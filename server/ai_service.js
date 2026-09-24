@@ -176,7 +176,7 @@ async function callGeminiAPI(apiKey, prompt, contextData) {
         {
           role: "user",
           parts: [
-            { text: `Hệ thống: Bạn là Trợ lý AI HaUI HomeFinder — Chuyên gia tư vấn phòng trọ và người bạn đồng hành tin cậy của sinh viên Đại học Công nghiệp Hà Nội. Hãy xưng hô thân mật (mình - bạn hoặc em/anh/chị tùy ngữ cảnh), trả lời súc tích, chân thành, am hiểu sâu sắc về 3 cơ sở HaUI (CS1 Nhổn, CS2 Tây Tựu, CS3 Hà Nam). Luôn đưa ra lời khuyên an toàn, phòng ngừa lừa đảo cọc và PCCC.\n\nDữ liệu phòng trọ thực tế từ hệ thống:\n${JSON.stringify(contextData)}\n\nCâu hỏi của sinh viên: ${prompt}` }
+            { text: `Hệ thống: Bạn là 5PTL — Trợ lý AI thông minh của HaUI HomeFinder, người bạn đồng hành tin cậy của sinh viên Đại học Công nghiệp Hà Nội. Hãy xưng hô thân mật (mình - bạn hoặc em/anh/chị tùy ngữ cảnh), trả lời súc tích, chân thành, am hiểu sâu sắc về 3 cơ sở HaUI (CS1 Nhổn, CS2 Tây Tựu, CS3 Hà Nam). Luôn đưa ra lời khuyên an toàn, phòng ngừa lừa đảo cọc và PCCC.\n\nDữ liệu phòng trọ thực tế từ hệ thống:\n${JSON.stringify(contextData)}\n\nCâu hỏi của sinh viên: ${prompt}` }
           ]
         }
       ],
@@ -237,7 +237,7 @@ function localDomainReasoning(userMessage, allRooms) {
   // Kịch bản 1: Hỏi về cọc / tiền cọc / lừa đảo / an toàn
   if (query.includes('cọc') || query.includes('lừa đảo') || query.includes('giữ chỗ') || query.includes('chuyển tiền') || query.includes('an toàn')) {
     return {
-      text: `Chào bạn! Về vấn đề **đặt cọc và giữ phòng**, Trợ lý AI HaUI khuyên bạn phải cực kỳ thận trọng:\n\n` +
+      text: `Chào bạn! Về vấn đề **đặt cọc và giữ phòng**, Trợ lý 5PTL khuyên bạn phải cực kỳ thận trọng:\n\n` +
             `🚨 **3 NGUYÊN TẮC VÀNG TRÁNH BỊ LỪA CỌC:**\n` +
             `1. **TUYỆT ĐỐI KHÔNG chuyển khoản trước** khi bạn chưa đến tận nơi xem phòng và chưa gặp trực tiếp chủ nhà thật (có CCCD/hộ khẩu rõ ràng).\n` +
             `2. **Cảnh giác bẫy phòng ảo giá rẻ:** Những bài đăng hình ảnh như khách sạn, full điều hòa nóng lạnh mà giá chỉ 1.2 - 1.5 triệu ở khu Nhổn/Kiều Mai là chiêu trò môi giới câu tương tác hoặc lừa cọc từ xa.\n` +
@@ -318,7 +318,7 @@ function localDomainReasoning(userMessage, allRooms) {
   }
 
   // Mặc định: Tư vấn tổng quát + Tìm phòng phù hợp theo yêu cầu
-  let responseText = `Chào bạn! Mình là **Trợ lý AI HaUI HomeFinder** — hỗ trợ sinh viên ĐH Công nghiệp Hà Nội tìm phòng nhanh, an toàn và đúng giá.\n\n`;
+  let responseText = `Chào bạn! Mình là **Trợ lý 5PTL** — trợ lý AI thông minh của HaUI HomeFinder, hỗ trợ sinh viên tìm phòng nhanh, an toàn và đúng giá.\n\n`;
   if (matchedRooms.length > 0) {
     responseText += `Dựa trên yêu cầu của bạn, mình đã quét nhanh kho dữ liệu **257 phòng trọ HaUI** và tìm thấy các lựa chọn sáng giá nhất:\n\n`;
     matchedRooms.forEach((r, idx) => {
@@ -367,7 +367,7 @@ async function processAIChat(userMessage, allRooms) {
         return {
           text: aiResponse,
           suggestedRooms: matchedRooms,
-          engine: 'Gemini AI Pro'
+          engine: 'Gemini AI (5PTL)'
         };
       }
     } catch (e) {
@@ -377,7 +377,7 @@ async function processAIChat(userMessage, allRooms) {
 
   // Fallback to Local Reasoning Engine (am hiểu sâu sắc HaUI)
   const result = localDomainReasoning(userMessage, allRooms);
-  result.engine = 'HaUI Domain AI Engine';
+  result.engine = '5PTL AI Engine';
   return result;
 }
 

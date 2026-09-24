@@ -105,7 +105,7 @@
           <div class="quick-filters">
             <button class="btn-ghost" onclick="openChatAndAsk('Tư vấn kinh nghiệm thuê trọ lần đầu cho tân sinh viên')" style="background: rgba(139, 92, 246, 0.15); border-color: rgba(139, 92, 246, 0.3); color: #6d28d9; font-weight: 700;">
               <i data-lucide="bot" style="width:16px;height:16px;color:#7c3aed;"></i>
-              ✨ Trợ Lý AI HaUI
+              ✨ Trợ Lý 5PTL
             </button>
             <button class="btn-ghost" onclick="filterByQuick('price_under_25')">
               <i data-lucide="tag" style="width:16px;height:16px;color:#10b981;"></i>
@@ -311,10 +311,10 @@
 
   </main>
 
-  <!-- ============ AI CHAT BOX (HaUI HomeFinder Assistant) ============ -->
-  <button class="chat-fab" id="chat-fab" title="Trợ lý AI HaUI">
+  <!-- ============ AI CHAT BOX (5PTL Assistant) ============ -->
+  <button class="chat-fab" id="chat-fab" title="Trợ lý 5PTL">
     <i data-lucide="sparkles" style="width:20px;height:20px;"></i>
-    <span>✨ Trợ lý AI HaUI</span>
+    <span>✨ Trợ lý 5PTL</span>
   </button>
 
   <div class="chat-window" id="chat-window">
@@ -324,7 +324,7 @@
           <i data-lucide="bot" style="width:20px;height:20px;"></i>
         </div>
         <div>
-          <div class="chat-header-title">Trợ Lý AI HaUI</div>
+          <div class="chat-header-title">Trợ Lý 5PTL</div>
           <div class="chat-header-sub">
             <span class="chat-status-dot"></span>
             Trực tuyến • Tư vấn thông minh 24/7
@@ -350,7 +350,7 @@
       <div class="msg-row ai">
         <div class="msg-avatar"><i data-lucide="bot" style="width:16px;height:16px;"></i></div>
         <div class="msg-bubble">
-          👋 Chào bạn! Mình là **Trợ lý AI HaUI HomeFinder**.<br/><br/>
+          👋 Chào bạn! Mình là **Trợ lý 5PTL** — trợ lý AI thông minh của HaUI HomeFinder.<br/><br/>
           Mình được huấn luyện chuyên biệt để hỗ trợ tân sinh viên và sinh viên ĐH Công nghiệp Hà Nội:<br/>
           • Tìm phòng trọ thật từ kho dữ liệu 3 cơ sở (CS1, CS2, CS3)<br/>
           • Bóc tách điều khoản hợp đồng & mẹo phòng tránh lừa cọc<br/>
@@ -602,7 +602,7 @@
           }
 
           // Hiển thị thông báo AI Search
-          showAIBadgeNotice(`✨ AI HaUI đã bóc tách: ${criteria.campus || '3 Cơ sở'} ${criteria.maxPrice ? '• Giá < ' + (criteria.maxPrice/1e6).toFixed(1) + 'tr' : ''} ${criteria.keywords.length ? '• ' + criteria.keywords.join(', ') : ''}`);
+          showAIBadgeNotice(`✨ Trợ lý 5PTL đã bóc tách: ${criteria.campus || '3 Cơ sở'} ${criteria.maxPrice ? '• Giá < ' + (criteria.maxPrice/1e6).toFixed(1) + 'tr' : ''} ${criteria.keywords.length ? '• ' + criteria.keywords.join(', ') : ''}`);
         } catch (e) {
           if (kw) params.q = kw;
         }
