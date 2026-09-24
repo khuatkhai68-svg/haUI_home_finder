@@ -1,0 +1,56 @@
+{
+  "ma_phong": "RM-PT123-557A80",
+  "nguon": "phongtro123",
+  "url_nguon": "https://phongtro123.com/phong-tro-30m-2-khep-kin-cau-dien-pr710429.html",
+  "ngay_cao": "2026-09-22T12:56:50.635Z",
+  "ngay_cap_nhat": "2026-09-22T12:56:50.635Z",
+  "trang_thai": "con_trong",
+  "vi_tri": {
+    "lat": 21.045,
+    "lng": 105.748,
+    "khoang_cach_cs1_km": 1.7,
+    "khoang_cach_cs2_km": 3,
+    "khoang_cach_cs3_km": 58.2,
+    "co_so_gan_nhat": "CS1",
+    "thoi_gian_di_xe_phut": 6
+  },
+  "thong_tin": {
+    "tieu_de": "Phòng trọ 30m^2 khép kín Cầu Diễn",
+    "gia": 3500000,
+    "dien_tich": 22,
+    "dia_chi": "GẦN GOLDMARK CITY, HỒ TÙNG MẬU TRỐNG PHÒNG VÀO Ở 1/9  Nhà 11E3,… 3.5 triệu/tháng25 m2 Bắc Từ Liêm, Hà Nội",
+    "quan_huyen": "Bắc Từ Liêm",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "* Phòng thoáng, an ninh tốt, gần đường 32, gần siêu thị Thành Đô, gần trường ĐH Tài Nguyên Môi Trường…",
+    "tien_ich": [
+      "dieu_hoa",
+      "ban_cong",
+      "khep_kin"
+    ],
+    "khong_chung_chu": true,
+    "gio_giac_tu_do": true
+  },
+  "lien_he": {
+    "so_dien_thoai": "0982652687",
+    "ten_chu": "Chủ nhà trọ Đường Cầu Diễn",
+    "facebook": ""
+  },
+  "anh": [
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/07/29/1juko479g-4n3ai3_1785294261.jpg"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/07/29/1juko46sr-4n3ai3_1785294261.jpg"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/07/29/1juko45q8-4n3ai3_1785294262.jpg"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/07/29/1juko46i4-4n3ai3_1785294262.jpg"
+    }
+  ],
+  "phan_tich": {
+    "scam_score": 5,
+    "da_kiem_tra": true
+  }
+}

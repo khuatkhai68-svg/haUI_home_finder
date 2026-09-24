@@ -1,0 +1,51 @@
+{
+  "ma_phong": "RM-FB-861FF1",
+  "nguon": "facebook",
+  "url_nguon": "https://www.facebook.com/groups/dhcncs3hanam/posts/1816964882633439/",
+  "ngay_cao": "2026-09-22T10:47:54.733Z",
+  "ngay_cap_nhat": "2026-09-22T10:47:54.733Z",
+  "trang_thai": "con_trong",
+  "vi_tri": {
+    "lat": 20.5425,
+    "lng": 105.899,
+    "khoang_cach_cs1_km": 59.3,
+    "khoang_cach_cs2_km": 60.5,
+    "khoang_cach_cs3_km": 0.2,
+    "co_so_gan_nhat": "CS3",
+    "thoi_gian_di_xe_phut": 2
+  },
+  "thong_tin": {
+    "tieu_de": "Phòng trọ đẹp 1.2 tr/tháng khép kín, không chung chủ gần HaUI CS3",
+    "gia": 1200000,
+    "dien_tich": 22,
+    "dia_chi": "Khu vực gần cổng phụ HaUI CS3, Xã Phù Vân, TP. Phủ Lý, Tỉnh Hà Nam",
+    "quan_huyen": "Phủ Lý",
+    "tinh_thanh": "Hà Nam",
+    "mo_ta": "Cho thuê phòng trọ đẹp khép kín, không chung chủ, giờ giấc thoải mái. Phòng có bình nóng lạnh, giường, chậu rửa. Điện nước tính theo công tơ giá rẻ. Liên hệ chính chủ xem phòng trực tiếp.",
+    "tien_ich": [
+      "nong_lanh",
+      "khep_kin",
+      "khong_chung_chu",
+      "gio_giac_tu_do"
+    ],
+    "khong_chung_chu": true,
+    "gio_giac_tu_do": true
+  },
+  "lien_he": {
+    "so_dien_thoai": "",
+    "ten_chu": "Chủ trọ Phù Vân - HaUI CS3",
+    "facebook": "https://www.facebook.com/groups/dhcncs3hanam/posts/1816964882633439/"
+  },
+  "anh": [
+    {
+      "url_goc": "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&fit=crop"
+    },
+    {
+      "url_goc": "https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=800&fit=crop"
+    }
+  ],
+  "phan_tich": {
+    "scam_score": 5,
+    "da_kiem_tra": true
+  }
+}

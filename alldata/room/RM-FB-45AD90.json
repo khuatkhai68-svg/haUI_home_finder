@@ -1,0 +1,48 @@
+{
+  "ma_phong": "RM-FB-45AD90",
+  "nguon": "facebook",
+  "url_nguon": "https://www.facebook.com/groups/140397885361011/posts/1040328418701282/",
+  "ngay_cao": "2026-09-22T12:15:25.413Z",
+  "ngay_cap_nhat": "2026-09-22T12:15:25.413Z",
+  "trang_thai": "con_trong",
+  "vi_tri": {
+    "lat": 21.045,
+    "lng": 105.748,
+    "khoang_cach_cs1_km": 1.7,
+    "khoang_cach_cs2_km": 3,
+    "khoang_cach_cs3_km": 58.2,
+    "co_so_gan_nhat": "CS1",
+    "thoi_gian_di_xe_phut": 6
+  },
+  "thong_tin": {
+    "tieu_de": "Nhượng phòng 99 cầu diễn 1tr8 cuối tháng trống",
+    "gia": 1800000,
+    "dien_tich": 25,
+    "dia_chi": "Đường Cầu Diễn, Phường Phúc Diễn, Quận Bắc Từ Liêm, Hà Nội",
+    "quan_huyen": "Bắc Từ Liêm",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Nhượng phòng 99 cầu diễn 1tr8 cuối tháng trống",
+    "tien_ich": [
+      "khep_kin"
+    ],
+    "khong_chung_chu": true,
+    "gio_giac_tu_do": true
+  },
+  "lien_he": {
+    "so_dien_thoai": "",
+    "ten_chu": "Chủ trọ khu vực HaUI CS1",
+    "facebook": "https://www.facebook.com/groups/140397885361011/?sorting_setting=CHRONOLOGICAL&locale=vi_VN"
+  },
+  "anh": [
+    {
+      "url_goc": "https://scontent.fhan14-1.fna.fbcdn.net/v/t39.30808-6/814817438_1488988369945386_4447361214744193341_n.jpg?stp=dst-jpg_tt6&cstp=mx946x2048&ctp=s590x590&_nc_cat=105&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=0TITNdaL03oQ7kNvwG7Hr51&_nc_oc=AdrqUSAqDqI5i-3wwR8C5accvJbZ2yvw56_9_eqRiHaZfRRPMjT_yQdLRwHz9C__JSw&_nc_zt=23&_nc_ht=scontent.fhan14-1.fna&_nc_gid=glS66iCN9OozcdnbRr_83g&_nc_ss=7b289&oh=00_AQI-GcUIJI94A5bmHM7xlHW_UVgpU7QzRZg8UKVw7aVjHg&oe=6AB850E9"
+    },
+    {
+      "url_goc": "https://scontent.fhan14-2.fna.fbcdn.net/v/t39.30808-6/800924671_1488988376612052_2800810707354618347_n.jpg?stp=dst-jpg_tt6&cstp=mx946x2048&ctp=s590x590&_nc_cat=100&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=sF-WrADP9PcQ7kNvwH3Y5L7&_nc_oc=AdrSx0MqIBF9NhxVHQHKTsHDEuGf2dxAYcV8wT21Pwbnya6xSVbGGZosnjNJXcONiTc&_nc_zt=23&_nc_ht=scontent.fhan14-2.fna&_nc_gid=glS66iCN9OozcdnbRr_83g&_nc_ss=7b289&oh=00_AQLLcVfPUhq_DtLMks_YpxlNIEjMKlNd4BlV9P2SybGwYQ&oe=6AB83BBF"
+    }
+  ],
+  "phan_tich": {
+    "scam_score": 5,
+    "da_kiem_tra": true
+  }
+}

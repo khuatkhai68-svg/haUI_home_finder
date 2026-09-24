@@ -1,0 +1,54 @@
+{
+  "ma_phong": "RM-PT123-C11AD7",
+  "nguon": "phongtro123",
+  "url_nguon": "https://phongtro123.com/cho-thue-1-phong-master-tu-1-10-trong-can-chung-cu-2-ngu-2-ve-sinh-cc-bca-pham-van-dong-pr713173.html",
+  "ngay_cao": "2026-09-22T12:57:03.402Z",
+  "ngay_cap_nhat": "2026-09-22T12:57:03.402Z",
+  "trang_thai": "con_trong",
+  "vi_tri": {
+    "lat": 21.0395,
+    "lng": 105.768,
+    "khoang_cach_cs1_km": 3.8,
+    "khoang_cach_cs2_km": 5,
+    "khoang_cach_cs3_km": 57.1,
+    "co_so_gan_nhat": "CS1",
+    "thoi_gian_di_xe_phut": 13
+  },
+  "thong_tin": {
+    "tieu_de": "Cho thuê 1 phòng Master Nữ ở từ 1/10 trong căn chung cư 2 ngủ 2 vệ sinh, CC BCA Phạm Văn Đồng",
+    "gia": 5700000,
+    "dien_tich": 22,
+    "dia_chi": "GẦN GOLDMARK CITY, HỒ TÙNG MẬU TRỐNG PHÒNG VÀO Ở 1/9  Nhà 11E3,… 3.5 triệu/tháng25 m2 Bắc Từ Liêm, Hà Nội",
+    "quan_huyen": "Bắc Từ Liêm",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Cho thuê 1 phòng Master Nữ trong căn chung cư 2 ngủ 2 vệ sinh, chung cư Bô Công An Phạm Văn Đồng",
+    "tien_ich": [
+      "khep_kin"
+    ],
+    "khong_chung_chu": true,
+    "gio_giac_tu_do": true
+  },
+  "lien_he": {
+    "so_dien_thoai": "0388560060",
+    "ten_chu": "Chủ nhà trọ Đường Hồ Tùng Mậu",
+    "facebook": ""
+  },
+  "anh": [
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/09/17/anh-phong_1789635343.png"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/450x300/fit/2026/09/17/anh-phong_1789635343.png"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/450x300/fit/2026/09/03/img-6803_1788369345.png"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/450x300/fit/2024/03/29/2_1711684797.jpg"
+    }
+  ],
+  "phan_tich": {
+    "scam_score": 5,
+    "da_kiem_tra": true
+  }
+}

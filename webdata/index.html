@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StudentAI Rental - Tìm Trọ Sinh Viên Thông Minh | HaUI</title>
+  <meta name="description" content="Nền tảng tìm kiếm phòng trọ thông minh tích hợp AI, hiển thị trên bản đồ dành riêng cho sinh viên HaUI." />
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Lucide icons via CDN -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+<body>
+
+  <!-- ============ NAVBAR ============ -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <!-- Brand -->
+      <a href="index.html" class="navbar-brand" style="text-decoration:none;">
+        <div class="navbar-logo">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Haui_logo.png/200px-Haui_logo.png"
+               alt="HaUI Logo"
+               onerror="this.style.display='none'" />
+        </div>
+        <div>
+          <div class="navbar-title">Hệ Thống Tìm Trọ HaUI</div>
+          <div class="navbar-subtitle">"Bạn cứ việc học, tìm trọ để Cò lo!"</div>
+        </div>
+      </a>
+
+      <!-- Nav -->
+      <nav class="navbar-nav">
+        <a href="index.html" class="active">
+          <i data-lucide="search" style="width:16px;height:16px;"></i> Tìm phòng
+        </a>
+        <a href="map.html">
+          <i data-lucide="map" style="width:16px;height:16px;"></i> Bản đồ
+        </a>
+        <a href="room-detail.html">
+          <i data-lucide="map-pin" style="width:16px;height:16px;"></i> Chi tiết phòng
+        </a>
+        <a href="admin.html">
+          <i data-lucide="plus-circle" style="width:16px;height:16px;"></i> Quản trị Admin
+        </a>
+      </nav>
+
+      <!-- Actions -->
+      <div class="navbar-actions">
+        <button class="btn-ai-assist" id="chat-trigger-btn">
+          <i data-lucide="message-square" style="width:16px;height:16px;"></i>
+          Trợ lý AI
+        </button>
+        <button class="btn-login">Đăng nhập</button>
+      </div>
+    </div>
+  </header>
+
+  <main style="flex:1;display:flex;flex-direction:column;">
+
+    <!-- ============ HERO SECTION ============ -->
+    <section class="hero-section">
+      <div class="hero-bg">
+        <div class="hero-blob-1"></div>
+        <div class="hero-blob-2"></div>
+      </div>
+
+      <div class="hero-inner">
+        <!-- Badge -->
+        <div class="hero-badge">
+          <i data-lucide="shield-check" style="width:18px;height:18px;"></i>
+          <span>Nền tảng tìm trọ dành riêng cho sinh viên HaUI</span>
+        </div>
+
+        <!-- Title -->
+        <h1 class="hero-title">
+          Trải nghiệm thuê trọ<br/>
+          <span class="gradient-text">An toàn tuyệt đối.</span>
+        </h1>
+
+        <!-- Description -->
+        <p class="hero-desc">
+          Hệ sinh thái thông minh đầu tiên bảo lãnh 100% tiền cọc, tự động tính toán khoảng cách
+          tránh tắc đường và tìm bạn ở ghép cực chuẩn cho dân Công Nghiệp.
+        </p>
+
+        <!-- Search Box -->
+        <div class="search-wrapper">
+          <div class="search-glow"></div>
+          <div class="search-box">
+            <div class="search-input-group">
+              <i data-lucide="map-pin" style="width:24px;height:24px;color:#3b82f6;"></i>
+              <input type="text" id="hero-keyword" placeholder="Nhập địa điểm (Nhổn, Kiều Mai, Cầu Giấy...)" />
+            </div>
+            <div class="search-input-group">
+              <i data-lucide="calculator" style="width:24px;height:24px;color:#10b981;"></i>
+              <input type="text" id="hero-budget" placeholder="Ngân sách tối đa? (vd: 3 triệu)" />
+            </div>
+            <button class="search-btn" id="hero-search-btn" onclick="handleHeroSearch()">
+              <i data-lucide="search" style="width:20px;height:20px;"></i>
+              Khám phá ngay
+            </button>
+          </div>
+
+          <!-- Quick Filters -->
+          <div class="quick-filters">
+            <button class="btn-ghost" onclick="filterByQuick('price_under_25')">
+              <i data-lucide="tag" style="width:16px;height:16px;color:#10b981;"></i>
+              Dưới 2.5 triệu
+            </button>
+            <button class="btn-ghost" onclick="filterByQuick('near_cs1')">
+              <i data-lucide="compass" style="width:16px;height:16px;color:#f97316;"></i>
+              &lt; 10 phút đi xe CS1
+            </button>
+            <button class="btn-ghost" onclick="filterByQuick('near_cs3')">
+              <i data-lucide="map-pin" style="width:16px;height:16px;color:#8b5cf6;"></i>
+              Gần CS3 (Hà Nam)
+            </button>
+            <button class="btn-ghost" onclick="filterByQuick('facebook')">
+              <i data-lucide="share-2" style="width:16px;height:16px;color:#3b82f6;"></i>
+              Tin từ Facebook
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FEATURES SECTION ============ -->
+    <section class="features-section">
+      <div class="container" style="max-width:1024px;">
+        <div class="text-center" style="margin-bottom:0;">
+          <h2 class="section-title">
+            Giải quyết mọi <span style="color:#2563eb;">"nỗi sợ"</span> của tân sinh viên
+          </h2>
+          <p class="section-desc">
+            Chúng tôi không chỉ giúp bạn tìm phòng, chúng tôi bảo vệ quyền lợi và túi tiền
+            của bạn bằng công nghệ.
+          </p>
+        </div>
+
+        <div class="features-grid">
+          <!-- Feature 1 -->
+          <div class="feature-card">
+            <div class="feature-icon blue">
+              <i data-lucide="compass" style="width:32px;height:32px;"></i>
+            </div>
+            <h3 class="feature-title">Tính Khoảng Cách Tránh Tắc Đường</h3>
+            <p class="feature-desc">
+              Quên "đường chim bay" đi. AI của chúng tôi đo khoảng cách đi xe máy thực tế,
+              tự động né các điểm kẹt xe khét tiếng trên Quốc lộ 32 để bạn không bao giờ muộn học.
+            </p>
+          </div>
+
+          <!-- Feature 2 -->
+          <div class="feature-card purple">
+            <div class="feature-icon purple">
+              <i data-lucide="users" style="width:32px;height:32px;"></i>
+            </div>
+            <h3 class="feature-title">Tìm Bạn Ở Ghép (HaUI Match)</h3>
+            <p class="feature-desc">
+              Khớp sở thích sinh hoạt (nuôi pet, ngủ muộn) và ưu tiên sinh viên cùng khoa
+              (Kế toán, Cơ khí, CNTT) qua hệ thống xác thực thẻ sinh viên nội bộ.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ COMMUNITY SECTION ============ -->
+    <section class="community-section">
+      <div class="community-blob"></div>
+      <div class="community-inner">
+        <h2>Tham gia "HaUI Village"</h2>
+        <p>
+          Cộng đồng nhà trọ xác thực lớn nhất dành cho sinh viên Đại học Công nghiệp Hà Nội.
+          Nơi mọi phòng trọ đều được kiểm định bởi chính hội sinh viên.
+        </p>
+        <button class="btn-emerald" onclick="alert('Tính năng đăng ký đang được phát triển!')">
+          Tạo hồ sơ sinh viên ngay
+        </button>
+      </div>
+    </section>
+
+    <!-- ============ LISTINGS SECTION ============ -->
+    <section class="listings-section">
+      <div class="listings-layout">
+
+        <!-- Sidebar Filter -->
+        <aside class="listings-sidebar">
+          <div class="filter-card">
+            <div class="filter-header">
+              <i data-lucide="sliders-horizontal" style="width:20px;height:20px;color:#2563eb;"></i>
+              <h3>Bộ Lọc Tìm Trọ</h3>
+            </div>
+
+            <!-- Campus -->
+            <div class="filter-group">
+              <div class="filter-label">
+                <i data-lucide="map-pin" style="width:16px;height:16px;"></i>
+                Chọn cơ sở HaUI
+              </div>
+              <div class="campus-toggle">
+                <button class="toggle-btn active" onclick="selectCampus(this,'cs1')">CS1 (Nhổn)</button>
+                <button class="toggle-btn" onclick="selectCampus(this,'cs2')">CS2 (Tây Tựu)</button>
+                <button class="toggle-btn" onclick="selectCampus(this,'cs3')">CS3 (Hà Nam)</button>
+              </div>
+            </div>
+
+            <!-- Radius -->
+            <div class="filter-group">
+              <div class="filter-label">
+                Bán kính tối đa: <span class="value" id="radius-label">10 km</span>
+              </div>
+              <input type="range" class="radius-slider" id="radius-slider" min="1" max="20" value="10"
+                     oninput="document.getElementById('radius-label').textContent=this.value+' km'" />
+              <div class="slider-labels"><span>1km</span><span>20km</span></div>
+            </div>
+
+            <!-- Price Filter -->
+            <div class="filter-group">
+              <div class="filter-label">
+                <i data-lucide="tag" style="width:16px;height:16px;"></i>
+                Mức giá thuê
+              </div>
+              <select id="price-filter" style="width:100%;padding:0.6rem;border-radius:8px;border:1px solid #cbd5e1;background:white;font-size:0.875rem;color:#1e293b;">
+                <option value="all">Tất cả mức giá</option>
+                <option value="under_2">Dưới 2 triệu</option>
+                <option value="2_to_3">Từ 2 - 3 triệu</option>
+                <option value="3_to_4">Từ 3 - 4 triệu</option>
+                <option value="above_4">Trên 4 triệu</option>
+              </select>
+            </div>
+
+            <!-- Source Filter -->
+            <div class="filter-group">
+              <div class="filter-label">
+                <i data-lucide="database" style="width:16px;height:16px;"></i>
+                Nguồn dữ liệu
+              </div>
+              <select id="source-filter" style="width:100%;padding:0.6rem;border-radius:8px;border:1px solid #cbd5e1;background:white;font-size:0.875rem;color:#1e293b;">
+                <option value="all">Tất cả (Phongtro123 + Facebook)</option>
+                <option value="phongtro123">phongtro123.com</option>
+                <option value="facebook">Facebook Groups</option>
+              </select>
+            </div>
+
+            <!-- Sort By -->
+            <div class="filter-group">
+              <div class="filter-label">
+                <i data-lucide="arrow-up-down" style="width:16px;height:16px;"></i>
+                Sắp xếp theo
+              </div>
+              <select id="sort-filter" style="width:100%;padding:0.6rem;border-radius:8px;border:1px solid #cbd5e1;background:white;font-size:0.875rem;color:#1e293b;">
+                <option value="newest">Mới cập nhật nhất</option>
+                <option value="distance">Gần trường nhất</option>
+                <option value="price_asc">Giá: Thấp đến Cao</option>
+                <option value="price_desc">Giá: Cao đến Thấp</option>
+              </select>
+            </div>
+
+            <button class="btn-primary w-full" style="margin-top:1rem;" onclick="applyFilter()">
+              Áp dụng &amp; Tìm kiếm
+            </button>
+          </div>
+        </aside>
+
+        <!-- Main Listings -->
+        <div class="listings-main">
+          <div class="listings-header">
+            <h2 class="listings-title">Phòng Trọ Dành Cho Bạn</h2>
+            <span class="listings-count">Tìm thấy <strong id="room-count">0</strong> kết quả</span>
+          </div>
+
+          <div class="rooms-grid" id="rooms-grid">
+            <!-- Skeleton loading -->
+            <div class="room-card">
+              <div class="room-image"><div class="skeleton" style="height:192px;width:100%;border-radius:0;"></div></div>
+              <div class="room-body" style="gap:.75rem;">
+                <div class="skeleton" style="height:1rem;width:90%;"></div>
+                <div class="skeleton" style="height:0.85rem;width:60%;"></div>
+                <div class="skeleton" style="height:1.5rem;width:40%;margin-top:.5rem;"></div>
+                <div class="skeleton" style="height:2.5rem;width:100%;margin-top:auto;"></div>
+              </div>
+            </div>
+            <div class="room-card">
+              <div class="room-image"><div class="skeleton" style="height:192px;width:100%;border-radius:0;"></div></div>
+              <div class="room-body" style="gap:.75rem;">
+                <div class="skeleton" style="height:1rem;width:90%;"></div>
+                <div class="skeleton" style="height:0.85rem;width:60%;"></div>
+                <div class="skeleton" style="height:1.5rem;width:40%;margin-top:.5rem;"></div>
+                <div class="skeleton" style="height:2.5rem;width:100%;margin-top:auto;"></div>
+              </div>
+            </div>
+            <div class="room-card">
+              <div class="room-image"><div class="skeleton" style="height:192px;width:100%;border-radius:0;"></div></div>
+              <div class="room-body" style="gap:.75rem;">
+                <div class="skeleton" style="height:1rem;width:90%;"></div>
+                <div class="skeleton" style="height:0.85rem;width:60%;"></div>
+                <div class="skeleton" style="height:1.5rem;width:40%;margin-top:.5rem;"></div>
+                <div class="skeleton" style="height:2.5rem;width:100%;margin-top:auto;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ AI CHAT BOX ============ -->
+  <button class="chat-fab" id="chat-fab" title="Trợ lý AI">
+    <i data-lucide="message-square" style="width:24px;height:24px;"></i>
+  </button>
+
+  <div class="chat-window" id="chat-window">
+    <div class="chat-header">
+      <div class="chat-header-left">
+        <i data-lucide="sparkles" style="width:20px;height:20px;"></i>
+        Trợ lý AI
+      </div>
+      <button class="chat-close" id="chat-close">
+        <i data-lucide="x" style="width:20px;height:20px;"></i>
+      </button>
+    </div>
+
+    <div class="chat-messages" id="chat-messages">
+      <div class="msg-row ai">
+        <div class="msg-avatar"><i data-lucide="bot" style="width:16px;height:16px;"></i></div>
+        <div class="msg-bubble">
+          Chào bạn! Mình là trợ lý AI tìm trọ. Mình có thể giúp bạn tìm phòng quanh trường nào, mức giá bao nhiêu?
+        </div>
+      </div>
+    </div>
+
+    <div class="chat-input-area">
+      <input type="text" class="chat-input" id="chat-input" placeholder="Nhập tin nhắn..." />
+      <button class="chat-send" id="chat-send">
+        <i data-lucide="send" style="width:16px;height:16px;margin-left:-2px;"></i>
+      </button>
+    </div>
+  </div>
+
+  <script>
+    // ---- Init Lucide Icons ----
+    lucide.createIcons();
+
+    let allRooms = [];
+    let currentRooms = [];
+    let selectedCampus = 'cs1';
+
+    // Helper map amenities
+    const AMENITY_MAP = {
+      'dieu_hoa': 'Điều hòa',
+      'nong_lanh': 'Nóng lạnh',
+      'may_giat': 'Máy giặt',
+      'wifi': 'Wifi',
+      'tu_lanh': 'Tủ lạnh',
+      'giuong': 'Giường',
+      'khoa_van_tay': 'Vân tay',
+      'bai_xe': 'Bãi xe',
+      'ban_cong': 'Ban công',
+      'bep_rieng': 'Bếp riêng',
+      'wc_rieng': 'Khép kín',
+      'thang_may': 'Thang máy'
+    };
+
+    // Load rooms from real Backend API
+    async function loadRooms(params = {}) {
+      const grid = document.getElementById('rooms-grid');
+      const countEl = document.getElementById('room-count');
+
+      try {
+        const query = new URLSearchParams({
+          campus: selectedCampus,
+          ...params
+        });
+        const res = await fetch(`/api/rooms?${query.toString()}`);
+        if (!res.ok) throw new Error('API error: ' + res.status);
+        const data = await res.json();
+        allRooms = data.data || [];
+        currentRooms = [...allRooms];
+        renderRooms(currentRooms);
+      } catch (err) {
+        console.warn('Không thể load từ /api/rooms, thử fallback:', err);
+        grid.innerHTML = `
+          <div class="no-results" style="grid-column:1/-1;text-align:center;padding:2rem;background:white;border-radius:12px;border:1px dashed #cbd5e1;">
+            <p style="color:#64748b;font-weight:600;">Đang kết nối tới máy chủ backend...</p>
+            <p style="font-size:0.875rem;color:#94a3b8;">Vui lòng khởi động backend server trên cổng 3333</p>
+          </div>
+        `;
+      }
+    }
+
+    function renderRooms(rooms) {
+      const grid = document.getElementById('rooms-grid');
+      const countEl = document.getElementById('room-count');
+      countEl.textContent = rooms.length;
+
+      if (!rooms || rooms.length === 0) {
+        grid.innerHTML = `
+          <div class="no-results" style="grid-column:1/-1;text-align:center;padding:3rem 1rem;background:white;border-radius:16px;border:1px dashed #cbd5e1;">
+            <p style="font-size:1.1rem;font-weight:700;color:#1e293b;margin-bottom:0.5rem;">Không tìm thấy phòng nào phù hợp</p>
+            <p style="color:#64748b;font-size:0.9rem;">Thử tăng bán kính tìm kiếm hoặc chọn mức giá khác xem sao nhé!</p>
+          </div>
+        `;
+        return;
+      }
+
+      grid.innerHTML = rooms.map(room => {
+        let dist = null;
+        let campusLabel = 'CS1';
+        if (selectedCampus === 'cs3') {
+          dist = room.distCS3;
+          campusLabel = 'CS3 (Hà Nam)';
+        } else if (selectedCampus === 'cs2') {
+          dist = room.distCS2;
+          campusLabel = 'CS2 (Tây Tựu)';
+        } else {
+          dist = room.distCS1;
+          campusLabel = 'CS1 (Nhổn)';
+        }
+        const distStr = dist !== null && dist !== undefined ? dist.toFixed(1) + ' km' : 'Gần trường';
+        const img = (room.images && room.images.length > 0) ? room.images[0] : 'https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=600&h=400&fit=crop';
+        const isFB = room.nguon === 'facebook';
+        const sourceBadge = isFB 
+          ? `<span style="position:absolute;top:10px;left:10px;background:#1877f2;color:white;padding:4px 10px;border-radius:6px;font-size:0.75rem;font-weight:700;box-shadow:0 2px 6px rgba(0,0,0,0.2);">Facebook</span>`
+          : `<span style="position:absolute;top:10px;left:10px;background:#0284c7;color:white;padding:4px 10px;border-radius:6px;font-size:0.75rem;font-weight:700;box-shadow:0 2px 6px rgba(0,0,0,0.2);">phongtro123</span>`;
+
+        const amenitiesHtml = (room.amenities || []).slice(0, 3).map(a => `
+          <span class="room-tag" style="background:#f1f5f9;color:#475569;font-size:0.75rem;">${AMENITY_MAP[a] || a}</span>
+        `).join('');
+
+        return `
+          <div class="room-card" style="display:flex;flex-direction:column;border-radius:14px;overflow:hidden;border:1px solid #e2e8f0;background:white;transition:transform 0.2s,box-shadow 0.2s;">
+            <div class="room-image" style="position:relative;height:200px;overflow:hidden;background:#f1f5f9;">
+              <img src="${img}" alt="${room.title}" loading="lazy"
+                   style="width:100%;height:100%;object-fit:cover;"
+                   onerror="this.src='https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=600&h=400&fit=crop'" />
+              ${sourceBadge}
+              <div class="distance-badge" style="position:absolute;bottom:10px;right:10px;background:rgba(15,23,42,0.85);backdrop-filter:blur(4px);color:white;padding:4px 8px;border-radius:6px;font-size:0.75rem;font-weight:600;">
+                Cách ${campusLabel} ${distStr}
+              </div>
+            </div>
+            <div class="room-body" style="padding:1rem;display:flex;flex-direction:column;flex:1;">
+              <h3 class="room-title" style="font-size:0.95rem;font-weight:700;color:#0f172a;line-height:1.4;margin:0 0 0.5rem;display:-webkit-box;-webkit-line-clamp:2;line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;" title="${room.title}">
+                ${room.title}
+              </h3>
+              <p style="font-size:0.8rem;color:#64748b;margin:0 0 0.5rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">
+                📍 ${room.address || (room.district + ', Hà Nội')}
+              </p>
+              <div class="room-tags" style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:0.75rem;">
+                ${room.area ? `<span class="room-tag">📐 ${room.area} m²</span>` : ''}
+                ${amenitiesHtml}
+              </div>
+              <div style="margin-top:auto;display:flex;align-items:baseline;justify-content:space-between;padding-top:0.5rem;border-top:1px solid #f1f5f9;">
+                <div class="room-price" style="font-size:1.15rem;font-weight:800;color:#2563eb;">
+                  ${(room.price/1000000).toFixed(1)} <span style="font-size:0.8rem;color:#64748b;font-weight:500;">tr/tháng</span>
+                </div>
+                <a href="room-detail.html?id=${room.id}" class="room-link" style="display:inline-block;padding:0.45rem 0.9rem;background:#2563eb;color:white;font-weight:600;font-size:0.8rem;border-radius:8px;text-decoration:none;transition:background 0.2s;">
+                  Chi tiết →
+                </a>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // Campus selection
+    function selectCampus(btn, campus) {
+      document.querySelectorAll('.campus-toggle .toggle-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      selectedCampus = campus;
+      applyFilter();
+    }
+
+    // Apply Filter
+    function applyFilter() {
+      const radiusVal = document.getElementById('radius-slider')?.value || 10;
+      const priceVal = document.getElementById('price-filter')?.value || 'all';
+      const sourceVal = document.getElementById('source-filter')?.value || 'all';
+      const sortVal = document.getElementById('sort-filter')?.value || 'newest';
+
+      const params = {
+        campus: selectedCampus,
+        max_distance: radiusVal,
+        sort: sortVal
+      };
+
+      if (sourceVal !== 'all') params.nguon = sourceVal;
+
+      if (priceVal === 'under_2') {
+        params.max_price = 2000000;
+      } else if (priceVal === '2_to_3') {
+        params.min_price = 2000000;
+        params.max_price = 3000000;
+      } else if (priceVal === '3_to_4') {
+        params.min_price = 3000000;
+        params.max_price = 4000000;
+      } else if (priceVal === 'above_4') {
+        params.min_price = 4000000;
+      }
+
+      loadRooms(params);
+    }
+
+    // Quick filter triggers
+    function filterByQuick(type) {
+      const listingsEl = document.querySelector('.listings-section');
+      if (listingsEl) listingsEl.scrollIntoView({ behavior: 'smooth' });
+
+      if (type === 'price_under_25') {
+        document.getElementById('price-filter').value = 'under_2';
+        loadRooms({ max_price: 2500000 });
+      } else if (type === 'near_cs1') {
+        selectedCampus = 'cs1';
+        document.querySelectorAll('.campus-toggle .toggle-btn').forEach((b, i) => {
+          b.classList.toggle('active', i === 0);
+        });
+        document.getElementById('radius-slider').value = 5;
+        document.getElementById('radius-label').textContent = '5 km';
+        loadRooms({ max_distance: 5, campus: 'cs1' });
+      } else if (type === 'near_cs3') {
+        selectedCampus = 'cs3';
+        document.querySelectorAll('.campus-toggle .toggle-btn').forEach((b, i) => {
+          b.classList.toggle('active', i === 2);
+        });
+        document.getElementById('radius-slider').value = 10;
+        document.getElementById('radius-label').textContent = '10 km';
+        loadRooms({ max_distance: 10, campus: 'cs3' });
+      } else if (type === 'facebook') {
+        document.getElementById('source-filter').value = 'facebook';
+        loadRooms({ nguon: 'facebook' });
+      }
+    }
+
+    // Hero search input handler
+    function handleHeroSearch() {
+      const kw = document.getElementById('hero-keyword')?.value?.trim() || '';
+      const budgetStr = document.getElementById('hero-budget')?.value?.trim() || '';
+      
+      const params = {};
+      if (kw) params.q = kw;
+
+      if (budgetStr) {
+        const trMatch = budgetStr.match(/(\d+[.,]?\d*)\s*tr/i);
+        if (trMatch) {
+          params.max_price = Math.round(parseFloat(trMatch[1].replace(',', '.')) * 1e6);
+        } else {
+          const num = parseInt(budgetStr.replace(/\D/g, ''));
+          if (num > 0) {
+            params.max_price = num < 50 ? num * 1000000 : num;
+          }
+        }
+      }
+
+      const listingsEl = document.querySelector('.listings-section');
+      if (listingsEl) listingsEl.scrollIntoView({ behavior: 'smooth' });
+
+      loadRooms(params);
+    }
+
+    // Enter key triggers hero search
+    document.getElementById('hero-keyword')?.addEventListener('keydown', e => {
+      if (e.key === 'Enter') handleHeroSearch();
+    });
+    document.getElementById('hero-budget')?.addEventListener('keydown', e => {
+      if (e.key === 'Enter') handleHeroSearch();
+    });
+
+    // Initial load
+    loadRooms();
+
+    // ---- Chat ----
+    const fab = document.getElementById('chat-fab');
+    const chatWindow = document.getElementById('chat-window');
+    const closeBtn = document.getElementById('chat-close');
+    const chatTrigger = document.getElementById('chat-trigger-btn');
+    const chatInput = document.getElementById('chat-input');
+    const chatSend = document.getElementById('chat-send');
+    const chatMessages = document.getElementById('chat-messages');
+
+    function openChat() { fab.classList.add('hidden'); chatWindow.classList.add('open'); }
+    function closeChat() { fab.classList.remove('hidden'); chatWindow.classList.remove('open'); }
+
+    fab.addEventListener('click', openChat);
+    if (chatTrigger) chatTrigger.addEventListener('click', openChat);
+    closeBtn.addEventListener('click', closeChat);
+
+    function addMessage(role, text) {
+      const row = document.createElement('div');
+      row.className = `msg-row ${role}`;
+      row.innerHTML = role === 'ai'
+        ? `<div class="msg-avatar"><i data-lucide="bot" style="width:16px;height:16px;"></i></div><div class="msg-bubble">${text}</div>`
+        : `<div class="msg-bubble">${text}</div>`;
+      chatMessages.appendChild(row);
+      lucide.createIcons({ nodes: [row] });
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    function addTyping() {
+      const row = document.createElement('div');
+      row.className = 'msg-row ai';
+      row.id = 'typing-row';
+      row.innerHTML = `
+        <div class="msg-avatar"><i data-lucide="bot" style="width:16px;height:16px;"></i></div>
+        <div class="msg-bubble">
+          <div class="typing-indicator">
+            <div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div>
+          </div>
+        </div>`;
+      chatMessages.appendChild(row);
+      lucide.createIcons({ nodes: [row] });
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    function sendMessage() {
+      const text = chatInput.value.trim();
+      if (!text) return;
+      addMessage('user', text);
+      chatInput.value = '';
+      addTyping();
+
+      // Thông minh phản hồi dựa trên từ khóa người dùng
+      setTimeout(() => {
+        const typing = document.getElementById('typing-row');
+        if (typing) typing.remove();
+
+        const low = text.toLowerCase();
+        let reply = "Mình có thể giúp bạn tìm phòng gần HaUI Cơ sở 1 (Nhổn) hoặc Cơ sở 2 (Tây Tựu). Bạn muốn tìm mức giá khoảng bao nhiêu?";
+
+        if (low.includes('giá') || low.includes('triệu') || low.includes('rẻ') || low.includes('tiền')) {
+          reply = "Phòng trọ quanh HaUI phân khúc phổ biến nhất là từ 1.8 - 3.2 triệu/tháng (đầy đủ nóng lạnh, điều hòa, khép kín). Khu Nguyên Xá và Kiều Mai có rất nhiều lựa chọn giá tốt!";
+        } else if (low.includes('cs1') || low.includes('nhổn') || low.includes('nguyên xá')) {
+          reply = "Khu vực Nguyên Xá, Đình Quán, Kiều Mai chỉ cách HaUI CS1 khoảng 300m - 1km, đi bộ hoặc xe bus rất tiện lợi!";
+        } else if (low.includes('cs2') || low.includes('tây tựu')) {
+          reply = "Cơ sở 2 ở Tây Tựu có nhiều phòng trọ thoáng mát, giá rẻ hơn CS1 khoảng 20-30%, chỉ từ 1.5 - 2.5 triệu/tháng!";
+        } else if (low.includes('ghép') || low.includes('ở cùng')) {
+          reply = "Bạn có thể dùng tính năng HaUI Match để ghép bạn cùng khoa nhé! Chi phí share phòng sẽ chỉ còn khoảng 1 - 1.5 triệu/người/tháng.";
+        }
+
+        addMessage('ai', reply);
+      }, 1000 + Math.random() * 500);
+    }
+
+    chatSend.addEventListener('click', sendMessage);
+    chatInput.addEventListener('keydown', e => { if (e.key === 'Enter') sendMessage(); });
+    chatInput.addEventListener('input', () => {
+      chatSend.disabled = !chatInput.value.trim();
+    });
+    chatSend.disabled = true;
+  </script>
+</body>
+</html>

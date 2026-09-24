@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Environment variables
+.env
+.env.local
+.env.production
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs (giữ lại thư mục, bỏ nội dung log cũ)
+alldata/logs/*.json
+
+# Playwright / botdata temp
+botdata/.playwright-mcp/
+botdata/screenshots/
+botdata/playwright-mcp/
+
+# Screenshots tạm
+webdata/*.png
+webdata/*.jpg
+
+# Crawler scripts không cần thiết cho production
+# (giữ lại alldata/room/*.json vì là DB chính)
+
+# Build artifacts
+*.log
+npm-debug.log*

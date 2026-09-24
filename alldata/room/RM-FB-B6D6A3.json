@@ -1,0 +1,51 @@
+{
+  "ma_phong": "RM-FB-B6D6A3",
+  "nguon": "facebook",
+  "url_nguon": "https://www.facebook.com/groups/1896518147417522/posts/2804082253327769/",
+  "ngay_cao": "2026-09-22T10:47:54.728Z",
+  "ngay_cap_nhat": "2026-09-22T10:47:54.729Z",
+  "trang_thai": "con_trong",
+  "vi_tri": {
+    "lat": 21.041,
+    "lng": 105.733,
+    "khoang_cach_cs1_km": 1.4,
+    "khoang_cach_cs2_km": 2.4,
+    "khoang_cach_cs3_km": 58.2,
+    "co_so_gan_nhat": "CS1",
+    "thoi_gian_di_xe_phut": 5
+  },
+  "thong_tin": {
+    "tieu_de": "Cho thuê phòng Xuân Phương – Gần Đại học Công Nghiệp, Nhổn",
+    "gia": 2200000,
+    "dien_tich": 24,
+    "dia_chi": "Đường Xuân Phương, Phường Phương Canh, Quận Nam Từ Liêm, Hà Nội",
+    "quan_huyen": "Bắc Từ Liêm",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Cho thuê phòng trọ Xuân Phương gần trường ĐH Công Nghiệp Hà Nội, khu vực Nhổn. Phòng khép kín sạch sẽ, có bình nóng lạnh, quạt trần, giường đệm, chỗ nấu ăn và để xe tầng 1 an toàn. Giờ giấc tự do, không chung chủ.",
+    "tien_ich": [
+      "nong_lanh",
+      "khep_kin",
+      "khong_chung_chu",
+      "gio_giac_tu_do"
+    ],
+    "khong_chung_chu": true,
+    "gio_giac_tu_do": true
+  },
+  "lien_he": {
+    "so_dien_thoai": "",
+    "ten_chu": "Chủ nhà Trọ HaUI Nhổn - Tây Tựu",
+    "facebook": "https://www.facebook.com/groups/1896518147417522/posts/2804082253327769/"
+  },
+  "anh": [
+    {
+      "url_goc": "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&fit=crop"
+    },
+    {
+      "url_goc": "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&fit=crop"
+    }
+  ],
+  "phan_tich": {
+    "scam_score": 5,
+    "da_kiem_tra": true
+  }
+}

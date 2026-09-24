@@ -1,0 +1,54 @@
+{
+  "ma_phong": "RM-FB-AD3F67",
+  "nguon": "facebook",
+  "url_nguon": "https://www.facebook.com/groups/571071327079339/posts/2285560238963764/",
+  "ngay_cao": "2026-09-22T12:23:25.523Z",
+  "ngay_cap_nhat": "2026-09-22T12:23:25.523Z",
+  "trang_thai": "con_trong",
+  "vi_tri": {
+    "lat": 21.061,
+    "lng": 105.719,
+    "khoang_cach_cs1_km": 1.9,
+    "khoang_cach_cs2_km": 0.7,
+    "khoang_cach_cs3_km": 60.7,
+    "co_so_gan_nhat": "CS2",
+    "thoi_gian_di_xe_phut": 2
+  },
+  "thong_tin": {
+    "tieu_de": "Mình có Nhà cho thuê 5 tầng mỗi tầng 1p đủ đồ",
+    "gia": 8000000,
+    "dien_tich": 25,
+    "dia_chi": "Thôn Đại Tự, Xã Kim Chung, Huyện Hoài Đức, Hà Nội",
+    "quan_huyen": "Hoài Đức",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Mình có Nhà cho thuê 5 tầng mỗi tầng 1p đủ đồ\nCó 3 ngủ cho thuê 8 triệu\nSố 25 ngõ 84 Đại Tự\nLiên hệ: 0354454522\nĐóng 3 cọc 1",
+    "tien_ich": [
+      "khep_kin"
+    ],
+    "khong_chung_chu": true,
+    "gio_giac_tu_do": true
+  },
+  "lien_he": {
+    "so_dien_thoai": "0354454522",
+    "ten_chu": "Chủ trọ khu vực HaUI CS1",
+    "facebook": "https://www.facebook.com/groups/571071327079339/?locale=vi_VN"
+  },
+  "anh": [
+    {
+      "url_goc": "https://scontent.fhan14-4.fna.fbcdn.net/v/t39.30808-6/800115113_1873494377367172_9072844977190785573_n.jpg?stp=dst-jpg_tt6&cstp=mx1536x2048&ctp=s590x590&_nc_cat=102&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=w_CFZklSWq0Q7kNvwHoUr7P&_nc_oc=AdrrF0eKjmtuSG8ToUfh1SvXeA-mDCwwklp5KZsKXU7F88pKJh-7bFxOeNBxM4-4IAY&_nc_zt=23&_nc_ht=scontent.fhan14-4.fna&_nc_gid=EGvw-xFPDp6sHcJTKfTMSw&_nc_ss=7b289&oh=00_AQLUwXqNMpUijxUuNJfAAA0w6UhnJc-ZkfcugebcR9W_sw&oe=6AB84C10"
+    },
+    {
+      "url_goc": "https://scontent.fhan14-3.fna.fbcdn.net/v/t39.30808-6/807484625_1873494404033836_93289392772950436_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1536&ctp=s590x590&_nc_cat=110&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=K4GIN78AQHoQ7kNvwE8kSF6&_nc_oc=AdosR2r9cZNc3aqI14Q9h6rWwSGsmTMOoBHv1azHvF6M6wMxzGx7Z26s2nc0SO5ahLA&_nc_zt=23&_nc_ht=scontent.fhan14-3.fna&_nc_gid=EGvw-xFPDp6sHcJTKfTMSw&_nc_ss=7b289&oh=00_AQJH2wr0n30ioWQgw6gqkbr6coolbee6FeNgCwGmxsfyhg&oe=6AB84BE8"
+    },
+    {
+      "url_goc": "https://scontent.fhan14-3.fna.fbcdn.net/v/t39.30808-6/795430627_1873494474033829_2663826065363392033_n.jpg?stp=dst-jpg_tt6&cstp=mx1536x2048&ctp=s590x590&_nc_cat=110&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=4ihPEWdgIxsQ7kNvwGnN_Ny&_nc_oc=AdpHaTJqUnTdl0C1YgcVg5gw6nZAk1HZ0sDrQSJhfDSl4OjFLIpcUeqn26vfkTwwAsk&_nc_zt=23&_nc_ht=scontent.fhan14-3.fna&_nc_gid=EGvw-xFPDp6sHcJTKfTMSw&_nc_ss=7b289&oh=00_AQLP7o1buIaoiUqMgIrPGli4tUCQ7xaYRo4XV6SvvNfLUw&oe=6AB852E0"
+    },
+    {
+      "url_goc": "https://scontent.fhan14-1.fna.fbcdn.net/v/t39.30808-6/800715680_1873494440700499_1562714877751956704_n.jpg?stp=dst-jpg_tt6&cstp=mx1536x2048&ctp=s590x590&_nc_cat=105&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=zNibMO9pQeIQ7kNvwFJJhM3&_nc_oc=Ado-MRREO1xElNbazeFH9NW96n-pYmvRnMwrjCq9-VaMCWEigqgDrT1cw3ji9XMjvFM&_nc_zt=23&_nc_ht=scontent.fhan14-1.fna&_nc_gid=EGvw-xFPDp6sHcJTKfTMSw&_nc_ss=7b289&oh=00_AQJz2OiUjAIFVz5IBAecgN4Pl15Ct7Pgg4UEx93lal9Prw&oe=6AB8351F"
+    }
+  ],
+  "phan_tich": {
+    "scam_score": 5,
+    "da_kiem_tra": true
+  }
+}

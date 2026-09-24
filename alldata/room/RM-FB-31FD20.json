@@ -1,0 +1,46 @@
+{
+  "ma_phong": "RM-FB-31FD20",
+  "nguon": "facebook",
+  "url_nguon": "https://www.facebook.com/groups/571071327079339/?locale=vi_VN",
+  "ngay_cao": "2026-09-22T12:23:25.525Z",
+  "ngay_cap_nhat": "2026-09-22T12:23:25.525Z",
+  "trang_thai": "con_trong",
+  "vi_tri": {
+    "lat": 21.0618,
+    "lng": 105.7259,
+    "khoang_cach_cs1_km": 1.3,
+    "khoang_cach_cs2_km": 0,
+    "khoang_cach_cs3_km": 60.6,
+    "co_so_gan_nhat": "CS2",
+    "thoi_gian_di_xe_phut": 2
+  },
+  "thong_tin": {
+    "tieu_de": "Cho thuê phòng trọ 1.8 tr/tháng tại Đường Tây Tựu (HaUI CS2)",
+    "gia": 1800000,
+    "dien_tich": 25,
+    "dia_chi": "Đường Tây Tựu, Phường Tây Tựu, Quận Bắc Từ Liêm, Hà Nội (gần HaUI CS2)",
+    "quan_huyen": "Bắc Từ Liêm",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "1tr 8 ngay cổng trường ĐHCNHN cơ sở 2 luôn. Lh 0936 257326 hoặc zalo 0936 257326",
+    "tien_ich": [
+      "dieu_hoa",
+      "khep_kin"
+    ],
+    "khong_chung_chu": true,
+    "gio_giac_tu_do": true
+  },
+  "lien_he": {
+    "so_dien_thoai": "",
+    "ten_chu": "Chủ trọ khu vực HaUI CS2",
+    "facebook": "https://www.facebook.com/groups/571071327079339/?locale=vi_VN"
+  },
+  "anh": [
+    {
+      "url_goc": "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&fit=crop"
+    }
+  ],
+  "phan_tich": {
+    "scam_score": 5,
+    "da_kiem_tra": true
+  }
+}

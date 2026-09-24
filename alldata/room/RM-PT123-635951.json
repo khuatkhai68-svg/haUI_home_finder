@@ -1,0 +1,55 @@
+{
+  "ma_phong": "RM-PT123-635951",
+  "nguon": "phongtro123",
+  "url_nguon": "https://phongtro123.com/cho-thue-phong-tro-gan-cong-chinh-dhcn-ha-nam-pr711337.html",
+  "ngay_cao": "2026-09-22T12:58:10.229Z",
+  "ngay_cap_nhat": "2026-09-22T12:58:10.229Z",
+  "trang_thai": "con_trong",
+  "vi_tri": {
+    "lat": 20.541,
+    "lng": 105.898,
+    "khoang_cach_cs1_km": 59.5,
+    "khoang_cach_cs2_km": 60.6,
+    "khoang_cach_cs3_km": 0,
+    "co_so_gan_nhat": "CS3",
+    "thoi_gian_di_xe_phut": 2
+  },
+  "thong_tin": {
+    "tieu_de": "Cho thuê phòng trọ gần cổng chính ĐHCN hà nam",
+    "gia": 1800000,
+    "dien_tich": 22,
+    "dia_chi": "TP. Phủ Lý, Tỉnh Hà Nam (gần HaUI CS3)",
+    "quan_huyen": "Phủ Lý",
+    "tinh_thanh": "Hà Nam",
+    "mo_ta": "Cho thuê phòng trọ gần ĐH Công nghiệp – cơ sở 3, Hà Nam",
+    "tien_ich": [
+      "dieu_hoa",
+      "khep_kin"
+    ],
+    "khong_chung_chu": true,
+    "gio_giac_tu_do": true
+  },
+  "lien_he": {
+    "so_dien_thoai": "0909316890",
+    "ten_chu": "Chủ nhà trọ TP. Phủ Lý",
+    "facebook": ""
+  },
+  "anh": [
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/450x300/fit/2026/09/03/img-6803_1788369345.png"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/450x300/fit/2024/03/29/2_1711684797.jpg"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/450x300/fit/2026/09/01/img-6803_1788232468.png"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/450x300/fit/2025/05/08/11_1746698807.png"
+    }
+  ],
+  "phan_tich": {
+    "scam_score": 5,
+    "da_kiem_tra": true
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "ma_phong": "RM-FB-8ECB7C",
+  "nguon": "facebook",
+  "url_nguon": "https://www.facebook.com/groups/nha.tro.haui/posts/1398733152076595/",
+  "ngay_cao": "2026-09-22T12:25:05.685Z",
+  "ngay_cap_nhat": "2026-09-22T12:25:05.685Z",
+  "trang_thai": "con_trong",
+  "vi_tri": {
+    "lat": 21.038,
+    "lng": 105.722,
+    "khoang_cach_cs1_km": 2.2,
+    "khoang_cach_cs2_km": 2.7,
+    "khoang_cach_cs3_km": 58.2,
+    "co_so_gan_nhat": "CS1",
+    "thoi_gian_di_xe_phut": 8
+  },
+  "thong_tin": {
+    "tieu_de": "Cho thuê phòng trọ 3.0 tr/tháng tại Khu đô thị Vân Canh (HaUI CS1)",
+    "gia": 3000000,
+    "dien_tich": 22,
+    "dia_chi": "Khu đô thị Vân Canh, Huyện Hoài Đức, Hà Nội",
+    "quan_huyen": "Hoài Đức",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Địa chỉ: Hud Vân Canh\n Diện tích: 22m2\nGiá: 3tr\n Nội thất đầy đủ: Giường, tủ lạnh, tủ quần áo, nóng lạnh, điều hoà, tủ bếp,... Full Đồ\n- Cách ĐH Công Nghiệp ~2km\n- Cách Cao Đẳng FPT, ĐH Đông Á ~ 1km\n Lưu ý: 1/10 ở\n Ban công/Cửa sổ: có\n Thang: máy\n Nuôi pet: nuôi pet nhỏ\n Xe điện: có\n Hợp đồng: 12 tháng",
+    "tien_ich": [
+      "dieu_hoa",
+      "nong_lanh",
+      "tu_lanh",
+      "ban_cong",
+      "khep_kin"
+    ],
+    "khong_chung_chu": true,
+    "gio_giac_tu_do": true
+  },
+  "lien_he": {
+    "so_dien_thoai": "",
+    "ten_chu": "Chủ trọ khu vực HaUI CS1",
+    "facebook": "https://www.facebook.com/groups/nha.tro.haui/?locale=vi_VN"
+  },
+  "anh": [
+    {
+      "url_goc": "https://scontent.fhan14-1.fna.fbcdn.net/v/t39.30808-6/821132300_1109450201782830_7672400569452897639_n.jpg?stp=dst-jpg_tt6&cstp=mx1170x860&ctp=s590x590&_nc_cat=107&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=Lpu_Om_DgH0Q7kNvwGYkZoK&_nc_oc=Adonua2BqXbdwYFsovCetGu_S6OuYfQ3wjIO3_v7G_pQ6A8mGwjXQeUxawP9uikTNqE&_nc_zt=23&_nc_ht=scontent.fhan14-1.fna&_nc_gid=EmqbYWrKz8JIvLcIhnPjEg&_nc_ss=7b289&oh=00_AQJKK0SDwSkNivJafGcDKwzGPNcBm2_cQ3ruyplNCdJPdA&oe=6AB85CDC"
+    },
+    {
+      "url_goc": "https://scontent.fhan14-4.fna.fbcdn.net/v/t39.30808-6/820212375_1109450245116159_2604013433474991337_n.jpg?stp=dst-jpg_tt6&cstp=mx1170x924&ctp=s590x590&_nc_cat=102&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=dga2lZeDqiUQ7kNvwHRSgI4&_nc_oc=AdomDcUmlrfB2veExM_KJbWle4qitY4YWKx969LzNyxaMY7v9C32cER41RXSPn6vZ6Q&_nc_zt=23&_nc_ht=scontent.fhan14-4.fna&_nc_gid=EmqbYWrKz8JIvLcIhnPjEg&_nc_ss=7b289&oh=00_AQL7oVtBe7d3USW3LE2QOxi8LKatma91C7__xgyezf-Cgg&oe=6AB839C0"
+    },
+    {
+      "url_goc": "https://scontent.fhan14-2.fna.fbcdn.net/v/t39.30808-6/819276281_1109450288449488_484833786012755884_n.jpg?stp=dst-jpg_tt6&cstp=mx1086x1449&ctp=s590x590&_nc_cat=100&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=K_EhLtgSm8YQ7kNvwHQGAzc&_nc_oc=AdpCj3m0bZcqS6CcdcXUa-jtpXRpqBsj_CzOC5DSPMixjAEgqXePiwgSXmT3db04pG0&_nc_zt=23&_nc_ht=scontent.fhan14-2.fna&_nc_gid=EmqbYWrKz8JIvLcIhnPjEg&_nc_ss=7b289&oh=00_AQL_BcGaOF1kupAWGj5wxbrZje6raxsHm0nU8IIJ2REfCQ&oe=6AB84958"
+    },
+    {
+      "url_goc": "https://scontent.fhan14-1.fna.fbcdn.net/v/t39.30808-6/819110339_1109450331782817_5968646122057553796_n.jpg?stp=dst-jpg_tt6&cstp=mx954x1280&ctp=s590x590&_nc_cat=107&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=JahcoscUJB4Q7kNvwFMhdfR&_nc_oc=AdrYs9nJRbSV6C8OTOBYQTjT9R09uo4Yfa2wxHyDK3R1xnHzJb9WqdJBmI70PdHZHuY&_nc_zt=23&_nc_ht=scontent.fhan14-1.fna&_nc_gid=EmqbYWrKz8JIvLcIhnPjEg&_nc_ss=7b289&oh=00_AQLEfds1FuTYdXx_5PBWi87akJ86kUXlPXC1WKJnQE_n-w&oe=6AB842DA"
+    }
+  ],
+  "phan_tich": {
+    "scam_score": 5,
+    "da_kiem_tra": true
+  }
+}

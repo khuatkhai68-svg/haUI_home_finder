@@ -1,0 +1,49 @@
+{
+  "ma_phong": "RM-FB-9ACCD3",
+  "nguon": "facebook",
+  "url_nguon": "https://www.facebook.com/groups/2229052660694268/posts/4460274787572033/",
+  "ngay_cao": "2026-09-22T12:24:31.806Z",
+  "ngay_cap_nhat": "2026-09-22T12:24:31.807Z",
+  "trang_thai": "con_trong",
+  "vi_tri": {
+    "lat": 21.045,
+    "lng": 105.748,
+    "khoang_cach_cs1_km": 1.7,
+    "khoang_cach_cs2_km": 3,
+    "khoang_cach_cs3_km": 58.2,
+    "co_so_gan_nhat": "CS1",
+    "thoi_gian_di_xe_phut": 6
+  },
+  "thong_tin": {
+    "tieu_de": "Cho thuê phòng trọ 1.8 tr/tháng tại Đường Cầu Diễn (HaUI CS1)",
+    "gia": 1800000,
+    "dien_tich": 25,
+    "dia_chi": "Đường Cầu Diễn, Phường Phúc Diễn, Quận Bắc Từ Liêm, Hà Nội",
+    "quan_huyen": "Bắc Từ Liêm",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "99 cầu diễn - cách ga tàu điện 500m\n1tr8 (cuối tháng ở đc)\nVì lí do riêng nên mik ko ở đc cần nhượng lại bn nào cần ib mik nha \n-Tầng 3 thang bộ\n*Dịch vụ \nĐiện 4k \nNước 100k /ng \nMạng vệ sinh 150k/p \nMáy giặt 60k/ng \nĐiện hành lang 20k\nLh: 0385940957 Ẩn bớt",
+    "tien_ich": [
+      "may_giat",
+      "khep_kin"
+    ],
+    "khong_chung_chu": true,
+    "gio_giac_tu_do": true
+  },
+  "lien_he": {
+    "so_dien_thoai": "0385940957",
+    "ten_chu": "Chủ trọ khu vực HaUI CS1",
+    "facebook": "https://www.facebook.com/groups/2229052660694268/?locale=vi_VN"
+  },
+  "anh": [
+    {
+      "url_goc": "https://scontent.fhan14-2.fna.fbcdn.net/v/t39.30808-6/808007985_1450023723935374_8837270311963624287_n.jpg?stp=dst-jpg_tt6&cstp=mx944x2042&ctp=s590x590&_nc_cat=100&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=dLpfY3fHPs0Q7kNvwGXwBxz&_nc_oc=AdquzjEtvFKAYmw1QNLMYnbl2RJuN6I-EkXV6aPh_rlfD8J3g65VT2fM6OzBpFDO0tA&_nc_zt=23&_nc_ht=scontent.fhan14-2.fna&_nc_gid=XDpYXPwvca8uFksRtMbJGg&_nc_ss=7b289&oh=00_AQKqD50LNRMvCOgLkKHiCmWWwj8pEqvd32IeG_0cjE08pg&oe=6AB83550"
+    },
+    {
+      "url_goc": "https://scontent.fhan14-4.fna.fbcdn.net/v/t39.30808-6/818384460_1450023710602042_680854807206153570_n.jpg?stp=dst-jpg_tt6&cstp=mx944x2042&ctp=s590x590&_nc_cat=102&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=NWqKZXKJ-OwQ7kNvwFSHx8g&_nc_oc=AdoIqmNYCicLM05_2Jn24cbr4j6-M7A1HBwLtMyDypTzMsNu-8eC4INYrWkWOut1qzc&_nc_zt=23&_nc_ht=scontent.fhan14-4.fna&_nc_gid=XDpYXPwvca8uFksRtMbJGg&_nc_ss=7b289&oh=00_AQLKOjgFs5vT13UGH5mtGMsYg0L7tL9tkulZeZlVfsaYBg&oe=6AB832F2"
+    }
+  ],
+  "phan_tich": {
+    "scam_score": 5,
+    "da_kiem_tra": true
+  }
+}

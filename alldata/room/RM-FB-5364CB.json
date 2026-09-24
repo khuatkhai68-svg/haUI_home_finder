@@ -1,0 +1,58 @@
+{
+  "ma_phong": "RM-FB-5364CB",
+  "nguon": "facebook",
+  "url_nguon": "https://www.facebook.com/groups/2252917341608621/posts/4746472068919790/",
+  "ngay_cao": "2026-09-22T12:42:14.093Z",
+  "ngay_cap_nhat": "2026-09-22T12:42:14.093Z",
+  "trang_thai": "con_trong",
+  "vi_tri": {
+    "lat": 21.0499,
+    "lng": 105.7505,
+    "khoang_cach_cs1_km": 1.7,
+    "khoang_cach_cs2_km": 2.9,
+    "khoang_cach_cs3_km": 58.6,
+    "co_so_gan_nhat": "CS1",
+    "thoi_gian_di_xe_phut": 6
+  },
+  "thong_tin": {
+    "tieu_de": "Cho thuê phòng trọ 3.3 tr/tháng tại Phố Đức Diễn (HaUI CS1)",
+    "gia": 3300000,
+    "dien_tich": 18,
+    "dia_chi": "Phố Đức Diễn, Phường Phúc Diễn, Quận Bắc Từ Liêm, Hà Nội",
+    "quan_huyen": "Bắc Từ Liêm",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "CHÚ Ý \n 3tr3 ngõ 75 ĐỨC DIỄN ( 23/72/49/27 Đức Diễn )\nCách trường tài nguyên và môi trường, đh đông Á 2km\n Trống NHÀ MỚI\n Giá : 3tr3 - 3tr8\n Căn hộ Studio\n Diện tích 15 - 18 m2\n Thang máy\n Nội thất : Giường tủ, điều hoà nóng lạnh ,tủ lạnh như hình…\nLh 0367896568",
+    "tien_ich": [
+      "dieu_hoa",
+      "nong_lanh",
+      "tu_lanh",
+      "khep_kin",
+      "thang_may"
+    ],
+    "khong_chung_chu": true,
+    "gio_giac_tu_do": true
+  },
+  "lien_he": {
+    "so_dien_thoai": "0367896568",
+    "ten_chu": "Chủ trọ khu vực HaUI CS1",
+    "facebook": "https://www.facebook.com/groups/2252917341608621/?locale=vi_VN"
+  },
+  "anh": [
+    {
+      "url_goc": "https://scontent.fhan15-1.fna.fbcdn.net/v/t39.30808-6/818384610_2652687651814928_3120384134671520858_n.jpg?stp=dst-jpg_tt6&cstp=mx1536x2048&ctp=s590x590&_nc_cat=106&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=5gcsijLLnkQQ7kNvwGMoGOv&_nc_oc=Adp-2wZy5xnoHpIKbqtxCW7kl44_A6TDktHFYxnoQ5_hYIkNATSmxNkJTGGPFT9-OMw&_nc_zt=23&_nc_ht=scontent.fhan15-1.fna&_nc_gid=QvOpEEfr02w3a2V-y0j4oQ&_nc_ss=7b289&oh=00_AQI5Xy1Cia7wBtMf54qlMRr-OYkCZ5zAICgwjD5_LhmqeA&oe=6AB85076"
+    },
+    {
+      "url_goc": "https://scontent.fhan15-2.fna.fbcdn.net/v/t39.30808-6/818570713_2652688028481557_7534938211277046154_n.jpg?stp=dst-jpg_tt6&cstp=mx1536x2048&ctp=s590x590&_nc_cat=111&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=UeQreGP8TbcQ7kNvwFpNd7Q&_nc_oc=Adq4gYQLSHprc8RWIYGiQokdaAMNdPjRrA8NVxlJxUyGLVdHzlwgQRtGloZW6ahsrzs&_nc_zt=23&_nc_ht=scontent.fhan15-2.fna&_nc_gid=QvOpEEfr02w3a2V-y0j4oQ&_nc_ss=7b289&oh=00_AQKQTIPPquLWuTXwbZ_Yd_fpwoMsM4-Dt4bWK8Tw88K7aA&oe=6AB838E6"
+    },
+    {
+      "url_goc": "https://scontent.fhan15-2.fna.fbcdn.net/v/t39.30808-6/818384823_2652687681814925_3508624324987451840_n.jpg?stp=dst-jpg_tt6&cstp=mx1536x2048&ctp=s590x590&_nc_cat=103&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=0UIuGh4FfocQ7kNvwGByx73&_nc_oc=Adom0AdBGZ13pEunmgXfrqRbdz8P1sV7ws2NWMv-w69PrCkcTxW0nmjom_XBo5f_PPM&_nc_zt=23&_nc_ht=scontent.fhan15-2.fna&_nc_gid=QvOpEEfr02w3a2V-y0j4oQ&_nc_ss=7b289&oh=00_AQJvRp1f91hSjJ4JkwCUYR1uizBsx0ZPm6MBApU9yydy4A&oe=6AB84897"
+    },
+    {
+      "url_goc": "https://scontent.fhan15-1.fna.fbcdn.net/v/t39.30808-6/818384740_2652688101814883_2234226995752828722_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1536&ctp=s590x590&_nc_cat=106&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=f_r9xP9xiEEQ7kNvwHZelC2&_nc_oc=AdqFqvynI4Ed38u79zH2r-AWHMHrhIypdsdHpfFgsx-1H6d747DpV96E3dfrhbcgGhQ&_nc_zt=23&_nc_ht=scontent.fhan15-1.fna&_nc_gid=QvOpEEfr02w3a2V-y0j4oQ&_nc_ss=7b289&oh=00_AQIyOczIkRnNdbbTxj_2fgHzVoIVWsBfzoaVGG9A7n2BcA&oe=6AB84C85"
+    }
+  ],
+  "phan_tich": {
+    "scam_score": 5,
+    "da_kiem_tra": true
+  }
+}

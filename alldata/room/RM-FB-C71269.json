@@ -1,0 +1,48 @@
+{
+  "ma_phong": "RM-FB-C71269",
+  "nguon": "facebook",
+  "url_nguon": "https://www.facebook.com/groups/PhongTroHoaiDuc/posts/4712464332307015/",
+  "ngay_cao": "2026-09-22T10:47:23.778Z",
+  "ngay_cap_nhat": "2026-09-22T10:47:23.778Z",
+  "trang_thai": "con_trong",
+  "vi_tri": {
+    "lat": 21.05145,
+    "lng": 105.74054,
+    "khoang_cach_cs1_km": 0.6,
+    "khoang_cach_cs2_km": 1.9,
+    "khoang_cach_cs3_km": 59.1,
+    "co_so_gan_nhat": "CS1",
+    "thoi_gian_di_xe_phut": 2
+  },
+  "thong_tin": {
+    "tieu_de": "PHÒNG 1N1K  TRẠM TRÔI, HOÀI ĐỨC",
+    "gia": 2500000,
+    "dien_tich": 25,
+    "dia_chi": "Phường Minh Khai, Quận Bắc Từ Liêm, Hà Nội (gần HaUI CS1)",
+    "quan_huyen": "Bắc Từ Liêm",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "PHÒNG 1N1K – TRẠM TRÔI, HOÀI ĐỨC \n Địa chỉ: 27 ngõ 90 Trạm Trôi – ô tô vào tận nhà\n Diện tích: 35m²",
+    "tien_ich": [
+      "khep_kin"
+    ],
+    "khong_chung_chu": true,
+    "gio_giac_tu_do": true
+  },
+  "lien_he": {
+    "so_dien_thoai": "",
+    "ten_chu": "Chủ trọ HaUI Nhổn - Minh Khai",
+    "facebook": "https://www.facebook.com/groups/PhongTroHoaiDuc/?locale=vi_VN"
+  },
+  "anh": [
+    {
+      "url_goc": "https://scontent.fhan14-3.fna.fbcdn.net/v/t39.30808-6/819728314_1063642522951386_4902986817835124196_n.jpg?stp=dst-jpg_tt6&cstp=mx960x1280&ctp=s590x590&_nc_cat=110&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=C1i1MXwvw3YQ7kNvwEXiD5f&_nc_oc=Ado_JKJ9XxVn79kcbY43E5g7HuLBwJnjYrXu2kbAeNn_78LxWA59MCSipM1dzwkhq0Y&_nc_zt=23&_nc_ht=scontent.fhan14-3.fna&_nc_gid=4PYBUcVpHsULh0eu_cVBhw&_nc_ss=7b289&oh=00_AQLurv4hdo5CB2gvf3Qv8F8cXtNNtniE0qVT7A4g-aM5Fw&oe=6AB832BC"
+    },
+    {
+      "url_goc": "https://scontent.fhan14-2.fna.fbcdn.net/v/t39.30808-6/818479495_1063642516284720_2525416565872634466_n.jpg?stp=dst-jpg_tt6&cstp=mx1280x1280&ctp=s590x590&_nc_cat=108&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=6j8iPJbg-LAQ7kNvwHRWoWL&_nc_oc=AdqULglLm1Lkyhjwspy6xHeGkRHmu1f3kd0Q-mhE_80SDBuqUZ9PuY5GLF_B96ebtlI&_nc_zt=23&_nc_ht=scontent.fhan14-2.fna&_nc_gid=4PYBUcVpHsULh0eu_cVBhw&_nc_ss=7b289&oh=00_AQJoBlZrmfYnwiEIMVU98VLvXrKgMYlaNdOG7nC1dPF2Jg&oe=6AB82AE4"
+    }
+  ],
+  "phan_tich": {
+    "scam_score": 5,
+    "da_kiem_tra": true
+  }
+}

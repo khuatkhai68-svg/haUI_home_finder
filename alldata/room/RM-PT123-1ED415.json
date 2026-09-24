@@ -1,0 +1,59 @@
+{
+  "ma_phong": "RM-PT123-1ED415",
+  "nguon": "phongtro123",
+  "url_nguon": "https://phongtro123.com/phong-tro-sv-gia-re-2026-gan-truong-dh-cong-nghiep-ha-noi-cs3-phu-ly-ha-nam-nay-la-ninh-binh-pr711212.html",
+  "ngay_cao": "2026-09-22T12:58:12.723Z",
+  "ngay_cap_nhat": "2026-09-22T12:58:12.723Z",
+  "trang_thai": "con_trong",
+  "vi_tri": {
+    "lat": 20.541,
+    "lng": 105.898,
+    "khoang_cach_cs1_km": 59.5,
+    "khoang_cach_cs2_km": 60.6,
+    "khoang_cach_cs3_km": 0,
+    "co_so_gan_nhat": "CS3",
+    "thoi_gian_di_xe_phut": 2
+  },
+  "thong_tin": {
+    "tieu_de": "PHÒNG TRỌ SV GIÁ RẺ 2026 GẦN TRƯỜNG ĐH CÔNG NGHIỆP HÀ NỘI CS3 PHỦ LÝ HÀ NAM (NAY LÀ NINH BÌNH)",
+    "gia": 1600000,
+    "dien_tich": 22,
+    "dia_chi": "TP. Phủ Lý, Tỉnh Hà Nam (gần HaUI CS3)",
+    "quan_huyen": "Phủ Lý",
+    "tinh_thanh": "Hà Nam",
+    "mo_ta": "Phòng trọ gần trường ĐH công nghiệp cs3 Hà Nam (nay là Ninh Bình), CÁCH TRƯỜNG 200M. Đầy đủ điều hòa, tủ lạnh, nóng lạnh, giường chiếu, tủ quần áo, bếp từ, gác xép, có chỗ để xe, thoáng mát rộng rãi. Lh 0912388823 (zalo)/0982111930",
+    "tien_ich": [
+      "dieu_hoa",
+      "nong_lanh",
+      "tu_lanh",
+      "gac_xep",
+      "ban_cong",
+      "khep_kin"
+    ],
+    "khong_chung_chu": true,
+    "gio_giac_tu_do": true
+  },
+  "lien_he": {
+    "so_dien_thoai": "0909316890",
+    "ten_chu": "Chủ nhà trọ TP. Phủ Lý",
+    "facebook": ""
+  },
+  "anh": [
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/08/11/z6912751430851-7de1f40e069e246c8000bc353b0c661f_1786415211.jpg"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/08/11/z6912751436524-7a4fd85cc2120a3bab2599992638b063_1786415214.jpg"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/08/11/z6912751436652-5440b1b314a99a87f170f8b81e362be9_1786415214.jpg"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/08/11/1785295745298-1851097908547811390-5321486225369186647-56f052501acd9912bf7598fe78557d37_1786415211.jpg"
+    }
+  ],
+  "phan_tich": {
+    "scam_score": 5,
+    "da_kiem_tra": true
+  }
+}

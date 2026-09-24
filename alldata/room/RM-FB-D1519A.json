@@ -1,0 +1,59 @@
+{
+  "ma_phong": "RM-FB-D1519A",
+  "nguon": "facebook",
+  "url_nguon": "https://www.facebook.com/groups/chothuephongtrogiarehanoi/posts/1616670973338624/",
+  "ngay_cao": "2026-09-22T12:30:47.514Z",
+  "ngay_cap_nhat": "2026-09-22T12:30:47.514Z",
+  "trang_thai": "con_trong",
+  "vi_tri": {
+    "lat": 21.05373,
+    "lng": 105.7351,
+    "khoang_cach_cs1_km": 0,
+    "khoang_cach_cs2_km": 1.3,
+    "khoang_cach_cs3_km": 59.5,
+    "co_so_gan_nhat": "CS1",
+    "thoi_gian_di_xe_phut": 2
+  },
+  "thong_tin": {
+    "tieu_de": "Cho thuê phòng trọ 2.7 tr/tháng tại Phường Minh Khai (HaUI CS1)",
+    "gia": 2700000,
+    "dien_tich": 25,
+    "dia_chi": "Phường Minh Khai, Quận Bắc Từ Liêm, Hà Nội (gần HaUI CS1)",
+    "quan_huyen": "Bắc Từ Liêm",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "2tr7 p Hoàng Đạo Thành - ở luôn\n Gần TLU, HMC, HANU, UTT, USSH,…\n Nội Thất:\nGiường, tủ, điều hoà, nóng lạnh, máy giặt chung\n Không chung chủ, cửa vân tay\n Ngõ ô tô đỗ cửa\n Xe để tầng 1 miễn phí\nLh 032.686.5353",
+    "tien_ich": [
+      "nong_lanh",
+      "may_giat",
+      "tu_lanh",
+      "khep_kin",
+      "khong_chung_chu",
+      "gio_giac_tu_do"
+    ],
+    "khong_chung_chu": true,
+    "gio_giac_tu_do": true
+  },
+  "lien_he": {
+    "so_dien_thoai": "",
+    "ten_chu": "Chủ trọ khu vực HaUI CS1",
+    "facebook": "https://www.facebook.com/groups/chothuephongtrogiarehanoi/?locale=vi_VN"
+  },
+  "anh": [
+    {
+      "url_goc": "https://scontent.fhan15-2.fna.fbcdn.net/v/t39.30808-6/799950987_3932559816886101_1136176471809622608_n.jpg?stp=dst-jpg_tt6&cstp=mx960x1280&ctp=s590x590&_nc_cat=110&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=frDV9g-dA9oQ7kNvwHoU1pF&_nc_oc=AdrzHFkZs5aDIDC6v1G0u788iwUPPAcHXiT-vYnSc0nR0Q8REE_Zyiwn2q-pho5QBXA&_nc_zt=23&_nc_ht=scontent.fhan15-2.fna&_nc_gid=jNnrSR2G0o3CcBeEnc2NAg&_nc_ss=7b289&oh=00_AQJxJ08UhLrTqRwJNT4qmRqc4M3dVJm7W70lsENK8fAMSg&oe=6AB84EFF"
+    },
+    {
+      "url_goc": "https://scontent.fhan15-1.fna.fbcdn.net/v/t39.30808-6/819484450_3932559926886090_7534514459959940868_n.jpg?stp=dst-jpg_tt6&cstp=mx1280x960&ctp=s590x590&_nc_cat=109&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=cjhZMqEGZM4Q7kNvwGNLt_0&_nc_oc=AdqzHTylHMDeHAvRttoOSLz1KBnYpJXnpyUqlYwf-DZKfDgzdawwM_AraWyX64iWeYQ&_nc_zt=23&_nc_ht=scontent.fhan15-1.fna&_nc_gid=jNnrSR2G0o3CcBeEnc2NAg&_nc_ss=7b289&oh=00_AQKlJ6geieGpdeavPDkyGRol98Bdn9q1HyChO5dntr5N4A&oe=6AB84631"
+    },
+    {
+      "url_goc": "https://scontent.fhan15-1.fna.fbcdn.net/v/t39.30808-6/800996474_3932559866886096_2148938061911795691_n.jpg?stp=dst-jpg_tt6&cstp=mx960x1280&ctp=s590x590&_nc_cat=101&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=U3OSjnaDRosQ7kNvwHSr0HC&_nc_oc=AdrvJ7a4THQl4nOiakAT2T_AZZAvm18QGJGjx9k3eI_G1JTFEbNVu93CISZE0X0U8uU&_nc_zt=23&_nc_ht=scontent.fhan15-1.fna&_nc_gid=jNnrSR2G0o3CcBeEnc2NAg&_nc_ss=7b289&oh=00_AQJzYHrZzK-E5VjcYEwn74kBuPZvxghZUPBeBg5VkT7XVg&oe=6AB83268"
+    },
+    {
+      "url_goc": "https://scontent.fhan15-2.fna.fbcdn.net/v/t39.30808-6/818902870_3932559826886100_470773030689531734_n.jpg?stp=dst-jpg_tt6&cstp=mx960x1280&ctp=s590x590&_nc_cat=111&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=FcBo2kSnRWsQ7kNvwFhh3vq&_nc_oc=AdpEapYKRdMPMqExWxkRkjdLsj0h9ceogSg2zGycL-u13JiywGgpHizJpeewLDpcKRg&_nc_zt=23&_nc_ht=scontent.fhan15-2.fna&_nc_gid=jNnrSR2G0o3CcBeEnc2NAg&_nc_ss=7b289&oh=00_AQLbulHvGnZEG_5bWH0BVcgmf13zgWQ_CSEDxLNQcG-GlA&oe=6AB83B9A"
+    }
+  ],
+  "phan_tich": {
+    "scam_score": 5,
+    "da_kiem_tra": true
+  }
+}

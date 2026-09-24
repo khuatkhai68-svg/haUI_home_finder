@@ -1,0 +1,55 @@
+{
+  "ma_phong": "RM-FB-DF16B3",
+  "nguon": "facebook",
+  "url_nguon": "https://www.facebook.com/groups/HaUITimPhongTro/posts/1752187242740572/",
+  "ngay_cao": "2026-09-22T10:47:54.733Z",
+  "ngay_cap_nhat": "2026-09-22T10:47:54.733Z",
+  "trang_thai": "con_trong",
+  "vi_tri": {
+    "lat": 21.0465,
+    "lng": 105.753,
+    "khoang_cach_cs1_km": 2,
+    "khoang_cach_cs2_km": 3.3,
+    "khoang_cach_cs3_km": 58.2,
+    "co_so_gan_nhat": "CS1",
+    "thoi_gian_di_xe_phut": 7
+  },
+  "thong_tin": {
+    "tieu_de": "Phòng trọ ngõ 291 Phú Diễn - Full đồ, ban công, cửa sổ thoáng mát",
+    "gia": 3600000,
+    "dien_tich": 28,
+    "dia_chi": "Ngõ 291 Đường Phú Diễn, Phường Phú Diễn, Quận Bắc Từ Liêm, Hà Nội",
+    "quan_huyen": "Bắc Từ Liêm",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Cho thuê phòng ngõ 291 Phú Diễn, gần ga Phú Diễn và ĐH Công Nghiệp CS1. Phòng full nội thất cao cấp: điều hòa, nóng lạnh, giường nệm, tủ quần áo, máy giặt, ban công thoáng đón gió. Thang máy tòa nhà, cửa vân tay.",
+    "tien_ich": [
+      "dieu_hoa",
+      "nong_lanh",
+      "may_giat",
+      "ban_cong",
+      "thang_may",
+      "khep_kin",
+      "khong_chung_chu",
+      "gio_giac_tu_do"
+    ],
+    "khong_chung_chu": true,
+    "gio_giac_tu_do": true
+  },
+  "lien_he": {
+    "so_dien_thoai": "",
+    "ten_chu": "Chủ nhà Trọ HaUI Nhổn - Tây Tựu",
+    "facebook": "https://www.facebook.com/groups/HaUITimPhongTro/posts/1752187242740572/"
+  },
+  "anh": [
+    {
+      "url_goc": "https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=800&fit=crop"
+    },
+    {
+      "url_goc": "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&fit=crop"
+    }
+  ],
+  "phan_tich": {
+    "scam_score": 5,
+    "da_kiem_tra": true
+  }
+}

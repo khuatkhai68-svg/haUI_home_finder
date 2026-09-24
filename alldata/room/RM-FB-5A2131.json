@@ -1,0 +1,56 @@
+{
+  "ma_phong": "RM-FB-5A2131",
+  "nguon": "facebook",
+  "url_nguon": "https://www.facebook.com/groups/nha.tro.haui/posts/1398374188779158/",
+  "ngay_cao": "2026-09-22T12:25:05.682Z",
+  "ngay_cap_nhat": "2026-09-22T12:25:05.682Z",
+  "trang_thai": "con_trong",
+  "vi_tri": {
+    "lat": 21.0585,
+    "lng": 105.718,
+    "khoang_cach_cs1_km": 1.9,
+    "khoang_cach_cs2_km": 0.9,
+    "khoang_cach_cs3_km": 60.5,
+    "co_so_gan_nhat": "CS2",
+    "thoi_gian_di_xe_phut": 3
+  },
+  "thong_tin": {
+    "tieu_de": "3TR4-3TR6 ĐÃ BẢO GỒM CẢ DVC CỦA CẢ PHÒNG",
+    "gia": 3400000,
+    "dien_tich": 25,
+    "dia_chi": "Khu đô thị Lai Xá, Xã Kim Chung, Huyện Hoài Đức, Hà Nội",
+    "quan_huyen": "Hoài Đức",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "3TR4-3TR6 (ĐÃ BẢO GỒM CẢ DVC CỦA CẢ PHÒNG)\nkHAI CHƯƠNG CCMN TẠI LAI XÁ FULL BAN CÔNG RỘNG 27M.\nPhòng đầy đủ đồ:điều hòa ,nóng lạnh tủ lạnh,bếp,rèm,máy giặt chung\nSát đường lớn cách: ĐH công nghiệp 1,2km;fpt-đông á 2,5km.\nĐầu tháng 10 nhận phòng\nLH xem phòng 0968480596 Ẩn bớt\nMạnh Quân\nTác giả\nMạnh Quân\nTác giả\n.",
+    "tien_ich": [
+      "dieu_hoa",
+      "nong_lanh",
+      "may_giat",
+      "tu_lanh",
+      "ban_cong",
+      "khep_kin"
+    ],
+    "khong_chung_chu": true,
+    "gio_giac_tu_do": true
+  },
+  "lien_he": {
+    "so_dien_thoai": "0968480596",
+    "ten_chu": "Chủ trọ khu vực HaUI CS1",
+    "facebook": "https://www.facebook.com/groups/nha.tro.haui/?locale=vi_VN"
+  },
+  "anh": [
+    {
+      "url_goc": "https://scontent.fhan14-5.fna.fbcdn.net/v/t39.30808-6/796335119_2629468957504320_8013036986329595274_n.jpg?stp=dst-jpg_tt6&cstp=mx1536x2048&ctp=s590x590&_nc_cat=106&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=zhNIPAdYYcwQ7kNvwHVMOke&_nc_oc=AdodLbVPSmmyangw-RvJRqb0GTnjhpqpJiyfLvB3hRQHl17ceUih19yl5vXuHC5h5Sg&_nc_zt=23&_nc_ht=scontent.fhan14-5.fna&_nc_gid=ivdSL48vCllzB1xJVX2_vg&_nc_ss=7b289&oh=00_AQJ0Y36ldaoMY8OgthS4l7x5s2kFZhQs822adFjrstFitg&oe=6AB83637"
+    },
+    {
+      "url_goc": "https://scontent.fhan14-2.fna.fbcdn.net/v/t39.30808-6/817135538_2629468960837653_3876653576113344348_n.jpg?stp=dst-jpg_tt6&cstp=mx1536x2048&ctp=s590x590&_nc_cat=108&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=wOVthtqx3kgQ7kNvwHJf7An&_nc_oc=Adpl8q1TO0Csfup9u3-a-r-K3a3DfRlt_l9FFzVjDuE_WQty74RITJfV09YMSD66VsI&_nc_zt=23&_nc_ht=scontent.fhan14-2.fna&_nc_gid=ivdSL48vCllzB1xJVX2_vg&_nc_ss=7b289&oh=00_AQIltR67XM5Ax71sp2kbGaUv_iKMlPSniObn3f23IhHdfw&oe=6AB8572E"
+    },
+    {
+      "url_goc": "https://scontent.fhan14-2.fna.fbcdn.net/v/t39.30808-6/796316027_2629468984170984_2138951871407393900_n.jpg?stp=dst-jpg_tt6&cstp=mx1536x2048&ctp=s590x590&_nc_cat=108&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=KJtTz6TpMtoQ7kNvwFfFnDs&_nc_oc=AdoLCn5Dvqom0vGAGcPSTxwYAKpw9ut-OAO9kxZ9SIDAbsK6bYU52_M9_rHRpGtScFY&_nc_zt=23&_nc_ht=scontent.fhan14-2.fna&_nc_gid=ivdSL48vCllzB1xJVX2_vg&_nc_ss=7b289&oh=00_AQKI3fPNPoiarcA8CTzBb6c90fnkv4gMfDu47IAk8CNACQ&oe=6AB85615"
+    }
+  ],
+  "phan_tich": {
+    "scam_score": 5,
+    "da_kiem_tra": true
+  }
+}

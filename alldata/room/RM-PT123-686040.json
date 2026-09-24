@@ -1,0 +1,54 @@
+{
+  "ma_phong": "RM-PT123-686040",
+  "nguon": "phongtro123",
+  "url_nguon": "https://phongtro123.com/hot-2023-nha-tro-sinh-vien-dai-hoc-cong-nghiep-co-so-3-ha-nam-pr634324.html",
+  "ngay_cao": "2026-09-22T12:58:32.565Z",
+  "ngay_cap_nhat": "2026-09-22T12:58:32.565Z",
+  "trang_thai": "con_trong",
+  "vi_tri": {
+    "lat": 20.541,
+    "lng": 105.898,
+    "khoang_cach_cs1_km": 59.5,
+    "khoang_cach_cs2_km": 60.6,
+    "khoang_cach_cs3_km": 0,
+    "co_so_gan_nhat": "CS3",
+    "thoi_gian_di_xe_phut": 2
+  },
+  "thong_tin": {
+    "tieu_de": "Hot!!!2023 Nhà trọ sịnh viên Đại học Công Nghiệp cơ sở 3 Hà Nam",
+    "gia": 1300000,
+    "dien_tich": 22,
+    "dia_chi": "TP. Phủ Lý, Tỉnh Hà Nam (gần HaUI CS3)",
+    "quan_huyen": "Phủ Lý",
+    "tinh_thanh": "Hà Nam",
+    "mo_ta": "Hot!!!2023 Nhà trọ sinh viên Đại học Công Nghiệp cơ sở 3 Hà Nam",
+    "tien_ich": [
+      "khep_kin"
+    ],
+    "khong_chung_chu": true,
+    "gio_giac_tu_do": true
+  },
+  "lien_he": {
+    "so_dien_thoai": "0909316890",
+    "ten_chu": "Chủ nhà trọ TP. Phủ Lý",
+    "facebook": ""
+  },
+  "anh": [
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2023/08/31/c4864632-bf85-45e7-971c-41397ee76272_1693439255.jpg"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2023/08/31/708117e2-2eb1-4750-a06f-1091b58e1553_1693439255.jpg"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2023/08/31/5e03e83b-a444-40a7-9024-661671689b89_1693439256.jpg"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2023/08/31/042b97f6-3f97-4cde-9b38-ed82e3f37705_1693439257.jpg"
+    }
+  ],
+  "phan_tich": {
+    "scam_score": 5,
+    "da_kiem_tra": true
+  }
+}

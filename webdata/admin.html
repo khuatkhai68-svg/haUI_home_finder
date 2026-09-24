@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard - StudentAI Rental</title>
+  <meta name="description" content="Bảng điều khiển quản trị hệ thống tìm trọ HaUI." />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <style>
+    body { overflow: hidden; }
+    @media (max-width: 768px) { body { overflow: auto; } }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-brand" style="text-decoration:none;">
+        <div class="navbar-logo">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Haui_logo.png/200px-Haui_logo.png"
+               alt="HaUI Logo" onerror="this.style.display='none'" />
+        </div>
+        <div>
+          <div class="navbar-title">Hệ Thống Tìm Trọ HaUI</div>
+          <div class="navbar-subtitle">"Bạn cứ việc học, tìm trọ để Cò lo!"</div>
+        </div>
+      </a>
+      <nav class="navbar-nav">
+        <a href="index.html"><i data-lucide="search" style="width:16px;height:16px;"></i> Tìm phòng</a>
+        <a href="map.html"><i data-lucide="map" style="width:16px;height:16px;"></i> Bản đồ</a>
+        <a href="room-detail.html"><i data-lucide="map-pin" style="width:16px;height:16px;"></i> Chi tiết phòng</a>
+        <a href="admin.html" class="active"><i data-lucide="plus-circle" style="width:16px;height:16px;"></i> Quản trị Admin</a>
+      </nav>
+      <div class="navbar-actions">
+        <button class="btn-login">Đăng nhập</button>
+      </div>
+    </div>
+  </header>
+
+  <main style="flex:1;display:flex;flex-direction:column;">
+    <div class="admin-layout">
+
+      <!-- Sidebar -->
+      <aside class="admin-sidebar">
+        <a href="admin.html" class="brand">StudentAI Admin</a>
+
+        <a href="admin.html" class="sidebar-link active">
+          <i data-lucide="bar-chart-3" style="width:20px;height:20px;"></i>
+          Dashboard
+        </a>
+        <a href="#" class="sidebar-link" onclick="showSection('rooms');return false;">
+          <i data-lucide="home" style="width:20px;height:20px;"></i>
+          Quản lý phòng
+          <span class="sidebar-badge">(1,248)</span>
+        </a>
+        <a href="#" class="sidebar-link" onclick="showSection('users');return false;">
+          <i data-lucide="users" style="width:20px;height:20px;"></i>
+          Người dùng
+        </a>
+        <a href="#" class="sidebar-link" onclick="showSection('crawler');return false;">
+          <i data-lucide="database" style="width:20px;height:20px;"></i>
+          Nguồn dữ liệu
+          <span class="sidebar-badge">(Crawler)</span>
+        </a>
+        <a href="#" class="sidebar-link" onclick="showSection('spam');return false;">
+          <i data-lucide="alert-circle" style="width:20px;height:20px;"></i>
+          Báo cáo Spam
+        </a>
+      </aside>
+
+      <!-- Main Content -->
+      <section class="admin-main">
+
+        <!-- Header -->
+        <div class="admin-header">
+          <div>
+            <h1>Tổng quan hệ thống</h1>
+            <p>Dữ liệu cập nhật realtime từ các crawler bot</p>
+          </div>
+          <button class="btn-primary" onclick="loadAdminData()">
+            <i data-lucide="refresh-cw" style="width:16px;height:16px;"></i> Làm mới
+          </button>
+        </div>
+
+        <!-- Stats Grid -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-card-header">
+              <div class="stat-label">Tổng số phòng trong DB</div>
+              <div class="stat-icon"><i data-lucide="home" style="width:20px;height:20px;"></i></div>
+            </div>
+            <div class="stat-value" id="stat-total">0</div>
+            <div class="stat-trend up">
+              <i data-lucide="database" style="width:16px;height:16px;"></i>
+              <span id="stat-sources-summary">Dữ liệu từ phongtro123 & Facebook</span>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-card-header">
+              <div class="stat-label">Phòng đang trống</div>
+              <div class="stat-icon"><i data-lucide="check-circle-2" style="width:20px;height:20px;"></i></div>
+            </div>
+            <div class="stat-value" id="stat-active" style="color:#059669;">0</div>
+            <div class="stat-trend up" style="color:#059669;">
+              Hiển thị trên bản đồ & danh sách
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-card-header">
+              <div class="stat-label">Đã cho thuê / Hết hạn</div>
+              <div class="stat-icon"><i data-lucide="x-circle" style="width:20px;height:20px;"></i></div>
+            </div>
+            <div class="stat-value" id="stat-rented" style="color:#64748b;">0</div>
+            <div class="stat-trend warn">
+              Tự động ẩn khỏi tìm kiếm
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-card-header">
+              <div class="stat-label">Giá thuê trung bình</div>
+              <div class="stat-icon"><i data-lucide="coins" style="width:20px;height:20px;"></i></div>
+            </div>
+            <div class="stat-value" id="stat-avg-price">0 tr</div>
+            <div class="stat-trend up" id="stat-price-range">
+              Phân khúc sinh viên HaUI
+            </div>
+          </div>
+        </div>
+
+        <!-- Crawler Stream Table -->
+        <div class="crawler-panel">
+          <div class="crawler-panel-header" style="display:flex;justify-content:space-between;align-items:center;">
+            <div>
+              <h2>Danh sách phòng thu thập thực tế</h2>
+              <p style="font-size:0.8rem;color:#64748b;margin:2px 0 0;">Cập nhật realtime từ cơ sở dữ liệu `alldata/room/`</p>
+            </div>
+            <div class="live-badge" style="display:flex;align-items:center;gap:6px;">
+              <span class="live-dot"><span class="live-dot-inner"></span></span>
+              <span class="live-dot-static"></span>
+              Backend Active (:3333)
+            </div>
+          </div>
+
+          <div style="overflow-x:auto;">
+            <table class="crawler-table">
+              <thead>
+                <tr>
+                  <th>Mã phòng</th>
+                  <th>Nguồn</th>
+                  <th>Tiêu đề phòng</th>
+                  <th>Giá thuê</th>
+                  <th>Cự ly CS1</th>
+                  <th>Trạng thái</th>
+                  <th>Thao tác</th>
+                </tr>
+              </thead>
+              <tbody id="crawler-tbody">
+                <tr><td colspan="7" style="text-align:center;padding:2rem;color:#94a3b8;">Đang tải dữ liệu từ API...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Quick Charts -->
+        <div style="margin-top:1.5rem; display:grid; grid-template-columns:1fr 1fr; gap:1.5rem;">
+
+          <!-- Price distribution -->
+          <div class="crawler-panel">
+            <div class="crawler-panel-header">
+              <h2>Phân bổ khoảng giá phòng</h2>
+            </div>
+            <div style="padding:1.5rem;" id="price-dist-container">
+              <div style="display:flex; flex-direction:column; gap:.75rem;">
+                <div>
+                  <div style="display:flex;justify-content:space-between;margin-bottom:.25rem;font-size:.8rem;color:#64748b;">
+                    <span>Dưới 2 triệu</span><span id="p-under-2" style="font-weight:600;color:#1e293b;">-</span>
+                  </div>
+                  <div style="height:8px;background:#f1f5f9;border-radius:4px;overflow:hidden;">
+                    <div id="bar-under-2" style="height:100%;width:0%;background:#2563eb;border-radius:4px;transition:width 0.6s;"></div>
+                  </div>
+                </div>
+                <div>
+                  <div style="display:flex;justify-content:space-between;margin-bottom:.25rem;font-size:.8rem;color:#64748b;">
+                    <span>2 - 3 triệu</span><span id="p-2-3" style="font-weight:600;color:#1e293b;">-</span>
+                  </div>
+                  <div style="height:8px;background:#f1f5f9;border-radius:4px;overflow:hidden;">
+                    <div id="bar-2-3" style="height:100%;width:0%;background:#10b981;border-radius:4px;transition:width 0.6s;"></div>
+                  </div>
+                </div>
+                <div>
+                  <div style="display:flex;justify-content:space-between;margin-bottom:.25rem;font-size:.8rem;color:#64748b;">
+                    <span>3 - 4.5 triệu</span><span id="p-3-45" style="font-weight:600;color:#1e293b;">-</span>
+                  </div>
+                  <div style="height:8px;background:#f1f5f9;border-radius:4px;overflow:hidden;">
+                    <div id="bar-3-45" style="height:100%;width:0%;background:#f59e0b;border-radius:4px;transition:width 0.6s;"></div>
+                  </div>
+                </div>
+                <div>
+                  <div style="display:flex;justify-content:space-between;margin-bottom:.25rem;font-size:.8rem;color:#64748b;">
+                    <span>Trên 4.5 triệu</span><span id="p-above-45" style="font-weight:600;color:#1e293b;">-</span>
+                  </div>
+                  <div style="height:8px;background:#f1f5f9;border-radius:4px;overflow:hidden;">
+                    <div id="bar-above-45" style="height:100%;width:0%;background:#ef4444;border-radius:4px;transition:width 0.6s;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Source breakdown -->
+          <div class="crawler-panel">
+            <div class="crawler-panel-header"><h2>Tỷ trọng nguồn tin cào</h2></div>
+            <div style="padding:1.5rem; display:flex; flex-direction:column; gap:1.25rem;">
+              <div style="display:flex; align-items:center; gap:1rem;">
+                <div style="width:44px;height:44px;background:#e0f2fe;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;">🌐</div>
+                <div style="flex:1;">
+                  <div style="display:flex;justify-content:space-between;margin-bottom:.25rem;">
+                    <span style="font-weight:600;font-size:.875rem;">phongtro123.com</span>
+                    <span id="src-pt123-count" style="font-weight:700;color:#0284c7;">0 (0%)</span>
+                  </div>
+                  <div style="height:6px;background:#f1f5f9;border-radius:3px;">
+                    <div id="bar-pt123" style="height:100%;width:0%;background:#0284c7;border-radius:3px;transition:width 0.6s;"></div>
+                  </div>
+                </div>
+              </div>
+              <div style="display:flex; align-items:center; gap:1rem;">
+                <div style="width:44px;height:44px;background:#dbeafe;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;">📘</div>
+                <div style="flex:1;">
+                  <div style="display:flex;justify-content:space-between;margin-bottom:.25rem;">
+                    <span style="font-weight:600;font-size:.875rem;">Facebook Groups & Ads</span>
+                    <span id="src-fb-count" style="font-weight:700;color:#1877f2;">0 (0%)</span>
+                  </div>
+                  <div style="height:6px;background:#f1f5f9;border-radius:3px;">
+                    <div id="bar-fb" style="height:100%;width:0%;background:#1877f2;border-radius:3px;transition:width 0.6s;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+    </div>
+  </main>
+
+  <script>
+    lucide.createIcons();
+
+    function showSection(sec) {
+      alert(`Mục "${sec}" đang kết nối dữ liệu.`);
+    }
+
+    async function loadAdminData() {
+      try {
+        const [statsRes, roomsRes] = await Promise.all([
+          fetch('/api/admin/stats'),
+          fetch('/api/rooms?status=all&limit=25')
+        ]);
+
+        if (statsRes.ok) {
+          const stats = await statsRes.json();
+          renderStats(stats);
+        }
+
+        if (roomsRes.ok) {
+          const roomsData = await roomsRes.json();
+          renderTable(roomsData.data || []);
+        }
+      } catch (e) {
+        console.warn('Lỗi kết nối admin API:', e);
+      }
+    }
+
+    function renderStats(stats) {
+      document.getElementById('stat-total').textContent = stats.total || 0;
+      document.getElementById('stat-active').textContent = stats.byStatus?.con_trong || 0;
+      document.getElementById('stat-rented').textContent = (stats.byStatus?.da_thue || 0) + (stats.byStatus?.nghi_ngo_lua_dao || 0);
+
+      const avg = stats.price?.avg ? (stats.price.avg / 1e6).toFixed(1) + ' tr/th' : 'Chưa có';
+      document.getElementById('stat-avg-price').textContent = avg;
+
+      if (stats.price?.min && stats.price?.max) {
+        document.getElementById('stat-price-range').textContent = 
+          `Từ ${(stats.price.min/1e6).toFixed(1)}M đến ${(stats.price.max/1e6).toFixed(1)}M`;
+      }
+
+      // Sources
+      const pt123 = stats.byNguon?.phongtro123 || 0;
+      const fb = stats.byNguon?.facebook || 0;
+      const total = stats.total || (pt123 + fb) || 1;
+      const ptPct = Math.round((pt123 / total) * 100);
+      const fbPct = Math.round((fb / total) * 100);
+
+      document.getElementById('src-pt123-count').textContent = `${pt123} (${ptPct}%)`;
+      document.getElementById('bar-pt123').style.width = `${ptPct}%`;
+
+      document.getElementById('src-fb-count').textContent = `${fb} (${fbPct}%)`;
+      document.getElementById('bar-fb').style.width = `${fbPct}%`;
+
+      document.getElementById('stat-sources-summary').textContent = `${pt123} từ phongtro123, ${fb} từ Facebook`;
+    }
+
+    function renderTable(rooms) {
+      const tbody = document.getElementById('crawler-tbody');
+      if (!rooms.length) {
+        tbody.innerHTML = `<tr><td colspan="7" style="text-align:center;padding:2rem;color:#94a3b8;">Chưa có dữ liệu phòng</td></tr>`;
+        return;
+      }
+
+      tbody.innerHTML = rooms.map(r => {
+        const isFB = r.nguon === 'facebook';
+        const sourceBadge = isFB
+          ? `<span style="background:#dbeafe;color:#1e40af;font-size:0.75rem;font-weight:700;padding:2px 8px;border-radius:4px;">Facebook</span>`
+          : `<span style="background:#e0f2fe;color:#0369a1;font-size:0.75rem;font-weight:700;padding:2px 8px;border-radius:4px;">phongtro123</span>`;
+
+        const distStr = r.distCS1 ? `${r.distCS1.toFixed(1)} km` : '-';
+        const priceStr = r.price ? `${(r.price/1e6).toFixed(1)} tr` : '-';
+        const isVacant = r.trangThai === 'con_trong';
+
+        const statusBadge = isVacant
+          ? `<span style="color:#15803d;background:#dcfce7;font-size:0.75rem;font-weight:700;padding:3px 8px;border-radius:4px;">Còn trống</span>`
+          : `<span style="color:#475569;background:#f1f5f9;font-size:0.75rem;font-weight:700;padding:3px 8px;border-radius:4px;">Đã thuê</span>`;
+
+        const actionBtn = isVacant
+          ? `<button onclick="toggleStatus('${r.id}', 'da_thue')" style="font-size:0.75rem;padding:3px 8px;border-radius:6px;border:1px solid #cbd5e1;background:white;cursor:pointer;">Đánh dấu Đã thuê</button>`
+          : `<button onclick="toggleStatus('${r.id}', 'con_trong')" style="font-size:0.75rem;padding:3px 8px;border-radius:6px;border:1px solid #10b981;color:#047857;background:#ecfdf5;cursor:pointer;">Mở lại Trống</button>`;
+
+        return `
+          <tr>
+            <td style="font-family:monospace;font-size:0.8rem;font-weight:700;color:#475569;">${r.id}</td>
+            <td>${sourceBadge}</td>
+            <td style="color:#0f172a;font-weight:600;max-width:260px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;" title="${r.title}">
+              <a href="room-detail.html?id=${r.id}" style="color:#1e293b;text-decoration:none;">${r.title}</a>
+            </td>
+            <td style="color:#2563eb;font-weight:700;">${priceStr}</td>
+            <td style="color:#64748b;font-size:0.85rem;">${distStr}</td>
+            <td>${statusBadge}</td>
+            <td>${actionBtn}</td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    async function toggleStatus(id, newStatus) {
+      try {
+        const res = await fetch(`/api/rooms/${id}/status`, {
+          method: 'PATCH',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ trang_thai: newStatus })
+        });
+        if (res.ok) {
+          loadAdminData();
+        }
+      } catch(e) {
+        alert('Lỗi cập nhật: ' + e.message);
+      }
+    }
+
+    loadAdminData();
+    setInterval(loadAdminData, 10000);
+  </script>
+</body>
+</html>

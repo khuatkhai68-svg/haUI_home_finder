@@ -1,0 +1,14 @@
+{
+  "name": "haui-crawler",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Crawler 50 phong tro phongtro123.com cho HaUI",
+  "main": "crawl50.mjs",
+  "scripts": {
+    "start": "node crawl50.mjs"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.2",
+    "cheerio": "^1.0.0"
+  }
+}

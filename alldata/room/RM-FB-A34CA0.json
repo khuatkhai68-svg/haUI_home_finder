@@ -1,0 +1,52 @@
+{
+  "ma_phong": "RM-FB-A34CA0",
+  "nguon": "facebook",
+  "url_nguon": "https://www.facebook.com/groups/447547838952346/posts/2851135288593577/",
+  "ngay_cao": "2026-09-22T10:47:54.731Z",
+  "ngay_cap_nhat": "2026-09-22T10:47:54.731Z",
+  "trang_thai": "con_trong",
+  "vi_tri": {
+    "lat": 21.0595,
+    "lng": 105.7265,
+    "khoang_cach_cs1_km": 1.1,
+    "khoang_cach_cs2_km": 0.3,
+    "khoang_cach_cs3_km": 60.3,
+    "co_so_gan_nhat": "CS2",
+    "thoi_gian_di_xe_phut": 2
+  },
+  "thong_tin": {
+    "tieu_de": "Phòng trọ Tây Tựu gần HaUI Cơ sở 2 - Có điều hòa, nóng lạnh",
+    "gia": 1800000,
+    "dien_tich": 23,
+    "dia_chi": "Đường Tây Tựu, Phường Tây Tựu, Quận Bắc Từ Liêm, Hà Nội",
+    "quan_huyen": "Bắc Từ Liêm",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Còn phòng khu vực Tây Tựu gần cơ sở 2 ĐHCN. Phòng khép kín có điều hòa, bình nóng lạnh, giường đôi. Ngõ rộng, đi bộ ra giảng đường HaUI CS2 chỉ 3 phút. Không chung chủ, giờ giấc tự do.",
+    "tien_ich": [
+      "dieu_hoa",
+      "nong_lanh",
+      "khep_kin",
+      "khong_chung_chu",
+      "gio_giac_tu_do"
+    ],
+    "khong_chung_chu": true,
+    "gio_giac_tu_do": true
+  },
+  "lien_he": {
+    "so_dien_thoai": "",
+    "ten_chu": "Chủ nhà Trọ HaUI Nhổn - Tây Tựu",
+    "facebook": "https://www.facebook.com/groups/447547838952346/posts/2851135288593577/"
+  },
+  "anh": [
+    {
+      "url_goc": "https://images.unsplash.com/photo-1554995207-c18c203602cb?w=800&fit=crop"
+    },
+    {
+      "url_goc": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&fit=crop"
+    }
+  ],
+  "phan_tich": {
+    "scam_score": 5,
+    "da_kiem_tra": true
+  }
+}

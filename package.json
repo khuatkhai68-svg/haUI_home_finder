@@ -1,0 +1,17 @@
+{
+  "name": "haui-room-finder",
+  "version": "1.0.0",
+  "description": "HaUI Room Finder — Hệ thống tổng hợp phòng trọ cho sinh viên ĐH Công nghiệp Hà Nội",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "node --watch server/server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

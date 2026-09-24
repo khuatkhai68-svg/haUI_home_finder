@@ -1,0 +1,49 @@
+{
+  "ma_phong": "RM-FB-46D3A1",
+  "nguon": "facebook",
+  "url_nguon": "https://www.facebook.com/groups/140397885361011/?locale=vi_VN",
+  "ngay_cao": "2026-09-22T12:33:16.532Z",
+  "ngay_cap_nhat": "2026-09-22T12:33:16.532Z",
+  "trang_thai": "con_trong",
+  "vi_tri": {
+    "lat": 21.0395,
+    "lng": 105.768,
+    "khoang_cach_cs1_km": 3.8,
+    "khoang_cach_cs2_km": 5,
+    "khoang_cach_cs3_km": 57.1,
+    "co_so_gan_nhat": "CS1",
+    "thoi_gian_di_xe_phut": 13
+  },
+  "thong_tin": {
+    "tieu_de": "Phòng VSKK tầng 5 thang bộ, full đồ ngay ngõ 39 Hồ Tùng Mậu",
+    "gia": 3900000,
+    "dien_tich": 25,
+    "dia_chi": "Đường Hồ Tùng Mậu, Phường Phú Diễn, Quận Bắc Từ Liêm, Hà Nội",
+    "quan_huyen": "Bắc Từ Liêm",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Phòng VSKK tầng 5 thang bộ, full đồ ngay ngõ 39 Hồ Tùng Mậu\nGiá: 3,9 triệu\nFull nội thất: giường, điều hòa, nóng lạnh, tủ quần áo, tủ lạnh, bàn , kệ bếp\nNhận xe điện\nKo chung chủ\nAn ninh tốt, vị trí gần ĐHTM, ĐH Sp, ĐH quốc gia\nLiên hệ :0377823400",
+    "tien_ich": [
+      "dieu_hoa",
+      "nong_lanh",
+      "tu_lanh",
+      "khep_kin",
+      "khong_chung_chu"
+    ],
+    "khong_chung_chu": true,
+    "gio_giac_tu_do": true
+  },
+  "lien_he": {
+    "so_dien_thoai": "0377823400",
+    "ten_chu": "Chủ trọ khu vực HaUI CS1",
+    "facebook": "https://www.facebook.com/groups/140397885361011/?locale=vi_VN"
+  },
+  "anh": [
+    {
+      "url_goc": "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&fit=crop"
+    }
+  ],
+  "phan_tich": {
+    "scam_score": 5,
+    "da_kiem_tra": true
+  }
+}

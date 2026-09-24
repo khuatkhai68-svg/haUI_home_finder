@@ -1,0 +1,54 @@
+{
+  "ma_phong": "RM-FB-CE1999",
+  "nguon": "facebook",
+  "url_nguon": "https://www.facebook.com/groups/1896518147417522/posts/2804194736649854/",
+  "ngay_cao": "2026-09-22T12:53:32.850Z",
+  "ngay_cap_nhat": "2026-09-22T12:53:32.850Z",
+  "trang_thai": "con_trong",
+  "vi_tri": {
+    "lat": 21.051,
+    "lng": 105.718,
+    "khoang_cach_cs1_km": 1.8,
+    "khoang_cach_cs2_km": 1.5,
+    "khoang_cach_cs3_km": 59.7,
+    "co_so_gan_nhat": "CS2",
+    "thoi_gian_di_xe_phut": 5
+  },
+  "thong_tin": {
+    "tieu_de": "Cho thuê phòng trọ 3.0 tr/tháng tại Xã Di Trạch (HaUI CS1)",
+    "gia": 3000000,
+    "dien_tich": 25,
+    "dia_chi": "Xã Di Trạch, Huyện Hoài Đức, Hà Nội",
+    "quan_huyen": "Hoài Đức",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Giá 3 tr sẵn tủ lạnh \n KHAI TRƯƠNG PHÒNG TRỌ – ĐAN KHÊ, DI TRẠCH \n Chỉ 3 TRIỆU/THÁNG – có TỦ LẠNH\n Phòng mới, sạch đẹp, thiết kế thoáng\n Có thang máy – đi lại cực tiện\n Sẵn tủ lạnh, vào ở ngay\n Ngay Đan Khê – Di Trạch, thuận tiện đi lại & sinh hoạt\n Phù hợp người đi làm, sinh viên, cặp đôi\nĐiện 4k \nNước 35k \nMạng 100k /p\nDvc : 200k/ ng\n Phòng khai trương số lượng có hạn – ib/chốt sớm kẻo hết! Ẩn bớt",
+    "tien_ich": [
+      "tu_lanh",
+      "ban_cong",
+      "khep_kin",
+      "thang_may"
+    ],
+    "khong_chung_chu": true,
+    "gio_giac_tu_do": true
+  },
+  "lien_he": {
+    "so_dien_thoai": "",
+    "ten_chu": "Chủ trọ khu vực HaUI CS1",
+    "facebook": "https://www.facebook.com/groups/1896518147417522/?locale=vi_VN"
+  },
+  "anh": [
+    {
+      "url_goc": "https://scontent.fhan15-1.fna.fbcdn.net/v/t39.30808-6/796972364_122130332870916207_4592362766766704013_n.jpg?stp=dst-jpg_tt6&cstp=mx800x600&ctp=s590x590&_nc_cat=102&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=Z7umAbquOhwQ7kNvwF-DUUe&_nc_oc=AdrvsXYHO92M2ELgTK5b2c5WmEfOGfxT9nPllbOqvav-COpQES6Ip6T9xHY885b36_c&_nc_zt=23&_nc_ht=scontent.fhan15-1.fna&_nc_gid=BVwNO6bbUD6wd4yV7xbqgQ&_nc_ss=7b289&oh=00_AQKl9-vY4aWX0ABT3NDP-lqt825F8lhEU3iZZbFv6k2nvw&oe=6AB84F61"
+    },
+    {
+      "url_goc": "https://scontent.fhan15-1.fna.fbcdn.net/v/t39.30808-6/797377664_122130333056916207_7665396957123058515_n.jpg?stp=dst-jpg_tt6&cstp=mx800x600&ctp=s590x590&_nc_cat=105&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=8HKe-B-4-6IQ7kNvwELl57z&_nc_oc=AdoRJhWIKHXm-XcZ8ZXBplTe52DIhS_FxX5jja4csYMalyjks2WotL5QIgLcmJDUlow&_nc_zt=23&_nc_ht=scontent.fhan15-1.fna&_nc_gid=BVwNO6bbUD6wd4yV7xbqgQ&_nc_ss=7b289&oh=00_AQIswFz-QpO4W4ev6RHqHenl-XDz7WfvMC4pG33SnLvkWQ&oe=6AB846D2"
+    },
+    {
+      "url_goc": "https://scontent.fhan15-1.fna.fbcdn.net/v/t39.30808-6/816227554_122130333548916207_3040633897093884996_n.jpg?stp=dst-jpg_tt6&cstp=mx1800x1350&ctp=s590x590&_nc_cat=105&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=pSUnm26KiUAQ7kNvwHKeULY&_nc_oc=Adoi7NFmc36LR7CCNXZbKW9HZEvQ73oFut9fAJGB53I5T80PEcGbEU1NFLSxmTq3Q2k&_nc_zt=23&_nc_ht=scontent.fhan15-1.fna&_nc_gid=BVwNO6bbUD6wd4yV7xbqgQ&_nc_ss=7b289&oh=00_AQIwEPnqhfzxmsQ9jvn5C4qpa_nBl-jIBlaunn0t0CXx6w&oe=6AB83739"
+    }
+  ],
+  "phan_tich": {
+    "scam_score": 5,
+    "da_kiem_tra": true
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "ma_phong": "RM-FB-6A0CD5",
+  "nguon": "facebook",
+  "url_nguon": "https://www.facebook.com/groups/1896518147417522/?locale=vi_VN",
+  "ngay_cao": "2026-09-22T12:01:27.862Z",
+  "ngay_cap_nhat": "2026-09-22T12:01:27.862Z",
+  "trang_thai": "con_trong",
+  "vi_tri": {
+    "lat": 21.0495,
+    "lng": 105.758,
+    "khoang_cach_cs1_km": 2.4,
+    "khoang_cach_cs2_km": 3.6,
+    "khoang_cach_cs3_km": 58.4,
+    "co_so_gan_nhat": "CS1",
+    "thoi_gian_di_xe_phut": 8
+  },
+  "thong_tin": {
+    "tieu_de": "Cho thuê phòng trọ 3.8 tr/tháng tại Đường Phú Diễn (HaUI CS1)",
+    "gia": 3800000,
+    "dien_tich": 25,
+    "dia_chi": "Đường Phú Diễn, Phường Phú Diễn, Quận Bắc Từ Liêm, Hà Nội",
+    "quan_huyen": "Bắc Từ Liêm",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "3tr8 phú diễn\nLh;0978.548.791",
+    "tien_ich": [
+      "khep_kin"
+    ],
+    "khong_chung_chu": true,
+    "gio_giac_tu_do": true
+  },
+  "lien_he": {
+    "so_dien_thoai": "",
+    "ten_chu": "Chủ trọ khu vực HaUI CS1",
+    "facebook": "https://www.facebook.com/groups/1896518147417522/?locale=vi_VN"
+  },
+  "anh": [
+    {
+      "url_goc": "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&fit=crop"
+    }
+  ],
+  "phan_tich": {
+    "scam_score": 5,
+    "da_kiem_tra": true
+  }
+}

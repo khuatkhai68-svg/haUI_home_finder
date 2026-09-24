@@ -1,0 +1,55 @@
+{
+  "ma_phong": "RM-FB-3BA6DB",
+  "nguon": "facebook",
+  "url_nguon": "https://www.facebook.com/groups/2252917341608621/posts/4746475595586104/",
+  "ngay_cao": "2026-09-22T12:42:14.090Z",
+  "ngay_cap_nhat": "2026-09-22T12:42:14.090Z",
+  "trang_thai": "con_trong",
+  "vi_tri": {
+    "lat": 21.0505,
+    "lng": 105.7425,
+    "khoang_cach_cs1_km": 0.8,
+    "khoang_cach_cs2_km": 2.1,
+    "khoang_cach_cs3_km": 58.9,
+    "co_so_gan_nhat": "CS1",
+    "thoi_gian_di_xe_phut": 3
+  },
+  "thong_tin": {
+    "tieu_de": "Chính chủ Cho thuê phòng ở luôn",
+    "gia": 2100000,
+    "dien_tich": 25,
+    "dia_chi": "Phố Đình Quán, Phường Phúc Diễn, Quận Bắc Từ Liêm, Hà Nội",
+    "quan_huyen": "Bắc Từ Liêm",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Chính chủ Cho thuê phòng ở luôn\nGiá 2,1tr đầu ngõ 4/1 đình quán cầu diễn\nPhòng có điều hòa ,nóng lạnh ,giường ,tủ và máy giặt chung\nKhông chung chủ, giờ giấc thoải mái, để xe free\nK sạc xe điện\nLh: 0912509336,",
+    "tien_ich": [
+      "dieu_hoa",
+      "nong_lanh",
+      "may_giat",
+      "khep_kin",
+      "khong_chung_chu"
+    ],
+    "khong_chung_chu": true,
+    "gio_giac_tu_do": true
+  },
+  "lien_he": {
+    "so_dien_thoai": "0912509336",
+    "ten_chu": "Chủ trọ khu vực HaUI CS1",
+    "facebook": "https://www.facebook.com/groups/2252917341608621/?locale=vi_VN"
+  },
+  "anh": [
+    {
+      "url_goc": "https://scontent.fhan15-1.fna.fbcdn.net/v/t39.30808-6/818384645_122128015875362121_8411563900988943230_n.jpg?stp=dst-jpg_tt6&cstp=mx1276x956&ctp=s590x590&_nc_cat=102&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=W3GCl5VS7m8Q7kNvwEOB080&_nc_oc=Adp2EVXfC6sqca1a7QiS4C_S3lHE0xBrwmk1EOhQrwnnbxaiT1xAy4roS0kXSsOc468&_nc_zt=23&_nc_ht=scontent.fhan15-1.fna&_nc_gid=0Br5v-EBLn5aIOwOxhjubw&_nc_ss=7b289&oh=00_AQLqH_7elXzfCja5Zzisrzbj4b6wwQmM4ilC2A9yjPL0Kg&oe=6AB85915"
+    },
+    {
+      "url_goc": "https://scontent.fhan15-1.fna.fbcdn.net/v/t39.30808-6/818384526_122128015971362121_6938113018347938159_n.jpg?stp=dst-jpg_tt6&cstp=mx960x1280&ctp=s590x590&_nc_cat=105&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=HuCbQpMjeaUQ7kNvwHfiYqe&_nc_oc=AdqKviwbl_MKkpD-trJj3YEswBoStPF-VzjNDzNI8xW3nfKhuAJHM1GlJCwDurqmLiU&_nc_zt=23&_nc_ht=scontent.fhan15-1.fna&_nc_gid=0Br5v-EBLn5aIOwOxhjubw&_nc_ss=7b289&oh=00_AQI7EqlMnpGWItaw7E0GInbdfI-icHpxNm9-ulQfUqFvRQ&oe=6AB84E43"
+    },
+    {
+      "url_goc": "https://scontent.fhan15-1.fna.fbcdn.net/v/t39.30808-6/818384665_122128016079362121_3734773485886169463_n.jpg?stp=dst-jpg_tt6&cstp=mx1276x956&ctp=s590x590&_nc_cat=105&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=a8vL3-YpLqsQ7kNvwE_wbt_&_nc_oc=AdopJxLFQPrKg_RXC6gZERP4AVdTFajTbag8Daji1fEoWReFRmJwXGQxT6O2BwghI1U&_nc_zt=23&_nc_ht=scontent.fhan15-1.fna&_nc_gid=0Br5v-EBLn5aIOwOxhjubw&_nc_ss=7b289&oh=00_AQIApCjlfX8xTGYOyx1ptQyxJ0SToPu4m4pvMAe4fk5t9A&oe=6AB84D11"
+    }
+  ],
+  "phan_tich": {
+    "scam_score": 5,
+    "da_kiem_tra": true
+  }
+}

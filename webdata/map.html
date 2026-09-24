@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bản Đồ Tìm Trọ Thực Tế - HaUI Room Finder (3 Cơ Sở)</title>
+  <meta name="description" content="Xem phòng trọ thực tế xung quanh 3 cơ sở trường Đại học Công Nghiệp Hà Nội (CS1 Nhổn, CS2 Tây Tựu, CS3 Hà Nam) trên bản đồ tương tác." />
+  <link rel="stylesheet" href="styles.css" />
+  
+  <!-- Leaflet CSS & JS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- Leaflet MarkerCluster -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
+  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+  <style>
+    body { overflow: hidden; }
+    #map { width: 100%; height: 100%; z-index: 1; }
+    
+    .map-layout {
+      display: flex;
+      height: calc(100vh - 65px);
+      width: 100%;
+      position: relative;
+    }
+
+    .map-sidebar {
+      width: 410px;
+      min-width: 360px;
+      max-width: 450px;
+      background: white;
+      border-right: 1px solid #e2e8f0;
+      display: flex;
+      flex-direction: column;
+      padding: 1.15rem;
+      box-shadow: 4px 0 16px rgba(0,0,0,0.04);
+      z-index: 10;
+      overflow: hidden;
+    }
+
+    .map-container {
+      flex: 1;
+      height: 100%;
+      position: relative;
+    }
+
+    /* Custom Leaflet styling */
+    .leaflet-popup-content-wrapper {
+      border-radius: 14px;
+      box-shadow: 0 12px 32px rgba(15,23,42,0.18);
+      padding: 0;
+      overflow: hidden;
+    }
+    .leaflet-popup-content { margin: 0; padding: 0; }
+    
+    .popup-card {
+      padding: 0.875rem;
+      width: 265px;
+      font-family: inherit;
+    }
+    .popup-img-wrap {
+      position: relative;
+      width: 100%;
+      height: 130px;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 0.5rem;
+    }
+    .popup-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .popup-source-badge {
+      position: absolute;
+      top: 6px;
+      left: 6px;
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 4px;
+      color: white;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+    .popup-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #0f172a;
+      line-height: 1.35;
+      margin-bottom: 0.35rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .popup-address {
+      font-size: 0.72rem;
+      color: #64748b;
+      margin-bottom: 0.4rem;
+      line-height: 1.3;
+    }
+    .popup-price-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.6rem;
+    }
+    .popup-price {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #2563eb;
+    }
+    .popup-dist {
+      font-size: 0.72rem;
+      font-weight: 600;
+      background: #eff6ff;
+      color: #1e40af;
+      padding: 2px 6px;
+      border-radius: 6px;
+    }
+    .popup-actions {
+      display: flex;
+      gap: 0.4rem;
+    }
+    .popup-btn-detail {
+      flex: 1;
+      text-align: center;
+      background: #2563eb;
+      color: white;
+      padding: 0.45rem;
+      border-radius: 7px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .popup-btn-detail:hover { background: #1d4ed8; }
+    .popup-btn-dir {
+      background: #f1f5f9;
+      color: #334155;
+      padding: 0.45rem 0.6rem;
+      border-radius: 7px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+    .popup-btn-dir:hover { background: #e2e8f0; }
+
+    /* Map layer switcher and quick view buttons */
+    .map-top-bar {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      right: 1rem;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      pointer-events: none;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .map-top-bar > * {
+      pointer-events: auto;
+    }
+
+    .layer-selector {
+      background: white;
+      border: 1px solid #cbd5e1;
+      border-radius: 10px;
+      padding: 4px;
+      display: flex;
+      gap: 4px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+    }
+    .layer-btn {
+      padding: 5px 10px;
+      border-radius: 6px;
+      border: none;
+      background: transparent;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #475569;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      transition: all 0.15s;
+    }
+    .layer-btn:hover { background: #f1f5f9; color: #0f172a; }
+    .layer-btn.active {
+      background: #2563eb;
+      color: white;
+      box-shadow: 0 2px 6px rgba(37,99,235,0.3);
+    }
+
+    .quick-view-pills {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .quick-pill {
+      background: white;
+      border: 1px solid #cbd5e1;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #334155;
+      cursor: pointer;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      transition: all 0.2s;
+    }
+    .quick-pill:hover { background: #f8fafc; transform: translateY(-1px); }
+    .quick-pill.active {
+      background: #0f172a;
+      color: white;
+      border-color: #0f172a;
+    }
+    .quick-pill.cs-pill-1 { border-color: #fca5a5; }
+    .quick-pill.cs-pill-2 { border-color: #d8b4fe; }
+    .quick-pill.cs-pill-3 { border-color: #6ee7b7; }
+
+    /* Campus Marker Badge */
+    .campus-badge {
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: white;
+      border: 2px solid white;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.35);
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      cursor: pointer;
+    }
+
+    /* Room Marker Price Pill */
+    .room-marker-pill {
+      padding: 3px 7px;
+      border-radius: 12px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: white;
+      border: 2px solid white;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.25);
+      white-space: nowrap;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      transition: transform 0.15s;
+    }
+    .room-marker-pill:hover {
+      transform: scale(1.15) translateY(-2px);
+      z-index: 1000 !important;
+    }
+
+    /* MarkerCluster Custom Colors */
+    .marker-cluster-small, .marker-cluster-medium, .marker-cluster-large {
+      background-color: rgba(37, 99, 235, 0.4) !important;
+    }
+    .marker-cluster-small div, .marker-cluster-medium div, .marker-cluster-large div {
+      background-color: rgba(30, 64, 175, 0.9) !important;
+      color: white !important;
+      font-weight: 800 !important;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-brand" style="text-decoration:none;">
+        <div class="navbar-logo">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Haui_logo.png/200px-Haui_logo.png"
+               alt="HaUI Logo" onerror="this.style.display='none'" />
+        </div>
+        <div>
+          <div class="navbar-title">Hệ Thống Tìm Trọ HaUI (3 Cơ Sở)</div>
+          <div class="navbar-subtitle">"Bạn cứ việc học, tìm trọ để Cò lo!"</div>
+        </div>
+      </a>
+      <nav class="navbar-nav">
+        <a href="index.html"><i data-lucide="search" style="width:16px;height:16px;"></i> Tìm phòng</a>
+        <a href="map.html" class="active"><i data-lucide="map" style="width:16px;height:16px;"></i> Bản đồ</a>
+        <a href="room-detail.html"><i data-lucide="map-pin" style="width:16px;height:16px;"></i> Chi tiết phòng</a>
+        <a href="admin.html"><i data-lucide="plus-circle" style="width:16px;height:16px;"></i> Quản trị Admin</a>
+      </nav>
+      <div class="navbar-actions">
+        <button class="btn-login">Đăng nhập</button>
+      </div>
+    </div>
+  </header>
+
+  <main style="flex:1;display:flex;flex-direction:column;">
+    <div class="map-layout">
+
+      <!-- Sidebar -->
+      <aside class="map-sidebar">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.75rem;">
+          <h2 style="font-size:1.05rem;font-weight:800;color:#0f172a;margin:0;display:flex;align-items:center;gap:6px;">
+            <span>🗺️</span> Bản đồ 3 Cơ Sở HaUI
+          </h2>
+          <span style="font-size:0.75rem;background:#dbeafe;color:#1e40af;padding:2px 8px;border-radius:12px;font-weight:700;">
+            <span id="map-room-count">0</span> phòng
+          </span>
+        </div>
+
+        <!-- Filter bar inside sidebar -->
+        <div style="margin-bottom:0.75rem;background:#f8fafc;padding:0.75rem;border-radius:10px;border:1px solid #e2e8f0;display:flex;flex-direction:column;gap:0.45rem;">
+          <!-- Campus Filter -->
+          <div style="display:flex;gap:0.4rem;">
+            <select id="map-filter-campus" onchange="onCampusFilterChange()" style="flex:1;padding:0.4rem 0.5rem;font-size:0.75rem;border-radius:6px;border:1.5px solid #93c5fd;background:#eff6ff;font-weight:700;color:#1e40af;">
+              <option value="all">🏫 Tất cả cơ sở (CS1, CS2, CS3)</option>
+              <option value="cs1">🏫 HaUI CS1 (Nhổn / Cầu Diễn)</option>
+              <option value="cs2">🏫 HaUI CS2 (Tây Tựu)</option>
+              <option value="cs3">🏫 HaUI CS3 (Hà Nam - Phủ Lý)</option>
+            </select>
+          </div>
+
+          <div style="display:flex;gap:0.4rem;">
+            <select id="map-filter-source" onchange="filterMapRooms()" style="flex:1;padding:0.35rem 0.5rem;font-size:0.75rem;border-radius:6px;border:1px solid #cbd5e1;background:white;font-weight:600;">
+              <option value="all">Tất cả nguồn (FB + Web)</option>
+              <option value="facebook">Chỉ Facebook Group</option>
+              <option value="phongtro123">Chỉ phongtro123.com</option>
+            </select>
+            <select id="map-filter-price" onchange="filterMapRooms()" style="flex:1;padding:0.35rem 0.5rem;font-size:0.75rem;border-radius:6px;border:1px solid #cbd5e1;background:white;font-weight:600;">
+              <option value="all">Mọi mức giá</option>
+              <option value="under_20">&lt; 2.0 triệu</option>
+              <option value="20_30">2.0 - 3.0 triệu</option>
+              <option value="above_30">&gt; 3.0 triệu</option>
+            </select>
+          </div>
+
+          <div style="display:flex;gap:0.4rem;">
+            <select id="map-filter-dist" onchange="filterMapRooms()" style="flex:1;padding:0.35rem 0.5rem;font-size:0.75rem;border-radius:6px;border:1px solid #cbd5e1;background:white;font-weight:600;">
+              <option value="all">Khoảng cách đến cơ sở gần nhất</option>
+              <option value="under_2">&lt; 2 km (Đi bộ/xe đạp)</option>
+              <option value="under_5">&lt; 5 km (Xe máy &lt; 15p)</option>
+              <option value="under_10">&lt; 10 km</option>
+            </select>
+            <button onclick="resetFilters()" style="padding:0.35rem 0.6rem;background:#f1f5f9;border:1px solid #cbd5e1;border-radius:6px;font-size:0.72rem;font-weight:700;color:#475569;cursor:pointer;">
+              Đặt lại
+            </button>
+          </div>
+        </div>
+
+        <!-- Selected Room Highlight Card -->
+        <div id="map-room-detail">
+          <div style="background:#f8fafc;border:1px dashed #cbd5e1;border-radius:10px;padding:0.9rem;text-align:center;color:#64748b;font-size:0.8rem;">
+            <i data-lucide="map-pin" style="width:26px;height:26px;color:#94a3b8;margin:0 auto 0.4rem;display:block;"></i>
+            Nhấp vào một điểm trên bản đồ hoặc danh sách bên dưới để xem vị trí chi tiết và chỉ đường.
+          </div>
+        </div>
+
+        <!-- Scrollable Rooms List -->
+        <div style="margin-top:0.65rem;flex:1;display:flex;flex-direction:column;min-height:0;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.4rem;">
+            <span style="font-size:0.72rem;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:0.04em;">
+              Danh sách phòng (<span id="list-count-display">0</span>)
+            </span>
+            <span style="font-size:0.7rem;color:#94a3b8;">Click để định vị</span>
+          </div>
+          <div id="map-room-list" style="display:flex;flex-direction:column;gap:0.45rem;overflow-y:auto;flex:1;padding-right:4px;"></div>
+        </div>
+      </aside>
+
+      <!-- Map Container -->
+      <section class="map-container">
+        <!-- Top Overlay Controls -->
+        <div class="map-top-bar">
+          <!-- Quick views -->
+          <div class="quick-view-pills">
+            <button class="quick-pill active" id="pill-all" onclick="setMapView('all', this)">Toàn hệ thống</button>
+            <button class="quick-pill cs-pill-1" id="pill-cs1" onclick="setMapView('cs1', this)">🏫 HaUI CS1 (Nhổn)</button>
+            <button class="quick-pill cs-pill-2" id="pill-cs2" onclick="setMapView('cs2', this)">🏫 HaUI CS2 (Tây Tựu)</button>
+            <button class="quick-pill cs-pill-3" id="pill-cs3" onclick="setMapView('cs3', this)">🏫 HaUI CS3 (Hà Nam)</button>
+            <button class="quick-pill" id="pill-caugiay" onclick="setMapView('caugiay', this)">Cầu Giấy</button>
+            <button class="quick-pill" id="pill-hoaiduc" onclick="setMapView('hoaiduc', this)">Hoài Đức</button>
+          </div>
+
+          <!-- Map API Layer Switcher -->
+          <div class="layer-selector">
+            <button class="layer-btn active" id="layer-google" onclick="switchLayer('google')">
+              <span>🗺️</span> Google Maps
+            </button>
+            <button class="layer-btn" id="layer-satellite" onclick="switchLayer('satellite')">
+              <span>🛰️</span> Vệ tinh
+            </button>
+            <button class="layer-btn" id="layer-osm" onclick="switchLayer('osm')">
+              <span>🌐</span> OSM
+            </button>
+          </div>
+        </div>
+
+        <div id="map"></div>
+      </section>
+
+    </div>
+  </main>
+
+  <script>
+    lucide.createIcons();
+
+    let allRooms = [];
+    let filteredRooms = [];
+    let selectedId = null;
+
+    // HaUI Campuses with Exact GPS Coordinates
+    const campuses = [
+      {
+        name: "HaUI - Cơ sở 1 (Trụ sở chính)",
+        code: "CS1",
+        lat: 21.05425,
+        lng: 105.73504,
+        color: "#dc2626",
+        address: "Số 298 đường Cầu Diễn, Phường Minh Khai, Quận Bắc Từ Liêm, Hà Nội"
+      },
+      {
+        name: "HaUI - Cơ sở 2 (Tây Tựu)",
+        code: "CS2",
+        lat: 21.07582,
+        lng: 105.72996,
+        color: "#7c3aed",
+        address: "Phường Tây Tựu, Quận Bắc Từ Liêm, Hà Nội"
+      },
+      {
+        name: "HaUI - Cơ sở 3 (Hà Nam)",
+        code: "CS3",
+        lat: 20.53994,
+        lng: 105.89704,
+        color: "#059669",
+        address: "Phường Lê Hồng Phong / Xã Phù Vân, TP. Phủ Lý, Tỉnh Hà Nam"
+      }
+    ];
+
+    // ---- Initialize Leaflet Map ----
+    const map = L.map('map', {
+      zoomControl: true,
+      center: [21.05425, 105.73504],
+      zoom: 13
+    });
+
+    map.zoomControl.setPosition('bottomright');
+
+    // ---- Define Tile Layers (Google Maps API Road, Google Satellite, OSM) ----
+    const tileLayers = {
+      google: L.tileLayer('https://mt1.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
+        attribution: '© Google Maps',
+        maxZoom: 20
+      }),
+      satellite: L.tileLayer('https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
+        attribution: '© Google Maps Satellite',
+        maxZoom: 20
+      }),
+      osm: L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors',
+        maxZoom: 19
+      })
+    };
+
+    let currentLayerKey = 'google';
+    tileLayers.google.addTo(map);
+
+    function switchLayer(layerKey) {
+      if (layerKey === currentLayerKey) return;
+      map.removeLayer(tileLayers[currentLayerKey]);
+      tileLayers[layerKey].addTo(map);
+      currentLayerKey = layerKey;
+
+      document.querySelectorAll('.layer-btn').forEach(btn => btn.classList.remove('active'));
+      const activeBtn = document.getElementById(`layer-${layerKey}`);
+      if (activeBtn) activeBtn.classList.add('active');
+    }
+
+    // ---- Campus Markers & Radius Circles ----
+    const campusLayer = L.layerGroup().addTo(map);
+
+    campuses.forEach(c => {
+      // 1km & 3km Radius Circles around Campus
+      L.circle([c.lat, c.lng], {
+        radius: 1000,
+        color: c.color,
+        fillColor: c.color,
+        fillOpacity: 0.05,
+        weight: 1.5,
+        dashArray: '4, 6'
+      }).addTo(campusLayer);
+
+      L.circle([c.lat, c.lng], {
+        radius: 3000,
+        color: c.color,
+        fillColor: 'transparent',
+        weight: 1,
+        dashArray: '2, 6'
+      }).addTo(campusLayer);
+
+      // Campus Marker Badge
+      const campusIcon = L.divIcon({
+        className: '',
+        html: `
+          <div class="campus-badge" style="background:${c.color};">
+            <span>🏫</span>
+            <span>${c.name}</span>
+          </div>
+        `,
+        iconAnchor: [90, 20]
+      });
+
+      L.marker([c.lat, c.lng], { icon: campusIcon })
+        .addTo(campusLayer)
+        .bindPopup(`
+          <div class="popup-card">
+            <h4 style="color:${c.color};margin:0 0 4px;font-size:0.95rem;font-weight:800;">🏫 ${c.name}</h4>
+            <p style="font-size:0.75rem;color:#475569;margin:0 0 8px;line-height:1.35;">📍 ${c.address}</p>
+            <div style="font-size:0.72rem;background:#f8fafc;color:#1e293b;padding:5px 8px;border-radius:6px;font-weight:700;border:1px solid #e2e8f0;">
+              Tọa độ GPS: ${c.lat}, ${c.lng}
+            </div>
+          </div>
+        `);
+    });
+
+    // ---- MarkerCluster Group for Rooms ----
+    const markersCluster = L.markerClusterGroup({
+      showCoverageOnHover: false,
+      maxClusterRadius: 35,
+      spiderfyOnMaxZoom: true,
+      zoomToBoundsOnClick: true
+    });
+    map.addLayer(markersCluster);
+
+    function onCampusFilterChange() {
+      const camp = document.getElementById('map-filter-campus').value;
+      if (camp === 'cs1') setMapView('cs1', document.getElementById('pill-cs1'));
+      else if (camp === 'cs2') setMapView('cs2', document.getElementById('pill-cs2'));
+      else if (camp === 'cs3') setMapView('cs3', document.getElementById('pill-cs3'));
+      filterMapRooms();
+    }
+
+    function filterMapRooms() {
+      const camp = document.getElementById('map-filter-campus')?.value || 'all';
+      const source = document.getElementById('map-filter-source')?.value || 'all';
+      const priceRange = document.getElementById('map-filter-price')?.value || 'all';
+      const distRange = document.getElementById('map-filter-dist')?.value || 'all';
+
+      filteredRooms = allRooms.filter(r => {
+        if (!r.lat || !r.lng) return false;
+
+        // Campus filter
+        if (camp === 'cs1') {
+          if (r.city === 'Hà Nam' || r.distCS1 > 15) return false;
+        } else if (camp === 'cs2') {
+          if (r.city === 'Hà Nam' || r.distCS2 > 15) return false;
+        } else if (camp === 'cs3') {
+          if (r.city !== 'Hà Nam' && (r.distCS3 === null || r.distCS3 > 25)) return false;
+        }
+
+        if (source !== 'all' && r.nguon !== source) return false;
+        
+        // Price filter
+        if (priceRange === 'under_20' && r.price >= 2000000) return false;
+        if (priceRange === '20_30' && (r.price < 2000000 || r.price > 3000000)) return false;
+        if (priceRange === 'above_30' && r.price <= 3000000) return false;
+
+        // Distance filter
+        const minDist = Math.min(
+          r.distCS1 !== null ? r.distCS1 : 999,
+          r.distCS2 !== null ? r.distCS2 : 999,
+          r.distCS3 !== null ? r.distCS3 : 999
+        );
+
+        if (distRange === 'under_2' && minDist > 2) return false;
+        if (distRange === 'under_5' && minDist > 5) return false;
+        if (distRange === 'under_10' && minDist > 10) return false;
+
+        return true;
+      });
+
+      renderMap();
+      renderRoomList();
+    }
+
+    function resetFilters() {
+      document.getElementById('map-filter-campus').value = 'all';
+      document.getElementById('map-filter-source').value = 'all';
+      document.getElementById('map-filter-price').value = 'all';
+      document.getElementById('map-filter-dist').value = 'all';
+      filterMapRooms();
+    }
+
+    function getOriginCoords(room) {
+      if (room.city === 'Hà Nam' || room.nearestCampus === 'CS3') return '20.53994,105.89704';
+      if (room.nearestCampus === 'CS2') return '21.07582,105.72996';
+      return '21.05425,105.73504';
+    }
+
+    function getCampusBadge(room) {
+      if (room.city === 'Hà Nam' || room.nearestCampus === 'CS3') {
+        const d = room.distCS3 !== null ? room.distCS3.toFixed(1) : '0.5';
+        return `<span style="font-size:0.7rem;color:#047857;background:#d1fae5;padding:2px 6px;border-radius:4px;font-weight:700;">🏫 CS3 Hà Nam: ${d}km</span>`;
+      }
+      const d1 = room.distCS1 !== null ? room.distCS1.toFixed(1) : '';
+      return `<span style="font-size:0.7rem;color:#1e40af;background:#eff6ff;padding:2px 6px;border-radius:4px;font-weight:700;">🏫 CS1: ${d1}km</span>`;
+    }
+
+    function renderMap() {
+      markersCluster.clearLayers();
+
+      filteredRooms.forEach(room => {
+        const isFB = room.nguon === 'facebook';
+        const isHN = room.city === 'Hà Nam' || room.nearestCampus === 'CS3';
+        const bg = isFB ? '#1877f2' : (isHN ? '#059669' : '#0284c7');
+        const priceLabel = room.price ? (room.price / 1e6).toFixed(1) + 'Tr' : 'Thoả thuận';
+
+        const customHtml = `
+          <div class="room-marker-pill" style="background:${bg};">
+            <span>${isFB ? '📘' : (isHN ? '🌿' : '🏠')}</span>
+            <span>${priceLabel}</span>
+          </div>
+        `;
+
+        const icon = L.divIcon({
+          html: customHtml,
+          className: '',
+          iconAnchor: [28, 14]
+        });
+
+        const marker = L.marker([room.lat, room.lng], { icon });
+
+        const img = (room.images && room.images.length)
+          ? room.images[0]
+          : 'https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=300&h=200&fit=crop';
+        
+        const originCoords = getOriginCoords(room);
+        const googleDirUrl = `https://www.google.com/maps/dir/?api=1&origin=${originCoords}&destination=${room.lat},${room.lng}`;
+
+        marker.bindPopup(`
+          <div class="popup-card">
+            <div class="popup-img-wrap">
+              <img src="${img}" alt="${room.title}" onerror="this.src='https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=300&h=200&fit=crop'"/>
+              <span class="popup-source-badge" style="background:${isFB ? '#1877f2' : (isHN ? '#059669' : '#0284c7')};">
+                ${isFB ? 'Facebook Group' : 'phongtro123.com'}
+              </span>
+            </div>
+            <div class="popup-title">${room.title}</div>
+            <div class="popup-address">📍 ${room.address || room.district}</div>
+            <div class="popup-price-row">
+              <span class="popup-price">${(room.price/1e6).toFixed(1)} tr/tháng</span>
+              ${getCampusBadge(room)}
+            </div>
+            <div class="popup-actions">
+              <a class="popup-btn-detail" href="room-detail.html?id=${room.id}">Xem chi tiết →</a>
+              <a class="popup-btn-dir" href="${googleDirUrl}" target="_blank" title="Chỉ đường từ trường HaUI">
+                <i data-lucide="navigation" style="width:14px;height:14px;"></i> Chỉ đường
+              </a>
+            </div>
+          </div>
+        `);
+
+        marker.on('click', () => selectRoom(room));
+        markersCluster.addLayer(marker);
+      });
+      lucide.createIcons();
+    }
+
+    function renderRoomList() {
+      const countEl = document.getElementById('map-room-count');
+      const listCountEl = document.getElementById('list-count-display');
+      const listEl = document.getElementById('map-room-list');
+      countEl.textContent = filteredRooms.length;
+      listCountEl.textContent = filteredRooms.length;
+
+      if (!filteredRooms.length) {
+        listEl.innerHTML = `
+          <div style="text-align:center;padding:2rem 1rem;color:#94a3b8;font-size:0.85rem;">
+            Không có phòng nào phù hợp bộ lọc hiện tại.
+          </div>
+        `;
+        return;
+      }
+
+      listEl.innerHTML = filteredRooms.map(r => {
+        const img = (r.images && r.images.length)
+          ? r.images[0]
+          : 'https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=100&h=80&fit=crop';
+        const isFB = r.nguon === 'facebook';
+        const isHN = r.city === 'Hà Nam' || r.nearestCampus === 'CS3';
+        const distStr = isHN
+          ? (r.distCS3 !== null ? `CS3: ${r.distCS3.toFixed(1)}km` : 'Hà Nam')
+          : (r.distCS1 !== null ? `CS1: ${r.distCS1.toFixed(1)}km` : '');
+
+        return `
+          <div onclick="focusRoomById('${r.id}')"
+               id="list-item-${r.id}"
+               style="padding:0.6rem 0.75rem;border:1px solid #e2e8f0;border-radius:10px;cursor:pointer;
+                      transition:all 0.15s;display:flex;gap:0.6rem;align-items:center;background:white;"
+               onmouseover="this.style.background='#f8fafc'"
+               onmouseout="this.style.background= selectedId==='${r.id}' ? '#eff6ff' : 'white'">
+            <img src="${img}" alt="" style="width:56px;height:46px;object-fit:cover;border-radius:6px;flex-shrink:0;"
+                 onerror="this.src='https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=100&h=80&fit=crop'"/>
+            <div style="flex:1;min-width:0;">
+              <div style="display:flex;align-items:center;gap:4px;margin-bottom:2px;">
+                <span style="font-size:0.62rem;font-weight:700;padding:1px 5px;border-radius:4px;background:${isHN?'#d1fae5':(isFB?'#dbeafe':'#e0f2fe')};color:${isHN?'#065f46':(isFB?'#1e40af':'#0369a1')};">
+                  ${isHN ? 'CS3 Hà Nam' : (isFB ? 'FB' : 'PT123')}
+                </span>
+                <p style="font-size:0.78rem;font-weight:700;color:#0f172a;margin:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;" title="${r.title}">
+                  ${r.title}
+                </p>
+              </div>
+              <p style="font-size:0.7rem;color:#64748b;margin:0 0 2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">
+                📍 ${r.address || r.district}
+              </p>
+              <div style="display:flex;align-items:center;justify-content:space-between;">
+                <span style="font-size:0.82rem;font-weight:800;color:#2563eb;">${(r.price/1e6).toFixed(1)} tr/th</span>
+                ${distStr ? `<span style="font-size:0.68rem;background:#f1f5f9;color:#475569;padding:1px 5px;border-radius:4px;font-weight:600;">${distStr}</span>` : ''}
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function focusRoomById(id) {
+      const room = filteredRooms.find(r => r.id === id);
+      if (room) selectRoom(room);
+    }
+
+    function selectRoom(room) {
+      selectedId = room.id;
+      const img = (room.images && room.images.length)
+        ? room.images[0]
+        : 'https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=400&h=200&fit=crop';
+      const isFB = room.nguon === 'facebook';
+      const isHN = room.city === 'Hà Nam' || room.nearestCampus === 'CS3';
+      const originCoords = getOriginCoords(room);
+      const googleDirUrl = `https://www.google.com/maps/dir/?api=1&origin=${originCoords}&destination=${room.lat},${room.lng}`;
+
+      const nearestCampusName = isHN ? "HaUI CS3 (Hà Nam)" : (room.nearestCampus === "CS2" ? "HaUI CS2 (Tây Tựu)" : "HaUI CS1 (Nhổn)");
+      const nearestDist = isHN ? room.distCS3 : (room.nearestCampus === "CS2" ? room.distCS2 : room.distCS1);
+      const distStr = nearestDist !== null ? `${nearestDist.toFixed(1)} km đến ${nearestCampusName}` : '';
+
+      document.getElementById('map-room-detail').innerHTML = `
+        <div style="background:white;padding:0.75rem;border-radius:12px;border:1.5px solid #3b82f6;box-shadow:0 4px 16px rgba(37,99,235,0.12);">
+          <div style="position:relative;height:120px;overflow:hidden;border-radius:8px;">
+            <img src="${img}" alt="${room.title}"
+                 onerror="this.src='https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=400&h=200&fit=crop'"
+                 style="width:100%;height:100%;object-fit:cover;" />
+            <span style="position:absolute;top:6px;left:6px;background:${isFB?'#1877f2':(isHN?'#059669':'#0284c7')};color:white;font-size:0.65rem;font-weight:800;padding:2px 7px;border-radius:4px;">
+              ${isHN ? '🌿 CS3 Hà Nam' : (isFB ? '📘 Facebook Group' : '🏠 phongtro123.com')}
+            </span>
+          </div>
+          <h3 style="font-size:0.85rem;font-weight:800;margin:0.5rem 0 0.3rem;line-height:1.35;color:#0f172a;">${room.title}</h3>
+          <p style="font-size:0.72rem;color:#64748b;margin:0 0 0.45rem;line-height:1.35;">📍 ${room.address || room.district}</p>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;">
+            <span style="font-size:1.05rem;font-weight:800;color:#2563eb;">${(room.price/1e6).toFixed(1)} tr/tháng</span>
+            <span style="font-size:0.7rem;color:#1e40af;background:#eff6ff;padding:3px 7px;border-radius:6px;font-weight:700;">
+              ${distStr} (~${room.commuteMin || 5}p xe)
+            </span>
+          </div>
+          <div style="display:flex;gap:0.4rem;">
+            <a href="room-detail.html?id=${room.id}"
+               style="flex:1;text-align:center;background:#2563eb;color:white;font-weight:700;padding:0.45rem;border-radius:7px;font-size:0.78rem;text-decoration:none;">
+              Xem chi tiết phòng →
+            </a>
+            <a href="${googleDirUrl}" target="_blank"
+               style="background:#f1f5f9;color:#334155;padding:0.45rem 0.65rem;border-radius:7px;font-size:0.75rem;font-weight:700;text-decoration:none;display:flex;align-items:center;gap:4px;">
+              <i data-lucide="navigation" style="width:14px;height:14px;"></i> Chỉ đường
+            </a>
+          </div>
+        </div>
+      `;
+      lucide.createIcons();
+
+      map.setView([room.lat, room.lng], 16, { animate: true });
+
+      // Highlight list item
+      document.querySelectorAll('[id^="list-item-"]').forEach(el => {
+        el.style.background = 'white';
+        el.style.borderColor = '#e2e8f0';
+      });
+      const li = document.getElementById(`list-item-${room.id}`);
+      if (li) {
+        li.style.background = '#eff6ff';
+        li.style.borderColor = '#93c5fd';
+        li.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    }
+
+    function setMapView(view, btn) {
+      document.querySelectorAll('.quick-pill').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+
+      if (view === 'cs1') {
+        map.setView([21.05425, 105.73504], 15, { animate: true });
+      } else if (view === 'cs2') {
+        map.setView([21.07582, 105.72996], 15, { animate: true });
+      } else if (view === 'cs3') {
+        map.setView([20.53994, 105.89704], 14, { animate: true });
+      } else if (view === 'caugiay') {
+        map.setView([21.0360, 105.7905], 14, { animate: true });
+      } else if (view === 'hoaiduc') {
+        map.setView([21.0585, 105.7180], 14, { animate: true });
+      } else {
+        if (filteredRooms.length > 0) {
+          const bounds = L.latLngBounds(filteredRooms.map(r => [r.lat, r.lng]));
+          map.fitBounds(bounds, { padding: [40, 40], maxZoom: 13 });
+        } else {
+          map.setView([21.035, 105.770], 11, { animate: true });
+        }
+      }
+    }
+
+    async function loadMapData() {
+      try {
+        const res = await fetch('/api/rooms?limit=500');
+        if (!res.ok) throw new Error('API status: ' + res.status);
+        const data = await res.json();
+        allRooms = data.data || [];
+        filterMapRooms();
+        if (filteredRooms.length > 0) {
+          const bounds = L.latLngBounds(filteredRooms.map(r => [r.lat, r.lng]));
+          map.fitBounds(bounds, { padding: [40, 40], maxZoom: 13 });
+        }
+      } catch (err) {
+        console.warn('Không thể tải dữ liệu từ /api/rooms:', err);
+      }
+    }
+
+    loadMapData();
+  </script>
+</body>
+</html>

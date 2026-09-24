@@ -1,0 +1,55 @@
+{
+  "ma_phong": "RM-PT123-27F428",
+  "nguon": "phongtro123",
+  "url_nguon": "https://phongtro123.com/35m-du-dh-tu-quat-giuong-4nguoi-chi-tu-2tr-pr709553.html",
+  "ngay_cao": "2026-09-22T12:57:23.253Z",
+  "ngay_cap_nhat": "2026-09-22T12:57:23.253Z",
+  "trang_thai": "con_trong",
+  "vi_tri": {
+    "lat": 21.0538,
+    "lng": 105.7345,
+    "khoang_cach_cs1_km": 0.1,
+    "khoang_cach_cs2_km": 1.3,
+    "khoang_cach_cs3_km": 59.5,
+    "co_so_gan_nhat": "CS1",
+    "thoi_gian_di_xe_phut": 2
+  },
+  "thong_tin": {
+    "tieu_de": "Phòng 35M2 từ 1tr6 đến 2tr2/1tháng LH 0962 036 228",
+    "gia": 1600000,
+    "dien_tich": 22,
+    "dia_chi": "Phường Minh Khai, Quận Bắc Từ Liêm, Hà Nội (gần HaUI CS1)",
+    "quan_huyen": "Bắc Từ Liêm",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Gần ĐH Kiểm sát, Phenikaa, ĐH Nguyễn Trãi, ĐH CMC, ĐH Đại Nam, HV Quân Y, HV Bưu Chính VT,ĐH Kiến trúc, ĐH Hà Nội",
+    "tien_ich": [
+      "dieu_hoa",
+      "khep_kin"
+    ],
+    "khong_chung_chu": true,
+    "gio_giac_tu_do": true
+  },
+  "lien_he": {
+    "so_dien_thoai": "0961665468",
+    "ten_chu": "Chủ nhà trọ Phường Minh Khai",
+    "facebook": ""
+  },
+  "anh": [
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/07/13/7_1783913395.jpg"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/07/13/6_1783913396.jpg"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/07/13/5_1783913400.jpg"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/07/13/4_1783913400.jpg"
+    }
+  ],
+  "phan_tich": {
+    "scam_score": 5,
+    "da_kiem_tra": true
+  }
+}

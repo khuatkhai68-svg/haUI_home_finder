@@ -1,0 +1,52 @@
+{
+  "ma_phong": "RM-FB-7BEBDC",
+  "nguon": "facebook",
+  "url_nguon": "https://www.facebook.com/groups/1896518147417522/posts/2804156323320362/",
+  "ngay_cao": "2026-09-22T12:13:29.589Z",
+  "ngay_cap_nhat": "2026-09-22T12:13:29.590Z",
+  "trang_thai": "con_trong",
+  "vi_tri": {
+    "lat": 21.0618,
+    "lng": 105.7259,
+    "khoang_cach_cs1_km": 1.3,
+    "khoang_cach_cs2_km": 0,
+    "khoang_cach_cs3_km": 60.6,
+    "co_so_gan_nhat": "CS2",
+    "thoi_gian_di_xe_phut": 2
+  },
+  "thong_tin": {
+    "tieu_de": "Cho thuê phòng trọ 2.2 tr/tháng tại Đường Tây Tựu (HaUI CS2)",
+    "gia": 2200000,
+    "dien_tich": 25,
+    "dia_chi": "Đường Tây Tựu, Phường Tây Tựu, Quận Bắc Từ Liêm, Hà Nội",
+    "quan_huyen": "Bắc Từ Liêm",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Số 27, ngõ 60 tây tựu cách cổng khu B đại học công nhiệp 300m , giá thuê chỉ từ 2tr2\nNhà mới , điều hòa, ban công, cửa sổ, nóng lạnh, máy giặt, camera an ninh... Đầy đủ. Free để xe tầng 1. Nhà chính chủ, ko trung gian\nQt: sđt/zalo 0978.491.468. #2tr2\nĐây chúng ta bắt đầu từ Đại học\nCông nghiệp U B Hà Nội Đại học\nTa sẽ bắt đầu lên tầng bốn. Cầu\nthang thịt nhá. Rộng rãi nhá.\nChúng ta sẽ bắt đầu tiếp đến\ntầng thứ ba cầu thang gỗ thịt",
+    "tien_ich": [
+      "dieu_hoa",
+      "nong_lanh",
+      "may_giat",
+      "ban_cong",
+      "khep_kin"
+    ],
+    "khong_chung_chu": true,
+    "gio_giac_tu_do": true
+  },
+  "lien_he": {
+    "so_dien_thoai": "",
+    "ten_chu": "Chủ trọ khu vực HaUI CS2",
+    "facebook": "https://www.facebook.com/groups/1896518147417522/?locale=vi_VN"
+  },
+  "anh": [
+    {
+      "url_goc": "https://scontent.fhan14-3.fna.fbcdn.net/v/t39.30808-6/799910656_4680811455472038_4070080045667556706_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1536&ctp=s590x590&_nc_cat=111&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=fHtOUACsCwYQ7kNvwHSiBpt&_nc_oc=AdorV9mIp6AZO1Dtwr3QUAqL7E-ztjqmZUlmCGWanEJg7OLyfgshIa_7qpoF415miFw&_nc_zt=23&_nc_ht=scontent.fhan14-3.fna&_nc_gid=v5Fpx83Cn9QFMIJ83BRKdQ&_nc_ss=7b289&oh=00_AQJYFypUEpewAj4h8GqvJmjR6en2dSixm7CpW-8Fku4shQ&oe=6AB82C73"
+    },
+    {
+      "url_goc": "https://scontent.fhan14-5.fna.fbcdn.net/v/t39.30808-6/800604319_4680811532138697_5759566327166488386_n.jpg?stp=dst-jpg_tt6&cstp=mx1536x2048&ctp=s590x590&_nc_cat=104&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=s5-mHoWHDCsQ7kNvwG1_Hkd&_nc_oc=AdrdWJkx9p00ADbyrB1euw-k6jqyTeY5ufLo511lG47-ZIM5mrzLbk-tAg9aZ0O6Cd4&_nc_zt=23&_nc_ht=scontent.fhan14-5.fna&_nc_gid=v5Fpx83Cn9QFMIJ83BRKdQ&_nc_ss=7b289&oh=00_AQKtvEUyi4G2fpsoyhE6tipNPuAV87UXlqz7jP8qLdPxRg&oe=6AB85038"
+    }
+  ],
+  "phan_tich": {
+    "scam_score": 5,
+    "da_kiem_tra": true
+  }
+}

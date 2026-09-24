@@ -1,0 +1,13 @@
+{
+  "ten_hien_thi": "Admin HaUI WebReal",
+  "email": "admin@haui.edu.vn",
+  "quyen": [
+    "quan_ly_phong",
+    "quan_ly_user",
+    "duyet_bai",
+    "xoa_bai",
+    "phan_tich_ai"
+  ],
+  "ma_admin": "AD-260921-BCBCCB",
+  "ngay_tao": "2026-09-21T12:04:29.316Z"
+}

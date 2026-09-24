@@ -1,0 +1,24 @@
+services:
+  # ─── Web Service (Express Server) ─────────────────────────────────────────────
+  - type: web
+    name: haui-room-finder
+    runtime: node
+    region: singapore          # gần Việt Nam nhất
+    plan: free                 # free tier, nâng lên starter ($7/tháng) để dùng disk
+    buildCommand: npm install
+    startCommand: npm start
+
+    # Biến môi trường
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000            # Render tự gán PORT, biến này chỉ để dự phòng
+
+    # ─── Persistent Disk (QUAN TRỌNG) ──────────────────────────────────────────
+    # Cần nâng lên plan "Starter" ($7/tháng) để dùng tính năng này
+    # Disk lưu alldata/ để bot không mất dữ liệu khi Render restart service
+    disk:
+      name: haui-room-data
+      mountPath: /opt/render/project/src/alldata
+      sizeGB: 1

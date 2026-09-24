@@ -1,0 +1,55 @@
+{
+  "ma_phong": "RM-FB-41F4F1",
+  "nguon": "facebook",
+  "url_nguon": "https://www.facebook.com/groups/PhongTroHoaiDuc/posts/4712526312300817/",
+  "ngay_cao": "2026-09-22T11:22:03.989Z",
+  "ngay_cap_nhat": "2026-09-22T11:22:03.989Z",
+  "trang_thai": "con_trong",
+  "vi_tri": {
+    "lat": 21.05373,
+    "lng": 105.7351,
+    "khoang_cach_cs1_km": 0,
+    "khoang_cach_cs2_km": 1.3,
+    "khoang_cach_cs3_km": 59.5,
+    "co_so_gan_nhat": "CS1",
+    "thoi_gian_di_xe_phut": 2
+  },
+  "thong_tin": {
+    "tieu_de": "Cho thuê phòng trọ 3.0 tr/tháng tại Phường Minh Khai (HaUI CS1)",
+    "gia": 3000000,
+    "dien_tich": 25,
+    "dia_chi": "Phường Minh Khai, Quận Bắc Từ Liêm, Hà Nội (gần HaUI CS1)",
+    "quan_huyen": "Bắc Từ Liêm",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "88 Đại Tự- Giá #3tr1-#3tr2\nFull đồ,ở dc luôn,thag máy\nQtlh 03825368",
+    "tien_ich": [
+      "tu_lanh",
+      "khep_kin"
+    ],
+    "khong_chung_chu": true,
+    "gio_giac_tu_do": true
+  },
+  "lien_he": {
+    "so_dien_thoai": "",
+    "ten_chu": "Chủ trọ HaUI CS1",
+    "facebook": "https://www.facebook.com/groups/PhongTroHoaiDuc/?locale=vi_VN"
+  },
+  "anh": [
+    {
+      "url_goc": "https://scontent.fhan15-2.fna.fbcdn.net/v/t39.30808-6/818743781_1677687717058497_3423473893248291314_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1536&ctp=s590x590&_nc_cat=104&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=rItBLlJwU9EQ7kNvwG_sHtx&_nc_oc=AdpQerIk5zMhU8m2YpH9LEa76mK23dgIdHyfmMH1yN0wg7R3N1LPyrjDWeh2sQvZtrs&_nc_zt=23&_nc_ht=scontent.fhan15-2.fna&_nc_gid=7bnAwmFE_XnPjWDUeXNZGA&_nc_ss=7b289&oh=00_AQLB8bfD8tjCl5pW3FBbGm5XEWEdqcVsx4sYwICLE1YxfA&oe=6AB83C9A"
+    },
+    {
+      "url_goc": "https://scontent.fhan15-1.fna.fbcdn.net/v/t39.30808-6/818636904_1677687757058493_6206624198100737317_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1536&ctp=s590x590&_nc_cat=101&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=0qZR_s6_z0UQ7kNvwF7FSNB&_nc_oc=AdrjWzXFE8zh1-0e828thSd72Mm7-CJgPIEEUeaKOwD83OCWrVTg8rjuOXlplMQLb2U&_nc_zt=23&_nc_ht=scontent.fhan15-1.fna&_nc_gid=7bnAwmFE_XnPjWDUeXNZGA&_nc_ss=7b289&oh=00_AQJdvw1DR-nzk74LeKy0gXMocHMyys2_5a0f9V3EX5diTw&oe=6AB8253C"
+    },
+    {
+      "url_goc": "https://scontent.fhan15-2.fna.fbcdn.net/v/t39.30808-6/821523243_1677687720391830_3124010480816990109_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1536&ctp=s590x590&_nc_cat=100&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=haUouly8GG4Q7kNvwGFnQAV&_nc_oc=AdoIXFD4t3ooBgEmo6RzhiQ1Te-dEbYz6YIOwIMD-dzgaBN0g6UzG3R1H4FjzxtKj-I&_nc_zt=23&_nc_ht=scontent.fhan15-2.fna&_nc_gid=7bnAwmFE_XnPjWDUeXNZGA&_nc_ss=7b289&oh=00_AQJF_R-C8k45aCc6a6_CdDNIuo8bydSU5XmtmVY5y0sikg&oe=6AB8300B"
+    },
+    {
+      "url_goc": "https://scontent.fhan15-2.fna.fbcdn.net/v/t39.30808-6/819762218_1677687763725159_3442627144413775929_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1536&ctp=s590x590&_nc_cat=110&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=b6IOWTBVYgEQ7kNvwELtRDB&_nc_oc=AdqGJyBUlkH925MG4H1wk2grawGlXmLTDzkO9PJtQQhLS6pXuIoR0k_oZ7jtxHBbWac&_nc_zt=23&_nc_ht=scontent.fhan15-2.fna&_nc_gid=7bnAwmFE_XnPjWDUeXNZGA&_nc_ss=7b289&oh=00_AQIdCjpvrxoWlcmXqtuq2zSlFTB2esKfsj6hl0qtzmxN-g&oe=6AB82ED0"
+    }
+  ],
+  "phan_tich": {
+    "scam_score": 5,
+    "da_kiem_tra": true
+  }
+}
