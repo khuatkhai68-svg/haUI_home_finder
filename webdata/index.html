@@ -87,13 +87,13 @@
         <div class="search-wrapper">
           <div class="search-glow"></div>
           <div class="search-box">
-            <div class="search-input-group">
-              <i data-lucide="map-pin" style="width:24px;height:24px;color:#3b82f6;"></i>
-              <input type="text" id="hero-keyword" placeholder="Nhập địa điểm (Nhổn, Kiều Mai, Cầu Giấy...)" />
+            <div class="search-input-group" style="flex: 1.5;">
+              <i data-lucide="sparkles" style="width:24px;height:24px;color:#8b5cf6;"></i>
+              <input type="text" id="hero-keyword" placeholder="Nhập địa điểm hoặc hỏi AI (vd: 'Phòng CS1 có gác xép dưới 2.5tr')..." />
             </div>
-            <div class="search-input-group">
+            <div class="search-input-group" style="flex: 1;">
               <i data-lucide="calculator" style="width:24px;height:24px;color:#10b981;"></i>
-              <input type="text" id="hero-budget" placeholder="Ngân sách tối đa? (vd: 3 triệu)" />
+              <input type="text" id="hero-budget" placeholder="Ngân sách (vd: 3 triệu)" />
             </div>
             <button class="search-btn" id="hero-search-btn" onclick="handleHeroSearch()">
               <i data-lucide="search" style="width:20px;height:20px;"></i>
@@ -103,6 +103,10 @@
 
           <!-- Quick Filters -->
           <div class="quick-filters">
+            <button class="btn-ghost" onclick="openChatAndAsk('Tư vấn kinh nghiệm thuê trọ lần đầu cho tân sinh viên')" style="background: rgba(139, 92, 246, 0.15); border-color: rgba(139, 92, 246, 0.3); color: #6d28d9; font-weight: 700;">
+              <i data-lucide="bot" style="width:16px;height:16px;color:#7c3aed;"></i>
+              ✨ Trợ Lý AI HaUI
+            </button>
             <button class="btn-ghost" onclick="filterByQuick('price_under_25')">
               <i data-lucide="tag" style="width:16px;height:16px;color:#10b981;"></i>
               Dưới 2.5 triệu
@@ -307,35 +311,59 @@
 
   </main>
 
-  <!-- ============ AI CHAT BOX ============ -->
-  <button class="chat-fab" id="chat-fab" title="Trợ lý AI">
-    <i data-lucide="message-square" style="width:24px;height:24px;"></i>
+  <!-- ============ AI CHAT BOX (HaUI HomeFinder Assistant) ============ -->
+  <button class="chat-fab" id="chat-fab" title="Trợ lý AI HaUI">
+    <i data-lucide="sparkles" style="width:20px;height:20px;"></i>
+    <span>✨ Trợ lý AI HaUI</span>
   </button>
 
   <div class="chat-window" id="chat-window">
     <div class="chat-header">
       <div class="chat-header-left">
-        <i data-lucide="sparkles" style="width:20px;height:20px;"></i>
-        Trợ lý AI
+        <div class="chat-header-avatar">
+          <i data-lucide="bot" style="width:20px;height:20px;"></i>
+        </div>
+        <div>
+          <div class="chat-header-title">Trợ Lý AI HaUI</div>
+          <div class="chat-header-sub">
+            <span class="chat-status-dot"></span>
+            Trực tuyến • Tư vấn thông minh 24/7
+          </div>
+        </div>
       </div>
-      <button class="chat-close" id="chat-close">
-        <i data-lucide="x" style="width:20px;height:20px;"></i>
+      <button class="chat-close" id="chat-close" title="Đóng">
+        <i data-lucide="x" style="width:18px;height:18px;"></i>
       </button>
+    </div>
+
+    <!-- Quick Chips -->
+    <div class="chat-quick-chips">
+      <button class="chip-btn" onclick="sendQuickPrompt('Làm sao để tránh bị lừa tiền cọc phòng trọ?')">🚨 Tránh lừa cọc</button>
+      <button class="chip-btn" onclick="sendQuickPrompt('Đi xem phòng trọ cần kiểm tra an toàn PCCC thế nào?')">🔥 An toàn PCCC</button>
+      <button class="chip-btn" onclick="sendQuickPrompt('Tư vấn kinh nghiệm thuê trọ quanh HaUI CS1 (Nhổn)')">📍 Trọ CS1 (Nhổn)</button>
+      <button class="chip-btn" onclick="sendQuickPrompt('Tư vấn kinh nghiệm thuê phòng tại HaUI CS2 (Tây Tựu)')">🌸 Trọ CS2 (Tây Tựu)</button>
+      <button class="chip-btn" onclick="sendQuickPrompt('Tư vấn kinh nghiệm thuê trọ HaUI CS3 (Hà Nam)')">🌾 Trọ CS3 (Hà Nam)</button>
+      <button class="chip-btn" onclick="sendQuickPrompt('Bảng giá điện nước sinh hoạt và các khoản phụ phí trọ?')">⚡ Giá điện nước</button>
     </div>
 
     <div class="chat-messages" id="chat-messages">
       <div class="msg-row ai">
         <div class="msg-avatar"><i data-lucide="bot" style="width:16px;height:16px;"></i></div>
         <div class="msg-bubble">
-          Chào bạn! Mình là trợ lý AI tìm trọ. Mình có thể giúp bạn tìm phòng quanh trường nào, mức giá bao nhiêu?
+          👋 Chào bạn! Mình là **Trợ lý AI HaUI HomeFinder**.<br/><br/>
+          Mình được huấn luyện chuyên biệt để hỗ trợ tân sinh viên và sinh viên ĐH Công nghiệp Hà Nội:<br/>
+          • Tìm phòng trọ thật từ kho dữ liệu 3 cơ sở (CS1, CS2, CS3)<br/>
+          • Bóc tách điều khoản hợp đồng & mẹo phòng tránh lừa cọc<br/>
+          • Kiểm tra an toàn PCCC, lối thoát hiểm và điện nước chuẩn<br/><br/>
+          <em>Bạn đang cần tìm phòng ở cơ sở nào hay cần mình tư vấn điều gì?</em>
         </div>
       </div>
     </div>
 
     <div class="chat-input-area">
-      <input type="text" class="chat-input" id="chat-input" placeholder="Nhập tin nhắn..." />
+      <input type="text" class="chat-input" id="chat-input" placeholder="Hỏi AI bất kỳ điều gì về thuê trọ HaUI..." />
       <button class="chat-send" id="chat-send">
-        <i data-lucide="send" style="width:16px;height:16px;margin-left:-2px;"></i>
+        <i data-lucide="send" style="width:18px;height:18px;"></i>
       </button>
     </div>
   </div>
@@ -534,22 +562,59 @@
       }
     }
 
-    // Hero search input handler
-    function handleHeroSearch() {
+    // ---- AI Hero search input handler ----
+    async function handleHeroSearch() {
       const kw = document.getElementById('hero-keyword')?.value?.trim() || '';
       const budgetStr = document.getElementById('hero-budget')?.value?.trim() || '';
       
       const params = {};
-      if (kw) params.q = kw;
+      const fullText = (kw + ' ' + budgetStr).trim();
 
-      if (budgetStr) {
-        const trMatch = budgetStr.match(/(\d+[.,]?\d*)\s*tr/i);
-        if (trMatch) {
-          params.max_price = Math.round(parseFloat(trMatch[1].replace(',', '.')) * 1e6);
-        } else {
-          const num = parseInt(budgetStr.replace(/\D/g, ''));
-          if (num > 0) {
-            params.max_price = num < 50 ? num * 1000000 : num;
+      // Kiểm tra nếu là câu hỏi tự nhiên cần AI phân tích
+      const isNaturalPrompt = kw.length > 8 || 
+        /(cs1|cs2|cs3|nhổn|tây tựu|hà nam|gác xép|ban công|dưới|triệu|kép kín|khép kín)/i.test(fullText);
+
+      if (isNaturalPrompt) {
+        try {
+          const res = await fetch('/api/ai/parse-search', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ query: fullText })
+          });
+          const criteria = await res.json();
+
+          if (criteria.campus) {
+            selectedCampus = criteria.campus.toLowerCase();
+            document.querySelectorAll('.campus-toggle .toggle-btn').forEach(btn => {
+              btn.classList.toggle('active', btn.getAttribute('data-campus') === selectedCampus);
+            });
+            params.campus = selectedCampus;
+          }
+
+          if (criteria.maxPrice) {
+            params.max_price = criteria.maxPrice;
+          }
+
+          if (criteria.keywords && criteria.keywords.length > 0) {
+            params.q = criteria.keywords.join(' ');
+          } else if (kw) {
+            params.q = kw;
+          }
+
+          // Hiển thị thông báo AI Search
+          showAIBadgeNotice(`✨ AI HaUI đã bóc tách: ${criteria.campus || '3 Cơ sở'} ${criteria.maxPrice ? '• Giá < ' + (criteria.maxPrice/1e6).toFixed(1) + 'tr' : ''} ${criteria.keywords.length ? '• ' + criteria.keywords.join(', ') : ''}`);
+        } catch (e) {
+          if (kw) params.q = kw;
+        }
+      } else {
+        if (kw) params.q = kw;
+        if (budgetStr) {
+          const trMatch = budgetStr.match(/(\d+[.,]?\d*)\s*tr/i);
+          if (trMatch) {
+            params.max_price = Math.round(parseFloat(trMatch[1].replace(',', '.')) * 1e6);
+          } else {
+            const num = parseInt(budgetStr.replace(/\D/g, ''));
+            if (num > 0) params.max_price = num < 50 ? num * 1000000 : num;
           }
         }
       }
@@ -558,6 +623,19 @@
       if (listingsEl) listingsEl.scrollIntoView({ behavior: 'smooth' });
 
       loadRooms(params);
+    }
+
+    function showAIBadgeNotice(text) {
+      let notice = document.getElementById('ai-search-notice');
+      if (!notice) {
+        notice = document.createElement('div');
+        notice.id = 'ai-search-notice';
+        notice.style.cssText = 'background: linear-gradient(135deg, #eff6ff, #f3e8ff); border: 1px solid #c7d2fe; color: #4338ca; padding: 0.75rem 1.25rem; border-radius: 0.75rem; font-weight: 600; font-size: 0.9rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem; box-shadow: 0 2px 8px rgba(99,102,241,0.1);';
+        const listingsHeader = document.querySelector('.listings-header');
+        if (listingsHeader) listingsHeader.parentNode.insertBefore(notice, listingsHeader);
+      }
+      notice.innerHTML = `<i data-lucide="sparkles" style="width:18px;height:18px;color:#7c3aed;"></i><span>${text}</span>`;
+      lucide.createIcons({ nodes: [notice] });
     }
 
     // Enter key triggers hero search
@@ -571,28 +649,87 @@
     // Initial load
     loadRooms();
 
-    // ---- Chat ----
+    // ---- HaUI AI Assistant Widget ----
     const fab = document.getElementById('chat-fab');
     const chatWindow = document.getElementById('chat-window');
     const closeBtn = document.getElementById('chat-close');
-    const chatTrigger = document.getElementById('chat-trigger-btn');
     const chatInput = document.getElementById('chat-input');
     const chatSend = document.getElementById('chat-send');
     const chatMessages = document.getElementById('chat-messages');
 
-    function openChat() { fab.classList.add('hidden'); chatWindow.classList.add('open'); }
-    function closeChat() { fab.classList.remove('hidden'); chatWindow.classList.remove('open'); }
+    function openChat() { 
+      fab.classList.add('hidden'); 
+      chatWindow.classList.add('open'); 
+      setTimeout(() => chatInput.focus(), 200);
+    }
+    function closeChat() { 
+      fab.classList.remove('hidden'); 
+      chatWindow.classList.remove('open'); 
+    }
+
+    function openChatAndAsk(prompt) {
+      openChat();
+      chatInput.value = prompt;
+      sendMessage();
+    }
+
+    function sendQuickPrompt(prompt) {
+      chatInput.value = prompt;
+      sendMessage();
+    }
 
     fab.addEventListener('click', openChat);
-    if (chatTrigger) chatTrigger.addEventListener('click', openChat);
     closeBtn.addEventListener('click', closeChat);
 
-    function addMessage(role, text) {
+    function formatAIMarkdown(text) {
+      if (!text) return '';
+      let escaped = text
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
+      
+      // Chuyển **chữ đậm**
+      escaped = escaped.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+      // Chuyển *chữ nghiêng*
+      escaped = escaped.replace(/\*(.*?)\*/g, '<em>$1</em>');
+      // Chuyển dòng xuống
+      escaped = escaped.replace(/\n/g, '<br/>');
+      return escaped;
+    }
+
+    function addMessage(role, text, suggestedRooms = []) {
       const row = document.createElement('div');
       row.className = `msg-row ${role}`;
+
+      let contentHtml = role === 'ai' ? formatAIMarkdown(text) : text;
+
+      // Render danh sách phòng đề xuất từ AI nếu có
+      if (suggestedRooms && suggestedRooms.length > 0) {
+        contentHtml += `<div class="ai-rooms-container">`;
+        suggestedRooms.forEach(r => {
+          const imgUrl = (r.images && r.images.length > 0) ? r.images[0] : (r.hinh_anh && r.hinh_anh.length > 0 ? r.hinh_anh[0] : 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=300');
+          const priceStr = r.price ? (r.price / 1e6).toFixed(1) + ' tr/tháng' : (r.gia_thang ? (r.gia_thang / 1e6).toFixed(1) + ' tr/tháng' : 'Thỏa thuận');
+          const distStr = r.distCS1 ? `Cách CS1 ~${r.distCS1}km` : (r.nearestCampus ? `Gần ${r.nearestCampus}` : 'HaUI');
+          const roomId = r.id || r.ma_phong;
+
+          contentHtml += `
+            <a href="room-detail.html?id=${roomId}" target="_blank" class="ai-mini-card">
+              <img src="${imgUrl}" class="ai-mini-img" alt="Ảnh phòng" onerror="this.src='https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=300'" />
+              <div class="ai-mini-info">
+                <div class="ai-mini-title">${r.title || r.tieu_de || 'Phòng trọ HaUI'}</div>
+                <div class="ai-mini-campus">📍 ${distStr}</div>
+                <div class="ai-mini-price">${priceStr}</div>
+              </div>
+            </a>
+          `;
+        });
+        contentHtml += `</div>`;
+      }
+
       row.innerHTML = role === 'ai'
-        ? `<div class="msg-avatar"><i data-lucide="bot" style="width:16px;height:16px;"></i></div><div class="msg-bubble">${text}</div>`
-        : `<div class="msg-bubble">${text}</div>`;
+        ? `<div class="msg-avatar"><i data-lucide="bot" style="width:18px;height:18px;"></i></div><div class="msg-bubble">${contentHtml}</div>`
+        : `<div class="msg-bubble">${contentHtml}</div>`;
+      
       chatMessages.appendChild(row);
       lucide.createIcons({ nodes: [row] });
       chatMessages.scrollTop = chatMessages.scrollHeight;
@@ -603,7 +740,7 @@
       row.className = 'msg-row ai';
       row.id = 'typing-row';
       row.innerHTML = `
-        <div class="msg-avatar"><i data-lucide="bot" style="width:16px;height:16px;"></i></div>
+        <div class="msg-avatar"><i data-lucide="bot" style="width:18px;height:18px;"></i></div>
         <div class="msg-bubble">
           <div class="typing-indicator">
             <div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div>
@@ -614,37 +751,44 @@
       chatMessages.scrollTop = chatMessages.scrollHeight;
     }
 
-    function sendMessage() {
+    async function sendMessage() {
       const text = chatInput.value.trim();
       if (!text) return;
+      
       addMessage('user', text);
       chatInput.value = '';
+      chatSend.disabled = true;
       addTyping();
 
-      // Thông minh phản hồi dựa trên từ khóa người dùng
-      setTimeout(() => {
+      try {
+        const res = await fetch('/api/ai/chat', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ message: text })
+        });
+        const data = await res.json();
+
         const typing = document.getElementById('typing-row');
         if (typing) typing.remove();
 
-        const low = text.toLowerCase();
-        let reply = "Mình có thể giúp bạn tìm phòng gần HaUI Cơ sở 1 (Nhổn) hoặc Cơ sở 2 (Tây Tựu). Bạn muốn tìm mức giá khoảng bao nhiêu?";
-
-        if (low.includes('giá') || low.includes('triệu') || low.includes('rẻ') || low.includes('tiền')) {
-          reply = "Phòng trọ quanh HaUI phân khúc phổ biến nhất là từ 1.8 - 3.2 triệu/tháng (đầy đủ nóng lạnh, điều hòa, khép kín). Khu Nguyên Xá và Kiều Mai có rất nhiều lựa chọn giá tốt!";
-        } else if (low.includes('cs1') || low.includes('nhổn') || low.includes('nguyên xá')) {
-          reply = "Khu vực Nguyên Xá, Đình Quán, Kiều Mai chỉ cách HaUI CS1 khoảng 300m - 1km, đi bộ hoặc xe bus rất tiện lợi!";
-        } else if (low.includes('cs2') || low.includes('tây tựu')) {
-          reply = "Cơ sở 2 ở Tây Tựu có nhiều phòng trọ thoáng mát, giá rẻ hơn CS1 khoảng 20-30%, chỉ từ 1.5 - 2.5 triệu/tháng!";
-        } else if (low.includes('ghép') || low.includes('ở cùng')) {
-          reply = "Bạn có thể dùng tính năng HaUI Match để ghép bạn cùng khoa nhé! Chi phí share phòng sẽ chỉ còn khoảng 1 - 1.5 triệu/người/tháng.";
+        if (data && data.text) {
+          addMessage('ai', data.text, data.suggestedRooms);
+        } else {
+          addMessage('ai', 'Dạ hiện tại em đang gặp chút gián đoạn kết nối, bạn thử hỏi lại giúp mình nhé!');
         }
-
-        addMessage('ai', reply);
-      }, 1000 + Math.random() * 500);
+      } catch (err) {
+        const typing = document.getElementById('typing-row');
+        if (typing) typing.remove();
+        addMessage('ai', '⚠️ Có lỗi kết nối tới máy chủ AI. Bạn vui lòng kiểm tra lại kết nối mạng nhé!');
+      } finally {
+        chatSend.disabled = !chatInput.value.trim();
+      }
     }
 
     chatSend.addEventListener('click', sendMessage);
-    chatInput.addEventListener('keydown', e => { if (e.key === 'Enter') sendMessage(); });
+    chatInput.addEventListener('keydown', e => { 
+      if (e.key === 'Enter') sendMessage(); 
+    });
     chatInput.addEventListener('input', () => {
       chatSend.disabled = !chatInput.value.trim();
     });

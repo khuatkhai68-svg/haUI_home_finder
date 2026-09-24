@@ -13,6 +13,7 @@ const path     = require('path');
 const https    = require('https');
 const http     = require('http');
 const autoCrawlBot = require('./auto_crawl_bot');
+const aiService    = require('./ai_service');
 
 const app  = express();
 const PORT = process.env.PORT || 3333;
@@ -616,6 +617,59 @@ app.delete('/api/rooms/:id', (req, res) => {
   if (!room) return res.status(404).json({ error: 'Không tìm thấy phòng' });
   deleteRoom(req.params.id);
   res.json({ success: true, message: `Đã xóa phòng ${req.params.id}` });
+});
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// ROUTES: /api/ai (HaUI AI Assistant & RAG Engine)
+// ═══════════════════════════════════════════════════════════════════════════════
+
+/**
+ * POST /api/ai/chat
+ * Trợ lý AI đàm thoại, tư vấn phòng và trả lời thắc mắc sinh viên HaUI
+ */
+app.post('/api/ai/chat', async (req, res) => {
+  try {
+    const { message, history } = req.body;
+    if (!message || !message.trim()) {
+      return res.status(400).json({ error: 'Nội dung tin nhắn không được để trống' });
+    }
+
+    // Chuẩn bị danh sách phòng dạng chuẩn để AI RAG sử dụng
+    const allRaw = getAllRooms();
+    const rooms = allRaw.map(r => formatRoom(r));
+
+    const result = await aiService.processAIChat(message, rooms);
+    res.json(result);
+  } catch (e) {
+    console.error('[/api/ai/chat]', e);
+    res.status(500).json({ error: 'Lỗi xử lý AI: ' + e.message });
+  }
+});
+
+/**
+ * POST /api/ai/parse-search
+ * Phân tích câu tìm kiếm bằng ngôn ngữ tự nhiên thành bộ lọc chính xác
+ */
+app.post('/api/ai/parse-search', (req, res) => {
+  try {
+    const { query } = req.body;
+    if (!query) return res.json({ campus: null, maxPrice: null, maxDistance: null, keywords: [] });
+    const criteria = aiService.extractSearchCriteria(query);
+    res.json(criteria);
+  } catch (e) {
+    res.status(500).json({ error: e.message });
+  }
+});
+
+/**
+ * GET /api/ai/tips
+ * Lấy cẩm nang, bí kíp sinh viên và an toàn PCCC
+ */
+app.get('/api/ai/tips', (_req, res) => {
+  res.json({
+    campusKnowledge: aiService.HAUI_CAMPUS_KNOWLEDGE,
+    safetyGuidelines: aiService.SAFETY_GUIDELINES
+  });
 });
 
 // ── SPA Fallback ──────────────────────────────────────────────────────────────
