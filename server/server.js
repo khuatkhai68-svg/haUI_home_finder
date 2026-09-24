@@ -389,6 +389,8 @@ app.get('/api/admin/stats', (req, res) => {
     const byDistrict = {};
     const priceList  = [];
 
+    const byCampus   = { cs1: 0, cs2: 0, cs3: 0 };
+
     for (const r of rooms) {
       const s = r.trang_thai || 'unknown';
       const n = r.nguon      || 'other';
@@ -396,6 +398,12 @@ app.get('/api/admin/stats', (req, res) => {
       byStatus[s]   = (byStatus[s]   || 0) + 1;
       byNguon[n]    = (byNguon[n]    || 0) + 1;
       byDistrict[q] = (byDistrict[q] || 0) + 1;
+
+      const camp = r.vi_tri?.co_so_gan_nhat || (r.thong_tin?.tinh_thanh === 'Hà Nam' ? 'CS3' : 'CS1');
+      if (camp === 'CS3') byCampus.cs3++;
+      else if (camp === 'CS2') byCampus.cs2++;
+      else byCampus.cs1++;
+
       if (r.thong_tin?.gia > 0) priceList.push(r.thong_tin.gia);
     }
 
@@ -418,7 +426,7 @@ app.get('/api/admin/stats', (req, res) => {
         status: r.trang_thai,
       }));
 
-    res.json({ total: rooms.length, byStatus, byNguon, byDistrict,
+    res.json({ total: rooms.length, byStatus, byNguon, byDistrict, byCampus,
       price: { avg: avgPrice, min: minPrice, max: maxPrice }, recent });
   } catch (e) {
     res.status(500).json({ error: e.message });
@@ -512,6 +520,104 @@ app.patch('/api/rooms/:id/status', (req, res) => {
   res.json({ success: true, id: req.params.id, trang_thai });
 });
 
+/**
+ * POST /api/rooms
+ * Thêm phòng mới thủ công (chủ nhà hoặc admin đăng tin)
+ */
+app.post('/api/rooms', (req, res) => {
+  try {
+    const b = req.body || {};
+    if (!b.tieu_de || !b.gia) {
+      return res.status(400).json({ error: 'Tiêu đề và giá thuê là bắt buộc.' });
+    }
+    const randId = Math.random().toString(36).substring(2, 8).toUpperCase();
+    const maPhong = `RM-MN-${randId}`;
+
+    const newRoom = {
+      ma_phong: maPhong,
+      nguon: "chu_nha_dang",
+      url_nguon: "",
+      ngay_cao: new Date().toISOString(),
+      ngay_cap_nhat: new Date().toISOString(),
+      trang_thai: b.trang_thai || "con_trong",
+      luat_tuan_thu: {
+        nghi_dinh_13: "Chủ nhà tự nguyện đăng tải",
+        da_kiem_tra_trung: true
+      },
+      thong_tin: {
+        tieu_de: b.tieu_de,
+        gia: Number(b.gia) || 0,
+        dien_tich: Number(b.dien_tich) || 20,
+        dia_chi: b.dia_chi || "",
+        quan_huyen: b.quan_huyen || "Bắc Từ Liêm",
+        tinh_thanh: b.tinh_thanh || "Hà Nội",
+        mo_ta: b.mo_ta || b.tieu_de,
+        tien_ich: Array.isArray(b.tien_ich) ? b.tien_ich : ['dieu_hoa', 'nong_lanh'],
+        khong_chung_chu: !!b.khong_chung_chu,
+        gio_giac_tu_do: !!b.gio_giac_tu_do
+      },
+      vi_tri: {
+        lat: Number(b.lat) || 21.0538,
+        lng: Number(b.lng) || 105.7351,
+        khoang_cach_cs1_km: Number(b.distCS1) || 0.5,
+        khoang_cach_cs2_km: Number(b.distCS2) || 1.5,
+        khoang_cach_cs3_km: Number(b.distCS3) || 55.0,
+        co_so_gan_nhat: b.co_so_gan_nhat || "CS1",
+        thoi_gian_di_xe_phut: 3
+      },
+      lien_he: {
+        ten_chu: b.ten_chu || "Chủ phòng (xác thực)",
+        so_dien_thoai: b.so_dien_thoai || "",
+        facebook: ""
+      },
+      anh: Array.isArray(b.anh) && b.anh.length
+        ? b.anh.map(url => ({ url_goc: url, mo_ta: "Ảnh phòng" }))
+        : [{ url_goc: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80", mo_ta: "Phòng trọ" }],
+      phan_tich: {
+        da_kiem_tra: true,
+        scam_score: 0.0
+      }
+    };
+
+    writeRoom(newRoom);
+    res.status(201).json({ success: true, room: newRoom });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+/**
+ * PUT /api/rooms/:id
+ * Cập nhật thông tin phòng
+ */
+app.put('/api/rooms/:id', (req, res) => {
+  const room = getRoomById(req.params.id);
+  if (!room) return res.status(404).json({ error: 'Không tìm thấy phòng' });
+  const b = req.body || {};
+
+  if (b.tieu_de) room.thong_tin.tieu_de = b.tieu_de;
+  if (b.gia !== undefined) room.thong_tin.gia = Number(b.gia);
+  if (b.dien_tich !== undefined) room.thong_tin.dien_tich = Number(b.dien_tich);
+  if (b.dia_chi) room.thong_tin.dia_chi = b.dia_chi;
+  if (b.so_dien_thoai) room.lien_he.so_dien_thoai = b.so_dien_thoai;
+  if (b.trang_thai) room.trang_thai = b.trang_thai;
+  if (b.mo_ta) room.thong_tin.mo_ta = b.mo_ta;
+
+  writeRoom(room);
+  res.json({ success: true, room });
+});
+
+/**
+ * DELETE /api/rooms/:id
+ * Xóa vĩnh viễn phòng khỏi DB
+ */
+app.delete('/api/rooms/:id', (req, res) => {
+  const room = getRoomById(req.params.id);
+  if (!room) return res.status(404).json({ error: 'Không tìm thấy phòng' });
+  deleteRoom(req.params.id);
+  res.json({ success: true, message: `Đã xóa phòng ${req.params.id}` });
+});
+
 // ── SPA Fallback ──────────────────────────────────────────────────────────────
 app.get('*', (req, res) => {
   const indexPath = path.join(WEBDATA_DIR, 'index.html');
@@ -530,7 +636,7 @@ app.listen(PORT, () => {
     : 0;
 
   console.log(`\n${sep}`);
-  console.log(`🚀 HaUI Room Finder Server đang chạy!`);
+  console.log(`🚀 HaUI HomeFinder Server đang chạy!`);
   console.log(`   Trang chủ       → http://localhost:${PORT}`);
   console.log(`   Bản đồ          → http://localhost:${PORT}/map.html`);
   console.log(`   Admin           → http://localhost:${PORT}/admin.html`);

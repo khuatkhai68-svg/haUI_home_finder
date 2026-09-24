@@ -24,7 +24,7 @@
                alt="Hệ Thống Tìm Trọ HaUI Logo" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Haui_logo.png/200px-Haui_logo.png'" />
         </div>
         <div>
-          <div class="navbar-title">Hệ Thống Tìm Trọ HaUI</div>
+          <div class="navbar-title">HaUI HomeFinder</div>
           <div class="navbar-subtitle">"Bạn cứ việc học, tìm trọ để Cò lo!"</div>
         </div>
       </a>
@@ -45,34 +45,29 @@
 
       <!-- Sidebar -->
       <aside class="admin-sidebar">
-        <a href="admin.html" class="brand">StudentAI Admin</a>
+        <a href="admin.html" class="brand">HaUI HomeFinder Admin</a>
 
-        <a href="admin.html" class="sidebar-link active">
+        <a href="admin.html" class="sidebar-link active" id="nav-dashboard" onclick="showSection('dashboard');return false;">
           <i data-lucide="bar-chart-3" style="width:20px;height:20px;"></i>
           Dashboard
         </a>
-        <a href="#" class="sidebar-link" onclick="showSection('rooms');return false;">
+        <a href="#" class="sidebar-link" id="nav-rooms" onclick="showSection('rooms');return false;">
           <i data-lucide="home" style="width:20px;height:20px;"></i>
           Quản lý phòng
-          <span class="sidebar-badge">(1,248)</span>
+          <span class="sidebar-badge" id="badge-total-rooms">(257)</span>
         </a>
-        <a href="#" class="sidebar-link" onclick="showSection('users');return false;">
+        <a href="#" class="sidebar-link" id="nav-users" onclick="showSection('users');return false;">
           <i data-lucide="users" style="width:20px;height:20px;"></i>
           Người dùng
         </a>
-        <a href="#" class="sidebar-link" onclick="showSection('crawler');return false;">
-          <i data-lucide="database" style="width:20px;height:20px;"></i>
-          Nguồn dữ liệu
-          <span class="sidebar-badge">(Crawler)</span>
-        </a>
-        <a href="#" class="sidebar-link" onclick="showSection('spam');return false;">
+        <a href="#" class="sidebar-link" id="nav-spam" onclick="showSection('spam');return false;">
           <i data-lucide="alert-circle" style="width:20px;height:20px;"></i>
           Báo cáo Spam
         </a>
       </aside>
 
-      <!-- Main Content -->
-      <section class="admin-main">
+      <!-- Main Content (Dashboard) -->
+      <section class="admin-main" id="sec-dashboard">
 
         <!-- Header -->
         <div class="admin-header">
@@ -285,36 +280,176 @@
             </div>
           </div>
 
-          <!-- Source breakdown -->
+          <!-- Campus breakdown -->
           <div class="crawler-panel">
-            <div class="crawler-panel-header"><h2>Tỷ trọng nguồn tin cào</h2></div>
+            <div class="crawler-panel-header"><h2>Phân bổ phòng theo Cơ sở (HaUI)</h2></div>
             <div style="padding:1.5rem; display:flex; flex-direction:column; gap:1.25rem;">
               <div style="display:flex; align-items:center; gap:1rem;">
-                <div style="width:44px;height:44px;background:#e0f2fe;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;">🌐</div>
+                <div style="width:44px;height:44px;background:#e0f2fe;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;">🏫</div>
                 <div style="flex:1;">
                   <div style="display:flex;justify-content:space-between;margin-bottom:.25rem;">
-                    <span style="font-weight:600;font-size:.875rem;">phongtro123.com</span>
-                    <span id="src-pt123-count" style="font-weight:700;color:#0284c7;">0 (0%)</span>
+                    <span style="font-weight:600;font-size:.875rem;">HaUI Cơ sở 1 (Minh Khai - Nhổn)</span>
+                    <span id="campus-cs1-count" style="font-weight:700;color:#0284c7;">-</span>
                   </div>
                   <div style="height:6px;background:#f1f5f9;border-radius:3px;">
-                    <div id="bar-pt123" style="height:100%;width:0%;background:#0284c7;border-radius:3px;transition:width 0.6s;"></div>
+                    <div id="bar-cs1" style="height:100%;width:0%;background:#0284c7;border-radius:3px;transition:width 0.6s;"></div>
                   </div>
                 </div>
               </div>
               <div style="display:flex; align-items:center; gap:1rem;">
-                <div style="width:44px;height:44px;background:#dbeafe;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;">📘</div>
+                <div style="width:44px;height:44px;background:#dbeafe;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;">🏢</div>
                 <div style="flex:1;">
                   <div style="display:flex;justify-content:space-between;margin-bottom:.25rem;">
-                    <span style="font-weight:600;font-size:.875rem;">Facebook Groups & Ads</span>
-                    <span id="src-fb-count" style="font-weight:700;color:#1877f2;">0 (0%)</span>
+                    <span style="font-weight:600;font-size:.875rem;">HaUI Cơ sở 2 (Tây Tựu)</span>
+                    <span id="campus-cs2-count" style="font-weight:700;color:#1877f2;">-</span>
                   </div>
                   <div style="height:6px;background:#f1f5f9;border-radius:3px;">
-                    <div id="bar-fb" style="height:100%;width:0%;background:#1877f2;border-radius:3px;transition:width 0.6s;"></div>
+                    <div id="bar-cs2" style="height:100%;width:0%;background:#1877f2;border-radius:3px;transition:width 0.6s;"></div>
+                  </div>
+                </div>
+              </div>
+              <div style="display:flex; align-items:center; gap:1rem;">
+                <div style="width:44px;height:44px;background:#ecfdf5;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;">🌿</div>
+                <div style="flex:1;">
+                  <div style="display:flex;justify-content:space-between;margin-bottom:.25rem;">
+                    <span style="font-weight:600;font-size:.875rem;">HaUI Cơ sở 3 (Phủ Lý - Hà Nam)</span>
+                    <span id="campus-cs3-count" style="font-weight:700;color:#059669;">-</span>
+                  </div>
+                  <div style="height:6px;background:#f1f5f9;border-radius:3px;">
+                    <div id="bar-cs3" style="height:100%;width:0%;background:#059669;border-radius:3px;transition:width 0.6s;"></div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+
+        </div>
+
+      </section>
+
+      <!-- View: Quản lý phòng trọ chuyên sâu -->
+      <section class="admin-main" id="sec-rooms" style="display:none;">
+        <div class="admin-header" style="display:flex;justify-content:space-between;align-items:center;">
+          <div>
+            <h1>Quản lý phòng trọ</h1>
+            <p>Toàn bộ danh mục phòng trọ đã thu thập và đăng tải trên hệ thống HaUI HomeFinder</p>
+          </div>
+          <div style="display:flex;gap:0.75rem;">
+            <button class="btn-primary" style="background:#10b981;" onclick="openAddRoomModal()">
+              <i data-lucide="plus" style="width:16px;height:16px;"></i> Thêm phòng mới
+            </button>
+            <button class="btn-primary" onclick="loadRoomManagerData()">
+              <i data-lucide="refresh-cw" style="width:16px;height:16px;"></i> Làm mới
+            </button>
+          </div>
+        </div>
+
+        <!-- Bộ lọc quản lý phòng -->
+        <div class="crawler-panel" style="margin-bottom:1.5rem;padding:1rem;">
+          <div style="display:grid;grid-template-columns:2fr 1fr 1fr;gap:1rem;align-items:center;">
+            <div>
+              <input type="text" id="rm-search" placeholder="🔍 Tìm theo mã phòng, tiêu đề, địa chỉ..." 
+                     style="width:100%;padding:0.6rem 0.8rem;border:1px solid #cbd5e1;border-radius:8px;font-size:0.875rem;"
+                     oninput="filterRoomManagerTable()" />
+            </div>
+            <div>
+              <select id="rm-filter-campus" onchange="filterRoomManagerTable()" style="width:100%;padding:0.6rem;border:1px solid #cbd5e1;border-radius:8px;font-size:0.875rem;background:white;">
+                <option value="all">Tất cả cơ sở (CS1, CS2, CS3)</option>
+                <option value="CS1">CS1 (Minh Khai - Nhổn)</option>
+                <option value="CS2">CS2 (Tây Tựu)</option>
+                <option value="CS3">CS3 (Hà Nam)</option>
+              </select>
+            </div>
+            <div>
+              <select id="rm-filter-status" onchange="filterRoomManagerTable()" style="width:100%;padding:0.6rem;border:1px solid #cbd5e1;border-radius:8px;font-size:0.875rem;background:white;">
+                <option value="all">Tất cả trạng thái</option>
+                <option value="con_trong">Còn trống</option>
+                <option value="da_thue">Đã thuê</option>
+                <option value="nghi_ngo_lua_dao">Nghi ngờ lừa đảo</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bảng danh sách chi tiết -->
+        <div class="crawler-panel">
+          <div class="crawler-panel-header" style="display:flex;justify-content:space-between;align-items:center;">
+            <h2>Danh sách phòng trọ (<span id="rm-filtered-count">0</span> phòng)</h2>
+          </div>
+          <div style="overflow-x:auto;">
+            <table class="crawler-table">
+              <thead>
+                <tr>
+                  <th>Mã phòng</th>
+                  <th>Cơ sở</th>
+                  <th>Tiêu đề phòng</th>
+                  <th>Giá thuê</th>
+                  <th>Điện thoại</th>
+                  <th>Trạng thái</th>
+                  <th>Thao tác</th>
+                </tr>
+              </thead>
+              <tbody id="rm-manage-tbody">
+                <tr><td colspan="7" style="text-align:center;padding:2rem;color:#94a3b8;">Đang tải danh sách phòng...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Modal Thêm phòng mới -->
+      <div id="modal-add-room" style="display:none;position:fixed;inset:0;background:rgba(15,23,42,0.6);z-index:9999;align-items:center;justify-content:center;padding:1rem;">
+        <div style="background:white;width:100%;max-width:540px;border-radius:16px;box-shadow:0 20px 25px -5px rgba(0,0,0,0.2);overflow:hidden;max-height:90vh;display:flex;flex-direction:column;">
+          <div style="padding:1rem 1.25rem;border-bottom:1px solid #e2e8f0;display:flex;justify-content:space-between;align-items:center;background:#f8fafc;">
+            <h3 style="font-size:1.1rem;font-weight:700;color:#0f172a;display:flex;align-items:center;gap:8px;">
+              <i data-lucide="plus-circle" style="width:20px;height:20px;color:#10b981;"></i> Thêm phòng trọ mới
+            </h3>
+            <button onclick="closeAddRoomModal()" style="border:none;background:none;font-size:1.2rem;cursor:pointer;color:#64748b;">✕</button>
+          </div>
+          <div style="padding:1.25rem;overflow-y:auto;flex:1;display:flex;flex-direction:column;gap:1rem;">
+            <div>
+              <label style="display:block;font-size:0.8rem;font-weight:600;color:#334155;margin-bottom:4px;">Tiêu đề phòng (*)</label>
+              <input type="text" id="add-title" placeholder="VD: Phòng khép kín full đồ ban công gần HaUI CS1" style="width:100%;padding:0.6rem;border:1px solid #cbd5e1;border-radius:8px;font-size:0.875rem;" required />
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;">
+              <div>
+                <label style="display:block;font-size:0.8rem;font-weight:600;color:#334155;margin-bottom:4px;">Giá thuê (VNĐ/tháng) (*)</label>
+                <input type="number" id="add-price" placeholder="VD: 2500000" style="width:100%;padding:0.6rem;border:1px solid #cbd5e1;border-radius:8px;font-size:0.875rem;" required />
+              </div>
+              <div>
+                <label style="display:block;font-size:0.8rem;font-weight:600;color:#334155;margin-bottom:4px;">Diện tích (m²)</label>
+                <input type="number" id="add-area" placeholder="VD: 25" style="width:100%;padding:0.6rem;border:1px solid #cbd5e1;border-radius:8px;font-size:0.875rem;" />
+              </div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;">
+              <div>
+                <label style="display:block;font-size:0.8rem;font-weight:600;color:#334155;margin-bottom:4px;">Cơ sở gần nhất (*)</label>
+                <select id="add-campus" style="width:100%;padding:0.6rem;border:1px solid #cbd5e1;border-radius:8px;font-size:0.875rem;background:white;">
+                  <option value="CS1">HaUI CS1 (Minh Khai - Nhổn)</option>
+                  <option value="CS2">HaUI CS2 (Tây Tựu)</option>
+                  <option value="CS3">HaUI CS3 (Hà Nam)</option>
+                </select>
+              </div>
+              <div>
+                <label style="display:block;font-size:0.8rem;font-weight:600;color:#334155;margin-bottom:4px;">Số điện thoại chủ nhà</label>
+                <input type="text" id="add-phone" placeholder="VD: 0987654321" style="width:100%;padding:0.6rem;border:1px solid #cbd5e1;border-radius:8px;font-size:0.875rem;" />
+              </div>
+            </div>
+            <div>
+              <label style="display:block;font-size:0.8rem;font-weight:600;color:#334155;margin-bottom:4px;">Địa chỉ chi tiết</label>
+              <input type="text" id="add-address" placeholder="VD: Ngõ 136 Cầu Diễn, Phường Minh Khai, Bắc Từ Liêm" style="width:100%;padding:0.6rem;border:1px solid #cbd5e1;border-radius:8px;font-size:0.875rem;" />
+            </div>
+            <div>
+              <label style="display:block;font-size:0.8rem;font-weight:600;color:#334155;margin-bottom:4px;">Mô tả phòng</label>
+              <textarea id="add-desc" rows="3" placeholder="Mô tả chi tiết tiện ích, giờ giấc, tiền điện nước..." style="width:100%;padding:0.6rem;border:1px solid #cbd5e1;border-radius:8px;font-size:0.875rem;"></textarea>
+            </div>
+          </div>
+          <div style="padding:1rem 1.25rem;border-top:1px solid #e2e8f0;display:flex;justify-content:flex-end;gap:0.75rem;background:#f8fafc;">
+            <button onclick="closeAddRoomModal()" style="padding:0.5rem 1rem;border:1px solid #cbd5e1;border-radius:8px;background:white;cursor:pointer;font-weight:600;">Hủy</button>
+            <button onclick="submitNewRoom()" class="btn-primary" style="background:#10b981;">Lưu phòng trọ</button>
+          </div>
+        </div>
+      </div>
 
         </div>
 
@@ -325,8 +460,30 @@
   <script>
     lucide.createIcons();
 
+    let allManagedRooms = [];
+
     function showSection(sec) {
-      alert(`Mục "${sec}" đang kết nối dữ liệu.`);
+      const secDash = document.getElementById('sec-dashboard');
+      const secRooms = document.getElementById('sec-rooms');
+      const navDash = document.getElementById('nav-dashboard');
+      const navRooms = document.getElementById('nav-rooms');
+
+      if (sec === 'rooms') {
+        if (secDash) secDash.style.display = 'none';
+        if (secRooms) secRooms.style.display = 'block';
+        if (navDash) navDash.classList.remove('active');
+        if (navRooms) navRooms.classList.add('active');
+        loadRoomManagerData();
+      } else if (sec === 'dashboard') {
+        if (secDash) secDash.style.display = 'block';
+        if (secRooms) secRooms.style.display = 'none';
+        if (navDash) navDash.classList.add('active');
+        if (navRooms) navRooms.classList.remove('active');
+        loadAdminData();
+      } else {
+        alert(`Mục "${sec}" đang được kết nối trong phiên bản tiếp theo.`);
+      }
+      lucide.createIcons();
     }
 
     async function loadAdminData() {
@@ -351,7 +508,11 @@
     }
 
     function renderStats(stats) {
-      document.getElementById('stat-total').textContent = stats.total || 0;
+      const total = stats.total || 0;
+      document.getElementById('stat-total').textContent = total;
+      const badgeRooms = document.getElementById('badge-total-rooms');
+      if (badgeRooms) badgeRooms.textContent = `(${total})`;
+
       document.getElementById('stat-active').textContent = stats.byStatus?.con_trong || 0;
       document.getElementById('stat-rented').textContent = (stats.byStatus?.da_thue || 0) + (stats.byStatus?.nghi_ngo_lua_dao || 0);
 
@@ -363,24 +524,37 @@
           `Từ ${(stats.price.min/1e6).toFixed(1)}M đến ${(stats.price.max/1e6).toFixed(1)}M`;
       }
 
-      // Sources
-      const pt123 = stats.byNguon?.phongtro123 || 0;
-      const fb = stats.byNguon?.facebook || 0;
-      const total = stats.total || (pt123 + fb) || 1;
-      const ptPct = Math.round((pt123 / total) * 100);
-      const fbPct = Math.round((fb / total) * 100);
+      // Campus breakdown
+      const cs1 = stats.byCampus?.cs1 || 0;
+      const cs2 = stats.byCampus?.cs2 || 0;
+      const cs3 = stats.byCampus?.cs3 || 0;
+      const tot = total || 1;
 
-      document.getElementById('src-pt123-count').textContent = `${pt123} (${ptPct}%)`;
-      document.getElementById('bar-pt123').style.width = `${ptPct}%`;
+      const p1 = Math.round((cs1 / tot) * 100);
+      const p2 = Math.round((cs2 / tot) * 100);
+      const p3 = Math.round((cs3 / tot) * 100);
 
-      document.getElementById('src-fb-count').textContent = `${fb} (${fbPct}%)`;
-      document.getElementById('bar-fb').style.width = `${fbPct}%`;
+      const el1 = document.getElementById('campus-cs1-count');
+      const el2 = document.getElementById('campus-cs2-count');
+      const el3 = document.getElementById('campus-cs3-count');
+      if (el1) el1.textContent = `${cs1} phòng (${p1}%)`;
+      if (el2) el2.textContent = `${cs2} phòng (${p2}%)`;
+      if (el3) el3.textContent = `${cs3} phòng (${p3}%)`;
 
-      document.getElementById('stat-sources-summary').textContent = `${pt123} từ phongtro123, ${fb} từ Facebook`;
+      const b1 = document.getElementById('bar-cs1');
+      const b2 = document.getElementById('bar-cs2');
+      const b3 = document.getElementById('bar-cs3');
+      if (b1) b1.style.width = `${p1}%`;
+      if (b2) b2.style.width = `${p2}%`;
+      if (b3) b3.style.width = `${p3}%`;
+
+      const sumEl = document.getElementById('stat-sources-summary');
+      if (sumEl) sumEl.textContent = `Phủ đều cả 3 cơ sở (CS1, CS2, CS3)`;
     }
 
     function renderTable(rooms) {
       const tbody = document.getElementById('crawler-tbody');
+      if (!tbody) return;
       if (!rooms.length) {
         tbody.innerHTML = `<tr><td colspan="7" style="text-align:center;padding:2rem;color:#94a3b8;">Chưa có dữ liệu phòng</td></tr>`;
         return;
@@ -429,12 +603,184 @@
         });
         if (res.ok) {
           loadAdminData();
+          if (document.getElementById('sec-rooms').style.display === 'block') {
+            loadRoomManagerData();
+          }
         }
       } catch(e) {
         alert('Lỗi cập nhật: ' + e.message);
       }
     }
 
+    // ── QUẢN LÝ PHÒNG TRỌ (ROOM MANAGER) ──────────────────────────────────
+    async function loadRoomManagerData() {
+      const tbody = document.getElementById('rm-manage-tbody');
+      tbody.innerHTML = `<tr><td colspan="7" style="text-align:center;padding:2rem;color:#94a3b8;">Đang tải danh sách phòng...</td></tr>`;
+      try {
+        const res = await fetch('/api/rooms?status=all&limit=500');
+        if (!res.ok) throw new Error('API error');
+        const data = await res.json();
+        allManagedRooms = data.data || [];
+        filterRoomManagerTable();
+      } catch (err) {
+        tbody.innerHTML = `<tr><td colspan="7" style="text-align:center;padding:2rem;color:#ef4444;">Lỗi tải dữ liệu phòng: ${err.message}</td></tr>`;
+      }
+    }
+
+    function filterRoomManagerTable() {
+      const kw = (document.getElementById('rm-search')?.value || '').toLowerCase().trim();
+      const campus = document.getElementById('rm-filter-campus')?.value || 'all';
+      const status = document.getElementById('rm-filter-status')?.value || 'all';
+
+      const filtered = allManagedRooms.filter(r => {
+        // Lọc từ khóa
+        if (kw) {
+          const matchId = (r.id || '').toLowerCase().includes(kw);
+          const matchTitle = (r.title || '').toLowerCase().includes(kw);
+          const matchAddr = (r.address || '').toLowerCase().includes(kw);
+          if (!matchId && !matchTitle && !matchAddr) return false;
+        }
+        // Lọc cơ sở
+        if (campus !== 'all') {
+          if (r.nearestCampus !== campus) return false;
+        }
+        // Lọc trạng thái
+        if (status !== 'all') {
+          if (r.trangThai !== status) return false;
+        }
+        return true;
+      });
+
+      const countEl = document.getElementById('rm-filtered-count');
+      if (countEl) countEl.textContent = filtered.length;
+
+      renderRoomManagerTable(filtered);
+    }
+
+    function renderRoomManagerTable(rooms) {
+      const tbody = document.getElementById('rm-manage-tbody');
+      if (!rooms.length) {
+        tbody.innerHTML = `<tr><td colspan="7" style="text-align:center;padding:2rem;color:#94a3b8;">Không tìm thấy phòng trọ phù hợp bộ lọc</td></tr>`;
+        return;
+      }
+
+      tbody.innerHTML = rooms.map(r => {
+        const campusBadge = r.nearestCampus === 'CS3'
+          ? `<span style="background:#ecfdf5;color:#047857;padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:700;">CS3 Hà Nam</span>`
+          : (r.nearestCampus === 'CS2'
+            ? `<span style="background:#eff6ff;color:#1d4ed8;padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:700;">CS2 Tây Tựu</span>`
+            : `<span style="background:#f0fdf4;color:#15803d;padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:700;">CS1 Nhổn</span>`);
+
+        const priceText = r.price ? `${(r.price/1e6).toFixed(1)} tr/th` : 'Chưa có';
+        const isVacant = r.trangThai === 'con_trong';
+
+        return `
+          <tr>
+            <td style="font-family:monospace;font-size:0.8rem;font-weight:700;color:#334155;">${r.id}</td>
+            <td>${campusBadge}</td>
+            <td style="max-width:280px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:600;" title="${r.title}">
+              <a href="room-detail.html?id=${r.id}" target="_blank" style="color:#0f172a;text-decoration:none;">${r.title}</a>
+              <div style="font-size:0.75rem;color:#64748b;font-weight:400;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">📍 ${r.address || '-'}</div>
+            </td>
+            <td style="color:#2563eb;font-weight:700;font-size:0.9rem;">${priceText}</td>
+            <td style="font-size:0.8rem;color:#475569;">${r.phone || 'Liên hệ bài viết'}</td>
+            <td>
+              <select onchange="toggleStatus('${r.id}', this.value)" style="padding:3px 6px;border-radius:6px;font-size:0.75rem;font-weight:600;background:${isVacant ? '#ecfdf5' : '#f8fafc'};color:${isVacant ? '#047857' : '#475569'};border:1px solid #cbd5e1;">
+                <option value="con_trong" ${isVacant ? 'selected' : ''}>Còn trống</option>
+                <option value="da_thue" ${r.trangThai === 'da_thue' ? 'selected' : ''}>Đã thuê</option>
+                <option value="nghi_ngo_lua_dao" ${r.trangThai === 'nghi_ngo_lua_dao' ? 'selected' : ''}>Nghi lừa đảo</option>
+              </select>
+            </td>
+            <td>
+              <div style="display:flex;gap:6px;">
+                <a href="room-detail.html?id=${r.id}" target="_blank" style="padding:3px 8px;border-radius:6px;background:#f1f5f9;color:#334155;text-decoration:none;font-size:0.75rem;font-weight:600;">Xem</a>
+                <button onclick="deleteManagedRoom('${r.id}')" style="padding:3px 8px;border-radius:6px;background:#fee2e2;color:#dc2626;border:none;cursor:pointer;font-size:0.75rem;font-weight:600;">Xóa</button>
+              </div>
+            </td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    async function deleteManagedRoom(id) {
+      if (!confirm(`Bạn có chắc chắn muốn xóa vĩnh viễn phòng ${id} khỏi hệ thống?`)) return;
+      try {
+        const res = await fetch(`/api/rooms/${id}`, { method: 'DELETE' });
+        if (res.ok) {
+          alert(`Đã xóa thành công phòng ${id}`);
+          loadRoomManagerData();
+          loadAdminData();
+        } else {
+          const err = await res.json();
+          alert('Lỗi: ' + (err.error || 'Không thể xóa'));
+        }
+      } catch (e) {
+        alert('Lỗi kết nối: ' + e.message);
+      }
+    }
+
+    function openAddRoomModal() {
+      const modal = document.getElementById('modal-add-room');
+      if (modal) modal.style.display = 'flex';
+      lucide.createIcons();
+    }
+
+    function closeAddRoomModal() {
+      const modal = document.getElementById('modal-add-room');
+      if (modal) modal.style.display = 'none';
+    }
+
+    async function submitNewRoom() {
+      const tieu_de = document.getElementById('add-title')?.value?.trim();
+      const gia = document.getElementById('add-price')?.value;
+      const dien_tich = document.getElementById('add-area')?.value;
+      const co_so_gan_nhat = document.getElementById('add-campus')?.value;
+      const so_dien_thoai = document.getElementById('add-phone')?.value?.trim();
+      const dia_chi = document.getElementById('add-address')?.value?.trim();
+      const mo_ta = document.getElementById('add-desc')?.value?.trim();
+
+      if (!tieu_de || !gia) {
+        alert('Vui lòng nhập đầy đủ Tiêu đề và Giá thuê!');
+        return;
+      }
+
+      try {
+        const res = await fetch('/api/rooms', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            tieu_de,
+            gia: Number(gia),
+            dien_tich: Number(dien_tich) || 20,
+            co_so_gan_nhat,
+            so_dien_thoai,
+            dia_chi,
+            mo_ta
+          })
+        });
+
+        if (res.ok) {
+          alert('Đã thêm phòng trọ mới thành công!');
+          closeAddRoomModal();
+          // Reset form
+          document.getElementById('add-title').value = '';
+          document.getElementById('add-price').value = '';
+          document.getElementById('add-area').value = '';
+          document.getElementById('add-phone').value = '';
+          document.getElementById('add-address').value = '';
+          document.getElementById('add-desc').value = '';
+          loadRoomManagerData();
+          loadAdminData();
+        } else {
+          const err = await res.json();
+          alert('Lỗi thêm phòng: ' + (err.error || 'Có lỗi xảy ra'));
+        }
+      } catch (e) {
+        alert('Lỗi kết nối: ' + e.message);
+      }
+    }
+
+    // ── BOT STATUS & RUN ───────────────────────────────────────────────
     async function fetchCrawlBotStatus() {
       try {
         const res = await fetch('/api/admin/crawl-status');
@@ -445,15 +791,19 @@
         const btn = document.getElementById('btn-run-crawl');
 
         if (data.running) {
-          statusEl.textContent = 'Đang cào dữ liệu...';
-          statusEl.style.color = '#ea580c';
+          if (statusEl) {
+            statusEl.textContent = 'Đang cào dữ liệu...';
+            statusEl.style.color = '#ea580c';
+          }
           if (btn) {
             btn.disabled = true;
             btn.innerHTML = '<i data-lucide="loader" style="width:14px;height:14px;animation:spin 1s linear infinite;"></i> Đang cào...';
           }
         } else {
-          statusEl.textContent = 'Sẵn sàng';
-          statusEl.style.color = '#059669';
+          if (statusEl) {
+            statusEl.textContent = 'Sẵn sàng';
+            statusEl.style.color = '#059669';
+          }
           if (btn) {
             btn.disabled = false;
             btn.innerHTML = '<i data-lucide="play" style="width:14px;height:14px;"></i> Cào dữ liệu ngay';
@@ -462,20 +812,27 @@
 
         if (data.lastRunAt) {
           const d = new Date(data.lastRunAt);
-          document.getElementById('crawl-bot-last').textContent = d.toLocaleTimeString('vi-VN', {hour:'2-digit', minute:'2-digit'}) + ' ' + d.toLocaleDateString('vi-VN');
+          const el = document.getElementById('crawl-bot-last');
+          if (el) el.textContent = d.toLocaleTimeString('vi-VN', {hour:'2-digit', minute:'2-digit'}) + ' ' + d.toLocaleDateString('vi-VN');
         }
 
         if (data.nextRunAt) {
           const nd = new Date(data.nextRunAt);
-          document.getElementById('crawl-bot-next').textContent = nd.toLocaleTimeString('vi-VN', {hour:'2-digit', minute:'2-digit'});
+          const el = document.getElementById('crawl-bot-next');
+          if (el) el.textContent = nd.toLocaleTimeString('vi-VN', {hour:'2-digit', minute:'2-digit'});
         }
 
         if (data.stats) {
-          document.getElementById('cstat-fb').textContent = data.stats.lastRunNewFb || 0;
-          document.getElementById('cstat-other').textContent = data.stats.lastRunNewOther || 0;
-          document.getElementById('cstat-spam').textContent = data.stats.lastRunDroppedSpam || 0;
-          document.getElementById('cstat-seek').textContent = data.stats.lastRunDroppedSeek || 0;
-          document.getElementById('cstat-dup').textContent = data.stats.lastRunDroppedDup || 0;
+          const elFb = document.getElementById('cstat-fb');
+          const elOther = document.getElementById('cstat-other');
+          const elSpam = document.getElementById('cstat-spam');
+          const elSeek = document.getElementById('cstat-seek');
+          const elDup = document.getElementById('cstat-dup');
+          if (elFb) elFb.textContent = data.stats.lastRunNewFb || 0;
+          if (elOther) elOther.textContent = data.stats.lastRunNewOther || 0;
+          if (elSpam) elSpam.textContent = data.stats.lastRunDroppedSpam || 0;
+          if (elSeek) elSeek.textContent = data.stats.lastRunDroppedSeek || 0;
+          if (elDup) elDup.textContent = data.stats.lastRunDroppedDup || 0;
         }
         lucide.createIcons();
       } catch (e) {
