@@ -162,15 +162,23 @@ function checkLink(url, uaIndex = 0) {
       res.resume(); // tiêu thụ body để tránh memory leak
 
       if (isFB) {
+        // FB thường block server request → chỉ xóa nếu rõ ràng redirect về login
         if (location.includes('/login') || location.includes('/checkpoint/'))
           return resolve({ ok: false, reason: `FB redirect → login (${s})` });
-        return resolve({ ok: s === 200 || s === 302, reason: `FB HTTP ${s}` });
+        // 403/404 từ FB server-side không đáng tin → giữ lại
+        return resolve({ ok: true, reason: `FB HTTP ${s} (kept)` });
       }
 
-      if (s >= 200 && s < 400) return resolve({ ok: true,  reason: `HTTP ${s}` });
+      // 2xx/3xx → link sống
+      if (s >= 200 && s < 400) return resolve({ ok: true, reason: `HTTP ${s}` });
+      // 403 = site chặn bot nhưng link vẫn sống → KHÔNG xóa
+      if (s === 403) return resolve({ ok: true, reason: `HTTP 403 blocked (kept)` });
+      // Chỉ xóa khi link thực sự không tồn tại
       if (s === 404 || s === 410) return resolve({ ok: false, reason: `HTTP ${s} Gone` });
-      if (s >= 500) return resolve({ ok: true, reason: `HTTP ${s} server-error (skip)` });
-      return resolve({ ok: false, reason: `HTTP ${s}` });
+      // 5xx = server lỗi tạm thời → giữ lại
+      if (s >= 500) return resolve({ ok: true, reason: `HTTP ${s} server-error (kept)` });
+      // Các code khác (401, 429...) → giữ lại cho an toàn
+      return resolve({ ok: true, reason: `HTTP ${s} unknown (kept)` });
     });
 
     req.on('timeout', () => { req.destroy(); resolve({ ok: false, reason: 'Timeout' }); });
