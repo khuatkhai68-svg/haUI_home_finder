@@ -124,43 +124,61 @@ function extractSearchCriteria(text) {
 
 /**
  * Lọc phòng trọ phù hợp nhất từ kho DB 257 phòng
+ * LUẬT CỨNG: Tuyệt đối không bao giờ trả về phòng có giá vượt quá criteria.maxPrice
  */
 function findMatchingRooms(criteria, allRooms, limit = 3) {
   if (!allRooms || allRooms.length === 0) return [];
 
-  let candidates = allRooms.filter(r => {
-    // Không lấy phòng đã thuê
-    if (r.trang_thai === 'da_thue' || r.trang_thai === 'an') return false;
-
-    // Lọc cơ sở nếu có
-    if (criteria.campus && r.co_so && r.co_so !== criteria.campus) {
-      return false;
-    }
-
-    // Lọc giá nếu có
-    if (criteria.maxPrice && r.gia_thang && r.gia_thang > criteria.maxPrice) {
-      return false;
-    }
-
-    // Lọc khoảng cách nếu có
-    if (criteria.maxDistance && r.khoang_cach_km && r.khoang_cach_km > criteria.maxDistance) {
-      return false;
-    }
-
-    return true;
+  // Lấy các phòng còn trống
+  let available = allRooms.filter(r => {
+    const st = r.trangThai || r.trang_thai || 'con_trong';
+    return st !== 'da_thue' && st !== 'an';
   });
 
-  // Nếu lọc quá chặt không ra phòng nào, nới lỏng cơ sở
-  if (candidates.length === 0 && criteria.campus) {
-    candidates = allRooms.filter(r => r.co_so === criteria.campus);
+  // BƯỚC 1: LỌC CỨNG THEO NGÂN SÁCH (NẾU CÓ)
+  if (criteria.maxPrice && criteria.maxPrice > 0) {
+    available = available.filter(r => {
+      const price = r.price ?? r.gia_thang ?? r.thong_tin?.gia ?? 0;
+      // Chỉ nhận phòng có giá > 0 và <= ngân sách tối đa
+      return price > 0 && price <= criteria.maxPrice;
+    });
   }
 
-  // Ưu tiên phòng có hình ảnh và giá tốt
+  // BƯỚC 2: LỌC THEO CƠ SỞ (NẾU CÓ)
+  let candidates = available;
+  if (criteria.campus) {
+    const targetCamp = criteria.campus.toUpperCase();
+    const campusFiltered = available.filter(r => {
+      const camp = (r.nearestCampus || r.co_so || r.vi_tri?.co_so_gan_nhat || '').toUpperCase();
+      return camp === targetCamp;
+    });
+
+    // Nếu tại cơ sở đó có phòng thỏa mãn giá, ưu tiên cơ sở đó
+    if (campusFiltered.length > 0) {
+      candidates = campusFiltered;
+    }
+    // Nếu tại cơ sở đó không có phòng nào <= maxPrice, vẫn giữ danh sách candidates có giá <= maxPrice ở cơ sở khác
+  }
+
+  // BƯỚC 3: LỌC KHOẢNG CÁCH (NẾU CÓ)
+  if (criteria.maxDistance && criteria.maxDistance > 0) {
+    const distFiltered = candidates.filter(r => {
+      const d = r.distCS1 ?? r.distCS2 ?? r.distCS3 ?? r.khoang_cach_km;
+      return d != null && d <= criteria.maxDistance;
+    });
+    if (distFiltered.length > 0) candidates = distFiltered;
+  }
+
+  // BƯỚC 4: SẮP XẾP — Ưu tiên có ảnh và giá tốt nhất (<= maxPrice)
   candidates.sort((a, b) => {
-    const aImg = (a.hinh_anh && a.hinh_anh.length > 0) ? 1 : 0;
-    const bImg = (b.hinh_anh && b.hinh_anh.length > 0) ? 1 : 0;
+    const aImg = (a.images?.length || a.hinh_anh?.length || (a.anh?.length)) ? 1 : 0;
+    const bImg = (b.images?.length || b.hinh_anh?.length || (b.anh?.length)) ? 1 : 0;
     if (bImg !== aImg) return bImg - aImg;
-    return (a.khoang_cach_km || 99) - (b.khoang_cach_km || 99);
+
+    const pA = a.price ?? a.gia_thang ?? 0;
+    const pB = b.price ?? b.gia_thang ?? 0;
+    // Sắp xếp theo giá tăng dần để tiết kiệm nhất cho sinh viên
+    return pA - pB;
   });
 
   return candidates.slice(0, limit);
@@ -263,9 +281,14 @@ function localDomainReasoning(userMessage, allRooms) {
 
   // Kịch bản 3: Hỏi về Cơ sở 1 (Nhổn)
   if (criteria.campus === 'CS1' || query.includes('cs1') || query.includes('nhổn') || query.includes('nguyên xá')) {
-    let roomIntro = matchedRooms.length > 0 ? 
-      `Dưới đây là **${matchedRooms.length} phòng trọ thực tế** gần Cơ sở 1 khớp với tiêu chí của bạn mà mình vừa kiểm tra từ hệ thống:` : 
-      `Hiện mình đang rà soát thêm phòng mới tại CS1.`;
+    let roomIntro = '';
+    if (matchedRooms.length > 0) {
+      roomIntro = `Dưới đây là **${matchedRooms.length} phòng trọ thực tế** gần Cơ sở 1 đảm bảo giá **không vượt quá ${criteria.maxPrice ? (criteria.maxPrice/1e6).toFixed(1) + ' triệu' : 'ngân sách'}** mà mình đã kiểm tra:`;
+    } else if (criteria.maxPrice) {
+      roomIntro = `⚠️ *Thông báo:* Hiện tại hệ thống không có phòng nào quanh HaUI CS1 có giá **dưới ${(criteria.maxPrice/1e6).toFixed(1)} triệu/tháng**. Mức giá phòng đơn thấp nhất tại khu Nhổn/Nguyên Xá hiện tại từ 1.8 - 2.0 triệu/tháng. Bạn có thể cân nhắc tìm bạn ở ghép để chia đôi chi phí nhé!`;
+    } else {
+      roomIntro = `Hiện mình đang rà soát thêm phòng mới tại CS1.`;
+    }
 
     return {
       text: `Khu vực **HaUI Cơ sở 1 (Nhổn - Bắc Từ Liêm)** là trung tâm sầm uất nhất với hơn 30.000 sinh viên:\n\n` +
@@ -280,13 +303,20 @@ function localDomainReasoning(userMessage, allRooms) {
 
   // Kịch bản 4: Hỏi về Cơ sở 2 (Tây Tựu)
   if (criteria.campus === 'CS2' || query.includes('cs2') || query.includes('tây tựu')) {
+    let roomIntro = '';
+    if (matchedRooms.length > 0) {
+      roomIntro = `Gợi ý phòng thực tế quanh CS2 đảm bảo đúng mức ngân sách (<= ${criteria.maxPrice ? (criteria.maxPrice/1e6).toFixed(1) + ' triệu' : 'yêu cầu'}):`;
+    } else if (criteria.maxPrice) {
+      roomIntro = `⚠️ Hiện tại chưa có phòng nào tại CS2 có giá dưới ${(criteria.maxPrice/1e6).toFixed(1)} triệu.`;
+    }
+
     return {
       text: `Khu vực **HaUI Cơ sở 2 (Tây Tựu)** có nhiều điểm cộng lớn về không gian và giá cả:\n\n` +
             `🌸 **Kinh nghiệm thuê trọ tại CS2:**\n` +
-            `• **Giá thuê mềm hơn 20% - 30%** so với CS1. Với cùng mức 2 triệu, ở CS2 bạn có thể thuê được phòng rộng 25 - 30m² thoáng mát, trong khi ở CS1 chỉ được phòng 18m².\n` +
+            `• **Giá thuê mềm hơn 20% - 30%** so with CS1. Với cùng mức 2 triệu, ở CS2 bạn có thể thuê được phòng rộng 25 - 30m² thoáng mát, trong khi ở CS1 chỉ được phòng 18m².\n` +
             `• **Môi trường:** Nhiều cây xanh, gần vùng hoa Tây Tựu, không khí trong lành, đường xá thông thoáng.\n` +
             `• **Lưu ý:** Buổi tối các tuyến đường nhánh hơi vắng, bạn nên ưu tiên thuê phòng ở mặt ngõ chính có đèn chiếu sáng công cộng.\n\n` +
-            (matchedRooms.length > 0 ? `Gợi ý phòng thực tế quanh CS2:` : ``),
+            `${roomIntro}`,
       suggestedRooms: matchedRooms
     };
   }
@@ -320,13 +350,26 @@ function localDomainReasoning(userMessage, allRooms) {
   // Mặc định: Tư vấn tổng quát + Tìm phòng phù hợp theo yêu cầu
   let responseText = `Chào bạn! Mình là **Trợ lý 5PTL** — trợ lý AI thông minh của HaUI HomeFinder, hỗ trợ sinh viên tìm phòng nhanh, an toàn và đúng giá.\n\n`;
   if (matchedRooms.length > 0) {
-    responseText += `Dựa trên yêu cầu của bạn, mình đã quét nhanh kho dữ liệu **257 phòng trọ HaUI** và tìm thấy các lựa chọn sáng giá nhất:\n\n`;
+    const budgetNote = criteria.maxPrice ? ` (đúng ngân sách **<= ${(criteria.maxPrice/1000000).toFixed(1)} triệu**)` : '';
+    responseText += `Dựa trên yêu cầu của bạn, mình đã quét nhanh kho dữ liệu **257 phòng trọ HaUI** và tìm thấy các lựa chọn sáng giá nhất${budgetNote}:\n\n`;
     matchedRooms.forEach((r, idx) => {
-      responseText += `${idx + 1}. **${r.tieu_de || 'Phòng trọ HaUI'}**\n` +
-                      `   • Cơ sở: **${r.co_so || 'CS1'}** (Cách trường: ~${r.khoang_cach_km || '0.5'} km)\n` +
-                      `   • Giá: **${(r.gia_thang ? (r.gia_thang / 1000000).toFixed(1) + ' tr/tháng' : 'Thỏa thuận')}** | SĐT: **${r.so_dien_thoai || 'Liên hệ'}**\n`;
+      const title = r.title || r.tieu_de || 'Phòng trọ HaUI';
+      const camp = r.nearestCampus || r.co_so || 'CS1';
+      const price = r.price ?? r.gia_thang ?? 0;
+      const priceText = price > 0 ? (price / 1000000).toFixed(1) + ' tr/tháng' : 'Thỏa thuận';
+      const dist = r.distCS1 ?? r.khoang_cach_km ?? '0.5';
+      const phone = r.phone || r.so_dien_thoai || 'Liên hệ';
+
+      responseText += `${idx + 1}. **${title}**\n` +
+                      `   • Cơ sở: **${camp}** (Cách trường: ~${dist} km)\n` +
+                      `   • Giá: **${priceText}** | SĐT: **${phone}**\n`;
     });
     responseText += `\nBạn có thể bấm vào thẻ phòng bên dưới để xem hình ảnh chi tiết và liên hệ ngay với chủ nhà nhé!`;
+  } else if (criteria.maxPrice) {
+    responseText += `⚠️ Hiện tại trong hệ thống **chưa có phòng nào dưới mức giá ${(criteria.maxPrice/1000000).toFixed(1)} triệu** tại khu vực bạn yêu cầu.\n\n` +
+                    `💡 **Gợi ý từ Trợ lý 5PTL:**\n` +
+                    `• Giá phòng trọ đơn khép kín tối thiểu hiện nay quanh CS1 từ 1.8 - 2.2 triệu/tháng.\n` +
+                    `• Nếu muốn tiết kiệm chi phí, bạn có thể tham khảo các phòng tại **Cơ sở 2 (Tây Tựu)** giá rẻ hơn 20-30%, hoặc sử dụng tính năng tìm bạn **ở ghép** nhé!`;
   } else {
     responseText += `Bạn có thể cho mình biết cụ thể hơn về nhu cầu của bạn không?\n` +
                     `• Bạn đang học ở **Cơ sở nào (CS1 Nhổn, CS2 Tây Tựu, hay CS3 Hà Nam)**?\n` +

@@ -570,9 +570,22 @@
       const params = {};
       const fullText = (kw + ' ' + budgetStr).trim();
 
+      // Bóc tách ngân sách nhập tay nếu có (ưu tiên số 1)
+      let explicitBudget = null;
+      if (budgetStr) {
+        const cleanB = budgetStr.toLowerCase().replace(/,/g, '.');
+        const m = cleanB.match(/(\d+(?:\.\d+)?)\s*(?:tr|trieu|m|k)?/i);
+        if (m) {
+          const val = parseFloat(m[1]);
+          if (cleanB.includes('k') && !cleanB.includes('tr')) explicitBudget = Math.round(val * 1000);
+          else if (val < 50) explicitBudget = Math.round(val * 1000000);
+          else explicitBudget = Math.round(val);
+        }
+      }
+
       // Kiểm tra nếu là câu hỏi tự nhiên cần AI phân tích
       const isNaturalPrompt = kw.length > 8 || 
-        /(cs1|cs2|cs3|nhổn|tây tựu|hà nam|gác xép|ban công|dưới|triệu|kép kín|khép kín)/i.test(fullText);
+        /(cs1|cs2|cs3|nhổn|tây tựu|hà nam|gác xép|ban công|dưới|triệu|kép kín|khép kín)/i.test(kw);
 
       if (isNaturalPrompt) {
         try {
@@ -591,7 +604,9 @@
             params.campus = selectedCampus;
           }
 
-          if (criteria.maxPrice) {
+          if (explicitBudget) {
+            params.max_price = explicitBudget;
+          } else if (criteria.maxPrice) {
             params.max_price = criteria.maxPrice;
           }
 
@@ -602,20 +617,17 @@
           }
 
           // Hiển thị thông báo AI Search
-          showAIBadgeNotice(`✨ Trợ lý 5PTL đã bóc tách: ${criteria.campus || '3 Cơ sở'} ${criteria.maxPrice ? '• Giá < ' + (criteria.maxPrice/1e6).toFixed(1) + 'tr' : ''} ${criteria.keywords.length ? '• ' + criteria.keywords.join(', ') : ''}`);
+          const budgetNotice = params.max_price ? `• Ngân sách: <= ${(params.max_price/1e6).toFixed(1)} tr/tháng` : '';
+          showAIBadgeNotice(`✨ Trợ lý 5PTL đã bóc tách: ${criteria.campus || '3 Cơ sở'} ${budgetNotice} ${criteria.keywords.length ? '• ' + criteria.keywords.join(', ') : ''}`);
         } catch (e) {
           if (kw) params.q = kw;
+          if (explicitBudget) params.max_price = explicitBudget;
         }
       } else {
         if (kw) params.q = kw;
-        if (budgetStr) {
-          const trMatch = budgetStr.match(/(\d+[.,]?\d*)\s*tr/i);
-          if (trMatch) {
-            params.max_price = Math.round(parseFloat(trMatch[1].replace(',', '.')) * 1e6);
-          } else {
-            const num = parseInt(budgetStr.replace(/\D/g, ''));
-            if (num > 0) params.max_price = num < 50 ? num * 1000000 : num;
-          }
+        if (explicitBudget) {
+          params.max_price = explicitBudget;
+          showAIBadgeNotice(`✨ Đang tìm phòng với ngân sách: <= ${(params.max_price/1e6).toFixed(1)} triệu/tháng`);
         }
       }
 
@@ -794,5 +806,25 @@
     });
     chatSend.disabled = true;
   </script>
+
+  <!-- ============ MOBILE BOTTOM NAVIGATION ============ -->
+  <nav class="mobile-bottom-nav">
+    <a href="index.html" class="mobile-nav-item active">
+      <i data-lucide="search"></i>
+      <span>Tìm phòng</span>
+    </a>
+    <a href="map.html" class="mobile-nav-item">
+      <i data-lucide="map"></i>
+      <span>Bản đồ 3 CS</span>
+    </a>
+    <button class="mobile-nav-item" onclick="openChat()">
+      <i data-lucide="bot" style="color:#7c3aed;"></i>
+      <span style="color:#7c3aed;font-weight:700;">Hỏi 5PTL</span>
+    </button>
+    <a href="admin.html" class="mobile-nav-item">
+      <i data-lucide="layout-dashboard"></i>
+      <span>Quản trị</span>
+    </a>
+  </nav>
 </body>
 </html>

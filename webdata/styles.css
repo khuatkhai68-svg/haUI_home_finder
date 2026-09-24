@@ -877,12 +877,65 @@ input, select, textarea { font-family: inherit; outline: none; }
 .skeleton { background: linear-gradient(90deg, var(--color-slate-100) 25%, var(--color-slate-200) 50%, var(--color-slate-100) 75%); background-size: 200% 100%; animation: skeleton 1.5s infinite; border-radius: 0.375rem; }
 @keyframes skeleton { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
 
-/* ---- Responsive ---- */
+/* ---- Mobile Bottom Navigation Bar ---- */
+.mobile-bottom-nav {
+  display: none;
+}
+
 @media (max-width: 1024px) {
   .listings-sidebar { display: none; }
   .map-sidebar { width: 320px; }
 }
 @media (max-width: 768px) {
+  body {
+    padding-bottom: 66px !important;
+  }
+  .mobile-bottom-nav {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 62px;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-top: 1px solid #e2e8f0;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 -4px 20px rgba(15, 23, 42, 0.08);
+  }
+  .mobile-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    height: 100%;
+    color: #64748b;
+    text-decoration: none;
+    font-size: 0.72rem;
+    font-weight: 600;
+    gap: 3px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    background: none;
+    border: none;
+  }
+  .mobile-nav-item:hover, .mobile-nav-item.active {
+    color: #2563eb;
+    font-weight: 700;
+  }
+  .mobile-nav-item svg {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.2s;
+  }
+  .mobile-nav-item:active svg {
+    transform: scale(0.9);
+  }
+
   .navbar-nav { display: none; }
   .navbar-subtitle { display: none; }
   .btn-ai-assist { display: none; }
@@ -895,7 +948,22 @@ input, select, textarea { font-family: inherit; outline: none; }
   .detail-header { flex-direction: column; }
   .detail-price-box { text-align: left; }
   .costs-grid { grid-template-columns: 1fr; }
-  .chat-window { width: calc(100vw - 2rem); right: 1rem; bottom: 1rem; }
+  
+  .chat-fab {
+    bottom: 4.8rem !important;
+    right: 1rem !important;
+    padding: 0.6rem 1rem !important;
+    font-size: 0.85rem !important;
+  }
+  .chat-window {
+    bottom: 0 !important;
+    right: 0 !important;
+    width: 100vw !important;
+    height: 85vh !important;
+    max-height: 85vh !important;
+    border-radius: 1.5rem 1.5rem 0 0 !important;
+    z-index: 1050 !important;
+  }
 }
 
 /* ---- Scroll custom ---- */
