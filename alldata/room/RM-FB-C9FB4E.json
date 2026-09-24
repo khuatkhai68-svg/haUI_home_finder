@@ -1,0 +1,58 @@
+{
+  "ma_phong": "RM-FB-C9FB4E",
+  "nguon": "facebook",
+  "url_nguon": "https://www.facebook.com/groups/dhcncs3hanam/posts/1819334159063178/",
+  "ngay_cao": "2026-09-24T17:17:22.071Z",
+  "ngay_cap_nhat": "2026-09-24T17:17:22.071Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "100% Khử định danh PII, nguồn nhóm công khai",
+    "chong_spam": "Đã qua kiểm định bài chào thuê chính thống",
+    "da_kiem_tra_trung": true
+  },
+  "thong_tin": {
+    "tieu_de": "Tìm phòng gần dhcn cơ sở 3 giá 1tr5tháng có bếp điện  tủ lạnh, cách trg 800m",
+    "gia": 1500000,
+    "dien_tich": 30,
+    "dia_chi": "Khu vực Phù Vân, TP. Phủ Lý, Hà Nam (gần HaUI CS3)",
+    "quan_huyen": "Phủ Lý",
+    "tinh_thanh": "Hà Nam",
+    "mo_ta": "Người tham gia ẩn danh\n9 giờ trước\n9 giờ\n \n·\nTìm phòng gần dhcn cơ sở 3 giá 1tr5/tháng có bếp điện + tủ lạnh, cách trg <800m\nTất cả cảm xúc:\n3\n5\nThích\nBình luận\nChia sẻ\nXem thêm câu trả lời\nNguyễn Thị Dương Tâm\nNữ cần ghép thì ib chị nhé, ccmn full đồ, cách cổng phụ 300m\n7 giờ\nChuyen Ty\nNhà mình còn phòng trọ .Rộng rãi thoáng mát Wii bạn công rộng có sân chơi ngồi cà fe ngắm phố chúng chủ .cách cổng chính 150 m . Bạn nào có nhu cầu lh cho mình!0983278018\n1 giờ",
+    "tien_ich": [
+      "tu_lanh",
+      "ban_cong",
+      "bep",
+      "tu_quan_ao"
+    ],
+    "khong_chung_chu": false,
+    "gio_giac_tu_do": false
+  },
+  "vi_tri": {
+    "lat": 20.54307,
+    "lng": 105.89991,
+    "khoang_cach_cs1_km": 59.3,
+    "khoang_cach_cs2_km": 60.4,
+    "khoang_cach_cs3_km": 0.3,
+    "co_so_gan_nhat": "CS3",
+    "thoi_gian_di_xe_phut": 1
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "0983278018",
+    "facebook": "https://www.facebook.com/groups/dhcncs3hanam/posts/1819334159063178/"
+  },
+  "anh": [
+    {
+      "url_goc": "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80",
+      "mo_ta": "Phòng trọ sinh viên"
+    },
+    {
+      "url_goc": "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80",
+      "mo_ta": "Không gian thoáng mát"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}

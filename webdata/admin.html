@@ -132,6 +132,78 @@
           </div>
         </div>
 
+        <!-- Bot Management & Hard Rules Section -->
+        <div style="margin-bottom:1.5rem; display:grid; grid-template-columns:1.2fr 0.8fr; gap:1.5rem;">
+          <!-- Auto Crawl Bot Card -->
+          <div class="crawler-panel" style="border: 2px solid #3b82f6;">
+            <div class="crawler-panel-header" style="display:flex;justify-content:space-between;align-items:center;background:#eff6ff;">
+              <div>
+                <h2 style="color:#1e40af;display:flex;align-items:center;gap:8px;">
+                  <i data-lucide="bot" style="width:20px;height:20px;color:#2563eb;"></i>
+                  Auto Crawl Bot (Mỗi 4 tiếng)
+                </h2>
+                <p style="font-size:0.8rem;color:#475569;margin:2px 0 0;">Cào +50 phòng Facebook & phongtro123 - Tuân thủ nghiêm ngặt Luật cứng</p>
+              </div>
+              <button id="btn-run-crawl" onclick="triggerCrawlNow()" class="btn-primary" style="padding:6px 14px;font-size:0.8rem;background:#2563eb;">
+                <i data-lucide="play" style="width:14px;height:14px;"></i> Cào dữ liệu ngay
+              </button>
+            </div>
+            <div style="padding:1.25rem;">
+              <div style="display:grid;grid-template-columns:repeat(4, 1fr);gap:1rem;margin-bottom:1rem;text-align:center;">
+                <div style="background:#f8fafc;padding:0.75rem;border-radius:8px;border:1px solid #e2e8f0;">
+                  <div style="font-size:0.75rem;color:#64748b;">Trạng thái</div>
+                  <div id="crawl-bot-status" style="font-size:0.95rem;font-weight:700;color:#059669;margin-top:2px;">Sẵn sàng</div>
+                </div>
+                <div style="background:#f8fafc;padding:0.75rem;border-radius:8px;border:1px solid #e2e8f0;">
+                  <div style="font-size:0.75rem;color:#64748b;">Chu kỳ</div>
+                  <div style="font-size:0.95rem;font-weight:700;color:#1e293b;margin-top:2px;">4 tiếng / lần</div>
+                </div>
+                <div style="background:#f8fafc;padding:0.75rem;border-radius:8px;border:1px solid #e2e8f0;">
+                  <div style="font-size:0.75rem;color:#64748b;">Lần chạy cuối</div>
+                  <div id="crawl-bot-last" style="font-size:0.8rem;font-weight:600;color:#334155;margin-top:4px;">Chưa cào</div>
+                </div>
+                <div style="background:#f8fafc;padding:0.75rem;border-radius:8px;border:1px solid #e2e8f0;">
+                  <div style="font-size:0.75rem;color:#64748b;">Lần chạy kế tiếp</div>
+                  <div id="crawl-bot-next" style="font-size:0.8rem;font-weight:600;color:#2563eb;margin-top:4px;">Tự động</div>
+                </div>
+              </div>
+
+              <!-- Thống kê đợt cào -->
+              <div id="crawl-stats-bar" style="background:#f1f5f9;padding:0.75rem 1rem;border-radius:6px;font-size:0.8rem;display:flex;justify-content:space-between;color:#334155;">
+                <span>🎯 Facebook mới: <strong id="cstat-fb" style="color:#2563eb;">0</strong></span>
+                <span>🌐 Nguồn khác mới: <strong id="cstat-other" style="color:#0284c7;">0</strong></span>
+                <span>🚫 Rác loại: <strong id="cstat-spam" style="color:#dc2626;">0</strong></span>
+                <span>👤 Tìm phòng loại: <strong id="cstat-seek" style="color:#ea580c;">0</strong></span>
+                <span>🔄 Trùng bỏ qua: <strong id="cstat-dup" style="color:#64748b;">0</strong></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bảng cam kết luật cứng -->
+          <div class="crawler-panel" style="border: 1px solid #cbd5e1;background:#fafafa;">
+            <div class="crawler-panel-header" style="background:#f1f5f9;padding:0.75rem 1rem;">
+              <h2 style="font-size:0.95rem;color:#0f172a;display:flex;align-items:center;gap:6px;">
+                <i data-lucide="shield-check" style="width:18px;height:18px;color:#16a34a;"></i>
+                Quy chuẩn & Luật cứng cào dữ liệu
+              </h2>
+            </div>
+            <div style="padding:0.75rem 1rem;font-size:0.75rem;line-height:1.5;color:#334155;">
+              <div style="margin-bottom:6px;">
+                <strong style="color:#16a34a;">✓ Nghị định 13/2023/NĐ-CP:</strong> 100% ẩn danh PII (không lưu UID, không lưu link cá nhân FB, không lưu tên thật).
+              </div>
+              <div style="margin-bottom:6px;">
+                <strong style="color:#16a34a;">✓ Lọc rác & Tin tìm phòng:</strong> Loại 100% bài tìm người ở ghép, sinh viên tìm trọ, sofa, đa cấp, bán đất.
+              </div>
+              <div style="margin-bottom:6px;">
+                <strong style="color:#16a34a;">✓ Đa dạng cơ sở & Phân khúc:</strong> Phủ đều cả HaUI CS1 (Nhổn), CS2 (Tây Tựu) và CS3 (Hà Nam).
+              </div>
+              <div>
+                <strong style="color:#16a34a;">✓ Chống trùng:</strong> Băm SHA-256 nội dung, ngăn chặn nhân bản bản ghi.
+              </div>
+            </div>
+          </div>
+        </div>
+
         <!-- Crawler Stream Table -->
         <div class="crawler-panel">
           <div class="crawler-panel-header" style="display:flex;justify-content:space-between;align-items:center;">
@@ -362,8 +434,76 @@
       }
     }
 
+    async function fetchCrawlBotStatus() {
+      try {
+        const res = await fetch('/api/admin/crawl-status');
+        if (!res.ok) return;
+        const data = await res.json();
+
+        const statusEl = document.getElementById('crawl-bot-status');
+        const btn = document.getElementById('btn-run-crawl');
+
+        if (data.running) {
+          statusEl.textContent = 'Đang cào dữ liệu...';
+          statusEl.style.color = '#ea580c';
+          if (btn) {
+            btn.disabled = true;
+            btn.innerHTML = '<i data-lucide="loader" style="width:14px;height:14px;animation:spin 1s linear infinite;"></i> Đang cào...';
+          }
+        } else {
+          statusEl.textContent = 'Sẵn sàng';
+          statusEl.style.color = '#059669';
+          if (btn) {
+            btn.disabled = false;
+            btn.innerHTML = '<i data-lucide="play" style="width:14px;height:14px;"></i> Cào dữ liệu ngay';
+          }
+        }
+
+        if (data.lastRunAt) {
+          const d = new Date(data.lastRunAt);
+          document.getElementById('crawl-bot-last').textContent = d.toLocaleTimeString('vi-VN', {hour:'2-digit', minute:'2-digit'}) + ' ' + d.toLocaleDateString('vi-VN');
+        }
+
+        if (data.nextRunAt) {
+          const nd = new Date(data.nextRunAt);
+          document.getElementById('crawl-bot-next').textContent = nd.toLocaleTimeString('vi-VN', {hour:'2-digit', minute:'2-digit'});
+        }
+
+        if (data.stats) {
+          document.getElementById('cstat-fb').textContent = data.stats.lastRunNewFb || 0;
+          document.getElementById('cstat-other').textContent = data.stats.lastRunNewOther || 0;
+          document.getElementById('cstat-spam').textContent = data.stats.lastRunDroppedSpam || 0;
+          document.getElementById('cstat-seek').textContent = data.stats.lastRunDroppedSeek || 0;
+          document.getElementById('cstat-dup').textContent = data.stats.lastRunDroppedDup || 0;
+        }
+        lucide.createIcons();
+      } catch (e) {
+        console.warn('Lỗi lấy trạng thái crawl bot:', e);
+      }
+    }
+
+    async function triggerCrawlNow() {
+      if (!confirm('Bạn có chắc muốn kích hoạt đợt cào dữ liệu ngay bây giờ? (+50 phòng FB & phongtro123)')) return;
+      try {
+        const btn = document.getElementById('btn-run-crawl');
+        if (btn) btn.disabled = true;
+        const res = await fetch('/api/admin/crawl/run-now', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ targetFb: 50, targetOther: 15 })
+        });
+        const d = await res.json();
+        alert(d.message || 'Đã kích hoạt cào dữ liệu.');
+        fetchCrawlBotStatus();
+      } catch (e) {
+        alert('Lỗi: ' + e.message);
+      }
+    }
+
     loadAdminData();
+    fetchCrawlBotStatus();
     setInterval(loadAdminData, 10000);
+    setInterval(fetchCrawlBotStatus, 5000);
   </script>
 </body>
 </html>

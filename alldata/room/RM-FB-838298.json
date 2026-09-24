@@ -1,0 +1,52 @@
+{
+  "ma_phong": "RM-FB-838298",
+  "nguon": "facebook",
+  "url_nguon": "https://www.facebook.com/groups/phongtrohn/posts/2863309717401648/",
+  "ngay_cao": "2026-09-24T17:16:59.971Z",
+  "ngay_cap_nhat": "2026-09-24T17:16:59.971Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "100% Khử định danh PII, nguồn nhóm công khai",
+    "chong_spam": "Đã qua kiểm định bài chào thuê chính thống",
+    "da_kiem_tra_trung": true
+  },
+  "thong_tin": {
+    "tieu_de": "Cho thuê phòng trọ khép kín 3.0 tr/tháng gần HaUI CS1 & CS2 (Nhổn - Bắc Từ Liêm)",
+    "gia": 3000000,
+    "dien_tich": 25,
+    "dia_chi": "Khu vực Nhổn, Bắc Từ Liêm, Hà Nội (gần HaUI CS1/CS2)",
+    "quan_huyen": "Bắc Từ Liêm",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Trần Quân\n1 ngày trước\n1 ngày\n \n·\nCho thuê nhà trong ngõ Phố Minh Khai, số nhà 45, ngõ 624/12/93, phố Minh Khai, Hà Nội (gần trường đại học Quản Lý Kinh Doanh). Ngôi nhà bao gồm 5 phòng, 3 phòng lớn, 2 phòng nhỏ. Hiện nay còn trống 1 phòng lớn: Phòng rộng 25m2, tầng 1. Giá: 3 tr/tháng.\nMặt tiền siêu đẹp, 2 mặt thoáng, có sân tập thể rất rộng trước nhà. Phòng độc lập, WC khép kín, an ninh tốt, có gác xép.\nLiên hệ: Bác Khánh 0982738600.\nCho thuê nhà trong ngõ Phố Minh Khai, số nhà 45, ngõ 624/12/9...",
+    "tien_ich": [
+      "ban_cong",
+      "gac_xep"
+    ],
+    "khong_chung_chu": false,
+    "gio_giac_tu_do": false
+  },
+  "vi_tri": {
+    "lat": 21.05436,
+    "lng": 105.73542,
+    "khoang_cach_cs1_km": 0.1,
+    "khoang_cach_cs2_km": 1.3,
+    "khoang_cach_cs3_km": 59.5,
+    "co_so_gan_nhat": "CS1",
+    "thoi_gian_di_xe_phut": 0
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "0982738600",
+    "facebook": "https://www.facebook.com/groups/phongtrohn/posts/2863309717401648/"
+  },
+  "anh": [
+    {
+      "url_goc": "https://scontent.fhan15-1.fna.fbcdn.net/v/t39.30808-6/821441685_1769342080940719_5984177645374358211_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1536&ctp=s720x720&_nc_cat=109&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=S5p34le4J7UQ7kNvwGX_54w&_nc_oc=Adpo8irOxOwa69BAf_GbLJ6UfjvnyBORq9pL93lry_AwVDRHHWRNVgOcS7AsOFps5nY&_nc_zt=23&_nc_ht=scontent.fhan15-1.fna&_nc_gid=MONAqKmLnPnWkm-yDPFwHQ&_nc_ss=7b289&oh=00_AQINKQsuGNegu4Rhyegwcww0TMkOdqnO_ev0Jj6K_QfxfA&oe=6ABB39DD",
+      "mo_ta": "Ảnh thực tế bài đăng FB"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}

@@ -12,6 +12,7 @@ const fs       = require('fs');
 const path     = require('path');
 const https    = require('https');
 const http     = require('http');
+const autoCrawlBot = require('./auto_crawl_bot');
 
 const app  = express();
 const PORT = process.env.PORT || 3333;
@@ -451,6 +452,50 @@ app.post('/api/admin/bot/run-now', (_req, res) => {
 });
 
 /**
+ * GET /api/admin/crawl-status
+ * Trả về trạng thái, luật cứng và thống kê cào của Auto Crawl Bot (mỗi 4 tiếng).
+ */
+app.get('/api/admin/crawl-status', (_req, res) => {
+  res.json(autoCrawlBot.getCrawlBotStatus());
+});
+
+/**
+ * POST /api/admin/crawl/run-now
+ * Kích hoạt cào ngay lập tức (+50 Facebook + nguồn khác, tuân thủ luật cứng).
+ */
+app.post('/api/admin/crawl/run-now', (req, res) => {
+  const status = autoCrawlBot.getCrawlBotStatus();
+  if (status.running) {
+    return res.status(409).json({ message: 'Bot cào đang chạy, vui lòng chờ.' });
+  }
+  const targetFb = parseInt(req.body?.targetFb) || 50;
+  const targetOther = parseInt(req.body?.targetOther) || 15;
+  autoCrawlBot.runCrawlJob({ targetFb, targetOther })
+    .catch(e => console.error('[CrawlBot API] Error:', e));
+  res.json({
+    message: `Đã kích hoạt cào tự động (Mục tiêu: +${targetFb} phòng Facebook, +${targetOther} phòng khác)!`,
+    rules: status.rules
+  });
+});
+
+/**
+ * GET /api/admin/crawl-log
+ * Xem log kiểm toán mới nhất của crawl bot.
+ */
+app.get('/api/admin/crawl-log', (_req, res) => {
+  const crawlLogPath = path.join(LOG_DIR, 'crawl_bot.log');
+  if (!fs.existsSync(crawlLogPath)) {
+    return res.json({ log: 'Chưa có dữ liệu log cào.' });
+  }
+  try {
+    const lines = fs.readFileSync(crawlLogPath, 'utf-8').trim().split('\n');
+    res.json({ log: lines.slice(-100).join('\n') });
+  } catch (e) {
+    res.status(500).json({ error: e.message });
+  }
+});
+
+/**
  * PATCH /api/rooms/:id/status
  * Body: { trang_thai: "da_thue" | "con_trong" | "nghi_ngo_lua_dao" | "het_han" }
  */
@@ -486,15 +531,19 @@ app.listen(PORT, () => {
 
   console.log(`\n${sep}`);
   console.log(`🚀 HaUI Room Finder Server đang chạy!`);
-  console.log(`   Trang chủ  → http://localhost:${PORT}`);
-  console.log(`   Bản đồ     → http://localhost:${PORT}/map.html`);
-  console.log(`   Admin      → http://localhost:${PORT}/admin.html`);
-  console.log(`   API phòng  → http://localhost:${PORT}/api/rooms`);
-  console.log(`   Bot status → http://localhost:${PORT}/api/admin/bot-status`);
+  console.log(`   Trang chủ       → http://localhost:${PORT}`);
+  console.log(`   Bản đồ          → http://localhost:${PORT}/map.html`);
+  console.log(`   Admin           → http://localhost:${PORT}/admin.html`);
+  console.log(`   API phòng       → http://localhost:${PORT}/api/rooms`);
+  console.log(`   Link Bot status → http://localhost:${PORT}/api/admin/bot-status`);
+  console.log(`   Crawl Bot API   → http://localhost:${PORT}/api/admin/crawl-status`);
   console.log(`${sep}`);
   console.log(`📦 DB: ${total} phòng trọ`);
   console.log(`🤖 Link Health Bot: chạy sau 30s, lặp mỗi 6 tiếng`);
+  console.log(`🕷️ Playwright Crawl Bot: lặp mỗi 4 tiếng (+50 FB, +phongtro123)`);
+  console.log(`⚖️ Luật cứng: Nghị định 13/2023/NĐ-CP, lọc spam, đa dạng CS1-2-3`);
   console.log(`${sep}\n`);
 
   scheduleLinkBot();
+  autoCrawlBot.startAutoCrawlScheduler();
 });

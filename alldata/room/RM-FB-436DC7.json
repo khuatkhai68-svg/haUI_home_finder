@@ -1,0 +1,53 @@
+{
+  "ma_phong": "RM-FB-436DC7",
+  "nguon": "facebook",
+  "url_nguon": "https://www.facebook.com/groups/447547838952346/posts/2860839700956469/",
+  "ngay_cao": "2026-09-24T17:17:44.762Z",
+  "ngay_cap_nhat": "2026-09-24T17:17:44.762Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "100% Khử định danh PII, nguồn nhóm công khai",
+    "chong_spam": "Đã qua kiểm định bài chào thuê chính thống",
+    "da_kiem_tra_trung": true
+  },
+  "thong_tin": {
+    "tieu_de": "NHÀ MK CÒN 1 PHÒNG KO CHUNG CHỦ MỚI XÂY CÁCH CỔNG CHÍNH 200M CỔNG PHỤ MỚI 150M",
+    "gia": 800000,
+    "dien_tich": 25,
+    "dia_chi": "Khu vực Phù Vân, TP. Phủ Lý, Hà Nam (gần HaUI CS3)",
+    "quan_huyen": "Phủ Lý",
+    "tinh_thanh": "Hà Nam",
+    "mo_ta": "Silas King\nQuản trị viên\n \n·\n1 ngày trước\n1 ngày\n \n·\nNHÀ MK CÒN 1 PHÒNG KO CHUNG CHỦ MỚI XÂY CÁCH CỔNG CHÍNH 200M CỔNG PHỤ MỚI 150M\nLiên hệ 0984527386\n0:00 / 0:48\nThích\nBình luận\nChia sẻ",
+    "tien_ich": [],
+    "khong_chung_chu": false,
+    "gio_giac_tu_do": false
+  },
+  "vi_tri": {
+    "lat": 20.54267,
+    "lng": 105.89921,
+    "khoang_cach_cs1_km": 59.3,
+    "khoang_cach_cs2_km": 60.5,
+    "khoang_cach_cs3_km": 0.2,
+    "co_so_gan_nhat": "CS3",
+    "thoi_gian_di_xe_phut": 1
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "0984527386",
+    "facebook": "https://www.facebook.com/groups/447547838952346/posts/2860839700956469/"
+  },
+  "anh": [
+    {
+      "url_goc": "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80",
+      "mo_ta": "Phòng trọ sinh viên"
+    },
+    {
+      "url_goc": "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80",
+      "mo_ta": "Không gian thoáng mát"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}

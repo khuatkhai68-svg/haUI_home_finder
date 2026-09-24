@@ -1,0 +1,56 @@
+{
+  "ma_phong": "RM-FB-D12348",
+  "nguon": "facebook",
+  "url_nguon": "https://www.facebook.com/groups/dhcncs3hanam/posts/1818717295791531/",
+  "ngay_cao": "2026-09-24T17:17:22.082Z",
+  "ngay_cap_nhat": "2026-09-24T17:17:22.082Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "100% Khử định danh PII, nguồn nhóm công khai",
+    "chong_spam": "Đã qua kiểm định bài chào thuê chính thống",
+    "da_kiem_tra_trung": true
+  },
+  "thong_tin": {
+    "tieu_de": "Cho thuê phòng trọ khép kín 1.0 tr/tháng gần HaUI CS3 (Phù Vân - Hà Nam)",
+    "gia": 1000000,
+    "dien_tich": 21,
+    "dia_chi": "Khu vực Châu Sơn, TP. Phủ Lý, Hà Nam (gần HaUI CS3)",
+    "quan_huyen": "Phủ Lý",
+    "tinh_thanh": "Hà Nam",
+    "mo_ta": "Nguyễn Thị Dương Tâm\n9 giờ trước\n9 giờ\n \n·\nCuối tháng này khách chuyển công tác e trống 2p , cách cổng phụ đhcn 300m, kcn châu sơn 1km, ccmn full đồ, thang máy , khoá vâ tay… Chính chủ cho thuê ạ\nSđt _zalo 0931685222\nTất cả cảm xúc:\n2\n1\nThích\nBình luận\nChia sẻ",
+    "tien_ich": [
+      "dieu_hoa",
+      "thang_may"
+    ],
+    "khong_chung_chu": false,
+    "gio_giac_tu_do": false
+  },
+  "vi_tri": {
+    "lat": 20.51957,
+    "lng": 105.90333,
+    "khoang_cach_cs1_km": 61.9,
+    "khoang_cach_cs2_km": 63.1,
+    "khoang_cach_cs3_km": 2.4,
+    "co_so_gan_nhat": "CS3",
+    "thoi_gian_di_xe_phut": 8
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "0931685222",
+    "facebook": "https://www.facebook.com/groups/dhcncs3hanam/posts/1818717295791531/"
+  },
+  "anh": [
+    {
+      "url_goc": "https://scontent.fhan15-2.fna.fbcdn.net/v/t39.30808-6/820008776_122195663246890785_3904665702663755908_n.jpg?stp=dst-jpg_tt6&cstp=mx718x960&ctp=s590x590&_nc_cat=104&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=X3FTay7nVvEQ7kNvwGmZXsC&_nc_oc=AdodJ2IGKf24e2WIXFfpWpPdI3TV3Jmd9BWwXWNlgRm9dACYqZbPQfCuDc_zZ_FLTnM&_nc_zt=23&_nc_ht=scontent.fhan15-2.fna&_nc_gid=fMwdNzTNmji1KBikcfzdPQ&_nc_ss=7b289&oh=00_AQJKEfDIDrHAL_ehN-2N_fNaWfcI874QYrnDDuv5LifS4w&oe=6ABB14CF",
+      "mo_ta": "Ảnh thực tế bài đăng FB"
+    },
+    {
+      "url_goc": "https://scontent.fhan15-1.fna.fbcdn.net/v/t39.30808-6/821708452_122195663402890785_2226655578853091752_n.jpg?stp=dst-jpg_tt6&cstp=mx960x1280&ctp=s590x590&_nc_cat=101&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=gvK7h85PUesQ7kNvwHj9Su3&_nc_oc=AdprpU1p_uc6RJdH0p-jdq3ZGxGrBTw-78ieC5FhQFwvDA8FoQJDvZ6QuIWMkLQEOxY&_nc_zt=23&_nc_ht=scontent.fhan15-1.fna&_nc_gid=fMwdNzTNmji1KBikcfzdPQ&_nc_ss=7b289&oh=00_AQIYWLNgchYSFtR-xiyhk9kf8rMmJX5f8J_-F25pYXwIMw&oe=6ABB1807",
+      "mo_ta": "Ảnh thực tế bài đăng FB"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}
