@@ -24,6 +24,8 @@ botdata/playwright-mcp/
 # Screenshots tạm
 webdata/*.png
 webdata/*.jpg
+!webdata/logo.png
+!webdata/favicon.png
 
 # Crawler scripts không cần thiết cho production
 # (giữ lại alldata/room/*.json vì là DB chính)
