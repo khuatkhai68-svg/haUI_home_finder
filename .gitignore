@@ -33,3 +33,6 @@ webdata/*.jpg
 # Build artifacts
 *.log
 npm-debug.log*
+
+# Subdirectory artifacts
+haUI_home_finder/
