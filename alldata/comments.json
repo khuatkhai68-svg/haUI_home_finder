@@ -1,0 +1,26 @@
+{
+  "RM-PT123-DE82AE": [
+    {
+      "id": "CMT-01",
+      "author": "Trần Tuấn Anh",
+      "major": "K17 - Công nghệ thông tin HaUI",
+      "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=tuananh",
+      "rating": 5,
+      "date": "2026-09-20",
+      "content": "Phòng ở rất êm, bác chủ trọ hiền lành hỗ trợ sinh viên nhiệt tình. Điện nước tính đúng công tơ riêng, có khóa vân tay đi về giờ nào cũng được. Đi bộ ra cổng trường CS1 tầm 5 phút.",
+      "tags": ["Chủ nhà thân thiện", "An ninh tốt", "Giờ giấc tự do"],
+      "likes": 8
+    },
+    {
+      "id": "CMT-02",
+      "author": "Lê Thị Mai",
+      "major": "K18 - Kế toán HaUI",
+      "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=lemai",
+      "rating": 4,
+      "date": "2026-09-22",
+      "content": "Phòng sạch sẽ, ban công phơi đồ thoáng gió. Buổi tối ngõ hơi đông nhưng đi lại tiện, gần chợ Nhổn mua đồ ăn rẻ lắm các bạn tân sinh viên nhé.",
+      "tags": ["Gần chợ", "Phòng sạch thoáng"],
+      "likes": 5
+    }
+  ]
+}

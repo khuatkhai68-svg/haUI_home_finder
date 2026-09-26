@@ -9,8 +9,35 @@
   <link rel="stylesheet" href="styles.css" />
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
   <style>
-    body { overflow: hidden; }
-    @media (max-width: 768px) { body { overflow: auto; } }
+    html, body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      overflow-y: auto !important;
+      background: #f8fafc;
+    }
+    .admin-layout {
+      display: flex !important;
+      min-height: calc(100vh - 64px);
+      width: 100%;
+    }
+    .admin-sidebar {
+      width: 256px;
+      flex-shrink: 0;
+      background: #ffffff;
+      border-right: 1px solid #e2e8f0;
+      position: sticky;
+      top: 64px;
+      height: calc(100vh - 64px);
+      overflow-y: auto;
+    }
+    .admin-main {
+      flex: 1;
+      min-width: 0;
+      padding: 1.75rem 2rem 4rem;
+      background: #f8fafc;
+      overflow-y: visible !important;
+    }
   </style>
 </head>
 <body>
@@ -41,7 +68,28 @@
   </header>
 
   <main style="flex:1;display:flex;flex-direction:column;">
-    <div class="admin-layout">
+    <!-- Màn hình khóa bảo mật: Chỉ Admin mới được truy cập -->
+    <div id="admin-auth-guard" style="display:none;flex:1;align-items:center;justify-content:center;padding:3rem 1.5rem;background:#f8fafc;">
+      <div style="background:white;border-radius:24px;max-width:480px;width:100%;padding:2.5rem 2rem;text-align:center;box-shadow:0 20px 40px -15px rgba(0,0,0,0.1);border:1px solid #e2e8f0;">
+        <div style="width:72px;height:72px;background:#fee2e2;color:#dc2626;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;font-size:2rem;">
+          🛡️
+        </div>
+        <h2 style="font-size:1.4rem;font-weight:800;color:#0f172a;margin-bottom:0.5rem;">Khu vực Quản trị Admin</h2>
+        <p style="color:#64748b;font-size:0.9rem;line-height:1.6;margin-bottom:1.75rem;">
+          Trang quản trị chỉ dành riêng cho <strong>Quản trị viên (Admin)</strong>. Sinh viên và khách vãng lai không có quyền truy cập vào bảng điều khiển này.
+        </p>
+        <div style="display:flex;flex-direction:column;gap:0.75rem;">
+          <button onclick="if(window.HaUIAuth) window.HaUIAuth.quickLogin('admin@haui.edu.vn','admin')" style="width:100%;padding:0.85rem;background:#2563eb;color:white;border:none;border-radius:12px;font-weight:700;cursor:pointer;font-size:0.95rem;box-shadow:0 4px 12px rgba(37,99,235,0.25);">
+            ⚡ Đăng nhập tài khoản Admin (1-Click)
+          </button>
+          <a href="index.html" style="padding:0.75rem;background:#f1f5f9;color:#334155;border-radius:12px;font-weight:600;text-decoration:none;font-size:0.9rem;">
+            ⬅️ Về trang chủ tìm trọ
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="admin-layout" id="admin-layout-container">
 
       <!-- Sidebar -->
       <aside class="admin-sidebar">
@@ -397,6 +445,100 @@
         </div>
       </section>
 
+      <!-- View: Quản lý người dùng -->
+      <section class="admin-main" id="sec-users" style="display:none;">
+        <div class="admin-header" style="display:flex;justify-content:space-between;align-items:center;">
+          <div>
+            <h1>Quản lý người dùng</h1>
+            <p>Danh sách tài khoản sinh viên, chủ trọ và phân quyền quản trị viên</p>
+          </div>
+          <button class="btn-primary" onclick="loadUsersData()">
+            <i data-lucide="refresh-cw" style="width:16px;height:16px;"></i> Làm mới
+          </button>
+        </div>
+
+        <!-- Thống kê người dùng -->
+        <div class="stats-grid" style="grid-template-columns: repeat(4, 1fr); margin-bottom: 1.5rem;">
+          <div class="stat-card">
+            <div class="stat-label">Tổng người dùng</div>
+            <div class="stat-value" id="user-count-total">0</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Sinh viên</div>
+            <div class="stat-value" id="user-count-students" style="color:#2563eb;">0</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Chủ trọ</div>
+            <div class="stat-value" id="user-count-landlords" style="color:#059669;">0</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Quản trị viên (Admin)</div>
+            <div class="stat-value" id="user-count-admins" style="color:#dc2626;">0</div>
+          </div>
+        </div>
+
+        <!-- Bảng danh sách người dùng -->
+        <div class="crawler-panel">
+          <div class="crawler-panel-header" style="display:flex;justify-content:space-between;align-items:center;">
+            <h2>Danh sách tài khoản hệ thống</h2>
+          </div>
+          <div style="overflow-x:auto;">
+            <table class="crawler-table">
+              <thead>
+                <tr>
+                  <th>Tài khoản</th>
+                  <th>Họ và tên</th>
+                  <th>Email</th>
+                  <th>Số điện thoại</th>
+                  <th>Vai trò hiện tại</th>
+                  <th>Phân quyền</th>
+                </tr>
+              </thead>
+              <tbody id="user-manage-tbody">
+                <tr><td colspan="6" style="text-align:center;padding:2rem;color:#94a3b8;">Đang tải danh sách người dùng...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- View: Báo cáo Spam & Lừa đảo -->
+      <section class="admin-main" id="sec-spam" style="display:none;">
+        <div class="admin-header" style="display:flex;justify-content:space-between;align-items:center;">
+          <div>
+            <h1>Báo cáo Spam & An toàn phòng trọ</h1>
+            <p>Hệ thống tự động phát hiện tin nghi ngờ lừa đảo, cọc tiền bất thường hoặc số điện thoại rác</p>
+          </div>
+          <button class="btn-primary" onclick="loadSpamData()">
+            <i data-lucide="refresh-cw" style="width:16px;height:16px;"></i> Quét lại
+          </button>
+        </div>
+
+        <!-- Bảng danh sách phòng nghi ngờ -->
+        <div class="crawler-panel">
+          <div class="crawler-panel-header" style="display:flex;justify-content:space-between;align-items:center;">
+            <h2>Danh sách phòng có rủi ro cao / Bị báo cáo</h2>
+          </div>
+          <div style="overflow-x:auto;">
+            <table class="crawler-table">
+              <thead>
+                <tr>
+                  <th>Mã phòng</th>
+                  <th>Tiêu đề phòng</th>
+                  <th>Giá thuê</th>
+                  <th>Scam Score</th>
+                  <th>Trạng thái</th>
+                  <th>Hành động xử lý</th>
+                </tr>
+              </thead>
+              <tbody id="spam-manage-tbody">
+                <tr><td colspan="6" style="text-align:center;padding:2rem;color:#94a3b8;">Đang tải danh sách cảnh báo spam...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
       <!-- Modal Thêm phòng mới -->
       <div id="modal-add-room" style="display:none;position:fixed;inset:0;background:rgba(15,23,42,0.6);z-index:9999;align-items:center;justify-content:center;padding:1rem;">
         <div style="background:white;width:100%;max-width:540px;border-radius:16px;box-shadow:0 20px 25px -5px rgba(0,0,0,0.2);overflow:hidden;max-height:90vh;display:flex;flex-direction:column;">
@@ -463,27 +605,185 @@
     let allManagedRooms = [];
 
     function showSection(sec) {
-      const secDash = document.getElementById('sec-dashboard');
-      const secRooms = document.getElementById('sec-rooms');
-      const navDash = document.getElementById('nav-dashboard');
-      const navRooms = document.getElementById('nav-rooms');
+      const sections = {
+        dashboard: document.getElementById('sec-dashboard'),
+        rooms: document.getElementById('sec-rooms'),
+        users: document.getElementById('sec-users'),
+        spam: document.getElementById('sec-spam')
+      };
+      const navLinks = {
+        dashboard: document.getElementById('nav-dashboard'),
+        rooms: document.getElementById('nav-rooms'),
+        users: document.getElementById('nav-users'),
+        spam: document.getElementById('nav-spam')
+      };
 
-      if (sec === 'rooms') {
-        if (secDash) secDash.style.display = 'none';
-        if (secRooms) secRooms.style.display = 'block';
-        if (navDash) navDash.classList.remove('active');
-        if (navRooms) navRooms.classList.add('active');
-        loadRoomManagerData();
-      } else if (sec === 'dashboard') {
-        if (secDash) secDash.style.display = 'block';
-        if (secRooms) secRooms.style.display = 'none';
-        if (navDash) navDash.classList.add('active');
-        if (navRooms) navRooms.classList.remove('active');
-        loadAdminData();
-      } else {
-        alert(`Mục "${sec}" đang được kết nối trong phiên bản tiếp theo.`);
-      }
+      Object.keys(sections).forEach(k => {
+        if (sections[k]) sections[k].style.display = 'none';
+        if (navLinks[k]) navLinks[k].classList.remove('active');
+      });
+
+      if (sections[sec]) sections[sec].style.display = 'block';
+      if (navLinks[sec]) navLinks[sec].classList.add('active');
+
+      if (sec === 'dashboard') loadAdminData();
+      else if (sec === 'rooms') loadRoomManagerData();
+      else if (sec === 'users') loadUsersData();
+      else if (sec === 'spam') loadSpamData();
+
       lucide.createIcons();
+    }
+
+    async function loadUsersData() {
+      const tbody = document.getElementById('user-manage-tbody');
+      if (tbody) tbody.innerHTML = `<tr><td colspan="6" style="text-align:center;padding:2rem;color:#94a3b8;">Đang tải danh sách người dùng...</td></tr>`;
+
+      try {
+        const res = await fetch('/api/auth/users');
+        if (!res.ok) throw new Error('Không thể tải danh sách người dùng');
+        const data = await res.json();
+        const users = data.users || [];
+
+        const total = users.length;
+        const students = users.filter(u => u.role === 'student').length;
+        const landlords = users.filter(u => u.role === 'landlord').length;
+        const admins = users.filter(u => u.role === 'admin').length;
+
+        const elTot = document.getElementById('user-count-total');
+        const elStu = document.getElementById('user-count-students');
+        const elHost = document.getElementById('user-count-landlords');
+        const elAdm = document.getElementById('user-count-admins');
+
+        if (elTot) elTot.textContent = total;
+        if (elStu) elStu.textContent = students;
+        if (elHost) elHost.textContent = landlords;
+        if (elAdm) elAdm.textContent = admins;
+
+        if (!users.length) {
+          tbody.innerHTML = `<tr><td colspan="6" style="text-align:center;padding:2rem;color:#94a3b8;">Chưa có tài khoản nào trong hệ thống</td></tr>`;
+          return;
+        }
+
+        tbody.innerHTML = users.map(u => {
+          const roleClass = u.role === 'admin' ? 'color:#dc2626;background:#fee2e2;' : (u.role === 'landlord' ? 'color:#059669;background:#ecfdf5;' : 'color:#2563eb;background:#eff6ff;');
+          const roleName = u.roleLabel || (u.role === 'admin' ? 'Quản trị viên' : (u.role === 'landlord' ? 'Chủ trọ' : 'Sinh viên'));
+
+          return `
+            <tr>
+              <td>
+                <div style="display:flex;align-items:center;gap:8px;">
+                  <img src="${u.avatar || 'https://api.dicebear.com/7.x/avataaars/svg?seed=' + encodeURIComponent(u.name)}" style="width:34px;height:34px;border-radius:50%;background:#e2e8f0;object-fit:cover;" />
+                  <span style="font-family:monospace;font-size:0.75rem;font-weight:700;color:#64748b;">${u.id}</span>
+                </div>
+              </td>
+              <td style="font-weight:700;color:#0f172a;">${u.name}</td>
+              <td style="color:#475569;font-size:0.85rem;">${u.email || '-'}</td>
+              <td style="color:#475569;font-size:0.85rem;">${u.phone || '-'}</td>
+              <td>
+                <span style="font-size:0.75rem;font-weight:700;padding:2px 8px;border-radius:6px;${roleClass}">
+                  ${roleName}
+                </span>
+              </td>
+              <td>
+                <select onchange="changeUserRole('${u.id}', this.value)" style="padding:4px 8px;border-radius:6px;border:1px solid #cbd5e1;font-size:0.8rem;background:white;cursor:pointer;">
+                  <option value="student" ${u.role === 'student' ? 'selected' : ''}>🎓 Sinh viên</option>
+                  <option value="landlord" ${u.role === 'landlord' ? 'selected' : ''}>🏠 Chủ trọ</option>
+                  <option value="admin" ${u.role === 'admin' ? 'selected' : ''}>🛡️ Quản trị viên</option>
+                </select>
+              </td>
+            </tr>
+          `;
+        }).join('');
+      } catch (err) {
+        if (tbody) tbody.innerHTML = `<tr><td colspan="6" style="text-align:center;padding:2rem;color:#ef4444;">Lỗi: ${err.message}</td></tr>`;
+      }
+    }
+
+    async function changeUserRole(userId, newRole) {
+      if (!confirm(`Bạn có chắc muốn đổi vai trò của tài khoản ${userId} sang "${newRole}"?`)) {
+        loadUsersData();
+        return;
+      }
+      try {
+        const res = await fetch(`/api/auth/users/${userId}/role`, {
+          method: 'PATCH',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ role: newRole })
+        });
+        const data = await res.json();
+        if (res.ok) {
+          alert('Cập nhật vai trò người dùng thành công!');
+          loadUsersData();
+        } else {
+          alert('Lỗi: ' + (data.error || 'Không thể đổi vai trò'));
+          loadUsersData();
+        }
+      } catch (e) {
+        alert('Lỗi kết nối: ' + e.message);
+        loadUsersData();
+      }
+    }
+
+    async function loadSpamData() {
+      const tbody = document.getElementById('spam-manage-tbody');
+      if (tbody) tbody.innerHTML = `<tr><td colspan="6" style="text-align:center;padding:2rem;color:#94a3b8;">Đang phân tích dữ liệu phòng chống lừa đảo...</td></tr>`;
+
+      try {
+        const res = await fetch('/api/rooms?status=all&limit=500');
+        if (!res.ok) throw new Error('Lỗi tải danh sách phòng');
+        const data = await res.json();
+        const rooms = data.data || [];
+
+        const suspicious = rooms.filter(r => {
+          const sc = r.scamScore || 0;
+          const text = ((r.title || '') + ' ' + (r.desc || '')).toLowerCase();
+          const hasRiskWord = text.includes('đặt cọc trước') || text.includes('chuyển khoản cọc') || text.includes('giữ chỗ gấp');
+          return sc >= 30 || r.trangThai === 'nghi_ngo_lua_dao' || hasRiskWord;
+        });
+
+        if (!suspicious.length) {
+          tbody.innerHTML = `<tr><td colspan="6" style="text-align:center;padding:2rem;color:#059669;font-weight:600;">✅ Hiện tại hệ thống không phát hiện tin phòng nào có rủi ro lừa đảo cao.</td></tr>`;
+          return;
+        }
+
+        tbody.innerHTML = suspicious.map(r => {
+          const score = r.scamScore || 45;
+          const isHigh = score >= 50 || r.trangThai === 'nghi_ngo_lua_dao';
+          const scoreBadge = isHigh
+            ? `<span style="background:#fee2e2;color:#dc2626;padding:3px 8px;border-radius:6px;font-weight:700;font-size:0.75rem;">⚠️ Cảnh báo (${score}%)</span>`
+            : `<span style="background:#fef3c7;color:#d97706;padding:3px 8px;border-radius:6px;font-weight:700;font-size:0.75rem;">Trung bình (${score}%)</span>`;
+
+          const priceStr = r.price ? `${(r.price/1e6).toFixed(1)} tr/th` : 'Chưa có';
+
+          return `
+            <tr>
+              <td style="font-family:monospace;font-size:0.8rem;font-weight:700;color:#334155;">${r.id}</td>
+              <td style="max-width:280px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:600;" title="${r.title}">
+                <a href="room-detail.html?id=${r.id}" target="_blank" style="color:#0f172a;text-decoration:none;">${r.title}</a>
+              </td>
+              <td style="color:#2563eb;font-weight:700;">${priceStr}</td>
+              <td>${scoreBadge}</td>
+              <td>
+                <span style="font-size:0.75rem;font-weight:700;color:${r.trangThai==='nghi_ngo_lua_dao'?'#dc2626':'#475569'};">
+                  ${r.trangThai==='nghi_ngo_lua_dao' ? '⛔ Đã đánh dấu Lừa đảo' : (r.trangThai==='con_trong' ? 'Đang hiển thị' : 'Đã ẩn')}
+                </span>
+              </td>
+              <td>
+                <div style="display:flex;gap:6px;">
+                  <button onclick="toggleStatus('${r.id}', 'nghi_ngo_lua_dao');setTimeout(loadSpamData, 500);" style="padding:3px 8px;border-radius:6px;background:#fee2e2;color:#dc2626;border:none;cursor:pointer;font-size:0.75rem;font-weight:600;">
+                    Khóa tin
+                  </button>
+                  <button onclick="deleteManagedRoom('${r.id}');setTimeout(loadSpamData, 500);" style="padding:3px 8px;border-radius:6px;background:#f1f5f9;color:#475569;border:none;cursor:pointer;font-size:0.75rem;font-weight:600;">
+                    Xóa vĩnh viễn
+                  </button>
+                </div>
+              </td>
+            </tr>
+          `;
+        }).join('');
+      } catch (err) {
+        if (tbody) tbody.innerHTML = `<tr><td colspan="6" style="text-align:center;padding:2rem;color:#ef4444;">Lỗi: ${err.message}</td></tr>`;
+      }
     }
 
     async function loadAdminData() {
@@ -502,6 +802,7 @@
           const roomsData = await roomsRes.json();
           renderTable(roomsData.data || []);
         }
+        lucide.createIcons();
       } catch (e) {
         console.warn('Lỗi kết nối admin API:', e);
       }
@@ -720,8 +1021,21 @@
     }
 
     function openAddRoomModal() {
+      const user = window.HaUIAuth ? window.HaUIAuth.getCurrentUser() : JSON.parse(localStorage.getItem('haui_auth_user') || 'null');
+      
+      // QUY ĐỊNH HỆ THỐNG: Chỉ tài khoản Chủ trọ mới được thêm phòng
+      if (!user || user.role !== 'landlord') {
+        alert('⚠️ QUY ĐỊNH BẢO MẬT:\nChỉ tài khoản CHỦ TRỌ (Landlord) mới có quyền đăng tin hoặc thêm phòng trọ mới vào hệ thống!\n\nVui lòng đăng nhập bằng tài khoản Chủ trọ để thực hiện.');
+        if (window.HaUIAuth) window.HaUIAuth.openModal();
+        return;
+      }
+
       const modal = document.getElementById('modal-add-room');
-      if (modal) modal.style.display = 'flex';
+      if (modal) {
+        modal.style.display = 'flex';
+        const phoneInput = document.getElementById('add-phone');
+        if (phoneInput && user.phone) phoneInput.value = user.phone;
+      }
       lucide.createIcons();
     }
 
@@ -731,11 +1045,17 @@
     }
 
     async function submitNewRoom() {
+      const user = window.HaUIAuth ? window.HaUIAuth.getCurrentUser() : JSON.parse(localStorage.getItem('haui_auth_user') || 'null');
+      if (!user || user.role !== 'landlord') {
+        alert('Lỗi: Chỉ tài khoản Chủ trọ (Landlord) mới có quyền đăng tin hoặc thêm phòng trọ mới.');
+        return;
+      }
+
       const tieu_de = document.getElementById('add-title')?.value?.trim();
       const gia = document.getElementById('add-price')?.value;
       const dien_tich = document.getElementById('add-area')?.value;
       const co_so_gan_nhat = document.getElementById('add-campus')?.value;
-      const so_dien_thoai = document.getElementById('add-phone')?.value?.trim();
+      const so_dien_thoai = document.getElementById('add-phone')?.value?.trim() || user.phone;
       const dia_chi = document.getElementById('add-address')?.value?.trim();
       const mo_ta = document.getElementById('add-desc')?.value?.trim();
 
@@ -747,8 +1067,13 @@
       try {
         const res = await fetch('/api/rooms', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: { 
+            'Content-Type': 'application/json',
+            'x-user-role': user.role
+          },
           body: JSON.stringify({
+            userRole: user.role,
+            ten_chu: user.name,
             tieu_de,
             gia: Number(gia),
             dien_tich: Number(dien_tich) || 20,
@@ -858,10 +1183,44 @@
       }
     }
 
-    loadAdminData();
-    fetchCrawlBotStatus();
-    setInterval(loadAdminData, 10000);
-    setInterval(fetchCrawlBotStatus, 5000);
+    // ── KIỂM TRA QUYỀN TRUY CẬP ADMIN (AUTH GUARD) ───────────────────
+    let adminInterval1 = null;
+    let adminInterval2 = null;
+
+    function checkAdminAccess() {
+      const user = window.HaUIAuth ? window.HaUIAuth.getCurrentUser() : JSON.parse(localStorage.getItem('haui_auth_user') || 'null');
+      const layout = document.getElementById('admin-layout-container');
+      const guard = document.getElementById('admin-auth-guard');
+
+      if (!user || user.role !== 'admin') {
+        if (layout) layout.style.display = 'none';
+        if (guard) guard.style.display = 'flex';
+        if (adminInterval1) clearInterval(adminInterval1);
+        if (adminInterval2) clearInterval(adminInterval2);
+        return false;
+      } else {
+        if (layout) layout.style.display = 'flex';
+        if (guard) guard.style.display = 'none';
+        return true;
+      }
+    }
+
+    function initAdminPage() {
+      if (checkAdminAccess()) {
+        loadAdminData();
+        fetchCrawlBotStatus();
+        if (!adminInterval1) adminInterval1 = setInterval(loadAdminData, 10000);
+        if (!adminInterval2) adminInterval2 = setInterval(fetchCrawlBotStatus, 5000);
+      }
+    }
+
+    // Lắng nghe sự kiện đăng nhập / đăng xuất
+    window.addEventListener('haui_auth_change', () => {
+      initAdminPage();
+    });
+
+    // Chạy kiểm tra ban đầu
+    setTimeout(initAdminPage, 100);
   </script>
 
   <!-- ============ MOBILE BOTTOM NAVIGATION ============ -->
@@ -883,5 +1242,8 @@
       <span>Quản trị</span>
     </a>
   </nav>
+
+  <!-- Hệ thống Xác thực & Đăng nhập -->
+  <script src="auth.js"></script>
 </body>
 </html>

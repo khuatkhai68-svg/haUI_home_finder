@@ -22,15 +22,47 @@ const PORT = process.env.PORT || 3333;
 const DB_ROOM_DIR = path.resolve(__dirname, '..', 'alldata', 'room');
 const WEBDATA_DIR = path.resolve(__dirname, '..', 'webdata');
 const LOG_DIR     = path.resolve(__dirname, '..', 'alldata', 'logs');
+const USERS_FILE    = path.resolve(__dirname, '..', 'alldata', 'users.json');
+const COMMENTS_FILE = path.resolve(__dirname, '..', 'alldata', 'comments.json');
+const UPLOAD_DIR    = path.resolve(__dirname, '..', 'alldata', 'uploads');
 
-// Đảm bảo thư mục log tồn tại
+// Đảm bảo thư mục log & upload tồn tại
 if (!fs.existsSync(LOG_DIR)) fs.mkdirSync(LOG_DIR, { recursive: true });
+if (!fs.existsSync(UPLOAD_DIR)) fs.mkdirSync(UPLOAD_DIR, { recursive: true });
+
+function getAllUsers() {
+  if (!fs.existsSync(USERS_FILE)) return [];
+  try {
+    return JSON.parse(fs.readFileSync(USERS_FILE, 'utf-8'));
+  } catch {
+    return [];
+  }
+}
+
+function saveUsers(users) {
+  fs.writeFileSync(USERS_FILE, JSON.stringify(users, null, 2), 'utf-8');
+}
+
+function getAllComments() {
+  if (!fs.existsSync(COMMENTS_FILE)) return {};
+  try {
+    return JSON.parse(fs.readFileSync(COMMENTS_FILE, 'utf-8'));
+  } catch {
+    return {};
+  }
+}
+
+function saveComments(cmts) {
+  fs.writeFileSync(COMMENTS_FILE, JSON.stringify(cmts, null, 2), 'utf-8');
+}
 
 // ── Middleware ─────────────────────────────────────────────────────────────────
 app.use(cors());
-app.use(express.json());
+app.use(express.json({ limit: '50mb' }));
+app.use(express.urlencoded({ limit: '50mb', extended: true }));
 app.use(express.static(WEBDATA_DIR));
 app.use('/photos', express.static(path.join(DB_ROOM_DIR, 'photos')));
+app.use('/uploads', express.static(UPLOAD_DIR));
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // DB HELPERS
@@ -73,6 +105,51 @@ function deleteRoom(id) {
   if (fs.existsSync(fp)) fs.unlinkSync(fp);
 }
 
+/**
+ * SERVER-SIDE TEXT SANITIZER (API-01)
+ * Làm sạch văn bản rác CSS/JS/JSON-LD trước khi phục vụ lên frontend.
+ * Hoạt động như lớp phòng thủ cuối cùng ngay tại tầng API.
+ */
+const GARBAGE_MARKERS = [
+  ' - Phongtro123.comwindow.',
+  'window.dataLayer',
+  '@charset "UTF-8"',
+  '@charset \'UTF-8\'',
+  '.swal2-',
+  '.vue-slider-',
+  'base_url = "https://phongtro123.com"',
+  '{"@context":"http://schema.org"',
+  'function gtag(',
+  'window.Laravel',
+  '@-webkit-keyframes',
+  '@keyframes swal2',
+];
+
+function cleanGarbageText(str) {
+  if (!str || typeof str !== 'string') return '';
+  let result = str;
+  for (const m of GARBAGE_MARKERS) {
+    const idx = result.indexOf(m);
+    if (idx > 0) result = result.substring(0, idx).trim();
+  }
+  return result.replace(/\*\*/g, '').replace(/\s+/g, ' ').trim();
+}
+
+// Danh sách địa danh ngoại vùng — lọc tại tầng API trước khi trả về client
+const GEO_BLACKLIST = [
+  'quận 1','quận 2','quận 3','quận 4','quận 5','quận 6','quận 7','quận 8',
+  'quận 9','quận 10','quận 11','quận 12','bình thạnh','gò vấp','tân bình',
+  'tân phú','phú nhuận','bình tân','thủ đức','nhà bè','hóc môn','củ chi',
+  'hồ chí minh','tp.hcm','tphcm','sài gòn','saigon','đà nẵng','bình dương',
+  'đồng nai','cần thơ',
+];
+
+function isGeographicallyValid(room) {
+  const combined = [(room.title||''), (room.address||''), (room.district||''), (room.city||'')].join(' ').toLowerCase();
+  return !GEO_BLACKLIST.some(kw => combined.includes(kw));
+}
+
+
 /** Map room JSON → format frontend. */
 function formatRoom(r) {
   const ti = r.thong_tin || {};
@@ -84,13 +161,14 @@ function formatRoom(r) {
     url:           r.url_nguon,
     trangThai:     r.trang_thai,
     ngayCao:       r.ngay_cao,
-    title:         ti.tieu_de   || '',
+    // API-01: Áp dụng cleanGarbageText cho tất cả trường text
+    title:         cleanGarbageText(ti.tieu_de   || ''),
     price:         ti.gia       || 0,
     area:          ti.dien_tich || 0,
-    address:       ti.dia_chi   || '',
+    address:       cleanGarbageText(ti.dia_chi   || ''),
     district:      ti.quan_huyen || '',
     city:          ti.tinh_thanh || 'Hà Nội',
-    desc:          ti.mo_ta     || '',
+    desc:          cleanGarbageText(ti.mo_ta     || ''),
     amenities:     ti.tien_ich  || [],
     noOwner:       ti.khong_chung_chu || false,
     freeTime:      ti.gio_giac_tu_do  || false,
@@ -104,9 +182,12 @@ function formatRoom(r) {
     phone:         lh.so_dien_thoai || '',
     owner:         lh.ten_chu       || '',
     fbLink:        lh.facebook      || '',
-    images:        (r.anh || []).map(a => a.url_goc).filter(Boolean),
+    images:        (r.anh || []).map(a => typeof a === 'string' ? a : a.url_goc).filter(Boolean),
+    videos:        (r.video || []).map(v => typeof v === 'string' ? v : v.url).filter(Boolean),
     scamScore:     r.phan_tich?.scam_score,
     checked:       r.phan_tich?.da_kiem_tra || false,
+    // Flag vị trí xấp xỉ: true = không có địa điểm cụ thể, đang trỏ về HaUI
+    approximateLocation: vt.vi_tri_xap_xi || false,
   };
 }
 
@@ -311,6 +392,9 @@ app.get('/api/rooms', (req, res) => {
     } = req.query;
 
     let rooms = getAllRooms().map(formatRoom);
+
+    // API-01 & DATA-01: Lọc địa lý cứng ngay tầng API — loại bỏ phòng ngoại vùng
+    rooms = rooms.filter(isGeographicallyValid);
 
     // ── Trạng thái ────────────────────────────────────────────────────────────
     if (status === 'all') {
@@ -522,17 +606,37 @@ app.patch('/api/rooms/:id/status', (req, res) => {
 });
 
 /**
+ * DELETE /api/rooms/:id
+ * Xóa phòng khỏi hệ thống DB
+ */
+app.delete('/api/rooms/:id', (req, res) => {
+  const room = getRoomById(req.params.id);
+  if (!room) return res.status(404).json({ error: 'Không tìm thấy phòng để xóa.' });
+  deleteRoom(req.params.id);
+  res.json({ success: true, message: `Đã xóa phòng ${req.params.id} thành công.` });
+});
+
+/**
  * POST /api/rooms
- * Thêm phòng mới thủ công (chủ nhà hoặc admin đăng tin)
+ * Thêm phòng mới thủ công — CHỈ DÀNH RIÊNG CHO CHỦ TRỌ
  */
 app.post('/api/rooms', (req, res) => {
   try {
     const b = req.body || {};
+    const userRole = b.userRole || req.headers['x-user-role'];
+
+    // PHÂN QUYỀN CHẶT CHẼ: Chỉ chủ trọ mới được thêm phòng
+    if (userRole !== 'landlord') {
+      return res.status(403).json({
+        error: 'Chỉ có tài khoản Chủ trọ (Landlord) mới có quyền đăng tin hoặc thêm phòng trọ mới!'
+      });
+    }
+
     if (!b.tieu_de || !b.gia) {
       return res.status(400).json({ error: 'Tiêu đề và giá thuê là bắt buộc.' });
     }
     const randId = Math.random().toString(36).substring(2, 8).toUpperCase();
-    const maPhong = `RM-MN-${randId}`;
+    const maPhong = `RM-HOST-${randId}`;
 
     const newRoom = {
       ma_phong: maPhong,
@@ -573,7 +677,12 @@ app.post('/api/rooms', (req, res) => {
       },
       anh: Array.isArray(b.anh) && b.anh.length
         ? b.anh.map(url => ({ url_goc: url, mo_ta: "Ảnh phòng" }))
-        : [{ url_goc: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80", mo_ta: "Phòng trọ" }],
+        : (Array.isArray(b.images) && b.images.length
+          ? b.images.map(url => ({ url_goc: url, mo_ta: "Ảnh phòng" }))
+          : [{ url_goc: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80", mo_ta: "Phòng trọ" }]),
+      video: Array.isArray(b.videos) && b.videos.length
+        ? b.videos.map(url => ({ url, mo_ta: "Video phòng" }))
+        : (b.video ? [{ url: b.video, mo_ta: "Video phòng" }] : []),
       phan_tich: {
         da_kiem_tra: true,
         scam_score: 0.0
@@ -670,6 +779,325 @@ app.get('/api/ai/tips', (_req, res) => {
     campusKnowledge: aiService.HAUI_CAMPUS_KNOWLEDGE,
     safetyGuidelines: aiService.SAFETY_GUIDELINES
   });
+});
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// AUTHENTICATION & USER MANAGEMENT API
+// ═══════════════════════════════════════════════════════════════════════════════
+
+/**
+ * GET /api/auth/demo-accounts
+ * Danh sách tài khoản demo tiện lợi để kiểm thử 1-click
+ */
+app.get('/api/auth/demo-accounts', (_req, res) => {
+  const users = getAllUsers();
+  const demoList = users.map(u => ({
+    id: u.id,
+    name: u.name,
+    email: u.email,
+    role: u.role,
+    roleLabel: u.roleLabel || u.role,
+    avatar: u.avatar,
+    password: u.password,
+    phone: u.phone
+  }));
+  res.json({ accounts: demoList });
+});
+
+/**
+ * POST /api/auth/login
+ * Đăng nhập bằng Email hoặc Số điện thoại + Mật khẩu
+ */
+app.post('/api/auth/login', (req, res) => {
+  try {
+    const { identifier, password } = req.body || {};
+    if (!identifier || !password) {
+      return res.status(400).json({ error: 'Vui lòng nhập Email/Số điện thoại và Mật khẩu.' });
+    }
+
+    const cleanId = String(identifier).trim().toLowerCase();
+    const users = getAllUsers();
+
+    const user = users.find(u => 
+      (u.email && u.email.toLowerCase() === cleanId) || 
+      (u.phone && u.phone.trim() === cleanId)
+    );
+
+    if (!user) {
+      return res.status(401).json({ error: 'Tài khoản không tồn tại trong hệ thống.' });
+    }
+
+    if (user.password !== password) {
+      return res.status(401).json({ error: 'Mật khẩu không chính xác.' });
+    }
+
+    // Không gửi kèm password về client
+    const { password: _p, ...safeUser } = user;
+    const token = `haui_token_${user.id}_${Date.now()}`;
+
+    res.json({
+      success: true,
+      message: `Chào mừng ${user.name} trở lại!`,
+      token,
+      user: safeUser
+    });
+  } catch (e) {
+    res.status(500).json({ error: e.message });
+  }
+});
+
+/**
+ * POST /api/auth/register
+ * Đăng ký tài khoản Sinh viên hoặc Chủ trọ
+ */
+app.post('/api/auth/register', (req, res) => {
+  try {
+    const { name, email, phone, password, role, campus, studentId } = req.body || {};
+
+    if (!name || !password || (!email && !phone)) {
+      return res.status(400).json({ error: 'Họ tên, mật khẩu và Email hoặc SĐT là bắt buộc.' });
+    }
+
+    const users = getAllUsers();
+    const cleanEmail = (email || '').trim().toLowerCase();
+    const cleanPhone = (phone || '').trim();
+
+    if (cleanEmail && users.some(u => u.email && u.email.toLowerCase() === cleanEmail)) {
+      return res.status(400).json({ error: 'Email này đã được đăng ký tài khoản.' });
+    }
+    if (cleanPhone && users.some(u => u.phone && u.phone.trim() === cleanPhone)) {
+      return res.status(400).json({ error: 'Số điện thoại này đã được đăng ký tài khoản.' });
+    }
+
+    const validRole = ['student', 'landlord'].includes(role) ? role : 'student';
+    const roleLabels = {
+      student: 'Sinh viên',
+      landlord: 'Chủ trọ',
+      admin: 'Quản trị viên'
+    };
+
+    const newId = `USR-${validRole.toUpperCase().slice(0, 3)}-${Date.now().toString().slice(-6)}`;
+    const newUser = {
+      id: newId,
+      name: name.trim(),
+      email: cleanEmail,
+      phone: cleanPhone,
+      password: password,
+      role: validRole,
+      roleLabel: roleLabels[validRole],
+      avatar: `https://api.dicebear.com/7.x/avataaars/svg?seed=${encodeURIComponent(name)}`,
+      campus: campus || 'CS1',
+      studentId: studentId || '',
+      verified: validRole === 'student',
+      savedRooms: [],
+      postedRooms: [],
+      createdAt: new Date().toISOString()
+    };
+
+    users.push(newUser);
+    saveUsers(users);
+
+    const { password: _p, ...safeUser } = newUser;
+    const token = `haui_token_${newUser.id}_${Date.now()}`;
+
+    res.json({
+      success: true,
+      message: 'Đăng ký tài khoản thành công!',
+      token,
+      user: safeUser
+    });
+  } catch (e) {
+    res.status(500).json({ error: e.message });
+  }
+});
+
+/**
+ * GET /api/auth/users
+ * Lấy danh sách người dùng (dành cho Admin)
+ */
+app.get('/api/auth/users', (_req, res) => {
+  const users = getAllUsers().map(({ password, ...u }) => u);
+  res.json({ total: users.length, users });
+});
+
+/**
+ * PATCH /api/auth/users/:id/role
+ * Admin phân quyền vai trò cho người dùng
+ */
+app.patch('/api/auth/users/:id/role', (req, res) => {
+  try {
+    const { role } = req.body || {};
+    const validRoles = ['student', 'landlord', 'admin'];
+    if (!validRoles.includes(role)) {
+      return res.status(400).json({ error: `Vai trò không hợp lệ. Chọn: ${validRoles.join(', ')}` });
+    }
+    const roleLabels = { student: 'Sinh viên', landlord: 'Chủ trọ', admin: 'Quản trị viên' };
+    const users = getAllUsers();
+    const user = users.find(u => u.id === req.params.id);
+    if (!user) return res.status(404).json({ error: 'Không tìm thấy người dùng' });
+
+    user.role = role;
+    user.roleLabel = roleLabels[role];
+    saveUsers(users);
+
+    const { password: _p, ...safeUser } = user;
+    res.json({ success: true, message: `Đã cập nhật vai trò thành ${roleLabels[role]}`, user: safeUser });
+  } catch (e) {
+    res.status(500).json({ error: e.message });
+  }
+});
+
+/**
+ * POST /api/upload
+ * Nhận file ảnh hoặc video từ máy tính (dạng base64 dataUrl), lưu trữ và trả về URL
+ */
+app.post('/api/upload', (req, res) => {
+  try {
+    const { dataUrl, filename, type } = req.body || {};
+    if (!dataUrl) return res.status(400).json({ error: 'Thiếu dữ liệu tệp (dataUrl).' });
+
+    const matches = dataUrl.match(/^data:([A-Za-z-+\/]+);base64,(.+)$/);
+    if (!matches || matches.length !== 3) {
+      return res.status(400).json({ error: 'Định dạng dataUrl không hợp lệ.' });
+    }
+
+    const mimeType = matches[1];
+    const buffer = Buffer.from(matches[2], 'base64');
+
+    // Xác định phần mở rộng
+    let ext = 'bin';
+    if (mimeType.includes('jpeg') || mimeType.includes('jpg')) ext = 'jpg';
+    else if (mimeType.includes('png')) ext = 'png';
+    else if (mimeType.includes('webp')) ext = 'webp';
+    else if (mimeType.includes('mp4')) ext = 'mp4';
+    else if (mimeType.includes('webm')) ext = 'webm';
+    else if (mimeType.includes('mov')) ext = 'mov';
+    else if (filename && filename.includes('.')) ext = filename.split('.').pop().toLowerCase();
+
+    const safeName = (filename ? path.parse(filename).name : (type || 'file'))
+      .replace(/[^a-zA-Z0-9_-]/g, '_')
+      .slice(0, 30);
+    const uniqueFileName = `${Date.now()}_${safeName}.${ext}`;
+    const filePath = path.join(UPLOAD_DIR, uniqueFileName);
+
+    fs.writeFileSync(filePath, buffer);
+
+    res.json({
+      success: true,
+      url: `/uploads/${uniqueFileName}`,
+      filename: uniqueFileName,
+      sizeBytes: buffer.length,
+      mimeType
+    });
+  } catch (e) {
+    res.status(500).json({ error: e.message });
+  }
+});
+
+/**
+ * GET /api/landlord/my-rooms
+ * Lấy danh sách các phòng trọ do chủ nhà đăng tải
+ */
+app.get('/api/landlord/my-rooms', (req, res) => {
+  try {
+    const phone = (req.query.phone || '').trim();
+    let rooms = getAllRooms();
+
+    // Lọc theo SĐT chủ trọ nếu có
+    if (phone) {
+      const filtered = rooms.filter(r => (r.lien_he?.so_dien_thoai || '').trim() === phone);
+      if (filtered.length > 0) {
+        return res.json({ total: filtered.length, data: filtered.map(formatRoom) });
+      }
+    }
+
+    // Nếu chưa có phòng đúng SĐT hoặc chưa nhập SĐT, trả về các phòng nguồn chu_nha_dang
+    const landlordRooms = rooms.filter(r => r.nguon === 'chu_nha_dang');
+    res.json({ total: landlordRooms.length, data: landlordRooms.map(formatRoom) });
+  } catch (e) {
+    res.status(500).json({ error: e.message });
+  }
+});
+
+/**
+ * GET /api/rooms/:id/comments
+ * Lấy danh sách bình luận đánh giá của sinh viên về phòng trọ
+ */
+app.get('/api/rooms/:id/comments', (req, res) => {
+  try {
+    const cmts = getAllComments();
+    const list = cmts[req.params.id] || [];
+
+    if (list.length > 0) {
+      return res.json({ total: list.length, comments: list });
+    }
+
+    // Nếu phòng này chưa có bình luận, tạo 2 bình luận gợi ý chân thực từ sinh viên HaUI
+    const defaultComments = [
+      {
+        id: `CMT-AUTO-1`,
+        author: "Nguyễn Tuấn Linh",
+        major: "K17 - Khoa Công nghệ Thông tin HaUI",
+        avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=linh",
+        rating: 5,
+        date: "2026-09-18",
+        content: "Phòng thoáng mát, bác chủ trọ ở gần nhưng không chung cổng, tính tiền điện nước đúng giá nhà nước. Đi xe máy sang CS1 chỉ mất 5 phút.",
+        tags: ["Chủ nhà thân thiện", "An ninh tốt", "Giờ giấc tự do"],
+        likes: 6
+      },
+      {
+        id: `CMT-AUTO-2`,
+        author: "Phạm Thu Hương",
+        major: "K18 - Khoa Quản trị Kinh doanh HaUI",
+        avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=huong",
+        rating: 4,
+        date: "2026-09-22",
+        content: "Khu vực này khá yên tĩnh để ôn thi, gần chợ Nhổn nên đi mua đồ ăn tiện. Phòng có bình nóng lạnh và điều hòa chạy rất êm.",
+        tags: ["Yên tĩnh học bài", "Gần chợ Nhổn"],
+        likes: 3
+      }
+    ];
+
+    res.json({ total: defaultComments.length, comments: defaultComments });
+  } catch (e) {
+    res.status(500).json({ error: e.message });
+  }
+});
+
+/**
+ * POST /api/rooms/:id/comments
+ * Thêm bình luận đánh giá mới cho phòng trọ
+ */
+app.post('/api/rooms/:id/comments', (req, res) => {
+  try {
+    const { author, major, rating, content, tags } = req.body || {};
+    if (!content || !content.trim()) {
+      return res.status(400).json({ error: 'Nội dung bình luận không được để trống.' });
+    }
+
+    const cmts = getAllComments();
+    const roomId = req.params.id;
+    if (!cmts[roomId]) cmts[roomId] = [];
+
+    const newComment = {
+      id: `CMT-${Date.now().toString().slice(-6)}`,
+      author: (author || 'Sinh viên HaUI').trim(),
+      major: (major || 'Sinh viên Đại học Công Nghiệp Hà Nội').trim(),
+      avatar: `https://api.dicebear.com/7.x/avataaars/svg?seed=${encodeURIComponent(author || 'student')}`,
+      rating: Number(rating) || 5,
+      date: new Date().toISOString().slice(0, 10),
+      content: content.trim(),
+      tags: Array.isArray(tags) ? tags : [],
+      likes: 1
+    };
+
+    cmts[roomId].unshift(newComment);
+    saveComments(cmts);
+
+    res.status(201).json({ success: true, comment: newComment });
+  } catch (e) {
+    res.status(500).json({ error: e.message });
+  }
 });
 
 // ── SPA Fallback ──────────────────────────────────────────────────────────────

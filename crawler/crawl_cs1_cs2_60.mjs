@@ -50,20 +50,44 @@ const WARD_COORDS = {
   "Mai Dịch": { lat: 21.0410, lng: 105.7780 }
 };
 
+// BOT-01: Danh sách địa danh ngoại vùng - phòng nào có địa chỉ này sẽ bị loại bỏ ngay lập tức
+const ADDR_BLACKLIST = [
+  'quận 1','quận 2','quận 3','quận 4','quận 5','quận 6','quận 7','quận 8','quận 9',
+  'quận 10','quận 11','quận 12','bình thạnh','gò vấp','tân bình','tân phú',
+  'phú nhuận','bình tân','thủ đức','nhà bè','hóc môn','củ chi','bình chánh',
+  'hồ chí minh','tp.hcm','tphcm','sài gòn','saigon',
+  'đà nẵng','bình dương','đồng nai','cần thơ',
+  'long biên','gia lâm','hoàng mai','thanh trì','thường tín',
+  'đông anh','mê linh','phú xuyên','ba vì','thạch thất','quốc oai',
+  'hoàn kiếm','đống đa','hai bà trưng','cầu giấy','thanh xuân','hà đông','tây hồ',
+];
+
+function isBlacklisted(addrText, titleText) {
+  const combined = (addrText + ' ' + titleText).toLowerCase();
+  return ADDR_BLACKLIST.some(kw => combined.includes(kw));
+}
+
+/**
+ * BOT-01 FIX v2: Nếu không khớp địa danh cụ thể,
+ * trỏ về HaUI CS1 và đánh dấu isApproximate=true.
+ * Frontend sẽ hiển thị chú thích "Vị trí ước tính" thay vì ẩn phòng.
+ */
 function resolveCoords(addrText, titleText) {
   const combined = (addrText + ' ' + titleText).toLowerCase();
   for (const [key, coords] of Object.entries(WARD_COORDS)) {
     if (combined.includes(key.toLowerCase())) {
       const jitterLat = (Math.random() - 0.5) * 0.0025;
       const jitterLng = (Math.random() - 0.5) * 0.0025;
-      return { lat: coords.lat + jitterLat, lng: coords.lng + jitterLng };
+      return { lat: coords.lat + jitterLat, lng: coords.lng + jitterLng, isApproximate: false };
     }
   }
-  // Default near HaUI CS1
-  const jitterLat = (Math.random() - 0.5) * 0.004;
-  const jitterLng = (Math.random() - 0.5) * 0.004;
-  return { lat: 21.0542 + jitterLat, lng: 105.7350 + jitterLng };
+  // Không khớp địa danh cụ thể — trỏ về HaUI CS1 với jitter nhỏ và đánh dấu xấp xỉ
+  console.log(`  [APPROX-COORD] Không khớp địa danh, trỏ về HaUI CS1: ${(addrText || titleText).substring(0, 60)}`);
+  const jitterLat = (Math.random() - 0.5) * 0.0008;
+  const jitterLng = (Math.random() - 0.5) * 0.0008;
+  return { lat: HAUI_CS1.lat + jitterLat, lng: HAUI_CS1.lng + jitterLng, isApproximate: true };
 }
+
 
 function parsePrice(text) {
   if (!text) return 0;
@@ -173,14 +197,30 @@ export async function crawlCS1CS2Rooms(targetCount = 60) {
 
       if (!data.title || data.title.includes('404') || data.title.includes('Protection')) continue;
 
+      // BOT-01: Lọc địa danh ngoại vùng TRƯỚC khi xử lý
+      if (isBlacklisted(data.address, data.title)) {
+        console.log(`  [SKIP-BLACKLIST] ${data.title.substring(0, 50)}`);
+        continue;
+      }
+
       const price = parsePrice(data.priceText) || 2500000;
       const area = parseArea(data.areaText);
-      const address = data.address.length < 120 && !data.address.includes('{') ? data.address : `${data.title.substring(0, 40)}, Bắc Từ Liêm, Hà Nội`;
+      const address = data.address.length < 120 && !data.address.includes('{') ? data.address : '';
+
+      // BOT-01: resolveCoords trả về HaUI nếu không khớp địa danh — vẫn lưu nhưng đánh dấu xấp xỉ
       const coords = resolveCoords(address, data.title);
 
       const distCS1 = calcDistance(coords.lat, coords.lng, HAUI_CS1.lat, HAUI_CS1.lng);
       const distCS2 = calcDistance(coords.lat, coords.lng, HAUI_CS2.lat, HAUI_CS2.lng);
       const distCS3 = calcDistance(coords.lat, coords.lng, HAUI_CS3.lat, HAUI_CS3.lng);
+
+      // BOT-01: Lọc bán kính - chỉ lọc khi có tọa độ thật (isApproximate=false)
+      const MAX_KM = 8.0;
+      if (!coords.isApproximate && distCS1 > MAX_KM && distCS2 > MAX_KM && distCS3 > 15) {
+        console.log(`  [SKIP-TOO-FAR] CS1=${distCS1}km CS2=${distCS2}km CS3=${distCS3}km: ${data.title.substring(0, 40)}`);
+        continue;
+      }
+
       const nearestDist = Math.min(distCS1, distCS2);
       const nearestCampus = distCS1 <= distCS2 ? "CS1" : "CS2";
       const commuteMin = Math.max(3, Math.round(nearestDist * 2.8 + 2));
@@ -195,6 +235,7 @@ export async function crawlCS1CS2Rooms(targetCount = 60) {
         vi_tri: {
           lat: parseFloat(coords.lat.toFixed(5)),
           lng: parseFloat(coords.lng.toFixed(5)),
+          vi_tri_xap_xi: coords.isApproximate || false,
           khoang_cach_cs1_km: distCS1,
           khoang_cach_cs2_km: distCS2,
           khoang_cach_cs3_km: distCS3,

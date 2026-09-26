@@ -28,6 +28,7 @@
         <a href="index.html"><i data-lucide="search" style="width:16px;height:16px;"></i> Tìm phòng</a>
         <a href="map.html"><i data-lucide="map" style="width:16px;height:16px;"></i> Bản đồ</a>
         <a href="room-detail.html" class="active"><i data-lucide="map-pin" style="width:16px;height:16px;"></i> Chi tiết phòng</a>
+        <a href="landlord.html" style="color:#059669;font-weight:600;"><i data-lucide="home" style="width:16px;height:16px;"></i> Kênh Chủ trọ</a>
         <a href="admin.html"><i data-lucide="plus-circle" style="width:16px;height:16px;"></i> Quản trị Admin</a>
       </nav>
       <div class="navbar-actions">
@@ -130,6 +131,33 @@
       }
     }
 
+    /**
+     * UI-02: Hàm làm sạch văn bản rác trước khi hiển thị lên DOM.
+     * Ngăn chặn CSS Swal2/dataLayer/JSON-LD rò rỉ ra giao diện người dùng.
+     */
+    function cleanText(str) {
+      if (!str || typeof str !== 'string') return '';
+      const GARBAGE_MARKERS = [
+        ' - Phongtro123.comwindow.',
+        'window.dataLayer',
+        '@charset "UTF-8"',
+        '.swal2-',
+        '.vue-slider-',
+        'base_url = "https://phongtro123.com"',
+        '{"@context":"http://schema.org"',
+        'function gtag(',
+        'window.Laravel',
+        '@-webkit-keyframes',
+        '@keyframes swal2',
+      ];
+      let result = str;
+      for (const m of GARBAGE_MARKERS) {
+        const idx = result.indexOf(m);
+        if (idx > 0) result = result.substring(0, idx).trim();
+      }
+      return result.replace(/\*\*/g, '').replace(/\s+/g, ' ').trim();
+    }
+
     function renderDetail(room) {
       const isFB = room.nguon === 'facebook';
       const images = (room.images && room.images.length) ? room.images : [
@@ -138,11 +166,18 @@
       const mainImg = images[0];
 
       const priceFmt = (room.price || 0).toLocaleString('vi-VN');
-      const distCS1 = room.distCS1 ? `${room.distCS1.toFixed(1)} km` : '1.0 km';
+      const distCS1 = room.distCS1 ? `${room.distCS1.toFixed(1)} km` : 'Gần trường';
+      const distCS2 = room.distCS2 ? `${room.distCS2.toFixed(1)} km` : '';
+      const distCS3 = room.distCS3 ? `${room.distCS3.toFixed(1)} km` : '';
       const commuteTime = room.commuteMin || Math.max(4, Math.round((room.distCS1 || 1.2) * 4));
       const mapLink = (room.lat && room.lng) 
         ? `https://www.google.com/maps?q=${room.lat},${room.lng}`
         : `https://www.google.com/maps?q=${encodeURIComponent(room.address || 'Đại học Công Nghiệp Hà Nội')}`;
+
+      // UI-02: Làm sạch mô tả trước khi hiển thị
+      const safeDesc = cleanText(room.desc) || 'Không có mô tả chi tiết từ người đăng.';
+      const safeTitle = cleanText(room.title) || 'Phòng trọ sinh viên HaUI';
+      const safeAddress = cleanText(room.address || (room.district + ', Hà Nội'));
 
       // Amenities
       const amenitiesHtml = (room.amenities || []).map(a => `
@@ -160,15 +195,26 @@
         </div>
       `).join('');
 
+      // Phần khoảng cách 3 cơ sở
+      const isCS3Room = room.nearestCampus === 'CS3' || (room.distCS3 && room.distCS3 < 20 && (!room.distCS1 || room.distCS3 < room.distCS1));
+      const distHtml = isCS3Room ? `
+        <span>🏫 Gần nhất: <strong style="color:#16a34a;font-weight:700;">HaUI CS3 (Hà Nam) — ${distCS3}</strong> (~${Math.max(3, Math.round((room.distCS3||5) * 3.5))} phút xe máy)</span>
+        ${distCS1 ? `<span>• CS1 (Nhổn): <strong>${distCS1}</strong></span>` : ''}
+      ` : `
+        <span>🏫 Gần nhất: <strong style="color:#0f172a;">HaUI CS1 (Nhổn) — ${distCS1}</strong> (~${commuteTime} phút xe máy)</span>
+        ${distCS2 ? `<span>• CS2 (Tây Tựu): <strong>${distCS2}</strong></span>` : ''}
+        ${distCS3 ? `<span>• CS3 (Hà Nam): <strong>${distCS3}</strong></span>` : ''}
+      `;
+
       document.getElementById('detail-card').innerHTML = `
         <!-- Images -->
         <div class="detail-images">
-          <div style="position:relative;overflow:hidden;border-radius:12px;height:400px;background:#0f172a;">
-            <img id="main-detail-img" class="detail-main-image" src="${mainImg}" alt="${room.title}"
-                 style="width:100%;height:100%;object-fit:cover;"
+          <div style="position:relative;overflow:hidden;border-radius:12px;height:420px;background:#0f172a;">
+            <img id="main-detail-img" class="detail-main-image" src="${mainImg}" alt="${safeTitle}"
+                 style="width:100%;height:100%;object-fit:cover;transition:opacity 0.3s;"
                  onerror="this.src='https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=900&h=500&fit=crop'" />
-            <div class="avm-badge cheap" style="position:absolute;top:16px;left:16px;z-index:2;background:${isFB?'#1877f2':'#059669'};color:white;padding:6px 14px;border-radius:8px;font-weight:700;font-size:0.8rem;box-shadow:0 4px 12px rgba(0,0,0,0.25);">
-              ${isFB ? '📘 Nguồn Facebook Group' : '🌐 Nguồn phongtro123.com'}
+            <div style="position:absolute;top:16px;left:16px;z-index:2;background:${isFB?'#1877f2':'#059669'};color:white;padding:6px 14px;border-radius:8px;font-weight:700;font-size:0.8rem;box-shadow:0 4px 12px rgba(0,0,0,0.25);">
+              ${isFB ? '📘 Facebook Group' : '🌐 phongtro123.com'}
             </div>
             <div style="position:absolute;bottom:16px;right:16px;background:rgba(0,0,0,0.7);backdrop-filter:blur(4px);color:white;padding:4px 10px;border-radius:6px;font-size:0.75rem;">
               📸 ${images.length} hình ảnh thực tế
@@ -187,29 +233,32 @@
                 <span style="background:#dcfce7;color:#15803d;padding:3px 8px;border-radius:4px;font-size:0.75rem;font-weight:700;">PHÒNG ĐANG TRỐNG</span>
               </div>
               <h1 class="detail-title" style="font-size:1.4rem;font-weight:800;color:#0f172a;line-height:1.35;margin:0 0 0.75rem;">
-                ${room.title}
+                ${safeTitle}
               </h1>
               <div class="detail-location" style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;font-size:0.9rem;color:#475569;margin-bottom:0.75rem;">
-                <span>📍 ${room.address || (room.district + ', Hà Nội')}</span>
+                <span>📍 ${safeAddress}</span>
               </div>
               <div style="display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;font-size:0.85rem;color:#64748b;">
-                ${(room.distCS3 !== undefined && room.distCS3 < 30) ? `
-                  <span>🏫 Gần nhất: <strong style="color:#16a34a;font-weight:700;">HaUI Cơ sở 3 (Hà Nam) - ${room.distCS3.toFixed(1)} km</strong> (~${Math.max(3, Math.round(room.distCS3 * 3.5))} phút xe máy)</span>
-                  <span>• CS1 (Nhổn): <strong>${room.distCS1 ? room.distCS1.toFixed(1) + ' km' : 'N/A'}</strong></span>
-                ` : `
-                  <span>🏫 Gần nhất: <strong style="color:#0f172a;">HaUI CS1 (Nhổn) - ${distCS1}</strong> (~${commuteTime} phút xe máy)</span>
-                  ${room.distCS2 ? `<span>• CS2 (Tây Tựu): <strong>${room.distCS2.toFixed(1)} km</strong></span>` : ''}
-                  ${room.distCS3 ? `<span>• CS3 (Hà Nam): <strong>${room.distCS3.toFixed(1)} km</strong></span>` : ''}
-                `}
+                ${distHtml}
                 <a href="${mapLink}" target="_blank" rel="noopener" style="color:#2563eb;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:4px;">
                   🗺️ Mở Google Maps →
                 </a>
               </div>
+              ${room.approximateLocation ? `
+                <div style="margin-top:0.75rem;padding:0.6rem 0.9rem;background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;display:flex;align-items:flex-start;gap:8px;font-size:0.82rem;">
+                  <span style="font-size:1rem;flex-shrink:0;">📍</span>
+                  <div>
+                    <strong style="color:#c2410c;">Vị trí ước tính:</strong>
+                    <span style="color:#92400e;"> Chưa có địa chỉ cụ thể — hệ thống đang hiển thị vị trí gần <strong>ĐH Công Nghiệp Hà Nội (CS1)</strong> để tham khảo. Vui lòng liên hệ chủ trọ để xác nhận địa chỉ thực tế.</span>
+                  </div>
+                </div>
+              ` : ''}
+
             </div>
 
             <!-- Price box -->
-            <div class="detail-price-box" style="background:#f8fafc;padding:1.25rem 1.5rem;border-radius:12px;border:1px solid #e2e8f0;text-align:right;">
-              <div class="detail-price-label" style="font-size:0.8rem;color:#64748b;font-weight:600;text-transform:uppercase;">Giá Thuê Niêm Yết</div>
+            <div class="detail-price-box" style="background:linear-gradient(135deg,#eff6ff,#e0f2fe);padding:1.25rem 1.5rem;border-radius:12px;border:1px solid #bfdbfe;text-align:right;min-width:180px;">
+              <div style="font-size:0.8rem;color:#1e40af;font-weight:700;text-transform:uppercase;">Giá Thuê Niêm Yết</div>
               <div class="detail-price" style="font-size:1.75rem;font-weight:900;color:#2563eb;margin:4px 0;">
                 ${priceFmt} <span style="font-size:0.85rem;color:#64748b;font-weight:500;">đ/tháng</span>
               </div>
@@ -226,11 +275,11 @@
                 <span style="font-size:0.85rem;font-weight:500;color:#64748b;margin-left:8px;">(${room.owner || 'Chủ trọ'})</span>
               </p>
             </div>
-            <div style="display:flex;gap:8px;">
+            <div style="display:flex;gap:8px;flex-wrap:wrap;">
               <a href="tel:${room.phone || '0988123456'}" style="display:inline-flex;align-items:center;gap:6px;background:#2563eb;color:white;padding:0.6rem 1.2rem;border-radius:8px;font-weight:700;font-size:0.85rem;text-decoration:none;">
-                Gọi điện ngay
+                📞 Gọi điện ngay
               </a>
-              <button onclick="navigator.clipboard?.writeText('${room.phone || ''}');alert('Đã sao chép SĐT: ${room.phone}');" style="padding:0.6rem 1rem;background:white;border:1px solid #cbd5e1;border-radius:8px;font-size:0.85rem;font-weight:600;cursor:pointer;">
+              <button onclick="navigator.clipboard?.writeText('${room.phone || ''}');alert('Đã sao chép SĐT!');" style="padding:0.6rem 1rem;background:white;border:1px solid #cbd5e1;border-radius:8px;font-size:0.85rem;font-weight:600;cursor:pointer;">
                 Sao chép SĐT
               </button>
               ${room.url ? `<a href="${room.url}" target="_blank" rel="noopener" style="padding:0.6rem 1rem;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;font-size:0.85rem;font-weight:600;color:#334155;text-decoration:none;">Xem bài gốc ↗</a>` : ''}
@@ -240,22 +289,22 @@
           <!-- Cost estimation -->
           <div class="detail-costs" style="margin:1.5rem 0;background:#f8fafc;padding:1.25rem;border-radius:12px;border:1px solid #e2e8f0;">
             <h3 style="font-size:1rem;font-weight:700;color:#1e293b;margin:0 0 1rem;">💰 Chi Phí Dự Kiến Hàng Tháng</h3>
-            <div class="costs-grid" style="display:grid;grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));gap:1rem;">
-              <div class="cost-row" style="background:white;padding:0.75rem;border-radius:8px;border:1px solid #e2e8f0;">
-                <span class="label" style="display:block;font-size:0.75rem;color:#64748b;">Tiền phòng:</span>
-                <strong class="value primary" style="font-size:0.95rem;color:#2563eb;">${priceFmt} đ</strong>
+            <div class="costs-grid" style="display:grid;grid-template-columns:repeat(auto-fit, minmax(160px, 1fr));gap:1rem;">
+              <div style="background:white;padding:0.75rem;border-radius:8px;border:1px solid #e2e8f0;">
+                <span style="display:block;font-size:0.75rem;color:#64748b;">Tiền phòng:</span>
+                <strong style="font-size:0.95rem;color:#2563eb;">${priceFmt} đ</strong>
               </div>
-              <div class="cost-row" style="background:white;padding:0.75rem;border-radius:8px;border:1px solid #e2e8f0;">
-                <span class="label" style="display:block;font-size:0.75rem;color:#64748b;">Giá điện:</span>
-                <strong class="value" style="font-size:0.95rem;">3.800 đ / kWh</strong>
+              <div style="background:white;padding:0.75rem;border-radius:8px;border:1px solid #e2e8f0;">
+                <span style="display:block;font-size:0.75rem;color:#64748b;">Giá điện:</span>
+                <strong style="font-size:0.95rem;">3.800 đ / kWh</strong>
               </div>
-              <div class="cost-row" style="background:white;padding:0.75rem;border-radius:8px;border:1px solid #e2e8f0;">
-                <span class="label" style="display:block;font-size:0.75rem;color:#64748b;">Giá nước:</span>
-                <strong class="value" style="font-size:0.95rem;">100.000 đ / người</strong>
+              <div style="background:white;padding:0.75rem;border-radius:8px;border:1px solid #e2e8f0;">
+                <span style="display:block;font-size:0.75rem;color:#64748b;">Giá nước:</span>
+                <strong style="font-size:0.95rem;">100.000 đ / người</strong>
               </div>
-              <div class="cost-row" style="background:white;padding:0.75rem;border-radius:8px;border:1px solid #e2e8f0;">
-                <span class="label" style="display:block;font-size:0.75rem;color:#64748b;">Wifi & Dịch vụ:</span>
-                <strong class="value" style="font-size:0.95rem;">Miễn phí / 100k</strong>
+              <div style="background:white;padding:0.75rem;border-radius:8px;border:1px solid #e2e8f0;">
+                <span style="display:block;font-size:0.75rem;color:#64748b;">Wifi & Dịch vụ:</span>
+                <strong style="font-size:0.95rem;">Miễn phí / 100k</strong>
               </div>
             </div>
           </div>
@@ -268,11 +317,91 @@
             </div>
           </div>
 
-          <!-- Description -->
+          <!-- Description — UI-02: safeDesc đã qua cleanText() -->
           <div style="margin:1.5rem 0;">
             <h3 style="font-size:1rem;font-weight:700;color:#1e293b;margin-bottom:0.75rem;">📝 Thông Tin Mô Tả Chi Tiết</h3>
-            <div style="background:white;padding:1.25rem;border-radius:10px;border:1px solid #e2e8f0;font-size:0.9rem;line-height:1.7;color:#334155;white-space:pre-line;">
-              ${room.desc || 'Không có mô tả chi tiết từ người đăng.'}
+            <div style="background:white;padding:1.25rem;border-radius:10px;border:1px solid #e2e8f0;font-size:0.9rem;line-height:1.7;color:#334155;white-space:pre-line;max-height:320px;overflow-y:auto;">
+              ${safeDesc}
+            </div>
+          </div>
+
+          <!-- Videos quay thực tế (nếu có) -->
+          ${room.videos && room.videos.length ? `
+            <div style="margin:1.5rem 0;">
+              <h3 style="font-size:1rem;font-weight:700;color:#1e293b;margin-bottom:0.75rem;display:flex;align-items:center;gap:6px;">
+                <span>🎥</span> Video Quay Phòng Thực Tế
+              </h3>
+              <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:1rem;">
+                ${room.videos.map(v => `
+                  <div style="border-radius:12px;overflow:hidden;border:1px solid #cbd5e1;background:#000;">
+                    <video src="${v}" controls style="width:100%;max-height:320px;display:block;"></video>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+          ` : ''}
+
+          <!-- ============ STUDENT REVIEWS & COMMENTS SECTION ============ -->
+          <div id="room-comments-section" style="margin:2.5rem 0 1.5rem;padding-top:2rem;border-top:1px solid #e2e8f0;">
+            <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:1.25rem;">
+              <div>
+                <h3 style="font-size:1.2rem;font-weight:800;color:#0f172a;margin:0 0 4px;display:flex;align-items:center;gap:8px;">
+                  <span>💬</span> Đánh giá & Bình luận từ Sinh viên HaUI
+                </h3>
+                <p style="font-size:0.85rem;color:#64748b;margin:0;">Ý kiến đóng góp thực tế từ các bạn sinh viên đã ở hoặc tới xem phòng</p>
+              </div>
+              <div style="display:flex;align-items:center;gap:6px;background:#fef3c7;padding:0.4rem 0.8rem;border-radius:9999px;border:1px solid #fde68a;">
+                <span style="font-size:1.1rem;color:#d97706;">⭐</span>
+                <span style="font-weight:800;font-size:0.95rem;color:#b45309;" id="avg-room-rating">4.8 / 5</span>
+                <span style="font-size:0.75rem;color:#78350f;">(Sinh viên đánh giá)</span>
+              </div>
+            </div>
+
+            <!-- Form gửi bình luận -->
+            <div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:16px;padding:1.25rem;margin-bottom:1.5rem;">
+              <h4 style="font-size:0.95rem;font-weight:700;color:#1e293b;margin:0 0 0.75rem;">Viết đánh giá của bạn:</h4>
+              <form id="comment-form" onsubmit="handleCommentSubmit(event, '${room.id}')" style="display:flex;flex-direction:column;gap:0.75rem;">
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;">
+                  <input type="text" id="cmt-author" placeholder="Họ và tên sinh viên (*)" required 
+                         style="padding:0.6rem 0.8rem;border:1px solid #cbd5e1;border-radius:8px;font-size:0.85rem;background:white;" />
+                  <input type="text" id="cmt-major" placeholder="Khoá & Khoa (VD: K17 CNTT, K18 Cơ khí)" 
+                         style="padding:0.6rem 0.8rem;border:1px solid #cbd5e1;border-radius:8px;font-size:0.85rem;background:white;" />
+                </div>
+
+                <div style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap;">
+                  <div style="display:flex;align-items:center;gap:6px;">
+                    <span style="font-size:0.85rem;font-weight:600;color:#475569;">Đánh giá sao:</span>
+                    <select id="cmt-rating" style="padding:0.4rem 0.6rem;border:1px solid #cbd5e1;border-radius:8px;font-size:0.85rem;background:white;font-weight:700;color:#d97706;">
+                      <option value="5">⭐⭐⭐⭐⭐ (5 sao - Rất tốt)</option>
+                      <option value="4">⭐⭐⭐⭐ (4 sao - Tốt)</option>
+                      <option value="3">⭐⭐⭐ (3 sao - Bình thường)</option>
+                      <option value="2">⭐⭐ (2 sao - Cần cân nhắc)</option>
+                      <option value="1">⭐ (1 sao - Không khuyên ở)</option>
+                    </select>
+                  </div>
+                  <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+                    <span style="font-size:0.8rem;color:#64748b;">Chọn nhanh:</span>
+                    <button type="button" onclick="addCommentTag('Chủ trọ thân thiện')" style="padding:2px 8px;border-radius:6px;background:#e0f2fe;color:#0369a1;border:none;font-size:0.75rem;cursor:pointer;">+ Chủ thân thiện</button>
+                    <button type="button" onclick="addCommentTag('An ninh tốt')" style="padding:2px 8px;border-radius:6px;background:#dcfce7;color:#15803d;border:none;font-size:0.75rem;cursor:pointer;">+ An ninh tốt</button>
+                    <button type="button" onclick="addCommentTag('Điện nước giá dân')" style="padding:2px 8px;border-radius:6px;background:#fef3c7;color:#b45309;border:none;font-size:0.75rem;cursor:pointer;">+ Điện nước rẻ</button>
+                    <button type="button" onclick="addCommentTag('Gần cổng trường CS1')" style="padding:2px 8px;border-radius:6px;background:#f3e8ff;color:#7e22ce;border:none;font-size:0.75rem;cursor:pointer;">+ Gần trường CS1</button>
+                  </div>
+                </div>
+
+                <textarea id="cmt-content" rows="3" placeholder="Chia sẻ trải nghiệm thực tế: phòng ốc ra sao, tiền điện nước, có bị ngập nước hay ồn ào không..." required
+                          style="padding:0.75rem;border:1px solid #cbd5e1;border-radius:8px;font-size:0.875rem;background:white;line-height:1.5;"></textarea>
+
+                <div style="display:flex;justify-content:flex-end;">
+                  <button type="submit" id="btn-submit-cmt" style="padding:0.6rem 1.5rem;background:#2563eb;color:white;border:none;border-radius:8px;font-weight:700;font-size:0.88rem;cursor:pointer;display:inline-flex;align-items:center;gap:6px;">
+                    <span>✈️</span> Gửi bình luận
+                  </button>
+                </div>
+              </form>
+            </div>
+
+            <!-- Danh sách bình luận -->
+            <div id="comments-list-container" style="display:flex;flex-direction:column;gap:1rem;">
+              <div style="text-align:center;padding:1.5rem;color:#94a3b8;font-size:0.85rem;">Đang tải bình luận từ sinh viên...</div>
             </div>
           </div>
 
@@ -291,7 +420,9 @@
 
         </div>
       `;
+      loadComments(room.id);
     }
+
 
     function changeMainImage(src) {
       const img = document.getElementById('main-detail-img');
@@ -330,6 +461,135 @@
       } catch {}
     }
 
+    // ── HỆ THỐNG BÌNH LUẬN & ĐÁNH GIÁ SINH VIÊN ──────────────────────
+    let currentTags = [];
+
+    function addCommentTag(tag) {
+      const textarea = document.getElementById('cmt-content');
+      if (!textarea) return;
+      if (!currentTags.includes(tag)) currentTags.push(tag);
+      textarea.value = (textarea.value ? textarea.value.trim() + ' • ' : '') + tag;
+      textarea.focus();
+    }
+
+    async function loadComments(roomId) {
+      const container = document.getElementById('comments-list-container');
+      if (!container) return;
+
+      // Auto-fill thông tin sinh viên nếu đã đăng nhập
+      const user = window.HaUIAuth ? window.HaUIAuth.getCurrentUser() : null;
+      if (user) {
+        const inpAuthor = document.getElementById('cmt-author');
+        const inpMajor = document.getElementById('cmt-major');
+        if (inpAuthor && !inpAuthor.value) inpAuthor.value = user.name;
+        if (inpMajor && !inpMajor.value) {
+          inpMajor.value = user.role === 'student' 
+            ? `${user.studentId ? 'SV HaUI (' + user.studentId + ')' : 'Sinh viên HaUI'}` 
+            : 'Người dùng HaUI';
+        }
+      }
+
+      try {
+        const res = await fetch(`/api/rooms/${roomId}/comments`);
+        if (!res.ok) throw new Error('Không thể tải bình luận');
+        const data = await res.json();
+        const comments = data.comments || [];
+
+        if (!comments.length) {
+          container.innerHTML = `
+            <div style="text-align:center;padding:1.5rem;color:#94a3b8;background:#f8fafc;border-radius:12px;">
+              Chưa có bình luận nào cho phòng trọ này. Hãy là sinh viên đầu tiên chia sẻ cảm nhận!
+            </div>
+          `;
+          return;
+        }
+
+        // Tính điểm trung bình
+        const sum = comments.reduce((acc, c) => acc + (c.rating || 5), 0);
+        const avg = (sum / comments.length).toFixed(1);
+        const avgEl = document.getElementById('avg-room-rating');
+        if (avgEl) avgEl.textContent = `${avg} / 5 (${comments.length} đánh giá)`;
+
+        container.innerHTML = comments.map(c => {
+          const stars = '⭐'.repeat(Math.max(1, Math.min(5, c.rating || 5)));
+          return `
+            <div style="background:white;border:1px solid #e2e8f0;border-radius:14px;padding:1.25rem;box-shadow:0 1px 3px rgba(0,0,0,0.03);">
+              <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0.75rem;">
+                <div style="display:flex;align-items:center;gap:10px;">
+                  <img src="${c.avatar || 'https://api.dicebear.com/7.x/avataaars/svg?seed=' + encodeURIComponent(c.author)}" 
+                       style="width:40px;height:40px;border-radius:50%;background:#e2e8f0;object-fit:cover;" />
+                  <div>
+                    <div style="font-weight:700;font-size:0.95rem;color:#0f172a;">${c.author}</div>
+                    <div style="font-size:0.78rem;color:#64748b;">${c.major || 'Sinh viên HaUI'} • ${c.date || 'Gần đây'}</div>
+                  </div>
+                </div>
+                <div style="font-size:0.9rem;" title="${c.rating} sao">${stars}</div>
+              </div>
+
+              <div style="font-size:0.9rem;color:#334155;line-height:1.6;margin-bottom:0.75rem;white-space:pre-line;">
+                ${c.content}
+              </div>
+
+              ${c.tags && c.tags.length ? `
+                <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:0.5rem;">
+                  ${c.tags.map(t => `<span style="font-size:0.72rem;background:#f1f5f9;color:#475569;padding:2px 8px;border-radius:6px;font-weight:600;"># ${t}</span>`).join('')}
+                </div>
+              ` : ''}
+
+              <div style="display:flex;justify-content:flex-end;">
+                <button onclick="this.innerHTML = '👍 Đã hữu ích (' + (${(c.likes || 1) + 1}) + ')'; this.disabled=true;" 
+                        style="padding:3px 10px;background:#f8fafc;border:1px solid #cbd5e1;border-radius:6px;font-size:0.75rem;color:#475569;cursor:pointer;">
+                  👍 Hữu ích (${c.likes || 1})
+                </button>
+              </div>
+            </div>
+          `;
+        }).join('');
+      } catch (err) {
+        container.innerHTML = `<div style="text-align:center;padding:1.5rem;color:#ef4444;">Lỗi tải bình luận: ${err.message}</div>`;
+      }
+    }
+
+    async function handleCommentSubmit(e, roomId) {
+      e.preventDefault();
+      const author = document.getElementById('cmt-author')?.value?.trim();
+      const major = document.getElementById('cmt-major')?.value?.trim();
+      const rating = document.getElementById('cmt-rating')?.value;
+      const content = document.getElementById('cmt-content')?.value?.trim();
+      const btn = document.getElementById('btn-submit-cmt');
+
+      if (!content) {
+        alert('Vui lòng nhập nội dung đánh giá của bạn!');
+        return;
+      }
+
+      if (btn) btn.disabled = true;
+
+      try {
+        const res = await fetch(`/api/rooms/${roomId}/comments`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            author, major, rating, content, tags: currentTags
+          })
+        });
+
+        if (res.ok) {
+          alert('Cảm ơn bạn! Bình luận của bạn đã được đăng thành công.');
+          document.getElementById('cmt-content').value = '';
+          currentTags = [];
+          loadComments(roomId);
+        } else {
+          const err = await res.json();
+          alert('Lỗi gửi bình luận: ' + (err.error || 'Có lỗi xảy ra'));
+        }
+      } catch (err) {
+        alert('Lỗi kết nối: ' + err.message);
+      } finally {
+        if (btn) btn.disabled = false;
+      }
+    }
+
     loadRoomDetail();
   </script>
 
@@ -352,5 +612,8 @@
       <span>Quản trị</span>
     </a>
   </nav>
+
+  <!-- Hệ thống Xác thực & Đăng nhập -->
+  <script src="auth.js"></script>
 </body>
 </html>

@@ -1,0 +1,40 @@
+[
+  {
+    "id": "USR-ADMIN-01",
+    "email": "admin@haui.edu.vn",
+    "password": "admin",
+    "name": "Quản Trị Viên Hệ Thống",
+    "phone": "0988888888",
+    "role": "admin",
+    "roleLabel": "Quản trị viên",
+    "avatar": "https://api.dicebear.com/7.x/bottts/svg?seed=admin",
+    "createdAt": "2026-09-01T00:00:00.000Z"
+  },
+  {
+    "id": "USR-STU-01",
+    "email": "student@haui.edu.vn",
+    "password": "123",
+    "name": "Nguyễn Hoàng Nam",
+    "phone": "0912345678",
+    "role": "student",
+    "roleLabel": "Sinh viên K17",
+    "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=nam",
+    "studentId": "2023601234",
+    "campus": "CS1",
+    "savedRooms": [],
+    "createdAt": "2026-09-10T00:00:00.000Z"
+  },
+  {
+    "id": "USR-HOST-01",
+    "email": "chutro@gmail.com",
+    "password": "123",
+    "name": "Bác Ba (Chủ trọ Nhổn)",
+    "phone": "0934567890",
+    "role": "landlord",
+    "roleLabel": "Chủ trọ xác minh",
+    "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=bacba",
+    "verified": true,
+    "postedRooms": [],
+    "createdAt": "2026-09-15T00:00:00.000Z"
+  }
+]

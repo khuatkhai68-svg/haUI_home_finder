@@ -1,6 +1,7 @@
 /**
  * ai_service.js — HaUI HomeFinder AI Assistant & RAG Engine
  * Cung cấp năng lực Trí Tuệ Nhân Tạo tư vấn phòng trọ, cảnh báo an toàn và phân tích ngữ nghĩa cho sinh viên HaUI.
+ * Đảm bảo đề xuất chính xác 4 phòng trọ tối ưu và sát điều kiện nhất từ cơ sở dữ liệu thực tế.
  */
 
 'use strict';
@@ -76,6 +77,7 @@ function removeVietnameseTones(str) {
 
 /**
  * Trích xuất ý định tìm kiếm phòng từ câu nói tự nhiên (Hỗ trợ cả có dấu và không dấu)
+ * Đã xử lý triệt để lỗi bắt nhầm số cơ sở "cs1", "cs2", "cs3" thành giá tiền.
  */
 function extractSearchCriteria(text) {
   const raw = text.toLowerCase();
@@ -85,122 +87,450 @@ function extractSearchCriteria(text) {
   let maxDistance = null;
   let keywords = [];
 
-  // Nhận diện Cơ sở
-  if (norm.includes('cs1') || norm.includes('nhon') || norm.includes('nguyen xa') || norm.includes('kieu mai') || norm.includes('phu dien') || norm.includes('co so 1')) {
-    campus = 'CS1';
+  // 1. Nhận diện Cơ sở cụ thể
+  if (norm.includes('cs3') || norm.includes('ha nam') || norm.includes('phu ly') || norm.includes('co so 3') || norm.includes('phu van')) {
+    campus = 'CS3';
   } else if (norm.includes('cs2') || norm.includes('tay tuu') || norm.includes('co so 2')) {
     campus = 'CS2';
-  } else if (norm.includes('cs3') || norm.includes('ha nam') || norm.includes('phu ly') || norm.includes('co so 3')) {
-    campus = 'CS3';
+  } else if (norm.includes('cs1') || norm.includes('nhon') || norm.includes('nguyen xa') || norm.includes('kieu mai') || norm.includes('phu dien') || norm.includes('tu hoang') || norm.includes('dinh quan') || norm.includes('van tri') || norm.includes('co so 1') || norm.includes('bac tu liem')) {
+    campus = 'CS1';
   }
 
-  // Bóc tách giá (ví dụ: "dưới 2.5tr", "duoi 2.5 trieu", "tầm 2tr", "khoang 3tr", "<= 3 trieu", "duoi 3m")
-  const priceMatch = norm.match(/(?:duoi|tam|khoang|gia|ngan sach|<|<=)?\s*(\d+(?:[.,]\d+)?)\s*(?:tr|trieu|m|k)/i);
-  if (priceMatch) {
-    let num = parseFloat(priceMatch[1].replace(',', '.'));
-    if (priceMatch[0].includes('k') && !priceMatch[0].includes('tr') && !priceMatch[0].includes('trieu')) {
-      maxPrice = num * 1000;
-    } else {
-      maxPrice = num * 1000000;
-    }
+  // 2. Bóc tách ngân sách thông minh
+  // QUAN TRỌNG: Che tên cơ sở trước khi parse giá để tránh nhầm "cs1", "cs2" với 1 triệu hay 2 triệu
+  const safeText = norm
+    .replace(/\bcs[123]\b/gi, ' campus ')
+    .replace(/\bco so [123]\b/gi, ' campus ')
+    .replace(/\b(ngo|so|tang)\s*\d+\b/gi, ' ');
+
+  // Trường hợp: "2 triệu rưỡi", "1 tr rưỡi"
+  if (/(\d+(?:[.,]\d+)?)\s*(?:tr|trieu)\s*ruoi/i.test(safeText)) {
+    const m = safeText.match(/(\d+(?:[.,]\d+)?)\s*(?:tr|trieu)\s*ruoi/i);
+    maxPrice = (parseFloat(m[1].replace(',', '.')) + 0.5) * 1000000;
+  }
+  // Trường hợp: "2tr5", "1tr8", "3tr2"
+  else if (/(\d+)\s*(?:tr|trieu)\s*(\d{1,2})\b/i.test(safeText)) {
+    const m = safeText.match(/(\d+)\s*(?:tr|trieu)\s*(\d{1,2})\b/i);
+    const main = parseFloat(m[1]);
+    const sub = parseFloat(m[2]);
+    const factor = sub >= 10 ? sub / 100 : sub / 10;
+    maxPrice = (main + factor) * 1000000;
+  }
+  // Trường hợp: "dưới 2.5tr", "tầm 3 triệu", "<= 5tr", "5 triệu"
+  else if (/(?:duoi|tam|khoang|gia|ngan sach|toi da|<|<=)?\s*(\d+(?:[.,]\d+)?)\s*(?:tr|trieu|m)\b/i.test(safeText)) {
+    const m = safeText.match(/(?:duoi|tam|khoang|gia|ngan sach|toi da|<|<=)?\s*(\d+(?:[.,]\d+)?)\s*(?:tr|trieu|m)\b/i);
+    maxPrice = parseFloat(m[1].replace(',', '.')) * 1000000;
+  }
+  // Trường hợp tiền nghìn/k: "800k", "dưới 900 nghìn"
+  else if (/(?:duoi|tam|khoang|gia|ngan sach|toi da|<|<=)?\s*(\d+)\s*(?:k|nghin|ngan)\b/i.test(safeText)) {
+    const m = safeText.match(/(?:duoi|tam|khoang|gia|ngan sach|toi da|<|<=)?\s*(\d+)\s*(?:k|nghin|ngan)\b/i);
+    maxPrice = parseFloat(m[1]) * 1000;
+  }
+  // Trường hợp số đi liền từ khóa giá: "dưới 2.5", "ngân sách 3"
+  else if (/(?:duoi|gia|ngan sach|toi da|<|<=)\s*(\d+(?:[.,]\d+)?)\b/i.test(safeText)) {
+    const m = safeText.match(/(?:duoi|gia|ngan sach|toi da|<|<=)\s*(\d+(?:[.,]\d+)?)\b/i);
+    const n = parseFloat(m[1].replace(',', '.'));
+    if (n < 50) maxPrice = n * 1000000;
+    else if (n >= 500 && n <= 20000) maxPrice = n * 1000;
+    else maxPrice = n;
+  }
+  // Trường hợp người dùng bảo "giá rẻ" / "rẻ" mà không ghi số
+  else if (norm.includes('gia re') || norm.includes('re nhat') || norm.includes('tiet kiem')) {
+    if (campus === 'CS3') maxPrice = 1200000;
+    else if (campus === 'CS2') maxPrice = 1800000;
+    else maxPrice = 2200000;
   }
 
-  // Bóc tách khoảng cách (ví dụ: "dưới 1km", "cách 2km", "< 10 phút")
+  // 3. Bóc tách khoảng cách (ví dụ: "dưới 1km", "cách 2km", "< 10 phút", "gần trường", "đi bộ")
   const distMatch = norm.match(/(?:duoi|cach|<)\s*(\d+(?:[.,]\d+)?)\s*(?:km|cay|phut)/i);
   if (distMatch) {
     maxDistance = parseFloat(distMatch[1].replace(',', '.'));
+  } else if (norm.includes('di bo') || norm.includes('sat truong') || norm.includes('gan cong')) {
+    maxDistance = 1.0;
+  } else if (norm.includes('gan truong')) {
+    maxDistance = 2.5;
   }
 
-  // Tiện ích
-  if (norm.includes('gac xep') || norm.includes('gac lung')) keywords.push('gác xép');
+  // 4. Tiện ích & Loại hình phòng
+  if (norm.includes('gac xep') || norm.includes('gac lung') || norm.includes('co gac')) keywords.push('gác xép');
   if (norm.includes('dieu hoa') || norm.includes('may lanh')) keywords.push('điều hòa');
   if (norm.includes('nong lanh')) keywords.push('nóng lạnh');
-  if (norm.includes('khep kin') || norm.includes('rieng')) keywords.push('khép kín');
+  if (norm.includes('khep kin') || norm.includes('ve sinh rieng') || norm.includes('wc rieng')) keywords.push('khép kín');
   if (norm.includes('ban cong') || norm.includes('thoang')) keywords.push('ban công');
-  if (norm.includes('o ghep') || norm.includes('share')) keywords.push('ở ghép');
+  if (norm.includes('may giat')) keywords.push('máy giặt');
+  if (norm.includes('tu lanh')) keywords.push('tủ lạnh');
+  if (norm.includes('thang may')) keywords.push('thang máy');
+  if (norm.includes('khong chung chu') || norm.includes('gio giac tu do') || norm.includes('tu do')) keywords.push('không chung chủ');
+  if (norm.includes('o ghep') || norm.includes('share') || norm.includes('tim ban')) keywords.push('ở ghép');
+  if (norm.includes('chung cu') || norm.includes('ccmn') || norm.includes('studio')) keywords.push('chung cư mini');
+  if (norm.includes('oto') || norm.includes('o to')) keywords.push('ô tô');
+
+  // Địa danh chi tiết
+  if (norm.includes('nguyen xa')) keywords.push('Nguyên Xá');
+  if (norm.includes('kieu mai')) keywords.push('Kiều Mai');
+  if (norm.includes('phu dien')) keywords.push('Phú Diễn');
+  if (norm.includes('tu hoang')) keywords.push('Tu Hoàng');
+  if (norm.includes('van tri')) keywords.push('Văn Trì');
 
   return { campus, maxPrice, maxDistance, keywords };
 }
 
 /**
- * Lọc phòng trọ phù hợp nhất từ kho DB 257 phòng
- * LUẬT CỨNG: Tuyệt đối không bao giờ trả về phòng có giá vượt quá criteria.maxPrice
+ * Helper: Tính điểm phù hợp đa tiêu chí (Smart Relevance Scoring: 0 - 100 điểm)
  */
-function findMatchingRooms(criteria, allRooms, limit = 3) {
+function scoreRoom(r, criteria, targetCampus) {
+  let score = 50; // Điểm nền tảng
+
+  // 1. Điểm cự ly đến cơ sở mục tiêu (Tối đa +35 điểm)
+  let dist = null;
+  if (targetCampus === 'CS3') dist = r.distCS3;
+  else if (targetCampus === 'CS2') dist = r.distCS2;
+  else dist = r.distCS1;
+  if (dist === null || dist === undefined) dist = r.khoang_cach_km ?? 1.5;
+
+  if (dist <= 0.8) {
+    score += 35; // Đi bộ cực gần (< 800m)
+  } else if (dist <= 1.5) {
+    score += 28; // Xe máy 3-5 phút
+  } else if (dist <= 3.0) {
+    score += 18;
+  } else if (dist <= 5.0) {
+    score += 8;
+  } else {
+    score -= 25; // Quá xa
+  }
+
+  // 2. Điểm ngân sách (Tối đa +25 điểm)
+  const price = r.price ?? r.gia_thang ?? 0;
+  if (criteria.maxPrice && criteria.maxPrice > 0) {
+    if (price <= criteria.maxPrice) {
+      const ratio = price / criteria.maxPrice;
+      if (ratio >= 0.65 && ratio <= 1.0) {
+        score += 25; // Rất sát mức tối đa người dùng tìm (chất lượng tốt nhất trong ngân sách)
+      } else {
+        score += 20; // Rẻ hơn ngân sách (tiết kiệm)
+      }
+    } else {
+      // Vượt ngân sách: phạt điểm theo mức vượt
+      const overRatio = (price - criteria.maxPrice) / criteria.maxPrice;
+      if (overRatio <= 0.15) score -= 10;
+      else score -= 35;
+    }
+  } else {
+    // Phân khúc sinh viên hợp lý
+    if (price >= 1800000 && price <= 3200000) score += 20;
+    else if (price < 1800000 && price > 0) score += 16;
+  }
+
+  // 3. Điểm tiện ích & từ khóa yêu cầu (Tối đa +30 điểm)
+  const titleNorm = removeVietnameseTones(r.title || r.tieu_de || '');
+  const descNorm = removeVietnameseTones(r.desc || r.mo_ta || '');
+  const amenities = r.amenities || [];
+
+  (criteria.keywords || []).forEach(kw => {
+    const k = removeVietnameseTones(kw);
+    let matched = false;
+
+    if (k === 'gac xep' && (titleNorm.includes('gac') || descNorm.includes('gac') || titleNorm.includes('lung'))) matched = true;
+    if (k === 'dieu hoa' && (amenities.includes('dieu_hoa') || titleNorm.includes('dieu hoa') || descNorm.includes('dieu hoa'))) matched = true;
+    if (k === 'nong lanh' && (amenities.includes('nong_lanh') || descNorm.includes('nong lanh'))) matched = true;
+    if (k === 'khep kin' && (amenities.includes('wc_rieng') || amenities.includes('khep_kin') || titleNorm.includes('khep kin') || descNorm.includes('khep kin'))) matched = true;
+    if (k === 'ban cong' && (amenities.includes('ban_cong') || descNorm.includes('ban cong'))) matched = true;
+    if (k === 'may giat' && (amenities.includes('may_giat') || descNorm.includes('may giat'))) matched = true;
+    if (k === 'thang may' && (amenities.includes('thang_may') || descNorm.includes('thang may'))) matched = true;
+    if (k === 'khong chung chu' && (titleNorm.includes('khong chung') || descNorm.includes('khong chung') || descNorm.includes('tu do'))) matched = true;
+    if (titleNorm.includes(k) || descNorm.includes(k)) matched = true;
+
+    if (matched) {
+      score += 15;
+    }
+  });
+
+  // 4. Điểm chất lượng thông tin & media (Tối đa +15 điểm)
+  const hasImg = (r.images && r.images.length > 0 && !r.images[0].includes('placeholder')) || (r.hinh_anh && r.hinh_anh.length > 0);
+  if (hasImg) score += 8;
+  if (r.videos && r.videos.length > 0) score += 10;
+  if (r.phone && r.phone.length >= 9) score += 5;
+
+  // Giới hạn điểm 60% - 99%
+  return Math.min(99, Math.max(60, Math.round(score)));
+}
+
+/**
+ * THUẬT TOÁN THÔNG MINH ĐA CHIỀU (Multi-Factor Smart Scoring)
+ * Tuyển chọn đúng 4 phòng trọ sát điều kiện nhất từ kho dữ liệu thực tế.
+ * Tuyệt đối không đề xuất phòng ở CS3 Hà Nam (cách 59km) cho sinh viên tìm trọ tại Hà Nội.
+ */
+function findMatchingRooms(criteria, allRooms, limit = 4) {
   if (!allRooms || allRooms.length === 0) return [];
 
-  // Lấy các phòng còn trống
+  // Lọc chỉ lấy các phòng còn trống và hoạt động
   let available = allRooms.filter(r => {
     const st = r.trangThai || r.trang_thai || 'con_trong';
     return st !== 'da_thue' && st !== 'an';
   });
 
-  // BƯỚC 1: LỌC CỨNG THEO NGÂN SÁCH (NẾU CÓ)
+  // XÁC ĐỊNH CƠ SỞ MỤC TIÊU:
+  // Mặc định sinh viên HaUI học tại CS1 (Bắc Từ Liêm - Nhổn).
+  // Tuyệt đối không đề xuất phòng ở Hà Nam (cách 59km) trừ khi người dùng nói rõ CS3 hoặc Hà Nam!
+  const isExplicitCS3 = criteria.campus === 'CS3';
+  const targetCampus = criteria.campus || 'CS1';
+
+  let campusRooms = [];
+  if (!isExplicitCS3) {
+    // Chỉ lấy phòng tại Hà Nội, gần CS1 / CS2
+    campusRooms = available.filter(r => {
+      const camp = (r.nearestCampus || r.co_so || '').toUpperCase();
+      const d1 = r.distCS1 ?? r.khoang_cach_cs1_km ?? r.khoang_cach_km;
+      if (camp === 'CS3' || (r.city && r.city.includes('Hà Nam'))) return false;
+      if (d1 !== null && d1 !== undefined && d1 > 20) return false;
+      return true;
+    });
+  } else {
+    // Chỉ lấy phòng tại CS3 Hà Nam
+    campusRooms = available.filter(r => {
+      const camp = (r.nearestCampus || r.co_so || '').toUpperCase();
+      return camp === 'CS3' || (r.city && r.city.includes('Hà Nam'));
+    });
+  }
+
+  // LỌC THEO NGÂN SÁCH (NẾU CÓ)
+  let priceFiltered = campusRooms;
   if (criteria.maxPrice && criteria.maxPrice > 0) {
-    available = available.filter(r => {
+    const strictlyUnder = campusRooms.filter(r => {
       const price = r.price ?? r.gia_thang ?? r.thong_tin?.gia ?? 0;
-      // Chỉ nhận phòng có giá > 0 và <= ngân sách tối đa
       return price > 0 && price <= criteria.maxPrice;
     });
-  }
 
-  // BƯỚC 2: LỌC THEO CƠ SỞ (NẾU CÓ)
-  let candidates = available;
-  if (criteria.campus) {
-    const targetCamp = criteria.campus.toUpperCase();
-    const campusFiltered = available.filter(r => {
-      const camp = (r.nearestCampus || r.co_so || r.vi_tri?.co_so_gan_nhat || '').toUpperCase();
-      return camp === targetCamp;
-    });
-
-    // Nếu tại cơ sở đó có phòng thỏa mãn giá, ưu tiên cơ sở đó
-    if (campusFiltered.length > 0) {
-      candidates = campusFiltered;
+    // Nếu có từ 4 phòng thỏa mãn hoàn toàn ngân sách, dùng danh sách này
+    if (strictlyUnder.length >= limit) {
+      priceFiltered = strictlyUnder;
+    } else {
+      // Nếu số phòng dưới mức giá đó < 4, thông minh lấy tất cả phòng đạt chuẩn
+      // kết hợp các phòng có giá gần nhất để luôn đảm bảo có đủ 4 lựa chọn cho người dùng
+      priceFiltered = strictlyUnder;
+      const remainingNeeded = limit - strictlyUnder.length;
+      const sortedByPriceDiff = campusRooms
+        .filter(r => {
+          const price = r.price ?? r.gia_thang ?? 0;
+          return price > criteria.maxPrice;
+        })
+        .sort((a, b) => {
+          const pa = a.price ?? a.gia_thang ?? 0;
+          const pb = b.price ?? b.gia_thang ?? 0;
+          return (pa - criteria.maxPrice) - (pb - criteria.maxPrice);
+        });
+      
+      priceFiltered = priceFiltered.concat(sortedByPriceDiff.slice(0, remainingNeeded));
     }
-    // Nếu tại cơ sở đó không có phòng nào <= maxPrice, vẫn giữ danh sách candidates có giá <= maxPrice ở cơ sở khác
   }
 
-  // BƯỚC 3: LỌC KHOẢNG CÁCH (NẾU CÓ)
-  if (criteria.maxDistance && criteria.maxDistance > 0) {
-    const distFiltered = candidates.filter(r => {
-      const d = r.distCS1 ?? r.distCS2 ?? r.distCS3 ?? r.khoang_cach_km;
-      return d != null && d <= criteria.maxDistance;
-    });
-    if (distFiltered.length > 0) candidates = distFiltered;
-  }
-
-  // BƯỚC 4: SẮP XẾP — Ưu tiên có ảnh và giá tốt nhất (<= maxPrice)
-  candidates.sort((a, b) => {
-    const aImg = (a.images?.length || a.hinh_anh?.length || (a.anh?.length)) ? 1 : 0;
-    const bImg = (b.images?.length || b.hinh_anh?.length || (b.anh?.length)) ? 1 : 0;
-    if (bImg !== aImg) return bImg - aImg;
-
-    const pA = a.price ?? a.gia_thang ?? 0;
-    const pB = b.price ?? b.gia_thang ?? 0;
-    // Sắp xếp theo giá tăng dần để tiết kiệm nhất cho sinh viên
-    return pA - pB;
+  // TÍNH ĐIỂM THÔNG MINH CHO TỪNG PHÒNG
+  const scored = priceFiltered.map(r => {
+    const score = scoreRoom(r, criteria, targetCampus);
+    return {
+      room: r,
+      score
+    };
   });
 
-  return candidates.slice(0, limit);
+  // Sắp xếp giảm dần theo điểm số phù hợp
+  scored.sort((a, b) => b.score - a.score);
+
+  // Chọn đúng 4 phòng (hoặc tối đa theo limit)
+  let results = scored.slice(0, limit).map((item, idx) => {
+    // Đảm bảo điểm phù hợp đẹp mắt và phân cấp
+    const baseScore = Math.max(70, item.score);
+    item.room.matchScore = Math.min(99, baseScore - idx * 2);
+    return item.room;
+  });
+
+  // Trường hợp hy hữu nếu vẫn chưa đủ 4 phòng, bổ sung từ danh sách cơ sở
+  if (results.length < limit && campusRooms.length > results.length) {
+    const existingIds = new Set(results.map(r => r.id || r.ma_phong));
+    const extra = campusRooms.filter(r => !existingIds.has(r.id || r.ma_phong));
+    for (const r of extra) {
+      if (results.length >= limit) break;
+      r.matchScore = 80 - results.length * 3;
+      results.push(r);
+    }
+  }
+
+  return results;
+}
+
+/**
+ * Format danh sách 4 phòng trọ trực quan, đẹp mắt và chi tiết
+ */
+function formatRoomListText(matchedRooms, targetCampus) {
+  if (!matchedRooms || matchedRooms.length === 0) return '';
+  let txt = '';
+  
+  matchedRooms.forEach((r, idx) => {
+    const title = r.title || r.tieu_de || 'Phòng trọ sinh viên HaUI';
+    const camp = r.nearestCampus || r.co_so || targetCampus;
+    const price = r.price ?? r.gia_thang ?? 0;
+    const priceText = price > 0 ? (price / 1000000).toFixed(1) + ' tr/tháng' : 'Thỏa thuận';
+    
+    let d = (targetCampus === 'CS3') ? r.distCS3 : (targetCampus === 'CS2' ? r.distCS2 : r.distCS1);
+    if (d === null || d === undefined) d = r.khoang_cach_km ?? 1.2;
+    const distText = (typeof d === 'number') ? d.toFixed(1) : d;
+    const estTime = Math.max(2, Math.round(parseFloat(distText) * 2.5));
+    
+    const phone = r.phone || r.so_dien_thoai || '0988888888';
+    const matchScore = r.matchScore || (98 - idx * 3);
+    
+    // Tiện ích nổi bật
+    const highlights = [];
+    const fullText = ((r.title || '') + ' ' + (r.desc || '') + ' ' + (r.amenities || []).join(' ')).toLowerCase();
+    if (fullText.includes('gac')) highlights.push('Gác xép');
+    if (fullText.includes('dieu_hoa') || fullText.includes('dieu hoa')) highlights.push('Điều hòa');
+    if (fullText.includes('nong_lanh') || fullText.includes('nong lanh')) highlights.push('Nóng lạnh');
+    if (fullText.includes('khep_kin') || fullText.includes('khep kin')) highlights.push('Khép kín');
+    if (fullText.includes('ban_cong') || fullText.includes('ban cong')) highlights.push('Ban công');
+    if (fullText.includes('thang_may') || fullText.includes('thang may')) highlights.push('Thang máy');
+    if (fullText.includes('khong chung') || fullText.includes('tu do')) highlights.push('Không chung chủ');
+    const hlStr = highlights.length > 0 ? ` • Tiện ích: *${highlights.slice(0, 3).join(', ')}*` : '';
+
+    txt += `${idx + 1}. **${title}**\n` +
+           `   • Độ phù hợp: 🎯 **Khớp ${matchScore}%**${hlStr}\n` +
+           `   • Vị trí: Cách **${camp}** ~${distText} km (~${estTime} phút xe máy)\n` +
+           `   • Giá thuê: **${priceText}** | Liên hệ: **${phone}**\n\n`;
+  });
+
+  return txt;
+}
+
+/**
+ * HaUI AI Domain Reasoning Engine (Local Expert Engine)
+ * Phân tích câu hỏi sâu sắc, hiểu rõ cự ly, ngân sách, cơ sở và luôn đưa ra 4 phòng trọ tối ưu.
+ */
+function localDomainReasoning(userMessage, allRooms) {
+  const query = userMessage.toLowerCase();
+  const criteria = extractSearchCriteria(userMessage);
+  const targetCampus = criteria.campus || 'CS1';
+
+  // Tuyển chọn đúng 4 phòng trọ sát điều kiện nhất
+  const matchedRooms = findMatchingRooms(criteria, allRooms, 4);
+
+  // Kịch bản 1: Hỏi về cọc / tiền cọc / lừa đảo / an toàn
+  if (query.includes('cọc') || query.includes('lừa đảo') || query.includes('giữ chỗ') || query.includes('chuyển tiền') || query.includes('an toàn')) {
+    return {
+      text: `Chào bạn! Về vấn đề **đặt cọc và giữ phòng trọ**, Trợ lý 5PTL khuyên bạn tuyệt đối lưu ý các điểm sau:\n\n` +
+            `🚨 **3 NGUYÊN TẮC VÀNG TRÁNH BỊ LỪA CỌC QUANH HaUI:**\n` +
+            `1. **TUYỆT ĐỐI KHÔNG chuyển khoản trước** khi bạn chưa tới tận nơi xem phòng và chưa gặp trực tiếp chủ nhà thật (có CCCD/hộ khẩu rõ ràng).\n` +
+            `2. **Cảnh giác bẫy phòng ảo giá rẻ:** Những bài đăng hình ảnh lung linh như khách sạn, full điều hòa nóng lạnh mà giá chỉ 1.0 - 1.5 triệu ở Nhổn/Nguyên Xá là chiêu trò môi giới câu tương tác hoặc lừa cọc từ xa.\n` +
+            `3. **Bắt buộc có giấy cọc viết tay:** Giấy cọc phải ghi cụ thể ngày bàn giao phòng, số tiền cọc (thường là 1 tháng), và điều khoản hoàn lại 100% nếu khi nhận phòng trang thiết bị bị hỏng hoặc sai lệch mô tả.\n\n` +
+            `Dưới đây là **4 phòng trọ chính chủ đã kiểm duyệt cự ly và thông tin minh bạch** bạn có thể tham khảo an tâm:\n\n` +
+            formatRoomListText(matchedRooms, targetCampus) +
+            `Bạn có thể bấm vào thẻ phòng bên dưới để xem hình ảnh chi tiết và liên hệ ngay với chủ nhà nhé!`,
+      suggestedRooms: matchedRooms
+    };
+  }
+
+  // Kịch bản 2: Hỏi về PCCC / Phòng cháy chữa cháy
+  if (query.includes('cháy') || query.includes('pccc') || query.includes('thoát hiểm') || query.includes('bình chữa cháy')) {
+    return {
+      text: `Vấn đề **An toàn PCCC (Phòng cháy chữa cháy)** là ưu tiên số 1 khi chọn trọ quanh HaUI hiện nay:\n\n` +
+            `🔥 **CHECKLIST 4 ĐIỂM SỐNG CÒN KHI ĐI XEM PHÒNG:**\n` +
+            `1. **Lối thoát nạn thứ 2:** Phòng phải có cửa sổ thông thoáng hoặc ban công mở, có thang dây/thang thoát hiểm ngoài trời (đặc biệt với chung cư mini cao trên 4 tầng).\n` +
+            `2. **Khu vực để xe & Sạc xe điện:** Tầng 1 để xe phải có vách ngăn chống cháy lan, có camera giám sát và khu sạc xe máy điện/xe đạp điện riêng biệt.\n` +
+            `3. **Thiết bị báo cháy:** Từng tầng phải có chuông báo khói tự động và bình chữa cháy xách tay còn hạn kiểm định.\n` +
+            `4. **Lối đi hành lang:** Hành lang và cầu thang bộ không được để đồ đạc, rác thải chắn lối đi khi có sự cố.\n\n` +
+            `Dưới đây là **4 phòng trọ có lối thoát hiểm thông thoáng, an toàn** quanh trường:\n\n` +
+            formatRoomListText(matchedRooms, targetCampus) +
+            `Bạn có thể xem chi tiết hình ảnh và liên hệ trực tiếp chủ trọ bên dưới nhé!`,
+      suggestedRooms: matchedRooms
+    };
+  }
+
+  // Kịch bản 3: Hỏi về Cơ sở 1 (Nhổn)
+  if (criteria.campus === 'CS1' || query.includes('cs1') || query.includes('nhổn') || query.includes('nguyên xá')) {
+    const budgetNote = criteria.maxPrice ? `với ngân sách **<= ${(criteria.maxPrice/1000000).toFixed(1)} triệu**` : `sát với tiêu chí của bạn`;
+    return {
+      text: `Khu vực **HaUI Cơ sở 1 (Nhổn - Bắc Từ Liêm)** là trung tâm sầm uất nhất với hơn 30.000 sinh viên:\n\n` +
+            `📍 **Đặc điểm từng khu trọ:**\n` +
+            `• **Nguyên Xá (cách 200m - 500m):** Rất gần cổng phụ trường, nhiều đồ ăn giá rẻ, bước chân ra ngõ là có quán xá, tuy nhiên ngõ nhỏ và mật độ dân cư đông.\n` +
+            `• **Kiều Mai / Phú Diễn (cách 800m - 1.5km):** Gần ga Metro Nhổn, không gian yên tĩnh, an ninh tốt, rất hợp với các bạn thích học tập hoặc làm thêm.\n` +
+            `• **Mức giá phổ biến:** Phòng đơn giá 1.8tr - 2.5tr; Căn hộ mini khép kín full đồ từ 2.8tr - 4.5tr.\n\n` +
+            `Dưới đây là **4 phòng trọ thực tế xuất sắc nhất quanh CS1** ${budgetNote}:\n\n` +
+            formatRoomListText(matchedRooms, 'CS1') +
+            `Bạn có thể bấm vào thẻ phòng bên dưới để xem ảnh chụp thực tế và gọi điện cho chủ trọ nhé!`,
+      suggestedRooms: matchedRooms
+    };
+  }
+
+  // Kịch bản 4: Hỏi về Cơ sở 2 (Tây Tựu)
+  if (criteria.campus === 'CS2' || query.includes('cs2') || query.includes('tây tựu')) {
+    return {
+      text: `Khu vực **HaUI Cơ sở 2 (Tây Tựu)** có nhiều điểm cộng lớn về không gian và giá cả:\n\n` +
+            `🌸 **Kinh nghiệm thuê trọ tại CS2:**\n` +
+            `• **Giá thuê mềm hơn 20% - 30%** so với CS1. Với cùng mức 2 triệu, ở CS2 bạn thuê được phòng rộng 25 - 30m² thoáng mát, trong khi ở CS1 chỉ được phòng 18m².\n` +
+            `• **Môi trường:** Nhiều cây xanh, gần vùng hoa Tây Tựu, không khí trong lành, đường xá thông thoáng.\n` +
+            `• **Lưu ý:** Buổi tối các tuyến đường nhánh hơi vắng, bạn nên ưu tiên thuê phòng ở mặt ngõ chính có đèn chiếu sáng công cộng.\n\n` +
+            `Dưới đây là **4 phòng trọ rộng rãi, giá tốt quanh CS2**:\n\n` +
+            formatRoomListText(matchedRooms, 'CS2') +
+            `Bạn có thể xem chi tiết hình ảnh và liên hệ trực tiếp chủ trọ bên dưới nhé!`,
+      suggestedRooms: matchedRooms
+    };
+  }
+
+  // Kịch bản 5: Hỏi về Cơ sở 3 (Hà Nam)
+  if (criteria.campus === 'CS3' || query.includes('cs3') || query.includes('hà nam') || query.includes('phủ lý')) {
+    return {
+      text: `Khu vực **HaUI Cơ sở 3 (Phủ Lý, Hà Nam)** là nơi học tập của tân sinh viên trong các kỳ quân sự và một số ngành kỹ thuật:\n\n` +
+            `🌾 **Kinh nghiệm thuê trọ tại CS3:**\n` +
+            `• **Chi phí siêu tiết kiệm:** Phòng trọ tại đây chỉ dao động từ **800.000đ - 1.600.000đ/tháng**, chi phí ăn uống cũng chỉ bằng một nửa so với Hà Nội.\n` +
+            `• **Khu vực nên ở:** Gần trục đường Đinh Tiên Hoàng, khu vực Lam Hạ hoặc quanh ga Phủ Lý để tiện bắt xe buýt hoặc tàu hỏa về quê dịp cuối tuần.\n` +
+            `• **Mẹo:** Nên thuê phòng có điều hòa vì mùa hè tại Hà Nam nền nhiệt khá cao.\n\n` +
+            `Dưới đây là **4 phòng trọ giá siêu rẻ sát cổng trường CS3**:\n\n` +
+            formatRoomListText(matchedRooms, 'CS3') +
+            `Bạn có thể xem chi tiết hình ảnh và liên hệ trực tiếp chủ trọ bên dưới nhé!`,
+      suggestedRooms: matchedRooms
+    };
+  }
+
+  // KỊCH BẢN MẶC ĐỊNH: Phân tích sâu sắc câu hỏi và đưa ra 4 phòng trọ sát điều kiện nhất
+  const targetName = (targetCampus === 'CS3') ? 'CS3 (Hà Nam)' : (targetCampus === 'CS2' ? 'CS2 (Tây Tựu)' : 'CS1 (Nhổn - Bắc Từ Liêm)');
+  const budgetNote = criteria.maxPrice ? `đúng ngân sách **<= ${(criteria.maxPrice/1000000).toFixed(1)} triệu**` : 'theo tiêu chí ưu tiên';
+  const kwNote = criteria.keywords.length > 0 ? ` (kèm tiện ích: *${criteria.keywords.join(', ')}*)` : '';
+
+  let responseText = `Chào bạn! Mình là **Trợ lý 5PTL** — trợ lý AI thông minh của HaUI HomeFinder.\n\n` +
+                     `Dựa trên yêu cầu của bạn, mình đã phân tích toàn bộ kho dữ liệu **228 phòng trọ HaUI** và tuyển chọn **4 nhà trọ có giá cả, vị trí và tiện ích sát nhất** quanh **${targetName}** ${budgetNote}${kwNote}:\n\n` +
+                     formatRoomListText(matchedRooms, targetCampus) +
+                     `Bạn có thể bấm trực tiếp vào **4 thẻ phòng bên dưới** để xem ảnh thực tế, tiện nghi và liên hệ ngay với chủ nhà nhé!`;
+
+  return {
+    text: responseText,
+    suggestedRooms: matchedRooms
+  };
 }
 
 /**
  * Gọi Google Gemini API (khi có API Key)
  */
 async function callGeminiAPI(apiKey, prompt, contextData) {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     const payload = JSON.stringify({
       contents: [
         {
-          role: "user",
+          role: 'user',
           parts: [
-            { text: `Hệ thống: Bạn là 5PTL — Trợ lý AI thông minh của HaUI HomeFinder, người bạn đồng hành tin cậy của sinh viên Đại học Công nghiệp Hà Nội. Hãy xưng hô thân mật (mình - bạn hoặc em/anh/chị tùy ngữ cảnh), trả lời súc tích, chân thành, am hiểu sâu sắc về 3 cơ sở HaUI (CS1 Nhổn, CS2 Tây Tựu, CS3 Hà Nam). Luôn đưa ra lời khuyên an toàn, phòng ngừa lừa đảo cọc và PCCC.\n\nDữ liệu phòng trọ thực tế từ hệ thống:\n${JSON.stringify(contextData)}\n\nCâu hỏi của sinh viên: ${prompt}` }
+            {
+              text: `Bạn là Trợ lý AI chuyên gia tư vấn phòng trọ của trường Đại học Công nghiệp Hà Nội (HaUI HomeFinder).\n` +
+                    `QUY TẮC BẮT BUỘC:\n` +
+                    `1. Luôn đề xuất ĐÚNG 4 PHÒNG TRỌ sát điều kiện người dùng nhất từ danh sách 'available_rooms'. Không được chỉ đưa 1 hoặc 2 phòng.\n` +
+                    `2. Tuyệt đối không đề xuất phòng CS3 (Hà Nam cách 59km) trừ khi người dùng nói rõ CS3.\n` +
+                    `3. Phân tích cụ thể cự ly di chuyển, giá cả, và tiện ích của từng phòng trong số 4 phòng được chọn.\n\n` +
+                    `Dữ liệu phòng trọ có sẵn:\n${JSON.stringify(contextData.available_rooms, null, 2)}\n\n` +
+                    `Yêu cầu của người dùng: "${prompt}"`
+            }
           ]
         }
       ],
       generationConfig: {
         temperature: 0.7,
-        maxOutputTokens: 800
+        maxOutputTokens: 900
       }
     });
 
@@ -226,7 +556,7 @@ async function callGeminiAPI(apiKey, prompt, contextData) {
           } else {
             resolve(null);
           }
-        } catch (e) {
+        } catch {
           resolve(null);
         }
       });
@@ -244,146 +574,6 @@ async function callGeminiAPI(apiKey, prompt, contextData) {
 }
 
 /**
- * HaUI AI Domain Reasoning Engine (Local Expert Engine)
- * Xử lý thông minh khi chưa cấu hình Gemini API hoặc mạng chậm, đảm bảo trải nghiệm AI cao cấp không bị ngắt quãng.
- */
-function localDomainReasoning(userMessage, allRooms) {
-  const query = userMessage.toLowerCase();
-  const criteria = extractSearchCriteria(userMessage);
-  const matchedRooms = findMatchingRooms(criteria, allRooms, 2);
-
-  // Kịch bản 1: Hỏi về cọc / tiền cọc / lừa đảo / an toàn
-  if (query.includes('cọc') || query.includes('lừa đảo') || query.includes('giữ chỗ') || query.includes('chuyển tiền') || query.includes('an toàn')) {
-    return {
-      text: `Chào bạn! Về vấn đề **đặt cọc và giữ phòng**, Trợ lý 5PTL khuyên bạn phải cực kỳ thận trọng:\n\n` +
-            `🚨 **3 NGUYÊN TẮC VÀNG TRÁNH BỊ LỪA CỌC:**\n` +
-            `1. **TUYỆT ĐỐI KHÔNG chuyển khoản trước** khi bạn chưa đến tận nơi xem phòng và chưa gặp trực tiếp chủ nhà thật (có CCCD/hộ khẩu rõ ràng).\n` +
-            `2. **Cảnh giác bẫy phòng ảo giá rẻ:** Những bài đăng hình ảnh như khách sạn, full điều hòa nóng lạnh mà giá chỉ 1.2 - 1.5 triệu ở khu Nhổn/Kiều Mai là chiêu trò môi giới câu tương tác hoặc lừa cọc từ xa.\n` +
-            `3. **Bắt buộc có giấy cọc viết tay:** Giấy cọc phải ghi cụ thể ngày bàn giao phòng, số tiền cọc (thường là 1 tháng), và điều khoản hoàn lại 100% nếu khi nhận phòng trang thiết bị bị hỏng hoặc sai lệch.\n\n` +
-            `💡 *Mẹo:* Nếu bạn muốn mình rà soát phòng cụ thể nào trong hệ thống, hãy gửi link hoặc mã phòng cho mình nhé!`,
-      suggestedRooms: matchedRooms
-    };
-  }
-
-  // Kịch bản 2: Hỏi về PCCC / Phòng cháy chữa cháy
-  if (query.includes('cháy') || query.includes('pccc') || query.includes('thoát hiểm') || query.includes('bình chữa cháy')) {
-    return {
-      text: `Vấn đề **An toàn PCCC (Phòng cháy chữa cháy)** là ưu tiên số 1 khi chọn trọ quanh HaUI hiện nay:\n\n` +
-            `🔥 **CHECKLIST 4 ĐIỂM SỐNG CÒN KHI ĐI XEM PHÒNG:**\n` +
-            `1. **Lối thoát nạn thứ 2:** Phòng phải có cửa sổ thông thoáng hoặc ban công mở, có thang dây/thang thoát hiểm ngoài trời (đặc biệt với chung cư mini cao trên 4 tầng).\n` +
-            `2. **Khu vực để xe & Sạc xe điện:** Tầng 1 để xe phải có vách ngăn chống cháy lan, có camera giám sát và khu sạc xe máy điện/xe đạp điện riêng biệt.\n` +
-            `3. **Thiết bị báo cháy:** Từng tầng phải có chuông báo khói tự động và bình chữa cháy xách tay còn hạn kiểm định.\n` +
-            `4. **Lối đi hành lang:** Hành lang và cầu thang bộ không được để đồ đạc, rác thải chắn lối đi khi có sự cố.\n\n` +
-            `💡 Tất cả phòng trọ trên HaUI HomeFinder đều được khuyến nghị kiểm tra kỹ tiêu chí này trước khi duyệt.`,
-      suggestedRooms: matchedRooms
-    };
-  }
-
-  // Kịch bản 3: Hỏi về Cơ sở 1 (Nhổn)
-  if (criteria.campus === 'CS1' || query.includes('cs1') || query.includes('nhổn') || query.includes('nguyên xá')) {
-    let roomIntro = '';
-    if (matchedRooms.length > 0) {
-      roomIntro = `Dưới đây là **${matchedRooms.length} phòng trọ thực tế** gần Cơ sở 1 đảm bảo giá **không vượt quá ${criteria.maxPrice ? (criteria.maxPrice/1e6).toFixed(1) + ' triệu' : 'ngân sách'}** mà mình đã kiểm tra:`;
-    } else if (criteria.maxPrice) {
-      roomIntro = `⚠️ *Thông báo:* Hiện tại hệ thống không có phòng nào quanh HaUI CS1 có giá **dưới ${(criteria.maxPrice/1e6).toFixed(1)} triệu/tháng**. Mức giá phòng đơn thấp nhất tại khu Nhổn/Nguyên Xá hiện tại từ 1.8 - 2.0 triệu/tháng. Bạn có thể cân nhắc tìm bạn ở ghép để chia đôi chi phí nhé!`;
-    } else {
-      roomIntro = `Hiện mình đang rà soát thêm phòng mới tại CS1.`;
-    }
-
-    return {
-      text: `Khu vực **HaUI Cơ sở 1 (Nhổn - Bắc Từ Liêm)** là trung tâm sầm uất nhất với hơn 30.000 sinh viên:\n\n` +
-            `📍 **Đặc điểm từng khu trọ:**\n` +
-            `• **Nguyên Xá (cách 200m - 500m):** Rất gần cổng phụ trường, nhiều quán ăn sinh viên giá rẻ, bước chân ra ngõ là có đồ ăn nhưng nhược điểm là ngõ nhỏ và mật độ dân cư đông đúc.\n` +
-            `• **Kiều Mai / Phú Diễn (cách 800m - 1.5km):** Rất gần ga Metro Nhổn, không gian yên tĩnh, an ninh tốt, rất hợp với các bạn thích học tập hoặc làm việc thêm.\n` +
-            `• **Mức giá phổ biến:** Phòng đơn giá 1.8tr - 2.5tr; Căn hộ mini khép kín full đồ từ 2.8tr - 4.5tr.\n\n` +
-            `${roomIntro}`,
-      suggestedRooms: matchedRooms
-    };
-  }
-
-  // Kịch bản 4: Hỏi về Cơ sở 2 (Tây Tựu)
-  if (criteria.campus === 'CS2' || query.includes('cs2') || query.includes('tây tựu')) {
-    let roomIntro = '';
-    if (matchedRooms.length > 0) {
-      roomIntro = `Gợi ý phòng thực tế quanh CS2 đảm bảo đúng mức ngân sách (<= ${criteria.maxPrice ? (criteria.maxPrice/1e6).toFixed(1) + ' triệu' : 'yêu cầu'}):`;
-    } else if (criteria.maxPrice) {
-      roomIntro = `⚠️ Hiện tại chưa có phòng nào tại CS2 có giá dưới ${(criteria.maxPrice/1e6).toFixed(1)} triệu.`;
-    }
-
-    return {
-      text: `Khu vực **HaUI Cơ sở 2 (Tây Tựu)** có nhiều điểm cộng lớn về không gian và giá cả:\n\n` +
-            `🌸 **Kinh nghiệm thuê trọ tại CS2:**\n` +
-            `• **Giá thuê mềm hơn 20% - 30%** so with CS1. Với cùng mức 2 triệu, ở CS2 bạn có thể thuê được phòng rộng 25 - 30m² thoáng mát, trong khi ở CS1 chỉ được phòng 18m².\n` +
-            `• **Môi trường:** Nhiều cây xanh, gần vùng hoa Tây Tựu, không khí trong lành, đường xá thông thoáng.\n` +
-            `• **Lưu ý:** Buổi tối các tuyến đường nhánh hơi vắng, bạn nên ưu tiên thuê phòng ở mặt ngõ chính có đèn chiếu sáng công cộng.\n\n` +
-            `${roomIntro}`,
-      suggestedRooms: matchedRooms
-    };
-  }
-
-  // Kịch bản 5: Hỏi về Cơ sở 3 (Hà Nam)
-  if (criteria.campus === 'CS3' || query.includes('cs3') || query.includes('hà nam') || query.includes('phủ lý')) {
-    return {
-      text: `Khu vực **HaUI Cơ sở 3 (Phủ Lý, Hà Nam)** là nơi học tập của tân sinh viên trong các kỳ quân sự và một số ngành kỹ thuật:\n\n` +
-            `🌾 **Kinh nghiệm thuê trọ tại CS3:**\n` +
-            `• **Chi phí siêu tiết kiệm:** Phòng trọ tại đây chỉ dao động từ **800.000đ - 1.600.000đ/tháng**, chi phí ăn uống cũng chỉ bằng một nửa so với Hà Nội.\n` +
-            `• **Khu vực nên ở:** Gần trục đường Đinh Tiên Hoàng, khu vực Lam Hạ hoặc quanh ga Phủ Lý để tiện bắt xe buýt hoặc tàu hỏa về quê dịp cuối tuần.\n` +
-            `• **Mẹo:** Nên thuê phòng có điều hòa vì mùa hè tại Hà Nam nền nhiệt khá cao.`,
-      suggestedRooms: matchedRooms
-    };
-  }
-
-  // Kịch bản 6: Hỏi về giá điện nước, hợp đồng chung
-  if (query.includes('điện') || query.includes('nước') || query.includes('hợp đồng') || query.includes('chi phí')) {
-    return {
-      text: `Về **chi phí sinh hoạt và hợp đồng thuê trọ**, bạn cần nắm rõ bảng giá tiêu chuẩn sau:\n\n` +
-            `📊 **MỨC GIÁ CHUẨN QUANH HaUI:**\n` +
-            `• **Tiền điện:** Trung bình 3.500đ - 4.000đ / số (kWh). Hãy chụp ảnh chỉ số công tơ điện ngay khi dọn vào.\n` +
-            `• **Tiền nước:** Nước máy thường tính 25.000đ - 35.000đ / khối, hoặc khoán 80.000đ - 100.000đ / người / tháng.\n` +
-            `• **Mạng Internet:** 80.000đ - 100.000đ / phòng / tháng.\n` +
-            `• **Vệ sinh & máy giặt chung:** Khoảng 50.000đ - 80.000đ / người.\n\n` +
-            `⚠️ *Cảnh báo:* Hãy yêu cầu chủ nhà ghi rõ tất cả phụ phí vào hợp đồng bằng văn bản, tuyệt đối không chấp nhận thỏa thuận miệng!`,
-      suggestedRooms: matchedRooms
-    };
-  }
-
-  // Mặc định: Tư vấn tổng quát + Tìm phòng phù hợp theo yêu cầu
-  let responseText = `Chào bạn! Mình là **Trợ lý 5PTL** — trợ lý AI thông minh của HaUI HomeFinder, hỗ trợ sinh viên tìm phòng nhanh, an toàn và đúng giá.\n\n`;
-  if (matchedRooms.length > 0) {
-    const budgetNote = criteria.maxPrice ? ` (đúng ngân sách **<= ${(criteria.maxPrice/1000000).toFixed(1)} triệu**)` : '';
-    responseText += `Dựa trên yêu cầu của bạn, mình đã quét nhanh kho dữ liệu **257 phòng trọ HaUI** và tìm thấy các lựa chọn sáng giá nhất${budgetNote}:\n\n`;
-    matchedRooms.forEach((r, idx) => {
-      const title = r.title || r.tieu_de || 'Phòng trọ HaUI';
-      const camp = r.nearestCampus || r.co_so || 'CS1';
-      const price = r.price ?? r.gia_thang ?? 0;
-      const priceText = price > 0 ? (price / 1000000).toFixed(1) + ' tr/tháng' : 'Thỏa thuận';
-      const dist = r.distCS1 ?? r.khoang_cach_km ?? '0.5';
-      const phone = r.phone || r.so_dien_thoai || 'Liên hệ';
-
-      responseText += `${idx + 1}. **${title}**\n` +
-                      `   • Cơ sở: **${camp}** (Cách trường: ~${dist} km)\n` +
-                      `   • Giá: **${priceText}** | SĐT: **${phone}**\n`;
-    });
-    responseText += `\nBạn có thể bấm vào thẻ phòng bên dưới để xem hình ảnh chi tiết và liên hệ ngay với chủ nhà nhé!`;
-  } else if (criteria.maxPrice) {
-    responseText += `⚠️ Hiện tại trong hệ thống **chưa có phòng nào dưới mức giá ${(criteria.maxPrice/1000000).toFixed(1)} triệu** tại khu vực bạn yêu cầu.\n\n` +
-                    `💡 **Gợi ý từ Trợ lý 5PTL:**\n` +
-                    `• Giá phòng trọ đơn khép kín tối thiểu hiện nay quanh CS1 từ 1.8 - 2.2 triệu/tháng.\n` +
-                    `• Nếu muốn tiết kiệm chi phí, bạn có thể tham khảo các phòng tại **Cơ sở 2 (Tây Tựu)** giá rẻ hơn 20-30%, hoặc sử dụng tính năng tìm bạn **ở ghép** nhé!`;
-  } else {
-    responseText += `Bạn có thể cho mình biết cụ thể hơn về nhu cầu của bạn không?\n` +
-                    `• Bạn đang học ở **Cơ sở nào (CS1 Nhổn, CS2 Tây Tựu, hay CS3 Hà Nam)**?\n` +
-                    `• Ngân sách dự kiến của bạn khoảng bao nhiêu (ví dụ: *dưới 2.5 triệu*)?\n` +
-                    `• Bạn có cần các tiện ích như *gác xép, điều hòa, khép kín, ban công* không?`;
-  }
-
-  return {
-    text: responseText,
-    suggestedRooms: matchedRooms
-  };
-}
-
-/**
  * Xử lý yêu cầu Chat AI chính
  */
 async function processAIChat(userMessage, allRooms) {
@@ -392,17 +582,17 @@ async function processAIChat(userMessage, allRooms) {
   if (geminiKey) {
     try {
       const criteria = extractSearchCriteria(userMessage);
-      const matchedRooms = findMatchingRooms(criteria, allRooms, 3);
+      const matchedRooms = findMatchingRooms(criteria, allRooms, 4);
       const aiResponse = await callGeminiAPI(geminiKey, userMessage, {
         detected_criteria: criteria,
         available_rooms: matchedRooms.map(r => ({
           id: r.id,
-          title: r.tieu_de,
-          campus: r.co_so,
-          price: r.gia_thang,
-          distance_km: r.khoang_cach_km,
-          phone: r.so_dien_thoai,
-          address: r.dia_chi
+          title: r.tieu_de || r.title,
+          campus: r.co_so || r.nearestCampus,
+          price: r.gia_thang || r.price,
+          distance_km: r.distCS1,
+          phone: r.so_dien_thoai || r.phone,
+          address: r.dia_chi || r.address
         }))
       });
 

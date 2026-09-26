@@ -329,8 +329,32 @@ function parseAmenities(text) {
   return list;
 }
 
+// ── BOT-01 FIX: Blacklist địa danh ngoại vùng ─────────────────────────────────
+const ADDR_BLACKLIST_BOT = [
+  'quận 1','quận 2','quận 3','quận 4','quận 5','quận 6','quận 7','quận 8','quận 9',
+  'quận 10','quận 11','quận 12','bình thạnh','gò vấp','tân bình','tân phú',
+  'phú nhuận','bình tân','thủ đức','nhà bè','hóc môn','củ chi','bình chánh',
+  'hồ chí minh','tp.hcm','tphcm','sài gòn','saigon',
+  'đà nẵng','bình dương','đồng nai','cần thơ',
+  'long biên','gia lâm','hoàng mai','thanh trì','thường tín',
+  'đông anh','mê linh','phú xuyên','ba vì','thạch thất','quốc oai',
+  'hoàn kiếm','đống đa','hai bà trưng','cầu giấy','thanh xuân','hà đông','tây hồ',
+];
+
+function isBlacklistedAddress(address, text) {
+  const combined = (address + ' ' + text).toLowerCase();
+  return ADDR_BLACKLIST_BOT.some(kw => combined.includes(kw));
+}
+
+// Bán kính tối đa để chấp nhận phòng (km)
+const MAX_DIST_HANOI_KM = 8.0;
+const MAX_DIST_HANAM_KM = 15.0;
+
 function resolveLocation(address, text, defaultRegion) {
   const combined = (address + ' ' + text).toLowerCase();
+
+  // BOT-01: Từ chối địa danh ngoại vùng ngay từ đầu
+  if (isBlacklistedAddress(address, text)) return null;
 
   // Kiểm tra khu vực Hà Nam (CS3)
   if (defaultRegion === 'hanam_cs3' || combined.includes('hà nam') || combined.includes('phủ lý') || combined.includes('phù vân') || combined.includes('cs3')) {
@@ -351,6 +375,13 @@ function resolveLocation(address, text, defaultRegion) {
     const finalLat = parseFloat((lat + jitterLat).toFixed(5));
     const finalLng = parseFloat((lng + jitterLng).toFixed(5));
 
+    const d3 = calcDistance(finalLat, finalLng, HAUI_CS3.lat, HAUI_CS3.lng);
+    // BOT-01: Kiểm tra bán kính CS3
+    if (d3 > MAX_DIST_HANAM_KM) {
+      auditLog(`  [SKIP-TOO-FAR-CS3] ${d3}km > ${MAX_DIST_HANAM_KM}km: ${(address || text).substring(0, 60)}`);
+      return null;
+    }
+
     return {
       lat: finalLat,
       lng: finalLng,
@@ -360,12 +391,14 @@ function resolveLocation(address, text, defaultRegion) {
       region: "hanam_cs3",
       distCS1: calcDistance(finalLat, finalLng, HAUI_CS1.lat, HAUI_CS1.lng),
       distCS2: calcDistance(finalLat, finalLng, HAUI_CS2.lat, HAUI_CS2.lng),
-      distCS3: calcDistance(finalLat, finalLng, HAUI_CS3.lat, HAUI_CS3.lng),
+      distCS3: d3,
       co_so_gan_nhat: "CS3"
     };
   }
 
   // Khu vực Hà Nội (CS1 & CS2)
+  // BOT-01: Bắt buộc phải khớp ít nhất 1 địa danh đã biết
+  let matched = false;
   let lat = HAUI_CS1.lat;
   let lng = HAUI_CS1.lng;
   let dist = "Bắc Từ Liêm";
@@ -377,8 +410,28 @@ function resolveLocation(address, text, defaultRegion) {
       lng = info.lng;
       dist = info.dist;
       landmark = lm;
+      matched = true;
       break;
     }
+  }
+
+  // BOT-01 v2: Nếu không khớp địa danh nào — trỏ về HaUI CS1, đánh dấu xấp xỉ
+  if (!matched) {
+    auditLog(`  [APPROX-LANDMARK] Không khớp địa danh cụ thể, trỏ về HaUI CS1: ${(address || text).substring(0, 60)}`);
+    const jLat = (Math.random() - 0.5) * 0.0008;
+    const jLng = (Math.random() - 0.5) * 0.0008;
+    const aLat = parseFloat((HAUI_CS1.lat + jLat).toFixed(5));
+    const aLng = parseFloat((HAUI_CS1.lng + jLng).toFixed(5));
+    return {
+      lat: aLat, lng: aLng,
+      dia_chi: address || 'Khu vực gần ĐH Công nghiệp Hà Nội (CS1)',
+      quan_huyen: 'Bắc Từ Liêm', tinh_thanh: 'Hà Nội', region: 'hanoi_cs1_cs2',
+      vi_tri_xap_xi: true,
+      distCS1: calcDistance(aLat, aLng, HAUI_CS1.lat, HAUI_CS1.lng),
+      distCS2: calcDistance(aLat, aLng, HAUI_CS2.lat, HAUI_CS2.lng),
+      distCS3: calcDistance(aLat, aLng, HAUI_CS3.lat, HAUI_CS3.lng),
+      co_so_gan_nhat: 'CS1'
+    };
   }
 
   const jitterLat = (Math.random() - 0.5) * 0.004;
@@ -390,19 +443,35 @@ function resolveLocation(address, text, defaultRegion) {
   const d2 = calcDistance(finalLat, finalLng, HAUI_CS2.lat, HAUI_CS2.lng);
   const d3 = calcDistance(finalLat, finalLng, HAUI_CS3.lat, HAUI_CS3.lng);
 
+  // BOT-01: Kiểm tra bán kính tối đa — nếu quá xa thì cũng trỏ về HaUI (xấp xỉ)
+  if (d1 > MAX_DIST_HANOI_KM && d2 > MAX_DIST_HANOI_KM) {
+    auditLog(`  [APPROX-TOO-FAR-HN] CS1=${d1}km CS2=${d2}km, trỏ về HaUI CS1`);
+    const jLat2 = (Math.random() - 0.5) * 0.0008;
+    const jLng2 = (Math.random() - 0.5) * 0.0008;
+    const aLat2 = parseFloat((HAUI_CS1.lat + jLat2).toFixed(5));
+    const aLng2 = parseFloat((HAUI_CS1.lng + jLng2).toFixed(5));
+    return {
+      lat: aLat2, lng: aLng2,
+      dia_chi: address || 'Khu vực gần ĐH Công nghiệp Hà Nội (CS1)',
+      quan_huyen: 'Bắc Từ Liêm', tinh_thanh: 'Hà Nội', region: 'hanoi_cs1_cs2',
+      vi_tri_xap_xi: true,
+      distCS1: calcDistance(aLat2, aLng2, HAUI_CS1.lat, HAUI_CS1.lng),
+      distCS2: calcDistance(aLat2, aLng2, HAUI_CS2.lat, HAUI_CS2.lng),
+      distCS3: calcDistance(aLat2, aLng2, HAUI_CS3.lat, HAUI_CS3.lng),
+      co_so_gan_nhat: 'CS1'
+    };
+  }
+
   return {
-    lat: finalLat,
-    lng: finalLng,
+    lat: finalLat, lng: finalLng,
     dia_chi: address.includes('Hà Nội') ? address : `${address || ('Khu vực ' + landmark)}, ${dist}, Hà Nội (gần HaUI CS1/CS2)`,
-    quan_huyen: dist,
-    tinh_thanh: "Hà Nội",
-    region: "hanoi_cs1_cs2",
-    distCS1: d1,
-    distCS2: d2,
-    distCS3: d3,
-    co_so_gan_nhat: d1 <= d2 ? "CS1" : "CS2"
+    quan_huyen: dist, tinh_thanh: 'Hà Nội', region: 'hanoi_cs1_cs2',
+    vi_tri_xap_xi: false,
+    distCS1: d1, distCS2: d2, distCS3: d3,
+    co_so_gan_nhat: d1 <= d2 ? 'CS1' : 'CS2'
   };
 }
+
 
 function generateCleanRentalTitle(text, address, price, region) {
   const lines = text.split('\n').map(l => l.trim()).filter(Boolean);
@@ -619,7 +688,15 @@ async function runCrawlJob(options = {}) {
           const phone = parsePhone(text);
           const amenities = parseAmenities(text);
           const loc = resolveLocation('', text, group.region);
+
+          // resolveLocation giờ đây không bao giờ trả null — luôn có fallback HaUI
+          if (!loc) {
+            droppedSpam++;
+            continue;
+          }
+
           const title = generateCleanRentalTitle(text, loc.dia_chi, price, group.region);
+
 
           // Tạo mã định danh RM-FB-XXXXXX
           const hashId = crypto.createHash('md5').update(textHash + Date.now()).digest('hex').substring(0, 6).toUpperCase();
@@ -653,6 +730,7 @@ async function runCrawlJob(options = {}) {
             vi_tri: {
               lat: loc.lat,
               lng: loc.lng,
+              vi_tri_xap_xi: loc.vi_tri_xap_xi || false,
               khoang_cach_cs1_km: loc.distCS1,
               khoang_cach_cs2_km: loc.distCS2,
               khoang_cach_cs3_km: loc.distCS3,
