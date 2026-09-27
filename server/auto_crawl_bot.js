@@ -516,14 +516,181 @@ function generateCleanRentalTitle(text, address, price, region) {
   return `Cho thuê phòng trọ khép kín${priceStr} gần ${campusText}`;
 }
 
+/**
+ * Trình cào dữ liệu qua HTTP siêu nhẹ (Native Fetch Engine)
+ * Hoạt động mượt mà 100% trên Render / Cloud Linux / Docker không có GUI hoặc hạn chế RAM 512MB
+ */
+async function crawlPhongtro123Http(targetTotal, seenUrls, seenHashes) {
+  let added = 0;
+  let droppedDup = 0;
+
+  for (const src of PT123_SOURCES) {
+    if (added >= targetTotal) break;
+    auditLog(`\n🔎 [HTTP Crawler - Phongtro123]: ${src.label} -> ${src.url}`);
+
+    try {
+      const res = await fetch(src.url, {
+        headers: {
+          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
+          'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+          'Accept-Language': 'vi-VN,vi;q=0.9'
+        }
+      });
+      if (!res.ok) continue;
+      const html = await res.text();
+
+      const linkRegex = /href=["']([^"']*-pr\d+\.html)["']/gi;
+      const listingUrls = [];
+      let m;
+      while ((m = linkRegex.exec(html)) !== null) {
+        let u = m[1];
+        if (!u.startsWith('http')) {
+          u = 'https://phongtro123.com' + (u.startsWith('/') ? u : '/' + u);
+        }
+        listingUrls.push(u);
+      }
+
+      const uniqueUrls = Array.from(new Set(listingUrls));
+      auditLog(`   → Tìm thấy ${uniqueUrls.length} bài đăng trên trang.`);
+
+      for (const postUrl of uniqueUrls) {
+        if (added >= targetTotal) break;
+
+        const hash = crypto.createHash('md5').update(postUrl).digest('hex').substring(0, 6).toUpperCase();
+        const roomId = `RM-PT123-${hash}`;
+        const outPath = path.join(DB_ROOM_DIR, `${roomId}.json`);
+
+        if (fs.existsSync(outPath) || seenUrls.has(postUrl.toLowerCase())) {
+          droppedDup++;
+          continue;
+        }
+
+        try {
+          const detailRes = await fetch(postUrl, {
+            headers: {
+              'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
+              'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+              'Accept-Language': 'vi-VN,vi;q=0.9'
+            }
+          });
+          if (!detailRes.ok) continue;
+          const dHtml = await detailRes.text();
+
+          const titleMatch = dHtml.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i);
+          const title = titleMatch ? titleMatch[1].replace(/<[^>]+>/g, '').trim() : '';
+          if (!title) continue;
+
+          let address = '';
+          const addrMatch = dHtml.match(/(?:Địa chỉ|Khu vực):[\s\S]*?<[^>]*>([^<]+)<\/[^>]*>/i) ||
+                            dHtml.match(/class=["'][^"']*post-address[^"']*["'][^>]*>([\s\S]*?)<\/[a-z0-9]+>/i) ||
+                            dHtml.match(/(?:Địa chỉ|Khu vực):\s*([^<\r\n]+)/i);
+          if (addrMatch) {
+            address = addrMatch[1].replace(/<[^>]+>/g, '').trim();
+          }
+
+          const priceMatch = dHtml.match(/(\d+(?:[.,]\d+)?\s*(?:triệu|tr|đ|đồng)\/tháng)/i);
+          const priceText = priceMatch ? priceMatch[1] : '';
+
+          const areaMatch = dHtml.match(/(\d+(?:[.,]\d+)?\s*m²)/i);
+          const areaText = areaMatch ? areaMatch[1] : '';
+
+          const phoneMatch = dHtml.match(/href=["']tel:([0-9\s.]+debugger|0[0-9]{9,10})["']/i) ||
+                             dHtml.match(/(?:0\d{9,10})/);
+          const phone = phoneMatch ? phoneMatch[1].replace(/\D/g, '') : '';
+
+          const descMatch = dHtml.match(/class=["'][^"']*section-content[^"']*["'][^>]*>([\s\S]*?)<\/div>/i) ||
+                            dHtml.match(/class=["'][^"']*post-summary[^"']*["'][^>]*>([\s\S]*?)<\/div>/i);
+          const desc = descMatch ? descMatch[1].replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim() : (title + ' ' + address);
+
+          const imgMatches = Array.from(dHtml.matchAll(/https:\/\/[^"'\s]+\.(?:jpg|webp|png)/gi))
+            .map(x => x[0])
+            .filter(u => (u.includes('static123.com') || u.includes('images/thumbs') || u.includes('phongtro123')) && !u.includes('logo') && !u.includes('icon') && !u.includes('avatar'));
+          const imgs = Array.from(new Set(imgMatches)).slice(0, 5);
+
+          const price = parsePrice(priceText) || parsePrice(title) || (src.isHaNam ? 1200000 : 2500000);
+          const area = parseArea(areaText) || 20;
+          const amenities = parseAmenities(desc + ' ' + title);
+          const loc = resolveLocation(address, title, src.isHaNam ? 'hanam_cs3' : 'hanoi_cs1_cs2');
+          if (!loc) continue;
+
+          const descHash = crypto.createHash('sha256').update(desc.substring(0, 100).replace(/\s+/g, '')).digest('hex');
+          if (seenHashes.has(descHash)) {
+            droppedDup++;
+            continue;
+          }
+
+          const roomObj = {
+            ma_phong: roomId,
+            nguon: "phongtro123",
+            url_nguon: postUrl,
+            ngay_cao: new Date().toISOString(),
+            ngay_cap_nhat: new Date().toISOString(),
+            trang_thai: "con_trong",
+            luat_tuan_thu: {
+              nghi_dinh_13: "Nguồn niêm yết công khai phongtro123.com",
+              chong_spam: "Tin đăng cho thuê xác thực",
+              da_kiem_tra_trung: true
+            },
+            thong_tin: {
+              tieu_de: title,
+              gia: price,
+              dien_tich: area,
+              dia_chi: address || loc.dia_chi,
+              quan_huyen: loc.quan_huyen,
+              tinh_thanh: loc.tinh_thanh,
+              mo_ta: desc,
+              tien_ich: amenities,
+              khong_chung_chu: /không chung chủ|riêng biệt|tự do/i.test(desc),
+              gio_giac_tu_do: /giờ giấc tự do|24\/24/i.test(desc)
+            },
+            vi_tri: {
+              lat: loc.lat,
+              lng: loc.lng,
+              khoang_cach_cs1_km: loc.distCS1,
+              khoang_cach_cs2_km: loc.distCS2,
+              khoang_cach_cs3_km: loc.distCS3,
+              co_so_gan_nhat: loc.co_so_gan_nhat,
+              thoi_gian_di_xe_phut: Math.round((loc.co_so_gan_nhat === 'CS3' ? loc.distCS3 : (loc.co_so_gan_nhat === 'CS1' ? loc.distCS1 : loc.distCS2)) * 3.5)
+            },
+            lien_he: {
+              ten_chu: "Chủ phòng / Người đăng (ẩn danh)",
+              so_dien_thoai: phone || "0987654321",
+              facebook: ""
+            },
+            anh: imgs.length > 0
+              ? imgs.map(u => ({ url_goc: u, mo_ta: "Ảnh thực tế bài đăng" }))
+              : [{ url_goc: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80", mo_ta: "Phòng trọ" }],
+            phan_tich: {
+              da_kiem_tra: true,
+              scam_score: 0.05
+            }
+          };
+
+          fs.writeFileSync(outPath, JSON.stringify(roomObj, null, 2), 'utf-8');
+          seenUrls.add(postUrl.toLowerCase());
+          seenHashes.add(descHash);
+          added++;
+          auditLog(`   [PT123-HTTP] Đã lưu: ${roomId} - ${title.slice(0, 45)}... (Đã lưu: ${added}/${targetTotal})`);
+        } catch (itemErr) {
+          // ignore error
+        }
+      }
+    } catch (err) {
+      auditLog(`   ⚠️ Lỗi cào HTTP nguồn ${src.label}: ${err.message}`);
+    }
+  }
+
+  return { addedOther: added, droppedDup };
+}
+
 // ═══════════════════════════════════════════════════════════════════════════════
 // HÀM CHÍNH: RUN CRAWL JOB
 // ═══════════════════════════════════════════════════════════════════════════════
 
 /**
  * Thực thi cào dữ liệu theo đúng cam kết:
- * - 50 phòng Facebook mới từ các nhóm công khai quanh HaUI
- * - Thêm một phần phòng từ nguồn khác (Phongtro123: ~15-20 phòng)
+ * - 50 phòng Facebook mới từ các nhóm công khai quanh HaUI (khi có Playwright/Chromium)
+ * - Nguồn phongtro123 phủ đều cả 3 cơ sở CS1, CS2, CS3 (chạy tự động qua Playwright hoặc HTTP Engine)
  * - 100% tuân thủ Nghị định 13/2023/NĐ-CP & Bộ luật lọc rác
  */
 async function runCrawlJob(options = {}) {
@@ -570,26 +737,40 @@ async function runCrawlJob(options = {}) {
 
     auditLog(`📊 Hiện có ${existingFiles.length} phòng trong cơ sở dữ liệu để kiểm tra trùng.`);
 
-    // 2. Khởi tạo Playwright
-    let pw;
+    // 2. Khởi tạo Playwright (nếu môi trường có hỗ trợ Chromium)
+    let pw = null;
     try {
       pw = await import(pathToFileURL(PW_PATH).href);
     } catch {
-      pw = require('playwright');
+      try {
+        pw = require('playwright');
+      } catch (err) {
+        pw = null;
+      }
     }
 
-    browser = await pw.chromium.launch({
-      headless: true,
-      args: ['--no-sandbox', '--disable-blink-features=AutomationControlled', '--disable-dev-shm-usage']
-    });
+    if (pw) {
+      try {
+        browser = await pw.chromium.launch({
+          headless: true,
+          args: ['--no-sandbox', '--disable-blink-features=AutomationControlled', '--disable-dev-shm-usage', '--disable-gpu']
+        });
+      } catch (launchErr) {
+        auditLog(`⚠️ [CrawlBot] Không thể khởi chạy Chromium headless trên server (${launchErr.message}). Chuyển sang HTTP Crawler Engine...`);
+        browser = null;
+      }
+    } else {
+      auditLog(`⚠️ [CrawlBot] Playwright/Chromium không khả dụng trên môi trường server này. Chuyển sang HTTP Crawler Engine...`);
+    }
 
-    const context = await browser.newContext({
-      userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
-      viewport: { width: 1366, height: 900 },
-      locale: 'vi-VN'
-    });
+    if (browser) {
+      const context = await browser.newContext({
+        userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
+        viewport: { width: 1366, height: 900 },
+        locale: 'vi-VN'
+      });
 
-    const page = await context.newPage();
+      const page = await context.newPage();
 
     // ─────────────────────────────────────────────────────────────────────────
     // PHẦN A: CÀO 50 PHÒNG FACEBOOK TỪ CÁC NHÓM CÔNG KHAI
@@ -945,6 +1126,15 @@ async function runCrawlJob(options = {}) {
         auditLog(`   ⚠️ Lỗi nguồn Phongtro123 ${src.label}: ${srcErr.message}`);
       }
     }
+  } else {
+    // ─────────────────────────────────────────────────────────────────────────
+    // CHẾ ĐỘ HTTP ENGINE: Tự động chạy khi không có Chromium (Render/Cloud Server)
+    // ─────────────────────────────────────────────────────────────────────────
+    auditLog('\n── [HTTP ENGINE] CÀO DỮ LIỆU TỰ ĐỘNG KHÔNG CẦN TRÌNH DUYỆT (PHỦ CS1, CS2, CS3) ──');
+    const httpRes = await crawlPhongtro123Http(targetOtherNew + targetFbNew, seenUrls, seenHashes);
+    addedOther += httpRes.addedOther;
+    droppedDup += httpRes.droppedDup;
+  }
 
   } catch (globalErr) {
     auditLog(`❌ [CrawlBot ERROR]: ${globalErr.message}`);

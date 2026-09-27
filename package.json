@@ -5,11 +5,13 @@
   "main": "server/server.js",
   "scripts": {
     "start": "node server/server.js",
-    "dev": "node --watch-path=server server/server.js"
+    "dev": "node --watch-path=server server/server.js",
+    "build": "npx playwright install chromium || true"
   },
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.19.2",
+    "playwright": "^1.40.0",
     "string-similarity": "^4.0.4"
   },
   "engines": {
