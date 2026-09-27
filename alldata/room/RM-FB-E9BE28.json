@@ -1,0 +1,58 @@
+{
+  "ma_phong": "RM-FB-E9BE28",
+  "nguon": "facebook",
+  "url_nguon": "https://www.facebook.com/groups/1896518147417522/posts/2809782839424377/",
+  "ngay_cao": "2026-09-27T12:41:50.686Z",
+  "ngay_cap_nhat": "2026-09-27T12:41:50.686Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "100% Khử định danh PII, nguồn nhóm công khai",
+    "chong_spam": "Đã qua kiểm định bài chào thuê chính thống",
+    "da_kiem_tra_trung": true
+  },
+  "thong_tin": {
+    "tieu_de": "- Phòng vskk chỉ 2tr5",
+    "gia": 2500000,
+    "dien_tich": 24,
+    "dia_chi": "Khu vực tây tựu, Bắc Từ Liêm, Hà Nội (gần HaUI CS1/CS2)",
+    "quan_huyen": "Bắc Từ Liêm",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Thành Dũng\n8 phút trước\n8 phút\n \n·\nĐịa chỉ 236 Tây Tựu\n- Phòng vskk chỉ: #2tr5\n- nội thất: Tủ quần áo,giường,kệ bếp, điều hoà,\nZL:0976977942(Trọ,CCMN kv Hà Nội)\nThích\nBình luận\nChia sẻ",
+    "tien_ich": [
+      "bep",
+      "giuong",
+      "tu_quan_ao"
+    ],
+    "khong_chung_chu": false,
+    "gio_giac_tu_do": false
+  },
+  "vi_tri": {
+    "lat": 21.06122,
+    "lng": 105.72557,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 1.3,
+    "khoang_cach_cs2_km": 0.1,
+    "khoang_cach_cs3_km": 60.6,
+    "co_so_gan_nhat": "CS2",
+    "thoi_gian_di_xe_phut": 0
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "0976977942",
+    "facebook": "https://www.facebook.com/groups/1896518147417522/posts/2809782839424377/"
+  },
+  "anh": [
+    {
+      "url_goc": "https://scontent.fhan22-1.fna.fbcdn.net/v/t39.30808-6/825329842_1433072885414212_8521882686883818344_n.jpg?stp=dst-jpg_tt6&cstp=mx1280x960&ctp=s590x590&_nc_cat=101&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=f0-nNm5koRMQ7kNvwHRT4uP&_nc_oc=AdpLuxwKhgZ6Fxma3T_AEN-BbfsHWnSWG_Pl5_M0P0CHwQHfy4ZoEqpL3wmWe3T3TDM&_nc_zt=23&_nc_ht=scontent.fhan22-1.fna&_nc_gid=3_nKtnvGO7KrVluiU7gaOg&_nc_ss=7b289&oh=00_AQKuYZygoPIqIIdwvF2DiQ4Rnj5K_eMFeAbQhzui8CX8Fw&oe=6ABED2EB",
+      "mo_ta": "Ảnh thực tế bài đăng FB"
+    },
+    {
+      "url_goc": "https://scontent.fhan22-1.fna.fbcdn.net/v/t39.30808-6/825329946_1433072882080879_8227898136369309579_n.jpg?stp=dst-jpg_tt6&cstp=mx1280x960&ctp=s590x590&_nc_cat=110&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=M9zsAKxVkmEQ7kNvwHMkPgk&_nc_oc=AdpFkoZLJMV9cNnwTbNlVThiPMDoyh6B_4yo1B2gEBNdu_wPuPftMPir-hCAimQvKDQ&_nc_zt=23&_nc_ht=scontent.fhan22-1.fna&_nc_gid=3_nKtnvGO7KrVluiU7gaOg&_nc_ss=7b289&oh=00_AQJ0bJKRIXWS0M6KN6H5bA-hN1nV_j4rPqPk40F6OnQ8RA&oe=6ABEC86D",
+      "mo_ta": "Ảnh thực tế bài đăng FB"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}

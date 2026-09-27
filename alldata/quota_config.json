@@ -1,0 +1,17 @@
+{
+  "annualIntake": {
+    "cs1": 4800,
+    "cs2": 2000,
+    "cs3": 1200
+  },
+  "ktxSpots": {
+    "cs1": 800,
+    "cs2": 0,
+    "cs3": 400
+  },
+  "localRatio": 0.25,
+  "roommateRatio": 2,
+  "turnoverRatio": 0.15,
+  "funnelEfficiency": 0.23,
+  "crawlCycleHours": 4
+}

@@ -5,11 +5,12 @@
   "main": "server/server.js",
   "scripts": {
     "start": "node server/server.js",
-    "dev": "node --watch server/server.js"
+    "dev": "node --watch-path=server server/server.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "string-similarity": "^4.0.4"
   },
   "engines": {
     "node": ">=18.0.0"

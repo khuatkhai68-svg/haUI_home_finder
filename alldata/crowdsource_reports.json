@@ -1,0 +1,36 @@
+[
+  {
+    "id": "RPT_1790501233284_44i5",
+    "roomId": "RM-FB-B33545",
+    "roomTitle": "Cho thuê căn hộ 3N1K ban công 11.0 tr/tháng Cổ Nhuế (gần HaUI CS1)",
+    "reportType": "het_phong",
+    "note": "Chủ trọ vừa báo đã có người cọc hôm qua",
+    "weight": 1,
+    "user": {
+      "name": "Nguyễn Văn A",
+      "email": "student@haui.edu.vn",
+      "role": "student"
+    },
+    "timestamp": "2026-09-27T09:27:13.284Z",
+    "status": "admin_resolved",
+    "resolvedAt": "2026-09-27T09:27:36.317Z",
+    "action": "restore_active"
+  },
+  {
+    "id": "RPT_1790501238434_qdav",
+    "roomId": "RM-FB-B33545",
+    "roomTitle": "Cho thuê căn hộ 3N1K ban công 11.0 tr/tháng Cổ Nhuế (gần HaUI CS1)",
+    "reportType": "het_phong",
+    "note": "Mình cũng vừa gọi hỏi, chủ báo phòng đã cho thuê rồi ạ",
+    "weight": 1,
+    "user": {
+      "name": "Trần Thị B",
+      "email": "tran.b@haui.edu.vn",
+      "role": "student"
+    },
+    "timestamp": "2026-09-27T09:27:18.434Z",
+    "status": "admin_resolved",
+    "resolvedAt": "2026-09-27T09:27:36.317Z",
+    "action": "restore_active"
+  }
+]

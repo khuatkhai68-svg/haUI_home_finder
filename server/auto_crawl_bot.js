@@ -174,7 +174,9 @@ function calcDistance(lat1, lon1, lat2, lon2) {
   return Math.round(R * c * 10) / 10;
 }
 
-// ── Trạng thái bot trong bộ nhớ ───────────────────────────────────────────────
+// ── Trạng thái bot & lưu trữ trạng thái bền vững ────────────────────────────
+const STATUS_FILE = path.join(LOG_DIR, 'crawl_bot_status.json');
+
 let crawlRunning = false;
 let crawlLastRun = null;
 let crawlTimer   = null;
@@ -188,6 +190,27 @@ let crawlStats   = {
   lifetimeAdded: 0,
   lastError: null
 };
+
+function loadPersistedStatus() {
+  if (fs.existsSync(STATUS_FILE)) {
+    try {
+      const data = JSON.parse(fs.readFileSync(STATUS_FILE, 'utf-8'));
+      if (data.lastRunAt) crawlLastRun = data.lastRunAt;
+      if (data.stats) crawlStats = { ...crawlStats, ...data.stats };
+    } catch {}
+  }
+}
+
+function savePersistedStatus() {
+  try {
+    fs.writeFileSync(STATUS_FILE, JSON.stringify({
+      lastRunAt: crawlLastRun,
+      stats: crawlStats
+    }, null, 2), 'utf-8');
+  } catch {}
+}
+
+loadPersistedStatus();
 
 // ── Ghi log kiểm toán (Audit Trail) ────────────────────────────────────────────
 function auditLog(msg) {
@@ -267,33 +290,34 @@ function parsePrice(text) {
   if (m1) {
     const dec = m1[2].length === 1 ? parseInt(m1[2]) * 100000 : (m1[2].length === 2 ? parseInt(m1[2]) * 10000 : parseInt(m1[2]) * 1000);
     const val = parseInt(m1[1]) * 1000000 + dec;
-    if (val >= 600000 && val <= 10000000) return val;
+    if (val >= 600000 && val <= 25000000) return val;
   }
 
   const m2 = text.match(/(?:giá|thuê|chỉ)?\s*(\d+(?:[.,]\d+)?)\s*(?:tr|triệu|tr\/tháng|tr\/thg)\b/i);
   if (m2) {
     const val = Math.round(parseFloat(m2[1].replace(',', '.')) * 1000000);
-    if (val >= 600000 && val <= 10000000) return val;
+    if (val >= 600000 && val <= 25000000) return val;
   }
 
   const mCu = text.match(/(\d+(?:[.,]\d+)?)\s*củ\s*(\d+)?/i);
   if (mCu) {
     let val = parseFloat(mCu[1].replace(',', '.')) * 1000000;
     if (mCu[2]) val += parseInt(mCu[2]) * 100000;
-    if (val >= 600000 && val <= 10000000) return Math.round(val);
+    if (val >= 600000 && val <= 25000000) return Math.round(val);
   }
 
-  const m3 = text.match(/(\d+(?:[.,]\d+)?)\s*k\b/i);
+  // Tránh bắt nhầm "1K" trong "3N1K" (phòng khách) hoặc "1km" (khoảng cách)
+  const m3 = text.match(/(?<![a-zA-Z])(\d+(?:[.,]\d+)?)\s*k\b(?!m)/i);
   if (m3) {
     const num = parseFloat(m3[1].replace(',', '.'));
-    const val = num < 100 ? Math.round(num * 1000000) : Math.round(num * 1000);
-    if (val >= 600000 && val <= 10000000) return val;
+    const val = num >= 500 && num <= 25000 ? Math.round(num * 1000) : (num < 25 && /(?:giá|thuê)\s*\d/i.test(text) ? Math.round(num * 1000000) : 0);
+    if (val >= 600000 && val <= 25000000) return val;
   }
 
   const m4 = text.match(/(\d{1,2})[.,](\d{3})[.,](\d{3})/);
   if (m4) {
     const val = parseInt(m4[1] + m4[2] + m4[3]);
-    if (val >= 600000 && val <= 10000000) return val;
+    if (val >= 600000 && val <= 25000000) return val;
   }
   return 0;
 }
@@ -940,6 +964,8 @@ async function runCrawlJob(options = {}) {
     crawlStats.lastRunDroppedDup = droppedDup;
     crawlStats.lifetimeAdded += (addedFb + addedOther);
 
+    savePersistedStatus();
+
     const totalRooms = fs.readdirSync(DB_ROOM_DIR).filter(f => f.endsWith('.json')).length;
 
     auditLog('================================================================================');
@@ -974,9 +1000,15 @@ function startAutoCrawlScheduler() {
 
   auditLog(`🤖 [CrawlBot] Đã kích hoạt lịch cào tự động Playwright: Chu kỳ mỗi 4 tiếng (4h/lần).`);
 
+  // Tự động kích hoạt đợt cào đầu tiên sau 15 giây khởi động server
+  setTimeout(() => {
+    auditLog(`🚀 [CrawlBot] Tự động kích hoạt đợt cào Playwright ban đầu...`);
+    runCrawlJob({ targetFb: 10, targetOther: 5 }).catch(e => auditLog(`[CrawlBot Initial Error]: ${e.message}`));
+  }, 15_000);
+
   crawlTimer = setInterval(() => {
     auditLog(`⏰ [CrawlBot] Kích hoạt chu kỳ 4 tiếng định kỳ...`);
-    runCrawlJob().catch(e => auditLog(`[CrawlBot Periodic Error]: ${e.message}`));
+    runCrawlJob({ targetFb: 20, targetOther: 10 }).catch(e => auditLog(`[CrawlBot Periodic Error]: ${e.message}`));
   }, CRAWL_INTERVAL_MS);
 }
 

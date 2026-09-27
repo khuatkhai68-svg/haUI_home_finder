@@ -112,6 +112,14 @@
           <i data-lucide="alert-circle" style="width:20px;height:20px;"></i>
           Báo cáo Spam
         </a>
+        <a href="#" class="sidebar-link" id="nav-quota" onclick="showSection('quota');return false;">
+          <i data-lucide="target" style="width:20px;height:20px;"></i>
+          Hạn ngạch & Nhu cầu SV
+        </a>
+        <a href="#" class="sidebar-link" id="nav-clean" onclick="showSection('clean');return false;">
+          <i data-lucide="sparkles" style="width:20px;height:20px;"></i>
+          Làm sạch & Duyệt HITL
+        </a>
       </aside>
 
       <!-- Main Content (Dashboard) -->
@@ -539,6 +547,220 @@
         </div>
       </section>
 
+      <!-- View: Hạn ngạch & Nhu cầu Tuyển sinh HaUI -->
+      <section class="admin-main" id="sec-quota" style="display:none;">
+        <div class="admin-header" style="display:flex;justify-content:space-between;align-items:center;">
+          <div>
+            <h1>Quản lý Hạn ngạch & Nhu cầu Tuyển sinh HaUI</h1>
+            <p>Hệ thống tự động tính toán số lượng phòng mục tiêu và hạn ngạch cào thô theo đầu vào tuyển sinh hàng năm</p>
+          </div>
+          <button class="btn-primary" onclick="loadQuotaData()">
+            <i data-lucide="refresh-cw" style="width:16px;height:16px;"></i> Tính toán lại
+          </button>
+        </div>
+
+        <!-- Stats Grid Hạn ngạch -->
+        <div class="stats-grid" style="margin-bottom:1.5rem;">
+          <div class="stat-card">
+            <div class="stat-card-header">
+              <div class="stat-label">Chỉ tiêu Tân SV / Năm</div>
+              <div class="stat-icon"><i data-lucide="graduation-cap" style="width:20px;height:20px;color:#2563eb;"></i></div>
+            </div>
+            <div class="stat-value" id="quota-total-intake">8.000</div>
+            <div class="stat-trend up" style="font-size:0.8rem;color:#64748b;">Toàn trường 3 cơ sở</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-header">
+              <div class="stat-label">Tổng SV Cần Thuê Trọ</div>
+              <div class="stat-icon"><i data-lucide="users" style="width:20px;height:20px;color:#059669;"></i></div>
+            </div>
+            <div class="stat-value" id="quota-rent-students">4.800</div>
+            <div class="stat-trend" style="font-size:0.8rem;color:#64748b;">(Trừ KTX & SV có nhà riêng)</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-header">
+              <div class="stat-label">Phòng Cần Thiết (Target)</div>
+              <div class="stat-icon"><i data-lucide="home" style="width:20px;height:20px;color:#7c3aed;"></i></div>
+            </div>
+            <div class="stat-value" id="quota-target-rooms">2.761</div>
+            <div class="stat-trend" style="font-size:0.8rem;color:#64748b;">Ghép 2 SV + 15% khóa cũ đổi trọ</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-header">
+              <div class="stat-label">Hạn ngạch Cào thô cần xử lý</div>
+              <div class="stat-icon"><i data-lucide="bot" style="width:20px;height:20px;color:#dc2626;"></i></div>
+            </div>
+            <div class="stat-value" id="quota-raw-crawl">12.004</div>
+            <div class="stat-trend" style="font-size:0.8rem;color:#dc2626;">(Hệ số phễu lọc sạch 23%)</div>
+          </div>
+        </div>
+
+        <!-- Bảng tiến độ theo cơ sở -->
+        <div class="crawler-panel" style="margin-bottom:1.5rem;">
+          <div class="crawler-panel-header">
+            <h2>Tiến độ Lấp đầy Kho phòng theo Cơ sở HaUI</h2>
+          </div>
+          <div style="overflow-x:auto;">
+            <table class="crawler-table">
+              <thead>
+                <tr>
+                  <th>Cơ sở HaUI</th>
+                  <th>Chỉ tiêu Tân SV</th>
+                  <th>Phòng Mục Tiêu</th>
+                  <th>Đã có trong DB</th>
+                  <th>Tỷ lệ Lấp đầy</th>
+                  <th>Cần Cào Thêm (Bài thô)</th>
+                  <th>Trạng thái Quota</th>
+                </tr>
+              </thead>
+              <tbody id="quota-campus-tbody">
+                <tr><td colspan="7" style="text-align:center;padding:2rem;color:#94a3b8;">Đang tính toán hạn ngạch...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Form điều chỉnh tham số tuyển sinh -->
+        <div class="crawler-panel">
+          <div class="crawler-panel-header">
+            <h2>Điều chỉnh Tham số Tuyển sinh & Mô hình Nhu cầu</h2>
+          </div>
+          <div style="padding:1.5rem;display:grid;grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));gap:1rem;">
+            <div>
+              <label style="display:block;font-size:0.8rem;font-weight:700;color:#334155;margin-bottom:4px;">Chỉ tiêu CS1 (Nhổn)</label>
+              <input type="number" id="cfg-intake-cs1" value="4800" style="width:100%;padding:0.6rem;border:1px solid #cbd5e1;border-radius:8px;" />
+            </div>
+            <div>
+              <label style="display:block;font-size:0.8rem;font-weight:700;color:#334155;margin-bottom:4px;">Chỉ tiêu CS2 (Tây Tựu)</label>
+              <input type="number" id="cfg-intake-cs2" value="2000" style="width:100%;padding:0.6rem;border:1px solid #cbd5e1;border-radius:8px;" />
+            </div>
+            <div>
+              <label style="display:block;font-size:0.8rem;font-weight:700;color:#334155;margin-bottom:4px;">Chỉ tiêu CS3 (Hà Nam)</label>
+              <input type="number" id="cfg-intake-cs3" value="1200" style="width:100%;padding:0.6rem;border:1px solid #cbd5e1;border-radius:8px;" />
+            </div>
+            <div>
+              <label style="display:block;font-size:0.8rem;font-weight:700;color:#334155;margin-bottom:4px;">Chỗ KTX Tân SV</label>
+              <input type="number" id="cfg-ktx-total" value="1200" style="width:100%;padding:0.6rem;border:1px solid #cbd5e1;border-radius:8px;" />
+            </div>
+            <div>
+              <label style="display:block;font-size:0.8rem;font-weight:700;color:#334155;margin-bottom:4px;">Tỷ lệ ở ghép (người/phòng)</label>
+              <input type="number" step="0.1" id="cfg-roommate" value="2.0" style="width:100%;padding:0.6rem;border:1px solid #cbd5e1;border-radius:8px;" />
+            </div>
+            <div>
+              <label style="display:block;font-size:0.8rem;font-weight:700;color:#334155;margin-bottom:4px;">Hiệu suất phễu cào (%)</label>
+              <input type="number" step="0.01" id="cfg-funnel" value="0.23" style="width:100%;padding:0.6rem;border:1px solid #cbd5e1;border-radius:8px;" />
+            </div>
+          </div>
+          <div style="padding:0 1.5rem 1.5rem;display:flex;justify-content:flex-end;">
+            <button onclick="saveQuotaParams()" class="btn-primary" style="background:#2563eb;">
+              💾 Lưu tham số & Cập nhật Quota
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- View: Làm sạch Dữ liệu & Kiểm duyệt HITL -->
+      <section class="admin-main" id="sec-clean" style="display:none;">
+        <div class="admin-header" style="display:flex;justify-content:space-between;align-items:center;">
+          <div>
+            <h1>Làm sạch Dữ liệu & Kiểm duyệt Cộng đồng (HITL)</h1>
+            <p>Khử trùng lặp tự động bằng thuật toán Entity Resolution kết hợp xác thực từ Sinh viên HaUI</p>
+          </div>
+          <div style="display:flex;gap:8px;">
+            <button class="btn-primary" onclick="runDataCleanSweep(false)">
+              <i data-lucide="search" style="width:16px;height:16px;"></i> Quét kiểm tra trùng
+            </button>
+            <button class="btn-primary" onclick="runDataCleanSweep(true)" style="background:#10b981;">
+              <i data-lucide="sparkles" style="width:16px;height:16px;"></i> Tự động khử trùng
+            </button>
+          </div>
+        </div>
+
+        <!-- Thống kê sức khỏe dữ liệu -->
+        <div class="stats-grid" style="margin-bottom:1.5rem;">
+          <div class="stat-card">
+            <div class="stat-card-header">
+              <div class="stat-label">Điểm Sức Khỏe Data</div>
+              <div class="stat-icon"><i data-lucide="shield-check" style="width:20px;height:20px;color:#10b981;"></i></div>
+            </div>
+            <div class="stat-value" id="clean-health-score">--</div>
+            <div class="stat-trend up" style="font-size:0.8rem;color:#059669;">Dữ liệu chuẩn hóa</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-header">
+              <div class="stat-label">Bài Trùng Lặp Phát Hiện</div>
+              <div class="stat-icon"><i data-lucide="copy" style="width:20px;height:20px;color:#eab308;"></i></div>
+            </div>
+            <div class="stat-value" id="clean-dup-count">--</div>
+            <div class="stat-trend" style="font-size:0.8rem;color:#ca8a04;">Cùng SĐT / Copy mô tả</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-header">
+              <div class="stat-label">Vi Phạm Tiêu Chuẩn</div>
+              <div class="stat-icon"><i data-lucide="alert-triangle" style="width:20px;height:20px;color:#ef4444;"></i></div>
+            </div>
+            <div class="stat-value" id="clean-issue-count">--</div>
+            <div class="stat-trend" style="font-size:0.8rem;color:#dc2626;">Pass đồ / Ngoại vùng</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-header">
+              <div class="stat-label">Hàng Đợi Sinh Viên Báo</div>
+              <div class="stat-icon"><i data-lucide="inbox" style="width:20px;height:20px;color:#2563eb;"></i></div>
+            </div>
+            <div class="stat-value" id="clean-queue-count">--</div>
+            <div class="stat-trend" style="font-size:0.8rem;color:#2563eb;">Cần xử lý 1-chạm</div>
+          </div>
+        </div>
+
+        <!-- Bảng 1: Hàng đợi Báo cáo từ Sinh viên (Human-in-the-Loop Queue) -->
+        <div class="crawler-panel" style="margin-bottom:1.5rem;">
+          <div class="crawler-panel-header" style="display:flex;justify-content:space-between;align-items:center;">
+            <h2>Hàng Đợi Kiểm Duyệt Cộng Đồng (Human-in-the-Loop)</h2>
+            <button onclick="loadCrowdsourceQueue()" style="border:none;background:none;color:#2563eb;font-size:0.85rem;font-weight:600;cursor:pointer;">Làm mới hàng đợi ↻</button>
+          </div>
+          <div style="overflow-x:auto;">
+            <table class="crawler-table">
+              <thead>
+                <tr>
+                  <th>Mã phòng</th>
+                  <th>Tiêu đề phòng</th>
+                  <th>Loại phản ánh</th>
+                  <th>Điểm Trọng Số RBAC</th>
+                  <th>Sinh viên ghi chú</th>
+                  <th>Hành động 1-Chạm</th>
+                </tr>
+              </thead>
+              <tbody id="clean-queue-tbody">
+                <tr><td colspan="6" style="text-align:center;padding:2rem;color:#94a3b8;">Đang tải hàng đợi phản hồi...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Bảng 2: Danh sách bài trùng lặp phát hiện bởi thuật toán -->
+        <div class="crawler-panel">
+          <div class="crawler-panel-header">
+            <h2>Các Cặp Phòng Trùng Lặp Cần Xử Lý (Deduplication Engine)</h2>
+          </div>
+          <div style="overflow-x:auto;">
+            <table class="crawler-table">
+              <thead>
+                <tr>
+                  <th>Phòng gốc (Lưu)</th>
+                  <th>Phòng trùng lặp (Cần ẩn)</th>
+                  <th>Lý do trùng</th>
+                  <th>Độ tương đồng</th>
+                  <th>Hành động</th>
+                </tr>
+              </thead>
+              <tbody id="clean-duplicates-tbody">
+                <tr><td colspan="5" style="text-align:center;padding:2rem;color:#94a3b8;">Bấm 'Quét kiểm tra trùng' để chạy thuật toán...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
       <!-- Modal Thêm phòng mới -->
       <div id="modal-add-room" style="display:none;position:fixed;inset:0;background:rgba(15,23,42,0.6);z-index:9999;align-items:center;justify-content:center;padding:1rem;">
         <div style="background:white;width:100%;max-width:540px;border-radius:16px;box-shadow:0 20px 25px -5px rgba(0,0,0,0.2);overflow:hidden;max-height:90vh;display:flex;flex-direction:column;">
@@ -609,13 +831,17 @@
         dashboard: document.getElementById('sec-dashboard'),
         rooms: document.getElementById('sec-rooms'),
         users: document.getElementById('sec-users'),
-        spam: document.getElementById('sec-spam')
+        spam: document.getElementById('sec-spam'),
+        quota: document.getElementById('sec-quota'),
+        clean: document.getElementById('sec-clean')
       };
       const navLinks = {
         dashboard: document.getElementById('nav-dashboard'),
         rooms: document.getElementById('nav-rooms'),
         users: document.getElementById('nav-users'),
-        spam: document.getElementById('nav-spam')
+        spam: document.getElementById('nav-spam'),
+        quota: document.getElementById('nav-quota'),
+        clean: document.getElementById('nav-clean')
       };
 
       Object.keys(sections).forEach(k => {
@@ -630,6 +856,8 @@
       else if (sec === 'rooms') loadRoomManagerData();
       else if (sec === 'users') loadUsersData();
       else if (sec === 'spam') loadSpamData();
+      else if (sec === 'quota') loadQuotaData();
+      else if (sec === 'clean') { loadCleanData(); loadCrowdsourceQueue(); }
 
       lucide.createIcons();
     }
@@ -800,7 +1028,7 @@
 
         if (roomsRes.ok) {
           const roomsData = await roomsRes.json();
-          renderTable(roomsData.data || []);
+          renderTable(Array.isArray(roomsData) ? roomsData : (roomsData.data || []));
         }
         lucide.createIcons();
       } catch (e) {
@@ -1202,6 +1430,346 @@
         if (layout) layout.style.display = 'flex';
         if (guard) guard.style.display = 'none';
         return true;
+      }
+    }
+
+    // ═════════════════════════════════════════════════════════════════════════
+    // PHÂN HỆ: QUẢN LÝ HẠN NGẠCH TUYỂN SINH (QUOTA PLANNER)
+    // ═════════════════════════════════════════════════════════════════════════
+
+    async function loadQuotaData() {
+      try {
+        const res = await fetch('/api/quota/plan');
+        if (!res.ok) throw new Error('Không thể tải kế hoạch hạn ngạch');
+        const plan = await res.json();
+
+        // Cập nhật summary
+        document.getElementById('quota-total-intake').textContent = (plan.summary.totalAnnualIntake || 8000).toLocaleString('vi-VN');
+        document.getElementById('quota-rent-students').textContent = (plan.summary.totalRentStudents || 4800).toLocaleString('vi-VN');
+        document.getElementById('quota-target-rooms').textContent = (plan.summary.totalTargetRooms || 2761).toLocaleString('vi-VN');
+        document.getElementById('quota-raw-crawl').textContent = (plan.summary.totalRawCrawlQuota || 12004).toLocaleString('vi-VN');
+
+        // Bảng cơ sở
+        const tbody = document.getElementById('quota-campus-tbody');
+        tbody.innerHTML = '';
+
+        const campuses = ['cs1', 'cs2', 'cs3'];
+        campuses.forEach(c => {
+          const item = plan.campuses[c];
+          if (!item) return;
+
+          const badgeColor = item.status === 'DU_QUOTA' ? '#10b981' : (item.status === 'DANG_NAP' ? '#f59e0b' : '#ef4444');
+          const badgeText = item.status === 'DU_QUOTA' ? '✅ Đủ Quota' : (item.status === 'DANG_NAP' ? '⏳ Đang nạp' : '⚠️ Thiếu Data');
+
+          const tr = document.createElement('tr');
+          tr.innerHTML = `
+            <td><strong>${item.name}</strong></td>
+            <td>${item.intake.toLocaleString('vi-VN')} tân SV</td>
+            <td><strong style="color:#2563eb;">${item.targetRooms.toLocaleString('vi-VN')}</strong> phòng</td>
+            <td><span style="font-weight:700;">${item.currentRooms}</span> phòng</td>
+            <td>
+              <div style="display:flex;align-items:center;gap:8px;">
+                <div style="flex:1;background:#e2e8f0;height:8px;border-radius:4px;overflow:hidden;">
+                  <div style="background:${badgeColor};width:${item.completionRate}%;height:100%;"></div>
+                </div>
+                <span style="font-size:0.8rem;font-weight:700;">${item.completionRate}%</span>
+              </div>
+            </td>
+            <td><span style="color:#dc2626;font-weight:700;">+${item.remainingRawToCrawl.toLocaleString('vi-VN')}</span> bài thô</td>
+            <td><span style="background:${badgeColor}20;color:${badgeColor};padding:4px 8px;border-radius:6px;font-size:0.75rem;font-weight:700;">${badgeText}</span></td>
+          `;
+          tbody.appendChild(tr);
+        });
+
+        // Điền giá trị form
+        const cfg = plan.config;
+        if (cfg) {
+          if (cfg.annualIntake) {
+            document.getElementById('cfg-intake-cs1').value = cfg.annualIntake.cs1 || 4800;
+            document.getElementById('cfg-intake-cs2').value = cfg.annualIntake.cs2 || 2000;
+            document.getElementById('cfg-intake-cs3').value = cfg.annualIntake.cs3 || 1200;
+          }
+          if (cfg.ktxSpots) {
+            document.getElementById('cfg-ktx-total').value = (cfg.ktxSpots.cs1 || 0) + (cfg.ktxSpots.cs2 || 0) + (cfg.ktxSpots.cs3 || 0);
+          }
+          document.getElementById('cfg-roommate').value = cfg.roommateRatio || 2.0;
+          document.getElementById('cfg-funnel').value = cfg.funnelEfficiency || 0.23;
+        }
+
+        lucide.createIcons();
+      } catch (err) {
+        console.error(err);
+      }
+    }
+
+    async function saveQuotaParams() {
+      const cs1 = parseInt(document.getElementById('cfg-intake-cs1').value) || 4800;
+      const cs2 = parseInt(document.getElementById('cfg-intake-cs2').value) || 2000;
+      const cs3 = parseInt(document.getElementById('cfg-intake-cs3').value) || 1200;
+      const ktx = parseInt(document.getElementById('cfg-ktx-total').value) || 1200;
+      const roommate = parseFloat(document.getElementById('cfg-roommate').value) || 2.0;
+      const funnel = parseFloat(document.getElementById('cfg-funnel').value) || 0.23;
+
+      const newConfig = {
+        annualIntake: { cs1, cs2, cs3 },
+        ktxSpots: { cs1: Math.round(ktx * 0.67), cs2: 0, cs3: Math.round(ktx * 0.33) },
+        roommateRatio: roommate,
+        funnelEfficiency: funnel
+      };
+
+      try {
+        const res = await fetch('/api/quota/config', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(newConfig)
+        });
+        const data = await res.json();
+        if (data.success) {
+          alert('Đã cập nhật cấu hình hạn ngạch tuyển sinh thành công!');
+          loadQuotaData();
+        }
+      } catch (err) {
+        alert('Lỗi cập nhật cấu hình: ' + err.message);
+      }
+    }
+
+    // ═════════════════════════════════════════════════════════════════════════
+    // PHÂN HỆ: LÀM SẠCH DỮ LIỆU & KIỂM DUYỆT HITL (DATA CLEANING)
+    // ═════════════════════════════════════════════════════════════════════════
+
+    async function loadCleanData() {
+      try {
+        const res = await fetch('/api/clean/sweep', { method: 'POST' });
+        if (!res.ok) throw new Error('Không thể quét dữ liệu');
+        const report = await res.json();
+
+        document.getElementById('clean-health-score').textContent = (report.healthScore || 93) + '/100';
+        document.getElementById('clean-dup-count').textContent = report.duplicateCount || 0;
+        document.getElementById('clean-issue-count').textContent = report.qualityIssueCount || 0;
+
+        const tbody = document.getElementById('clean-duplicates-tbody');
+        tbody.innerHTML = '';
+
+        if (!report.duplicates || report.duplicates.length === 0) {
+          tbody.innerHTML = `<tr><td colspan="5" style="text-align:center;padding:2rem;color:#10b981;">🎉 Tuyệt vời! Không phát hiện bài đăng trùng lặp nào.</td></tr>`;
+          return;
+        }
+
+        report.duplicates.forEach(d => {
+          const tr = document.createElement('tr');
+          const simPct = Math.round((d.similarity || 0.8) * 100);
+          tr.innerHTML = `
+            <td>
+              <strong>${d.room1}</strong><br>
+              <span style="font-size:0.8rem;color:#64748b;">${d.title1 || ''}</span>
+            </td>
+            <td>
+              <strong style="color:#ef4444;">${d.room2}</strong><br>
+              <span style="font-size:0.8rem;color:#64748b;">${d.title2 || ''}</span>
+            </td>
+            <td><span style="background:#fef3c7;color:#b45309;padding:4px 8px;border-radius:6px;font-size:0.75rem;font-weight:700;">${d.reason}</span></td>
+            <td><strong style="color:#2563eb;">${simPct}%</strong></td>
+            <td>
+              <button onclick="resolveDuplicateRoom('${d.room2}')" style="padding:4px 8px;background:#fee2e2;color:#dc2626;border:1px solid #fca5a5;border-radius:6px;font-size:0.75rem;font-weight:700;cursor:pointer;">
+                Ẩn bài trùng
+              </button>
+            </td>
+          `;
+          tbody.appendChild(tr);
+        });
+
+        lucide.createIcons();
+      } catch (err) {
+        console.error(err);
+      }
+    }
+
+    async function runDataCleanSweep(autoResolve = false) {
+      if (autoResolve && !confirm('Bạn có chắc muốn tự động ẩn các bài trùng lặp đã phát hiện để bảo toàn độ sạch của sàn phòng trọ?')) return;
+
+      try {
+        const res = await fetch(`/api/clean/sweep?autoResolve=${autoResolve}`, { method: 'POST' });
+        const report = await res.json();
+        if (autoResolve) {
+          alert(`Đã hoàn tất dọn dẹp! Đã tự động ẩn ${report.autoResolvedCount || 0} bài trùng lặp.`);
+        }
+        loadCleanData();
+        loadAdminData();
+      } catch (err) {
+        alert('Lỗi quét làm sạch: ' + err.message);
+      }
+    }
+
+    async function resolveDuplicateRoom(roomId) {
+      if (!confirm(`Xác nhận ẩn phòng trùng lặp ${roomId}?`)) return;
+      try {
+        await fetch('/api/crowdsource/resolve', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ roomId, action: 'confirm_rented' })
+        });
+        loadCleanData();
+      } catch (err) {
+        alert('Lỗi: ' + err.message);
+      }
+    }
+
+    async function loadCrowdsourceQueue() {
+      const tbody = document.getElementById('clean-queue-tbody');
+      if (!tbody) return;
+
+      try {
+        const res = await fetch('/api/crowdsource/queue');
+        if (!res.ok) throw new Error('Không thể tải hàng đợi');
+        const data = await res.json();
+        const items = data.data || [];
+
+        document.getElementById('clean-queue-count').textContent = items.length;
+        tbody.innerHTML = '';
+
+        if (items.length === 0) {
+          tbody.innerHTML = `<tr><td colspan="6" style="text-align:center;padding:2rem;color:#10b981;">🎉 Hiện không có phòng nào bị sinh viên báo cáo lỗi!</td></tr>`;
+          return;
+        }
+
+        items.forEach(q => {
+          const tr = document.createElement('tr');
+          const isRented = q.rentedWeight >= 1.0;
+          const isScam = q.scamWeight >= 1.0;
+
+          const typeTag = isRented
+            ? `<span style="background:#fee2e2;color:#b91c1c;padding:3px 8px;border-radius:6px;font-size:0.75rem;font-weight:700;">⚡ Báo Hết Phòng</span>`
+            : (isScam ? `<span style="background:#fef2f2;color:#ef4444;padding:3px 8px;border-radius:6px;font-size:0.75rem;font-weight:700;">🚩 Cảnh báo Lừa Đảo</span>` : `<span style="background:#f1f5f9;color:#475569;padding:3px 8px;border-radius:6px;font-size:0.75rem;font-weight:700;">Sai thông tin</span>`);
+
+          const notes = q.reports.map(r => `• ${r.user.name}: "${r.note}"`).join('<br>');
+
+          tr.innerHTML = `
+            <td><strong>${q.roomId}</strong></td>
+            <td><a href="/room-detail.html?id=${q.roomId}" target="_blank" style="color:#2563eb;text-decoration:none;font-weight:600;">${q.roomTitle} ↗</a></td>
+            <td>${typeTag}</td>
+            <td><strong style="color:#7c3aed;font-size:0.95rem;">${q.totalWeight.toFixed(1)}⭐</strong></td>
+            <td style="font-size:0.8rem;color:#475569;">${notes}</td>
+            <td>
+              <div style="display:flex;gap:4px;flex-wrap:wrap;">
+                <button onclick="resolveReportAction('${q.roomId}', 'confirm_rented')" style="padding:4px 8px;background:#fee2e2;color:#b91c1c;border:1px solid #f87171;border-radius:6px;font-size:0.75rem;font-weight:700;cursor:pointer;">
+                  Đã hết
+                </button>
+                <button onclick="resolveReportAction('${q.roomId}', 'restore_active')" style="padding:4px 8px;background:#f0fdf4;color:#15803d;border:1px solid #86efac;border-radius:6px;font-size:0.75rem;font-weight:700;cursor:pointer;">
+                  Bác bỏ
+                </button>
+                <button onclick="resolveReportAction('${q.roomId}', 'delete_permanently')" style="padding:4px 8px;background:#f8fafc;color:#64748b;border:1px solid #cbd5e1;border-radius:6px;font-size:0.75rem;cursor:pointer;">
+                  Xóa
+                </button>
+              </div>
+            </td>
+          `;
+          tbody.appendChild(tr);
+        });
+
+        lucide.createIcons();
+      } catch (err) {
+        console.error(err);
+      }
+    }
+
+    async function resolveReportAction(roomId, action) {
+      try {
+        const res = await fetch('/api/crowdsource/resolve', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ roomId, action })
+        });
+        const data = await res.json();
+        if (data.success) {
+          loadCrowdsourceQueue();
+          loadAdminData();
+        }
+      } catch (err) {
+        alert('Lỗi: ' + err.message);
+      }
+    }
+
+    async function triggerCrawlNow() {
+      const btn = document.getElementById('btn-run-crawl');
+      if (btn) {
+        btn.disabled = true;
+        btn.innerHTML = '<i data-lucide="loader-2" class="spin" style="width:14px;height:14px;"></i> Đang gửi lệnh...';
+        if (window.lucide) lucide.createIcons();
+      }
+      try {
+        const res = await fetch('/api/admin/crawl/run-now', { method: 'POST' });
+        const data = await res.json();
+        if (data.success) {
+          fetchCrawlBotStatus();
+        } else {
+          alert(data.message || 'Không thể bắt đầu đợt cào lúc này.');
+        }
+      } catch (err) {
+        alert('Lỗi: ' + err.message);
+      } finally {
+        setTimeout(fetchCrawlBotStatus, 1500);
+      }
+    }
+
+    async function fetchCrawlBotStatus() {
+      try {
+        const res = await fetch('/api/admin/crawl-status');
+        if (!res.ok) return;
+        const data = await res.json();
+
+        const statusEl = document.getElementById('crawl-bot-status');
+        const lastEl = document.getElementById('crawl-bot-last');
+        const nextEl = document.getElementById('crawl-bot-next');
+        const btn = document.getElementById('btn-run-crawl');
+
+        if (statusEl) {
+          if (data.running) {
+            statusEl.innerHTML = '<span style="color:#2563eb;font-weight:700;">⚡ Đang cào...</span>';
+          } else {
+            statusEl.innerHTML = '<span style="color:#059669;font-weight:700;">✓ Sẵn sàng</span>';
+          }
+        }
+
+        if (btn) {
+          btn.disabled = !!data.running;
+          btn.innerHTML = data.running
+            ? '<i data-lucide="loader-2" class="spin" style="width:14px;height:14px;"></i> Đang cào...'
+            : '<i data-lucide="play" style="width:14px;height:14px;"></i> Cào dữ liệu ngay';
+          if (window.lucide) lucide.createIcons();
+        }
+
+        if (lastEl) {
+          if (data.lastRunAt) {
+            const d = new Date(data.lastRunAt);
+            lastEl.textContent = d.toLocaleTimeString('vi-VN', {hour: '2-digit', minute:'2-digit'}) + ' (' + d.toLocaleDateString('vi-VN') + ')';
+          } else {
+            lastEl.textContent = 'Chưa cào';
+          }
+        }
+
+        if (nextEl) {
+          if (data.nextRunAt) {
+            const d = new Date(data.nextRunAt);
+            nextEl.textContent = d.toLocaleTimeString('vi-VN', {hour: '2-digit', minute:'2-digit'}) + ' (' + d.toLocaleDateString('vi-VN') + ')';
+          } else {
+            nextEl.textContent = 'Tự động (sau 4h)';
+          }
+        }
+
+        if (data.stats) {
+          const fbEl = document.getElementById('cstat-fb');
+          const otherEl = document.getElementById('cstat-other');
+          const spamEl = document.getElementById('cstat-spam');
+          const seekEl = document.getElementById('cstat-seek');
+          const dupEl = document.getElementById('cstat-dup');
+          if (fbEl) fbEl.textContent = data.stats.lastRunNewFb ?? 0;
+          if (otherEl) otherEl.textContent = data.stats.lastRunNewOther ?? 0;
+          if (spamEl) spamEl.textContent = data.stats.lastRunDroppedSpam ?? 0;
+          if (seekEl) seekEl.textContent = data.stats.lastRunDroppedSeek ?? 0;
+          if (dupEl) dupEl.textContent = data.stats.lastRunDroppedDup ?? 0;
+        }
+      } catch (err) {
+        console.warn('Lỗi đọc crawl status:', err);
       }
     }
 

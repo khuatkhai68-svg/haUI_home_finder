@@ -1,0 +1,67 @@
+{
+  "ma_phong": "RM-PT123-EFFB27",
+  "nguon": "phongtro123",
+  "url_nguon": "https://phongtro123.com/cho-thue-nha-tro-thoang-mat-day-du-tien-nghi-khu-vuc-khu-cong-nghiep-dong-van-1-2-pr689392.html",
+  "ngay_cao": "2026-09-27T13:05:23.898Z",
+  "ngay_cap_nhat": "2026-09-27T13:05:23.898Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "Nguồn niêm yết công khai phongtro123.com",
+    "chong_spam": "Tin đăng cho thuê xác thực",
+    "da_kiem_tra_trung": true
+  },
+  "thong_tin": {
+    "tieu_de": "cho thuê nhà trọ thoáng mát, đầy đủ tiện nghi khu vực khu công nghiệp đồng văn 1-2",
+    "gia": 2500000,
+    "dien_tich": 20,
+    "dia_chi": "Khu vực Phù Vân, TP. Phủ Lý, Hà Nam (gần HaUI CS3)",
+    "quan_huyen": "Phủ Lý",
+    "tinh_thanh": "Hà Nam",
+    "mo_ta": "cho thuê nhà trọ thoáng mát, đầy đủ tiện nghi khu vực khu công nghiệp đồng văn 1-2 ",
+    "tien_ich": [
+      "ban_cong"
+    ],
+    "khong_chung_chu": false,
+    "gio_giac_tu_do": false
+  },
+  "vi_tri": {
+    "lat": 20.54242,
+    "lng": 105.89847,
+    "khoang_cach_cs1_km": 59.3,
+    "khoang_cach_cs2_km": 60.5,
+    "khoang_cach_cs3_km": 0.2,
+    "co_so_gan_nhat": "CS3",
+    "thoi_gian_di_xe_phut": 1
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "0909316890",
+    "facebook": ""
+  },
+  "anh": [
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2025/08/16/img-5002_1755360042.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2025/08/16/img-5001_1755360042.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2025/08/16/img-4999_1755360043.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2025/08/16/img-4998_1755360043.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2025/08/16/img-4997_1755360044.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}

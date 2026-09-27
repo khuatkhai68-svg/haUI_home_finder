@@ -286,6 +286,22 @@
             </div>
           </div>
 
+          <!-- Community Data Cleaning Box (Human-in-the-Loop) -->
+          <div style="margin:1rem 0 1.5rem;padding:0.9rem 1.25rem;background:#fef2f2;border:1px dashed #fca5a5;border-radius:12px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.75rem;">
+            <div style="font-size:0.85rem;color:#991b1b;display:flex;align-items:center;gap:6px;">
+              <span style="font-size:1.1rem;">🛡️</span>
+              <span><strong>Cùng sinh viên HaUI làm sạch dữ liệu:</strong> Phát hiện phòng đã hết hoặc sai sự thật?</span>
+            </div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;">
+              <button onclick="reportRoom('${room.id}', 'het_phong')" style="padding:0.55rem 0.95rem;background:#fee2e2;border:1px solid #f87171;color:#b91c1c;border-radius:8px;font-size:0.82rem;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:4px;">
+                ⚡ Báo phòng đã hết
+              </button>
+              <button onclick="reportRoom('${room.id}', 'lua_dao_gia_ao')" style="padding:0.55rem 0.95rem;background:white;border:1px solid #cbd5e1;color:#64748b;border-radius:8px;font-size:0.82rem;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;gap:4px;">
+                🚩 Báo tin ảo / lừa đảo
+              </button>
+            </div>
+          </div>
+
           <!-- Cost estimation -->
           <div class="detail-costs" style="margin:1.5rem 0;background:#f8fafc;padding:1.25rem;border-radius:12px;border:1px solid #e2e8f0;">
             <h3 style="font-size:1rem;font-weight:700;color:#1e293b;margin:0 0 1rem;">💰 Chi Phí Dự Kiến Hàng Tháng</h3>
@@ -587,6 +603,38 @@
         alert('Lỗi kết nối: ' + err.message);
       } finally {
         if (btn) btn.disabled = false;
+      }
+    }
+
+    async function reportRoom(roomId, reportType) {
+      let note = '';
+      if (reportType === 'het_phong') {
+        if (!confirm('Bạn xác nhận chủ trọ đã báo phòng này ĐÃ CÓ NGƯỜI THUÊ? Hệ thống sẽ ghi nhận để tự động ẩn phòng giúp các bạn sinh viên khác.')) return;
+        note = prompt('Ghi chú thêm (ví dụ: Vừa gọi chủ bảo đã hết hôm qua):', 'Chủ trọ báo đã hết phòng');
+      } else {
+        note = prompt('Vui lòng nhập lý do báo cáo (ví dụ: Yêu cầu chuyển cọc trước, giá trên bài khác thực tế, số điện thoại ảo...):');
+        if (!note) return;
+      }
+
+      const currentUser = window.HaUIAuth?.getCurrentUser() || null;
+
+      try {
+        const res = await fetch('/api/crowdsource/report', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ roomId, reportType, note: note || '', user: currentUser })
+        });
+        const data = await res.json();
+        if (data.success) {
+          alert(data.message || 'Cảm ơn phản hồi của bạn!');
+          if (data.autoAction === 'DA_CHO_THUE' || data.autoAction === 'CACH_LY_TAM_AN') {
+            location.reload();
+          }
+        } else {
+          alert('Không thể gửi báo cáo: ' + (data.message || 'Lỗi hệ thống'));
+        }
+      } catch (err) {
+        alert('Lỗi kết nối khi gửi báo cáo: ' + err.message);
       }
     }
 

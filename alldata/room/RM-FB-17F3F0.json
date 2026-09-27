@@ -1,0 +1,52 @@
+{
+  "ma_phong": "RM-FB-17F3F0",
+  "nguon": "facebook",
+  "url_nguon": "https://www.facebook.com/groups/1896518147417522/posts/2809795109423150/",
+  "ngay_cao": "2026-09-27T12:53:17.195Z",
+  "ngay_cap_nhat": "2026-09-27T12:53:17.195Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "100% Khử định danh PII, nguồn nhóm công khai",
+    "chong_spam": "Đã qua kiểm định bài chào thuê chính thống",
+    "da_kiem_tra_trung": true
+  },
+  "thong_tin": {
+    "tieu_de": "Cho thuê phòng trọ khép kín 3.0 tr/tháng gần HaUI CS1 & CS2 (Nhổn - Bắc Từ Liêm)",
+    "gia": 3000000,
+    "dien_tich": 25,
+    "dia_chi": "Khu vực văn trì, Bắc Từ Liêm, Hà Nội (gần HaUI CS1/CS2)",
+    "quan_huyen": "Bắc Từ Liêm",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Nguyễn Hạnh\n6 phút trước\n6 phút\n \n·\nPhòng giữa tháng 10 ở. Full đồ, kcc, giờ tự do, nhà xe rộng bên ngoài. Đủ tiện ích. Chính chủ. Có cửa sổ và ban công thoáng. Chính chủ. Giá 3 tr. Tại ngõ 70 văn trì.\n0:00 / 0:00\nThích\nBình luận\nChia sẻ",
+    "tien_ich": [
+      "ban_cong"
+    ],
+    "khong_chung_chu": true,
+    "gio_giac_tu_do": false
+  },
+  "vi_tri": {
+    "lat": 21.05714,
+    "lng": 105.7375,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 0.5,
+    "khoang_cach_cs2_km": 1.3,
+    "khoang_cach_cs3_km": 59.8,
+    "co_so_gan_nhat": "CS1",
+    "thoi_gian_di_xe_phut": 2
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "Liên hệ qua bài viết",
+    "facebook": "https://www.facebook.com/groups/1896518147417522/posts/2809795109423150/"
+  },
+  "anh": [
+    {
+      "url_goc": "https://scontent.fhan22-1.fna.fbcdn.net/v/t15.5256-10/824564132_1821861902303887_474423058726840919_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x1920&ctp=s960x960&_nc_cat=111&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=117846&_nc_ohc=91xlV6qjpw8Q7kNvwHNjOgl&_nc_oc=AdqkOYe4rmkOffEiQXfXY33CWFO5INe1AVLO9plZHVRqBPbHc7chkJ5Ohb2LND0d9O0&_nc_zt=23&_nc_ht=scontent.fhan22-1.fna&_nc_gid=BT7A5dH-hYHfa3zPzN-9lA&_nc_ss=7b289&oh=00_AQKjmmdDy5_PLHvFXd6y1p6NODQ_XSA3E2N9uxEvObPSeQ&oe=6ABEC9F6",
+      "mo_ta": "Ảnh thực tế bài đăng FB"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}

@@ -14,6 +14,9 @@ const https    = require('https');
 const http     = require('http');
 const autoCrawlBot = require('./auto_crawl_bot');
 const aiService    = require('./ai_service');
+const quotaPlanner = require('./quota_planner');
+const dataCleaner  = require('./data_cleaner');
+const crowdsourceService = require('./crowdsource_service');
 
 const app  = express();
 const PORT = process.env.PORT || 3333;
@@ -1097,6 +1100,75 @@ app.post('/api/rooms/:id/comments', (req, res) => {
     res.status(201).json({ success: true, comment: newComment });
   } catch (e) {
     res.status(500).json({ error: e.message });
+  }
+});
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// HẠN NGẠCH TUYỂN SINH & LÀM SẠCH DỮ LIỆU (HITL + ALGORITHMIC DEDUPLICATION)
+// ═══════════════════════════════════════════════════════════════════════════════
+
+// Lấy kế hoạch hạn ngạch dựa trên đầu vào tuyển sinh hàng năm
+app.get('/api/quota/plan', (req, res) => {
+  try {
+    const plan = quotaPlanner.calculateQuotaPlan();
+    res.json(plan);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Cập nhật thông số đầu vào tuyển sinh
+app.post('/api/quota/config', (req, res) => {
+  try {
+    const newConfig = req.body;
+    quotaPlanner.saveQuotaConfig(newConfig);
+    const updatedPlan = quotaPlanner.calculateQuotaPlan(newConfig);
+    res.json({ success: true, plan: updatedPlan });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Chạy quét làm sạch & khử trùng lặp dữ liệu
+app.post('/api/clean/sweep', (req, res) => {
+  try {
+    const autoResolve = req.query.autoResolve === 'true' || req.body?.autoResolve === true;
+    const report = dataCleaner.runFullCleanSweep(autoResolve);
+    res.json(report);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Người dùng & Sinh viên gửi báo cáo làm sạch dữ liệu (Human-in-the-Loop)
+app.post('/api/crowdsource/report', (req, res) => {
+  try {
+    const { roomId, reportType, note, user } = req.body;
+    const result = crowdsourceService.submitReport({ roomId, reportType, note, user });
+    res.json(result);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Admin xem hàng đợi kiểm duyệt HITL
+app.get('/api/crowdsource/queue', (req, res) => {
+  try {
+    const queue = crowdsourceService.getReviewQueue();
+    res.json({ count: queue.length, data: queue });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Admin giải quyết báo cáo kiểm duyệt
+app.post('/api/crowdsource/resolve', (req, res) => {
+  try {
+    const { roomId, action } = req.body;
+    const result = crowdsourceService.resolveReport(roomId, action);
+    res.json(result);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
   }
 });
 
