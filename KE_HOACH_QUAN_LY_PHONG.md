@@ -36,8 +36,8 @@ Mỗi phòng trọ trong hệ thống `HaUI HomeFinder` được định nghĩa 
   "owner_name": "Cô Lan",
   "status": "available", 
   "images": [
-    "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800",
-    "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800"
+    "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/03/06/z7592968449853-c4bb6e036ec93ad1901fb47ddb103308_1772784394.jpg",
+    "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/08/25/1787627501299-943781495388447280-g2637657029613128114-h_1787641779.jpg"
   ],
   "amenities": ["Điều hòa", "Nóng lạnh", "Khép kín", "Máy giặt chung", "Khóa vân tay"],
   "deposit": "1 tháng",

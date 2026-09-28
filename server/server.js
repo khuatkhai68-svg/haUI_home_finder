@@ -140,16 +140,56 @@ function cleanGarbageText(str) {
 
 // Danh sách địa danh ngoại vùng — lọc tại tầng API trước khi trả về client
 const GEO_BLACKLIST = [
+  // Thừa Thiên Huế & Miền Trung
+  'huế', 'thừa thiên', 'thừa thiên huế', 'tứ hạ', 'hương trà', 'hương thủy', 'phú vang', 'phú lộc', 'quảng điền', 'a lưới', 'nam đông',
+  'đà nẵng', 'quảng nam', 'hội an', 'quảng ngãi', 'bình định', 'quy nhơn', 'phú yên', 'nha trang', 'khánh hòa',
+  'ninh thuận', 'bình thuận', 'phan thiết', 'quảng bình', 'quảng trị', 'hà tĩnh', 'nghệ an', 'thanh hóa',
+  // TP.HCM & Miền Nam
   'quận 1','quận 2','quận 3','quận 4','quận 5','quận 6','quận 7','quận 8',
   'quận 9','quận 10','quận 11','quận 12','bình thạnh','gò vấp','tân bình',
   'tân phú','phú nhuận','bình tân','thủ đức','nhà bè','hóc môn','củ chi',
-  'hồ chí minh','tp.hcm','tphcm','sài gòn','saigon','đà nẵng','bình dương',
-  'đồng nai','cần thơ',
+  'hồ chí minh','tp.hcm','tphcm','sài gòn','saigon','bình dương',
+  'đồng nai','cần thơ', 'nơ trang long', 'era town', 'phạm văn hai',
+  'phan đăng lưu', 'nguyễn đình chiểu', 'tân kỳ tân quý', 'văn lang', 'hutech', 'tôn đức thắng', 'tân sơn',
+  // Quận nội ngoại thành Hà Nội xa HaUI (> 15km)
+  'long biên', 'gia lâm', 'hoàng mai', 'thường tín', 'phú xuyên', 'ba vì', 'thạch thất', 'quốc oai', 'sơn tây', 'phúc thọ',
+  'hoàn kiếm', 'hai bà trưng', 'bạch đằng', 'bạch mai', 'kim ngưu', 'khâm thiên', 'xã đàn'
+];
+
+const COMMERCIAL_BLACKLIST = [
+  'cho thuê mặt bằng', 'mặt bằng kinh doanh', 'mặt tiền quốc lộ', 'mặt bằng 223m',
+  'kho xưởng', 'văn phòng', 'shophouse', 'kiot', 'ki-ốt'
 ];
 
 function isGeographicallyValid(room) {
-  const combined = [(room.title||''), (room.address||''), (room.district||''), (room.city||'')].join(' ').toLowerCase();
-  return !GEO_BLACKLIST.some(kw => combined.includes(kw));
+  const title = (room.title || '').toLowerCase();
+  const address = (room.address || '').toLowerCase();
+  const district = (room.district || '').toLowerCase();
+  const city = (room.city || '').toLowerCase();
+  const desc = (room.desc || '').toLowerCase();
+  const url = (room.url || '').toLowerCase();
+
+  // Bỏ qua nếu giá quá cao (mặt bằng kinh doanh > 15tr)
+  if (room.price && room.price > 15000000) return false;
+
+  const combined = [title, address, district, city, desc, url].join(' ');
+  // Cổ Nhuế là phường hợp lệ của Bắc Từ Liêm gần HaUI, không tính là Huế
+  const safeText = combined.replace(/cổ nhuế/g, 'co_nhue');
+
+  for (const kw of GEO_BLACKLIST) {
+    if (kw === 'huế') {
+      if (/\bhuế\b/i.test(safeText)) return false;
+    } else if (safeText.includes(kw)) {
+      return false;
+    }
+  }
+
+  // Chặn tin cho thuê mặt bằng thương mại
+  if (COMMERCIAL_BLACKLIST.some(kw => title.includes(kw) || desc.includes('cho thuê mặt bằng') || desc.includes('mặt bằng kinh doanh'))) {
+    return false;
+  }
+
+  return true;
 }
 
 
@@ -459,7 +499,11 @@ app.get('/api/rooms', (req, res) => {
 app.get('/api/rooms/:id', (req, res) => {
   const room = getRoomById(req.params.id);
   if (!room) return res.status(404).json({ error: 'Không tìm thấy phòng' });
-  res.json(formatRoom(room));
+  const formatted = formatRoom(room);
+  if (!isGeographicallyValid(formatted)) {
+    return res.status(404).json({ error: 'Phòng không thuộc phạm vi phục vụ hoặc là tin ngoại vùng đã bị loại bỏ' });
+  }
+  res.json(formatted);
 });
 
 // ═══════════════════════════════════════════════════════════════════════════════
@@ -682,7 +726,7 @@ app.post('/api/rooms', (req, res) => {
         ? b.anh.map(url => ({ url_goc: url, mo_ta: "Ảnh phòng" }))
         : (Array.isArray(b.images) && b.images.length
           ? b.images.map(url => ({ url_goc: url, mo_ta: "Ảnh phòng" }))
-          : [{ url_goc: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80", mo_ta: "Phòng trọ" }]),
+          : [{ url_goc: "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/03/06/z7592968449853-c4bb6e036ec93ad1901fb47ddb103308_1772784394.jpg", mo_ta: "Phòng trọ" }]),
       video: Array.isArray(b.videos) && b.videos.length
         ? b.videos.map(url => ({ url, mo_ta: "Video phòng" }))
         : (b.video ? [{ url: b.video, mo_ta: "Video phòng" }] : []),

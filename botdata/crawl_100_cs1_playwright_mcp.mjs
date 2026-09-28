@@ -280,7 +280,7 @@ async function run() {
 
       const images = raw.imgs.length > 0 
         ? raw.imgs.slice(0, 4).map(u => ({ url_goc: u }))
-        : [{ url_goc: 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&fit=crop' }];
+        : [{ url_goc: 'https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/03/06/z7592968449853-c4bb6e036ec93ad1901fb47ddb103308_1772784394.jpg' }];
 
       const isHoaiDuc = locInfo.cleanAddr.includes('Hoài Đức');
       const district = isHoaiDuc ? 'Hoài Đức' : 'Bắc Từ Liêm';

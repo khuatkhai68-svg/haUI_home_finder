@@ -686,12 +686,12 @@
 
       const savedIds = getSavedRoomIds();
 
-      // Danh sách ảnh fallback Unsplash chất lượng cao cho phòng trọ sinh viên
+      // Danh sách ảnh thật phòng trọ sinh viên Việt Nam quanh HaUI
       const FALLBACK_ROOM_IMGS = [
-        'https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=600&h=400&fit=crop',
-        'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=600&h=400&fit=crop',
-        'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=600&h=400&fit=crop',
-        'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=600&h=400&fit=crop'
+        'https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/03/06/z7592968449853-c4bb6e036ec93ad1901fb47ddb103308_1772784394.jpg',
+        'https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/03/06/z7592968382129-700ed78e91513289d9226ba80585bfaa_1772784390.jpg',
+        'https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/03/06/z7592968397722-b7a73914298c5f1475db35724428448a_1772784390.jpg',
+        'https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/03/06/z7592968412270-4f32a5981fedde9e6db610d32a074d5c_1772784391.jpg'
       ];
 
       grid.innerHTML = rooms.map((room, index) => {
@@ -743,7 +743,7 @@
           <div class="room-card" data-room-id="${room.id}">
             <div class="room-image">
               <img src="${img}" alt="${room.title}" loading="lazy"
-                   onerror="this.src='https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=600&h=400&fit=crop'" />
+                   onerror="this.src='https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/03/06/z7592968449853-c4bb6e036ec93ad1901fb47ddb103308_1772784394.jpg'" />
               
               ${sourceBadge}
 
@@ -832,11 +832,11 @@
 
       const recentList = rooms.slice(0, 5);
       container.innerHTML = recentList.map(r => {
-        const img = (r.images && r.images.length > 0) ? r.images[0] : 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=150&h=120&fit=crop';
+        const img = (r.images && r.images.length > 0) ? r.images[0] : 'https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/03/06/z7592968382129-700ed78e91513289d9226ba80585bfaa_1772784390.jpg';
         const price = (r.price / 1000000).toFixed(1);
         return `
           <a href="room-detail.html?id=${r.id}" class="recent-room-item">
-            <img src="${img}" class="recent-room-img" alt="${r.title}" onerror="this.src='https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=150&h=120&fit=crop'" />
+            <img src="${img}" class="recent-room-img" alt="${r.title}" onerror="this.src='https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/03/06/z7592968382129-700ed78e91513289d9226ba80585bfaa_1772784390.jpg'" />
             <div class="recent-room-info">
               <div class="recent-room-title">${r.title}</div>
               <div class="recent-room-meta">
@@ -1039,7 +1039,7 @@
         if (suggested.length > 0) {
           roomsSec.style.display = 'block';
           matchedGrid.innerHTML = suggested.map(r => {
-            const img = (r.images && r.images.length > 0) ? r.images[0] : (r.hinh_anh && r.hinh_anh.length > 0 ? r.hinh_anh[0] : 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=300');
+            const img = (r.images && r.images.length > 0) ? r.images[0] : (r.hinh_anh && r.hinh_anh.length > 0 ? r.hinh_anh[0] : 'https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/03/06/z7592968397722-b7a73914298c5f1475db35724428448a_1772784390.jpg');
             const priceStr = r.price ? (r.price / 1e6).toFixed(1) + ' tr/tháng' : (r.gia_thang ? (r.gia_thang / 1e6).toFixed(1) + ' tr/tháng' : 'Thỏa thuận');
             
             let d = r.distCS1 ?? r.khoang_cach_km ?? 1.2;
@@ -1055,7 +1055,7 @@
             return `
               <div class="canvas-room-card">
                 <img src="${img}" class="canvas-room-img" alt="Ảnh phòng"
-                     onerror="this.src='https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=300'" />
+                     onerror="this.src='https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/03/06/z7592968397722-b7a73914298c5f1475db35724428448a_1772784390.jpg'" />
                 <div class="canvas-room-info">
                   <div class="canvas-room-top">
                     <span class="canvas-match-score">🎯 Khớp ${matchScore}%</span>
@@ -1192,14 +1192,14 @@
       if (suggestedRooms && suggestedRooms.length > 0) {
         contentHtml += `<div class="ai-rooms-container">`;
         suggestedRooms.forEach(r => {
-          const imgUrl = (r.images && r.images.length > 0) ? r.images[0] : (r.hinh_anh && r.hinh_anh.length > 0 ? r.hinh_anh[0] : 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=300');
+          const imgUrl = (r.images && r.images.length > 0) ? r.images[0] : (r.hinh_anh && r.hinh_anh.length > 0 ? r.hinh_anh[0] : 'https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/03/06/z7592968412270-4f32a5981fedde9e6db610d32a074d5c_1772784391.jpg');
           const priceStr = r.price ? (r.price / 1e6).toFixed(1) + ' tr/tháng' : (r.gia_thang ? (r.gia_thang / 1e6).toFixed(1) + ' tr/tháng' : 'Thỏa thuận');
           const distStr = r.distCS1 ? `Cách CS1 ~${r.distCS1}km` : (r.nearestCampus ? `Gần ${r.nearestCampus}` : 'HaUI');
           const roomId = r.id || r.ma_phong;
 
           contentHtml += `
             <a href="room-detail.html?id=${roomId}" target="_blank" class="ai-mini-card">
-              <img src="${imgUrl}" class="ai-mini-img" alt="Ảnh phòng" onerror="this.src='https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=300'" />
+              <img src="${imgUrl}" class="ai-mini-img" alt="Ảnh phòng" onerror="this.src='https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/03/06/z7592968412270-4f32a5981fedde9e6db610d32a074d5c_1772784391.jpg'" />
               <div class="ai-mini-info">
                 <div class="ai-mini-title">${r.title || r.tieu_de || 'Phòng trọ HaUI'}</div>
                 <div class="ai-mini-campus">📍 ${distStr}</div>

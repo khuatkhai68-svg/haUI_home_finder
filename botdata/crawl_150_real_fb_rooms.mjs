@@ -461,7 +461,7 @@ async function main() {
 
         const images = (p.imgs && p.imgs.length > 0)
           ? p.imgs.map(u => ({ url_goc: u }))
-          : [{ url_goc: 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&fit=crop' }];
+          : [{ url_goc: 'https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/03/06/z7592968449853-c4bb6e036ec93ad1901fb47ddb103308_1772784394.jpg' }];
 
         const roomData = {
           ma_phong: roomId,

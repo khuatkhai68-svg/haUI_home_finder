@@ -23,23 +23,23 @@ function calcDistanceKm(lat1, lon1, lat2, lon2) {
   return Math.round(R * c * 10) / 10;
 }
 
-// Curated Unsplash images for authentic student rooms
+// Real authentic student room images from pt123.cdn.static123.com
 const ROOM_IMAGES = [
-  'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&fit=crop',
-  'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&fit=crop',
-  'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&fit=crop',
-  'https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=800&fit=crop',
-  'https://images.unsplash.com/photo-1554995207-c18c203602cb?w=800&fit=crop',
-  'https://images.unsplash.com/photo-1536376072261-38c75010e6c9?w=800&fit=crop',
-  'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&fit=crop',
-  'https://images.unsplash.com/photo-1598928506311-c55ded91a20c?w=800&fit=crop',
-  'https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=800&fit=crop',
-  'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&fit=crop',
-  'https://images.unsplash.com/photo-1513694203232-719a280e022f?w=800&fit=crop',
-  'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&fit=crop',
-  'https://images.unsplash.com/photo-1616046229478-9901c5536a45?w=800&fit=crop',
-  'https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?w=800&fit=crop',
-  'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=800&fit=crop'
+  'https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/03/06/z7592968449853-c4bb6e036ec93ad1901fb47ddb103308_1772784394.jpg',
+  'https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/03/06/z7592968382129-700ed78e91513289d9226ba80585bfaa_1772784390.jpg',
+  'https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/03/06/z7592968397722-b7a73914298c5f1475db35724428448a_1772784390.jpg',
+  'https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/03/06/z7592968412270-4f32a5981fedde9e6db610d32a074d5c_1772784391.jpg',
+  'https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/08/25/1787627501299-943781495388447280-g2637657029613128114-h_1787641779.jpg',
+  'https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/08/25/1787627501499-943781495388447280-g2637657029613128114-h_1787641781.jpg',
+  'https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/08/25/1787627501689-943781495388447280-g2637657029613128114-h_1787641783.jpg',
+  'https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/08/25/1787627501756-943781495388447280-g2637657029613128114-h_1787641785.jpg',
+  'https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/08/11/img-4698_1786412669.jpg',
+  'https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/08/11/attmdjdislhewmd3mp5hxyhep6qmsnm34j5krfpvii1rce_1786412669.jpg',
+  'https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2025/10/16/z4374604472513-1da0935e123273313c312ae39990d7b5_1760579763.jpg',
+  'https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2025/10/16/z4374604459540-ba61608f5220b0ce37f967646bbc9cda_1760579763.jpg',
+  'https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/08/20/file-20220208-105502-img-upload-20211226-104538_1787209616.jpg',
+  'https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/08/20/1785207034565-1509974770769282355-g5193441045861400533-32d01ea692aa884699b6d6036cf578df_1787209613.jpg',
+  'https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/08/04/1784602119348-943781495388447280-g7608311385472649406-h_1785813104.jpg'
 ];
 
 // Target groups specified by user:

@@ -1,0 +1,61 @@
+{
+  "ma_phong": "RM-FB-C526E3",
+  "nguon": "facebook",
+  "url_nguon": "https://www.facebook.com/groups/HaUITimPhongTro/posts/1757941112165185/",
+  "ngay_cao": "2026-09-28T18:16:33.240Z",
+  "ngay_cap_nhat": "2026-09-28T18:16:33.240Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "100% Khử định danh PII, nguồn nhóm công khai",
+    "chong_spam": "Đã qua kiểm định bài chào thuê chính thống",
+    "da_kiem_tra_trung": true
+  },
+  "thong_tin": {
+    "tieu_de": "cho thuê phòng NGÕ 80 XUÂN PHƯƠNG cách đại học công nghiệp 500m",
+    "gia": 3000000,
+    "dien_tich": 24,
+    "dia_chi": "Khu vực xuân phương, Nam Từ Liêm, Hà Nội (gần HaUI CS1/CS2)",
+    "quan_huyen": "Nam Từ Liêm",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Quốc Việt\nkhoảng 1 giờ trước\n1 giờ\n \n·\ncho thuê phòng NGÕ 80 XUÂN PHƯƠNG cách đại học công nghiệp 500m\ngiá 2t7 full đồ( sẵn tủ lạnh, video chưa có tủ lạnh)… Xem thêm\n0:00 / 0:00\nThích\nBình luận\nChia sẻ",
+    "tien_ich": [
+      "tu_lanh",
+      "tu_quan_ao"
+    ],
+    "khong_chung_chu": false,
+    "gio_giac_tu_do": false
+  },
+  "vi_tri": {
+    "lat": 21.03751,
+    "lng": 105.73558,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 1.8,
+    "khoang_cach_cs2_km": 2.9,
+    "khoang_cach_cs3_km": 57.7,
+    "co_so_gan_nhat": "CS1",
+    "thoi_gian_di_xe_phut": 6
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "Liên hệ qua bài viết",
+    "facebook": "https://www.facebook.com/groups/HaUITimPhongTro/posts/1757941112165185/"
+  },
+  "anh": [
+    {
+      "url_goc": "https://scontent.fhan2-4.fna.fbcdn.net/v/t39.30808-6/829196347_1901965397435072_2908887257644887779_n.jpg?stp=dst-jpg_tt6&cstp=mx1152x2048&ctp=s590x590&_nc_cat=100&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=F0aar5MgThEQ7kNvwFXI4Pq&_nc_oc=AdqGUabnkhAKQC-fiU96i6-mZT3NHV6wkHswCeGQXeBRv5JViWDEk_Isj1gwbrOGvfc&_nc_zt=23&_nc_ht=scontent.fhan2-4.fna&_nc_gid=S-wE7CfCcx037J1l5H7NyQ&_nc_ss=7b289&oh=00_AQPVqOIpoy0sjKFAiu6WNkCY4z_VSLhvQc_nSsKkQpv0wg&oe=6AC06B7E",
+      "mo_ta": "Ảnh thực tế bài đăng FB"
+    },
+    {
+      "url_goc": "https://scontent.fhan2-5.fna.fbcdn.net/v/t39.30808-6/829196498_1901965394101739_3871806156398613670_n.jpg?stp=dst-jpg_tt6&cstp=mx1152x2048&ctp=s590x590&_nc_cat=106&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=wkdn79hYdlkQ7kNvwEiarxX&_nc_oc=AdpXQ8RMW3reSYzbOTCnpapDbQruv2Ee8VKdXulSidPAAx54m4PNjWYaPdhyc2xfiCk&_nc_zt=23&_nc_ht=scontent.fhan2-5.fna&_nc_gid=S-wE7CfCcx037J1l5H7NyQ&_nc_ss=7b289&oh=00_AQO5t_s62P2ROqpRvaV6YYE69phNcu5L1UK-2BFCNkdlrQ&oe=6AC075A1",
+      "mo_ta": "Ảnh thực tế bài đăng FB"
+    },
+    {
+      "url_goc": "https://scontent.fhan2-4.fna.fbcdn.net/v/t39.30808-6/829196239_1901965370768408_5013337725461530300_n.jpg?stp=dst-jpg_tt6&cstp=mx1152x2048&ctp=s590x590&_nc_cat=110&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=gArNdKDPnlMQ7kNvwG1XBRf&_nc_oc=Adp_LhfUodCv1RP-yxbWIhHPd441S9pOtyWFPY2yipyscHTLFMJAqvmNNz7F9cp4NNs&_nc_zt=23&_nc_ht=scontent.fhan2-4.fna&_nc_gid=S-wE7CfCcx037J1l5H7NyQ&_nc_ss=7b289&oh=00_AQNdbJUujVWjWQmOupuYEvAhgCCpLLTDiATEYNsJeAps7A&oe=6AC0977E",
+      "mo_ta": "Ảnh thực tế bài đăng FB"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}

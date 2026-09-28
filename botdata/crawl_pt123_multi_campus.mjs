@@ -69,8 +69,24 @@ const LANDMARK_COORDS = {
   "duy tiên": { lat: 20.6120, lng: 105.9450, addr: "Thị xã Duy Tiên, Tỉnh Hà Nam" }
 };
 
+const ADDR_BLACKLIST_CRAWL = [
+  'huế', 'thừa thiên', 'tứ hạ', 'hương trà', 'đà nẵng', 'quảng nam', 'hồ chí minh', 'sài gòn', 'tphcm',
+  'bình thạnh', 'gò vấp', 'tân bình', 'tân phú', 'quận 1', 'quận 7', 'bình dương', 'đồng nai', 'cần thơ',
+  'cho thuê mặt bằng', 'mặt bằng kinh doanh', 'mặt tiền quốc lộ', 'kho xưởng', 'văn phòng', 'shophouse'
+];
+
 function resolveCoords(addrText, titleText, isHaNam = false) {
   const combined = (addrText + ' ' + titleText).toLowerCase();
+  const safeText = combined.replace(/cổ nhuế/g, 'co_nhue');
+
+  // Kiểm tra blacklist ngoại vùng và thương mại
+  for (const kw of ADDR_BLACKLIST_CRAWL) {
+    if (kw === 'huế') {
+      if (/\bhuế\b/i.test(safeText)) return null;
+    } else if (safeText.includes(kw)) {
+      return null;
+    }
+  }
   
   for (const [name, info] of Object.entries(LANDMARK_COORDS)) {
     if (combined.includes(name)) {
@@ -83,18 +99,26 @@ function resolveCoords(addrText, titleText, isHaNam = false) {
   }
 
   if (isHaNam) {
+    if (combined.includes('hà nam') || combined.includes('phủ lý') || combined.includes('phù vân')) {
+      return {
+        lat: 20.5410,
+        lng: 105.8980,
+        addr: "TP. Phủ Lý, Tỉnh Hà Nam (gần HaUI CS3)"
+      };
+    }
+    return null;
+  }
+
+  if (combined.includes('đại học công nghiệp') || combined.includes('đh công nghiệp') || combined.includes('bắc từ liêm') || combined.includes('hoài đức')) {
     return {
-      lat: 20.5410,
-      lng: 105.8980,
-      addr: "TP. Phủ Lý, Tỉnh Hà Nam (gần HaUI CS3)"
+      lat: 21.0538,
+      lng: 105.7345,
+      addr: "Phường Minh Khai, Quận Bắc Từ Liêm, Hà Nội (gần HaUI CS1)"
     };
   }
 
-  return {
-    lat: 21.0538,
-    lng: 105.7345,
-    addr: "Phường Minh Khai, Quận Bắc Từ Liêm, Hà Nội (gần HaUI CS1)"
-  };
+  // Tuyệt đối không fallback nếu không thuộc khu vực quanh trường
+  return null;
 }
 
 function parsePrice(text) {
@@ -184,8 +208,13 @@ async function main() {
       await page.waitForTimeout(1000);
 
       const listingUrls = await page.evaluate(() => {
-        const anchors = Array.from(document.querySelectorAll('a[href*="-pr"]'));
-        return anchors.map(a => a.href).filter(h => h.includes('-pr') && h.endsWith('.html'));
+        const container = document.querySelector('#left-col .post-listing, #left-col .post-list, .section-post-listing, #left-col') || document;
+        const anchors = Array.from(container.querySelectorAll('a[href*="-pr"]'));
+        const urlBlacklist = ['mat-bang', 'kho-xuong', 'van-phong', 'shophouse', 'kiot', 'hue', 'da-nang', 'tphcm', 'ho-chi-minh', 'binh-duong', 'can-tho', 'dong-nai', 'quan-1', 'quan-7', 'binh-thanh', 'go-vap', 'tan-binh'];
+        return anchors
+          .filter(a => !a.closest('#right-col, .sidebar, .box-vip, footer'))
+          .map(a => a.href)
+          .filter(h => h.includes('-pr') && h.endsWith('.html') && !urlBlacklist.some(bl => h.toLowerCase().includes(bl)));
       });
 
       const uniqueUrls = Array.from(new Set(listingUrls));
@@ -255,20 +284,26 @@ async function main() {
           if (!detail.title || detail.title.includes('404') || detail.title.length < 10) continue;
 
           const price = parsePrice(detail.priceText || detail.title);
-          if (price === 0) continue;
+          if (price === 0 || price > 15000000) continue;
 
           const areaVal = parseArea(detail.areaText || detail.desc);
+          if (areaVal > 120) continue;
 
           // Spam & Seeker filter
           const fullText = (detail.title + ' ' + detail.address + ' ' + detail.desc).toLowerCase();
           if (fullText.includes('tìm người ở ghép') || fullText.includes('tìm phòng') || fullText.includes('cần tìm') ||
               fullText.includes('bất động sản') || fullText.includes('bán đất') || fullText.includes('sổ đỏ') ||
-              fullText.includes('pass đồ') || fullText.includes('thanh lý')) {
+              fullText.includes('pass đồ') || fullText.includes('thanh lý') ||
+              fullText.includes('cho thuê mặt bằng') || fullText.includes('mặt bằng kinh doanh') || fullText.includes('kho xưởng')) {
             continue;
           }
 
-          // Geo coordinate resolution
+          // Geo coordinate resolution — MUST belong to HaUI
           const loc = resolveCoords(detail.address, detail.title, src.isHaNam);
+          if (!loc) {
+            console.log(`  [Bỏ qua] Không thuộc địa bàn HaUI hoặc ngoại vùng: ${detail.title.slice(0, 40)}`);
+            continue;
+          }
 
           const d1 = calcDistance(loc.lat, loc.lng, HAUI_CS1.lat, HAUI_CS1.lng);
           const d2 = calcDistance(loc.lat, loc.lng, HAUI_CS2.lat, HAUI_CS2.lng);

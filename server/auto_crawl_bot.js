@@ -145,19 +145,26 @@ const HANOI_COORDS = {
   "văn trì": { lat: 21.0585, lng: 105.7390, dist: "Bắc Từ Liêm" },
   "đình quán": { lat: 21.0505, lng: 105.7425, dist: "Bắc Từ Liêm" },
   "kiều mai": { lat: 21.0480, lng: 105.7460, dist: "Bắc Từ Liêm" },
+  "ngọa long": { lat: 21.0505, lng: 105.7410, dist: "Bắc Từ Liêm" },
+  "phú kiều": { lat: 21.0485, lng: 105.7470, dist: "Bắc Từ Liêm" },
   "phú diễn": { lat: 21.0450, lng: 105.7550, dist: "Bắc Từ Liêm" },
   "phúc diễn": { lat: 21.0490, lng: 105.7480, dist: "Bắc Từ Liêm" },
   "đức diễn": { lat: 21.0460, lng: 105.7500, dist: "Bắc Từ Liêm" },
   "cầu diễn": { lat: 21.0420, lng: 105.7620, dist: "Bắc Từ Liêm" },
   "tây tựu": { lat: 21.0618, lng: 105.7259, dist: "Bắc Từ Liêm" },
   "trung tựu": { lat: 21.0585, lng: 105.7255, dist: "Bắc Từ Liêm" },
+  "lideco": { lat: 21.0665, lng: 105.7115, dist: "Hoài Đức" },
+  "trạm trôi": { lat: 21.0680, lng: 105.7110, dist: "Hoài Đức" },
   "vân canh": { lat: 21.0380, lng: 105.7220, dist: "Hoài Đức" },
   "kim chung": { lat: 21.0590, lng: 105.7210, dist: "Hoài Đức" },
   "lai xá": { lat: 21.0585, lng: 105.7180, dist: "Hoài Đức" },
   "di trạch": { lat: 21.0510, lng: 105.7180, dist: "Hoài Đức" },
-  "phương canh": { lat: 21.0430, lng: 105.7310, dist: "Nam Từ Liêm" },
+  "đại tự": { lat: 21.0610, lng: 105.7190, dist: "Hoài Đức" },
+  "phương canh": { lat: 21.0420, lng: 105.7360, dist: "Nam Từ Liêm" },
   "xuân phương": { lat: 21.0370, lng: 105.7360, dist: "Nam Từ Liêm" },
   "tu hoàng": { lat: 21.0475, lng: 105.7335, dist: "Nam Từ Liêm" },
+  "hòe thị": { lat: 21.0410, lng: 105.7420, dist: "Nam Từ Liêm" },
+  "trịnh văn bô": { lat: 21.0425, lng: 105.7390, dist: "Nam Từ Liêm" },
   "hồ tùng mậu": { lat: 21.0390, lng: 105.7720, dist: "Cầu Giấy" },
   "mai dịch": { lat: 21.0370, lng: 105.7770, dist: "Cầu Giấy" }
 };
@@ -259,7 +266,9 @@ function isCommercialSpam(text) {
     'bán đất', 'đất nền', 'bất động sản nghỉ dưỡng', 'mái thái', 'tây ninh', 
     'khối u', 'thẩm mỹ', 'spa', 'massage', 'xe máy', 'thanh lý', 'mua bán', 
     'bát tràng', 'tour', 'du lịch', 'vé máy bay', 'vay tiền', 'tín dụng',
-    'bán nhà', 'bán biệt thự', 'bán shophouse', 'bán căn hộ'
+    'bán nhà', 'bán biệt thự', 'bán shophouse', 'bán căn hộ',
+    'cho thuê mặt bằng', 'mặt bằng kinh doanh', 'mặt tiền quốc lộ', 'mặt bằng',
+    'kho xưởng', 'văn phòng', 'shophouse', 'kiot', 'ki-ốt', 'cửa hàng kinh doanh'
   ];
   return spamKeywords.some(kw => lower.includes(kw));
 }
@@ -353,21 +362,55 @@ function parseAmenities(text) {
   return list;
 }
 
-// ── BOT-01 FIX: Blacklist địa danh ngoại vùng ─────────────────────────────────
+/** Trích xuất số điện thoại chính xác kể cả có dấu cách, chấm, gạch ngang */
+function extractPhoneNumber(text) {
+  if (!text) return '';
+  const matches = text.match(/(?:(?:\+84|0)(?:[\s.-]?\d){9,10})\b/g);
+  if (!matches) return '';
+  for (const m of matches) {
+    const clean = m.replace(/[\s.-]/g, '').replace(/^\+84/, '0');
+    if (/^0[35789]\d{8}$/.test(clean)) {
+      return clean;
+    }
+  }
+  return '';
+}
+
+// ── BOT-01 FIX: Blacklist địa danh ngoại vùng (Huế, Đà Nẵng, TP.HCM, Miền Trung/Nam) ──
 const ADDR_BLACKLIST_BOT = [
+  // Thừa Thiên Huế & Miền Trung
+  'huế', 'thừa thiên', 'thừa thiên huế', 'tứ hạ', 'hương trà', 'hương thủy', 'phú vang', 'phú lộc', 'quảng điền', 'a lưới', 'nam đông',
+  'đà nẵng', 'quảng nam', 'hội an', 'quảng ngãi', 'bình định', 'quy nhơn', 'phú yên', 'nha trang', 'khánh hòa',
+  'ninh thuận', 'bình thuận', 'phan thiết', 'quảng bình', 'quảng trị', 'hà tĩnh', 'nghệ an', 'vinh', 'thanh hóa',
+  // TP. Hồ Chí Minh & Miền Nam
   'quận 1','quận 2','quận 3','quận 4','quận 5','quận 6','quận 7','quận 8','quận 9',
   'quận 10','quận 11','quận 12','bình thạnh','gò vấp','tân bình','tân phú',
   'phú nhuận','bình tân','thủ đức','nhà bè','hóc môn','củ chi','bình chánh',
   'hồ chí minh','tp.hcm','tphcm','sài gòn','saigon',
-  'đà nẵng','bình dương','đồng nai','cần thơ',
+  'nơ trang long', 'era town', 'phạm văn hai', 'phan đăng lưu', 'nguyễn đình chiểu',
+  'tân kỳ tân quý', 'văn lang', 'hutech', 'tôn đức thắng', 'tân sơn', 'bình lợi trung',
+  'bình dương','thủ dầu một','dĩ an','thuận an','đồng nai','biên hòa','cần thơ',
+  'vũng tàu','tây ninh','long an','tiền giang','bến tre','an giang','kiên giang',
+  // Các huyện ngoại thành Hà Nội xa (> 15km)
   'long biên','gia lâm','hoàng mai','thanh trì','thường tín',
-  'đông anh','mê linh','phú xuyên','ba vì','thạch thất','quốc oai',
-  'hoàn kiếm','đống đa','hai bà trưng','cầu giấy','thanh xuân','hà đông','tây hồ',
+  'đông anh','mê linh','phú xuyên','ba vì','thạch thất','quốc oai','sơn tây','phúc thọ',
+  // Nội thành xa không thuộc cụm HaUI
+  'hoàn kiếm','hai bà trưng','đống đa','bạch đằng','khâm thiên','xã đàn','bạch mai','kim ngưu'
 ];
 
 function isBlacklistedAddress(address, text) {
   const combined = (address + ' ' + text).toLowerCase();
-  return ADDR_BLACKLIST_BOT.some(kw => combined.includes(kw));
+  // Safe normalize: 'cổ nhuế' là khu vực hợp lệ gần HaUI CS1, không được coi là 'huế'
+  const safeText = combined.replace(/cổ nhuế/g, 'co_nhue');
+
+  for (const kw of ADDR_BLACKLIST_BOT) {
+    if (kw === 'huế') {
+      if (/\bhuế\b/i.test(safeText)) return true;
+    } else if (safeText.includes(kw)) {
+      return true;
+    }
+  }
+  return false;
 }
 
 // Bán kính tối đa để chấp nhận phòng (km)
@@ -377,30 +420,45 @@ const MAX_DIST_HANAM_KM = 15.0;
 function resolveLocation(address, text, defaultRegion) {
   const combined = (address + ' ' + text).toLowerCase();
 
-  // BOT-01: Từ chối địa danh ngoại vùng ngay từ đầu
-  if (isBlacklistedAddress(address, text)) return null;
+  // 1. Từ chối ngay địa danh ngoại vùng (Huế, Đà Nẵng, Sài Gòn...)
+  if (isBlacklistedAddress(address, text)) {
+    auditLog(`  [REJECT-BLACKLIST-REGION] Phát hiện địa bàn ngoại vùng bị cấm: ${(address || text).substring(0, 60)}`);
+    return null;
+  }
+
+  // 2. Từ chối bài đăng mặt bằng thương mại, kho xưởng
+  if (isCommercialSpam(address + ' ' + text)) {
+    auditLog(`  [REJECT-COMMERCIAL] Phát hiện tin cho thuê mặt bằng / thương mại: ${(address || text).substring(0, 60)}`);
+    return null;
+  }
 
   // Kiểm tra khu vực Hà Nam (CS3)
   if (defaultRegion === 'hanam_cs3' || combined.includes('hà nam') || combined.includes('phủ lý') || combined.includes('phù vân') || combined.includes('cs3')) {
     let lat = HANAM_COORDS["phù vân"].lat;
     let lng = HANAM_COORDS["phù vân"].lng;
     let ward = "Phù Vân";
+    let matchedHN = false;
 
     for (const [w, coords] of Object.entries(HANAM_COORDS)) {
       if (combined.includes(w)) {
         lat = coords.lat;
         lng = coords.lng;
         ward = coords.ward || w;
+        matchedHN = true;
         break;
       }
     }
+
+    if (!matchedHN && !combined.includes('hà nam') && !combined.includes('phủ lý') && !combined.includes('phù vân')) {
+      return null;
+    }
+
     const jitterLat = (Math.random() - 0.5) * 0.003;
     const jitterLng = (Math.random() - 0.5) * 0.003;
     const finalLat = parseFloat((lat + jitterLat).toFixed(5));
     const finalLng = parseFloat((lng + jitterLng).toFixed(5));
 
     const d3 = calcDistance(finalLat, finalLng, HAUI_CS3.lat, HAUI_CS3.lng);
-    // BOT-01: Kiểm tra bán kính CS3
     if (d3 > MAX_DIST_HANAM_KM) {
       auditLog(`  [SKIP-TOO-FAR-CS3] ${d3}km > ${MAX_DIST_HANAM_KM}km: ${(address || text).substring(0, 60)}`);
       return null;
@@ -420,8 +478,7 @@ function resolveLocation(address, text, defaultRegion) {
     };
   }
 
-  // Khu vực Hà Nội (CS1 & CS2)
-  // BOT-01: Bắt buộc phải khớp ít nhất 1 địa danh đã biết
+  // Khu vực Hà Nội (CS1 & CS2) — Bắt buộc phải khớp ít nhất 1 địa danh đã biết quanh HaUI
   let matched = false;
   let lat = HAUI_CS1.lat;
   let lng = HAUI_CS1.lng;
@@ -439,23 +496,17 @@ function resolveLocation(address, text, defaultRegion) {
     }
   }
 
-  // BOT-01 v2: Nếu không khớp địa danh nào — trỏ về HaUI CS1, đánh dấu xấp xỉ
+  // TUYỆT ĐỐI KHÔNG FALLBACK TỌA ĐỘ MÙ QUÁNG NẾU KHÔNG THUỘC KHU VỰC HAUI
   if (!matched) {
-    auditLog(`  [APPROX-LANDMARK] Không khớp địa danh cụ thể, trỏ về HaUI CS1: ${(address || text).substring(0, 60)}`);
-    const jLat = (Math.random() - 0.5) * 0.0008;
-    const jLng = (Math.random() - 0.5) * 0.0008;
-    const aLat = parseFloat((HAUI_CS1.lat + jLat).toFixed(5));
-    const aLng = parseFloat((HAUI_CS1.lng + jLng).toFixed(5));
-    return {
-      lat: aLat, lng: aLng,
-      dia_chi: address || 'Khu vực gần ĐH Công nghiệp Hà Nội (CS1)',
-      quan_huyen: 'Bắc Từ Liêm', tinh_thanh: 'Hà Nội', region: 'hanoi_cs1_cs2',
-      vi_tri_xap_xi: true,
-      distCS1: calcDistance(aLat, aLng, HAUI_CS1.lat, HAUI_CS1.lng),
-      distCS2: calcDistance(aLat, aLng, HAUI_CS2.lat, HAUI_CS2.lng),
-      distCS3: calcDistance(aLat, aLng, HAUI_CS3.lat, HAUI_CS3.lng),
-      co_so_gan_nhat: 'CS1'
-    };
+    const isExplicitHaUI = combined.includes('đại học công nghiệp') || 
+                           combined.includes('đh công nghiệp') || 
+                           combined.includes('dh công nghiệp') || 
+                           combined.includes('haui cs1') || 
+                           combined.includes('haui cs2');
+    if (!isExplicitHaUI) {
+      auditLog(`  [REJECT-UNRECOGNIZED-LOCATION] Không khớp địa danh HaUI, từ chối lưu: ${(address || text).substring(0, 60)}`);
+      return null;
+    }
   }
 
   const jitterLat = (Math.random() - 0.5) * 0.004;
@@ -467,23 +518,10 @@ function resolveLocation(address, text, defaultRegion) {
   const d2 = calcDistance(finalLat, finalLng, HAUI_CS2.lat, HAUI_CS2.lng);
   const d3 = calcDistance(finalLat, finalLng, HAUI_CS3.lat, HAUI_CS3.lng);
 
-  // BOT-01: Kiểm tra bán kính tối đa — nếu quá xa thì cũng trỏ về HaUI (xấp xỉ)
+  // Nếu cự ly xa hơn 8km thì dứt khoát từ chối, KHÔNG ép về CS1
   if (d1 > MAX_DIST_HANOI_KM && d2 > MAX_DIST_HANOI_KM) {
-    auditLog(`  [APPROX-TOO-FAR-HN] CS1=${d1}km CS2=${d2}km, trỏ về HaUI CS1`);
-    const jLat2 = (Math.random() - 0.5) * 0.0008;
-    const jLng2 = (Math.random() - 0.5) * 0.0008;
-    const aLat2 = parseFloat((HAUI_CS1.lat + jLat2).toFixed(5));
-    const aLng2 = parseFloat((HAUI_CS1.lng + jLng2).toFixed(5));
-    return {
-      lat: aLat2, lng: aLng2,
-      dia_chi: address || 'Khu vực gần ĐH Công nghiệp Hà Nội (CS1)',
-      quan_huyen: 'Bắc Từ Liêm', tinh_thanh: 'Hà Nội', region: 'hanoi_cs1_cs2',
-      vi_tri_xap_xi: true,
-      distCS1: calcDistance(aLat2, aLng2, HAUI_CS1.lat, HAUI_CS1.lng),
-      distCS2: calcDistance(aLat2, aLng2, HAUI_CS2.lat, HAUI_CS2.lng),
-      distCS3: calcDistance(aLat2, aLng2, HAUI_CS3.lat, HAUI_CS3.lng),
-      co_so_gan_nhat: 'CS1'
-    };
+    auditLog(`  [REJECT-TOO-FAR-HN] CS1=${d1}km CS2=${d2}km vượt quá bán kính ${MAX_DIST_HANOI_KM}km: ${(address || text).substring(0, 60)}`);
+    return null;
   }
 
   return {
@@ -539,15 +577,25 @@ async function crawlPhongtro123Http(targetTotal, seenUrls, seenHashes) {
       if (!res.ok) continue;
       const html = await res.text();
 
+      // Chỉ lấy link trong container danh sách bài viết chính, loại bỏ 100% sidebar/vip toàn quốc
+      const mainContainerMatch = html.match(/<div[^>]*id=["']left-col["'][^>]*>([\s\S]*?)<\/div>\s*<div[^>]*id=["']right-col/i) ||
+                                 html.match(/<ul[^>]*class=["'][^"']*post-listing[^"']*["'][^>]*>([\s\S]*?)<\/ul>/i) ||
+                                 html.match(/<section[^>]*class=["'][^"']*section-post-listing[^"']*["'][^>]*>([\s\S]*?)<\/section>/i);
+      const searchHtml = mainContainerMatch ? mainContainerMatch[1] : html;
+
       const linkRegex = /href=["']([^"']*-pr\d+\.html)["']/gi;
       const listingUrls = [];
+      const urlBlacklist = ['mat-bang', 'kho-xuong', 'van-phong', 'shophouse', 'kiot', 'hue', 'da-nang', 'tphcm', 'ho-chi-minh', 'binh-duong', 'can-tho', 'dong-nai', 'quan-1', 'quan-7', 'binh-thanh', 'go-vap', 'tan-binh'];
       let m;
-      while ((m = linkRegex.exec(html)) !== null) {
+      while ((m = linkRegex.exec(searchHtml)) !== null) {
         let u = m[1];
         if (!u.startsWith('http')) {
           u = 'https://phongtro123.com' + (u.startsWith('/') ? u : '/' + u);
         }
-        listingUrls.push(u);
+        const lowerU = u.toLowerCase();
+        if (!urlBlacklist.some(bl => lowerU.includes(bl))) {
+          listingUrls.push(u);
+        }
       }
 
       const uniqueUrls = Array.from(new Set(listingUrls));
@@ -588,6 +636,10 @@ async function crawlPhongtro123Http(targetTotal, seenUrls, seenHashes) {
             address = addrMatch[1].replace(/<[^>]+>/g, '').trim();
           }
 
+          // Lọc ngay nếu tiêu đề hoặc địa chỉ chứa tỉnh khác hoặc mặt bằng kinh doanh
+          if (isCommercialSpam(title + ' ' + address)) continue;
+          if (isBlacklistedAddress(address, title)) continue;
+
           const priceMatch = dHtml.match(/(\d+(?:[.,]\d+)?\s*(?:triệu|tr|đ|đồng)\/tháng)/i);
           const priceText = priceMatch ? priceMatch[1] : '';
 
@@ -602,13 +654,19 @@ async function crawlPhongtro123Http(targetTotal, seenUrls, seenHashes) {
                             dHtml.match(/class=["'][^"']*post-summary[^"']*["'][^>]*>([\s\S]*?)<\/div>/i);
           const desc = descMatch ? descMatch[1].replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim() : (title + ' ' + address);
 
+          if (isCommercialSpam(desc) || isBlacklistedAddress('', desc)) continue;
+
           const imgMatches = Array.from(dHtml.matchAll(/https:\/\/[^"'\s]+\.(?:jpg|webp|png)/gi))
             .map(x => x[0])
             .filter(u => (u.includes('static123.com') || u.includes('images/thumbs') || u.includes('phongtro123')) && !u.includes('logo') && !u.includes('icon') && !u.includes('avatar'));
           const imgs = Array.from(new Set(imgMatches)).slice(0, 5);
 
           const price = parsePrice(priceText) || parsePrice(title) || (src.isHaNam ? 1200000 : 2500000);
+          if (price > 15000000 || price < 600000) continue; // Bỏ qua mặt bằng kinh doanh đắt tiền hoặc tin ảo
+
           const area = parseArea(areaText) || 20;
+          if (area > 120) continue; // Bỏ qua mặt bằng diện tích lớn
+
           const amenities = parseAmenities(desc + ' ' + title);
           const loc = resolveLocation(address, title, src.isHaNam ? 'hanam_cs3' : 'hanoi_cs1_cs2');
           if (!loc) continue;
@@ -659,7 +717,7 @@ async function crawlPhongtro123Http(targetTotal, seenUrls, seenHashes) {
             },
             anh: imgs.length > 0
               ? imgs.map(u => ({ url_goc: u, mo_ta: "Ảnh thực tế bài đăng" }))
-              : [{ url_goc: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80", mo_ta: "Phòng trọ" }],
+              : [{ url_goc: "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/03/06/z7592968449853-c4bb6e036ec93ad1901fb47ddb103308_1772784394.jpg", mo_ta: "Phòng trọ" }],
             phan_tich: {
               da_kiem_tra: true,
               scam_score: 0.05
@@ -951,8 +1009,8 @@ async function runCrawlJob(options = {}) {
             anh: (post.imgs && post.imgs.length > 0)
               ? post.imgs.map(u => ({ url_goc: u, mo_ta: "Ảnh thực tế bài đăng FB" }))
               : [
-                  { url_goc: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80", mo_ta: "Phòng trọ sinh viên" },
-                  { url_goc: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80", mo_ta: "Không gian thoáng mát" }
+                  { url_goc: "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/03/06/z7592968449853-c4bb6e036ec93ad1901fb47ddb103308_1772784394.jpg", mo_ta: "Phòng trọ sinh viên" },
+                  { url_goc: "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/08/25/1787627501299-943781495388447280-g2637657029613128114-h_1787641779.jpg", mo_ta: "Không gian thoáng mát" }
                 ],
             phan_tich: {
               da_kiem_tra: true,
@@ -992,8 +1050,13 @@ async function runCrawlJob(options = {}) {
         await page.waitForTimeout(1500);
 
         const listingUrls = await page.evaluate(() => {
-          const anchors = Array.from(document.querySelectorAll('a[href*="-pr"]'));
-          return anchors.map(a => a.href).filter(h => h.includes('-pr') && h.endsWith('.html'));
+          const container = document.querySelector('#left-col .post-listing, #left-col .post-list, .section-post-listing, #left-col') || document;
+          const anchors = Array.from(container.querySelectorAll('a[href*="-pr"]'));
+          const urlBlacklist = ['mat-bang', 'kho-xuong', 'van-phong', 'shophouse', 'kiot', 'hue', 'da-nang', 'tphcm', 'ho-chi-minh', 'binh-duong', 'can-tho', 'dong-nai', 'quan-1', 'quan-7', 'binh-thanh', 'go-vap', 'tan-binh'];
+          return anchors
+            .filter(a => !a.closest('#right-col, .sidebar, .box-vip, footer'))
+            .map(a => a.href)
+            .filter(h => h.includes('-pr') && h.endsWith('.html') && !urlBlacklist.some(bl => h.toLowerCase().includes(bl)));
         });
 
         const uniqueUrls = Array.from(new Set(listingUrls));
@@ -1061,11 +1124,17 @@ async function runCrawlJob(options = {}) {
             });
 
             if (!detail.title) continue;
+            if (isCommercialSpam(detail.title + ' ' + detail.address + ' ' + detail.desc)) continue;
+            if (isBlacklistedAddress(detail.address, detail.title + ' ' + detail.desc)) continue;
 
             const price = parsePrice(detail.priceText) || parsePrice(detail.title) || (src.isHaNam ? 1200000 : 2500000);
+            if (price > 15000000 || price < 600000) continue;
             const area = parseArea(detail.areaText) || 20;
+            if (area > 120) continue;
+
             const amenities = parseAmenities(detail.desc + ' ' + detail.title);
             const loc = resolveLocation(detail.address, detail.title, src.isHaNam ? 'hanam_cs3' : 'hanoi_cs1_cs2');
+            if (!loc) continue;
 
             const roomObj = {
               ma_phong: roomId,
@@ -1107,7 +1176,7 @@ async function runCrawlJob(options = {}) {
               },
               anh: detail.imgs.length > 0
                 ? detail.imgs.map(u => ({ url_goc: u, mo_ta: "Ảnh thực tế bài đăng" }))
-                : [{ url_goc: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80", mo_ta: "Phòng trọ" }],
+                : [{ url_goc: "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/03/06/z7592968449853-c4bb6e036ec93ad1901fb47ddb103308_1772784394.jpg", mo_ta: "Phòng trọ" }],
               phan_tich: {
                 da_kiem_tra: true,
                 scam_score: 0.05

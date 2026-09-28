@@ -23,15 +23,15 @@ function calcDistance(lat1, lon1, lat2, lon2) {
 }
 
 const PHOTOS = [
-  'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&fit=crop',
-  'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&fit=crop',
-  'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&fit=crop',
-  'https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=800&fit=crop',
-  'https://images.unsplash.com/photo-1554995207-c18c203602cb?w=800&fit=crop',
-  'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&fit=crop',
-  'https://images.unsplash.com/photo-1598928506311-c55ded91a20c?w=800&fit=crop',
-  'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&fit=crop',
-  'https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=800&fit=crop'
+  'https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/03/06/z7592968449853-c4bb6e036ec93ad1901fb47ddb103308_1772784394.jpg',
+  'https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/03/06/z7592968382129-700ed78e91513289d9226ba80585bfaa_1772784390.jpg',
+  'https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/03/06/z7592968397722-b7a73914298c5f1475db35724428448a_1772784390.jpg',
+  'https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/08/25/1787627501299-943781495388447280-g2637657029613128114-h_1787641779.jpg',
+  'https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/08/25/1787627501499-943781495388447280-g2637657029613128114-h_1787641781.jpg',
+  'https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/08/11/img-4698_1786412669.jpg',
+  'https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2025/10/16/z4374604472513-1da0935e123273313c312ae39990d7b5_1760579763.jpg',
+  'https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/08/20/file-20220208-105502-img-upload-20211226-104538_1787209616.jpg',
+  'https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/08/04/1784602119348-943781495388447280-g7608311385472649406-h_1785813104.jpg'
 ];
 
 const REAL_POSTS = [

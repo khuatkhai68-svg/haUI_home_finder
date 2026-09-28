@@ -696,7 +696,7 @@
 
         const img = (room.images && room.images.length)
           ? room.images[0]
-          : 'https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=300&h=200&fit=crop';
+          : 'https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/03/06/z7592968449853-c4bb6e036ec93ad1901fb47ddb103308_1772784394.jpg';
         
         const originCoords = getOriginCoords(room);
         const googleDirUrl = `https://www.google.com/maps/dir/?api=1&origin=${originCoords}&destination=${room.lat},${room.lng}`;
@@ -704,7 +704,7 @@
         marker.bindPopup(`
           <div class="popup-card">
             <div class="popup-img-wrap">
-              <img src="${img}" alt="${room.title}" onerror="this.src='https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=300&h=200&fit=crop'"/>
+              <img src="${img}" alt="${room.title}" onerror="this.src='https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/03/06/z7592968449853-c4bb6e036ec93ad1901fb47ddb103308_1772784394.jpg'"/>
               <span class="popup-source-badge" style="background:${isFB ? '#1877f2' : (isHN ? '#059669' : '#0284c7')};">
                 ${isFB ? 'Facebook Group' : 'phongtro123.com'}
               </span>
@@ -749,7 +749,7 @@
       listEl.innerHTML = filteredRooms.map(r => {
         const img = (r.images && r.images.length)
           ? r.images[0]
-          : 'https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=100&h=80&fit=crop';
+          : 'https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/03/06/z7592968449853-c4bb6e036ec93ad1901fb47ddb103308_1772784394.jpg';
         const isFB = r.nguon === 'facebook';
         const isHN = r.city === 'Hà Nam' || r.nearestCampus === 'CS3';
         const distStr = isHN
@@ -764,7 +764,7 @@
                onmouseover="this.style.background='#f8fafc'"
                onmouseout="this.style.background= selectedId==='${r.id}' ? '#eff6ff' : 'white'">
             <img src="${img}" alt="" style="width:56px;height:46px;object-fit:cover;border-radius:6px;flex-shrink:0;"
-                 onerror="this.src='https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=100&h=80&fit=crop'"/>
+                 onerror="this.src='https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/08/25/1787627501299-943781495388447280-g2637657029613128114-h_1787641779.jpg'"/>
             <div style="flex:1;min-width:0;">
               <div style="display:flex;align-items:center;gap:4px;margin-bottom:2px;">
                 <span style="font-size:0.62rem;font-weight:700;padding:1px 5px;border-radius:4px;background:${isHN?'#d1fae5':(isFB?'#dbeafe':'#e0f2fe')};color:${isHN?'#065f46':(isFB?'#1e40af':'#0369a1')};">
@@ -796,7 +796,7 @@
       selectedId = room.id;
       const img = (room.images && room.images.length)
         ? room.images[0]
-        : 'https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=400&h=200&fit=crop';
+        : 'https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/03/06/z7592968449853-c4bb6e036ec93ad1901fb47ddb103308_1772784394.jpg';
       const isFB = room.nguon === 'facebook';
       const isHN = room.city === 'Hà Nam' || room.nearestCampus === 'CS3';
       const originCoords = getOriginCoords(room);
@@ -810,7 +810,7 @@
         <div style="background:white;padding:0.75rem;border-radius:12px;border:1.5px solid #3b82f6;box-shadow:0 4px 16px rgba(37,99,235,0.12);">
           <div style="position:relative;height:120px;overflow:hidden;border-radius:8px;">
             <img src="${img}" alt="${room.title}"
-                 onerror="this.src='https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=400&h=200&fit=crop'"
+                 onerror="this.src='https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/08/25/1787627501299-943781495388447280-g2637657029613128114-h_1787641779.jpg'"
                  style="width:100%;height:100%;object-fit:cover;" />
             <span style="position:absolute;top:6px;left:6px;background:${isFB?'#1877f2':(isHN?'#059669':'#0284c7')};color:white;font-size:0.65rem;font-weight:800;padding:2px 7px;border-radius:4px;">
               ${isHN ? '🌿 CS3 Hà Nam' : (isFB ? '📘 Facebook Group' : '🏠 phongtro123.com')}
