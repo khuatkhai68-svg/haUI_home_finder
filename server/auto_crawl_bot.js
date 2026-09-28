@@ -47,6 +47,36 @@ const PW_PATH     = path.resolve(__dirname, '..', 'botdata', 'playwright-mcp', '
 
 if (!fs.existsSync(DB_ROOM_DIR)) fs.mkdirSync(DB_ROOM_DIR, { recursive: true });
 if (!fs.existsSync(LOG_DIR))     fs.mkdirSync(LOG_DIR, { recursive: true });
+const PHOTOS_DIR  = path.resolve(__dirname, '..', 'alldata', 'room', 'photos');
+if (!fs.existsSync(PHOTOS_DIR)) fs.mkdirSync(PHOTOS_DIR, { recursive: true });
+
+async function saveImagesLocally(imgs, roomId) {
+  if (!imgs || !imgs.length) return [];
+  const results = [];
+  for (let i = 0; i < Math.min(imgs.length, 6); i++) {
+    const u = imgs[i];
+    const destName = `${roomId}_photo_${i + 1}.jpg`;
+    const destPath = path.join(PHOTOS_DIR, destName);
+    try {
+      const res = await fetch(u, {
+        headers: {
+          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
+          'Accept': 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
+        }
+      });
+      if (res.ok) {
+        const buf = Buffer.from(await res.arrayBuffer());
+        if (buf.length > 3000) {
+          fs.writeFileSync(destPath, buf);
+          results.push({ url_goc: `/photos/${destName}`, mo_ta: "Ảnh thực tế bài đăng FB" });
+          continue;
+        }
+      }
+    } catch (e) {}
+    results.push({ url_goc: u, mo_ta: "Ảnh thực tế bài đăng FB" });
+  }
+  return results;
+}
 
 // ── Tọa độ các cơ sở HaUI ──────────────────────────────────────────────────────
 const HAUI_CS1 = { lat: 21.05373, lng: 105.73510, name: "HaUI Cơ sở 1 (Minh Khai - Bắc Từ Liêm)" };
@@ -863,6 +893,14 @@ async function runCrawlJob(options = {}) {
         // Cuộn để tải thêm bài viết (tối đa 25 nhịp cuộn)
         for (let s = 1; s <= 25; s++) {
           const batch = await page.evaluate((grp) => {
+            // Tự động bấm "Xem thêm" / "See more" để mở rộng toàn văn bài viết và số điện thoại
+            document.querySelectorAll('div[role="button"], span').forEach(el => {
+              const txt = (el.innerText || '').trim();
+              if (txt === 'Xem thêm' || txt === 'See more') {
+                try { el.click(); } catch(e) {}
+              }
+            });
+
             const articles = document.querySelectorAll('[role="article"], div[data-pagelet*="FeedUnit"]');
             const items = [];
 
@@ -1007,7 +1045,7 @@ async function runCrawlJob(options = {}) {
               facebook: post.href
             },
             anh: (post.imgs && post.imgs.length > 0)
-              ? post.imgs.map(u => ({ url_goc: u, mo_ta: "Ảnh thực tế bài đăng FB" }))
+              ? await saveImagesLocally(post.imgs, roomId)
               : [
                   { url_goc: "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/03/06/z7592968449853-c4bb6e036ec93ad1901fb47ddb103308_1772784394.jpg", mo_ta: "Phòng trọ sinh viên" },
                   { url_goc: "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/08/25/1787627501299-943781495388447280-g2637657029613128114-h_1787641779.jpg", mo_ta: "Không gian thoáng mát" }

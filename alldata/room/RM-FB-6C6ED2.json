@@ -17,41 +17,53 @@
     "dia_chi": "Khu vực Nhổn, Bắc Từ Liêm, Hà Nội (gần HaUI CS1/CS2)",
     "quan_huyen": "Bắc Từ Liêm",
     "tinh_thanh": "Hà Nội",
-    "mo_ta": "Duệ Ngọc 16 giờ trước 16 giờ · CCMN siêu xinh cách FPT, Đông Á, UEB chưa đến 1km giá 4tr F… Xem thêm 1 Thích Bình luận Chia sẻ Duệ Ngọc Tác giả ib 8 phút",
-    "tien_ich": [],
-    "khong_chung_chu": false,
-    "gio_giac_tu_do": false
+    "mo_ta": "CCMN siêu xinh cách FPT, Đông Á, UEB chưa đến 1km giá 4tr. Full nội thất có máy giặt riêng, tủ lạnh, bếp từ,... vác người không đến ở. Phòng nào cũng có ban công siêu thoáng. 3 ngày nữa hoàn thiện, có thể đến ở luôn hoặc 1/10. Inbox/LH: 0339818199",
+    "tien_ich": [
+      "dieu_hoa",
+      "nong_lanh",
+      "may_giat",
+      "tu_lanh",
+      "bep",
+      "ban_cong",
+      "full_noi_that"
+    ],
+    "khong_chung_chu": true,
+    "gio_giac_tu_do": true
   },
   "vi_tri": {
     "lat": 21.05504,
     "lng": 105.73539,
-    "khoang_cach_cs1_km": 0.1,
+    "khoang_cach_cs1_km": 0.8,
     "khoang_cach_cs2_km": 1.2,
     "khoang_cach_cs3_km": 59.6,
     "co_so_gan_nhat": "CS1",
-    "thoi_gian_di_xe_phut": 0
+    "thoi_gian_di_xe_phut": 3
   },
   "lien_he": {
-    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
-    "so_dien_thoai": "Liên hệ qua bài viết",
+    "ten_chu": "Duệ Ngọc",
+    "so_dien_thoai": "0339818199",
     "facebook": "https://www.facebook.com/groups/1896518147417522/posts/2805777023158292/"
   },
   "anh": [
     {
-      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2021/09/18/img-20201011-184046_1631959461.jpg",
-      "mo_ta": "Ảnh thực tế bài đăng"
+      "url_goc": "/photos/RM-FB-6C6ED2_photo_1.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng FB"
     },
     {
-      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/08/18/1787055915224-1921455383095753661-8090169437290380625-467a46304a9a290cb2b2e2d70d96c549_1787056700.jpg",
-      "mo_ta": "Ảnh thực tế bài đăng"
+      "url_goc": "/photos/RM-FB-6C6ED2_photo_2.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng FB"
     },
     {
-      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/08/18/1787055915259-1921455383095753661-8090169437290380625-2e66218d8a438a5f1aeb673b9fc28cb4_1787056700.jpg",
-      "mo_ta": "Ảnh thực tế bài đăng"
+      "url_goc": "/photos/RM-FB-6C6ED2_photo_3.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng FB"
     },
     {
-      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/08/18/1787055915290-1921455383095753661-8090169437290380625-a95e6c15dfccb0ea04a6ed66f816ba3c_1787056701.jpg",
-      "mo_ta": "Ảnh thực tế bài đăng"
+      "url_goc": "/photos/RM-FB-6C6ED2_photo_4.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng FB"
+    },
+    {
+      "url_goc": "/photos/RM-FB-6C6ED2_photo_5.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng FB"
     }
   ],
   "phan_tich": {
