@@ -396,6 +396,32 @@
     .user-dropdown-item.danger:hover {
       background: #fef2f2;
     }
+
+    @media (max-width: 768px) {
+      .auth-modal-card {
+        max-width: 95vw;
+        border-radius: 16px;
+      }
+      .user-info-text {
+        display: none;
+      }
+      .user-profile-btn {
+        padding: 0.25rem;
+        border: none;
+        background: transparent;
+      }
+      .auth-quick-buttons {
+        gap: 0.35rem;
+      }
+      .btn-quick-role {
+        font-size: 0.68rem;
+        padding: 0.4rem 0.2rem;
+      }
+      .user-dropdown-menu {
+        right: -8px;
+        width: 220px;
+      }
+    }
   `;
 
   // Thêm styles vào <head>

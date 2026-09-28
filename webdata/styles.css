@@ -55,7 +55,11 @@
 /* ---- Reset & Base ---- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  max-width: 100%;
+  overflow-x: hidden;
+}
 
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -65,6 +69,8 @@ body {
   display: flex;
   flex-direction: column;
   line-height: 1.6;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 img { max-width: 100%; display: block; }
@@ -1641,7 +1647,9 @@ input, select, textarea { font-family: inherit; outline: none; }
 .detail-container { max-width: 900px; margin: 2.5rem auto; padding: 0 1rem; }
 .detail-card { background: white; border-radius: 1.5rem; box-shadow: var(--shadow-xl); overflow: hidden; }
 .detail-images { position: relative; }
-.detail-main-image { width: 100%; height: 24rem; object-fit: cover; display: block; transition: transform 0.5s ease; }
+.detail-main-wrap { position: relative; overflow: hidden; border-radius: 12px; height: 420px; background: #0f172a; }
+.detail-main-image { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease; }
+.detail-thumb-item { overflow: hidden; height: 140px; border-radius: 8px; cursor: pointer; }
 .detail-main-image:hover { transform: scale(1.02); }
 .avm-badge {
   position: absolute; top: 1rem; left: 1rem;
@@ -1700,6 +1708,36 @@ input, select, textarea { font-family: inherit; outline: none; }
 .sidebar-link:hover { background: var(--color-slate-50); color: var(--color-slate-900); }
 .sidebar-link.active { background: var(--color-blue-50); color: var(--color-blue-700); }
 .sidebar-badge { font-size: 0.75rem; color: var(--color-muted-fg); margin-left: auto; }
+
+/* Admin Mobile Navigation Tabs */
+.admin-mobile-nav {
+  display: none;
+}
+.admin-mobile-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.45rem 0.85rem;
+  border-radius: 9999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #475569;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.15s ease;
+}
+.admin-mobile-tab:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+.admin-mobile-tab.active {
+  background: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+}
+
 .admin-main { flex: 1; padding: 2rem; overflow-y: auto; }
 .admin-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; }
 .admin-header h1 { font-size: 1.5rem; font-weight: 700; color: var(--color-slate-900); }
@@ -1759,19 +1797,29 @@ input, select, textarea { font-family: inherit; outline: none; }
 @media (max-width: 1024px) {
   .listings-sidebar { display: none; }
   .map-sidebar { width: 320px; }
+  .admin-sidebar { width: 220px; }
 }
+
 @media (max-width: 768px) {
-  body {
-    padding-bottom: 66px !important;
+  /* Prevent horizontal drag/scroll blowout on phones */
+  html, body {
+    max-width: 100vw;
+    overflow-x: hidden;
   }
+  body {
+    padding-bottom: calc(64px + env(safe-area-inset-bottom, 0px)) !important;
+  }
+
+  /* ---- Mobile Bottom Navigation Bar ---- */
   .mobile-bottom-nav {
     display: flex;
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
-    height: 62px;
-    background: rgba(255, 255, 255, 0.96);
+    height: 60px;
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    background: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border-top: 1px solid #e2e8f0;
@@ -1789,54 +1837,503 @@ input, select, textarea { font-family: inherit; outline: none; }
     height: 100%;
     color: #64748b;
     text-decoration: none;
-    font-size: 0.72rem;
+    font-size: 0.68rem;
     font-weight: 600;
-    gap: 3px;
+    gap: 2px;
     transition: all 0.2s ease;
     cursor: pointer;
     background: none;
     border: none;
+    padding: 4px 0;
   }
   .mobile-nav-item:hover, .mobile-nav-item.active {
     color: #2563eb;
     font-weight: 700;
   }
   .mobile-nav-item svg {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     transition: transform 0.2s;
   }
   .mobile-nav-item:active svg {
     transform: scale(0.9);
   }
 
-  .navbar-nav { display: none; }
-  .navbar-subtitle { display: none; }
-  .btn-ai-assist { display: none; }
-  .listings-layout { flex-direction: column; }
-  .search-box { flex-direction: column; }
-  .search-btn { width: 100%; }
-  .admin-sidebar { display: none; }
-  .map-layout { flex-direction: column; }
-  .map-sidebar { width: 100%; height: auto; max-height: 50vh; }
-  .detail-header { flex-direction: column; }
-  .detail-price-box { text-align: left; }
-  .costs-grid { grid-template-columns: 1fr; }
-  
+  /* ---- Header / Navbar on Mobile ---- */
+  .navbar-inner {
+    height: 56px;
+    padding: 0 0.75rem;
+  }
+  .navbar-logo {
+    width: 36px;
+    height: 36px;
+  }
+  .navbar-title {
+    font-size: 0.925rem;
+    line-height: 1.15;
+  }
+  .navbar-subtitle {
+    display: none !important;
+  }
+  .navbar-nav {
+    display: none !important;
+  }
+  .btn-ai-assist {
+    display: none !important;
+  }
+  .navbar-actions {
+    gap: 0.4rem;
+  }
+  /* Hide 'Tin đã lưu' text label, only keep icon and badge */
+  #nav-fav-btn {
+    padding: 0.35rem 0.55rem !important;
+    font-size: 0.75rem !important;
+  }
+  #nav-fav-btn span:not(#fav-count-badge) {
+    display: none;
+  }
+  /* Hide large 'Đăng tin trọ' button in navbar on mobile since landlord page is in bottom nav */
+  .navbar-actions a[href="landlord.html"].btn-primary {
+    display: none !important;
+  }
+  .btn-login {
+    padding: 0.35rem 0.7rem !important;
+    font-size: 0.78rem !important;
+  }
+
+  /* ---- Hero Section & AI Copilot on Mobile ---- */
+  .hero-section {
+    padding: 2rem 0.85rem 2.25rem !important;
+    min-height: auto !important;
+  }
+  .hero-badge {
+    font-size: 0.72rem !important;
+    padding: 0.3rem 0.75rem !important;
+    max-width: 95%;
+    margin-bottom: 1rem !important;
+    white-space: normal !important;
+    text-align: center;
+  }
+  .hero-title {
+    font-size: clamp(1.65rem, 7vw, 2.15rem) !important;
+    margin-bottom: 1.15rem !important;
+    line-height: 1.25 !important;
+  }
+  .ai-copilot-container {
+    width: 100% !important;
+  }
+  .ai-mode-selector {
+    gap: 0.35rem !important;
+    margin-bottom: 0.6rem !important;
+  }
+  .ai-mode-pill {
+    font-size: 0.75rem !important;
+    padding: 0.35rem 0.65rem !important;
+  }
+  .ai-input-bar {
+    padding: 0.45rem 0.55rem 0.45rem 0.85rem !important;
+    border-radius: 1.25rem !important;
+    gap: 0.45rem !important;
+  }
+  .ai-prompt-input {
+    font-size: 0.875rem !important;
+  }
+  .ai-submit-btn {
+    padding: 0.55rem 0.85rem !important;
+    font-size: 0.8rem !important;
+    border-radius: 0.85rem !important;
+  }
+  .ai-live-canvas {
+    padding: 1rem !important;
+    border-radius: 1.15rem !important;
+    margin-top: 1rem !important;
+  }
+  .canvas-rooms-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.65rem !important;
+  }
+  .canvas-room-card {
+    padding: 0.6rem !important;
+    gap: 0.6rem !important;
+  }
+  .canvas-room-img {
+    width: 75px !important;
+    height: 75px !important;
+  }
+  .quick-prompt-chips {
+    margin-top: 1rem !important;
+    justify-content: flex-start !important;
+    overflow-x: auto !important;
+    flex-wrap: nowrap !important;
+    -webkit-overflow-scrolling: touch;
+    padding: 0.25rem 0.25rem 0.5rem !important;
+    gap: 0.4rem !important;
+    scrollbar-width: none;
+  }
+  .quick-prompt-chips::-webkit-scrollbar {
+    display: none;
+  }
+  .chip-ai-btn {
+    white-space: nowrap !important;
+    font-size: 0.75rem !important;
+    padding: 0.35rem 0.75rem !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* ---- Category Nav Bar on Mobile ---- */
+  .category-nav-bar {
+    top: 56px !important;
+  }
+  .category-nav-inner {
+    padding: 0.4rem 0.6rem !important;
+    gap: 0.35rem !important;
+  }
+  .cat-item {
+    padding: 0.4rem 0.75rem !important;
+    font-size: 0.78rem !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* ---- Listings Stream on Mobile ---- */
+  .listings-section {
+    padding: 1.25rem 0.65rem 3rem !important;
+  }
+  .listings-layout {
+    flex-direction: column !important;
+  }
+  .listings-headline-box {
+    padding: 0.85rem !important;
+    border-radius: 14px !important;
+    margin-bottom: 0.85rem !important;
+  }
+  .listings-main-title {
+    font-size: 1.15rem !important;
+    margin-bottom: 0.35rem !important;
+    line-height: 1.35 !important;
+  }
+  .listings-sub-desc {
+    font-size: 0.78rem !important;
+    line-height: 1.45 !important;
+    margin-bottom: 0.65rem !important;
+  }
+  .quick-campus-pills {
+    gap: 0.35rem !important;
+    padding-top: 0.5rem !important;
+  }
+  .pill-btn {
+    padding: 0.3rem 0.6rem !important;
+    font-size: 0.75rem !important;
+  }
+
+  /* Listings Control Bar: Sort Tabs horizontally scrollable */
+  .listings-control-bar {
+    padding: 0.65rem 0.75rem !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.6rem !important;
+    margin-bottom: 0.85rem !important;
+  }
+  .sort-tabs-group {
+    display: flex !important;
+    overflow-x: auto !important;
+    flex-wrap: nowrap !important;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 0.35rem !important;
+    width: 100% !important;
+    padding-bottom: 2px;
+  }
+  .sort-tabs-group::-webkit-scrollbar {
+    display: none;
+  }
+  .sort-tab-btn {
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+    padding: 0.35rem 0.65rem !important;
+    font-size: 0.78rem !important;
+  }
+
+  /* Room Cards on Mobile */
+  .rooms-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+  .rooms-grid.list-mode {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1rem !important;
+  }
+  .rooms-grid.list-mode .room-card {
+    flex-direction: column !important;
+    border-radius: 16px !important;
+  }
+  .rooms-grid.list-mode .room-image {
+    width: 100% !important;
+    height: 185px !important;
+  }
+  .room-body {
+    padding: 0.85rem !important;
+  }
+  .room-title {
+    font-size: 0.925rem !important;
+    line-height: 1.35 !important;
+  }
+  .room-price-val {
+    font-size: 1.18rem !important;
+  }
+  .room-footer {
+    flex-wrap: wrap !important;
+    gap: 0.5rem !important;
+    padding-top: 0.65rem !important;
+  }
+  .room-author-info {
+    max-width: 55% !important;
+  }
+  .room-card-actions {
+    margin-left: auto;
+    gap: 0.35rem !important;
+  }
+  .btn-call-fast {
+    padding: 0.4rem 0.65rem !important;
+    font-size: 0.75rem !important;
+    border-radius: 6px !important;
+  }
+  .btn-view-fast {
+    padding: 0.4rem 0.75rem !important;
+    font-size: 0.75rem !important;
+    border-radius: 6px !important;
+  }
+
+  /* ---- AI Chat Assistant on Mobile ---- */
   .chat-fab {
-    bottom: 4.8rem !important;
-    right: 1rem !important;
-    padding: 0.6rem 1rem !important;
-    font-size: 0.85rem !important;
+    bottom: calc(68px + env(safe-area-inset-bottom, 0px)) !important;
+    right: 0.85rem !important;
+    padding: 0.5rem 0.85rem !important;
+    font-size: 0.8rem !important;
+    z-index: 999 !important;
   }
   .chat-window {
     bottom: 0 !important;
     right: 0 !important;
+    left: 0 !important;
     width: 100vw !important;
+    max-width: 100vw !important;
     height: 85vh !important;
     max-height: 85vh !important;
     border-radius: 1.5rem 1.5rem 0 0 !important;
     z-index: 1050 !important;
+  }
+  .chat-messages {
+    padding: 0.75rem !important;
+    gap: 0.75rem !important;
+  }
+  .msg-bubble {
+    max-width: 90% !important;
+    font-size: 0.825rem !important;
+    padding: 0.7rem 0.85rem !important;
+  }
+
+  /* ---- Map Page on Mobile ---- */
+  .map-layout {
+    flex-direction: column !important;
+    height: calc(100vh - 56px - 60px) !important;
+    position: relative !important;
+  }
+  .map-sidebar {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: 40vh !important;
+    border-right: none !important;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 0.75rem !important;
+    overflow-y: auto !important;
+  }
+  .map-container {
+    flex: 1 !important;
+    height: 100% !important;
+    min-height: 250px !important;
+  }
+  .map-top-bar {
+    top: 0.5rem !important;
+    left: 0.5rem !important;
+    right: 0.5rem !important;
+    gap: 4px !important;
+  }
+  .layer-selector {
+    padding: 2px !important;
+  }
+  .layer-btn {
+    padding: 4px 7px !important;
+    font-size: 0.68rem !important;
+  }
+  .quick-view-pills {
+    display: flex !important;
+    overflow-x: auto !important;
+    flex-wrap: nowrap !important;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    max-width: 100% !important;
+    gap: 4px !important;
+  }
+  .quick-view-pills::-webkit-scrollbar {
+    display: none;
+  }
+  .quick-pill {
+    padding: 4px 8px !important;
+    font-size: 0.68rem !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* ---- Room Detail Page on Mobile ---- */
+  .detail-container {
+    margin: 0.75rem auto 2rem !important;
+    padding: 0 0.5rem !important;
+  }
+  .detail-card {
+    border-radius: 16px !important;
+  }
+  .detail-main-wrap {
+    height: 230px !important;
+  }
+  .detail-main-image {
+    height: 100% !important;
+  }
+  .detail-thumb-item {
+    height: 65px !important;
+  }
+  .detail-body {
+    padding: 1rem !important;
+  }
+  .detail-header {
+    flex-direction: column !important;
+    gap: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
+  .detail-title {
+    font-size: 1.15rem !important;
+    line-height: 1.35 !important;
+  }
+  .detail-price-box {
+    width: 100% !important;
+    min-width: 0 !important;
+    text-align: left !important;
+    padding: 0.85rem 1rem !important;
+    border-radius: 10px !important;
+  }
+  .detail-price {
+    font-size: 1.5rem !important;
+  }
+  .costs-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 0.5rem !important;
+  }
+
+  /* ---- Landlord Page on Mobile ---- */
+  .landlord-hero {
+    padding: 1.75rem 1rem 2rem !important;
+  }
+  .landlord-hero h1 {
+    font-size: 1.35rem !important;
+    line-height: 1.3 !important;
+  }
+  .landlord-tabs {
+    overflow-x: auto !important;
+    flex-wrap: nowrap !important;
+    scrollbar-width: none;
+    gap: 0.5rem !important;
+  }
+  .landlord-tabs::-webkit-scrollbar {
+    display: none;
+  }
+  .landlord-tab-btn {
+    padding: 0.65rem 0.85rem !important;
+    font-size: 0.82rem !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* ---- Admin Page on Mobile ---- */
+  .admin-layout {
+    flex-direction: column !important;
+    height: auto !important;
+    min-height: calc(100vh - 56px - 60px) !important;
+  }
+  .admin-sidebar {
+    display: none !important;
+  }
+  .admin-mobile-nav {
+    display: flex !important;
+    overflow-x: auto !important;
+    white-space: nowrap !important;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 0.5rem 0.75rem !important;
+    background: white !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+    gap: 0.4rem !important;
+    position: sticky !important;
+    top: 56px !important;
+    z-index: 35 !important;
+    width: 100% !important;
+  }
+  .admin-mobile-nav::-webkit-scrollbar {
+    display: none;
+  }
+  .admin-main {
+    padding: 1rem 0.65rem !important;
+    overflow-x: hidden !important;
+  }
+  .admin-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.75rem !important;
+    margin-bottom: 1.25rem !important;
+  }
+  .admin-header h1 {
+    font-size: 1.25rem !important;
+  }
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.65rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+  .stat-card {
+    padding: 0.85rem !important;
+    border-radius: 12px !important;
+  }
+  .stat-value {
+    font-size: 1.35rem !important;
+  }
+  .crawler-table th, .crawler-table td {
+    padding: 0.65rem 0.75rem !important;
+    font-size: 0.75rem !important;
+  }
+  .crawler-panel {
+    border-radius: 14px !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* ---- Small Phone Specific (< 400px, e.g. iPhone SE, Galaxy A) ---- */
+@media (max-width: 400px) {
+  .hero-title {
+    font-size: 1.55rem !important;
+  }
+  .ai-submit-btn span {
+    display: none;
+  }
+  .ai-submit-btn {
+    padding: 0.55rem 0.65rem !important;
+  }
+  .costs-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .stats-grid {
+    grid-template-columns: 1fr !important;
   }
 }
 

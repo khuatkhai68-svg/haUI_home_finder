@@ -32,6 +32,7 @@ webdata/*.jpg
 
 # Build artifacts
 *.log
+!ho_so_nop/*.log
 npm-debug.log*
 
 # Subdirectory artifacts

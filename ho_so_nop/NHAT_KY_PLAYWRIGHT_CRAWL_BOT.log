@@ -1,0 +1,964 @@
+[00:15:09 25/9/2026] ================================================================================
+[00:15:09 25/9/2026] 🚀 [CrawlBot] BẮT ĐẦU CHU KỲ CÀO DỮ LIỆU TỰ ĐỘNG (CHU KỲ 4 TIẾNG)
+[00:15:09 25/9/2026] 🎯 Mục tiêu: +50 phòng Facebook công khai | +15 phòng từ nguồn khác
+[00:15:09 25/9/2026] ⚖️ Cam kết: 100% tuân thủ Nghị định 13/2023/NĐ-CP, khử PII, chống trùng SHA-256
+[00:15:09 25/9/2026] ================================================================================
+[00:15:09 25/9/2026] 📊 Hiện có 224 phòng trong cơ sở dữ liệu để kiểm tra trùng.
+[00:15:09 25/9/2026] 
+── [PHẦN A] CÀO PHÒNG TRỌ FACEBOOK (CÁC NHÓM CÔNG KHAI HAUI CS1, CS2, CS3) ──
+[00:15:09 25/9/2026] 
+🔎 [Quét nhóm FB]: Nhà trọ Nhổn - Nguyên Xá - Văn Trì - ĐH Công Nghiệp Hà Nội (80K tv) (hanoi_cs1_cs2)
+[00:15:09 25/9/2026]    URL: https://www.facebook.com/groups/1896518147417522/?locale=vi_VN
+[00:15:31 25/9/2026]    → Bóc tách được 8 bài viết thô từ nhóm.
+[00:15:31 25/9/2026]    → Nhóm này đã lưu thành công: +4 phòng chuẩn. (Tổng FB mới: 4/50)
+[00:15:31 25/9/2026] 
+🔎 [Quét nhóm FB]: HaUI - Tìm Phòng Trọ (71.9K tv) (hanoi_cs1_cs2)
+[00:15:31 25/9/2026]    URL: https://www.facebook.com/groups/219194439373201?locale=vi_VN
+[00:15:54 25/9/2026]    → Bóc tách được 3 bài viết thô từ nhóm.
+[00:15:54 25/9/2026]    → Nhóm này đã lưu thành công: +1 phòng chuẩn. (Tổng FB mới: 5/50)
+[00:15:54 25/9/2026] 
+🔎 [Quét nhóm FB]: Phòng Trọ Hoài Đức - Vân Canh - Kim Chung (Gần CS1 & CS2) (hanoi_cs1_cs2)
+[00:15:54 25/9/2026]    URL: https://www.facebook.com/groups/PhongTroHoaiDuc/?locale=vi_VN
+[00:16:16 25/9/2026]    → Bóc tách được 3 bài viết thô từ nhóm.
+[00:16:16 25/9/2026]    → Nhóm này đã lưu thành công: +3 phòng chuẩn. (Tổng FB mới: 8/50)
+[00:16:16 25/9/2026] 
+🔎 [Quét nhóm FB]: Phòng Trọ Bắc Từ Liêm - Nhổn - Cầu Diễn (hanoi_cs1_cs2)
+[00:16:16 25/9/2026]    URL: https://www.facebook.com/groups/140397885361011/?locale=vi_VN
+[00:16:37 25/9/2026]    → Bóc tách được 16 bài viết thô từ nhóm.
+[00:16:38 25/9/2026]    → Nhóm này đã lưu thành công: +2 phòng chuẩn. (Tổng FB mới: 10/50)
+[00:16:38 25/9/2026] 
+🔎 [Quét nhóm FB]: Phòng Trọ Sinh Viên Hà Nội (hanoi_cs1_cs2)
+[00:16:38 25/9/2026]    URL: https://www.facebook.com/groups/phongtrohn/?locale=vi_VN
+[00:16:59 25/9/2026]    → Bóc tách được 3 bài viết thô từ nhóm.
+[00:16:59 25/9/2026]    → Nhóm này đã lưu thành công: +2 phòng chuẩn. (Tổng FB mới: 12/50)
+[00:16:59 25/9/2026] 
+🔎 [Quét nhóm FB]: Nhà trọ ĐH Công nghiệp HaUI - Cơ Sở 3 - Phù Vân - Phủ Lý Hà Nam (hanam_cs3)
+[00:16:59 25/9/2026]    URL: https://www.facebook.com/groups/611511566512116?locale=vi_VN
+[00:17:22 25/9/2026]    → Bóc tách được 16 bài viết thô từ nhóm.
+[00:17:22 25/9/2026]    → Nhóm này đã lưu thành công: +5 phòng chuẩn. (Tổng FB mới: 17/50)
+[00:17:22 25/9/2026] 
+🔎 [Quét nhóm FB]: Cho Thuê Phòng Trọ ĐH Công Nghiệp Hà Nội Haui (CS3 Phù Vân Hà Nam) (hanam_cs3)
+[00:17:22 25/9/2026]    URL: https://www.facebook.com/groups/447547838952346/?locale=vi_VN
+[00:17:44 25/9/2026]    → Bóc tách được 5 bài viết thô từ nhóm.
+[00:17:44 25/9/2026]    → Nhóm này đã lưu thành công: +1 phòng chuẩn. (Tổng FB mới: 18/50)
+[00:17:44 25/9/2026] 
+🔎 [Quét nhóm FB]: Phòng Trọ ĐH Công Nghiệp Hà Nam CS3 (hanam_cs3)
+[00:17:44 25/9/2026]    URL: https://www.facebook.com/groups/phongtrodhcnhanam/?locale=vi_VN
+[00:18:05 25/9/2026]    → Bóc tách được 0 bài viết thô từ nhóm.
+[00:18:05 25/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 18/50)
+[00:18:05 25/9/2026] 
+🔎 [Quét nhóm FB]: Phòng Trọ Phủ Lý Hà Nam (Gần HaUI CS3) (hanam_cs3)
+[00:18:05 25/9/2026]    URL: https://www.facebook.com/groups/phongtrophulyhanam/?locale=vi_VN
+[00:18:26 25/9/2026]    → Bóc tách được 0 bài viết thô từ nhóm.
+[00:18:26 25/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 18/50)
+[00:18:26 25/9/2026] 
+🔎 [Quét nhóm FB]: Thuê Trọ Hà Nam - Phủ Lý (hanam_cs3)
+[00:18:26 25/9/2026]    URL: https://www.facebook.com/groups/thuetrohanam/?locale=vi_VN
+[00:18:47 25/9/2026]    → Bóc tách được 0 bài viết thô từ nhóm.
+[00:18:47 25/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 18/50)
+[00:18:47 25/9/2026] 
+── [PHẦN B] CÀO THÊM PHÒNG TRỌ TỪ NGUỒN KHÁC (PHONGTRO123: CS1, CS2, CS3) ──
+[00:18:47 25/9/2026] 
+🔎 [Nguồn Phongtro123]: Minh Khai (CS1) -> https://phongtro123.com/tinh-thanh/ha-noi/quan-bac-tu-liem/phuong-minh-khai
+[00:18:50 25/9/2026]    → Tìm thấy 30 bài đăng trên trang.
+[00:18:52 25/9/2026]    [PT123] Đã lưu: RM-PT123-207E74 - Chính chủ cho Thuê phòng trọ phòng trọ Cầu Di... (Tổng khác: 1/15)
+[00:18:54 25/9/2026]    [PT123] Đã lưu: RM-PT123-85E00B - Cho thuê phòng trọ Nguyên Xá 32m2 giá 3,6 Gần... (Tổng khác: 2/15)
+[00:18:55 25/9/2026]    [PT123] Đã lưu: RM-PT123-4BFA92 - CHO THUÊ PHÒNG VỆ SINH KHÉP KÍN ĐẦY ĐỦ TIỆN N... (Tổng khác: 3/15)
+[00:18:57 25/9/2026]    [PT123] Đã lưu: RM-PT123-E233E3 - Cho thuê phòng trọ tầng1 triêng biệt giá 4 tr... (Tổng khác: 4/15)
+[00:18:59 25/9/2026]    [PT123] Đã lưu: RM-PT123-F1004E - cho thuê phòng trọ 2,9 triệu đi bộ ra ga tàu ... (Tổng khác: 5/15)
+[00:19:00 25/9/2026]    [PT123] Đã lưu: RM-PT123-44FE64 - Cho thuê phòng có gác, ban công, tiện nghi, g... (Tổng khác: 6/15)
+[00:19:02 25/9/2026]    [PT123] Đã lưu: RM-PT123-25E444 - Phòng ban công full nội thất - máy giặt riêng... (Tổng khác: 7/15)
+[00:19:03 25/9/2026]    [PT123] Đã lưu: RM-PT123-A2E8B0 - Phòng mới 100% như hình full nội thất... (Tổng khác: 8/15)
+[00:19:05 25/9/2026]    [PT123] Đã lưu: RM-PT123-5DC010 - CHO THUÊ DUPLEX | CỬA SỔ THOÁNG – 4TR5... (Tổng khác: 9/15)
+[00:19:06 25/9/2026]    [PT123] Đã lưu: RM-PT123-B4C4D4 - **CHO THUÊ PHÒNG TRỌ FULL NỘI THẤT** Địa chỉ:... (Tổng khác: 10/15)
+[00:19:08 25/9/2026]    [PT123] Đã lưu: RM-PT123-D79B10 - C/c Nguyễn Kim Quận 10, 3PN full nội thất giá... (Tổng khác: 11/15)
+[00:19:09 25/9/2026]    [PT123] Đã lưu: RM-PT123-B5637D - Studio Full Nội Thất(mới) Cửa Sổ Trời Lớn Tại... (Tổng khác: 12/15)
+[00:19:11 25/9/2026]    [PT123] Đã lưu: RM-PT123-DE82AE - Cho thuê C/c Melody Residence, 869 Âu Cơ - Nh... (Tổng khác: 13/15)
+[00:19:12 25/9/2026]    [PT123] Đã lưu: RM-PT123-E00C81 - **CHO THUÊ PHÒNG TRỌ FULL NỘI THẤT *** Địa ch... (Tổng khác: 14/15)
+[00:19:14 25/9/2026]    [PT123] Đã lưu: RM-PT123-8CEB72 - Trống phòng 4tr Cổ Linh. Gần AEON MALL Long B... (Tổng khác: 15/15)
+[00:19:14 25/9/2026] ✅ Đã đạt mục tiêu 15 phòng từ nguồn khác!
+[00:19:14 25/9/2026] ================================================================================
+[00:19:14 25/9/2026] 🎉 [CrawlBot] HOÀN TẤT ĐỢT CÀO DỮ LIỆU TỰ ĐỘNG!
+[00:19:14 25/9/2026]    + Facebook mới thêm:     18 phòng
+[00:19:14 25/9/2026]    + Nguồn khác mới thêm:   15 phòng
+[00:19:14 25/9/2026]    - Rác thương mại loại:  1 bài
+[00:19:14 25/9/2026]    - Bài tìm phòng loại:    12 bài
+[00:19:14 25/9/2026]    - Trùng lặp bỏ qua:      18 bài
+[00:19:14 25/9/2026] 📦 Tổng số phòng hiện có trong DB: 257 phòng
+[00:19:14 25/9/2026] ⏰ Đợt cào tự động kế tiếp sẽ chạy sau 4 tiếng.
+[00:19:14 25/9/2026] ================================================================================
+
+[00:30:51 25/9/2026] 🤖 [CrawlBot] Đã kích hoạt lịch cào tự động Playwright: Chu kỳ mỗi 4 tiếng (4h/lần).
+[01:07:53 25/9/2026] 🤖 [CrawlBot] Đã kích hoạt lịch cào tự động Playwright: Chu kỳ mỗi 4 tiếng (4h/lần).
+[01:12:56 25/9/2026] 🤖 [CrawlBot] Đã kích hoạt lịch cào tự động Playwright: Chu kỳ mỗi 4 tiếng (4h/lần).
+[01:16:09 25/9/2026] 🤖 [CrawlBot] Đã kích hoạt lịch cào tự động Playwright: Chu kỳ mỗi 4 tiếng (4h/lần).
+[02:23:39 25/9/2026] 🤖 [CrawlBot] Đã kích hoạt lịch cào tự động Playwright: Chu kỳ mỗi 4 tiếng (4h/lần).
+[23:32:49 26/9/2026] 🤖 [CrawlBot] Đã kích hoạt lịch cào tự động Playwright: Chu kỳ mỗi 4 tiếng (4h/lần).
+[23:32:49 26/9/2026] 🤖 [CrawlBot] Đã kích hoạt lịch cào tự động Playwright: Chu kỳ mỗi 4 tiếng (4h/lần).
+[23:42:21 26/9/2026] 🤖 [CrawlBot] Đã kích hoạt lịch cào tự động Playwright: Chu kỳ mỗi 4 tiếng (4h/lần).
+[23:42:41 26/9/2026] 🤖 [CrawlBot] Đã kích hoạt lịch cào tự động Playwright: Chu kỳ mỗi 4 tiếng (4h/lần).
+[23:44:28 26/9/2026] 🤖 [CrawlBot] Đã kích hoạt lịch cào tự động Playwright: Chu kỳ mỗi 4 tiếng (4h/lần).
+[23:52:31 26/9/2026] 🤖 [CrawlBot] Đã kích hoạt lịch cào tự động Playwright: Chu kỳ mỗi 4 tiếng (4h/lần).
+[23:52:44 26/9/2026] 🤖 [CrawlBot] Đã kích hoạt lịch cào tự động Playwright: Chu kỳ mỗi 4 tiếng (4h/lần).
+[00:07:30 27/9/2026] 🤖 [CrawlBot] Đã kích hoạt lịch cào tự động Playwright: Chu kỳ mỗi 4 tiếng (4h/lần).
+[00:07:44 27/9/2026] 🤖 [CrawlBot] Đã kích hoạt lịch cào tự động Playwright: Chu kỳ mỗi 4 tiếng (4h/lần).
+[00:35:23 27/9/2026] ================================================================================
+[00:35:23 27/9/2026] 🚀 [CrawlBot] BẮT ĐẦU CHU KỲ CÀO DỮ LIỆU TỰ ĐỘNG (CHU KỲ 4 TIẾNG)
+[00:35:23 27/9/2026] 🎯 Mục tiêu: +50 phòng Facebook công khai | +15 phòng từ nguồn khác
+[00:35:23 27/9/2026] ⚖️ Cam kết: 100% tuân thủ Nghị định 13/2023/NĐ-CP, khử PII, chống trùng SHA-256
+[00:35:23 27/9/2026] ================================================================================
+[00:35:23 27/9/2026] 📊 Hiện có 228 phòng trong cơ sở dữ liệu để kiểm tra trùng.
+[00:35:23 27/9/2026] 🤖 [CrawlBot] Đã kích hoạt lịch cào tự động Playwright: Chu kỳ mỗi 4 tiếng (4h/lần).
+[00:35:23 27/9/2026] 🤖 [CrawlBot] Đã kích hoạt lịch cào tự động Playwright: Chu kỳ mỗi 4 tiếng (4h/lần).
+[01:07:45 27/9/2026] 🤖 [CrawlBot] Đã kích hoạt lịch cào tự động Playwright: Chu kỳ mỗi 4 tiếng (4h/lần).
+[01:07:45 27/9/2026] 🤖 [CrawlBot] Đã kích hoạt lịch cào tự động Playwright: Chu kỳ mỗi 4 tiếng (4h/lần).
+[01:15:49 27/9/2026] 🤖 [CrawlBot] Đã kích hoạt lịch cào tự động Playwright: Chu kỳ mỗi 4 tiếng (4h/lần).
+[01:19:19 27/9/2026] 🤖 [CrawlBot] Đã kích hoạt lịch cào tự động Playwright: Chu kỳ mỗi 4 tiếng (4h/lần).
+[13:07:30 27/9/2026] 🤖 [CrawlBot] Đã kích hoạt lịch cào tự động Playwright: Chu kỳ mỗi 4 tiếng (4h/lần).
+[13:07:31 27/9/2026] 🤖 [CrawlBot] Đã kích hoạt lịch cào tự động Playwright: Chu kỳ mỗi 4 tiếng (4h/lần).
+[13:08:18 27/9/2026] 🤖 [CrawlBot] Đã kích hoạt lịch cào tự động Playwright: Chu kỳ mỗi 4 tiếng (4h/lần).
+[13:28:52 27/9/2026] 🤖 [CrawlBot] Đã kích hoạt lịch cào tự động Playwright: Chu kỳ mỗi 4 tiếng (4h/lần).
+[13:32:37 27/9/2026] 🤖 [CrawlBot] Đã kích hoạt lịch cào tự động Playwright: Chu kỳ mỗi 4 tiếng (4h/lần).
+[16:19:57 27/9/2026] 🤖 [CrawlBot] Đã kích hoạt lịch cào tự động Playwright: Chu kỳ mỗi 4 tiếng (4h/lần).
+[16:19:58 27/9/2026] 🤖 [CrawlBot] Đã kích hoạt lịch cào tự động Playwright: Chu kỳ mỗi 4 tiếng (4h/lần).
+[16:22:28 27/9/2026] 🤖 [CrawlBot] Đã kích hoạt lịch cào tự động Playwright: Chu kỳ mỗi 4 tiếng (4h/lần).
+[16:22:46 27/9/2026] 🤖 [CrawlBot] Đã kích hoạt lịch cào tự động Playwright: Chu kỳ mỗi 4 tiếng (4h/lần).
+[16:27:13 27/9/2026] 🤖 [CrawlBot] Đã kích hoạt lịch cào tự động Playwright: Chu kỳ mỗi 4 tiếng (4h/lần).
+[17:28:01 27/9/2026] ================================================================================
+[17:28:01 27/9/2026] 🚀 [CrawlBot] BẮT ĐẦU CHU KỲ CÀO DỮ LIỆU TỰ ĐỘNG (CHU KỲ 4 TIẾNG)
+[17:28:01 27/9/2026] 🎯 Mục tiêu: +50 phòng Facebook công khai | +15 phòng từ nguồn khác
+[17:28:01 27/9/2026] ⚖️ Cam kết: 100% tuân thủ Nghị định 13/2023/NĐ-CP, khử PII, chống trùng SHA-256
+[17:28:01 27/9/2026] ================================================================================
+[17:28:01 27/9/2026] 📊 Hiện có 228 phòng trong cơ sở dữ liệu để kiểm tra trùng.
+[17:28:01 27/9/2026] 🤖 [CrawlBot] Đã kích hoạt lịch cào tự động Playwright: Chu kỳ mỗi 4 tiếng (4h/lần).
+[17:28:02 27/9/2026] 🤖 [CrawlBot] Đã kích hoạt lịch cào tự động Playwright: Chu kỳ mỗi 4 tiếng (4h/lần).
+[18:51:41 27/9/2026] ================================================================================
+[18:51:41 27/9/2026] 🚀 [CrawlBot] BẮT ĐẦU CHU KỲ CÀO DỮ LIỆU TỰ ĐỘNG (CHU KỲ 4 TIẾNG)
+[18:51:41 27/9/2026] 🎯 Mục tiêu: +50 phòng Facebook công khai | +15 phòng từ nguồn khác
+[18:51:41 27/9/2026] ⚖️ Cam kết: 100% tuân thủ Nghị định 13/2023/NĐ-CP, khử PII, chống trùng SHA-256
+[18:51:41 27/9/2026] ================================================================================
+[18:51:41 27/9/2026] 📊 Hiện có 228 phòng trong cơ sở dữ liệu để kiểm tra trùng.
+[18:51:41 27/9/2026] 🤖 [CrawlBot] Đã kích hoạt lịch cào tự động Playwright: Chu kỳ mỗi 4 tiếng (4h/lần).
+[18:51:42 27/9/2026] 🤖 [CrawlBot] Đã kích hoạt lịch cào tự động Playwright: Chu kỳ mỗi 4 tiếng (4h/lần).
+[19:40:24 27/9/2026] 🤖 [CrawlBot] Đã kích hoạt lịch cào tự động Playwright: Chu kỳ mỗi 4 tiếng (4h/lần).
+[19:40:41 27/9/2026] 🤖 [CrawlBot] Đã kích hoạt lịch cào tự động Playwright: Chu kỳ mỗi 4 tiếng (4h/lần).
+[19:40:56 27/9/2026] 🚀 [CrawlBot] Tự động kích hoạt đợt cào Playwright ban đầu...
+[19:40:56 27/9/2026] ================================================================================
+[19:40:56 27/9/2026] 🚀 [CrawlBot] BẮT ĐẦU CHU KỲ CÀO DỮ LIỆU TỰ ĐỘNG (CHU KỲ 4 TIẾNG)
+[19:40:56 27/9/2026] 🎯 Mục tiêu: +10 phòng Facebook công khai | +5 phòng từ nguồn khác
+[19:40:56 27/9/2026] ⚖️ Cam kết: 100% tuân thủ Nghị định 13/2023/NĐ-CP, khử PII, chống trùng SHA-256
+[19:40:56 27/9/2026] ================================================================================
+[19:40:56 27/9/2026] 📊 Hiện có 228 phòng trong cơ sở dữ liệu để kiểm tra trùng.
+[19:40:57 27/9/2026] 
+── [PHẦN A] CÀO PHÒNG TRỌ FACEBOOK (CÁC NHÓM CÔNG KHAI HAUI CS1, CS2, CS3) ──
+[19:40:57 27/9/2026] 
+🔎 [Quét nhóm FB]: Nhà trọ Nhổn - Nguyên Xá - Văn Trì - ĐH Công Nghiệp Hà Nội (80K tv) (hanoi_cs1_cs2)
+[19:40:57 27/9/2026]    URL: https://www.facebook.com/groups/1896518147417522/?locale=vi_VN
+[19:41:13 27/9/2026] 🤖 [CrawlBot] Đã kích hoạt lịch cào tự động Playwright: Chu kỳ mỗi 4 tiếng (4h/lần).
+[19:41:28 27/9/2026] 🚀 [CrawlBot] Tự động kích hoạt đợt cào Playwright ban đầu...
+[19:41:28 27/9/2026] ================================================================================
+[19:41:28 27/9/2026] 🚀 [CrawlBot] BẮT ĐẦU CHU KỲ CÀO DỮ LIỆU TỰ ĐỘNG (CHU KỲ 4 TIẾNG)
+[19:41:28 27/9/2026] 🎯 Mục tiêu: +10 phòng Facebook công khai | +5 phòng từ nguồn khác
+[19:41:28 27/9/2026] ⚖️ Cam kết: 100% tuân thủ Nghị định 13/2023/NĐ-CP, khử PII, chống trùng SHA-256
+[19:41:28 27/9/2026] ================================================================================
+[19:41:28 27/9/2026] 📊 Hiện có 228 phòng trong cơ sở dữ liệu để kiểm tra trùng.
+[19:41:29 27/9/2026] 
+── [PHẦN A] CÀO PHÒNG TRỌ FACEBOOK (CÁC NHÓM CÔNG KHAI HAUI CS1, CS2, CS3) ──
+[19:41:29 27/9/2026] 
+🔎 [Quét nhóm FB]: Nhà trọ Nhổn - Nguyên Xá - Văn Trì - ĐH Công Nghiệp Hà Nội (80K tv) (hanoi_cs1_cs2)
+[19:41:29 27/9/2026]    URL: https://www.facebook.com/groups/1896518147417522/?locale=vi_VN
+[19:41:50 27/9/2026]    → Bóc tách được 5 bài viết thô từ nhóm.
+[19:41:50 27/9/2026]   [APPROX-LANDMARK] Không khớp địa danh cụ thể, trỏ về HaUI CS1: Ngọc Thư
+9 phút trước
+9 phút
+ 
+·
+CCMN máy giặt riêng cách ĐH
+[19:41:50 27/9/2026]    → Nhóm này đã lưu thành công: +3 phòng chuẩn. (Tổng FB mới: 3/10)
+[19:41:50 27/9/2026] 
+🔎 [Quét nhóm FB]: HaUI - Tìm Phòng Trọ (71.9K tv) (hanoi_cs1_cs2)
+[19:41:50 27/9/2026]    URL: https://www.facebook.com/groups/219194439373201?locale=vi_VN
+[19:42:11 27/9/2026]    → Bóc tách được 4 bài viết thô từ nhóm.
+[19:42:11 27/9/2026]    → Nhóm này đã lưu thành công: +2 phòng chuẩn. (Tổng FB mới: 5/10)
+[19:42:11 27/9/2026] 
+🔎 [Quét nhóm FB]: Phòng Trọ Hoài Đức - Vân Canh - Kim Chung (Gần CS1 & CS2) (hanoi_cs1_cs2)
+[19:42:12 27/9/2026]    URL: https://www.facebook.com/groups/PhongTroHoaiDuc/?locale=vi_VN
+[19:42:33 27/9/2026]    → Bóc tách được 3 bài viết thô từ nhóm.
+[19:42:33 27/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 5/10)
+[19:42:33 27/9/2026] 
+🔎 [Quét nhóm FB]: Phòng Trọ Bắc Từ Liêm - Nhổn - Cầu Diễn (hanoi_cs1_cs2)
+[19:42:33 27/9/2026]    URL: https://www.facebook.com/groups/140397885361011/?locale=vi_VN
+[19:42:54 27/9/2026]    → Bóc tách được 4 bài viết thô từ nhóm.
+[19:42:54 27/9/2026]    → Nhóm này đã lưu thành công: +1 phòng chuẩn. (Tổng FB mới: 6/10)
+[19:42:54 27/9/2026] 
+🔎 [Quét nhóm FB]: Phòng Trọ Sinh Viên Hà Nội (hanoi_cs1_cs2)
+[19:42:54 27/9/2026]    URL: https://www.facebook.com/groups/phongtrohn/?locale=vi_VN
+[19:43:15 27/9/2026]    → Bóc tách được 3 bài viết thô từ nhóm.
+[19:43:15 27/9/2026]   [APPROX-LANDMARK] Không khớp địa danh cụ thể, trỏ về HaUI CS1: Trang Lê
+2 ngày trước
+2 ngày
+ 
+·
+ Trống phòng cạnh khu Bách 
+[19:43:15 27/9/2026]   [APPROX-LANDMARK] Không khớp địa danh cụ thể, trỏ về HaUI CS1: Trần Quân
+2 ngày trước
+2 ngày
+ 
+·
+Cho thuê nhà trong ngõ Phố
+[19:43:15 27/9/2026]    → Nhóm này đã lưu thành công: +2 phòng chuẩn. (Tổng FB mới: 8/10)
+[19:43:15 27/9/2026] 
+🔎 [Quét nhóm FB]: Nhà trọ ĐH Công nghiệp HaUI - Cơ Sở 3 - Phù Vân - Phủ Lý Hà Nam (hanam_cs3)
+[19:43:15 27/9/2026]    URL: https://www.facebook.com/groups/611511566512116?locale=vi_VN
+[19:43:37 27/9/2026]    → Bóc tách được 7 bài viết thô từ nhóm.
+[19:43:37 27/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 8/10)
+[19:43:37 27/9/2026] 
+🔎 [Quét nhóm FB]: Cho Thuê Phòng Trọ ĐH Công Nghiệp Hà Nội Haui (CS3 Phù Vân Hà Nam) (hanam_cs3)
+[19:43:37 27/9/2026]    URL: https://www.facebook.com/groups/447547838952346/?locale=vi_VN
+[19:43:58 27/9/2026]    → Bóc tách được 21 bài viết thô từ nhóm.
+[19:43:58 27/9/2026]    → Nhóm này đã lưu thành công: +2 phòng chuẩn. (Tổng FB mới: 10/10)
+[19:43:58 27/9/2026] ✅ Đã đạt mục tiêu 10 phòng Facebook mới! Chuyển sang nguồn khác.
+[19:43:58 27/9/2026] 
+── [PHẦN B] CÀO THÊM PHÒNG TRỌ TỪ NGUỒN KHÁC (PHONGTRO123: CS1, CS2, CS3) ──
+[19:43:58 27/9/2026] 
+🔎 [Nguồn Phongtro123]: Minh Khai (CS1) -> https://phongtro123.com/tinh-thanh/ha-noi/quan-bac-tu-liem/phuong-minh-khai
+[19:44:02 27/9/2026]    → Tìm thấy 30 bài đăng trên trang.
+[19:44:04 27/9/2026]   [APPROX-LANDMARK] Không khớp địa danh cụ thể, trỏ về HaUI CS1: SIÊU PHẨM CĂN HỘ CỬA SỔ LỚN ĐÓN NẮNG GIÓ – NƠ TRANG LONG CHỈ
+[19:44:04 27/9/2026]    [PT123] Đã lưu: RM-PT123-1CC7BB - SIÊU PHẨM CĂN HỘ CỬA SỔ LỚN ĐÓN NẮNG GIÓ – NƠ... (Tổng khác: 1/5)
+[19:44:06 27/9/2026]   [APPROX-LANDMARK] Không khớp địa danh cụ thể, trỏ về HaUI CS1: TÌM BẠN NỮ Ở GHÉP PHÒNG MASTER CHUNG CƯ ERA TOWN
+[19:44:06 27/9/2026]    [PT123] Đã lưu: RM-PT123-50E5A5 - TÌM BẠN NỮ Ở GHÉP PHÒNG MASTER CHUNG CƯ ERA T... (Tổng khác: 2/5)
+[19:44:09 27/9/2026]   [APPROX-LANDMARK] Không khớp địa danh cụ thể, trỏ về HaUI CS1: C/c An Gia Garden -Tân Kì tân Quý căn hộ 2p ngủ,NTCB giá 11t
+[19:44:09 27/9/2026]    [PT123] Đã lưu: RM-PT123-7C3BC1 - C/c An Gia Garden -Tân Kì tân Quý căn hộ 2p n... (Tổng khác: 3/5)
+[19:44:10 27/9/2026]   [APPROX-LANDMARK] Không khớp địa danh cụ thể, trỏ về HaUI CS1: Cộng Hoà Plaza căn hộ rộng 76m2-2p ngủ-NTCC- giá 14tr/tháng
+[19:44:10 27/9/2026]    [PT123] Đã lưu: RM-PT123-05735B - Cộng Hoà Plaza căn hộ rộng 76m2-2p ngủ-NTCC- ... (Tổng khác: 4/5)
+[19:44:13 27/9/2026]   [APPROX-LANDMARK] Không khớp địa danh cụ thể, trỏ về HaUI CS1: Cho Thuê Phòng Có Ban Công Thoáng Mát Đường Nguyễn Đình Chiể
+[19:44:13 27/9/2026]    [PT123] Đã lưu: RM-PT123-E2CCE8 - Cho Thuê Phòng Có Ban Công Thoáng Mát Đường N... (Tổng khác: 5/5)
+[19:44:13 27/9/2026] ✅ Đã đạt mục tiêu 5 phòng từ nguồn khác!
+[19:44:13 27/9/2026] ================================================================================
+[19:44:13 27/9/2026] 🎉 [CrawlBot] HOÀN TẤT ĐỢT CÀO DỮ LIỆU TỰ ĐỘNG!
+[19:44:13 27/9/2026]    + Facebook mới thêm:     10 phòng
+[19:44:13 27/9/2026]    + Nguồn khác mới thêm:   5 phòng
+[19:44:13 27/9/2026]    - Rác thương mại loại:  0 bài
+[19:44:13 27/9/2026]    - Bài tìm phòng loại:    13 bài
+[19:44:13 27/9/2026]    - Trùng lặp bỏ qua:      21 bài
+[19:44:13 27/9/2026] 📦 Tổng số phòng hiện có trong DB: 243 phòng
+[19:44:13 27/9/2026] ⏰ Đợt cào tự động kế tiếp sẽ chạy sau 4 tiếng.
+[19:44:13 27/9/2026] ================================================================================
+
+[19:52:55 27/9/2026] ================================================================================
+[19:52:55 27/9/2026] 🚀 [CrawlBot] BẮT ĐẦU CHU KỲ CÀO DỮ LIỆU TỰ ĐỘNG (CHU KỲ 4 TIẾNG)
+[19:52:55 27/9/2026] 🎯 Mục tiêu: +50 phòng Facebook công khai | +15 phòng từ nguồn khác
+[19:52:55 27/9/2026] ⚖️ Cam kết: 100% tuân thủ Nghị định 13/2023/NĐ-CP, khử PII, chống trùng SHA-256
+[19:52:55 27/9/2026] ================================================================================
+[19:52:55 27/9/2026] 📊 Hiện có 243 phòng trong cơ sở dữ liệu để kiểm tra trùng.
+[19:52:55 27/9/2026] 
+── [PHẦN A] CÀO PHÒNG TRỌ FACEBOOK (CÁC NHÓM CÔNG KHAI HAUI CS1, CS2, CS3) ──
+[19:52:55 27/9/2026] 
+🔎 [Quét nhóm FB]: Nhà trọ Nhổn - Nguyên Xá - Văn Trì - ĐH Công Nghiệp Hà Nội (80K tv) (hanoi_cs1_cs2)
+[19:52:55 27/9/2026]    URL: https://www.facebook.com/groups/1896518147417522/?locale=vi_VN
+[19:53:17 27/9/2026]    → Bóc tách được 7 bài viết thô từ nhóm.
+[19:53:17 27/9/2026]   [APPROX-LANDMARK] Không khớp địa danh cụ thể, trỏ về HaUI CS1: Ngọc Thư Lalisa
+khoảng 1 giờ trước
+1 giờ
+ 
+·
+CCMN máy giặt r
+[19:53:17 27/9/2026]    → Nhóm này đã lưu thành công: +4 phòng chuẩn. (Tổng FB mới: 4/50)
+[19:53:17 27/9/2026] 
+🔎 [Quét nhóm FB]: HaUI - Tìm Phòng Trọ (71.9K tv) (hanoi_cs1_cs2)
+[19:53:17 27/9/2026]    URL: https://www.facebook.com/groups/219194439373201?locale=vi_VN
+[19:53:39 27/9/2026]    → Bóc tách được 4 bài viết thô từ nhóm.
+[19:53:39 27/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 4/50)
+[19:53:39 27/9/2026] 
+🔎 [Quét nhóm FB]: Phòng Trọ Hoài Đức - Vân Canh - Kim Chung (Gần CS1 & CS2) (hanoi_cs1_cs2)
+[19:53:39 27/9/2026]    URL: https://www.facebook.com/groups/PhongTroHoaiDuc/?locale=vi_VN
+[19:54:00 27/9/2026]    → Bóc tách được 4 bài viết thô từ nhóm.
+[19:54:00 27/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 4/50)
+[19:54:00 27/9/2026] 
+🔎 [Quét nhóm FB]: Phòng Trọ Bắc Từ Liêm - Nhổn - Cầu Diễn (hanoi_cs1_cs2)
+[19:54:00 27/9/2026]    URL: https://www.facebook.com/groups/140397885361011/?locale=vi_VN
+[19:54:22 27/9/2026]    → Bóc tách được 4 bài viết thô từ nhóm.
+[19:54:22 27/9/2026]    → Nhóm này đã lưu thành công: +1 phòng chuẩn. (Tổng FB mới: 5/50)
+[19:54:22 27/9/2026] 
+🔎 [Quét nhóm FB]: Phòng Trọ Sinh Viên Hà Nội (hanoi_cs1_cs2)
+[19:54:22 27/9/2026]    URL: https://www.facebook.com/groups/phongtrohn/?locale=vi_VN
+[19:54:43 27/9/2026]    → Bóc tách được 0 bài viết thô từ nhóm.
+[19:54:43 27/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 5/50)
+[19:54:43 27/9/2026] 
+🔎 [Quét nhóm FB]: Nhà trọ ĐH Công nghiệp HaUI - Cơ Sở 3 - Phù Vân - Phủ Lý Hà Nam (hanam_cs3)
+[19:54:43 27/9/2026]    URL: https://www.facebook.com/groups/611511566512116?locale=vi_VN
+[19:55:04 27/9/2026]    → Bóc tách được 0 bài viết thô từ nhóm.
+[19:55:04 27/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 5/50)
+[19:55:04 27/9/2026] 
+🔎 [Quét nhóm FB]: Cho Thuê Phòng Trọ ĐH Công Nghiệp Hà Nội Haui (CS3 Phù Vân Hà Nam) (hanam_cs3)
+[19:55:04 27/9/2026]    URL: https://www.facebook.com/groups/447547838952346/?locale=vi_VN
+[19:55:25 27/9/2026]    → Bóc tách được 0 bài viết thô từ nhóm.
+[19:55:25 27/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 5/50)
+[19:55:25 27/9/2026] 
+🔎 [Quét nhóm FB]: Phòng Trọ ĐH Công Nghiệp Hà Nam CS3 (hanam_cs3)
+[19:55:25 27/9/2026]    URL: https://www.facebook.com/groups/phongtrodhcnhanam/?locale=vi_VN
+[19:55:46 27/9/2026]    → Bóc tách được 0 bài viết thô từ nhóm.
+[19:55:46 27/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 5/50)
+[19:55:46 27/9/2026] 
+🔎 [Quét nhóm FB]: Phòng Trọ Phủ Lý Hà Nam (Gần HaUI CS3) (hanam_cs3)
+[19:55:46 27/9/2026]    URL: https://www.facebook.com/groups/phongtrophulyhanam/?locale=vi_VN
+[19:56:08 27/9/2026]    → Bóc tách được 0 bài viết thô từ nhóm.
+[19:56:08 27/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 5/50)
+[19:56:08 27/9/2026] 
+🔎 [Quét nhóm FB]: Thuê Trọ Hà Nam - Phủ Lý (hanam_cs3)
+[19:56:08 27/9/2026]    URL: https://www.facebook.com/groups/thuetrohanam/?locale=vi_VN
+[19:56:29 27/9/2026]    → Bóc tách được 0 bài viết thô từ nhóm.
+[19:56:29 27/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 5/50)
+[19:56:29 27/9/2026] 
+── [PHẦN B] CÀO THÊM PHÒNG TRỌ TỪ NGUỒN KHÁC (PHONGTRO123: CS1, CS2, CS3) ──
+[19:56:29 27/9/2026] 
+🔎 [Nguồn Phongtro123]: Minh Khai (CS1) -> https://phongtro123.com/tinh-thanh/ha-noi/quan-bac-tu-liem/phuong-minh-khai
+[19:56:33 27/9/2026]    → Tìm thấy 30 bài đăng trên trang.
+[19:56:40 27/9/2026] 
+🔎 [Nguồn Phongtro123]: Phúc Diễn (CS1) -> https://phongtro123.com/tinh-thanh/ha-noi/quan-bac-tu-liem/phuong-phuc-dien
+[19:56:43 27/9/2026]    → Tìm thấy 30 bài đăng trên trang.
+[19:56:46 27/9/2026]    [PT123] Đã lưu: RM-PT123-91992E - cho thuê phòng trọ khép kín 2,3 gần Y học Tuệ... (Tổng khác: 1/15)
+[19:56:48 27/9/2026]    [PT123] Đã lưu: RM-PT123-F9709D - CHO THUÊ PHÒNG TRỌ MỚI TẠI VÂN TRÌ , FULL ĐỒ,... (Tổng khác: 2/15)
+[19:56:49 27/9/2026]    [PT123] Đã lưu: RM-PT123-063952 - PHÒNG VSC – GẦN GOLDMARK CITY, HỒ TÙNG MẬU gi... (Tổng khác: 3/15)
+[19:56:51 27/9/2026]    [PT123] Đã lưu: RM-PT123-877B13 - PHÒNG MỚI TINH – CHỈ 2,5 TRIỆU/THÁNG – CẦU DI... (Tổng khác: 4/15)
+[19:56:52 27/9/2026]   [APPROX-LANDMARK] Không khớp địa danh cụ thể, trỏ về HaUI CS1: CHO THUÊ PHÒNG 2.9tr TRỌ FULL ĐỒ – CÓ THANG MÁY – GẦN ĐẠI HỌ
+[19:56:52 27/9/2026]    [PT123] Đã lưu: RM-PT123-428990 - CHO THUÊ PHÒNG 2.9tr TRỌ FULL ĐỒ – CÓ THANG M... (Tổng khác: 5/15)
+[19:56:54 27/9/2026]    [PT123] Đã lưu: RM-PT123-F40399 - CHO THUÊ PHÒNG TRỌ – SỐ 2, NGÁCH 1, NGÕ 36 CẦ... (Tổng khác: 6/15)
+[19:56:55 27/9/2026]    [PT123] Đã lưu: RM-PT123-FDCE7D - Nhà số 39 hẻm 90 ngách 64 ngõ 193 Phú Diễn , ... (Tổng khác: 7/15)
+[19:56:57 27/9/2026]    [PT123] Đã lưu: RM-PT123-A7F0FF - Cho thuê phòng trọ khép kín giá rẻ 3,2 tr Phú... (Tổng khác: 8/15)
+[19:56:58 27/9/2026]    [PT123] Đã lưu: RM-PT123-255259 - Nhà số 639 Phúc Diễn , Nam Từ Liêm⏰ Đang trốn... (Tổng khác: 9/15)
+[19:57:00 27/9/2026]    [PT123] Đã lưu: RM-PT123-26C012 - Cho thuê phòng trọ nhà 5 tầng. Trong khu Quân... (Tổng khác: 10/15)
+[19:57:07 27/9/2026] 
+🔎 [Nguồn Phongtro123]: Tây Tựu (CS2) -> https://phongtro123.com/tinh-thanh/ha-noi/quan-bac-tu-liem/phuong-tay-tuu
+[19:57:09 27/9/2026]    → Tìm thấy 30 bài đăng trên trang.
+[19:57:14 27/9/2026]   [APPROX-LANDMARK] Không khớp địa danh cụ thể, trỏ về HaUI CS1: Tìm phòng trọ sinh viên? Đây là lựa chọn đáng cân nhắc !
+[19:57:14 27/9/2026]    [PT123] Đã lưu: RM-PT123-06B61E - Tìm phòng trọ sinh viên? Đây là lựa chọn đáng... (Tổng khác: 11/15)
+[19:57:16 27/9/2026]   [APPROX-LANDMARK] Không khớp địa danh cụ thể, trỏ về HaUI CS1: Phòng Trọ mới Tinh cách Học Viện Chính Sách & Phát Triển 50m
+[19:57:16 27/9/2026]    [PT123] Đã lưu: RM-PT123-C0BDE1 - Phòng Trọ mới Tinh cách Học Viện Chính Sách &... (Tổng khác: 12/15)
+[19:57:17 27/9/2026]   [APPROX-LANDMARK] Không khớp địa danh cụ thể, trỏ về HaUI CS1: CHÍNH CHỦ CHO THUÊ PHÒNG TRỌ NGAY CỔNG CHÀO AN KHÁNH CHỈ 2,5
+[19:57:17 27/9/2026]    [PT123] Đã lưu: RM-PT123-1771AF - CHÍNH CHỦ CHO THUÊ PHÒNG TRỌ NGAY CỔNG CHÀO A... (Tổng khác: 13/15)
+[19:57:21 27/9/2026]   [APPROX-LANDMARK] Không khớp địa danh cụ thể, trỏ về HaUI CS1: Cho thuê phòng khép kín 24m2 đc 621 Bạch Đằng
+[19:57:21 27/9/2026]    [PT123] Đã lưu: RM-PT123-AFFAE8 - Cho thuê phòng khép kín 24m2 đc 621 Bạch Đằng... (Tổng khác: 14/15)
+[19:57:27 27/9/2026]   [APPROX-LANDMARK] Không khớp địa danh cụ thể, trỏ về HaUI CS1: Cho thuê phòng trọ full đồ ngõ 1096 Láng, gần cầu 361, DH Gi
+[19:57:27 27/9/2026]    [PT123] Đã lưu: RM-PT123-067996 - Cho thuê phòng trọ full đồ ngõ 1096 Láng, gần... (Tổng khác: 15/15)
+[19:57:27 27/9/2026] ✅ Đã đạt mục tiêu 15 phòng từ nguồn khác!
+[19:57:27 27/9/2026] ================================================================================
+[19:57:27 27/9/2026] 🎉 [CrawlBot] HOÀN TẤT ĐỢT CÀO DỮ LIỆU TỰ ĐỘNG!
+[19:57:27 27/9/2026]    + Facebook mới thêm:     5 phòng
+[19:57:27 27/9/2026]    + Nguồn khác mới thêm:   15 phòng
+[19:57:27 27/9/2026]    - Rác thương mại loại:  1 bài
+[19:57:27 27/9/2026]    - Bài tìm phòng loại:    6 bài
+[19:57:27 27/9/2026]    - Trùng lặp bỏ qua:      44 bài
+[19:57:27 27/9/2026] 📦 Tổng số phòng hiện có trong DB: 263 phòng
+[19:57:27 27/9/2026] ⏰ Đợt cào tự động kế tiếp sẽ chạy sau 4 tiếng.
+[19:57:27 27/9/2026] ================================================================================
+
+[20:00:29 27/9/2026] ================================================================================
+[20:00:29 27/9/2026] 🚀 [CrawlBot] BẮT ĐẦU CHU KỲ CÀO DỮ LIỆU TỰ ĐỘNG (CHU KỲ 4 TIẾNG)
+[20:00:29 27/9/2026] 🎯 Mục tiêu: +50 phòng Facebook công khai | +15 phòng từ nguồn khác
+[20:00:29 27/9/2026] ⚖️ Cam kết: 100% tuân thủ Nghị định 13/2023/NĐ-CP, khử PII, chống trùng SHA-256
+[20:00:29 27/9/2026] ================================================================================
+[20:00:29 27/9/2026] 📊 Hiện có 263 phòng trong cơ sở dữ liệu để kiểm tra trùng.
+[20:00:29 27/9/2026] 
+── [PHẦN A] CÀO PHÒNG TRỌ FACEBOOK (CÁC NHÓM CÔNG KHAI HAUI CS1, CS2, CS3) ──
+[20:00:29 27/9/2026] 
+🔎 [Quét nhóm FB]: Nhà trọ Nhổn - Nguyên Xá - Văn Trì - ĐH Công Nghiệp Hà Nội (80K tv) (hanoi_cs1_cs2)
+[20:00:29 27/9/2026]    URL: https://www.facebook.com/groups/1896518147417522/?locale=vi_VN
+[20:00:51 27/9/2026]    → Bóc tách được 0 bài viết thô từ nhóm.
+[20:00:51 27/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 0/50)
+[20:00:51 27/9/2026] 
+🔎 [Quét nhóm FB]: HaUI - Tìm Phòng Trọ (71.9K tv) (hanoi_cs1_cs2)
+[20:00:51 27/9/2026]    URL: https://www.facebook.com/groups/219194439373201?locale=vi_VN
+[20:01:12 27/9/2026]    → Bóc tách được 0 bài viết thô từ nhóm.
+[20:01:12 27/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 0/50)
+[20:01:12 27/9/2026] 
+🔎 [Quét nhóm FB]: Phòng Trọ Hoài Đức - Vân Canh - Kim Chung (Gần CS1 & CS2) (hanoi_cs1_cs2)
+[20:01:12 27/9/2026]    URL: https://www.facebook.com/groups/PhongTroHoaiDuc/?locale=vi_VN
+[20:01:33 27/9/2026]    → Bóc tách được 0 bài viết thô từ nhóm.
+[20:01:33 27/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 0/50)
+[20:01:33 27/9/2026] 
+🔎 [Quét nhóm FB]: Phòng Trọ Bắc Từ Liêm - Nhổn - Cầu Diễn (hanoi_cs1_cs2)
+[20:01:33 27/9/2026]    URL: https://www.facebook.com/groups/140397885361011/?locale=vi_VN
+[20:01:54 27/9/2026]    → Bóc tách được 0 bài viết thô từ nhóm.
+[20:01:54 27/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 0/50)
+[20:01:54 27/9/2026] 
+🔎 [Quét nhóm FB]: Phòng Trọ Sinh Viên Hà Nội (hanoi_cs1_cs2)
+[20:01:54 27/9/2026]    URL: https://www.facebook.com/groups/phongtrohn/?locale=vi_VN
+[20:02:16 27/9/2026]    → Bóc tách được 0 bài viết thô từ nhóm.
+[20:02:16 27/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 0/50)
+[20:02:16 27/9/2026] 
+🔎 [Quét nhóm FB]: Nhà trọ ĐH Công nghiệp HaUI - Cơ Sở 3 - Phù Vân - Phủ Lý Hà Nam (hanam_cs3)
+[20:02:16 27/9/2026]    URL: https://www.facebook.com/groups/611511566512116?locale=vi_VN
+[20:02:37 27/9/2026]    → Bóc tách được 0 bài viết thô từ nhóm.
+[20:02:37 27/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 0/50)
+[20:02:37 27/9/2026] 
+🔎 [Quét nhóm FB]: Cho Thuê Phòng Trọ ĐH Công Nghiệp Hà Nội Haui (CS3 Phù Vân Hà Nam) (hanam_cs3)
+[20:02:37 27/9/2026]    URL: https://www.facebook.com/groups/447547838952346/?locale=vi_VN
+[20:02:58 27/9/2026]    → Bóc tách được 0 bài viết thô từ nhóm.
+[20:02:58 27/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 0/50)
+[20:02:58 27/9/2026] 
+🔎 [Quét nhóm FB]: Phòng Trọ ĐH Công Nghiệp Hà Nam CS3 (hanam_cs3)
+[20:02:58 27/9/2026]    URL: https://www.facebook.com/groups/phongtrodhcnhanam/?locale=vi_VN
+[20:03:19 27/9/2026]    → Bóc tách được 0 bài viết thô từ nhóm.
+[20:03:19 27/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 0/50)
+[20:03:19 27/9/2026] 
+🔎 [Quét nhóm FB]: Phòng Trọ Phủ Lý Hà Nam (Gần HaUI CS3) (hanam_cs3)
+[20:03:19 27/9/2026]    URL: https://www.facebook.com/groups/phongtrophulyhanam/?locale=vi_VN
+[20:03:40 27/9/2026]    → Bóc tách được 0 bài viết thô từ nhóm.
+[20:03:40 27/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 0/50)
+[20:03:40 27/9/2026] 
+🔎 [Quét nhóm FB]: Thuê Trọ Hà Nam - Phủ Lý (hanam_cs3)
+[20:03:40 27/9/2026]    URL: https://www.facebook.com/groups/thuetrohanam/?locale=vi_VN
+[20:04:01 27/9/2026]    → Bóc tách được 0 bài viết thô từ nhóm.
+[20:04:01 27/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 0/50)
+[20:04:01 27/9/2026] 
+── [PHẦN B] CÀO THÊM PHÒNG TRỌ TỪ NGUỒN KHÁC (PHONGTRO123: CS1, CS2, CS3) ──
+[20:04:01 27/9/2026] 
+🔎 [Nguồn Phongtro123]: Minh Khai (CS1) -> https://phongtro123.com/tinh-thanh/ha-noi/quan-bac-tu-liem/phuong-minh-khai
+[20:04:04 27/9/2026]    → Tìm thấy 30 bài đăng trên trang.
+[20:04:12 27/9/2026] 
+🔎 [Nguồn Phongtro123]: Phúc Diễn (CS1) -> https://phongtro123.com/tinh-thanh/ha-noi/quan-bac-tu-liem/phuong-phuc-dien
+[20:04:14 27/9/2026]    → Tìm thấy 30 bài đăng trên trang.
+[20:04:23 27/9/2026] 
+🔎 [Nguồn Phongtro123]: Tây Tựu (CS2) -> https://phongtro123.com/tinh-thanh/ha-noi/quan-bac-tu-liem/phuong-tay-tuu
+[20:04:26 27/9/2026]    → Tìm thấy 30 bài đăng trên trang.
+[20:04:38 27/9/2026]   [APPROX-LANDMARK] Không khớp địa danh cụ thể, trỏ về HaUI CS1: Cho thuê CCMN Full đồ, khép kín ngay 05 Tú Mỡ, Cạnh sân bóng
+[20:04:38 27/9/2026]    [PT123] Đã lưu: RM-PT123-2F27F8 - Cho thuê CCMN Full đồ, khép kín ngay 05 Tú Mỡ... (Tổng khác: 1/15)
+[20:04:52 27/9/2026] 
+🔎 [Nguồn Phongtro123]: Hoài Đức (CS1/CS2) -> https://phongtro123.com/tinh-thanh/ha-noi/huyen-hoai-duc
+[20:04:55 27/9/2026]    → Tìm thấy 30 bài đăng trên trang.
+[20:04:57 27/9/2026]   [APPROX-LANDMARK] Không khớp địa danh cụ thể, trỏ về HaUI CS1: Thông tin mô tả
+
+CHÍNH CHỦ CHO THUÊ PHÒNG KHÉP KÍN ĐỦ ĐỒ – C
+[20:04:57 27/9/2026]    [PT123] Đã lưu: RM-PT123-461AB8 - CHÍNH CHỦ CHO THUÊ PHÒNG KHÉP KÍN ĐỦ ĐỒ – CỔN... (Tổng khác: 2/15)
+[20:04:59 27/9/2026]   [APPROX-LANDMARK] Không khớp địa danh cụ thể, trỏ về HaUI CS1: [HIẾM] - CHÍNH CHỦ - Cho thuê phòng khép kín FULL ĐỒ, phong 
+[20:04:59 27/9/2026]    [PT123] Đã lưu: RM-PT123-BB16C8 - [HIẾM] - CHÍNH CHỦ - Cho thuê phòng khép kín ... (Tổng khác: 3/15)
+[20:05:00 27/9/2026]   [APPROX-LANDMARK] Không khớp địa danh cụ thể, trỏ về HaUI CS1: CAO TRUNG, THỊ TRẤN TRÔI, HOÀI ĐỨCGiá chỉ 2.2 triệu/tháng – 
+[20:05:00 27/9/2026]    [PT123] Đã lưu: RM-PT123-84458C - CAO TRUNG, THỊ TRẤN TRÔI, HOÀI ĐỨCGiá chỉ 2.2... (Tổng khác: 4/15)
+[20:05:02 27/9/2026]    [PT123] Đã lưu: RM-PT123-93A7DE - Phòng mới đẹp giá rẻ chỉ 2tr5 tại 17 Đường Vă... (Tổng khác: 5/15)
+[20:05:09 27/9/2026] 
+🔎 [Nguồn Phongtro123]: TP. Phủ Lý (CS3) -> https://phongtro123.com/tinh-thanh/ha-nam/thanh-pho-phu-ly
+[20:05:11 27/9/2026]    → Tìm thấy 29 bài đăng trên trang.
+[20:05:18 27/9/2026] 
+🔎 [Nguồn Phongtro123]: Tỉnh Hà Nam (CS3) -> https://phongtro123.com/tinh-thanh/ha-nam
+[20:05:20 27/9/2026]    → Tìm thấy 29 bài đăng trên trang.
+[20:05:22 27/9/2026]    [PT123] Đã lưu: RM-PT123-B538D7 - Nhà trọ Tuấn Thuyết cho thuê phòng trọ... (Tổng khác: 6/15)
+[20:05:23 27/9/2026]    [PT123] Đã lưu: RM-PT123-EFFB27 - cho thuê nhà trọ thoáng mát, đầy đủ tiện nghi... (Tổng khác: 7/15)
+[20:05:31 27/9/2026] ================================================================================
+[20:05:31 27/9/2026] 🎉 [CrawlBot] HOÀN TẤT ĐỢT CÀO DỮ LIỆU TỰ ĐỘNG!
+[20:05:31 27/9/2026]    + Facebook mới thêm:     0 phòng
+[20:05:31 27/9/2026]    + Nguồn khác mới thêm:   7 phòng
+[20:05:31 27/9/2026]    - Rác thương mại loại:  0 bài
+[20:05:31 27/9/2026]    - Bài tìm phòng loại:    0 bài
+[20:05:31 27/9/2026]    - Trùng lặp bỏ qua:      131 bài
+[20:05:31 27/9/2026] 📦 Tổng số phòng hiện có trong DB: 270 phòng
+[20:05:31 27/9/2026] ⏰ Đợt cào tự động kế tiếp sẽ chạy sau 4 tiếng.
+[20:05:31 27/9/2026] ================================================================================
+
+[22:37:50 27/9/2026] ================================================================================
+[22:37:50 27/9/2026] 🚀 [CrawlBot] BẮT ĐẦU CHU KỲ CÀO DỮ LIỆU TỰ ĐỘNG (CHU KỲ 4 TIẾNG)
+[22:37:50 27/9/2026] 🎯 Mục tiêu: +50 phòng Facebook công khai | +15 phòng từ nguồn khác
+[22:37:50 27/9/2026] ⚖️ Cam kết: 100% tuân thủ Nghị định 13/2023/NĐ-CP, khử PII, chống trùng SHA-256
+[22:37:50 27/9/2026] ================================================================================
+[22:37:50 27/9/2026] 📊 Hiện có 270 phòng trong cơ sở dữ liệu để kiểm tra trùng.
+[22:37:50 27/9/2026] 
+── [PHẦN A] CÀO PHÒNG TRỌ FACEBOOK (CÁC NHÓM CÔNG KHAI HAUI CS1, CS2, CS3) ──
+[22:37:50 27/9/2026] 
+🔎 [Quét nhóm FB]: Nhà trọ Nhổn - Nguyên Xá - Văn Trì - ĐH Công Nghiệp Hà Nội (80K tv) (hanoi_cs1_cs2)
+[22:37:50 27/9/2026]    URL: https://www.facebook.com/groups/1896518147417522/?locale=vi_VN
+[22:38:13 27/9/2026]    → Bóc tách được 3 bài viết thô từ nhóm.
+[22:38:13 27/9/2026]    → Nhóm này đã lưu thành công: +3 phòng chuẩn. (Tổng FB mới: 3/50)
+[22:38:13 27/9/2026] 
+🔎 [Quét nhóm FB]: HaUI - Tìm Phòng Trọ (71.9K tv) (hanoi_cs1_cs2)
+[22:38:13 27/9/2026]    URL: https://www.facebook.com/groups/219194439373201?locale=vi_VN
+[22:38:34 27/9/2026]    → Bóc tách được 0 bài viết thô từ nhóm.
+[22:38:34 27/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 3/50)
+[22:38:34 27/9/2026] 
+🔎 [Quét nhóm FB]: Phòng Trọ Hoài Đức - Vân Canh - Kim Chung (Gần CS1 & CS2) (hanoi_cs1_cs2)
+[22:38:34 27/9/2026]    URL: https://www.facebook.com/groups/PhongTroHoaiDuc/?locale=vi_VN
+[22:38:56 27/9/2026]    → Bóc tách được 0 bài viết thô từ nhóm.
+[22:38:56 27/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 3/50)
+[22:38:56 27/9/2026] 
+🔎 [Quét nhóm FB]: Phòng Trọ Bắc Từ Liêm - Nhổn - Cầu Diễn (hanoi_cs1_cs2)
+[22:38:56 27/9/2026]    URL: https://www.facebook.com/groups/140397885361011/?locale=vi_VN
+[22:39:17 27/9/2026]    → Bóc tách được 0 bài viết thô từ nhóm.
+[22:39:17 27/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 3/50)
+[22:39:17 27/9/2026] 
+🔎 [Quét nhóm FB]: Phòng Trọ Sinh Viên Hà Nội (hanoi_cs1_cs2)
+[22:39:17 27/9/2026]    URL: https://www.facebook.com/groups/phongtrohn/?locale=vi_VN
+[22:39:38 27/9/2026]    → Bóc tách được 0 bài viết thô từ nhóm.
+[22:39:38 27/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 3/50)
+[22:39:38 27/9/2026] 
+🔎 [Quét nhóm FB]: Nhà trọ ĐH Công nghiệp HaUI - Cơ Sở 3 - Phù Vân - Phủ Lý Hà Nam (hanam_cs3)
+[22:39:38 27/9/2026]    URL: https://www.facebook.com/groups/611511566512116?locale=vi_VN
+[22:40:00 27/9/2026]    → Bóc tách được 0 bài viết thô từ nhóm.
+[22:40:00 27/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 3/50)
+[22:40:00 27/9/2026] 
+🔎 [Quét nhóm FB]: Cho Thuê Phòng Trọ ĐH Công Nghiệp Hà Nội Haui (CS3 Phù Vân Hà Nam) (hanam_cs3)
+[22:40:00 27/9/2026]    URL: https://www.facebook.com/groups/447547838952346/?locale=vi_VN
+[22:40:21 27/9/2026]    → Bóc tách được 0 bài viết thô từ nhóm.
+[22:40:21 27/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 3/50)
+[22:40:21 27/9/2026] 
+🔎 [Quét nhóm FB]: Phòng Trọ ĐH Công Nghiệp Hà Nam CS3 (hanam_cs3)
+[22:40:21 27/9/2026]    URL: https://www.facebook.com/groups/phongtrodhcnhanam/?locale=vi_VN
+[22:40:42 27/9/2026]    → Bóc tách được 0 bài viết thô từ nhóm.
+[22:40:42 27/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 3/50)
+[22:40:42 27/9/2026] 
+🔎 [Quét nhóm FB]: Phòng Trọ Phủ Lý Hà Nam (Gần HaUI CS3) (hanam_cs3)
+[22:40:42 27/9/2026]    URL: https://www.facebook.com/groups/phongtrophulyhanam/?locale=vi_VN
+[22:41:03 27/9/2026]    → Bóc tách được 0 bài viết thô từ nhóm.
+[22:41:03 27/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 3/50)
+[22:41:03 27/9/2026] 
+🔎 [Quét nhóm FB]: Thuê Trọ Hà Nam - Phủ Lý (hanam_cs3)
+[22:41:03 27/9/2026]    URL: https://www.facebook.com/groups/thuetrohanam/?locale=vi_VN
+[22:41:24 27/9/2026]    → Bóc tách được 0 bài viết thô từ nhóm.
+[22:41:24 27/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 3/50)
+[22:41:24 27/9/2026] 
+── [PHẦN B] CÀO THÊM PHÒNG TRỌ TỪ NGUỒN KHÁC (PHONGTRO123: CS1, CS2, CS3) ──
+[22:41:24 27/9/2026] 
+🔎 [Nguồn Phongtro123]: Minh Khai (CS1) -> https://phongtro123.com/tinh-thanh/ha-noi/quan-bac-tu-liem/phuong-minh-khai
+[22:41:29 27/9/2026]    → Tìm thấy 30 bài đăng trên trang.
+[22:41:32 27/9/2026]   [APPROX-LANDMARK] Không khớp địa danh cụ thể, trỏ về HaUI CS1: SIÊU PHẨM CĂN HỘ CỬA SỔ LỚN NGẬP TRÀN ÁNH SÁNG – TRỤC ĐƯỜNG 
+[22:41:32 27/9/2026]    [PT123] Đã lưu: RM-PT123-AC453F - SIÊU PHẨM CĂN HỘ CỬA SỔ LỚN NGẬP TRÀN ÁNH SÁN... (Tổng khác: 1/15)
+[22:41:37 27/9/2026] 
+🔎 [Nguồn Phongtro123]: Phúc Diễn (CS1) -> https://phongtro123.com/tinh-thanh/ha-noi/quan-bac-tu-liem/phuong-phuc-dien
+[22:41:40 27/9/2026]    → Tìm thấy 30 bài đăng trên trang.
+[22:41:47 27/9/2026] 
+🔎 [Nguồn Phongtro123]: Tây Tựu (CS2) -> https://phongtro123.com/tinh-thanh/ha-noi/quan-bac-tu-liem/phuong-tay-tuu
+[22:41:50 27/9/2026]    → Tìm thấy 29 bài đăng trên trang.
+[22:42:09 27/9/2026] 
+🔎 [Nguồn Phongtro123]: Hoài Đức (CS1/CS2) -> https://phongtro123.com/tinh-thanh/ha-noi/huyen-hoai-duc
+[22:42:11 27/9/2026]    → Tìm thấy 30 bài đăng trên trang.
+[22:42:17 27/9/2026] 
+🔎 [Nguồn Phongtro123]: TP. Phủ Lý (CS3) -> https://phongtro123.com/tinh-thanh/ha-nam/thanh-pho-phu-ly
+[22:42:19 27/9/2026]    → Tìm thấy 29 bài đăng trên trang.
+[22:42:25 27/9/2026] 
+🔎 [Nguồn Phongtro123]: Tỉnh Hà Nam (CS3) -> https://phongtro123.com/tinh-thanh/ha-nam
+[22:42:27 27/9/2026]    → Tìm thấy 29 bài đăng trên trang.
+[22:42:33 27/9/2026] ================================================================================
+[22:42:33 27/9/2026] 🎉 [CrawlBot] HOÀN TẤT ĐỢT CÀO DỮ LIỆU TỰ ĐỘNG!
+[22:42:33 27/9/2026]    + Facebook mới thêm:     3 phòng
+[22:42:33 27/9/2026]    + Nguồn khác mới thêm:   1 phòng
+[22:42:33 27/9/2026]    - Rác thương mại loại:  0 bài
+[22:42:33 27/9/2026]    - Bài tìm phòng loại:    0 bài
+[22:42:33 27/9/2026]    - Trùng lặp bỏ qua:      143 bài
+[22:42:33 27/9/2026] 📦 Tổng số phòng hiện có trong DB: 274 phòng
+[22:42:33 27/9/2026] ⏰ Đợt cào tự động kế tiếp sẽ chạy sau 4 tiếng.
+[22:42:33 27/9/2026] ================================================================================
+
+[23:12:20 27/9/2026] ================================================================================
+[23:12:20 27/9/2026] 🚀 [CrawlBot] BẮT ĐẦU CHU KỲ CÀO DỮ LIỆU TỰ ĐỘNG (CHU KỲ 4 TIẾNG)
+[23:12:20 27/9/2026] 🎯 Mục tiêu: +50 phòng Facebook công khai | +15 phòng từ nguồn khác
+[23:12:20 27/9/2026] ⚖️ Cam kết: 100% tuân thủ Nghị định 13/2023/NĐ-CP, khử PII, chống trùng SHA-256
+[23:12:20 27/9/2026] ================================================================================
+[23:12:20 27/9/2026] 📊 Hiện có 274 phòng trong cơ sở dữ liệu để kiểm tra trùng.
+[23:12:21 27/9/2026] 
+── [PHẦN A] CÀO PHÒNG TRỌ FACEBOOK (CÁC NHÓM CÔNG KHAI HAUI CS1, CS2, CS3) ──
+[23:12:21 27/9/2026] 
+🔎 [Quét nhóm FB]: Nhà trọ Nhổn - Nguyên Xá - Văn Trì - ĐH Công Nghiệp Hà Nội (80K tv) (hanoi_cs1_cs2)
+[23:12:21 27/9/2026]    URL: https://www.facebook.com/groups/1896518147417522/?locale=vi_VN
+[23:12:42 27/9/2026]    → Bóc tách được 0 bài viết thô từ nhóm.
+[23:12:42 27/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 0/50)
+[23:12:42 27/9/2026] 
+🔎 [Quét nhóm FB]: HaUI - Tìm Phòng Trọ (71.9K tv) (hanoi_cs1_cs2)
+[23:12:42 27/9/2026]    URL: https://www.facebook.com/groups/219194439373201?locale=vi_VN
+[23:13:03 27/9/2026]    → Bóc tách được 0 bài viết thô từ nhóm.
+[23:13:03 27/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 0/50)
+[23:13:03 27/9/2026] 
+🔎 [Quét nhóm FB]: Phòng Trọ Hoài Đức - Vân Canh - Kim Chung (Gần CS1 & CS2) (hanoi_cs1_cs2)
+[23:13:03 27/9/2026]    URL: https://www.facebook.com/groups/PhongTroHoaiDuc/?locale=vi_VN
+[23:13:24 27/9/2026]    → Bóc tách được 0 bài viết thô từ nhóm.
+[23:13:24 27/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 0/50)
+[23:13:24 27/9/2026] 
+🔎 [Quét nhóm FB]: Phòng Trọ Bắc Từ Liêm - Nhổn - Cầu Diễn (hanoi_cs1_cs2)
+[23:13:24 27/9/2026]    URL: https://www.facebook.com/groups/140397885361011/?locale=vi_VN
+[23:13:45 27/9/2026]    → Bóc tách được 0 bài viết thô từ nhóm.
+[23:13:45 27/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 0/50)
+[23:13:45 27/9/2026] 
+🔎 [Quét nhóm FB]: Phòng Trọ Sinh Viên Hà Nội (hanoi_cs1_cs2)
+[23:13:45 27/9/2026]    URL: https://www.facebook.com/groups/phongtrohn/?locale=vi_VN
+[23:14:07 27/9/2026]    → Bóc tách được 0 bài viết thô từ nhóm.
+[23:14:07 27/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 0/50)
+[23:14:07 27/9/2026] 
+🔎 [Quét nhóm FB]: Nhà trọ ĐH Công nghiệp HaUI - Cơ Sở 3 - Phù Vân - Phủ Lý Hà Nam (hanam_cs3)
+[23:14:07 27/9/2026]    URL: https://www.facebook.com/groups/611511566512116?locale=vi_VN
+[23:14:28 27/9/2026]    → Bóc tách được 0 bài viết thô từ nhóm.
+[23:14:28 27/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 0/50)
+[23:14:28 27/9/2026] 
+🔎 [Quét nhóm FB]: Cho Thuê Phòng Trọ ĐH Công Nghiệp Hà Nội Haui (CS3 Phù Vân Hà Nam) (hanam_cs3)
+[23:14:28 27/9/2026]    URL: https://www.facebook.com/groups/447547838952346/?locale=vi_VN
+[23:14:49 27/9/2026]    → Bóc tách được 0 bài viết thô từ nhóm.
+[23:14:49 27/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 0/50)
+[23:14:49 27/9/2026] 
+🔎 [Quét nhóm FB]: Phòng Trọ ĐH Công Nghiệp Hà Nam CS3 (hanam_cs3)
+[23:14:49 27/9/2026]    URL: https://www.facebook.com/groups/phongtrodhcnhanam/?locale=vi_VN
+[23:15:10 27/9/2026]    → Bóc tách được 0 bài viết thô từ nhóm.
+[23:15:10 27/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 0/50)
+[23:15:10 27/9/2026] 
+🔎 [Quét nhóm FB]: Phòng Trọ Phủ Lý Hà Nam (Gần HaUI CS3) (hanam_cs3)
+[23:15:10 27/9/2026]    URL: https://www.facebook.com/groups/phongtrophulyhanam/?locale=vi_VN
+[23:15:31 27/9/2026]    → Bóc tách được 0 bài viết thô từ nhóm.
+[23:15:31 27/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 0/50)
+[23:15:31 27/9/2026] 
+🔎 [Quét nhóm FB]: Thuê Trọ Hà Nam - Phủ Lý (hanam_cs3)
+[23:15:31 27/9/2026]    URL: https://www.facebook.com/groups/thuetrohanam/?locale=vi_VN
+[23:15:52 27/9/2026]    → Bóc tách được 0 bài viết thô từ nhóm.
+[23:15:52 27/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 0/50)
+[23:15:52 27/9/2026] 
+── [PHẦN B] CÀO THÊM PHÒNG TRỌ TỪ NGUỒN KHÁC (PHONGTRO123: CS1, CS2, CS3) ──
+[23:15:52 27/9/2026] 
+🔎 [Nguồn Phongtro123]: Minh Khai (CS1) -> https://phongtro123.com/tinh-thanh/ha-noi/quan-bac-tu-liem/phuong-minh-khai
+[23:15:56 27/9/2026]    → Tìm thấy 30 bài đăng trên trang.
+[23:16:02 27/9/2026] 
+🔎 [Nguồn Phongtro123]: Phúc Diễn (CS1) -> https://phongtro123.com/tinh-thanh/ha-noi/quan-bac-tu-liem/phuong-phuc-dien
+[23:16:05 27/9/2026]    → Tìm thấy 30 bài đăng trên trang.
+[23:16:12 27/9/2026] 
+🔎 [Nguồn Phongtro123]: Tây Tựu (CS2) -> https://phongtro123.com/tinh-thanh/ha-noi/quan-bac-tu-liem/phuong-tay-tuu
+[23:16:15 27/9/2026]    → Tìm thấy 29 bài đăng trên trang.
+[23:16:34 27/9/2026] 
+🔎 [Nguồn Phongtro123]: Hoài Đức (CS1/CS2) -> https://phongtro123.com/tinh-thanh/ha-noi/huyen-hoai-duc
+[23:16:37 27/9/2026]    → Tìm thấy 30 bài đăng trên trang.
+[23:16:42 27/9/2026] 
+🔎 [Nguồn Phongtro123]: TP. Phủ Lý (CS3) -> https://phongtro123.com/tinh-thanh/ha-nam/thanh-pho-phu-ly
+[23:16:44 27/9/2026]    → Tìm thấy 29 bài đăng trên trang.
+[23:16:49 27/9/2026] 
+🔎 [Nguồn Phongtro123]: Tỉnh Hà Nam (CS3) -> https://phongtro123.com/tinh-thanh/ha-nam
+[23:16:51 27/9/2026]    → Tìm thấy 29 bài đăng trên trang.
+[23:16:57 27/9/2026] ================================================================================
+[23:16:57 27/9/2026] 🎉 [CrawlBot] HOÀN TẤT ĐỢT CÀO DỮ LIỆU TỰ ĐỘNG!
+[23:16:57 27/9/2026]    + Facebook mới thêm:     0 phòng
+[23:16:57 27/9/2026]    + Nguồn khác mới thêm:   0 phòng
+[23:16:57 27/9/2026]    - Rác thương mại loại:  0 bài
+[23:16:57 27/9/2026]    - Bài tìm phòng loại:    0 bài
+[23:16:57 27/9/2026]    - Trùng lặp bỏ qua:      144 bài
+[23:16:57 27/9/2026] 📦 Tổng số phòng hiện có trong DB: 274 phòng
+[23:16:57 27/9/2026] ⏰ Đợt cào tự động kế tiếp sẽ chạy sau 4 tiếng.
+[23:16:57 27/9/2026] ================================================================================
+
+[23:41:13 27/9/2026] ⏰ [CrawlBot] Kích hoạt chu kỳ 4 tiếng định kỳ...
+[23:41:13 27/9/2026] ================================================================================
+[23:41:13 27/9/2026] 🚀 [CrawlBot] BẮT ĐẦU CHU KỲ CÀO DỮ LIỆU TỰ ĐỘNG (CHU KỲ 4 TIẾNG)
+[23:41:13 27/9/2026] 🎯 Mục tiêu: +20 phòng Facebook công khai | +10 phòng từ nguồn khác
+[23:41:13 27/9/2026] ⚖️ Cam kết: 100% tuân thủ Nghị định 13/2023/NĐ-CP, khử PII, chống trùng SHA-256
+[23:41:13 27/9/2026] ================================================================================
+[23:41:13 27/9/2026] 📊 Hiện có 274 phòng trong cơ sở dữ liệu để kiểm tra trùng.
+[23:41:14 27/9/2026] 
+── [PHẦN A] CÀO PHÒNG TRỌ FACEBOOK (CÁC NHÓM CÔNG KHAI HAUI CS1, CS2, CS3) ──
+[23:41:14 27/9/2026] 
+🔎 [Quét nhóm FB]: Nhà trọ Nhổn - Nguyên Xá - Văn Trì - ĐH Công Nghiệp Hà Nội (80K tv) (hanoi_cs1_cs2)
+[23:41:14 27/9/2026]    URL: https://www.facebook.com/groups/1896518147417522/?locale=vi_VN
+[23:41:36 27/9/2026]    → Bóc tách được 0 bài viết thô từ nhóm.
+[23:41:36 27/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 0/20)
+[23:41:36 27/9/2026] 
+🔎 [Quét nhóm FB]: HaUI - Tìm Phòng Trọ (71.9K tv) (hanoi_cs1_cs2)
+[23:41:36 27/9/2026]    URL: https://www.facebook.com/groups/219194439373201?locale=vi_VN
+[23:41:57 27/9/2026]    → Bóc tách được 0 bài viết thô từ nhóm.
+[23:41:57 27/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 0/20)
+[23:41:57 27/9/2026] 
+🔎 [Quét nhóm FB]: Phòng Trọ Hoài Đức - Vân Canh - Kim Chung (Gần CS1 & CS2) (hanoi_cs1_cs2)
+[23:41:57 27/9/2026]    URL: https://www.facebook.com/groups/PhongTroHoaiDuc/?locale=vi_VN
+[23:42:19 27/9/2026]    → Bóc tách được 0 bài viết thô từ nhóm.
+[23:42:19 27/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 0/20)
+[23:42:19 27/9/2026] 
+🔎 [Quét nhóm FB]: Phòng Trọ Bắc Từ Liêm - Nhổn - Cầu Diễn (hanoi_cs1_cs2)
+[23:42:19 27/9/2026]    URL: https://www.facebook.com/groups/140397885361011/?locale=vi_VN
+[23:42:40 27/9/2026]    → Bóc tách được 0 bài viết thô từ nhóm.
+[23:42:40 27/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 0/20)
+[23:42:40 27/9/2026] 
+🔎 [Quét nhóm FB]: Phòng Trọ Sinh Viên Hà Nội (hanoi_cs1_cs2)
+[23:42:40 27/9/2026]    URL: https://www.facebook.com/groups/phongtrohn/?locale=vi_VN
+[23:43:01 27/9/2026]    → Bóc tách được 0 bài viết thô từ nhóm.
+[23:43:01 27/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 0/20)
+[23:43:01 27/9/2026] 
+🔎 [Quét nhóm FB]: Nhà trọ ĐH Công nghiệp HaUI - Cơ Sở 3 - Phù Vân - Phủ Lý Hà Nam (hanam_cs3)
+[23:43:01 27/9/2026]    URL: https://www.facebook.com/groups/611511566512116?locale=vi_VN
+[23:43:23 27/9/2026]    → Bóc tách được 0 bài viết thô từ nhóm.
+[23:43:23 27/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 0/20)
+[23:43:23 27/9/2026] 
+🔎 [Quét nhóm FB]: Cho Thuê Phòng Trọ ĐH Công Nghiệp Hà Nội Haui (CS3 Phù Vân Hà Nam) (hanam_cs3)
+[23:43:23 27/9/2026]    URL: https://www.facebook.com/groups/447547838952346/?locale=vi_VN
+[23:43:44 27/9/2026]    → Bóc tách được 0 bài viết thô từ nhóm.
+[23:43:44 27/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 0/20)
+[23:43:44 27/9/2026] 
+🔎 [Quét nhóm FB]: Phòng Trọ ĐH Công Nghiệp Hà Nam CS3 (hanam_cs3)
+[23:43:44 27/9/2026]    URL: https://www.facebook.com/groups/phongtrodhcnhanam/?locale=vi_VN
+[23:44:05 27/9/2026]    → Bóc tách được 0 bài viết thô từ nhóm.
+[23:44:05 27/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 0/20)
+[23:44:05 27/9/2026] 
+🔎 [Quét nhóm FB]: Phòng Trọ Phủ Lý Hà Nam (Gần HaUI CS3) (hanam_cs3)
+[23:44:05 27/9/2026]    URL: https://www.facebook.com/groups/phongtrophulyhanam/?locale=vi_VN
+[23:44:26 27/9/2026]    → Bóc tách được 0 bài viết thô từ nhóm.
+[23:44:26 27/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 0/20)
+[23:44:26 27/9/2026] 
+🔎 [Quét nhóm FB]: Thuê Trọ Hà Nam - Phủ Lý (hanam_cs3)
+[23:44:26 27/9/2026]    URL: https://www.facebook.com/groups/thuetrohanam/?locale=vi_VN
+[23:44:47 27/9/2026]    → Bóc tách được 0 bài viết thô từ nhóm.
+[23:44:47 27/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 0/20)
+[23:44:47 27/9/2026] 
+── [PHẦN B] CÀO THÊM PHÒNG TRỌ TỪ NGUỒN KHÁC (PHONGTRO123: CS1, CS2, CS3) ──
+[23:44:47 27/9/2026] 
+🔎 [Nguồn Phongtro123]: Minh Khai (CS1) -> https://phongtro123.com/tinh-thanh/ha-noi/quan-bac-tu-liem/phuong-minh-khai
+[23:44:50 27/9/2026]    → Tìm thấy 30 bài đăng trên trang.
+[23:44:55 27/9/2026] 
+🔎 [Nguồn Phongtro123]: Phúc Diễn (CS1) -> https://phongtro123.com/tinh-thanh/ha-noi/quan-bac-tu-liem/phuong-phuc-dien
+[23:44:58 27/9/2026]    → Tìm thấy 30 bài đăng trên trang.
+[23:45:05 27/9/2026] 
+🔎 [Nguồn Phongtro123]: Tây Tựu (CS2) -> https://phongtro123.com/tinh-thanh/ha-noi/quan-bac-tu-liem/phuong-tay-tuu
+[23:45:07 27/9/2026]    → Tìm thấy 29 bài đăng trên trang.
+[23:45:24 27/9/2026] 
+🔎 [Nguồn Phongtro123]: Hoài Đức (CS1/CS2) -> https://phongtro123.com/tinh-thanh/ha-noi/huyen-hoai-duc
+[23:45:26 27/9/2026]    → Tìm thấy 30 bài đăng trên trang.
+[23:45:33 27/9/2026] 
+🔎 [Nguồn Phongtro123]: TP. Phủ Lý (CS3) -> https://phongtro123.com/tinh-thanh/ha-nam/thanh-pho-phu-ly
+[23:45:35 27/9/2026]    → Tìm thấy 29 bài đăng trên trang.
+[23:45:41 27/9/2026] 
+🔎 [Nguồn Phongtro123]: Tỉnh Hà Nam (CS3) -> https://phongtro123.com/tinh-thanh/ha-nam
+[23:45:43 27/9/2026]    → Tìm thấy 29 bài đăng trên trang.
+[23:45:52 27/9/2026] ================================================================================
+[23:45:52 27/9/2026] 🎉 [CrawlBot] HOÀN TẤT ĐỢT CÀO DỮ LIỆU TỰ ĐỘNG!
+[23:45:52 27/9/2026]    + Facebook mới thêm:     0 phòng
+[23:45:52 27/9/2026]    + Nguồn khác mới thêm:   0 phòng
+[23:45:52 27/9/2026]    - Rác thương mại loại:  0 bài
+[23:45:52 27/9/2026]    - Bài tìm phòng loại:    0 bài
+[23:45:52 27/9/2026]    - Trùng lặp bỏ qua:      143 bài
+[23:45:52 27/9/2026] 📦 Tổng số phòng hiện có trong DB: 274 phòng
+[23:45:52 27/9/2026] ⏰ Đợt cào tự động kế tiếp sẽ chạy sau 4 tiếng.
+[23:45:52 27/9/2026] ================================================================================
+
+[00:11:31 28/9/2026] 🤖 [CrawlBot] Đã kích hoạt lịch cào tự động Playwright: Chu kỳ mỗi 4 tiếng (4h/lần).
+[00:11:31 28/9/2026] 🤖 [CrawlBot] Đã kích hoạt lịch cào tự động Playwright: Chu kỳ mỗi 4 tiếng (4h/lần).
+[00:11:46 28/9/2026] 🚀 [CrawlBot] Tự động kích hoạt đợt cào Playwright ban đầu...
+[00:11:46 28/9/2026] ================================================================================
+[00:11:46 28/9/2026] 🚀 [CrawlBot] BẮT ĐẦU CHU KỲ CÀO DỮ LIỆU TỰ ĐỘNG (CHU KỲ 4 TIẾNG)
+[00:11:46 28/9/2026] 🎯 Mục tiêu: +10 phòng Facebook công khai | +5 phòng từ nguồn khác
+[00:11:46 28/9/2026] ⚖️ Cam kết: 100% tuân thủ Nghị định 13/2023/NĐ-CP, khử PII, chống trùng SHA-256
+[00:11:46 28/9/2026] ================================================================================
+[00:11:46 28/9/2026] 📊 Hiện có 274 phòng trong cơ sở dữ liệu để kiểm tra trùng.
+[00:11:46 28/9/2026] 
+── [PHẦN A] CÀO PHÒNG TRỌ FACEBOOK (CÁC NHÓM CÔNG KHAI HAUI CS1, CS2, CS3) ──
+[00:11:46 28/9/2026] 
+🔎 [Quét nhóm FB]: Nhà trọ Nhổn - Nguyên Xá - Văn Trì - ĐH Công Nghiệp Hà Nội (80K tv) (hanoi_cs1_cs2)
+[00:11:46 28/9/2026]    URL: https://www.facebook.com/groups/1896518147417522/?locale=vi_VN
+[00:12:08 28/9/2026]    → Bóc tách được 0 bài viết thô từ nhóm.
+[00:12:08 28/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 0/10)
+[00:12:08 28/9/2026] 
+🔎 [Quét nhóm FB]: HaUI - Tìm Phòng Trọ (71.9K tv) (hanoi_cs1_cs2)
+[00:12:08 28/9/2026]    URL: https://www.facebook.com/groups/219194439373201?locale=vi_VN
+[00:12:29 28/9/2026]    → Bóc tách được 0 bài viết thô từ nhóm.
+[00:12:29 28/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 0/10)
+[00:12:29 28/9/2026] 
+🔎 [Quét nhóm FB]: Phòng Trọ Hoài Đức - Vân Canh - Kim Chung (Gần CS1 & CS2) (hanoi_cs1_cs2)
+[00:12:29 28/9/2026]    URL: https://www.facebook.com/groups/PhongTroHoaiDuc/?locale=vi_VN
+[00:12:50 28/9/2026]    → Bóc tách được 0 bài viết thô từ nhóm.
+[00:12:50 28/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 0/10)
+[00:12:50 28/9/2026] 
+🔎 [Quét nhóm FB]: Phòng Trọ Bắc Từ Liêm - Nhổn - Cầu Diễn (hanoi_cs1_cs2)
+[00:12:50 28/9/2026]    URL: https://www.facebook.com/groups/140397885361011/?locale=vi_VN
+[00:13:11 28/9/2026]    → Bóc tách được 0 bài viết thô từ nhóm.
+[00:13:11 28/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 0/10)
+[00:13:11 28/9/2026] 
+🔎 [Quét nhóm FB]: Phòng Trọ Sinh Viên Hà Nội (hanoi_cs1_cs2)
+[00:13:11 28/9/2026]    URL: https://www.facebook.com/groups/phongtrohn/?locale=vi_VN
+[00:13:32 28/9/2026]    → Bóc tách được 0 bài viết thô từ nhóm.
+[00:13:32 28/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 0/10)
+[00:13:32 28/9/2026] 
+🔎 [Quét nhóm FB]: Nhà trọ ĐH Công nghiệp HaUI - Cơ Sở 3 - Phù Vân - Phủ Lý Hà Nam (hanam_cs3)
+[00:13:32 28/9/2026]    URL: https://www.facebook.com/groups/611511566512116?locale=vi_VN
+[00:13:53 28/9/2026]    → Bóc tách được 0 bài viết thô từ nhóm.
+[00:13:53 28/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 0/10)
+[00:13:53 28/9/2026] 
+🔎 [Quét nhóm FB]: Cho Thuê Phòng Trọ ĐH Công Nghiệp Hà Nội Haui (CS3 Phù Vân Hà Nam) (hanam_cs3)
+[00:13:53 28/9/2026]    URL: https://www.facebook.com/groups/447547838952346/?locale=vi_VN
+[00:14:14 28/9/2026]    → Bóc tách được 0 bài viết thô từ nhóm.
+[00:14:14 28/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 0/10)
+[00:14:14 28/9/2026] 
+🔎 [Quét nhóm FB]: Phòng Trọ ĐH Công Nghiệp Hà Nam CS3 (hanam_cs3)
+[00:14:14 28/9/2026]    URL: https://www.facebook.com/groups/phongtrodhcnhanam/?locale=vi_VN
+[00:14:35 28/9/2026]    → Bóc tách được 0 bài viết thô từ nhóm.
+[00:14:35 28/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 0/10)
+[00:14:35 28/9/2026] 
+🔎 [Quét nhóm FB]: Phòng Trọ Phủ Lý Hà Nam (Gần HaUI CS3) (hanam_cs3)
+[00:14:35 28/9/2026]    URL: https://www.facebook.com/groups/phongtrophulyhanam/?locale=vi_VN
+[00:14:56 28/9/2026]    → Bóc tách được 0 bài viết thô từ nhóm.
+[00:14:56 28/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 0/10)
+[00:14:56 28/9/2026] 
+🔎 [Quét nhóm FB]: Thuê Trọ Hà Nam - Phủ Lý (hanam_cs3)
+[00:14:56 28/9/2026]    URL: https://www.facebook.com/groups/thuetrohanam/?locale=vi_VN
+[00:15:17 28/9/2026]    → Bóc tách được 0 bài viết thô từ nhóm.
+[00:15:17 28/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 0/10)
+[00:15:17 28/9/2026] 
+── [PHẦN B] CÀO THÊM PHÒNG TRỌ TỪ NGUỒN KHÁC (PHONGTRO123: CS1, CS2, CS3) ──
+[00:15:17 28/9/2026] 
+🔎 [Nguồn Phongtro123]: Minh Khai (CS1) -> https://phongtro123.com/tinh-thanh/ha-noi/quan-bac-tu-liem/phuong-minh-khai
+[00:15:21 28/9/2026]    → Tìm thấy 30 bài đăng trên trang.
+[00:15:29 28/9/2026] 
+🔎 [Nguồn Phongtro123]: Phúc Diễn (CS1) -> https://phongtro123.com/tinh-thanh/ha-noi/quan-bac-tu-liem/phuong-phuc-dien
+[00:15:33 28/9/2026]    → Tìm thấy 30 bài đăng trên trang.
+[00:15:40 28/9/2026] 
+🔎 [Nguồn Phongtro123]: Tây Tựu (CS2) -> https://phongtro123.com/tinh-thanh/ha-noi/quan-bac-tu-liem/phuong-tay-tuu
+[00:15:43 28/9/2026]    → Tìm thấy 29 bài đăng trên trang.
+[00:16:05 28/9/2026] 
+🔎 [Nguồn Phongtro123]: Hoài Đức (CS1/CS2) -> https://phongtro123.com/tinh-thanh/ha-noi/huyen-hoai-duc
+[00:16:08 28/9/2026]    → Tìm thấy 30 bài đăng trên trang.
+[00:16:13 28/9/2026] 
+🔎 [Nguồn Phongtro123]: TP. Phủ Lý (CS3) -> https://phongtro123.com/tinh-thanh/ha-nam/thanh-pho-phu-ly
+[00:16:16 28/9/2026]    → Tìm thấy 29 bài đăng trên trang.
+[00:16:21 28/9/2026] 
+🔎 [Nguồn Phongtro123]: Tỉnh Hà Nam (CS3) -> https://phongtro123.com/tinh-thanh/ha-nam
+[00:16:23 28/9/2026]    → Tìm thấy 29 bài đăng trên trang.
+[00:16:30 28/9/2026] ================================================================================
+[00:16:30 28/9/2026] 🎉 [CrawlBot] HOÀN TẤT ĐỢT CÀO DỮ LIỆU TỰ ĐỘNG!
+[00:16:30 28/9/2026]    + Facebook mới thêm:     0 phòng
+[00:16:30 28/9/2026]    + Nguồn khác mới thêm:   0 phòng
+[00:16:30 28/9/2026]    - Rác thương mại loại:  0 bài
+[00:16:30 28/9/2026]    - Bài tìm phòng loại:    0 bài
+[00:16:30 28/9/2026]    - Trùng lặp bỏ qua:      138 bài
+[00:16:30 28/9/2026] 📦 Tổng số phòng hiện có trong DB: 274 phòng
+[00:16:30 28/9/2026] ⏰ Đợt cào tự động kế tiếp sẽ chạy sau 4 tiếng.
+[00:16:30 28/9/2026] ================================================================================
+
+[01:12:00 28/9/2026] 🤖 [CrawlBot] Đã kích hoạt lịch cào tự động Playwright: Chu kỳ mỗi 4 tiếng (4h/lần).
+[01:12:00 28/9/2026] 🤖 [CrawlBot] Đã kích hoạt lịch cào tự động Playwright: Chu kỳ mỗi 4 tiếng (4h/lần).
+[01:12:15 28/9/2026] 🚀 [CrawlBot] Tự động kích hoạt đợt cào Playwright ban đầu...
+[01:12:15 28/9/2026] ================================================================================
+[01:12:15 28/9/2026] 🚀 [CrawlBot] BẮT ĐẦU CHU KỲ CÀO DỮ LIỆU TỰ ĐỘNG (CHU KỲ 4 TIẾNG)
+[01:12:15 28/9/2026] 🎯 Mục tiêu: +10 phòng Facebook công khai | +5 phòng từ nguồn khác
+[01:12:15 28/9/2026] ⚖️ Cam kết: 100% tuân thủ Nghị định 13/2023/NĐ-CP, khử PII, chống trùng SHA-256
+[01:12:15 28/9/2026] ================================================================================
+[01:12:15 28/9/2026] 📊 Hiện có 274 phòng trong cơ sở dữ liệu để kiểm tra trùng.
+[01:12:18 28/9/2026] 
+── [PHẦN A] CÀO PHÒNG TRỌ FACEBOOK (CÁC NHÓM CÔNG KHAI HAUI CS1, CS2, CS3) ──
+[01:12:18 28/9/2026] 
+🔎 [Quét nhóm FB]: Nhà trọ Nhổn - Nguyên Xá - Văn Trì - ĐH Công Nghiệp Hà Nội (80K tv) (hanoi_cs1_cs2)
+[01:12:18 28/9/2026]    URL: https://www.facebook.com/groups/1896518147417522/?locale=vi_VN
+[01:12:40 28/9/2026]    → Bóc tách được 0 bài viết thô từ nhóm.
+[01:12:40 28/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 0/10)
+[01:12:40 28/9/2026] 
+🔎 [Quét nhóm FB]: HaUI - Tìm Phòng Trọ (71.9K tv) (hanoi_cs1_cs2)
+[01:12:40 28/9/2026]    URL: https://www.facebook.com/groups/219194439373201?locale=vi_VN
+[01:13:01 28/9/2026]    → Bóc tách được 0 bài viết thô từ nhóm.
+[01:13:01 28/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 0/10)
+[01:13:01 28/9/2026] 
+🔎 [Quét nhóm FB]: Phòng Trọ Hoài Đức - Vân Canh - Kim Chung (Gần CS1 & CS2) (hanoi_cs1_cs2)
+[01:13:01 28/9/2026]    URL: https://www.facebook.com/groups/PhongTroHoaiDuc/?locale=vi_VN
+[01:13:22 28/9/2026]    → Bóc tách được 0 bài viết thô từ nhóm.
+[01:13:22 28/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 0/10)
+[01:13:22 28/9/2026] 
+🔎 [Quét nhóm FB]: Phòng Trọ Bắc Từ Liêm - Nhổn - Cầu Diễn (hanoi_cs1_cs2)
+[01:13:22 28/9/2026]    URL: https://www.facebook.com/groups/140397885361011/?locale=vi_VN
+[01:13:43 28/9/2026]    → Bóc tách được 0 bài viết thô từ nhóm.
+[01:13:43 28/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 0/10)
+[01:13:43 28/9/2026] 
+🔎 [Quét nhóm FB]: Phòng Trọ Sinh Viên Hà Nội (hanoi_cs1_cs2)
+[01:13:43 28/9/2026]    URL: https://www.facebook.com/groups/phongtrohn/?locale=vi_VN
+[01:14:04 28/9/2026]    → Bóc tách được 0 bài viết thô từ nhóm.
+[01:14:04 28/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 0/10)
+[01:14:04 28/9/2026] 
+🔎 [Quét nhóm FB]: Nhà trọ ĐH Công nghiệp HaUI - Cơ Sở 3 - Phù Vân - Phủ Lý Hà Nam (hanam_cs3)
+[01:14:04 28/9/2026]    URL: https://www.facebook.com/groups/611511566512116?locale=vi_VN
+[01:14:25 28/9/2026]    → Bóc tách được 0 bài viết thô từ nhóm.
+[01:14:25 28/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 0/10)
+[01:14:25 28/9/2026] 
+🔎 [Quét nhóm FB]: Cho Thuê Phòng Trọ ĐH Công Nghiệp Hà Nội Haui (CS3 Phù Vân Hà Nam) (hanam_cs3)
+[01:14:25 28/9/2026]    URL: https://www.facebook.com/groups/447547838952346/?locale=vi_VN
+[01:14:46 28/9/2026]    → Bóc tách được 0 bài viết thô từ nhóm.
+[01:14:46 28/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 0/10)
+[01:14:46 28/9/2026] 
+🔎 [Quét nhóm FB]: Phòng Trọ ĐH Công Nghiệp Hà Nam CS3 (hanam_cs3)
+[01:14:46 28/9/2026]    URL: https://www.facebook.com/groups/phongtrodhcnhanam/?locale=vi_VN
+[01:15:07 28/9/2026]    → Bóc tách được 0 bài viết thô từ nhóm.
+[01:15:07 28/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 0/10)
+[01:15:07 28/9/2026] 
+🔎 [Quét nhóm FB]: Phòng Trọ Phủ Lý Hà Nam (Gần HaUI CS3) (hanam_cs3)
+[01:15:07 28/9/2026]    URL: https://www.facebook.com/groups/phongtrophulyhanam/?locale=vi_VN
+[01:15:46 28/9/2026] 🤖 [CrawlBot] Đã kích hoạt lịch cào tự động Playwright: Chu kỳ mỗi 4 tiếng (4h/lần).
+[01:16:01 28/9/2026] 🚀 [CrawlBot] Tự động kích hoạt đợt cào Playwright ban đầu...
+[01:16:01 28/9/2026] ================================================================================
+[01:16:01 28/9/2026] 🚀 [CrawlBot] BẮT ĐẦU CHU KỲ CÀO DỮ LIỆU TỰ ĐỘNG (CHU KỲ 4 TIẾNG)
+[01:16:01 28/9/2026] 🎯 Mục tiêu: +10 phòng Facebook công khai | +5 phòng từ nguồn khác
+[01:16:01 28/9/2026] ⚖️ Cam kết: 100% tuân thủ Nghị định 13/2023/NĐ-CP, khử PII, chống trùng SHA-256
+[01:16:01 28/9/2026] ================================================================================
+[01:16:02 28/9/2026] 📊 Hiện có 274 phòng trong cơ sở dữ liệu để kiểm tra trùng.
+[01:16:02 28/9/2026] 
+── [PHẦN A] CÀO PHÒNG TRỌ FACEBOOK (CÁC NHÓM CÔNG KHAI HAUI CS1, CS2, CS3) ──
+[01:16:02 28/9/2026] 
+🔎 [Quét nhóm FB]: Nhà trọ Nhổn - Nguyên Xá - Văn Trì - ĐH Công Nghiệp Hà Nội (80K tv) (hanoi_cs1_cs2)
+[01:16:02 28/9/2026]    URL: https://www.facebook.com/groups/1896518147417522/?locale=vi_VN
+[01:16:23 28/9/2026]    → Bóc tách được 0 bài viết thô từ nhóm.
+[01:16:23 28/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 0/10)
+[01:16:23 28/9/2026] 
+🔎 [Quét nhóm FB]: HaUI - Tìm Phòng Trọ (71.9K tv) (hanoi_cs1_cs2)
+[01:16:23 28/9/2026]    URL: https://www.facebook.com/groups/219194439373201?locale=vi_VN
+[01:16:45 28/9/2026]    → Bóc tách được 4 bài viết thô từ nhóm.
+[01:16:45 28/9/2026]    → Nhóm này đã lưu thành công: +3 phòng chuẩn. (Tổng FB mới: 3/10)
+[01:16:45 28/9/2026] 
+🔎 [Quét nhóm FB]: Phòng Trọ Hoài Đức - Vân Canh - Kim Chung (Gần CS1 & CS2) (hanoi_cs1_cs2)
+[01:16:45 28/9/2026]    URL: https://www.facebook.com/groups/PhongTroHoaiDuc/?locale=vi_VN
+[01:17:06 28/9/2026]    → Bóc tách được 3 bài viết thô từ nhóm.
+[01:17:06 28/9/2026]    → Nhóm này đã lưu thành công: +1 phòng chuẩn. (Tổng FB mới: 4/10)
+[01:17:06 28/9/2026] 
+🔎 [Quét nhóm FB]: Phòng Trọ Bắc Từ Liêm - Nhổn - Cầu Diễn (hanoi_cs1_cs2)
+[01:17:06 28/9/2026]    URL: https://www.facebook.com/groups/140397885361011/?locale=vi_VN
+[01:17:27 28/9/2026]    → Bóc tách được 3 bài viết thô từ nhóm.
+[01:17:27 28/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 4/10)
+[01:17:27 28/9/2026] 
+🔎 [Quét nhóm FB]: Phòng Trọ Sinh Viên Hà Nội (hanoi_cs1_cs2)
+[01:17:27 28/9/2026]    URL: https://www.facebook.com/groups/phongtrohn/?locale=vi_VN
+[01:17:49 28/9/2026]    → Bóc tách được 3 bài viết thô từ nhóm.
+[01:17:49 28/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 4/10)
+[01:17:49 28/9/2026] 
+🔎 [Quét nhóm FB]: Nhà trọ ĐH Công nghiệp HaUI - Cơ Sở 3 - Phù Vân - Phủ Lý Hà Nam (hanam_cs3)
+[01:17:49 28/9/2026]    URL: https://www.facebook.com/groups/611511566512116?locale=vi_VN
+[01:18:10 28/9/2026]    → Bóc tách được 0 bài viết thô từ nhóm.
+[01:18:10 28/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 4/10)
+[01:18:10 28/9/2026] 
+🔎 [Quét nhóm FB]: Cho Thuê Phòng Trọ ĐH Công Nghiệp Hà Nội Haui (CS3 Phù Vân Hà Nam) (hanam_cs3)
+[01:18:10 28/9/2026]    URL: https://www.facebook.com/groups/447547838952346/?locale=vi_VN
+[01:18:31 28/9/2026]    → Bóc tách được 0 bài viết thô từ nhóm.
+[01:18:31 28/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 4/10)
+[01:18:31 28/9/2026] 
+🔎 [Quét nhóm FB]: Phòng Trọ ĐH Công Nghiệp Hà Nam CS3 (hanam_cs3)
+[01:18:31 28/9/2026]    URL: https://www.facebook.com/groups/phongtrodhcnhanam/?locale=vi_VN
+[01:18:52 28/9/2026]    → Bóc tách được 0 bài viết thô từ nhóm.
+[01:18:52 28/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 4/10)
+[01:18:52 28/9/2026] 
+🔎 [Quét nhóm FB]: Phòng Trọ Phủ Lý Hà Nam (Gần HaUI CS3) (hanam_cs3)
+[01:18:52 28/9/2026]    URL: https://www.facebook.com/groups/phongtrophulyhanam/?locale=vi_VN
+[01:19:14 28/9/2026]    → Bóc tách được 0 bài viết thô từ nhóm.
+[01:19:14 28/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 4/10)
+[01:19:14 28/9/2026] 
+🔎 [Quét nhóm FB]: Thuê Trọ Hà Nam - Phủ Lý (hanam_cs3)
+[01:19:14 28/9/2026]    URL: https://www.facebook.com/groups/thuetrohanam/?locale=vi_VN
+[01:19:35 28/9/2026]    → Bóc tách được 0 bài viết thô từ nhóm.
+[01:19:35 28/9/2026]    → Nhóm này đã lưu thành công: +0 phòng chuẩn. (Tổng FB mới: 4/10)
+[01:19:35 28/9/2026] 
+── [PHẦN B] CÀO THÊM PHÒNG TRỌ TỪ NGUỒN KHÁC (PHONGTRO123: CS1, CS2, CS3) ──
+[01:19:35 28/9/2026] 
+🔎 [Nguồn Phongtro123]: Minh Khai (CS1) -> https://phongtro123.com/tinh-thanh/ha-noi/quan-bac-tu-liem/phuong-minh-khai
+[01:19:38 28/9/2026]    → Tìm thấy 30 bài đăng trên trang.
+[01:19:51 28/9/2026] 
+🔎 [Nguồn Phongtro123]: Phúc Diễn (CS1) -> https://phongtro123.com/tinh-thanh/ha-noi/quan-bac-tu-liem/phuong-phuc-dien
+[01:19:54 28/9/2026]    → Tìm thấy 30 bài đăng trên trang.
+[01:20:06 28/9/2026] 
+🔎 [Nguồn Phongtro123]: Tây Tựu (CS2) -> https://phongtro123.com/tinh-thanh/ha-noi/quan-bac-tu-liem/phuong-tay-tuu
+[01:20:08 28/9/2026]    → Tìm thấy 29 bài đăng trên trang.
+[01:20:34 28/9/2026] 
+🔎 [Nguồn Phongtro123]: Hoài Đức (CS1/CS2) -> https://phongtro123.com/tinh-thanh/ha-noi/huyen-hoai-duc
+[01:20:37 28/9/2026]    → Tìm thấy 30 bài đăng trên trang.
+[01:20:47 28/9/2026] 
+🔎 [Nguồn Phongtro123]: TP. Phủ Lý (CS3) -> https://phongtro123.com/tinh-thanh/ha-nam/thanh-pho-phu-ly
+[01:20:49 28/9/2026]    → Tìm thấy 29 bài đăng trên trang.
+[01:20:59 28/9/2026] 
+🔎 [Nguồn Phongtro123]: Tỉnh Hà Nam (CS3) -> https://phongtro123.com/tinh-thanh/ha-nam
+[01:21:01 28/9/2026]    → Tìm thấy 29 bài đăng trên trang.
+[01:21:11 28/9/2026] ================================================================================
+[01:21:11 28/9/2026] 🎉 [CrawlBot] HOÀN TẤT ĐỢT CÀO DỮ LIỆU TỰ ĐỘNG!
+[01:21:11 28/9/2026]    + Facebook mới thêm:     4 phòng
+[01:21:11 28/9/2026]    + Nguồn khác mới thêm:   0 phòng
+[01:21:11 28/9/2026]    - Rác thương mại loại:  1 bài
+[01:21:11 28/9/2026]    - Bài tìm phòng loại:    1 bài
+[01:21:11 28/9/2026]    - Trùng lặp bỏ qua:      128 bài
+[01:21:11 28/9/2026] 📦 Tổng số phòng hiện có trong DB: 278 phòng
+[01:21:11 28/9/2026] ⏰ Đợt cào tự động kế tiếp sẽ chạy sau 4 tiếng.
+[01:21:11 28/9/2026] ================================================================================
+

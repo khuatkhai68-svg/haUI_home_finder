@@ -122,6 +122,28 @@
         </a>
       </aside>
 
+      <!-- Thanh điều hướng Phân hệ Quản trị trên điện thoại (Mobile Admin Nav) -->
+      <div class="admin-mobile-nav">
+        <button class="admin-mobile-tab active" data-sec="dashboard" onclick="showSection('dashboard');return false;">
+          <i data-lucide="bar-chart-3" style="width:14px;height:14px;"></i> Dashboard
+        </button>
+        <button class="admin-mobile-tab" data-sec="rooms" onclick="showSection('rooms');return false;">
+          <i data-lucide="home" style="width:14px;height:14px;"></i> Phòng trọ
+        </button>
+        <button class="admin-mobile-tab" data-sec="users" onclick="showSection('users');return false;">
+          <i data-lucide="users" style="width:14px;height:14px;"></i> Người dùng
+        </button>
+        <button class="admin-mobile-tab" data-sec="spam" onclick="showSection('spam');return false;">
+          <i data-lucide="alert-circle" style="width:14px;height:14px;"></i> Báo Spam
+        </button>
+        <button class="admin-mobile-tab" data-sec="quota" onclick="showSection('quota');return false;">
+          <i data-lucide="target" style="width:14px;height:14px;"></i> Hạn ngạch
+        </button>
+        <button class="admin-mobile-tab" data-sec="clean" onclick="showSection('clean');return false;">
+          <i data-lucide="sparkles" style="width:14px;height:14px;"></i> Duyệt HITL
+        </button>
+      </div>
+
       <!-- Main Content (Dashboard) -->
       <section class="admin-main" id="sec-dashboard">
 
@@ -847,6 +869,11 @@
       Object.keys(sections).forEach(k => {
         if (sections[k]) sections[k].style.display = 'none';
         if (navLinks[k]) navLinks[k].classList.remove('active');
+      });
+
+      // Cập nhật tab trên điện thoại
+      document.querySelectorAll('.admin-mobile-tab').forEach(tab => {
+        tab.classList.toggle('active', tab.getAttribute('data-sec') === sec);
       });
 
       if (sections[sec]) sections[sec].style.display = 'block';
@@ -1799,11 +1826,15 @@
     </a>
     <a href="map.html" class="mobile-nav-item">
       <i data-lucide="map"></i>
-      <span>Bản đồ 3 CS</span>
+      <span>Bản đồ</span>
     </a>
     <a href="index.html#chat-window" class="mobile-nav-item">
       <i data-lucide="bot" style="color:#7c3aed;"></i>
       <span style="color:#7c3aed;font-weight:700;">Hỏi 5PTL</span>
+    </a>
+    <a href="landlord.html" class="mobile-nav-item">
+      <i data-lucide="plus-circle" style="color:#059669;"></i>
+      <span>Đăng tin</span>
     </a>
     <a href="admin.html" class="mobile-nav-item active">
       <i data-lucide="layout-dashboard"></i>

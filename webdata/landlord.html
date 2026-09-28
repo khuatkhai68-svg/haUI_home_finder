@@ -277,7 +277,7 @@
               </div>
 
               <!-- SĐT & Tên chủ -->
-              <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+              <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));gap:1rem;">
                 <div>
                   <label style="display:block;font-size:0.85rem;font-weight:700;color:#334155;margin-bottom:4px;">Số điện thoại liên hệ (*)</label>
                   <input type="tel" id="cr-phone" placeholder="VD: 0987654321" required
@@ -773,9 +773,13 @@
       <i data-lucide="map"></i>
       <span>Bản đồ</span>
     </a>
+    <a href="index.html#chat-window" class="mobile-nav-item">
+      <i data-lucide="bot" style="color:#7c3aed;"></i>
+      <span style="color:#7c3aed;font-weight:700;">Hỏi 5PTL</span>
+    </a>
     <a href="landlord.html" class="mobile-nav-item active">
-      <i data-lucide="home"></i>
-      <span>Chủ trọ</span>
+      <i data-lucide="plus-circle" style="color:#059669;"></i>
+      <span style="color:#059669;font-weight:700;">Đăng tin</span>
     </a>
     <a href="admin.html" class="mobile-nav-item">
       <i data-lucide="layout-dashboard"></i>

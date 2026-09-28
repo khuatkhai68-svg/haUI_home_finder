@@ -1,0 +1,141 @@
+{
+  "timestamp": "2026-09-27T10:28:16.140Z",
+  "totalRoomsChecked": 228,
+  "validCleanRooms": 212,
+  "duplicateCount": 12,
+  "qualityIssueCount": 4,
+  "healthScore": 93,
+  "autoResolvedCount": 0,
+  "duplicates": [
+    {
+      "room1": "RM-FB-15CFB2",
+      "room2": "RM-FB-9EAF37",
+      "reason": "CUNG_SDT_NOI_DUNG_TUONG_DONG",
+      "similarity": 0.71,
+      "title1": "Cho thuê phòng trọ 3.9 tr/tháng tại Đường Văn Trì (HaUI CS1)",
+      "title2": "Cho thuê phòng trọ 3.6 tr/tháng tại Đường Cầu Diễn (HaUI CS1)"
+    },
+    {
+      "room1": "RM-FB-1C1D3A",
+      "room2": "RM-FB-6557E2",
+      "reason": "CUNG_SDT_NOI_DUNG_TUONG_DONG",
+      "similarity": 0.98,
+      "title1": "Cho thuê phòng trọ 4.0 tr/tháng tại Phường Minh Khai (HaUI CS1)",
+      "title2": "Cho thuê phòng trọ 4.0 tr/tháng tại Phường Minh Khai (HaUI CS1)"
+    },
+    {
+      "room1": "RM-FB-2DF225",
+      "room2": "RM-FB-97263E",
+      "reason": "CUNG_SDT_NOI_DUNG_TUONG_DONG",
+      "similarity": 0.76,
+      "title1": "Cuối tháng có phòng như hình",
+      "title2": "Cho thuê phòng trọ 3.8 tr/tháng tại Phường Minh Khai (HaUI CS1)"
+    },
+    {
+      "room1": "RM-FB-591392",
+      "room2": "RM-FB-C9FB4E",
+      "reason": "CUNG_SDT_NOI_DUNG_TUONG_DONG",
+      "similarity": 0.67,
+      "title1": "Cần phòng trọ Ko cần gần trường",
+      "title2": "Tìm phòng gần dhcn cơ sở 3 giá 1tr5tháng có bếp điện tủ lạnh, cách trg 800m"
+    },
+    {
+      "room1": "RM-FB-6CAB0D",
+      "room2": "RM-FB-DF16B3",
+      "reason": "TRUNG_URL",
+      "similarity": 1,
+      "title1": "Cho thuê phòng trọ 3.6 tr/tháng tại Nhổn - Bắc Từ Liêm (Gần HaUI CS1 & CS2)",
+      "title2": "Phòng trọ ngõ 291 Phú Diễn - Full đồ, ban công, cửa sổ thoáng mát"
+    },
+    {
+      "room1": "RM-FB-838298",
+      "room2": "RM-FB-D1B995",
+      "reason": "CUNG_SDT_NOI_DUNG_TUONG_DONG",
+      "similarity": 0.95,
+      "title1": "Cho thuê phòng trọ khép kín 3.0 tr/tháng gần HaUI CS1 & CS2 (Nhổn - Bắc Từ Liêm)",
+      "title2": "Cho thuê phòng trọ 3.0 tr/tháng tại Phường Minh Khai (HaUI CS1)"
+    },
+    {
+      "room1": "RM-FB-8C4609",
+      "room2": "RM-FB-90B0F7",
+      "reason": "NOI_DUNG_COPY_PASTE",
+      "similarity": 0.96,
+      "title1": "Cho thuê phòng trọ 3.5 tr/tháng tại Phường Minh Khai (HaUI CS1)",
+      "title2": "Cho thuê phòng trọ 4.0 tr/tháng tại Phường Minh Khai (HaUI CS1)"
+    },
+    {
+      "room1": "RM-FB-90B0F7",
+      "room2": "RM-FB-BE3F98",
+      "reason": "NOI_DUNG_COPY_PASTE",
+      "similarity": 0.88,
+      "title1": "Cho thuê phòng trọ 4.0 tr/tháng tại Phường Minh Khai (HaUI CS1)",
+      "title2": "Cho thuê phòng trọ 4.0 tr/tháng tại Phường Minh Khai (HaUI CS1)"
+    },
+    {
+      "room1": "RM-FB-AC91AA",
+      "room2": "RM-FB-F424F2",
+      "reason": "CUNG_SDT_NOI_DUNG_TUONG_DONG",
+      "similarity": 0.81,
+      "title1": "Phòng đẹp rộng thoáng cần cho thuê khu L liền kề Bảo Sơn sát Vinsmart City",
+      "title2": "Phòng đẹp rộng thoáng cần cho thuê khu L liền kề Bảo Sơn sát Vinsmart City"
+    },
+    {
+      "room1": "RM-PT123-147214",
+      "room2": "RM-PT123-8479B3",
+      "reason": "CUNG_SDT_NOI_DUNG_TUONG_DONG",
+      "similarity": 0.65,
+      "title1": "Nhà số 21 ngõ 114 Nguyễn Đạo An, Phú diễn, Bắc Từ Liêm trống phòng 103 vskk ở luôn",
+      "title2": "Cho thuê phòng 3tr tại đầu phố nguyên xá . Phòng đẹp đủ nội thất cao cấp"
+    },
+    {
+      "room1": "RM-PT123-207E74",
+      "room2": "RM-PT123-8479B3",
+      "reason": "CUNG_SDT_NOI_DUNG_TUONG_DONG",
+      "similarity": 0.67,
+      "title1": "Chính chủ cho Thuê phòng trọ phòng trọ Cầu Diễn, gần cao đẳng ngữ, Đai học công nghiệp, ga nhổn TNMT",
+      "title2": "Cho thuê phòng 3tr tại đầu phố nguyên xá . Phòng đẹp đủ nội thất cao cấp"
+    },
+    {
+      "room1": "RM-PT123-2D8CEF",
+      "room2": "RM-PT123-5ACF19",
+      "reason": "CUNG_SDT_NOI_DUNG_TUONG_DONG",
+      "similarity": 0.89,
+      "title1": "CHO THUÊ CHDV FULL NỘI THẤT BANCOL - DIỆN TÍCH 40M2",
+      "title2": "CHO THUÊ CHDV FULL NỘI THẤT - BANCOL - DIỆN TÍCH 35M2"
+    }
+  ],
+  "qualityIssues": [
+    {
+      "ma_phong": "RM-FB-0703CA",
+      "tieu_de": "Cho thuê phòng trọ 1.5 tr/tháng tại Phù Vân (HaUI CS3)",
+      "gia": 1500000,
+      "issues": [
+        "Chứa từ khóa loại trừ: bài đăng không phải chào cho thuê phòng chính thống (/\\bpass\\s+(?:đồ|lại|phòng|hợp đồng)\\b/i)"
+      ]
+    },
+    {
+      "ma_phong": "RM-PT123-59FFE6",
+      "tieu_de": "Góc nhượng trọ vì em chuyển nơi làm việc ạ",
+      "gia": 2700000,
+      "issues": [
+        "Chứa từ khóa loại trừ: bài đăng không phải chào cho thuê phòng chính thống (/\\bpass\\s+(?:đồ|lại|phòng|hợp đồng)\\b/i)"
+      ]
+    },
+    {
+      "ma_phong": "RM-PT123-5D4277",
+      "tieu_de": "PASS PHÒNG KHÉP KÍN FULL NỘI THẤT TẠI MINH KHAI, BẮC TỪ LIÊM, HÀ NỘI",
+      "gia": 3800000,
+      "issues": [
+        "Chứa từ khóa loại trừ: bài đăng không phải chào cho thuê phòng chính thống (/\\bpass\\s+(?:đồ|lại|phòng|hợp đồng)\\b/i)"
+      ]
+    },
+    {
+      "ma_phong": "RM-PT123-D2F93F",
+      "tieu_de": "PASS PHÒNG STUDIO 20m2 TẠI TRẦN CUNG, CỔ NHUẾ 1, BẮC TỪ LIÊM, HÀ NỘI",
+      "gia": 4400000,
+      "issues": [
+        "Chứa từ khóa loại trừ: bài đăng không phải chào cho thuê phòng chính thống (/\\bpass\\s+(?:đồ|lại|phòng|hợp đồng)\\b/i)"
+      ]
+    }
+  ]
+}

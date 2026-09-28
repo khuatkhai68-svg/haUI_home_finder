@@ -188,7 +188,7 @@
 
       // Thumbnails
       const thumbHtml = images.slice(1, 4).map((src, i) => `
-        <div style="overflow:hidden;height:140px;border-radius:8px;cursor:pointer;" onclick="changeMainImage('${src}')">
+        <div class="detail-thumb-item" onclick="changeMainImage('${src}')">
           <img src="${src}" alt="Ảnh ${i+2}" style="width:100%;height:100%;object-fit:cover;transition:transform .3s;"
                onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"
                onerror="this.style.display='none'"/>
@@ -209,25 +209,25 @@
       document.getElementById('detail-card').innerHTML = `
         <!-- Images -->
         <div class="detail-images">
-          <div style="position:relative;overflow:hidden;border-radius:12px;height:420px;background:#0f172a;">
+          <div class="detail-main-wrap" style="position:relative;overflow:hidden;border-radius:12px;background:#0f172a;">
             <img id="main-detail-img" class="detail-main-image" src="${mainImg}" alt="${safeTitle}"
                  style="width:100%;height:100%;object-fit:cover;transition:opacity 0.3s;"
                  onerror="this.src='https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=900&h=500&fit=crop'" />
-            <div style="position:absolute;top:16px;left:16px;z-index:2;background:${isFB?'#1877f2':'#059669'};color:white;padding:6px 14px;border-radius:8px;font-weight:700;font-size:0.8rem;box-shadow:0 4px 12px rgba(0,0,0,0.25);">
+            <div style="position:absolute;top:12px;left:12px;z-index:2;background:${isFB?'#1877f2':'#059669'};color:white;padding:4px 10px;border-radius:6px;font-weight:700;font-size:0.75rem;box-shadow:0 4px 12px rgba(0,0,0,0.25);">
               ${isFB ? '📘 Facebook Group' : '🌐 phongtro123.com'}
             </div>
-            <div style="position:absolute;bottom:16px;right:16px;background:rgba(0,0,0,0.7);backdrop-filter:blur(4px);color:white;padding:4px 10px;border-radius:6px;font-size:0.75rem;">
-              📸 ${images.length} hình ảnh thực tế
+            <div style="position:absolute;bottom:12px;right:12px;background:rgba(0,0,0,0.7);backdrop-filter:blur(4px);color:white;padding:3px 8px;border-radius:6px;font-size:0.72rem;">
+              📸 ${images.length} hình ảnh
             </div>
           </div>
-          ${thumbHtml ? `<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:8px;">${thumbHtml}</div>` : ''}
+          ${thumbHtml ? `<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:6px;">${thumbHtml}</div>` : ''}
         </div>
 
         <!-- Body -->
         <div class="detail-body" style="padding:1.75rem;">
           <!-- Header -->
           <div class="detail-header" style="display:flex;justify-content:space-between;align-items:flex-start;gap:1.5rem;flex-wrap:wrap;border-bottom:1px solid #f1f5f9;padding-bottom:1.5rem;">
-            <div style="flex:1;min-width:280px;">
+            <div style="flex:1;min-width:0;">
               <div style="display:flex;gap:6px;margin-bottom:8px;">
                 <span style="background:#e0f2fe;color:#0369a1;padding:3px 8px;border-radius:4px;font-size:0.75rem;font-weight:700;">MÃ: ${room.id}</span>
                 <span style="background:#dcfce7;color:#15803d;padding:3px 8px;border-radius:4px;font-size:0.75rem;font-weight:700;">PHÒNG ĐANG TRỐNG</span>
@@ -649,11 +649,15 @@
     </a>
     <a href="map.html" class="mobile-nav-item">
       <i data-lucide="map"></i>
-      <span>Bản đồ 3 CS</span>
+      <span>Bản đồ</span>
     </a>
     <a href="index.html#chat-window" class="mobile-nav-item">
       <i data-lucide="bot" style="color:#7c3aed;"></i>
       <span style="color:#7c3aed;font-weight:700;">Hỏi 5PTL</span>
+    </a>
+    <a href="landlord.html" class="mobile-nav-item">
+      <i data-lucide="plus-circle" style="color:#059669;"></i>
+      <span>Đăng tin</span>
     </a>
     <a href="admin.html" class="mobile-nav-item">
       <i data-lucide="layout-dashboard"></i>
