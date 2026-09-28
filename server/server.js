@@ -272,7 +272,7 @@ function checkLink(url, uaIndex = 0) {
     const options = {
       hostname: parsed.hostname,
       path:     parsed.pathname + parsed.search,
-      method:   isFB ? 'GET' : 'HEAD',  // FB chặn HEAD → dùng GET
+      method:   'GET',  // Dùng GET để kiểm tra nội dung Soft-404 (tin hết hạn)
       headers:  {
         'User-Agent':      ua,
         'Accept':          'text/html,application/xhtml+xml,*/*;q=0.8',
@@ -285,26 +285,40 @@ function checkLink(url, uaIndex = 0) {
     const req = lib.request(options, res => {
       const { statusCode: s, headers } = res;
       const location = headers?.location || '';
-      res.resume(); // tiêu thụ body để tránh memory leak
 
       if (isFB) {
+        res.resume();
         // FB thường block server request → chỉ xóa nếu rõ ràng redirect về login
         if (location.includes('/login') || location.includes('/checkpoint/'))
           return resolve({ ok: false, reason: `FB redirect → login (${s})` });
-        // 403/404 từ FB server-side không đáng tin → giữ lại
         return resolve({ ok: true, reason: `FB HTTP ${s} (kept)` });
       }
 
-      // 2xx/3xx → link sống
-      if (s >= 200 && s < 400) return resolve({ ok: true, reason: `HTTP ${s}` });
-      // 403 = site chặn bot nhưng link vẫn sống → KHÔNG xóa
-      if (s === 403) return resolve({ ok: true, reason: `HTTP 403 blocked (kept)` });
-      // Chỉ xóa khi link thực sự không tồn tại
-      if (s === 404 || s === 410) return resolve({ ok: false, reason: `HTTP ${s} Gone` });
-      // 5xx = server lỗi tạm thời → giữ lại
-      if (s >= 500) return resolve({ ok: true, reason: `HTTP ${s} server-error (kept)` });
-      // Các code khác (401, 429...) → giữ lại cho an toàn
-      return resolve({ ok: true, reason: `HTTP ${s} unknown (kept)` });
+      if (s === 404 || s === 410) {
+        res.resume();
+        return resolve({ ok: false, reason: `HTTP ${s} Gone` });
+      }
+
+      // Thu thập 30KB đầu của HTML để bắt Soft-404 banner
+      let bodyChunk = '';
+      res.on('data', chunk => {
+        if (bodyChunk.length < 30000) {
+          bodyChunk += chunk.toString('utf-8');
+        } else {
+          res.destroy(); // Đã đủ dữ liệu kiểm tra, ngắt kết nối sớm để tiết kiệm tài nguyên
+        }
+      });
+
+      res.on('end', () => {
+        const isExpired = /tin đăng này đã hết hạn|tin hết hạn|bạn đang xem tin cũ tại phongtro123|tin đã cho thuê|phòng đã cho thuê|bài viết này hiện không tồn tại/i.test(bodyChunk);
+        if (isExpired) {
+          return resolve({ ok: false, reason: 'Tin đăng đã hết hạn (Soft-404)' });
+        }
+        if (s >= 200 && s < 400) return resolve({ ok: true, reason: `HTTP ${s}` });
+        if (s === 403) return resolve({ ok: true, reason: `HTTP 403 blocked (kept)` });
+        if (s >= 500) return resolve({ ok: true, reason: `HTTP ${s} server-error (kept)` });
+        return resolve({ ok: true, reason: `HTTP ${s} unknown (kept)` });
+      });
     });
 
     req.on('timeout', () => { req.destroy(); resolve({ ok: false, reason: 'Timeout' }); });

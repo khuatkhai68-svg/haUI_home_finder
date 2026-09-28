@@ -144,11 +144,29 @@ const PUBLIC_FB_GROUPS = [
 
 // ── Nguồn bổ sung khác: Phongtro123 đa cơ sở CS1, CS2, CS3 ──────────────────
 const PT123_SOURCES = [
+  { url: 'https://phongtro123.com/tinh-thanh/ha-noi/quan-bac-tu-liem', isHaNam: false, label: 'Bắc Từ Liêm Toàn Quận (CS1/CS2) Tr1' },
+  { url: 'https://phongtro123.com/tinh-thanh/ha-noi/quan-bac-tu-liem?page=2', isHaNam: false, label: 'Bắc Từ Liêm Toàn Quận (CS1/CS2) Tr2' },
+  { url: 'https://phongtro123.com/tinh-thanh/ha-noi/quan-bac-tu-liem?page=3', isHaNam: false, label: 'Bắc Từ Liêm Toàn Quận (CS1/CS2) Tr3' },
+  { url: 'https://phongtro123.com/tinh-thanh/ha-noi/quan-bac-tu-liem?page=4', isHaNam: false, label: 'Bắc Từ Liêm Toàn Quận (CS1/CS2) Tr4' },
   { url: 'https://phongtro123.com/tinh-thanh/ha-noi/quan-bac-tu-liem/phuong-minh-khai', isHaNam: false, label: 'Minh Khai (CS1)' },
   { url: 'https://phongtro123.com/tinh-thanh/ha-noi/quan-bac-tu-liem/phuong-phuc-dien', isHaNam: false, label: 'Phúc Diễn (CS1)' },
+  { url: 'https://phongtro123.com/tinh-thanh/ha-noi/quan-bac-tu-liem/phuong-phu-dien', isHaNam: false, label: 'Phú Diễn (CS1)' },
   { url: 'https://phongtro123.com/tinh-thanh/ha-noi/quan-bac-tu-liem/phuong-tay-tuu', isHaNam: false, label: 'Tây Tựu (CS2)' },
+  { url: 'https://phongtro123.com/tinh-thanh/ha-noi/quan-bac-tu-liem/phuong-co-nhue-1', isHaNam: false, label: 'Cổ Nhuế 1 (CS1)' },
+  { url: 'https://phongtro123.com/tinh-thanh/ha-noi/quan-bac-tu-liem/phuong-co-nhue-2', isHaNam: false, label: 'Cổ Nhuế 2 (CS1)' },
+  { url: 'https://phongtro123.com/tinh-thanh/ha-noi/quan-bac-tu-liem/phuong-dong-ngac', isHaNam: false, label: 'Đông Ngạc (CS1)' },
+  { url: 'https://phongtro123.com/tinh-thanh/ha-noi/quan-bac-tu-liem/phuong-xuan-tao', isHaNam: false, label: 'Xuân Tảo (CS1)' },
+  { url: 'https://phongtro123.com/tinh-thanh/ha-noi/quan-cau-giay/phuong-nghia-tan', isHaNam: false, label: 'Nghĩa Tân (CS1)' },
+  { url: 'https://phongtro123.com/tinh-thanh/ha-noi/huyen-hoai-duc/xa-kim-chung', isHaNam: false, label: 'Kim Chung - Lai Xá (CS1/CS2)' },
+  { url: 'https://phongtro123.com/tinh-thanh/ha-noi/huyen-hoai-duc/xa-van-canh', isHaNam: false, label: 'Vân Canh (CS1)' },
+  { url: 'https://phongtro123.com/tinh-thanh/ha-noi/huyen-hoai-duc/xa-di-trach', isHaNam: false, label: 'Di Trạch (CS1/CS2)' },
+  { url: 'https://phongtro123.com/tinh-thanh/ha-noi/huyen-hoai-duc/thi-tran-tram-troi', isHaNam: false, label: 'Trạm Trôi (CS2)' },
   { url: 'https://phongtro123.com/tinh-thanh/ha-noi/huyen-hoai-duc', isHaNam: false, label: 'Hoài Đức (CS1/CS2)' },
   { url: 'https://phongtro123.com/tinh-thanh/ha-nam/thanh-pho-phu-ly', isHaNam: true, label: 'TP. Phủ Lý (CS3)' },
+  { url: 'https://phongtro123.com/tinh-thanh/ha-nam/thanh-pho-phu-ly/phuong-le-hong-phong', isHaNam: true, label: 'Lê Hồng Phong (CS3)' },
+  { url: 'https://phongtro123.com/tinh-thanh/ha-nam/thanh-pho-phu-ly/phuong-quang-trung', isHaNam: true, label: 'Quang Trung (CS3)' },
+  { url: 'https://phongtro123.com/tinh-thanh/ha-nam/thanh-pho-phu-ly/phuong-minh-khai', isHaNam: true, label: 'Minh Khai Hà Nam (CS3)' },
+  { url: 'https://phongtro123.com/tinh-thanh/ha-nam/thanh-pho-phu-ly/phuong-luong-khanh-thien', isHaNam: true, label: 'Lương Khánh Thiện (CS3)' },
   { url: 'https://phongtro123.com/tinh-thanh/ha-nam', isHaNam: true, label: 'Tỉnh Hà Nam (CS3)' }
 ];
 
@@ -196,7 +214,15 @@ const HANOI_COORDS = {
   "hòe thị": { lat: 21.0410, lng: 105.7420, dist: "Nam Từ Liêm" },
   "trịnh văn bô": { lat: 21.0425, lng: 105.7390, dist: "Nam Từ Liêm" },
   "hồ tùng mậu": { lat: 21.0390, lng: 105.7720, dist: "Cầu Giấy" },
-  "mai dịch": { lat: 21.0370, lng: 105.7770, dist: "Cầu Giấy" }
+  "mai dịch": { lat: 21.0370, lng: 105.7770, dist: "Cầu Giấy" },
+  "cổ nhuế": { lat: 21.0650, lng: 105.7760, dist: "Bắc Từ Liêm" },
+  "đông ngạc": { lat: 21.0820, lng: 105.7750, dist: "Bắc Từ Liêm" },
+  "thụy phương": { lat: 21.0860, lng: 105.7650, dist: "Bắc Từ Liêm" },
+  "phạm văn đồng": { lat: 21.0550, lng: 105.7780, dist: "Bắc Từ Liêm" },
+  "trần cung": { lat: 21.0510, lng: 105.7830, dist: "Bắc Từ Liêm" },
+  "hoàng công chất": { lat: 21.0480, lng: 105.7620, dist: "Bắc Từ Liêm" },
+  "xuân tảo": { lat: 21.0680, lng: 105.7890, dist: "Bắc Từ Liêm" },
+  "nghĩa tân": { lat: 21.0450, lng: 105.7920, dist: "Cầu Giấy" }
 };
 
 // ── Tính khoảng cách Haversine (km) ──────────────────────────────────────────
@@ -612,8 +638,9 @@ async function crawlPhongtro123Http(targetTotal, seenUrls, seenHashes) {
       const html = await res.text();
 
       // Chỉ lấy link trong container danh sách bài viết chính, loại bỏ 100% sidebar/vip toàn quốc
-      const mainContainerMatch = html.match(/<div[^>]*id=["']left-col["'][^>]*>([\s\S]*?)<\/div>\s*<div[^>]*id=["']right-col/i) ||
-                                 html.match(/<ul[^>]*class=["'][^"']*post-listing[^"']*["'][^>]*>([\s\S]*?)<\/ul>/i) ||
+      const mainContainerMatch = html.match(/<ul[^>]*class=["'][^"']*(?:post[-_]+listing|post__listing)[^"']*["'][^>]*>([\s\S]*?)<\/ul>/i) ||
+                                 html.match(/<div[^>]*class=["'][^"']*(?:post[-_]+listing|post__listing)[^"']*["'][^>]*>([\s\S]*?)<\/div>/i) ||
+                                 html.match(/<div[^>]*id=["']left-col["'][^>]*>([\s\S]*?)<\/div>\s*<div[^>]*id=["']right-col/i) ||
                                  html.match(/<section[^>]*class=["'][^"']*section-post-listing[^"']*["'][^>]*>([\s\S]*?)<\/section>/i);
       const searchHtml = mainContainerMatch ? mainContainerMatch[1] : html;
 
@@ -658,16 +685,32 @@ async function crawlPhongtro123Http(targetTotal, seenUrls, seenHashes) {
           if (!detailRes.ok) continue;
           const dHtml = await detailRes.text();
 
+          // Lọc bỏ 100% tin đã hết hạn (Soft-404)
+          if (/tin đăng này đã hết hạn|tin hết hạn|bạn đang xem tin cũ tại phongtro123|tin đã cho thuê|phòng đã cho thuê/i.test(dHtml)) {
+            continue;
+          }
+
           const titleMatch = dHtml.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i);
           const title = titleMatch ? titleMatch[1].replace(/<[^>]+>/g, '').trim() : '';
           if (!title) continue;
 
           let address = '';
-          const addrMatch = dHtml.match(/(?:Địa chỉ|Khu vực):[\s\S]*?<[^>]*>([^<]+)<\/[^>]*>/i) ||
-                            dHtml.match(/class=["'][^"']*post-address[^"']*["'][^>]*>([\s\S]*?)<\/[a-z0-9]+>/i) ||
-                            dHtml.match(/(?:Địa chỉ|Khu vực):\s*([^<\r\n]+)/i);
-          if (addrMatch) {
-            address = addrMatch[1].replace(/<[^>]+>/g, '').trim();
+          const schemaMatch = dHtml.match(/"streetAddress"\s*:\s*"([^"]+)"/i);
+          if (schemaMatch) {
+            address = schemaMatch[1].trim();
+          } else {
+            const tdMatch = dHtml.match(/Địa chỉ:<\/div><\/td><td[^>]*>\s*([^<]+)\s*<\/td>/i);
+            if (tdMatch) {
+              address = tdMatch[1].trim();
+            } else {
+              const iconMatch = dHtml.match(/Địa chỉ:\s*([^<]+)<span/i);
+              if (iconMatch) {
+                address = iconMatch[1].trim();
+              } else {
+                const addrMatch = dHtml.match(/(?:Địa chỉ|Khu vực):\s*([^<\r\n]+)/i);
+                if (addrMatch) address = addrMatch[1].replace(/<[^>]+>/g, '').trim();
+              }
+            }
           }
 
           // Lọc ngay nếu tiêu đề hoặc địa chỉ chứa tỉnh khác hoặc mặt bằng kinh doanh
@@ -945,6 +988,11 @@ async function runCrawlJob(options = {}) {
           // Cuộn trang
           await page.mouse.wheel(0, 1500);
           await page.waitForTimeout(700);
+          await page.evaluate(() => {
+            document.querySelectorAll('[role="dialog"], div[data-nosnippet]').forEach(el => el.remove());
+            document.body.style.overflow = 'auto';
+            document.documentElement.style.overflow = 'auto';
+          });
         }
 
         auditLog(`   → Bóc tách được ${rawPostsMap.size} bài viết thô từ nhóm.`);
@@ -965,6 +1013,9 @@ async function runCrawlJob(options = {}) {
             continue;
           }
           if (!isGenuineRoomOffer(text)) {
+            continue;
+          }
+          if (!post.imgs || post.imgs.length === 0) {
             continue;
           }
 
@@ -1048,12 +1099,7 @@ async function runCrawlJob(options = {}) {
               so_dien_thoai: phone || "Liên hệ qua bài viết",
               facebook: post.href
             },
-            anh: (post.imgs && post.imgs.length > 0)
-              ? await saveImagesLocally(post.imgs, roomId)
-              : [
-                  { url_goc: "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/03/06/z7592968449853-c4bb6e036ec93ad1901fb47ddb103308_1772784394.jpg", mo_ta: "Phòng trọ sinh viên" },
-                  { url_goc: "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/08/25/1787627501299-943781495388447280-g2637657029613128114-h_1787641779.jpg", mo_ta: "Không gian thoáng mát" }
-                ],
+            anh: await saveImagesLocally(post.imgs, roomId),
             phan_tich: {
               da_kiem_tra: true,
               scam_score: 0.05
@@ -1121,6 +1167,11 @@ async function runCrawlJob(options = {}) {
             await page.waitForTimeout(800);
 
             const detail = await page.evaluate(() => {
+              const bodyText = document.body ? document.body.innerText : '';
+              if (/tin đăng này đã hết hạn|tin hết hạn|bạn đang xem tin cũ tại phongtro123|tin đã cho thuê|phòng đã cho thuê/i.test(bodyText)) {
+                return null;
+              }
+
               const title = document.querySelector('h1')?.innerText?.trim() || '';
 
               let address = '';
@@ -1165,7 +1216,7 @@ async function runCrawlJob(options = {}) {
               };
             });
 
-            if (!detail.title) continue;
+            if (!detail || !detail.title) continue;
             if (isCommercialSpam(detail.title + ' ' + detail.address + ' ' + detail.desc)) continue;
             if (isBlacklistedAddress(detail.address, detail.title + ' ' + detail.desc)) continue;
 
@@ -1335,5 +1386,6 @@ module.exports = {
   runCrawlJob,
   startAutoCrawlScheduler,
   getCrawlBotStatus,
+  crawlPhongtro123Http,
   CRAWL_INTERVAL_MS
 };
