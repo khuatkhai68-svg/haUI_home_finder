@@ -17,7 +17,7 @@
     "dia_chi": "Khu vực Trần Hưng Đạo, TP. Phủ Lý, Hà Nam (gần HaUI CS3)",
     "quan_huyen": "Phủ Lý",
     "tinh_thanh": "Hà Nam",
-    "mo_ta": "Chuyen Ty\nIb M có phòng rộng đầy đủ tiện bán công có sân rộng thoáng mát , nghi chỉ cách cổng chính đhcn có 130 m đi bộ vài bước chân là đến trường thiện chí hl 0983278018\n12 giờ",
+    "mo_ta": "Chuyen Ty Ib M có phòng rộng đầy đủ tiện bán công có sân rộng thoáng mát , nghi chỉ cách cổng chính đhcn có 130 m đi bộ vài bước chân là đến trường thiện chí hl 0983278018 12 giờ",
     "tien_ich": [
       "dieu_hoa",
       "ban_cong"
@@ -42,12 +42,12 @@
   },
   "anh": [
     {
-      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/03/06/z7592968449853-c4bb6e036ec93ad1901fb47ddb103308_1772784394.jpg",
-      "mo_ta": "Phòng trọ sinh viên"
+      "url_goc": "/photos/RM-FB-6C6ED2_photo_1.jpg",
+      "mo_ta": "Ảnh không gian phòng trọ"
     },
     {
-      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/08/25/1787627501299-943781495388447280-g2637657029613128114-h_1787641779.jpg",
-      "mo_ta": "Không gian thoáng mát"
+      "url_goc": "/photos/RM-FB-6C6ED2_photo_2.jpg",
+      "mo_ta": "Ảnh không gian phòng trọ"
     }
   ],
   "phan_tich": {

@@ -270,7 +270,8 @@ function isStudentSeekingPost(text) {
     'cần tìm phòng', 'tìm phòng trọ', 'tìm trọ', 'tìm bạn ở ghép', 
     'tìm bạn cùng phòng', 'ở ghép', 'share phòng', 'pass phòng', 
     'cần pass', 'em là sinh viên', 'mình là sinh viên', 'mình là sv', 
-    'tài chính từ', 'ai có phòng', 'còn phòng nào tầm', 'cần thuê phòng', 
+    'tài chính từ', 'ai có phòng', 'còn phòng nào tầm', 'còn phòng nào kh', 'còn phòng nào không',
+    'cần thuê phòng', 'cần phòng trọ', 'xin hình ảnh và giá', 'nhượng trọ', 'nhượng phòng', 'pass đồ', 'thanh lý',
     'muốn tìm phòng', 'inbox mình với', 'ib em với', 'tìm phòng quanh',
     'bác nào có phòng', 'mọi người ai có phòng', 'tìm giúp',
     'ai còn phòng', 'mình cần tìm', 'em cần tìm', 'tớ muốn tìm', 'tìm người ở cùng',
@@ -282,6 +283,9 @@ function isStudentSeekingPost(text) {
   }
 
   if (/^(mình|em|cháu|ai|có ai|bạn nào|cần|tìm|tớ)\s+(tìm|cần|muốn|hỏi)\b/i.test(text.trim())) {
+    return true;
+  }
+  if (/\bcòn phòng nào\b/i.test(lower)) {
     return true;
   }
   return false;

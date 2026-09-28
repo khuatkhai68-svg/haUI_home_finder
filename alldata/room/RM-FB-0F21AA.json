@@ -17,7 +17,7 @@
     "dia_chi": "Khu vực nguyên xá, Bắc Từ Liêm, Hà Nội (gần HaUI CS1/CS2)",
     "quan_huyen": "Bắc Từ Liêm",
     "tinh_thanh": "Hà Nội",
-    "mo_ta": "MoôkminoE\n BẮC TỪ LIÊM\n*1tr7: 78 Nguyên Xá (vsc)\n*1tr8: 195 Cầu Diễn (vsc)… Xem thêm\n8 giờ",
+    "mo_ta": "MoôkminoE BẮC TỪ LIÊM 1tr7 78 Nguyên Xá (vsc) 1tr8 195 Cầu Diễn (vsc) 8 giờ",
     "tien_ich": [],
     "khong_chung_chu": false,
     "gio_giac_tu_do": false
@@ -39,20 +39,12 @@
   },
   "anh": [
     {
-      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/08/04/1784602119342-943781495388447280-g7608311385472649406-h_1785813124.jpg",
-      "mo_ta": "Ảnh thực tế bài đăng"
+      "url_goc": "/photos/RM-FB-6C6ED2_photo_1.jpg",
+      "mo_ta": "Ảnh không gian phòng trọ"
     },
     {
-      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2024/08/18/6535c129-c5f9-4833-a9e8-2f84f89f0178_1723946167.jpg",
-      "mo_ta": "Ảnh thực tế bài đăng"
-    },
-    {
-      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2024/08/18/2d431fd8-71ed-4eb8-8aa2-f23862f39ac2_1723946170.jpg",
-      "mo_ta": "Ảnh thực tế bài đăng"
-    },
-    {
-      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2024/08/18/e6680404-528e-430b-93f0-c71eeaf7c08a_1723946171.jpg",
-      "mo_ta": "Ảnh thực tế bài đăng"
+      "url_goc": "/photos/RM-FB-6C6ED2_photo_2.jpg",
+      "mo_ta": "Ảnh không gian phòng trọ"
     }
   ],
   "phan_tich": {

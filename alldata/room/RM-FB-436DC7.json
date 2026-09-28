@@ -17,7 +17,7 @@
     "dia_chi": "Khu vực Phù Vân, TP. Phủ Lý, Hà Nam (gần HaUI CS3)",
     "quan_huyen": "Phủ Lý",
     "tinh_thanh": "Hà Nam",
-    "mo_ta": "Silas King Quản trị viên · 1 ngày trước 1 ngày · NHÀ MK CÒN 1 PHÒNG KO CHUNG CHỦ MỚI XÂY CÁCH CỔNG CHÍNH 200M CỔNG PHỤ MỚI 150M Liên hệ 0984527386 0:00 / 0:48 Thích Bình luận Chia sẻ",
+    "mo_ta": "Silas King Quản trị viên 1 ngày 1 ngày NHÀ MK CÒN 1 PHÒNG KO CHUNG CHỦ MỚI XÂY CÁCH CỔNG CHÍNH 200M CỔNG PHỤ MỚI 150M Liên hệ 0984527386 0 00 / 0 48",
     "tien_ich": [],
     "khong_chung_chu": false,
     "gio_giac_tu_do": false
@@ -38,20 +38,12 @@
   },
   "anh": [
     {
-      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/09/07/444aa5d0-06f1-4a11-a4c3-d61f1299ee02_1788783901.jpg",
-      "mo_ta": "Ảnh thực tế bài đăng"
+      "url_goc": "/photos/RM-FB-6C6ED2_photo_1.jpg",
+      "mo_ta": "Ảnh không gian phòng trọ"
     },
     {
-      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/09/07/644ccba2-ed5f-4719-85ab-6e9b18993534_1788783902.jpg",
-      "mo_ta": "Ảnh thực tế bài đăng"
-    },
-    {
-      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/09/07/faf55cf7-f9b7-4ccb-8d85-0d4108da6ecb_1788783902.jpg",
-      "mo_ta": "Ảnh thực tế bài đăng"
-    },
-    {
-      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2025/08/18/z6915823393072-1c411dc6af7c04eaee0f7bd77b0a63fc_1755502427.jpg",
-      "mo_ta": "Ảnh thực tế bài đăng"
+      "url_goc": "/photos/RM-FB-6C6ED2_photo_2.jpg",
+      "mo_ta": "Ảnh không gian phòng trọ"
     }
   ],
   "phan_tich": {

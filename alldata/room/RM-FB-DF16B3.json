@@ -21,7 +21,7 @@
     "dia_chi": "Ngõ 291 Đường Phú Diễn, Phường Phú Diễn, Quận Bắc Từ Liêm, Hà Nội",
     "quan_huyen": "Bắc Từ Liêm",
     "tinh_thanh": "Hà Nội",
-    "mo_ta": "Cho thuê phòng ngõ 291 Phú Diễn, gần ga Phú Diễn và ĐH Công Nghiệp CS1. Phòng full nội thất cao cấp: điều hòa, nóng lạnh, giường nệm, tủ quần áo, máy giặt, ban công thoáng đón gió. Thang máy tòa nhà, cửa vân tay.",
+    "mo_ta": "Cho thuê phòng ngõ 291 Phú Diễn, gần ga Phú Diễn và ĐH Công Nghiệp CS1. Phòng full nội thất cao cấp điều hòa, nóng lạnh, giường nệm, tủ quần áo, máy giặt, ban công thoáng đón gió. Thang máy tòa nhà, cửa vân tay.",
     "tien_ich": [
       "dieu_hoa",
       "nong_lanh",
@@ -42,20 +42,12 @@
   },
   "anh": [
     {
-      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/09/22/8c24f4ffabb927e77ea89_1790073402.jpg",
-      "mo_ta": "Ảnh thực tế bài đăng"
+      "url_goc": "/photos/RM-FB-4555E7_photo_2.jpg",
+      "mo_ta": "Ảnh không gian phòng trọ"
     },
     {
-      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/09/22/33390481602807957836_1790073404.jpg",
-      "mo_ta": "Ảnh thực tế bài đăng"
-    },
-    {
-      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/09/22/333904816028079578310_1790073405.jpg",
-      "mo_ta": "Ảnh thực tế bài đăng"
-    },
-    {
-      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/08/12/1000003378_1786530727.jpg",
-      "mo_ta": "Ảnh thực tế bài đăng"
+      "url_goc": "/photos/RM-FB-52B628_photo_1.jpg",
+      "mo_ta": "Ảnh không gian phòng trọ"
     }
   ],
   "phan_tich": {

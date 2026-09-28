@@ -21,7 +21,7 @@
     "dia_chi": "Đường Trịnh Văn Bô, Phường Phương Canh, Quận Nam Từ Liêm, Hà Nội",
     "quan_huyen": "Bắc Từ Liêm",
     "tinh_thanh": "Hà Nội",
-    "mo_ta": "Căn hộ 1 ngủ 1 khách riêng biệt thiết kế hiện đại tại Trịnh Văn Bô. Phòng đầy đủ nội thất: 2 điều hòa, nóng lạnh, tủ lạnh, máy giặt, sofa mini, bàn ăn. Ban công view thoáng mát, thang máy xịn sò. Thích hợp nhóm 2-3 bạn ở.",
+    "mo_ta": "Căn hộ 1 ngủ 1 khách riêng biệt thiết kế hiện đại tại Trịnh Văn Bô. Phòng đầy đủ nội thất 2 điều hòa, nóng lạnh, tủ lạnh, máy giặt, sofa mini, bàn ăn. Ban công view thoáng mát, thang máy xịn sò. hợp nhóm 2-3 bạn ở.",
     "tien_ich": [
       "dieu_hoa",
       "nong_lanh",
@@ -43,20 +43,12 @@
   },
   "anh": [
     {
-      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2024/08/18/screenshot-2024-08-18-21-17-48-914-comgoogleandroidappsmaps_1723990687.jpg",
-      "mo_ta": "Ảnh thực tế bài đăng"
+      "url_goc": "/photos/RM-FB-4555E7_photo_1.jpg",
+      "mo_ta": "Ảnh không gian phòng trọ"
     },
     {
-      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2024/08/18/screenshot-2024-08-18-21-17-43-726-comgoogleandroidappsmaps_1723990686.jpg",
-      "mo_ta": "Ảnh thực tế bài đăng"
-    },
-    {
-      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2024/08/18/screenshot-2024-08-18-21-17-40-924-comgoogleandroidappsmaps_1723990689.jpg",
-      "mo_ta": "Ảnh thực tế bài đăng"
-    },
-    {
-      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2024/08/18/screenshot-2024-08-18-21-17-34-405-comgoogleandroidappsmaps_1723990696.jpg",
-      "mo_ta": "Ảnh thực tế bài đăng"
+      "url_goc": "/photos/RM-FB-4555E7_photo_2.jpg",
+      "mo_ta": "Ảnh không gian phòng trọ"
     }
   ],
   "phan_tich": {

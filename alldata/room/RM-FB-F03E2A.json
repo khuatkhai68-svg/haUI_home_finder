@@ -17,7 +17,7 @@
     "dia_chi": "Khu vực Phù Vân, TP. Phủ Lý, Hà Nam (gần HaUI CS3)",
     "quan_huyen": "Phủ Lý",
     "tinh_thanh": "Hà Nam",
-    "mo_ta": "Trinh Vu\nIb zalo mình còn phòng đầy đủ tiện nghi nhé ạ 0984527386\n2 ngày",
+    "mo_ta": "Trinh Vu Ib zalo mình còn phòng đầy đủ tiện nghi nhé ạ 0984527386 2 ngày",
     "tien_ich": [],
     "khong_chung_chu": false,
     "gio_giac_tu_do": false
@@ -39,20 +39,12 @@
   },
   "anh": [
     {
-      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/450x300/fit/2026/09/04/b1_1788490501.jpg",
-      "mo_ta": "Ảnh thực tế bài đăng"
+      "url_goc": "/photos/RM-FB-3A2883_photo_2.jpg",
+      "mo_ta": "Ảnh không gian phòng trọ"
     },
     {
-      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/09/22/img-1800_1790080765.jpg",
-      "mo_ta": "Ảnh thực tế bài đăng"
-    },
-    {
-      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/09/22/img-2905_1790080765.jpg",
-      "mo_ta": "Ảnh thực tế bài đăng"
-    },
-    {
-      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/09/22/img-2906_1790080767.jpg",
-      "mo_ta": "Ảnh thực tế bài đăng"
+      "url_goc": "/photos/RM-FB-3A2883_photo_3.jpg",
+      "mo_ta": "Ảnh không gian phòng trọ"
     }
   ],
   "phan_tich": {
