@@ -6,13 +6,14 @@
   "ngay_cap_nhat": "2026-09-22T10:47:23.778Z",
   "trang_thai": "con_trong",
   "vi_tri": {
-    "lat": 21.05145,
-    "lng": 105.74054,
-    "khoang_cach_cs1_km": 0.6,
-    "khoang_cach_cs2_km": 1.9,
-    "khoang_cach_cs3_km": 59.1,
-    "co_so_gan_nhat": "CS1",
-    "thoi_gian_di_xe_phut": 2
+    "lat": 21.068,
+    "lng": 105.711,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 3,
+    "khoang_cach_cs2_km": 1.7,
+    "khoang_cach_cs3_km": 61.7,
+    "co_so_gan_nhat": "CS2",
+    "thoi_gian_di_xe_phut": 6
   },
   "thong_tin": {
     "tieu_de": "PHÒNG 1N1K TRẠM TRÔI, HOÀI ĐỨC",

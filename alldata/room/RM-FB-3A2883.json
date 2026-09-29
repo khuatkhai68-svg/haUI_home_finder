@@ -25,12 +25,12 @@
     "gio_giac_tu_do": false
   },
   "vi_tri": {
-    "lat": 21.04047,
-    "lng": 105.76279,
+    "lat": 21.042,
+    "lng": 105.762,
     "vi_tri_xap_xi": false,
-    "khoang_cach_cs1_km": 3.2,
-    "khoang_cach_cs2_km": 4.5,
-    "khoang_cach_cs3_km": 57.3,
+    "khoang_cach_cs1_km": 3.1,
+    "khoang_cach_cs2_km": 4.3,
+    "khoang_cach_cs3_km": 57.5,
     "co_so_gan_nhat": "CS1",
     "thoi_gian_di_xe_phut": 11
   },

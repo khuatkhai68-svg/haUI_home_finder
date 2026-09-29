@@ -6,11 +6,12 @@
   "ngay_cap_nhat": "2026-09-22T10:47:54.734Z",
   "trang_thai": "con_trong",
   "vi_tri": {
-    "lat": 21.05,
+    "lat": 21.049,
     "lng": 105.748,
+    "vi_tri_xap_xi": false,
     "khoang_cach_cs1_km": 1.4,
-    "khoang_cach_cs2_km": 2.6,
-    "khoang_cach_cs3_km": 58.7,
+    "khoang_cach_cs2_km": 2.7,
+    "khoang_cach_cs3_km": 58.6,
     "co_so_gan_nhat": "CS1",
     "thoi_gian_di_xe_phut": 5
   },

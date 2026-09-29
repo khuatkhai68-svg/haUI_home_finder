@@ -8,11 +8,12 @@
   "vi_tri": {
     "lat": 21.0618,
     "lng": 105.7259,
+    "vi_tri_xap_xi": false,
     "khoang_cach_cs1_km": 1.3,
     "khoang_cach_cs2_km": 0,
     "khoang_cach_cs3_km": 60.6,
     "co_so_gan_nhat": "CS2",
-    "thoi_gian_di_xe_phut": 2
+    "thoi_gian_di_xe_phut": 1
   },
   "thong_tin": {
     "tieu_de": "CHO THUÊ PHÒNG TRỌ TÂY TỰU",

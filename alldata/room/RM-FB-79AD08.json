@@ -26,13 +26,14 @@
     "gio_giac_tu_do": false
   },
   "vi_tri": {
-    "lat": 21.04902,
-    "lng": 105.71957,
-    "khoang_cach_cs1_km": 1.7,
-    "khoang_cach_cs2_km": 1.6,
-    "khoang_cach_cs3_km": 59.5,
+    "lat": 21.051,
+    "lng": 105.718,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 1.8,
+    "khoang_cach_cs2_km": 1.5,
+    "khoang_cach_cs3_km": 59.7,
     "co_so_gan_nhat": "CS2",
-    "thoi_gian_di_xe_phut": 6
+    "thoi_gian_di_xe_phut": 5
   },
   "lien_he": {
     "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",

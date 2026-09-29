@@ -8,17 +8,18 @@
   "vi_tri": {
     "lat": 20.541,
     "lng": 105.898,
+    "vi_tri_xap_xi": true,
     "khoang_cach_cs1_km": 59.5,
     "khoang_cach_cs2_km": 60.6,
     "khoang_cach_cs3_km": 0,
     "co_so_gan_nhat": "CS3",
-    "thoi_gian_di_xe_phut": 2
+    "thoi_gian_di_xe_phut": 1
   },
   "thong_tin": {
     "tieu_de": "Cho thuê phòng trọ tại cơ sở 3 Đại Học Công Nghiệp",
     "gia": 2000000,
     "dien_tich": 25,
-    "dia_chi": "Cho thuê phòng trọ tại cơ sở 3 Đại Học Công Nghiệp - 711266",
+    "dia_chi": "Khuôn viên Đại học Công nghiệp Hà Nội (CS3 Phủ Lý, Hà Nam) - Vị trí bài đăng gần trường",
     "quan_huyen": "Phủ Lý",
     "tinh_thanh": "Hà Nam",
     "mo_ta": "CHO THUÊ PHÒNG TRỌ KHÉP KÍN - ĐẦY ĐỦ TIỆN NGHI - GẦN ĐH CÔNG NGHIỆP CS3",

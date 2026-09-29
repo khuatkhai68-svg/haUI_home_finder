@@ -172,11 +172,10 @@ const PT123_SOURCES = [
 
 // ── Tọa độ địa danh để geocoding chính xác ─────────────────────────────────────
 const HANAM_COORDS = {
-  "phù vân": { lat: 20.5435, lng: 105.8992, ward: "Phù Vân" },
-  "lê hồng phong": { lat: 20.5385, lng: 105.8955, ward: "Quang Trung" },
-  "trường thi": { lat: 20.5345, lng: 105.9080, ward: "Trần Hưng Đạo" },
-  "minh khai": { lat: 20.5410, lng: 105.9130, ward: "Minh Khai" },
-  "quang trung": { lat: 20.5480, lng: 105.9150, ward: "Quang Trung" },
+  "phù vân": { lat: 20.5410, lng: 105.8980, ward: "Phù Vân" },
+  "lê hồng phong": { lat: 20.5380, lng: 105.9050, ward: "Lê Hồng Phong" },
+  "quang trung": { lat: 20.5360, lng: 105.9120, ward: "Quang Trung" },
+  "minh khai": { lat: 20.5420, lng: 105.9150, ward: "Minh Khai" },
   "lương khánh thiện": { lat: 20.5350, lng: 105.9170, ward: "Lương Khánh Thiện" },
   "trần hưng đạo": { lat: 20.5390, lng: 105.9180, ward: "Trần Hưng Đạo" },
   "châu sơn": { lat: 20.5210, lng: 105.9020, ward: "Châu Sơn" },
@@ -184,10 +183,16 @@ const HANAM_COORDS = {
   "liêm chính": { lat: 20.5280, lng: 105.9320, ward: "Liêm Chính" },
   "lam hạ": { lat: 20.5550, lng: 105.9280, ward: "Lam Hạ" },
   "kim bảng": { lat: 20.5620, lng: 105.8420, ward: "Kim Bảng" },
-  "duy tiên": { lat: 20.6120, lng: 105.9450, ward: "Duy Tiên" }
+  "duy tiên": { lat: 20.6120, lng: 105.9450, ward: "Duy Tiên" },
+  "ngô gia tự": { lat: 20.5420, lng: 105.9010, ward: "Phù Vân" },
+  "hoàng văn thụ": { lat: 20.5370, lng: 105.9080, ward: "Lê Hồng Phong" },
+  "đinh tiên hoàng": { lat: 20.5320, lng: 105.9150, ward: "Trần Hưng Đạo" },
+  "lý thường kiệt": { lat: 20.5400, lng: 105.9130, ward: "Minh Khai" },
+  "biên hòa": { lat: 20.5340, lng: 105.9160, ward: "Lương Khánh Thiện" }
 };
 
 const HANOI_COORDS = {
+  // Cụm trọng điểm CS1 - Minh Khai / Nhổn
   "nhổn": { lat: 21.0540, lng: 105.7350, dist: "Bắc Từ Liêm" },
   "nguyên xá": { lat: 21.0555, lng: 105.7380, dist: "Bắc Từ Liêm" },
   "văn trì": { lat: 21.0585, lng: 105.7390, dist: "Bắc Từ Liêm" },
@@ -199,30 +204,67 @@ const HANOI_COORDS = {
   "phúc diễn": { lat: 21.0490, lng: 105.7480, dist: "Bắc Từ Liêm" },
   "đức diễn": { lat: 21.0460, lng: 105.7500, dist: "Bắc Từ Liêm" },
   "cầu diễn": { lat: 21.0420, lng: 105.7620, dist: "Bắc Từ Liêm" },
+
+  // Cụm trọng điểm CS2 - Tây Tựu
   "tây tựu": { lat: 21.0618, lng: 105.7259, dist: "Bắc Từ Liêm" },
   "trung tựu": { lat: 21.0585, lng: 105.7255, dist: "Bắc Từ Liêm" },
-  "lideco": { lat: 21.0665, lng: 105.7115, dist: "Hoài Đức" },
-  "trạm trôi": { lat: 21.0680, lng: 105.7110, dist: "Hoài Đức" },
-  "vân canh": { lat: 21.0380, lng: 105.7220, dist: "Hoài Đức" },
-  "kim chung": { lat: 21.0590, lng: 105.7210, dist: "Hoài Đức" },
-  "lai xá": { lat: 21.0585, lng: 105.7180, dist: "Hoài Đức" },
-  "di trạch": { lat: 21.0510, lng: 105.7180, dist: "Hoài Đức" },
-  "đại tự": { lat: 21.0610, lng: 105.7190, dist: "Hoài Đức" },
-  "phương canh": { lat: 21.0420, lng: 105.7360, dist: "Nam Từ Liêm" },
-  "xuân phương": { lat: 21.0370, lng: 105.7360, dist: "Nam Từ Liêm" },
-  "tu hoàng": { lat: 21.0475, lng: 105.7335, dist: "Nam Từ Liêm" },
-  "hòe thị": { lat: 21.0410, lng: 105.7420, dist: "Nam Từ Liêm" },
-  "trịnh văn bô": { lat: 21.0425, lng: 105.7390, dist: "Nam Từ Liêm" },
-  "hồ tùng mậu": { lat: 21.0390, lng: 105.7720, dist: "Cầu Giấy" },
-  "mai dịch": { lat: 21.0370, lng: 105.7770, dist: "Cầu Giấy" },
-  "cổ nhuế": { lat: 21.0650, lng: 105.7760, dist: "Bắc Từ Liêm" },
-  "đông ngạc": { lat: 21.0820, lng: 105.7750, dist: "Bắc Từ Liêm" },
+  "thượng cát": { lat: 21.0950, lng: 105.7280, dist: "Bắc Từ Liêm" },
+  "liên mạc": { lat: 21.0920, lng: 105.7450, dist: "Bắc Từ Liêm" },
   "thụy phương": { lat: 21.0860, lng: 105.7650, dist: "Bắc Từ Liêm" },
+  "đông ngạc": { lat: 21.0820, lng: 105.7750, dist: "Bắc Từ Liêm" },
+  "tân xuân": { lat: 21.0810, lng: 105.7790, dist: "Bắc Từ Liêm" },
+  "cổ nhuế": { lat: 21.0650, lng: 105.7760, dist: "Bắc Từ Liêm" },
   "phạm văn đồng": { lat: 21.0550, lng: 105.7780, dist: "Bắc Từ Liêm" },
   "trần cung": { lat: 21.0510, lng: 105.7830, dist: "Bắc Từ Liêm" },
   "hoàng công chất": { lat: 21.0480, lng: 105.7620, dist: "Bắc Từ Liêm" },
   "xuân tảo": { lat: 21.0680, lng: 105.7890, dist: "Bắc Từ Liêm" },
-  "nghĩa tân": { lat: 21.0450, lng: 105.7920, dist: "Cầu Giấy" }
+
+  // Cụm lân cận Hoài Đức (rất gần CS1 & CS2)
+  "lideco": { lat: 21.0665, lng: 105.7115, dist: "Hoài Đức" },
+  "trạm trôi": { lat: 21.0680, lng: 105.7110, dist: "Hoài Đức" },
+  "đức thượng": { lat: 21.0740, lng: 105.7020, dist: "Hoài Đức" },
+  "kim chung": { lat: 21.0590, lng: 105.7210, dist: "Hoài Đức" },
+  "lai xá": { lat: 21.0585, lng: 105.7180, dist: "Hoài Đức" },
+  "di trạch": { lat: 21.0510, lng: 105.7180, dist: "Hoài Đức" },
+  "đại tự": { lat: 21.0610, lng: 105.7190, dist: "Hoài Đức" },
+  "vân canh": { lat: 21.0380, lng: 105.7220, dist: "Hoài Đức" },
+  "sơn đồng": { lat: 21.0450, lng: 105.7050, dist: "Hoài Đức" },
+  "tiền yên": { lat: 21.0250, lng: 105.6950, dist: "Hoài Đức" },
+  "song phương": { lat: 21.0180, lng: 105.6980, dist: "Hoài Đức" },
+  "an khánh": { lat: 21.0020, lng: 105.7380, dist: "Hoài Đức" },
+  "lê trọng tấn": { lat: 20.9985, lng: 105.7485, dist: "Hoài Đức" },
+  "geleximco": { lat: 20.9990, lng: 105.7450, dist: "Hoài Đức" },
+
+  // Cụm lân cận Nam Từ Liêm
+  "phương canh": { lat: 21.0420, lng: 105.7360, dist: "Nam Từ Liêm" },
+  "xuân phương": { lat: 21.0370, lng: 105.7360, dist: "Nam Từ Liêm" },
+  "tu hoàng": { lat: 21.0475, lng: 105.7335, dist: "Nam Từ Liêm" },
+  "hòe thị": { lat: 21.0410, lng: 105.7420, dist: "Nam Từ Liêm" },
+  "thị cấm": { lat: 21.0395, lng: 105.7410, dist: "Nam Từ Liêm" },
+  "trịnh văn bô": { lat: 21.0425, lng: 105.7390, dist: "Nam Từ Liêm" },
+  "miêu nha": { lat: 21.0180, lng: 105.7360, dist: "Nam Từ Liêm" },
+  "tây mỗ": { lat: 21.0050, lng: 105.7420, dist: "Nam Từ Liêm" },
+  "đại mỗ": { lat: 20.9950, lng: 105.7580, dist: "Nam Từ Liêm" },
+  "mỹ đình": { lat: 21.0280, lng: 105.7720, dist: "Nam Từ Liêm" },
+  "đình thôn": { lat: 21.0210, lng: 105.7770, dist: "Nam Từ Liêm" },
+  "mễ trì": { lat: 21.0150, lng: 105.7790, dist: "Nam Từ Liêm" },
+  "phú đô": { lat: 21.0120, lng: 105.7680, dist: "Nam Từ Liêm" },
+  "lê đức thọ": { lat: 21.0320, lng: 105.7680, dist: "Nam Từ Liêm" },
+  "lê quang đạo": { lat: 21.0180, lng: 105.7690, dist: "Nam Từ Liêm" },
+  "hàm nghi": { lat: 21.0380, lng: 105.7650, dist: "Nam Từ Liêm" },
+  "nguyễn cơ thạch": { lat: 21.0360, lng: 105.7650, dist: "Nam Từ Liêm" },
+  "trần hữu dực": { lat: 21.0410, lng: 105.7550, dist: "Nam Từ Liêm" },
+
+  // Cụm lân cận Cầu Giấy (giáp ranh tuyến Metro Nhổn - Cầu Giấy)
+  "hồ tùng mậu": { lat: 21.0390, lng: 105.7720, dist: "Cầu Giấy" },
+  "mai dịch": { lat: 21.0370, lng: 105.7770, dist: "Cầu Giấy" },
+  "doãn kế thiện": { lat: 21.0420, lng: 105.7780, dist: "Cầu Giấy" },
+  "trần bình": { lat: 21.0360, lng: 105.7760, dist: "Cầu Giấy" },
+  "xuân thủy": { lat: 21.0365, lng: 105.7860, dist: "Cầu Giấy" },
+  "cầu giấy": { lat: 21.0320, lng: 105.7950, dist: "Cầu Giấy" },
+  "nghĩa tân": { lat: 21.0450, lng: 105.7920, dist: "Cầu Giấy" },
+  "nghĩa đô": { lat: 21.0470, lng: 105.7980, dist: "Cầu Giấy" },
+  "hoàng quốc việt": { lat: 21.0460, lng: 105.7940, dist: "Cầu Giấy" }
 };
 
 // ── Tính khoảng cách Haversine (km) ──────────────────────────────────────────
@@ -494,8 +536,8 @@ function resolveLocation(address, text, defaultRegion) {
 
   // Kiểm tra khu vực Hà Nam (CS3)
   if (defaultRegion === 'hanam_cs3' || combined.includes('hà nam') || combined.includes('phủ lý') || combined.includes('phù vân') || combined.includes('cs3')) {
-    let lat = HANAM_COORDS["phù vân"].lat;
-    let lng = HANAM_COORDS["phù vân"].lng;
+    let lat = HAUI_CS3.lat;
+    let lng = HAUI_CS3.lng;
     let ward = "Phù Vân";
     let matchedHN = false;
 
@@ -513,10 +555,10 @@ function resolveLocation(address, text, defaultRegion) {
       return null;
     }
 
-    const jitterLat = (Math.random() - 0.5) * 0.003;
-    const jitterLng = (Math.random() - 0.5) * 0.003;
-    const finalLat = parseFloat((lat + jitterLat).toFixed(5));
-    const finalLng = parseFloat((lng + jitterLng).toFixed(5));
+    // TUYỆT ĐỐI KHÔNG BỊA TỌA ĐỘ BẰNG JITTER RANDOM!
+    const finalLat = parseFloat(lat.toFixed(5));
+    const finalLng = parseFloat(lng.toFixed(5));
+    const isApprox = !matchedHN;
 
     const d3 = calcDistance(finalLat, finalLng, HAUI_CS3.lat, HAUI_CS3.lng);
     if (d3 > MAX_DIST_HANAM_KM) {
@@ -527,10 +569,13 @@ function resolveLocation(address, text, defaultRegion) {
     return {
       lat: finalLat,
       lng: finalLng,
-      dia_chi: address.includes('Hà Nam') ? address : `${address || ('Khu vực ' + ward)}, TP. Phủ Lý, Hà Nam (gần HaUI CS3)`,
+      dia_chi: isApprox
+        ? "Khuôn viên Đại học Công nghiệp Hà Nội (CS3 Phủ Lý, Hà Nam) - Vị trí bài đăng gần trường"
+        : (address.includes('Hà Nam') ? address : `${address || ('Khu vực ' + ward)}, TP. Phủ Lý, Hà Nam (gần HaUI CS3)`),
       quan_huyen: "Phủ Lý",
       tinh_thanh: "Hà Nam",
       region: "hanam_cs3",
+      vi_tri_xap_xi: isApprox,
       distCS1: calcDistance(finalLat, finalLng, HAUI_CS1.lat, HAUI_CS1.lng),
       distCS2: calcDistance(finalLat, finalLng, HAUI_CS2.lat, HAUI_CS2.lng),
       distCS3: d3,
@@ -538,7 +583,7 @@ function resolveLocation(address, text, defaultRegion) {
     };
   }
 
-  // Khu vực Hà Nội (CS1 & CS2) — Bắt buộc phải khớp ít nhất 1 địa danh đã biết quanh HaUI
+  // Khu vực Hà Nội (CS1 & CS2) — Tra cứu tọa độ chuẩn
   let matched = false;
   let lat = HAUI_CS1.lat;
   let lng = HAUI_CS1.lng;
@@ -556,40 +601,67 @@ function resolveLocation(address, text, defaultRegion) {
     }
   }
 
-  // TUYỆT ĐỐI KHÔNG FALLBACK TỌA ĐỘ MÙ QUÁNG NẾU KHÔNG THUỘC KHU VỰC HAUI
+  // NẾU BÀI ĐĂNG KHÔNG GHI ĐỊA CHỈ RÕ RÀNG:
+  // Quy định thép: "các bài đăng trên Facebook mà không có ghi địa chỉ rõ ràng hãy cứ trỏ về Đại học Công nghiệp, không được bịa vị trí của bất cứ phòng trọ nào."
+  const isExplicitHaUI = combined.includes('đại học công nghiệp') || 
+                         combined.includes('đh công nghiệp') || 
+                         combined.includes('dh công nghiệp') || 
+                         combined.includes('haui') || 
+                         combined.includes('cs1') || 
+                         combined.includes('cs2') ||
+                         combined.includes('nhổn') ||
+                         combined.includes('gần trường');
+
+  let isApprox = false;
+  let targetCampus = 'CS1';
+
   if (!matched) {
-    const isExplicitHaUI = combined.includes('đại học công nghiệp') || 
-                           combined.includes('đh công nghiệp') || 
-                           combined.includes('dh công nghiệp') || 
-                           combined.includes('haui cs1') || 
-                           combined.includes('haui cs2');
     if (!isExplicitHaUI) {
-      auditLog(`  [REJECT-UNRECOGNIZED-LOCATION] Không khớp địa danh HaUI, từ chối lưu: ${(address || text).substring(0, 60)}`);
+      auditLog(`  [REJECT-UNRECOGNIZED-LOCATION] Không có địa chỉ rõ ràng và không liên quan HaUI: ${(address || text).substring(0, 60)}`);
       return null;
+    }
+    // Trỏ thẳng về Đại học Công nghiệp Hà Nội, không bịa đặt tọa độ
+    isApprox = true;
+    if (combined.includes('cs2') || combined.includes('tây tựu')) {
+      lat = HAUI_CS2.lat;
+      lng = HAUI_CS2.lng;
+      targetCampus = 'CS2';
+      landmark = 'Cơ sở 2 HaUI';
+    } else {
+      lat = HAUI_CS1.lat;
+      lng = HAUI_CS1.lng;
+      targetCampus = 'CS1';
+      landmark = 'Cơ sở 1 HaUI';
     }
   }
 
-  const jitterLat = (Math.random() - 0.5) * 0.004;
-  const jitterLng = (Math.random() - 0.5) * 0.004;
-  const finalLat = parseFloat((lat + jitterLat).toFixed(5));
-  const finalLng = parseFloat((lng + jitterLng).toFixed(5));
+  // TUYỆT ĐỐI KHÔNG DÙNG JITTER RANDOM LÀM SAI LỆCH VỊ TRÍ
+  const finalLat = parseFloat(lat.toFixed(5));
+  const finalLng = parseFloat(lng.toFixed(5));
 
   const d1 = calcDistance(finalLat, finalLng, HAUI_CS1.lat, HAUI_CS1.lng);
   const d2 = calcDistance(finalLat, finalLng, HAUI_CS2.lat, HAUI_CS2.lng);
   const d3 = calcDistance(finalLat, finalLng, HAUI_CS3.lat, HAUI_CS3.lng);
 
-  // Nếu cự ly xa hơn 8km thì dứt khoát từ chối, KHÔNG ép về CS1
-  if (d1 > MAX_DIST_HANOI_KM && d2 > MAX_DIST_HANOI_KM) {
+  // Nếu bài ghi địa chỉ cụ thể mà cự ly xa hơn 8km thì dứt khoát từ chối, KHÔNG ép về CS1
+  if (!isApprox && d1 > MAX_DIST_HANOI_KM && d2 > MAX_DIST_HANOI_KM) {
     auditLog(`  [REJECT-TOO-FAR-HN] CS1=${d1}km CS2=${d2}km vượt quá bán kính ${MAX_DIST_HANOI_KM}km: ${(address || text).substring(0, 60)}`);
     return null;
   }
 
   return {
-    lat: finalLat, lng: finalLng,
-    dia_chi: address.includes('Hà Nội') ? address : `${address || ('Khu vực ' + landmark)}, ${dist}, Hà Nội (gần HaUI CS1/CS2)`,
-    quan_huyen: dist, tinh_thanh: 'Hà Nội', region: 'hanoi_cs1_cs2',
-    vi_tri_xap_xi: false,
-    distCS1: d1, distCS2: d2, distCS3: d3,
+    lat: finalLat, 
+    lng: finalLng,
+    dia_chi: isApprox 
+      ? `Khuôn viên Đại học Công nghiệp Hà Nội (${targetCampus}) - Vị trí trỏ về trường do bài đăng Facebook không ghi địa chỉ cụ thể`
+      : (address.includes('Hà Nội') ? address : `${address || ('Khu vực ' + landmark)}, ${dist}, Hà Nội (gần HaUI CS1/CS2)`),
+    quan_huyen: dist, 
+    tinh_thanh: 'Hà Nội', 
+    region: 'hanoi_cs1_cs2',
+    vi_tri_xap_xi: isApprox,
+    distCS1: d1, 
+    distCS2: d2, 
+    distCS3: d3,
     co_so_gan_nhat: d1 <= d2 ? 'CS1' : 'CS2'
   };
 }
@@ -694,6 +766,16 @@ async function crawlPhongtro123Http(targetTotal, seenUrls, seenHashes) {
           const title = titleMatch ? titleMatch[1].replace(/<[^>]+>/g, '').trim() : '';
           if (!title) continue;
 
+          // Trích xuất vị trí bản đồ từ Google Map embed trong section "Vị trí & bản đồ"
+          const mapIframeMatch = dHtml.match(/src=["'](https:\/\/www\.google\.com\/maps\/embed[^"']+)["']/i);
+          let mapQuery = '';
+          if (mapIframeMatch) {
+            const qMatch = mapIframeMatch[1].match(/place\?q=([^&"'>]+)/i);
+            if (qMatch) {
+              try { mapQuery = decodeURIComponent(qMatch[1].replace(/\+/g, ' ')).trim(); } catch {}
+            }
+          }
+
           let address = '';
           const schemaMatch = dHtml.match(/"streetAddress"\s*:\s*"([^"]+)"/i);
           if (schemaMatch) {
@@ -712,10 +794,11 @@ async function crawlPhongtro123Http(targetTotal, seenUrls, seenHashes) {
               }
             }
           }
+          if (!address && mapQuery) address = mapQuery;
 
           // Lọc ngay nếu tiêu đề hoặc địa chỉ chứa tỉnh khác hoặc mặt bằng kinh doanh
-          if (isCommercialSpam(title + ' ' + address)) continue;
-          if (isBlacklistedAddress(address, title)) continue;
+          if (isCommercialSpam(title + ' ' + address + ' ' + mapQuery)) continue;
+          if (isBlacklistedAddress(address + ' ' + mapQuery, title)) continue;
 
           const priceMatch = dHtml.match(/(\d+(?:[.,]\d+)?\s*(?:triệu|tr|đ|đồng)\/tháng)/i);
           const priceText = priceMatch ? priceMatch[1] : '';
@@ -745,7 +828,7 @@ async function crawlPhongtro123Http(targetTotal, seenUrls, seenHashes) {
           if (area > 120) continue; // Bỏ qua mặt bằng diện tích lớn
 
           const amenities = parseAmenities(desc + ' ' + title);
-          const loc = resolveLocation(address, title, src.isHaNam ? 'hanam_cs3' : 'hanoi_cs1_cs2');
+          const loc = resolveLocation(address || mapQuery, (title + ' ' + (mapQuery || '') + ' ' + desc), src.isHaNam ? 'hanam_cs3' : 'hanoi_cs1_cs2');
           if (!loc) continue;
 
           const descHash = crypto.createHash('sha256').update(desc.substring(0, 100).replace(/\s+/g, '')).digest('hex');
@@ -781,6 +864,7 @@ async function crawlPhongtro123Http(targetTotal, seenUrls, seenHashes) {
             vi_tri: {
               lat: loc.lat,
               lng: loc.lng,
+              vi_tri_xap_xi: loc.vi_tri_xap_xi || false,
               khoang_cach_cs1_km: loc.distCS1,
               khoang_cach_cs2_km: loc.distCS2,
               khoang_cach_cs3_km: loc.distCS3,
@@ -1182,6 +1266,17 @@ async function runCrawlJob(options = {}) {
                 address = addrEl.parentElement?.innerText?.replace(/Địa chỉ:|Khu vực:/gi, '').trim() || '';
               }
 
+              // Trích xuất bản đồ Google Maps embed
+              const mapIframe = document.querySelector('iframe[src*="google.com/maps/embed"], iframe[title*="Vị trí"]');
+              let mapQuery = '';
+              if (mapIframe) {
+                const src = mapIframe.getAttribute('src') || '';
+                const m = src.match(/place\?q=([^&"'>]+)/i);
+                if (m) {
+                  try { mapQuery = decodeURIComponent(m[1].replace(/\+/g, ' ')).trim(); } catch {}
+                }
+              }
+
               let priceText = '';
               const priceEl = Array.from(document.querySelectorAll('*')).find(el =>
                 el.children.length === 0 && (el.innerText?.includes('triệu/tháng') || el.innerText?.includes('tr/tháng') || el.innerText?.includes('đồng/tháng'))
@@ -1208,6 +1303,7 @@ async function runCrawlJob(options = {}) {
               return {
                 title,
                 address,
+                mapQuery,
                 priceText,
                 areaText,
                 phone,
@@ -1218,15 +1314,16 @@ async function runCrawlJob(options = {}) {
 
             if (!detail || !detail.title) continue;
             if (isCommercialSpam(detail.title + ' ' + detail.address + ' ' + detail.desc)) continue;
-            if (isBlacklistedAddress(detail.address, detail.title + ' ' + detail.desc)) continue;
+            if (isBlacklistedAddress(detail.address || detail.mapQuery, detail.title + ' ' + detail.desc)) continue;
 
             const price = parsePrice(detail.priceText) || parsePrice(detail.title) || (src.isHaNam ? 1200000 : 2500000);
             if (price > 15000000 || price < 600000) continue;
             const area = parseArea(detail.areaText) || 20;
             if (area > 120) continue;
 
+            const fullAddr = detail.address || detail.mapQuery;
             const amenities = parseAmenities(detail.desc + ' ' + detail.title);
-            const loc = resolveLocation(detail.address, detail.title, src.isHaNam ? 'hanam_cs3' : 'hanoi_cs1_cs2');
+            const loc = resolveLocation(fullAddr, (detail.title + ' ' + (detail.mapQuery || '') + ' ' + detail.desc), src.isHaNam ? 'hanam_cs3' : 'hanoi_cs1_cs2');
             if (!loc) continue;
 
             const roomObj = {
@@ -1245,7 +1342,7 @@ async function runCrawlJob(options = {}) {
                 tieu_de: detail.title,
                 gia: price,
                 dien_tich: area,
-                dia_chi: detail.address || loc.dia_chi,
+                dia_chi: fullAddr || loc.dia_chi,
                 quan_huyen: loc.quan_huyen,
                 tinh_thanh: loc.tinh_thanh,
                 mo_ta: detail.desc,
@@ -1256,6 +1353,7 @@ async function runCrawlJob(options = {}) {
               vi_tri: {
                 lat: loc.lat,
                 lng: loc.lng,
+                vi_tri_xap_xi: loc.vi_tri_xap_xi || false,
                 khoang_cach_cs1_km: loc.distCS1,
                 khoang_cach_cs2_km: loc.distCS2,
                 khoang_cach_cs3_km: loc.distCS3,

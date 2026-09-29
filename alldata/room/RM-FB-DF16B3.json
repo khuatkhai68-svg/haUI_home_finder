@@ -6,13 +6,14 @@
   "ngay_cap_nhat": "2026-09-22T10:47:54.733Z",
   "trang_thai": "con_trong",
   "vi_tri": {
-    "lat": 21.0465,
-    "lng": 105.753,
-    "khoang_cach_cs1_km": 2,
-    "khoang_cach_cs2_km": 3.3,
-    "khoang_cach_cs3_km": 58.2,
+    "lat": 21.045,
+    "lng": 105.755,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 2.3,
+    "khoang_cach_cs2_km": 3.6,
+    "khoang_cach_cs3_km": 58,
     "co_so_gan_nhat": "CS1",
-    "thoi_gian_di_xe_phut": 7
+    "thoi_gian_di_xe_phut": 8
   },
   "thong_tin": {
     "tieu_de": "Phòng trọ ngõ 291 Phú Diễn - Full đồ, ban công, cửa sổ thoáng mát",

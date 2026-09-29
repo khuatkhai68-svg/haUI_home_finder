@@ -7,6 +7,8 @@
   <meta name="description" content="HaUI HomeFinder - Xem chi tiết thông tin phòng trọ, giá điện nước, và đánh giá AI." />
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 </head>
 <body>
@@ -173,6 +175,11 @@
       const mapLink = (room.lat && room.lng) 
         ? `https://www.google.com/maps?q=${room.lat},${room.lng}`
         : `https://www.google.com/maps?q=${encodeURIComponent(room.address || 'Đại học Công Nghiệp Hà Nội')}`;
+
+      const originCoords = room.nearestCampus === 'CS3' ? '20.54100,105.89800' : (room.nearestCampus === 'CS2' ? '21.06180,105.72590' : '21.05373,105.73510');
+      const googleDirUrl = (room.lat && room.lng)
+        ? `https://www.google.com/maps/dir/?api=1&origin=${originCoords}&destination=${room.lat},${room.lng}`
+        : `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(room.address || 'Đại học Công Nghiệp Hà Nội')}`;
 
       // UI-02: Làm sạch mô tả trước khi hiển thị
       const safeDesc = cleanText(room.desc) || 'Không có mô tả chi tiết từ người đăng.';
@@ -341,6 +348,46 @@
             </div>
           </div>
 
+          <!-- ============ VỊ TRÍ & BẢN ĐỒ SECTION (THEO MẪU BẢN ĐỒ CHUẨN) ============ -->
+          <div style="margin:2rem 0;background:white;padding:1.5rem;border-radius:12px;border:1px solid #e2e8f0;box-shadow:0 1px 3px rgba(0,0,0,0.05);">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;flex-wrap:wrap;gap:0.75rem;">
+              <div>
+                <h3 style="font-size:1.15rem;font-weight:800;color:#0f172a;margin:0 0 4px;display:flex;align-items:center;gap:8px;">
+                  <span>📍</span> Vị trí & bản đồ
+                </h3>
+                <p style="font-size:0.88rem;color:#475569;margin:0;">
+                  <strong>Địa chỉ:</strong> ${safeAddress}
+                </p>
+              </div>
+              <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                <a href="${googleDirUrl}" target="_blank" rel="noopener" 
+                   style="font-size:0.85rem;color:#2563eb;text-decoration:none;font-weight:700;display:inline-flex;align-items:center;gap:4px;background:#eff6ff;padding:6px 12px;border-radius:6px;border:1px solid #bfdbfe;">
+                  🧭 Chỉ đường từ HaUI
+                </a>
+                <a href="${mapLink}" target="_blank" rel="noopener" 
+                   style="font-size:0.85rem;color:#64748b;text-decoration:none;font-weight:600;display:inline-flex;align-items:center;gap:4px;background:#f8fafc;padding:6px 12px;border-radius:6px;border:1px solid #e2e8f0;">
+                  Xem bản đồ lớn ↗
+                </a>
+              </div>
+            </div>
+
+            ${room.approximateLocation ? `
+              <div style="margin-bottom:1rem;padding:0.75rem 1rem;background:#fffbeb;border:1px solid #fde68a;border-radius:8px;display:flex;align-items:flex-start;gap:8px;font-size:0.85rem;">
+                <span style="font-size:1.2rem;flex-shrink:0;">ℹ️</span>
+                <div style="color:#92400e;line-height:1.45;">
+                  <strong>Định vị tại Trường Đại học Công nghiệp Hà Nội:</strong> Bài đăng này không ghi rõ địa chỉ ngõ/số nhà cụ thể. Hệ thống tự động định vị trực tiếp về <strong>cổng trường HaUI (${room.nearestCampus || 'CS1'})</strong> để hỗ trợ sinh viên tính khoảng cách, tuyệt đối <em>không bịa đặt tọa độ giả</em>.
+                </div>
+              </div>
+            ` : `
+              <div style="margin-bottom:1rem;padding:0.6rem 1rem;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;display:flex;align-items:center;gap:8px;font-size:0.85rem;color:#166534;">
+                <span style="font-size:1.1rem;">✅</span>
+                <span><strong>Vị trí xác thực:</strong> Tọa độ định vị chính xác theo thông tin địa chỉ từ bài đăng gốc.</span>
+              </div>
+            `}
+
+            <div id="room-detail-map" style="width:100%;height:320px;border-radius:8px;overflow:hidden;border:1px solid #cbd5e1;background:#f1f5f9;"></div>
+          </div>
+
           <!-- Videos quay thực tế (nếu có) -->
           ${room.videos && room.videos.length ? `
             <div style="margin:1.5rem 0;">
@@ -437,6 +484,88 @@
         </div>
       `;
       loadComments(room.id);
+      initDetailMap(room);
+    }
+
+    function initDetailMap(room) {
+      if (!room || !room.lat || !room.lng) return;
+      const mapContainer = document.getElementById('room-detail-map');
+      if (!mapContainer) return;
+
+      try {
+        const detailMap = L.map('room-detail-map', {
+          center: [room.lat, room.lng],
+          zoom: 15,
+          zoomControl: true,
+          scrollWheelZoom: false
+        });
+
+        L.tileLayer('https://mt1.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
+          attribution: '© Google Maps',
+          maxZoom: 20
+        }).addTo(detailMap);
+
+        const isApprox = !!room.approximateLocation;
+        const markerColor = isApprox ? '#d97706' : (room.nguon === 'facebook' ? '#1877f2' : '#059669');
+        const markerBadgeText = isApprox ? '🏫 Cổng trường HaUI (Vị trí xấp xỉ)' : '📍 Vị trí phòng trọ';
+
+        const customMarkerHtml = `
+          <div style="background:${markerColor};color:white;padding:5px 10px;border-radius:20px;font-size:12px;font-weight:700;white-space:nowrap;box-shadow:0 3px 8px rgba(0,0,0,0.3);display:flex;align-items:center;gap:5px;border:2px solid white;">
+            <span>${isApprox ? '🏫' : (room.nguon === 'facebook' ? '📘' : '🏠')}</span>
+            <span>${isApprox ? 'Tại Cổng HaUI' : ((room.price/1e6).toFixed(1) + ' Tr/tháng')}</span>
+          </div>
+        `;
+
+        const icon = L.divIcon({
+          html: customMarkerHtml,
+          className: '',
+          iconAnchor: [50, 16]
+        });
+
+        const marker = L.marker([room.lat, room.lng], { icon }).addTo(detailMap);
+        marker.bindPopup(`
+          <div style="min-width:200px;font-family:sans-serif;line-height:1.4;">
+            <div style="font-weight:800;color:#0f172a;font-size:0.92rem;margin-bottom:4px;">${cleanText(room.title)}</div>
+            <div style="font-size:0.78rem;color:#475569;margin-bottom:6px;">📍 ${cleanText(room.address || '')}</div>
+            <div style="font-size:0.75rem;padding:3px 8px;border-radius:4px;background:#f1f5f9;color:${markerColor};font-weight:700;">
+              ${markerBadgeText}
+            </div>
+          </div>
+        `).openPopup();
+
+        // Thêm các cơ sở HaUI để định vị bối cảnh
+        const campuses = [
+          { name: "HaUI Cơ sở 1 (Minh Khai - Nhổn)", lat: 21.05373, lng: 105.73510, color: '#1e40af' },
+          { name: "HaUI Cơ sở 2 (Tây Tựu)", lat: 21.06180, lng: 105.72590, color: '#b45309' },
+          { name: "HaUI Cơ sở 3 (Phủ Lý - Hà Nam)", lat: 20.54100, lng: 105.89800, color: '#047857' }
+        ];
+
+        campuses.forEach(c => {
+          const d = Math.sqrt(Math.pow(c.lat - room.lat, 2) + Math.pow(c.lng - room.lng, 2)) * 111;
+          if (d <= 8) {
+            L.circle([c.lat, c.lng], {
+              radius: 500,
+              color: c.color,
+              fillColor: c.color,
+              fillOpacity: 0.08,
+              weight: 1.5,
+              dashArray: '3, 4'
+            }).addTo(detailMap);
+
+            L.marker([c.lat, c.lng], {
+              icon: L.divIcon({
+                className: '',
+                html: `<div style="background:${c.color};color:white;padding:3px 8px;border-radius:4px;font-size:10px;font-weight:700;border:1px solid white;box-shadow:0 2px 4px rgba(0,0,0,0.2);">🏫 ${c.name}</div>`,
+                iconAnchor: [55, 12]
+              })
+            }).addTo(detailMap).bindPopup(`<b>🏫 ${c.name}</b>`);
+          }
+        });
+
+        setTimeout(() => { detailMap.invalidateSize(); }, 300);
+      } catch (err) {
+        console.error('[DetailMap] Lỗi khởi tạo bản đồ:', err);
+      }
     }
 
 

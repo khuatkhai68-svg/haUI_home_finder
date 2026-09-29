@@ -8,6 +8,7 @@
   "vi_tri": {
     "lat": 21.0505,
     "lng": 105.7425,
+    "vi_tri_xap_xi": false,
     "khoang_cach_cs1_km": 0.8,
     "khoang_cach_cs2_km": 2.1,
     "khoang_cach_cs3_km": 58.9,

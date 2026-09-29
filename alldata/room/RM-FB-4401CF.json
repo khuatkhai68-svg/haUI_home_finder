@@ -8,17 +8,18 @@
   "vi_tri": {
     "lat": 21.05373,
     "lng": 105.7351,
+    "vi_tri_xap_xi": true,
     "khoang_cach_cs1_km": 0,
     "khoang_cach_cs2_km": 1.3,
     "khoang_cach_cs3_km": 59.5,
     "co_so_gan_nhat": "CS1",
-    "thoi_gian_di_xe_phut": 2
+    "thoi_gian_di_xe_phut": 1
   },
   "thong_tin": {
     "tieu_de": "Cho thuê phòng trọ 8.0 tr/tháng tại Phường Minh Khai (HaUI CS1)",
     "gia": 8000000,
     "dien_tich": 25,
-    "dia_chi": "Phường Minh Khai, Quận Bắc Từ Liêm, Hà Nội (gần HaUI CS1)",
+    "dia_chi": "Khuôn viên Đại học Công nghiệp Hà Nội (CS1) - Vị trí trỏ về trường do bài đăng Facebook không ghi địa chỉ cụ thể",
     "quan_huyen": "Bắc Từ Liêm",
     "tinh_thanh": "Hà Nội",
     "mo_ta": "14 Tháng 8 Trần Hữu Thưởng đang ở Trích Sài Hồ Tây. 14 Tháng 8 Hà Nội Cho thuê phòng ccmn full nội thất nl,đh tủ lạnh thang máy xịn xò view hồ Tây, pccc đạt chuẩn diện tích 25m2 đầy đủ giá 4.xtr",

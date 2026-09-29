@@ -6,13 +6,14 @@
   "ngay_cap_nhat": "2026-09-22T11:34:06.209Z",
   "trang_thai": "con_trong",
   "vi_tri": {
-    "lat": 21.0552,
-    "lng": 105.7382,
+    "lat": 21.0555,
+    "lng": 105.738,
+    "vi_tri_xap_xi": false,
     "khoang_cach_cs1_km": 0.4,
-    "khoang_cach_cs2_km": 1.5,
-    "khoang_cach_cs3_km": 59.5,
+    "khoang_cach_cs2_km": 1.4,
+    "khoang_cach_cs3_km": 59.6,
     "co_so_gan_nhat": "CS1",
-    "thoi_gian_di_xe_phut": 2
+    "thoi_gian_di_xe_phut": 1
   },
   "thong_tin": {
     "tieu_de": "Mình có phòng 2tr2 ở nguyên xá ib zl mình gửi video 0916753385",

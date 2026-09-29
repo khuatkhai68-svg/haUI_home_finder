@@ -6,13 +6,14 @@
   "ngay_cap_nhat": "2026-09-22T11:21:33.611Z",
   "trang_thai": "con_trong",
   "vi_tri": {
-    "lat": 21.0585,
-    "lng": 105.718,
-    "khoang_cach_cs1_km": 1.9,
-    "khoang_cach_cs2_km": 0.9,
+    "lat": 21.059,
+    "lng": 105.721,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 1.6,
+    "khoang_cach_cs2_km": 0.6,
     "khoang_cach_cs3_km": 60.5,
     "co_so_gan_nhat": "CS2",
-    "thoi_gian_di_xe_phut": 3
+    "thoi_gian_di_xe_phut": 2
   },
   "thong_tin": {
     "tieu_de": "Cho thuê phòng trọ 3.0 tr/tháng tại Khu đô thị Lai Xá (HaUI CS1)",
