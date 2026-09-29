@@ -965,18 +965,21 @@ async function runCrawlJob(options = {}) {
       }
     }
 
-    if (pw) {
-      try {
-        browser = await pw.chromium.launch({
-          headless: true,
-          args: ['--no-sandbox', '--disable-blink-features=AutomationControlled', '--disable-dev-shm-usage', '--disable-gpu']
-        });
-      } catch (launchErr) {
-        auditLog(`⚠️ [CrawlBot] Không thể khởi chạy Chromium headless trên server (${launchErr.message}). Chuyển sang HTTP Crawler Engine...`);
-        browser = null;
-      }
-    } else {
-      auditLog(`⚠️ [CrawlBot] Playwright/Chromium không khả dụng trên môi trường server này. Chuyển sang HTTP Crawler Engine...`);
+    if (!pw) {
+      auditLog(`❌ [CrawlBot] LỖI BỘ LUẬT THÉP: Playwright không khả dụng. Hệ thống CHỈ sử dụng Playwright để đảm bảo cào chuẩn xác 100%. Từ chối cào chay.`);
+      crawlRunning = false;
+      return { success: false, error: 'Playwright required' };
+    }
+
+    try {
+      browser = await pw.chromium.launch({
+        headless: true,
+        args: ['--no-sandbox', '--disable-blink-features=AutomationControlled', '--disable-dev-shm-usage', '--disable-gpu']
+      });
+    } catch (launchErr) {
+      auditLog(`❌ [CrawlBot] Không thể khởi chạy Chromium Playwright (${launchErr.message}). Từ chối cào.`);
+      crawlRunning = false;
+      return { success: false, error: launchErr.message };
     }
 
     if (browser) {
@@ -1390,13 +1393,7 @@ async function runCrawlJob(options = {}) {
       }
     }
   } else {
-    // ─────────────────────────────────────────────────────────────────────────
-    // CHẾ ĐỘ HTTP ENGINE: Tự động chạy khi không có Chromium (Render/Cloud Server)
-    // ─────────────────────────────────────────────────────────────────────────
-    auditLog('\n── [HTTP ENGINE] CÀO DỮ LIỆU TỰ ĐỘNG KHÔNG CẦN TRÌNH DUYỆT (PHỦ CS1, CS2, CS3) ──');
-    const httpRes = await crawlPhongtro123Http(targetOtherNew + targetFbNew, seenUrls, seenHashes);
-    addedOther += httpRes.addedOther;
-    droppedDup += httpRes.droppedDup;
+    auditLog('❌ [CrawlBot] Trình duyệt Playwright không sẵn sàng, đã hủy đợt cào theo luật chỉ dùng Playwright.');
   }
 
   } catch (globalErr) {
