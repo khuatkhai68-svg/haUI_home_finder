@@ -1,0 +1,69 @@
+{
+  "ma_phong": "RM-PT123-A80789",
+  "nguon": "phongtro123",
+  "url_nguon": "https://phongtro123.com/khai-truong-toa-moi-chung-cu-mini-cao-cap-xep-nho-full-noi-that-co-gac-xep-pr688539.html",
+  "ngay_cao": "2026-09-29T14:37:07.129Z",
+  "ngay_cap_nhat": "2026-09-29T14:37:07.129Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "Nguồn niêm yết công khai phongtro123.com",
+    "chong_spam": "Tin đăng cho thuê xác thực",
+    "da_kiem_tra_trung": true
+  },
+  "thong_tin": {
+    "tieu_de": "KHAI TRƯƠNG TÒA MỚI: CHUNG CƯ MINI CAO CẤP XÉP NHỎ, FULL NỘI THẤT, CÓ GÁC XÉP",
+    "gia": 2500000,
+    "dien_tich": 29,
+    "dia_chi": "Số 7, ngõ 401/123 Đường Xuân Đỉnh, Phường Xuân Đỉnh, Hà Nội",
+    "quan_huyen": "Bắc Từ Liêm",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Vị trí: Số 7, ngõ 401/123 Xuân Đỉnh, Hà Nội – chỉ cách đường Phạm Văn Đồng ~300m, ngõ rộng ô tô có thể vào… - 688539",
+    "tien_ich": [
+      "gac_xep",
+      "giuong_tu"
+    ],
+    "khong_chung_chu": false,
+    "gio_giac_tu_do": false
+  },
+  "vi_tri": {
+    "lat": 21.055,
+    "lng": 105.778,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 4.5,
+    "khoang_cach_cs2_km": 5.5,
+    "khoang_cach_cs3_km": 58.5,
+    "co_so_gan_nhat": "CS1",
+    "thoi_gian_di_xe_phut": 14
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "0909316890",
+    "facebook": ""
+  },
+  "anh": [
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2025/08/07/z6881054535803-d5cc79a130bc7a4194b97c3afbe57249_1754534934.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2025/08/07/z6881054543405-5c94c115054f84f2bd58b6d33774c75d_1754534934.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2025/08/07/z6881054568394-ea6cf1ab5f31425b9066bfbdb038303d_1754534936.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2025/08/07/z6881054612474-2aec8b5a836319444c5c283ab3e62134_1754534937.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2025/08/07/z6881054612476-422962e8cdc269a3a094f711e22c90d1_1754534937.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "ma_phong": "RM-PT123-04A7E5",
+  "nguon": "phongtro123",
+  "url_nguon": "https://phongtro123.com/sieu-pham-nha-tro-tai-ngo-290-xuan-dinh-bac-tu-liem-pr694060.html",
+  "ngay_cao": "2026-09-29T14:36:21.756Z",
+  "ngay_cap_nhat": "2026-09-29T14:36:21.756Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "Nguồn niêm yết công khai phongtro123.com",
+    "chong_spam": "Tin đăng cho thuê xác thực",
+    "da_kiem_tra_trung": true
+  },
+  "thong_tin": {
+    "tieu_de": "SIÊU PHẨM NHÀ TRỌ TẠI NGÕ 290 XUÂN ĐỈNH, BẮC TỪ LIÊM",
+    "gia": 2500000,
+    "dien_tich": 20,
+    "dia_chi": "25 Ngõ 290, Phường Xuân Đỉnh, Hà Nội",
+    "quan_huyen": "Bắc Từ Liêm",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Mô tả: cửa sổ, ban công ánh sáng chan hoà tiết kiệm điện Diện tích: 20m2. Ở được luôn! Nội thất:… - 694060",
+    "tien_ich": [
+      "ban_cong"
+    ],
+    "khong_chung_chu": false,
+    "gio_giac_tu_do": false
+  },
+  "vi_tri": {
+    "lat": 21.071,
+    "lng": 105.789,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 5.9,
+    "khoang_cach_cs2_km": 6.6,
+    "khoang_cach_cs3_km": 60,
+    "co_so_gan_nhat": "CS1",
+    "thoi_gian_di_xe_phut": 19
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "0909316890",
+    "facebook": ""
+  },
+  "anh": [
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2025/10/12/z7108987364179-c43a2954ae557855decede00ad3ac75a_1760272566.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2025/10/12/z7108987369471-2568bd4f77c90753f40825703a82e1cf_1760272566.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2025/10/12/z7108987390439-51901dcc70536d4ce12ef1a0dd5d82e3_1760272568.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/450x300/fit/2025/10/12/z7108987364179-c43a2954ae557855decede00ad3ac75a_1760272566.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/450x300/fit/2025/10/12/z7108987369471-2568bd4f77c90753f40825703a82e1cf_1760272566.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}

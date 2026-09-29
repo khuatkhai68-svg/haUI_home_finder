@@ -1,0 +1,70 @@
+{
+  "ma_phong": "RM-PT123-DCFAC2",
+  "nguon": "phongtro123",
+  "url_nguon": "https://phongtro123.com/nha-moi-khai-truong-25m2-full-noi-that-tai-kim-chung-hoai-duc-pr639034.html",
+  "ngay_cao": "2026-09-29T14:41:11.192Z",
+  "ngay_cap_nhat": "2026-09-29T14:41:11.192Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "Nguồn niêm yết công khai phongtro123.com",
+    "chong_spam": "Tin đăng cho thuê xác thực",
+    "da_kiem_tra_trung": true
+  },
+  "thong_tin": {
+    "tieu_de": "Nhà Mới Khai Trương 25m2 full nội thất tại Kim Chung - Hoài Đức",
+    "gia": 2200000,
+    "dien_tich": 20,
+    "dia_chi": "ngõ 132 Đường Lai Xá, Xã Hoài Đức, Hà Nội",
+    "quan_huyen": "Hoài Đức",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Địa chỉ : Ngõ 132 Lai Xá - Kim Chung - Hoài Đức ⏰ Đang trống Giá 3tr5 Phòng gác xép Thang máy Diện… - 639034",
+    "tien_ich": [
+      "gac_xep",
+      "giuong_tu",
+      "thang_may"
+    ],
+    "khong_chung_chu": false,
+    "gio_giac_tu_do": false
+  },
+  "vi_tri": {
+    "lat": 21.059,
+    "lng": 105.721,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 1.6,
+    "khoang_cach_cs2_km": 0.6,
+    "khoang_cach_cs3_km": 60.5,
+    "co_so_gan_nhat": "CS2",
+    "thoi_gian_di_xe_phut": 3
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "0909316890",
+    "facebook": ""
+  },
+  "anh": [
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2023/10/29/b1bb79094d869ad8c39717_1698516405.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2023/10/29/b8acb21d869251cc088314_1698516408.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2023/10/29/e27d24ce1041c71f9e5016_1698516408.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2023/10/29/7b97732647a990f7c9b815_1698516410.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/450x300/fit/2023/10/29/b1bb79094d869ad8c39717_1698516405.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}

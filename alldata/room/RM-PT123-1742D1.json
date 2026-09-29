@@ -1,0 +1,68 @@
+{
+  "ma_phong": "RM-PT123-1742D1",
+  "nguon": "phongtro123",
+  "url_nguon": "https://phongtro123.com/phong-tro-moi-xay-gan-kcn-chau-son-thoang-mat-sach-se-pr606598.html",
+  "ngay_cao": "2026-09-29T14:42:20.417Z",
+  "ngay_cap_nhat": "2026-09-29T14:42:20.417Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "Nguồn niêm yết công khai phongtro123.com",
+    "chong_spam": "Tin đăng cho thuê xác thực",
+    "da_kiem_tra_trung": true
+  },
+  "thong_tin": {
+    "tieu_de": "Phòng trọ mới xây gần KCN Châu Sơn thoáng mát sạch sẽ",
+    "gia": 5606598,
+    "dien_tich": 20,
+    "dia_chi": "số nhà 3 Đường Đinh Công Tráng, Xã Châu Sơn, Thành Phố Phủ Lý, Hà Nam",
+    "quan_huyen": "Phủ Lý",
+    "tinh_thanh": "Hà Nam",
+    "mo_ta": "Dãy phòng khép kín mới xây xong Gần KCN Châu Sơn đi bộ 5 phút đến Khu công nghiệp Không chung chủ, an ninh tốt, phòng… - 606598",
+    "tien_ich": [
+      "wc_rieng"
+    ],
+    "khong_chung_chu": true,
+    "gio_giac_tu_do": false
+  },
+  "vi_tri": {
+    "lat": 20.521,
+    "lng": 105.902,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 61.7,
+    "khoang_cach_cs2_km": 62.9,
+    "khoang_cach_cs3_km": 2.3,
+    "co_so_gan_nhat": "CS3",
+    "thoi_gian_di_xe_phut": 7
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "0909316890",
+    "facebook": ""
+  },
+  "anh": [
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2022/08/29/z3680720553477-23c5f8552fc2b3833d4300c150404e4b_1661758862.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2022/08/29/z3680720579673-1c1f25781a5dbb6b9f8701916816a955_1661758862.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2022/08/29/z3680720813506-c61cd3fd4e08c4cecfe6d51cd7bf0da5_1661758864.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/450x300/fit/2022/08/29/z3680720553477-23c5f8552fc2b3833d4300c150404e4b_1661758862.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/450x300/fit/2022/08/29/z3680720579673-1c1f25781a5dbb6b9f8701916816a955_1661758862.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "ma_phong": "RM-PT123-41C125",
+  "nguon": "phongtro123",
+  "url_nguon": "https://phongtro123.com/phong-tro-co-gac-lung-moi-xay-rong-rai-cho-thue-tu-1-den-2-nguoi-gia-thoa-thuan-2-pr663647.html",
+  "ngay_cao": "2026-09-29T14:39:02.070Z",
+  "ngay_cap_nhat": "2026-09-29T14:39:02.070Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "Nguồn niêm yết công khai phongtro123.com",
+    "chong_spam": "Tin đăng cho thuê xác thực",
+    "da_kiem_tra_trung": true
+  },
+  "thong_tin": {
+    "tieu_de": "Phòng trọ có gác lửng mới xây rộng rãi cho thuê, từ 1 đến 2 người, giá thoả thuận",
+    "gia": 2500000,
+    "dien_tich": 33,
+    "dia_chi": "Ngõ 51 Đường Vân Trì, Phường Tây Tựu, Hà Nội",
+    "quan_huyen": "Bắc Từ Liêm",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Chính chủ cho thuê phòng trọ diện tích sử dụng 22-33 m2 tại ngõ 51 Phố Vân Trì, Phường Minh Khai, Quận Bắc Từ Liêm,… - 663647",
+    "tien_ich": [
+      "gac_xep"
+    ],
+    "khong_chung_chu": false,
+    "gio_giac_tu_do": false
+  },
+  "vi_tri": {
+    "lat": 21.0618,
+    "lng": 105.7259,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 1.3,
+    "khoang_cach_cs2_km": 0,
+    "khoang_cach_cs3_km": 60.6,
+    "co_so_gan_nhat": "CS2",
+    "thoi_gian_di_xe_phut": 3
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "0909316890",
+    "facebook": ""
+  },
+  "anh": [
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2024/09/03/9872d7a4-7ebe-4877-8d7d-f069556a4b90_1725343113.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2024/09/03/a959e6df-240c-4dba-845e-de5dd183f3fe_1725343113.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2024/09/03/8a158db4-09f7-41ef-83c7-ae0b81698b3d_1725343115.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2024/09/03/44bc3e80-e292-4d19-9e2c-cd8a62c9596b_1725343115.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2024/09/03/38c4dd22-0e2c-4fd6-b6f7-da101ef741ae_1725343116.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}

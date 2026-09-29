@@ -1,0 +1,69 @@
+{
+  "ma_phong": "RM-PT123-7C3F6B",
+  "nguon": "phongtro123",
+  "url_nguon": "https://phongtro123.com/cho-thue-phong-tro-gia-dinh-khep-kin-gia-re-nhat-ha-noi-pr686975.html",
+  "ngay_cao": "2026-09-29T14:37:16.642Z",
+  "ngay_cap_nhat": "2026-09-29T14:37:16.642Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "Nguồn niêm yết công khai phongtro123.com",
+    "chong_spam": "Tin đăng cho thuê xác thực",
+    "da_kiem_tra_trung": true
+  },
+  "thong_tin": {
+    "tieu_de": "cho thuê phòng trọ gia đình khép kín giá rẻ nhất Hà Nội",
+    "gia": 2500000,
+    "dien_tich": 16,
+    "dia_chi": "Số 5 ngõ 5 Võ Qúy Huân Đường Võ Quý Huân, Phường Phú Diễn, Hà Nội",
+    "quan_huyen": "Bắc Từ Liêm",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Cho thuê phòng trọ khép kín ( ưu tiên gia đình, người đi làm) có đủ nóng lạnh. Diện tích khoảng 16m2. Đc: đường… - 686975",
+    "tien_ich": [
+      "nong_lanh",
+      "wc_rieng"
+    ],
+    "khong_chung_chu": false,
+    "gio_giac_tu_do": false
+  },
+  "vi_tri": {
+    "lat": 21.045,
+    "lng": 105.755,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 2.3,
+    "khoang_cach_cs2_km": 3.6,
+    "khoang_cach_cs3_km": 58,
+    "co_so_gan_nhat": "CS1",
+    "thoi_gian_di_xe_phut": 7
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "0909316890",
+    "facebook": ""
+  },
+  "anh": [
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2025/07/19/z6821828139993-95c313796ed9cc79c05919db3ac592f6_1752939124.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2025/07/19/z6821828149121-cb1302ac3533395fca2c79b8ec162eab_1752939124.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2025/07/19/z6821828150131-7406d9eaaa42f977b5dbfdbdc9de405f_1752939126.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2025/07/19/z6821828158783-fb52cdf216a1a2fd250af855126fa0ed_1752939126.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2025/07/19/z6821828160083-1803e3b2de59388d408e84bca7709d9f_1752939129.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}

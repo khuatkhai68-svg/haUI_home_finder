@@ -1,0 +1,70 @@
+{
+  "ma_phong": "RM-PT123-A7E750",
+  "nguon": "phongtro123",
+  "url_nguon": "https://phongtro123.com/cho-thue-phong-tro-sinh-vien-gia-cung-rat-sinh-vien-pr656958.html",
+  "ngay_cao": "2026-09-29T14:41:01.027Z",
+  "ngay_cap_nhat": "2026-09-29T14:41:01.027Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "Nguồn niêm yết công khai phongtro123.com",
+    "chong_spam": "Tin đăng cho thuê xác thực",
+    "da_kiem_tra_trung": true
+  },
+  "thong_tin": {
+    "tieu_de": "cho thuê phòng trọ sinh viên giá cũng rất sinh viên",
+    "gia": 2200000,
+    "dien_tich": 20,
+    "dia_chi": "55/34 Đường Yên Vĩnh, Xã Hoài Đức, Hà Nội",
+    "quan_huyen": "Hoài Đức",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Phòng cho thuê giá rẻ full nội thất 2t6-3t1 ️ Có thể đến ở ngay ️ Điều hoà,nóng lạnh, giường tủ,bếp(máy… - 656958",
+    "tien_ich": [
+      "nong_lanh",
+      "giuong_tu",
+      "bep"
+    ],
+    "khong_chung_chu": false,
+    "gio_giac_tu_do": false
+  },
+  "vi_tri": {
+    "lat": 21.055,
+    "lng": 105.715,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 2.1,
+    "khoang_cach_cs2_km": 1.4,
+    "khoang_cach_cs3_km": 60.2,
+    "co_so_gan_nhat": "CS2",
+    "thoi_gian_di_xe_phut": 4
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "0909316890",
+    "facebook": ""
+  },
+  "anh": [
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2024/06/11/92d622f5-06db-4314-969e-14da7018badf_1718077928.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2024/06/11/00813af5-a634-4495-afa8-e7ec0df0706b_1718077934.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2024/06/11/d2082e26-14b5-453b-8e9a-3e21041a8f91_1718077940.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/450x300/fit/2024/06/11/92d622f5-06db-4314-969e-14da7018badf_1718077928.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/450x300/fit/2024/06/11/00813af5-a634-4495-afa8-e7ec0df0706b_1718077934.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}

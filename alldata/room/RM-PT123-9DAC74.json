@@ -1,0 +1,66 @@
+{
+  "ma_phong": "RM-PT123-9DAC74",
+  "nguon": "phongtro123",
+  "url_nguon": "https://phongtro123.com/phong-tro-gia-re-tang-2-an-ninh-tot-pr620122.html",
+  "ngay_cao": "2026-09-29T14:41:14.059Z",
+  "ngay_cap_nhat": "2026-09-29T14:41:14.059Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "Nguồn niêm yết công khai phongtro123.com",
+    "chong_spam": "Tin đăng cho thuê xác thực",
+    "da_kiem_tra_trung": true
+  },
+  "thong_tin": {
+    "tieu_de": "Phòng trọ giá rẻ tầng 2 an ninh tốt",
+    "gia": 2900000,
+    "dien_tich": 20,
+    "dia_chi": "47, Xã Sơn Đồng, Hà Nội",
+    "quan_huyen": "Hoài Đức",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Tôi chính chủ cho thuê phòng: 1 phòng 20m vuông. (2.9 tr) 1 phòng 15m vuông. (1.9 tr) 1 nhà vệ sinh to rộng, sạch sẽ. Có… - 620122",
+    "tien_ich": [],
+    "khong_chung_chu": false,
+    "gio_giac_tu_do": false
+  },
+  "vi_tri": {
+    "lat": 21.045,
+    "lng": 105.705,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 3.3,
+    "khoang_cach_cs2_km": 2.9,
+    "khoang_cach_cs3_km": 59.5,
+    "co_so_gan_nhat": "CS2",
+    "thoi_gian_di_xe_phut": 9
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "0909316890",
+    "facebook": ""
+  },
+  "anh": [
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2023/03/23/07e54d3c57988ac6d389_1679568943.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/450x300/fit/2023/03/23/07e54d3c57988ac6d389_1679568943.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/450x300/fit/2024/03/29/2_1711684797.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/450x300/fit/2026/09/01/img-6803_1788232468.png",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/450x300/fit/2026/09/03/img-6803_1788369345.png",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}

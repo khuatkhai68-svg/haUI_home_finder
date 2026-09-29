@@ -1,0 +1,68 @@
+{
+  "ma_phong": "RM-PT123-8D0C24",
+  "nguon": "phongtro123",
+  "url_nguon": "https://phongtro123.com/cho-thue-phong-dep-lideco-phong-doi-1-khach-1-ngu-gia-3-2-tr-gan-dai-hoc-thanh-do-cong-nghiep-pr692736.html",
+  "ngay_cao": "2026-09-29T14:40:49.691Z",
+  "ngay_cap_nhat": "2026-09-29T14:40:49.691Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "Nguồn niêm yết công khai phongtro123.com",
+    "chong_spam": "Tin đăng cho thuê xác thực",
+    "da_kiem_tra_trung": true
+  },
+  "thong_tin": {
+    "tieu_de": "Cho thuê phòng đẹp lideco phòng đôi, 1 khách 1 ngủ giá 3,2 tr.gần đại học Thành Đô, Công Nghiệ",
+    "gia": 3200000,
+    "dien_tich": 20,
+    "dia_chi": "Đường Quốc lộ 32, Xã Thuận An, Hà Nội",
+    "quan_huyen": "Hoài Đức",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Cho thuê phòng đẹp tại nhà số 4, Tuyết 16, KĐT Lideco : Phòng đôi full nội thất giá 3.2tr/tháng – vào ở ngay Gần… - 692736",
+    "tien_ich": [
+      "giuong_tu"
+    ],
+    "khong_chung_chu": false,
+    "gio_giac_tu_do": false
+  },
+  "vi_tri": {
+    "lat": 21.0665,
+    "lng": 105.7115,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 2.8,
+    "khoang_cach_cs2_km": 1.6,
+    "khoang_cach_cs3_km": 61.6,
+    "co_so_gan_nhat": "CS2",
+    "thoi_gian_di_xe_phut": 5
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "0909316890",
+    "facebook": ""
+  },
+  "anh": [
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2025/09/25/z4577574066848-83cbc5fa9a399235cef68f3baca11b8a_1758788703.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2025/09/25/z4577574071995-d90be7d89aaaca2e2de890de3be7cf67_1758788706.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2025/09/25/z4577574091938-2c676de78848bd8180df45bce73c9b88_1758788711.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2025/09/25/z4577574083194-945e8c7927c603e24a8c46134f09cf06_1758788718.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/450x300/fit/2025/09/25/z4577574066848-83cbc5fa9a399235cef68f3baca11b8a_1758788703.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}

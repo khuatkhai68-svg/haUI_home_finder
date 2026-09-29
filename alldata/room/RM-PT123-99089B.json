@@ -1,0 +1,66 @@
+{
+  "ma_phong": "RM-PT123-99089B",
+  "nguon": "phongtro123",
+  "url_nguon": "https://phongtro123.com/phong-tro-dep-danh-cho-cac-ban-nu-sinh-vien-hay-dang-lam-viec-tai-khu-vuc-tay-ho-cau-giay-ba-dinh-pr713781.html",
+  "ngay_cao": "2026-09-29T14:18:16.679Z",
+  "ngay_cap_nhat": "2026-09-29T14:18:16.679Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "Nguồn niêm yết công khai phongtro123.com",
+    "chong_spam": "Tin đăng cho thuê xác thực",
+    "da_kiem_tra_trung": true
+  },
+  "thong_tin": {
+    "tieu_de": "Phòng trọ đẹp dành cho các bạn nữ sinh viên hay đang làm việc tại khu vực Tây hồ, Cầu giấy, Ba đình.",
+    "gia": 3000000,
+    "dien_tich": 20,
+    "dia_chi": "7 đường Võng Thị, Phường Tây Hồ, Hà Nội",
+    "quan_huyen": "Cầu Giấy",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Phòng trọ đẹp dành cho các bạn nữ sinh viên hay đang làm việc tại khu vực Tây hồ, Cầu giấy, Ba đình. 7 đường Võng Thị, Phường Tây Hồ, Hà Nội",
+    "tien_ich": [],
+    "khong_chung_chu": false,
+    "gio_giac_tu_do": false
+  },
+  "vi_tri": {
+    "lat": 21.032,
+    "lng": 105.795,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 6.7,
+    "khoang_cach_cs2_km": 7.9,
+    "khoang_cach_cs3_km": 55.6,
+    "co_so_gan_nhat": "CS1",
+    "thoi_gian_di_xe_phut": 23
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "0936019926",
+    "facebook": ""
+  },
+  "anh": [
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/09/29/gen-h-anh-nha-cho-thue-1_1790651003.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/09/29/gen-h-anh-nha-cho-thue-2_1790651003.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/09/29/gen-h-anh-nha-cho-thue-3_1790651004.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/09/29/gen-h-anh-phong-cho-thue_1790651004.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/09/29/gen-h-anh_1790651005.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "ma_phong": "RM-PT123-378C81",
+  "nguon": "phongtro123",
+  "url_nguon": "https://phongtro123.com/chinh-chu-moi-thue-ccmn-tai-thuy-phuong-bac-tu-liem-pr704173.html",
+  "ngay_cao": "2026-09-29T14:34:53.030Z",
+  "ngay_cap_nhat": "2026-09-29T14:34:53.030Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "Nguồn niêm yết công khai phongtro123.com",
+    "chong_spam": "Tin đăng cho thuê xác thực",
+    "da_kiem_tra_trung": true
+  },
+  "thong_tin": {
+    "tieu_de": "Chính chủ mời thuê phòng tại Thụy Phương - Bắc Từ Liêm",
+    "gia": 704173,
+    "dien_tich": 20,
+    "dia_chi": "Đường Thụy Phương, Phường Đông Ngạc, Hà Nội",
+    "quan_huyen": "Bắc Từ Liêm",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Chính Chủ Mời Bạn Đến Xem Và Thuê Phòng Hoàn Toàn Miễn Phí, Không Trung Gian, Gặp Trực Tiếp Chủ Nhà! - Diện tích… - 704173",
+    "tien_ich": [],
+    "khong_chung_chu": false,
+    "gio_giac_tu_do": false
+  },
+  "vi_tri": {
+    "lat": 21.086,
+    "lng": 105.765,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 4.7,
+    "khoang_cach_cs2_km": 4.9,
+    "khoang_cach_cs3_km": 62.2,
+    "co_so_gan_nhat": "CS1",
+    "thoi_gian_di_xe_phut": 15
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "0909316890",
+    "facebook": ""
+  },
+  "anh": [
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/04/02/33350692962930410553_1775142133.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/04/02/35310227196499637264_1775142135.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/04/02/43079769323541408292_1775142135.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/04/02/1081991655729956750_1775142166.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/04/02/13576025461892598731_1775142133.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}

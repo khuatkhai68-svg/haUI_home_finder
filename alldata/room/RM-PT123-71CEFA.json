@@ -1,0 +1,68 @@
+{
+  "ma_phong": "RM-PT123-71CEFA",
+  "nguon": "phongtro123",
+  "url_nguon": "https://phongtro123.com/ccmn-khep-kin-moi-tinh-tai-tay-tuu-bac-tu-liem-ha-noi-chi-tu-2tr600k-pr706215.html",
+  "ngay_cao": "2026-09-29T14:34:38.803Z",
+  "ngay_cap_nhat": "2026-09-29T14:34:38.803Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "Nguồn niêm yết công khai phongtro123.com",
+    "chong_spam": "Tin đăng cho thuê xác thực",
+    "da_kiem_tra_trung": true
+  },
+  "thong_tin": {
+    "tieu_de": "PHÒNG TRỌ CCMN KHÉP KÍN MỚI TINH TẠI TÂY TỰU, BẮC TỪ LIÊM, HÀ NỘI CHỈ TỪ 2TR600K",
+    "gia": 600000,
+    "dien_tich": 25,
+    "dia_chi": "ngõ 22 Đường Trung Kiên, Hà Nội",
+    "quan_huyen": "Bắc Từ Liêm",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "GIÁ KHAI TRƯƠNG – CCMN KHÉP KÍN MỚI TINH TẠI TÂY TỰU, BẮC TỪ LIÊM, HÀ NỘI CHỈ TỪ 2TR600K * Địa chỉ: Ngõ 22 Trung… - 706215",
+    "tien_ich": [
+      "wc_rieng"
+    ],
+    "khong_chung_chu": false,
+    "gio_giac_tu_do": false
+  },
+  "vi_tri": {
+    "lat": 21.0618,
+    "lng": 105.7259,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 1.3,
+    "khoang_cach_cs2_km": 0,
+    "khoang_cach_cs3_km": 60.6,
+    "co_so_gan_nhat": "CS2",
+    "thoi_gian_di_xe_phut": 3
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "0909316890",
+    "facebook": ""
+  },
+  "anh": [
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/05/04/d13943fe-0ab2-4ea3-9fab-3ffd923760b8_1777899066.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/05/04/8886a85e-00b6-41fd-8014-477c1f07f16f_1777899065.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/05/04/5f1599d9-4d7f-4ec1-a32e-3edeeaafba4e_1777899064.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/05/04/87381169-3bf3-4810-bcc8-34846ba20a9e_1777899065.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/05/04/b136b70f-1802-44fd-8b2d-a938abd92388_1777899066.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}

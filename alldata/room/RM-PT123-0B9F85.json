@@ -1,0 +1,71 @@
+{
+  "ma_phong": "RM-PT123-0B9F85",
+  "nguon": "phongtro123",
+  "url_nguon": "https://phongtro123.com/cho-thue-phong-sieu-chill-gan-dh-cong-nghiep-khep-kin-rieng-biet-khong-chung-chu-pr680233.html",
+  "ngay_cao": "2026-09-29T14:40:51.651Z",
+  "ngay_cap_nhat": "2026-09-29T14:40:51.651Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "Nguồn niêm yết công khai phongtro123.com",
+    "chong_spam": "Tin đăng cho thuê xác thực",
+    "da_kiem_tra_trung": true
+  },
+  "thong_tin": {
+    "tieu_de": "Cho thuê phòng siêu chill gần ĐH Công Nghiệp , khép kín riêng biệt, không chung chủ",
+    "gia": 2200000,
+    "dien_tich": 5,
+    "dia_chi": "Đường Lai Xá, Xã Thuận An, Hà Nội",
+    "quan_huyen": "Hoài Đức",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "-Phòng Khép Kín Full Nội -Full đồ: giường 1m6, tủ quần áo 3 cánh, bàn ăn 2 ghế -Bếp riêng: tủ bếp trên–dưới,… - 680233",
+    "tien_ich": [
+      "dieu_hoa",
+      "wc_rieng",
+      "giuong_tu",
+      "bep"
+    ],
+    "khong_chung_chu": false,
+    "gio_giac_tu_do": false
+  },
+  "vi_tri": {
+    "lat": 21.0585,
+    "lng": 105.718,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 1.9,
+    "khoang_cach_cs2_km": 0.9,
+    "khoang_cach_cs3_km": 60.5,
+    "co_so_gan_nhat": "CS2",
+    "thoi_gian_di_xe_phut": 3
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "0909316890",
+    "facebook": ""
+  },
+  "anh": [
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2025/04/25/20250412-150818-2_1745568021.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2025/04/25/20250412-160130_1745568024.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2025/04/25/20250412-154854_1745568021.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2025/04/25/20250412-161059_1745568024.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2025/04/25/20250412-171140_1745568026.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "ma_phong": "RM-PT123-A07663",
+  "nguon": "phongtro123",
+  "url_nguon": "https://phongtro123.com/cho-thue-phong-so-15-cao-trung-tt-troi-hoai-duc-con-phong-2-pr710887.html",
+  "ngay_cao": "2026-09-29T14:40:35.847Z",
+  "ngay_cap_nhat": "2026-09-29T14:40:35.847Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "Nguồn niêm yết công khai phongtro123.com",
+    "chong_spam": "Tin đăng cho thuê xác thực",
+    "da_kiem_tra_trung": true
+  },
+  "thong_tin": {
+    "tieu_de": "Cho thuê phòng – Số 15 Cao Trung, TT Trôi, Hoài Đức (còn phòng)",
+    "gia": 2000000,
+    "dien_tich": 20,
+    "dia_chi": "15 Đường Cao Trung 1, Xã Hoài Đức, Hà Nội",
+    "quan_huyen": "Hoài Đức",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "P402 – Giá chỉ 2 triệu/tháng – Vào ở ngay. Full nội thất: giường, tủ quần áo, tủ lạnh, kệ bếp, điều… - 710887",
+    "tien_ich": [
+      "tu_lanh",
+      "giuong_tu",
+      "bep"
+    ],
+    "khong_chung_chu": false,
+    "gio_giac_tu_do": false
+  },
+  "vi_tri": {
+    "lat": 21.055,
+    "lng": 105.715,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 2.1,
+    "khoang_cach_cs2_km": 1.4,
+    "khoang_cach_cs3_km": 60.2,
+    "co_so_gan_nhat": "CS2",
+    "thoi_gian_di_xe_phut": 4
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "0909316890",
+    "facebook": ""
+  },
+  "anh": [
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/08/05/1785879477756-2754595891912452882-g7608311385472649406-h_1785905759.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/08/05/1785879477840-2754595891912452882-g7608311385472649406-h_1785905762.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/08/05/1785879477084-2754595891912452882-g7608311385472649406-h_1785905765.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/450x300/fit/2026/08/05/1785879477756-2754595891912452882-g7608311385472649406-h_1785905759.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/450x300/fit/2026/08/05/1785879477840-2754595891912452882-g7608311385472649406-h_1785905762.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}

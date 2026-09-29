@@ -1,0 +1,66 @@
+{
+  "ma_phong": "RM-PT123-9FFBFB",
+  "nguon": "phongtro123",
+  "url_nguon": "https://phongtro123.com/cho-thue-phong-tro-gia-re-day-du-noi-that-pr657818.html",
+  "ngay_cao": "2026-09-29T14:39:11.133Z",
+  "ngay_cap_nhat": "2026-09-29T14:39:11.133Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "Nguồn niêm yết công khai phongtro123.com",
+    "chong_spam": "Tin đăng cho thuê xác thực",
+    "da_kiem_tra_trung": true
+  },
+  "thong_tin": {
+    "tieu_de": "CHO THUÊ PHÒNG TRỌ GIÁ RẺ , ĐẦY ĐỦ NỘI THẤT",
+    "gia": 2657818,
+    "dien_tich": 20,
+    "dia_chi": "9 Đường Phạm Văn Nghị, Phường Đông Ngạc, Hà Nội",
+    "quan_huyen": "Bắc Từ Liêm",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "CHỖ Ở LÝ TƯỞNG - CHO THUÊ NHÀ TRỌ Vị trí: Khu tập thể , tổng cục ll đường phạm văn nghị , cổ nhuế 2 - cạnh… - 657818",
+    "tien_ich": [],
+    "khong_chung_chu": false,
+    "gio_giac_tu_do": false
+  },
+  "vi_tri": {
+    "lat": 21.082,
+    "lng": 105.775,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 5.2,
+    "khoang_cach_cs2_km": 5.6,
+    "khoang_cach_cs3_km": 61.5,
+    "co_so_gan_nhat": "CS1",
+    "thoi_gian_di_xe_phut": 17
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "0909316890",
+    "facebook": ""
+  },
+  "anh": [
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2024/06/20/438171879-1602356186974758-356414166919764797-n_1718879366.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2024/06/20/448618628-807562281352381-8936599043898730956-n_1718879374.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2024/06/20/447893269-758089513065917-414345621815296023-n_1718879378.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2024/06/20/448333286-3697991067127566-246550333246214290-n_1718879382.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2024/06/20/448304276-382115241027382-2440681839539044503-n_1718879384.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}

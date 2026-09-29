@@ -1,0 +1,68 @@
+{
+  "ma_phong": "RM-PT123-2F5019",
+  "nguon": "phongtro123",
+  "url_nguon": "https://phongtro123.com/minh-con-sot-chuc-phong-tro-tai-pham-van-dong-bac-tu-liem-dt-20m2-co-ban-cong-lh-0363643643-pr648983.html",
+  "ngay_cao": "2026-09-29T14:39:22.642Z",
+  "ngay_cap_nhat": "2026-09-29T14:39:22.642Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "Nguồn niêm yết công khai phongtro123.com",
+    "chong_spam": "Tin đăng cho thuê xác thực",
+    "da_kiem_tra_trung": true
+  },
+  "thong_tin": {
+    "tieu_de": "Mình còn sót chục phòng trọ tại Phạm Văn Đồng, Bắc Từ Liêm, DT 20m2, có ban công, LH 0363643643",
+    "gia": 2500000,
+    "dien_tich": 20,
+    "dia_chi": "191 Đường Phạm Văn Đồng, Phường Xuân Đỉnh, Hà Nội",
+    "quan_huyen": "Bắc Từ Liêm",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Còn chục phòng trọ siêu đẹp với đầy đủ tiện nghi đang chờ bạn! Vị trí tại 191 Phạm Văn Đồng, Xuân Đỉnh,… - 648983",
+    "tien_ich": [
+      "ban_cong"
+    ],
+    "khong_chung_chu": false,
+    "gio_giac_tu_do": false
+  },
+  "vi_tri": {
+    "lat": 21.055,
+    "lng": 105.778,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 4.5,
+    "khoang_cach_cs2_km": 5.5,
+    "khoang_cach_cs3_km": 58.5,
+    "co_so_gan_nhat": "CS1",
+    "thoi_gian_di_xe_phut": 14
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "0909316890",
+    "facebook": ""
+  },
+  "anh": [
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2024/03/14/phong-tro-cho-thue-tai-191-pham-van-dong-bac-tu-liem-1_1710403706.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2024/03/14/phong-tro-cho-thue-tai-191-pham-van-dong-bac-tu-liem-2_1710403706.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2024/03/14/phong-tro-cho-thue-tai-191-pham-van-dong-bac-tu-liem-3_1710403707.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2024/03/14/phong-tro-cho-thue-tai-191-pham-van-dong-bac-tu-liem-4_1710403707.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2024/03/14/phong-tro-cho-thue-tai-191-pham-van-dong-bac-tu-liem-5_1710403709.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}
