@@ -299,18 +299,32 @@ function checkLink(url, uaIndex = 0) {
         return resolve({ ok: false, reason: `HTTP ${s} Gone` });
       }
 
-      // Thu thập 30KB đầu của HTML để bắt Soft-404 banner
+      // Xử lý redirect về trang chủ hoặc danh mục (tin đã bị gỡ)
+      if (s >= 300 && s < 400 && location) {
+        if (location === 'https://phongtro123.com/' || location === '/' || !location.includes('-pr')) {
+          res.resume();
+          return resolve({ ok: false, reason: 'Tin đăng đã hết hạn (Redirect về trang chủ/danh mục)' });
+        }
+      }
+
+      // Thu thập 120KB đầu của HTML để bắt trọn banner cảnh báo hết hạn
       let bodyChunk = '';
       res.on('data', chunk => {
-        if (bodyChunk.length < 30000) {
+        if (bodyChunk.length < 120000) {
           bodyChunk += chunk.toString('utf-8');
         } else {
           res.destroy(); // Đã đủ dữ liệu kiểm tra, ngắt kết nối sớm để tiết kiệm tài nguyên
         }
       });
 
-      res.on('end', () => {
-        const isExpired = /tin đăng này đã hết hạn|tin hết hạn|bạn đang xem tin cũ tại phongtro123|tin đã cho thuê|phòng đã cho thuê|bài viết này hiện không tồn tại/i.test(bodyChunk);
+      const handleEnd = () => {
+        const lower = bodyChunk.toLowerCase();
+        const isExpired = 
+          lower.includes('bạn đang xem tin cũ tại phongtro123') ||
+          lower.includes('tin đăng này đã hết hạn') ||
+          lower.includes('bài viết này hiện không tồn tại') ||
+          (lower.includes('bg-danger') && (lower.includes('hết hạn') || lower.includes('tin cũ')));
+
         if (isExpired) {
           return resolve({ ok: false, reason: 'Tin đăng đã hết hạn (Soft-404)' });
         }
@@ -318,7 +332,10 @@ function checkLink(url, uaIndex = 0) {
         if (s === 403) return resolve({ ok: true, reason: `HTTP 403 blocked (kept)` });
         if (s >= 500) return resolve({ ok: true, reason: `HTTP ${s} server-error (kept)` });
         return resolve({ ok: true, reason: `HTTP ${s} unknown (kept)` });
-      });
+      };
+
+      res.on('end', handleEnd);
+      res.on('close', handleEnd);
     });
 
     req.on('timeout', () => { req.destroy(); resolve({ ok: false, reason: 'Timeout' }); });
