@@ -69,11 +69,9 @@ async function saveImagesLocally(imgs, roomId) {
         if (buf.length > 3000) {
           fs.writeFileSync(destPath, buf);
           results.push({ url_goc: `/photos/${destName}`, mo_ta: "Ảnh thực tế bài đăng FB" });
-          continue;
         }
       }
     } catch (e) {}
-    results.push({ url_goc: u, mo_ta: "Ảnh thực tế bài đăng FB" });
   }
   return results;
 }
@@ -820,6 +818,7 @@ async function crawlPhongtro123Http(targetTotal, seenUrls, seenHashes) {
             .map(x => x[0])
             .filter(u => (u.includes('static123.com') || u.includes('images/thumbs') || u.includes('phongtro123')) && !u.includes('logo') && !u.includes('icon') && !u.includes('avatar'));
           const imgs = Array.from(new Set(imgMatches)).slice(0, 5);
+          if (!imgs || imgs.length === 0) continue; // BẮT BUỘC PHẢI CÓ ẢNH THỰC TẾ TRONG BÀI ĐĂNG
 
           const price = parsePrice(priceText) || parsePrice(title) || (src.isHaNam ? 1200000 : 2500000);
           if (price > 15000000 || price < 600000) continue; // Bỏ qua mặt bằng kinh doanh đắt tiền hoặc tin ảo
@@ -876,9 +875,7 @@ async function crawlPhongtro123Http(targetTotal, seenUrls, seenHashes) {
               so_dien_thoai: phone || "0987654321",
               facebook: ""
             },
-            anh: imgs.length > 0
-              ? imgs.map(u => ({ url_goc: u, mo_ta: "Ảnh thực tế bài đăng" }))
-              : [{ url_goc: "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/03/06/z7592968449853-c4bb6e036ec93ad1901fb47ddb103308_1772784394.jpg", mo_ta: "Phòng trọ" }],
+            anh: imgs.map(u => ({ url_goc: u, mo_ta: "Ảnh thực tế bài đăng" })),
             phan_tich: {
               da_kiem_tra: true,
               scam_score: 0.05
@@ -1142,6 +1139,13 @@ async function runCrawlJob(options = {}) {
           const hashId = crypto.createHash('md5').update(textHash + Date.now()).digest('hex').substring(0, 6).toUpperCase();
           const roomId = `RM-FB-${hashId}`;
 
+          // BỘ LUẬT THÉP: BẮT BUỘC PHẢI TẢI THÀNH CÔNG ẢNH THẬT RIÊNG CỦA BÀI ĐĂNG
+          const localPhotos = await saveImagesLocally(post.imgs, roomId);
+          if (!localPhotos || localPhotos.length === 0) {
+            auditLog(`   ⚠️ [BỎ QUA VÌ KHÔNG TẢI ĐƯỢC ẢNH THỰC TẾ]: ${roomId} - "${title.slice(0, 40)}"`);
+            continue;
+          }
+
           // LUẬT CỨNG: KHỬ ĐỊNH DANH PII THEO NGHỊ ĐỊNH 13/2023/NĐ-CP
           const roomObj = {
             ma_phong: roomId,
@@ -1183,7 +1187,7 @@ async function runCrawlJob(options = {}) {
               so_dien_thoai: phone || "Liên hệ qua bài viết",
               facebook: post.href
             },
-            anh: await saveImagesLocally(post.imgs, roomId),
+            anh: localPhotos,
             phan_tich: {
               da_kiem_tra: true,
               scam_score: 0.05
@@ -1313,6 +1317,7 @@ async function runCrawlJob(options = {}) {
             });
 
             if (!detail || !detail.title) continue;
+            if (!detail.imgs || detail.imgs.length === 0) continue;
             if (isCommercialSpam(detail.title + ' ' + detail.address + ' ' + detail.desc)) continue;
             if (isBlacklistedAddress(detail.address || detail.mapQuery, detail.title + ' ' + detail.desc)) continue;
 
@@ -1365,9 +1370,7 @@ async function runCrawlJob(options = {}) {
                 so_dien_thoai: detail.phone || "0987654321",
                 facebook: ""
               },
-              anh: detail.imgs.length > 0
-                ? detail.imgs.map(u => ({ url_goc: u, mo_ta: "Ảnh thực tế bài đăng" }))
-                : [{ url_goc: "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2026/03/06/z7592968449853-c4bb6e036ec93ad1901fb47ddb103308_1772784394.jpg", mo_ta: "Phòng trọ" }],
+              anh: detail.imgs.map(u => ({ url_goc: u, mo_ta: "Ảnh thực tế bài đăng" })),
               phan_tich: {
                 da_kiem_tra: true,
                 scam_score: 0.05

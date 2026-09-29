@@ -52,23 +52,9 @@ async function downloadPhoto(url, destPath) {
   }
 }
 
-// Kho ảnh phòng trọ sinh viên Việt Nam thực tế sạch (không watermark) để làm chuẩn fallback nội bộ
-const CLEAN_ROOM_FALLBACKS = [
-  "/photos/RM-FB-6C6ED2_photo_1.jpg",
-  "/photos/RM-FB-6C6ED2_photo_2.jpg",
-  "/photos/RM-FB-6C6ED2_photo_3.jpg",
-  "/photos/RM-FB-6C6ED2_photo_4.jpg",
-  "/photos/RM-FB-6C6ED2_photo_5.jpg",
-  "/photos/RM-FB-3A2883_photo_1.jpg",
-  "/photos/RM-FB-3A2883_photo_2.jpg",
-  "/photos/RM-FB-3A2883_photo_3.jpg",
-  "/photos/RM-FB-3E7D75_photo_1.jpg",
-  "/photos/RM-FB-3E7D75_photo_2.jpg",
-  "/photos/RM-FB-4555E7_photo_1.jpg",
-  "/photos/RM-FB-4555E7_photo_2.jpg",
-  "/photos/RM-FB-52B628_photo_1.jpg",
-  "/photos/RM-FB-52B628_photo_2.jpg"
-];
+// BỘ LUẬT THÉP: TUYỆT ĐỐI KHÔNG DÙNG ẢNH MƯỢN / FALLBACK GIỮA CÁC PHÒNG.
+// MỖI PHÒNG BẮT BUỘC PHẢI CÓ ẢNH THẬT RIÊNG CỦA CHÍNH NÓ (MÃ PHÒNG TRÙNG KHỚP).
+
 
 let deletedCount = 0;
 let cleanedTextCount = 0;
@@ -140,13 +126,12 @@ for (const file of files) {
       }
     }
 
-    // Nếu bài FB này không có ảnh nào tải được hoặc link đã chết từ trước
+    // Nếu bài FB này không có ảnh nào tải được hoặc ảnh bị lỗi
     if (newAnh.length === 0) {
-      // Dùng ảnh local sạch từ kho ảnh phòng trọ đã xác thực của hệ thống (KHÔNG DÙNG PT123 WATERMARK, KHÔNG DÙNG UNSPLASH)
-      const fallbackIdx = Math.abs(roomId.split('').reduce((a, b) => a + b.charCodeAt(0), 0)) % (CLEAN_ROOM_FALLBACKS.length - 2);
-      newAnh.push({ url_goc: CLEAN_ROOM_FALLBACKS[fallbackIdx], mo_ta: "Ảnh không gian phòng trọ" });
-      newAnh.push({ url_goc: CLEAN_ROOM_FALLBACKS[fallbackIdx + 1], mo_ta: "Ảnh không gian phòng trọ" });
-      fbFallbackAdjusted++;
+      console.log(`🗑️ [XÓA PHÒNG KHÔNG ẢNH THẬT]: ${roomId} - "${title}"`);
+      fs.unlinkSync(filePath);
+      deletedCount++;
+      continue;
     }
 
     room.anh = newAnh;
