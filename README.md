@@ -49,10 +49,15 @@ npm start
 npm run dev
 ```
 
-Truy cập trên trình duyệt:
+Truy cập trên trình duyệt (local):
 - 🌐 Trang chủ: [http://localhost:3333](http://localhost:3333)
 - 🗺️ Bản đồ 3 cơ sở: [http://localhost:3333/map.html](http://localhost:3333/map.html)
 - ⚙️ Bảng quản trị: [http://localhost:3333/admin.html](http://localhost:3333/admin.html)
+
+🚀 **Truy cập trực tuyến (Production):**
+- 🌐 Trang chủ: [https://haui-home-finder.onrender.com/index.html](https://haui-home-finder.onrender.com/index.html)
+- 🗺️ Bản đồ 3 cơ sở: [https://haui-home-finder.onrender.com/map.html](https://haui-home-finder.onrender.com/map.html)
+- ⚙️ Bảng quản trị: [https://haui-home-finder.onrender.com/admin.html](https://haui-home-finder.onrender.com/admin.html)
 
 ---
 
