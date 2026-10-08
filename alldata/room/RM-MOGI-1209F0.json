@@ -1,0 +1,85 @@
+{
+  "ma_phong": "RM-MOGI-1209F0",
+  "nguon": "mogi",
+  "url_nguon": "https://mogi.vn/huyen-hoai-duc/thue-can-ho-chung-cu/chi-13tr-thang-thue-ngay-can-ho-128m2-3pn-full-noi-that-tai-splendora-id21465119",
+  "ngay_cao": "2026-10-08T02:11:24.942Z",
+  "ngay_cap_nhat": "2026-10-08T02:11:24.942Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "Nguồn niêm yết công khai mogi.vn",
+    "chong_spam": "Đã qua cổng kiểm định pipeline staging",
+    "da_kiem_tra_trung": true,
+    "sha256_noi_dung": "1533be8d93b03c75feb899de7e81624ee7daf0ea3e6f29f094f3a1a9c2ba6a02"
+  },
+  "kiem_dinh": {
+    "link": {
+      "ok": true,
+      "reason": "HTTP 200 OK, tin còn hiệu lực (Playwright live DOM)",
+      "at": "2026-10-08T02:10:06.719Z"
+    },
+    "pipeline": "pipeline_crawl_validate_publish",
+    "nhom_nguon": "Mogi CCMN Hoài Đức"
+  },
+  "thong_tin": {
+    "tieu_de": "Chỉ 13tr/tháng thuê ngay căn hộ 128m2, 3PN full nội thất tại Splendora",
+    "gia": 13000000,
+    "dien_tich": null,
+    "dia_chi": "Đại lộ Thăng Long, Xã An Khánh, Huyện Hoài Đức, Hà Nội",
+    "quan_huyen": "Hoài Đức",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Chỉ 13tr/tháng thuê ngay căn hộ 128m2, 3PN full nội thất tại Splendora\nChị chủ gửi cho thuê căn hộ 128m2, 3pn nội thất hiện đại tinh tế, chỉ cần xách vali vào ở. LH 0965556384\nCăn hộ diện tích 128m2, bao gồm:\n- 3 phòng ngủ.\n- 2 WC.\n- 1 khách bếp và kho.\n- Nội thất đầy đủ và đẹp như ảnh, đầy đủ điều hòa nóng lạnh, bếp từ hiện đại, tủ lạnh...\n- Sử dụng tiện ích khu đô thị Splendora như: Bể bơi, sân tennis, hầm để xe miễn phí và rộng rãi.\nPhí dịch vụ chung 8800/m2.\nĐể xem trực tiếp căn hộ và hỗ trợ giấy tờ liên hệ Mr Huy 0965556384",
+    "tien_ich": [
+      "dieu_hoa",
+      "nong_lanh",
+      "tu_lanh",
+      "bep"
+    ],
+    "khong_chung_chu": false,
+    "gio_giac_tu_do": false
+  },
+  "vi_tri": {
+    "lat": 21.052,
+    "lng": 105.715,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 2.1,
+    "khoang_cach_cs2_km": 1.6,
+    "khoang_cach_cs3_km": 59.9,
+    "co_so_gan_nhat": "CS2",
+    "thoi_gian_di_xe_phut": 6
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "0965556384",
+    "facebook": ""
+  },
+  "anh": [
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2021/12/01/086/58cddc184ccf4b98870f81a846a1d53b.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2021/12/01/085/9acc33eb76e04bb3a166bfe0b6ac82f3.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2021/12/01/087/2076253402f64102bf0f0a2a365185a7.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2021/12/01/089/b74008add13341ffa96a5bb8cc4dec0f.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2021/12/01/082/3eb49a127e7d450ab381c1c3e51989af.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2021/12/01/089/8ddbdfb1ab9949e5a079fe6491dc387b.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}

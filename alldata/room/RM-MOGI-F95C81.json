@@ -1,0 +1,86 @@
+{
+  "ma_phong": "RM-MOGI-F95C81",
+  "nguon": "mogi",
+  "url_nguon": "https://mogi.vn/quan-cau-giay/thue-phong-tro-loi-di-rieng/cho-thue-phong-tro-pho-nguyen-kha-trac-cau-giay-id22596835",
+  "ngay_cao": "2026-10-08T02:11:09.453Z",
+  "ngay_cap_nhat": "2026-10-08T02:11:09.453Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "Nguồn niêm yết công khai mogi.vn",
+    "chong_spam": "Đã qua cổng kiểm định pipeline staging",
+    "da_kiem_tra_trung": true,
+    "sha256_noi_dung": "8d8b0e345dd4f1281b2200cbf948a9bb941fb9ce4604640a31122c98d1ad1031"
+  },
+  "kiem_dinh": {
+    "link": {
+      "ok": true,
+      "reason": "HTTP 200 OK, tin còn hiệu lực (Playwright live DOM)",
+      "at": "2026-10-08T02:08:50.969Z"
+    },
+    "pipeline": "pipeline_crawl_validate_publish",
+    "nhom_nguon": "Mogi Cầu Giấy Tr3"
+  },
+  "thong_tin": {
+    "tieu_de": "Cho thuê phòng trọ phố Nguyễn Khả Trạc, Cầu Giấy",
+    "gia": 4200000,
+    "dien_tich": 15,
+    "dia_chi": "Nguyễn Khả Trạc, Phường Mai Dịch, Quận Cầu Giấy, Hà Nội",
+    "quan_huyen": "Cầu Giấy",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Cho thuê phòng trọ phố Nguyễn Khả Trạc, Cầu Giấy\nCho thuê phòng trọ phố Nguyễn Khả Trạc, Cầu Giấy\nDiện tích phòng từ 18 đến 25 m². Giá từ 4tr2, vskk, điều hoà, nóng lạnh, bàn bếp. Phí dịch vụ & máy giặt 150k, nước 100k, internet 100k, điện 4k/số, để xe: 50k/ xe. Hotline O94238188O",
+    "tien_ich": [
+      "dieu_hoa",
+      "nong_lanh",
+      "may_giat",
+      "bep",
+      "wifi"
+    ],
+    "khong_chung_chu": false,
+    "gio_giac_tu_do": false
+  },
+  "vi_tri": {
+    "lat": 21.032,
+    "lng": 105.795,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 6.7,
+    "khoang_cach_cs2_km": 7.9,
+    "khoang_cach_cs3_km": 55.6,
+    "co_so_gan_nhat": "CS1",
+    "thoi_gian_di_xe_phut": 23
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "Liên hệ qua bài viết",
+    "facebook": ""
+  },
+  "anh": [
+    {
+      "url_goc": "https://cloud.mogi.vn/images/rotate3/2024/07/09/330/a58a8e93f91c438caa124fc8dd59afb2.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/rotate3/2024/07/09/331/5338d4ffa04240bba89b89c6f20bc18a.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/rotate3/2024/07/09/332/84f42dbd5fca4e1b990aea252f381238.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/rotate3/2024/07/09/332/35d156d200d14d3cbfa9f34ceefb9941.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/rotate3/2024/07/09/333/3e5d8699baaf4fd990ba33c146082145.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/rotate3/2024/07/09/334/ee48125e931844a28f619f0fcf9bf0e4.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}

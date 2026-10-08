@@ -1,0 +1,82 @@
+{
+  "ma_phong": "RM-MOGI-3103E1",
+  "nguon": "mogi",
+  "url_nguon": "https://mogi.vn/quan-cau-giay/thue-can-ho-tap-the-cu-xa/chinh-chu-cho-thue-can-ho-tang-4-tap-the-nghia-tan-70m2-2-ngu-7tr-id22750519",
+  "ngay_cao": "2026-10-08T02:11:19.157Z",
+  "ngay_cap_nhat": "2026-10-08T02:11:19.157Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "Nguồn niêm yết công khai mogi.vn",
+    "chong_spam": "Đã qua cổng kiểm định pipeline staging",
+    "da_kiem_tra_trung": true,
+    "sha256_noi_dung": "40e21b235d28e4bf4d153fdfd87c1a6b0612f7f6576621d398e1ae5082a6be7c"
+  },
+  "kiem_dinh": {
+    "link": {
+      "ok": true,
+      "reason": "HTTP 200 OK, tin còn hiệu lực (Playwright live DOM)",
+      "at": "2026-10-08T02:09:24.024Z"
+    },
+    "pipeline": "pipeline_crawl_validate_publish",
+    "nhom_nguon": "Mogi CCMN Cầu Giấy Tr1"
+  },
+  "thong_tin": {
+    "tieu_de": "Chính chủ cho thuê căn hộ tầng 4 Tập thể Nghĩa Tân, 70m2, 2 ngủ, 7tr",
+    "gia": 7000000,
+    "dien_tich": 70,
+    "dia_chi": "Nghĩa Tân, Phường Nghĩa Tân, Quận Cầu Giấy, Hà Nội",
+    "quan_huyen": "Cầu Giấy",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Chính chủ cho thuê căn hộ tầng 4 Tập thể Nghĩa Tân, 70m2, 2 ngủ, 7tr\nCăn hộ tầng 4 khu tập thể Nghĩa Tân. Chính chủ.\nGần trường học, công viên, chợ dân sinh, đều cách ~500m\n2 phòng ngủ, 1wc, 1 bếp, đầy đủ trang thiết bị cơ bản\nPhù hợp gia đình nhỏ, nhóm bạn nhỏ\nGiá thuê 7 triệu/tháng. Điện nước giá dân.",
+    "tien_ich": [
+      "bep"
+    ],
+    "khong_chung_chu": false,
+    "gio_giac_tu_do": false
+  },
+  "vi_tri": {
+    "lat": 21.032,
+    "lng": 105.795,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 6.7,
+    "khoang_cach_cs2_km": 7.9,
+    "khoang_cach_cs3_km": 55.6,
+    "co_so_gan_nhat": "CS1",
+    "thoi_gian_di_xe_phut": 23
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "Liên hệ qua bài viết",
+    "facebook": ""
+  },
+  "anh": [
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2026/08/07/395/85c38eee6829487fbae6bcb013c6b0bd.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2026/08/07/391/c65c961f0f584afaa538c50d53f4fb1b.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2026/08/07/392/d4121c84a146461487f58f756912b23b.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2026/08/07/393/2e3f80af30f44619aba99f0aa5083615.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2026/08/07/393/0d754371695347bfa2296ff79147c02e.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2026/08/07/394/0372c106c39e4ce8a5ce54d8bc4a0987.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}

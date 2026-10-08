@@ -1,0 +1,80 @@
+{
+  "ma_phong": "RM-MOGI-D0D08A",
+  "nguon": "mogi",
+  "url_nguon": "https://mogi.vn/quan-bac-tu-liem/thue-phong-tro-khu-nha-tro/cho-thue-phong-tro-nha-tro-khu-vuc-bac-tu-liem-id21985262",
+  "ngay_cao": "2026-10-08T02:10:20.345Z",
+  "ngay_cap_nhat": "2026-10-08T02:10:20.345Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "Nguồn niêm yết công khai mogi.vn",
+    "chong_spam": "Đã qua cổng kiểm định pipeline staging",
+    "da_kiem_tra_trung": true,
+    "sha256_noi_dung": "14781aff696e8a7f3b167e8bf5af624ffe00cc4b450b771e1d471bdce1f57646"
+  },
+  "kiem_dinh": {
+    "link": {
+      "ok": true,
+      "reason": "HTTP 200 OK, tin còn hiệu lực (Playwright live DOM)",
+      "at": "2026-10-08T02:05:54.577Z"
+    },
+    "pipeline": "pipeline_crawl_validate_publish",
+    "nhom_nguon": "Mogi Bắc Từ Liêm Tr4"
+  },
+  "thong_tin": {
+    "tieu_de": "Cho thuê phòng trọ, nhà trọ khu vực Bắc Từ Liêm",
+    "gia": 3500000,
+    "dien_tich": 30,
+    "dia_chi": "Cầu Diễn, Phường Minh Khai, Quận Bắc Từ Liêm, Hà Nội",
+    "quan_huyen": "Bắc Từ Liêm",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Cho thuê phòng trọ, nhà trọ khu vực Bắc Từ Liêm\nNhà mới 100% - Ưu đãi cực sốc - Thuê ngay !\n🔥 Vị trí: Khắp Hà Nội, chuyển phòng miễn phí trong hệ thống\n🔥An toàn: 100% khóa vân tay, camera 24/24\n🔥 Tiện nghi : Hotline, đội ngũ kỹ thuật, dịch vụ sẵn sàng xử lý Everytime\n🔥 Hệ thống phòng hơn 2000 phòng khắp Hà Nội\n🔥 Phục vụ trực tiếp gần 5000 khách hàng\n....\nLiên hệ 0924791222 nhé ❤",
+    "tien_ich": [],
+    "khong_chung_chu": false,
+    "gio_giac_tu_do": true
+  },
+  "vi_tri": {
+    "lat": 21.0537,
+    "lng": 105.7351,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 0,
+    "khoang_cach_cs2_km": 1.3,
+    "khoang_cach_cs3_km": 59.5,
+    "co_so_gan_nhat": "CS1",
+    "thoi_gian_di_xe_phut": 1
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "0924791222",
+    "facebook": ""
+  },
+  "anh": [
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2023/01/07/060/c8f510ee9ebb451aac8cca8a92a706a8.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2023/01/07/061/1cea13f2ca8a4835b85e0d33e28d8e31.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2023/01/07/062/d1c0d2bdbcb24d94ad8697184dc7e402.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2023/01/07/064/b4483cb0cbed47708ae818058736327b.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2023/01/07/065/df646732d9444172a5385acb5e39c6a0.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2023/01/07/067/6d3da7fabcf54f6d8132f25b9995864a.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}

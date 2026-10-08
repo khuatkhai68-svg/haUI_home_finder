@@ -1,0 +1,84 @@
+{
+  "ma_phong": "RM-MOGI-A21E53",
+  "nguon": "mogi",
+  "url_nguon": "https://mogi.vn/quan-bac-tu-liem/thue-can-ho-dich-vu/can-ho-co-gac-cua-so-lon-thoang-mat-nam-ngay-ho-tung-mau-tran-binh-id22633107",
+  "ngay_cao": "2026-10-08T02:10:36.267Z",
+  "ngay_cap_nhat": "2026-10-08T02:10:36.267Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "Nguồn niêm yết công khai mogi.vn",
+    "chong_spam": "Đã qua cổng kiểm định pipeline staging",
+    "da_kiem_tra_trung": true,
+    "sha256_noi_dung": "28ba3f938e12079200526fa6bd3070286bce460df5bf578189fe75f0cfd9fdb6"
+  },
+  "kiem_dinh": {
+    "link": {
+      "ok": true,
+      "reason": "HTTP 200 OK, tin còn hiệu lực (Playwright live DOM)",
+      "at": "2026-10-08T02:06:38.675Z"
+    },
+    "pipeline": "pipeline_crawl_validate_publish",
+    "nhom_nguon": "Mogi CCMN Bắc Từ Liêm Tr2"
+  },
+  "thong_tin": {
+    "tieu_de": "Căn hộ có gác cửa sổ lớn thoáng mát nằm ngay hồ tùng mậu trần bình",
+    "gia": 4000000,
+    "dien_tich": 35,
+    "dia_chi": "Hồ Tùng Mậu, Phường Cổ Nhuế 2, Quận Bắc Từ Liêm, Hà Nội",
+    "quan_huyen": "Bắc Từ Liêm",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Căn hộ có gác cửa sổ lớn thoáng mát nằm ngay hồ tùng mậu trần bình\nTÌM PHÒNG ĐẸP NGAY ĐÂY RỒI\nCĂN CÓ GÁC CỬA SỔ LỚN THOÁNG MÁT NẰM NGAY HỒ TÙNG MẬU - TRẦN BÌNH\nĐịa chỉ: Hồ tùng mậu - Bắc từ liêm - Hà nội\nThiết kế có gác - cửa sổ lớn thoáng mát\nĐầy đủ nội thất mới tinh - bóc seal nhà mới\nRa vào bằng cửa cổng vân tay, giờ giấc tự do\nTrang bị đầy đủ thang máy, thang bộ và thang thoát hiểm\nNằm ngay đường lớn trần vĩ, mai dịch, dương khê, nguyễn cơ thạch, lê đức thọ, hàm nghi, phúc diễn, xuân thuỷ, phạm văn đồng,...\n-----------------\nHotline 0799174781 gặp Bích Thuỷ để được xem phòng nhanh nhất",
+    "tien_ich": [
+      "thang_may",
+      "ban_cong",
+      "gac_xep"
+    ],
+    "khong_chung_chu": false,
+    "gio_giac_tu_do": true
+  },
+  "vi_tri": {
+    "lat": 21.049,
+    "lng": 105.748,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 1.4,
+    "khoang_cach_cs2_km": 2.7,
+    "khoang_cach_cs3_km": 58.6,
+    "co_so_gan_nhat": "CS1",
+    "thoi_gian_di_xe_phut": 5
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "0799174781",
+    "facebook": ""
+  },
+  "anh": [
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/10/15/053/99e0f476ba0f4186b2c5d1817edd26b2.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/10/15/054/f132b67335d741f0939c0244ba344b12.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/10/15/055/43c397dfdbba417ba0abd1682e6d817a.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/10/15/056/02cd4d18222e40cca8592de6ae2ad8c3.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/10/15/057/361d801ca880441ea8ae986ac300af3b.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/10/15/058/b97fdd22ef4f44ff915be0647b002e26.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "ma_phong": "RM-MOGI-02522A",
+  "nguon": "mogi",
+  "url_nguon": "https://mogi.vn/quan-nam-tu-liem/thue-phong-tro-khu-nha-tro/cho-thue-phong-tro-35m2-1n1k-full-do-tai-me-tri-nam-tu-liem-ha-noi-id22502556",
+  "ngay_cao": "2026-10-08T02:10:49.031Z",
+  "ngay_cap_nhat": "2026-10-08T02:10:49.031Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "Nguồn niêm yết công khai mogi.vn",
+    "chong_spam": "Đã qua cổng kiểm định pipeline staging",
+    "da_kiem_tra_trung": true,
+    "sha256_noi_dung": "7f5c4453e7417fa0cf894004bd3824822f2f7bb95877183458e602a6d7211522"
+  },
+  "kiem_dinh": {
+    "link": {
+      "ok": true,
+      "reason": "HTTP 200 OK, tin còn hiệu lực (Playwright live DOM)",
+      "at": "2026-10-08T02:07:26.212Z"
+    },
+    "pipeline": "pipeline_crawl_validate_publish",
+    "nhom_nguon": "Mogi Nam Từ Liêm Tr4"
+  },
+  "thong_tin": {
+    "tieu_de": "Cho thuê phòng trọ 35m2 1N1K full đồ tại Mễ Trì, Nam Từ Liêm, Hà Nội",
+    "gia": 5200000,
+    "dien_tich": 35,
+    "dia_chi": "Số 12, ngõ 89 Mễ Trì Thượng, Phường Mễ Trì, Quận Nam Từ Liêm, Hà Nội",
+    "quan_huyen": "Nam Từ Liêm",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Cho thuê phòng trọ 35m2 1N1K full đồ tại Mễ Trì, Nam Từ Liêm, Hà Nội\nCho thuê phòng trọ 40m2 - 1N1K full đồ tại Mễ Trì, Nam Từ Liêm.\n----------------------------------------------------------------\n🏡 Địa chỉ: Số 12 ngõ 89, Mễ Trì Thượng, Nam Từ Liêm (ngay gần cấp 1 Mễ Trì) gần tòa Golden place.\n✔Có sẵn giường, tủ quần áo, điều hoà, nóng lạnh, tủ lạnh, máy giặt, bàn ghế, bàn bếp, tủ bếp, hút mùi, bếp từ, wifi...chỉ cần mang quần áo tới là ở.\n✔Để xe miễn phí ở tầng 1\n✔Thang máy tốc độ cao, giờ giấc thoải mái, cổng khoá vân tay\n✔Ô tô 16 chỗ vào ngay sát nhà, có bãi gửi ô tô ngay gần nhà.\n- Diện tích 35m2 - Giá: 5.2tr/tháng (1N1K)\n- Diện tích 40m2 - Giá: 5.6tr/tháng (setup được 2N1K)\n☎️LHCC: 0969139826 (Lực)\n(Ưu tiên gia đình, người đi làm lịch sự tử tế; các bạn sv ở sạch sẽ. Phòng full đồ Chỉ việc xách vali vào ở)",
+    "tien_ich": [
+      "dieu_hoa",
+      "nong_lanh",
+      "may_giat",
+      "tu_lanh",
+      "thang_may",
+      "bep",
+      "giuong",
+      "tu_quan_ao",
+      "wifi"
+    ],
+    "khong_chung_chu": false,
+    "gio_giac_tu_do": false
+  },
+  "vi_tri": {
+    "lat": 21.032,
+    "lng": 105.758,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 3.4,
+    "khoang_cach_cs2_km": 4.7,
+    "khoang_cach_cs3_km": 56.5,
+    "co_so_gan_nhat": "CS1",
+    "thoi_gian_di_xe_phut": 12
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "0969139826",
+    "facebook": ""
+  },
+  "anh": [
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/03/15/293/a0b38795ad314ed1805673b1df967e2d.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/03/15/290/eea4e2b46d4449a89bc5bc1f7a888535.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/03/15/291/2a0a974ac7c740aeb06ffa73e637db78.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/03/15/292/d9d4c6e53e224607bd38699bb15f50e8.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/03/15/293/894d3c051e8943188a4328ed1d5f724f.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/03/15/294/743ab44433ab47bead22f46ee42fa96e.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}

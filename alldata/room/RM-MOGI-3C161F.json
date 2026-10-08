@@ -1,0 +1,83 @@
+{
+  "ma_phong": "RM-MOGI-3C161F",
+  "nguon": "mogi",
+  "url_nguon": "https://mogi.vn/quan-bac-tu-liem/thue-phong-tro-khu-nha-tro/phong-tro-gia-re-tai-co-nhue-rong-thoang-id21990708",
+  "ngay_cao": "2026-10-08T02:10:16.323Z",
+  "ngay_cap_nhat": "2026-10-08T02:10:16.323Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "Nguồn niêm yết công khai mogi.vn",
+    "chong_spam": "Đã qua cổng kiểm định pipeline staging",
+    "da_kiem_tra_trung": true,
+    "sha256_noi_dung": "df9f6e8fd8174153293c7af11adfaa1b54774a4a183e1e6ba056e35c9bb57eb9"
+  },
+  "kiem_dinh": {
+    "link": {
+      "ok": true,
+      "reason": "HTTP 200 OK, tin còn hiệu lực (Playwright live DOM)",
+      "at": "2026-10-08T02:05:43.578Z"
+    },
+    "pipeline": "pipeline_crawl_validate_publish",
+    "nhom_nguon": "Mogi Bắc Từ Liêm Tr3"
+  },
+  "thong_tin": {
+    "tieu_de": "Phòng Trọ Giá Rẻ Tại Cổ Nhuế Rộng Thoáng 🍖",
+    "gia": 3850000,
+    "dien_tich": 25,
+    "dia_chi": "Phạm Văn Đồng, Phường Cổ Nhuế 1, Quận Bắc Từ Liêm, Hà Nội",
+    "quan_huyen": "Bắc Từ Liêm",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Phòng Trọ Giá Rẻ Tại Cổ Nhuế Rộng Thoáng 🍖\n🌻 Địa chỉ : Ngõ 397 Phạm Văn Đồng ( Gần Công Viên Thống Nhất Cách 100m )\n💦 01/02 Trống\n----------------------\n🍖 Giá 3tr850\n🍖 Phòng đơn\n🍖 Thang máy .tầng 2 Phòng 204\nNội thất : Điều hoà , nóng lạnh , giường , đệm , tủ quần áo , bàn ghế , bếp và tủ bếp , máy giặt chung , khoá cửa vân tay...\nIb hoặc lh zalo 08.6982.9682",
+    "tien_ich": [
+      "thang_may",
+      "giuong"
+    ],
+    "khong_chung_chu": false,
+    "gio_giac_tu_do": false
+  },
+  "vi_tri": {
+    "lat": 21.058,
+    "lng": 105.755,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 2.1,
+    "khoang_cach_cs2_km": 3,
+    "khoang_cach_cs3_km": 59.4,
+    "co_so_gan_nhat": "CS1",
+    "thoi_gian_di_xe_phut": 7
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "0869829682",
+    "facebook": ""
+  },
+  "anh": [
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2023/01/30/041/1ffd2b2eb2914abb8562ccf42e384a8c.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2023/01/30/042/7c588af385bb4c71a3b6fa118e80a53e.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2023/01/30/043/fba69b92608a4cf2bf68f7e1f79739f7.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2023/01/30/044/311f3cf4680e401d8dd2056fa1674903.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2023/01/30/045/e2cceb813c5b40ce89064cdc6367ac78.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2023/01/30/046/50956c352b614326a73ff1a6660f3fa3.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "ma_phong": "RM-MOGI-15E2C1",
+  "nguon": "mogi",
+  "url_nguon": "https://mogi.vn/quan-bac-tu-liem/thue-phong-tro-khu-nha-tro/chinh-chu-cho-thue-phong-tro-gia-re-tai-ha-noi-id21989976",
+  "ngay_cao": "2026-10-08T02:10:18.043Z",
+  "ngay_cap_nhat": "2026-10-08T02:10:18.043Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "Nguồn niêm yết công khai mogi.vn",
+    "chong_spam": "Đã qua cổng kiểm định pipeline staging",
+    "da_kiem_tra_trung": true,
+    "sha256_noi_dung": "a61a8861d4ca3134092a4dbcf06cb7ec59a8a028a86c6976e5cb921da5ecf78e"
+  },
+  "kiem_dinh": {
+    "link": {
+      "ok": true,
+      "reason": "HTTP 200 OK, tin còn hiệu lực (Playwright live DOM)",
+      "at": "2026-10-08T02:05:49.215Z"
+    },
+    "pipeline": "pipeline_crawl_validate_publish",
+    "nhom_nguon": "Mogi Bắc Từ Liêm Tr3"
+  },
+  "thong_tin": {
+    "tieu_de": "Chính chủ cho thuê phòng trọ giá rẻ tại Hà Nội",
+    "gia": 3860000,
+    "dien_tich": 30,
+    "dia_chi": "Phạm Văn Đồng, Phường Cổ Nhuế 1, Quận Bắc Từ Liêm, Hà Nội",
+    "quan_huyen": "Bắc Từ Liêm",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Chính chủ cho thuê phòng trọ giá rẻ tại Hà Nội\nChính chủ cho thuê phòng\nĐiều hòa .nóng lạnh.giường,tủ đầy đủ\nTại 397 Phạm Văn Đồng\n-Gần nhiều trường ĐH như Đh Quốc Gia, Ngoại Ngữ, học viện tài chính, Đh Nội Vụ, Mỏ Địa Chất, ….\n-Diện tích 25-30m2 ở được 3 đến 4 người 1 phòng.( không giới hạn số người ở)\n- Giá phòng 3triệu8/tháng\n- Nội Thất:\n+ Điều Hòa\n+Nóng Lạnh\n+Giường\n+Tủ quần áo\n-Mỗi tầng chỉ có 4 phòng khép kín vì thế không gian sinh hoạt rất thỏa mái\n-Phòng có 2 cửa sổ lên rất thoáng mát\n-Giờ giấc tự do, thỏa mái, có vân tay, mỗi phòng 1 bộ chìa khóa riêng,đi đóng về mở ko quản giờ giấc\n-Để xe tầng 1 free. có camera giám sát 24/24\n-Điện 3,8k/số, nước 100k/ng, mạng 50k/người.\nIbox or liên hệ: 08.6982.9682",
+    "tien_ich": [
+      "dieu_hoa",
+      "nong_lanh",
+      "ban_cong",
+      "giuong",
+      "tu_quan_ao",
+      "wifi"
+    ],
+    "khong_chung_chu": false,
+    "gio_giac_tu_do": true
+  },
+  "vi_tri": {
+    "lat": 21.058,
+    "lng": 105.755,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 2.1,
+    "khoang_cach_cs2_km": 3,
+    "khoang_cach_cs3_km": 59.4,
+    "co_so_gan_nhat": "CS1",
+    "thoi_gian_di_xe_phut": 7
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "0869829682",
+    "facebook": ""
+  },
+  "anh": [
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2023/01/28/454/7d163a4b48b441b0b584f06aeac0d24f.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2023/01/28/456/62101a31fe8249258057ad958b537393.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2023/01/28/457/e70795de88e742f282459fc6990cf056.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "ma_phong": "RM-MOGI-7F43C7",
+  "nguon": "mogi",
+  "url_nguon": "https://mogi.vn/quan-cau-giay/thue-phong-tro-khu-nha-tro/ccmn-full-noi-that-moi-100-may-giat-rieng-pccc-duong-lac-long-quan-id22567839",
+  "ngay_cao": "2026-10-08T02:11:07.409Z",
+  "ngay_cap_nhat": "2026-10-08T02:11:07.409Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "Nguồn niêm yết công khai mogi.vn",
+    "chong_spam": "Đã qua cổng kiểm định pipeline staging",
+    "da_kiem_tra_trung": true,
+    "sha256_noi_dung": "d56ade2d48f41cea150046502828857d96a0fd61d8a6f9fb4e6d6fcb0780df27"
+  },
+  "kiem_dinh": {
+    "link": {
+      "ok": true,
+      "reason": "HTTP 200 OK, tin còn hiệu lực (Playwright live DOM)",
+      "at": "2026-10-08T02:08:46.584Z"
+    },
+    "pipeline": "pipeline_crawl_validate_publish",
+    "nhom_nguon": "Mogi Cầu Giấy Tr3"
+  },
+  "thong_tin": {
+    "tieu_de": "CCMN full nội thất mới 100% máy giặt riêng, PCCC, đường Lạc Long Quân",
+    "gia": 5000000,
+    "dien_tich": 25,
+    "dia_chi": "Lạc Long Quân, Phường Nghĩa Đô, Quận Cầu Giấy, Hà Nội",
+    "quan_huyen": "Cầu Giấy",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "CCMN full nội thất mới 100% máy giặt riêng, PCCC, đường Lạc Long Quân\nCCMN full nội thất mới 100% máy giặt riêng, PCCC, đường Lạc Long Quân\n- Địa chỉ : Số 19B ngõ 269 Lạc Long Quân\n- Phòng Studio gác xép 25m2\n- Thang máy. Đặc biệt PCCC đầy đủ, có thang thoát hiểm ngoài trời, rất an toàn\n- Nội thất : Full đồ , điều hòa, nóng lạnh, giường, tủ quần áo,tủ lạnh, bếp, máy giặt, chăn ga gối đệm...\n- Dịch vụ : Điện 4k. Các chi phí khác tổng 300k/người ( bao gồm nước, wifi, thang máy, vệ sinh, rác...)\n- Giá thuê: 5 triệu\n- Lh chính chủ: Phòng như ảnh 100%",
+    "tien_ich": [
+      "dieu_hoa",
+      "nong_lanh",
+      "may_giat",
+      "tu_lanh",
+      "thang_may",
+      "bep",
+      "giuong",
+      "tu_quan_ao",
+      "wifi",
+      "gac_xep"
+    ],
+    "khong_chung_chu": false,
+    "gio_giac_tu_do": false
+  },
+  "vi_tri": {
+    "lat": 21.032,
+    "lng": 105.795,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 6.7,
+    "khoang_cach_cs2_km": 7.9,
+    "khoang_cach_cs3_km": 55.6,
+    "co_so_gan_nhat": "CS1",
+    "thoi_gian_di_xe_phut": 23
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "Liên hệ qua bài viết",
+    "facebook": ""
+  },
+  "anh": [
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/05/29/282/ebcedef3eadc46e6bc18410ddbe3cb3e.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/05/29/283/c28d463fa9fa489aa1d39e942c6d53b5.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/05/29/284/97f022abffde45c8a7085ff528c572b8.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/05/29/285/b1d7e7a69ba44c338b59b36f8cd48858.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/05/29/286/f9f709e782484ddb93b7a3d4b45d7241.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/05/29/286/9b277fbfa40549009e69812d40f1de2c.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}

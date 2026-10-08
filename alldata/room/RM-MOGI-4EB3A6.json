@@ -1,0 +1,76 @@
+{
+  "ma_phong": "RM-MOGI-4EB3A6",
+  "nguon": "mogi",
+  "url_nguon": "https://mogi.vn/quan-bac-tu-liem/thue-can-ho-chung-cu/can-ho-thuoc-chung-cu-green-stars-232-pham-van-dong-bac-tu-liem-hn-id22658974",
+  "ngay_cao": "2026-10-08T02:10:32.802Z",
+  "ngay_cap_nhat": "2026-10-08T02:10:32.802Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "Nguồn niêm yết công khai mogi.vn",
+    "chong_spam": "Đã qua cổng kiểm định pipeline staging",
+    "da_kiem_tra_trung": true,
+    "sha256_noi_dung": "8a4d05ef0884bef77432554c16e1e9afcf062cbac1936eec6268996380a817fe"
+  },
+  "kiem_dinh": {
+    "link": {
+      "ok": true,
+      "reason": "HTTP 200 OK, tin còn hiệu lực (Playwright live DOM)",
+      "at": "2026-10-08T02:06:31.593Z"
+    },
+    "pipeline": "pipeline_crawl_validate_publish",
+    "nhom_nguon": "Mogi CCMN Bắc Từ Liêm Tr2"
+  },
+  "thong_tin": {
+    "tieu_de": "Căn hộ thuộc chung cư Green Stars 232 phạm văn đồng - Bắc Từ Liêm - Hn",
+    "gia": 12000000,
+    "dien_tich": 67,
+    "dia_chi": "Phạm Văn Đồng, Phường Cổ Nhuế 1, Quận Bắc Từ Liêm, Hà Nội",
+    "quan_huyen": "Bắc Từ Liêm",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Căn hộ thuộc chung cư Green Stars 232 phạm văn đồng - Bắc Từ Liêm - Hn\nChung cư Green Stars 232 Phạm Văn Đồng, Bắc Từ Liêm - HN bên cạnh bộ công an , tiện ích nội khu và xung quanh đầy đủ , 2PN + 2WC 66,8m2 và full nội thất, tầng trung view đẹp , giá thuê 12tr, có thể vào ở luôn , ai có nhu cầu pm 0396691139 ( Hoàng Triều)",
+    "tien_ich": [],
+    "khong_chung_chu": false,
+    "gio_giac_tu_do": false
+  },
+  "vi_tri": {
+    "lat": 21.058,
+    "lng": 105.755,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 2.1,
+    "khoang_cach_cs2_km": 3,
+    "khoang_cach_cs3_km": 59.4,
+    "co_so_gan_nhat": "CS1",
+    "thoi_gian_di_xe_phut": 7
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "0396691139",
+    "facebook": ""
+  },
+  "anh": [
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/01/08/077/da348a2d86cd4422a6befaece2e58d5a.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/01/08/078/c6a75f9434c243799279c792ce5bdb1d.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/01/08/079/50c1e5ff961e4a309107b8c44be36d61.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/01/08/079/ec79971139c1430392167e7dc716ae60.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/project/thumb-detail/2024/10/07/229/f7f61b7efce64a448e9f25844d427086.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}

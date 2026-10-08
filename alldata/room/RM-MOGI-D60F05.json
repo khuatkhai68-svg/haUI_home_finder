@@ -1,0 +1,74 @@
+{
+  "ma_phong": "RM-MOGI-D60F05",
+  "nguon": "mogi",
+  "url_nguon": "https://mogi.vn/quan-nam-tu-liem/thue-phong-tro-khu-nha-tro/cho-thue-phong-tro-1-ngu-1-khach-me-tri-thuong-id22520667",
+  "ngay_cao": "2026-10-08T02:10:51.137Z",
+  "ngay_cap_nhat": "2026-10-08T02:10:51.137Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "Nguồn niêm yết công khai mogi.vn",
+    "chong_spam": "Đã qua cổng kiểm định pipeline staging",
+    "da_kiem_tra_trung": true,
+    "sha256_noi_dung": "4aad8683f93518c02e0a1e4d8f94af7422f441212979592fc8c26cc7b982733e"
+  },
+  "kiem_dinh": {
+    "link": {
+      "ok": true,
+      "reason": "HTTP 200 OK, tin còn hiệu lực (Playwright live DOM)",
+      "at": "2026-10-08T02:07:30.493Z"
+    },
+    "pipeline": "pipeline_crawl_validate_publish",
+    "nhom_nguon": "Mogi Nam Từ Liêm Tr4"
+  },
+  "thong_tin": {
+    "tieu_de": "Cho Thuê Phòng Trọ 1 Ngủ 1 Khách Mễ Trì Thượng",
+    "gia": 2900000,
+    "dien_tich": 25,
+    "dia_chi": "Mễ Trì Thượng, Phường Mễ Trì, Quận Nam Từ Liêm, Hà Nội",
+    "quan_huyen": "Nam Từ Liêm",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Cho Thuê Phòng Trọ 1 Ngủ 1 Khách Mễ Trì Thượng\nMình có phòng 1 ngủ 1 khách 25m2 khép kín Full Đồ\nngõ 50 Mễ Trì Thượng\nNT: Điều hoà , nóng lạnh , giường tủ , máy giặt , bàn bếp , thoáng , phòng khép kín mới sạch sẽ !\nLiên hệ chính chủ\nMr Thông: 0911122281",
+    "tien_ich": [
+      "dieu_hoa",
+      "nong_lanh",
+      "may_giat",
+      "bep",
+      "giuong"
+    ],
+    "khong_chung_chu": false,
+    "gio_giac_tu_do": false
+  },
+  "vi_tri": {
+    "lat": 21.032,
+    "lng": 105.758,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 3.4,
+    "khoang_cach_cs2_km": 4.7,
+    "khoang_cach_cs3_km": 56.5,
+    "co_so_gan_nhat": "CS1",
+    "thoi_gian_di_xe_phut": 12
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "0911122281",
+    "facebook": ""
+  },
+  "anh": [
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/04/01/092/da9c297d9b474a8dbae3cd8cf975006b.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/04/01/091/c1eb406b16e547dea071ed5c7a00f250.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/04/01/094/d49d2a4163e24342955b61e6493840fa.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}

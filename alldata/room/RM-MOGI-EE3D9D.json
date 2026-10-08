@@ -1,0 +1,87 @@
+{
+  "ma_phong": "RM-MOGI-EE3D9D",
+  "nguon": "mogi",
+  "url_nguon": "https://mogi.vn/quan-bac-tu-liem/thue-phong-tro-khu-nha-tro/2-8tr-phong-studio-25m2-ngo-36-cau-dien-giap-truong-cd-in-full-do-id22164813",
+  "ngay_cao": "2026-10-08T02:10:12.864Z",
+  "ngay_cap_nhat": "2026-10-08T02:10:12.864Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "Nguồn niêm yết công khai mogi.vn",
+    "chong_spam": "Đã qua cổng kiểm định pipeline staging",
+    "da_kiem_tra_trung": true,
+    "sha256_noi_dung": "4cd43b9a32a35e974c99c6b92aafa6a8cbbb7662b24cb9a5227bbfe0784fb477"
+  },
+  "kiem_dinh": {
+    "link": {
+      "ok": true,
+      "reason": "HTTP 200 OK, tin còn hiệu lực (Playwright live DOM)",
+      "at": "2026-10-08T02:05:33.513Z"
+    },
+    "pipeline": "pipeline_crawl_validate_publish",
+    "nhom_nguon": "Mogi Bắc Từ Liêm Tr3"
+  },
+  "thong_tin": {
+    "tieu_de": "2,8tr_phòng studio 25m2 ngõ 36 Cầu Diễn (giáp trường cđ in)_full đồ",
+    "gia": 2800000,
+    "dien_tich": 25,
+    "dia_chi": "Cầu Diễn, Phường Phúc Diễn, Quận Bắc Từ Liêm, Hà Nội",
+    "quan_huyen": "Bắc Từ Liêm",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "2,8tr_phòng studio 25m2 ngõ 36 Cầu Diễn (giáp trường cđ in)_full đồ\nCho thuê phòng studio 25m² tại ngõ 36 Cầu Diễn (Giáp trường Cao đẳng Công nghiệp In, Cách 50m ra đường QL 32... Di chuyển vào Trung tâm HN rất tiện).\n- Đồ đạc trong phòng gồm: Điều hòa, nóng lạnh, Giường, Tủ Quần áo, Ban công thoáng mát, Máy giặt chung...\n- Không chung chủ, giờ giấc tự do, an ninh tốt.\n- Ngõ trước nhà rộng, ô tô đỗ được.\n- Giá thuê: 2,8 tr/ tháng.\n(Thanh toán: Cọc 1 tháng, thanh toán tháng 1 lần; Nếu thanh toán 3 - 6 tháng/ lần sẽ Fix bớt).\n- Liên hệ chính chủ: 0828602525",
+    "tien_ich": [
+      "dieu_hoa",
+      "nong_lanh",
+      "may_giat",
+      "ban_cong",
+      "giuong",
+      "tu_quan_ao"
+    ],
+    "khong_chung_chu": true,
+    "gio_giac_tu_do": true
+  },
+  "vi_tri": {
+    "lat": 21.049,
+    "lng": 105.748,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 1.4,
+    "khoang_cach_cs2_km": 2.7,
+    "khoang_cach_cs3_km": 58.6,
+    "co_so_gan_nhat": "CS1",
+    "thoi_gian_di_xe_phut": 5
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "0828602525",
+    "facebook": ""
+  },
+  "anh": [
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2023/05/19/531/079aebc1ab1a45dfb54baf412eeff3d5.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2023/05/19/531/c5d4bbcd41734d129a7f1ba131ea13e7.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2023/05/19/544/3878c871fb88477a80b70eca528b3428.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2023/05/19/544/2cbf62c013f54ff1802683080e17091d.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2023/05/19/542/31a903d5b6e04fa7bdf400218b93a49c.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2023/05/19/540/e16a65664671451c8c3bc22ea73d5cb6.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}

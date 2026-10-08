@@ -1,0 +1,80 @@
+{
+  "ma_phong": "RM-MOGI-3CD138",
+  "nguon": "mogi",
+  "url_nguon": "https://mogi.vn/quan-nam-tu-liem/thue-phong-tro-khu-nha-tro/phong-tro-1n1k-me-tri-thuong-gia-re-id22621977",
+  "ngay_cao": "2026-10-08T02:10:44.863Z",
+  "ngay_cap_nhat": "2026-10-08T02:10:44.863Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "Nguồn niêm yết công khai mogi.vn",
+    "chong_spam": "Đã qua cổng kiểm định pipeline staging",
+    "da_kiem_tra_trung": true,
+    "sha256_noi_dung": "09a88c46a12037d97e36262ec3e432e8241cafbefbf18f82ebd99b8ffdda947e"
+  },
+  "kiem_dinh": {
+    "link": {
+      "ok": true,
+      "reason": "HTTP 200 OK, tin còn hiệu lực (Playwright live DOM)",
+      "at": "2026-10-08T02:07:16.460Z"
+    },
+    "pipeline": "pipeline_crawl_validate_publish",
+    "nhom_nguon": "Mogi Nam Từ Liêm Tr3"
+  },
+  "thong_tin": {
+    "tieu_de": "Phòng trọ 1N1K mễ trì thượng giá rẻ",
+    "gia": 6500000,
+    "dien_tich": 35,
+    "dia_chi": "Mễ Trì Thượng, Phường Mễ Trì, Quận Nam Từ Liêm, Hà Nội",
+    "quan_huyen": "Nam Từ Liêm",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Phòng trọ 1N1K mễ trì thượng giá rẻ\n🏠N.230 mễ trì thượng\nNội thất : Đh , nl , giường tu , bếp , hút mui , tủ lanh,.....\nKo chung chủ , vskk , xe free\nĐiện 3,8k/số\nNước 35k/khối\nDvc 100k/ng\n👉Giá 5tr _1n1k\n☎️Call/Zalo : 0352480698",
+    "tien_ich": [
+      "nong_lanh",
+      "bep",
+      "giuong"
+    ],
+    "khong_chung_chu": true,
+    "gio_giac_tu_do": false
+  },
+  "vi_tri": {
+    "lat": 21.032,
+    "lng": 105.758,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 3.4,
+    "khoang_cach_cs2_km": 4.7,
+    "khoang_cach_cs3_km": 56.5,
+    "co_so_gan_nhat": "CS1",
+    "thoi_gian_di_xe_phut": 12
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "0352480698",
+    "facebook": ""
+  },
+  "anh": [
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/09/06/098/df3386aff117465e9624e33ad17ad5ab.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/09/06/099/629800ef0f8547958873247590672158.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/09/06/100/74ce235e9ae440bb97ad7eccd1f17a01.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/09/06/101/67d9e572a6b64b4abc88b94c10eac75b.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/09/06/102/d28ce82bd2bd478cbf7b77ee4de2efae.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}

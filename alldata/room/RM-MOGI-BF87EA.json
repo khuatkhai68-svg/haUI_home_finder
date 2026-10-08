@@ -1,0 +1,88 @@
+{
+  "ma_phong": "RM-MOGI-BF87EA",
+  "nguon": "mogi",
+  "url_nguon": "https://mogi.vn/quan-nam-tu-liem/thue-phong-tro-khu-nha-tro/phong-gac-xep-thiet-ke-du-do-khep-kin-co-dem-pho-phung-khoang-20m2-id22521363",
+  "ngay_cao": "2026-10-08T02:10:50.004Z",
+  "ngay_cap_nhat": "2026-10-08T02:10:50.004Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "Nguồn niêm yết công khai mogi.vn",
+    "chong_spam": "Đã qua cổng kiểm định pipeline staging",
+    "da_kiem_tra_trung": true,
+    "sha256_noi_dung": "409824b4f6fc7698869991fe1224ff547c023ca841d23f154e71327f3b9f6d0d"
+  },
+  "kiem_dinh": {
+    "link": {
+      "ok": true,
+      "reason": "HTTP 200 OK, tin còn hiệu lực (Playwright live DOM)",
+      "at": "2026-10-08T02:07:27.609Z"
+    },
+    "pipeline": "pipeline_crawl_validate_publish",
+    "nhom_nguon": "Mogi Nam Từ Liêm Tr4"
+  },
+  "thong_tin": {
+    "tieu_de": "Phòng gác xép thiết kế đủ đồ khép kín có đệm phố Phùng Khoang 20m2",
+    "gia": 3600000,
+    "dien_tich": 20,
+    "dia_chi": "159 Phùng Khoang, Phường Trung Văn, Quận Nam Từ Liêm, Hà Nội",
+    "quan_huyen": "Nam Từ Liêm",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Phòng gác xép thiết kế đủ đồ khép kín có đệm phố Phùng Khoang 20m2\nPhòng gác xép thiết kế đủ đồ khép kín có đệm phố Phùng Khoang\nNội thất:\n✅ Điều hòa, nóng lạnh\n✅ Giường, tủ áo\n✅ Tủ bếp trên dưới\nNgoại thất:\n✅ Thang máy\n✅ Khóa vân tay\n✅ Camera giám sát\n✅ Thiết bị PCCC\n✅ Máy giặt chung\nKhu vực gần nhà thờ Phùng Khoang, chợ dân sinh cách 300m",
+    "tien_ich": [
+      "dieu_hoa",
+      "nong_lanh",
+      "may_giat",
+      "thang_may",
+      "bep",
+      "giuong",
+      "gac_xep"
+    ],
+    "khong_chung_chu": false,
+    "gio_giac_tu_do": false
+  },
+  "vi_tri": {
+    "lat": 21.032,
+    "lng": 105.758,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 3.4,
+    "khoang_cach_cs2_km": 4.7,
+    "khoang_cach_cs3_km": 56.5,
+    "co_so_gan_nhat": "CS1",
+    "thoi_gian_di_xe_phut": 12
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "Liên hệ qua bài viết",
+    "facebook": ""
+  },
+  "anh": [
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/04/01/052/4c8698e3c34143208e6fd7cef65fb417.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/04/01/053/e1c4593954864e65be5a5f09a8eb9250.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/04/01/054/6c1bafbfb59144058997979f04357406.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/04/01/055/c87c36abcb6e47e1b3e867d6056b27d6.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/04/01/056/983867f9a73a4229938b9e605170235e.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/04/01/056/0765ef22b9ad4212b6e26202efbab7eb.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}

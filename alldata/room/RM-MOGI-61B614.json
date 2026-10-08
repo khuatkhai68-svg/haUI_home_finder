@@ -1,0 +1,89 @@
+{
+  "ma_phong": "RM-MOGI-61B614",
+  "nguon": "mogi",
+  "url_nguon": "https://mogi.vn/quan-bac-tu-liem/thue-can-ho-dich-vu/bac-tu-liem-28m2-moi-tinh-full-do-o-luon-id22640284",
+  "ngay_cao": "2026-10-08T02:10:31.901Z",
+  "ngay_cap_nhat": "2026-10-08T02:10:31.901Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "Nguồn niêm yết công khai mogi.vn",
+    "chong_spam": "Đã qua cổng kiểm định pipeline staging",
+    "da_kiem_tra_trung": true,
+    "sha256_noi_dung": "096fa5ddb1067d81b97f3f9bbc642b4f7b0faec177c8e82ed2f419f85d33bd31"
+  },
+  "kiem_dinh": {
+    "link": {
+      "ok": true,
+      "reason": "HTTP 200 OK, tin còn hiệu lực (Playwright live DOM)",
+      "at": "2026-10-08T02:06:30.186Z"
+    },
+    "pipeline": "pipeline_crawl_validate_publish",
+    "nhom_nguon": "Mogi CCMN Bắc Từ Liêm Tr2"
+  },
+  "thong_tin": {
+    "tieu_de": "Bắc Từ Liêm 28m2 mới tinh full đồ ở luôn",
+    "gia": 4600000,
+    "dien_tich": 28,
+    "dia_chi": "Xuân Đỉnh, Phường Xuân Đỉnh, Quận Bắc Từ Liêm, Hà Nội",
+    "quan_huyen": "Bắc Từ Liêm",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Bắc Từ Liêm 28m2 mới tinh full đồ ở luôn\n---Cho Thuê Chung Cư Mini Mới Xây, Khép Kín, Không Chung Chủ,Tự Do Thời Gian.\n--Địa Chỉ: Ngõ 333 Xuân Đỉnh-Quận Bắc Từ Liêm\n--Giáp Các Tuyến Phố Lớn Võ Chí Công, Xuân La, Lạc Long Quân, Phạm Văn Đồng, Nguyễn Hoàng Tôn\n- Nhà Gần Siêu Thị,Chợ Dân Sinh,Trường Mầm Non Cấp 1-2 -3,Bến Xe Bus Chỉ Cách 1p Đi Bộ\n-Căn Hộ Có Cửa Sổ Rộng, Thoáng Mát Không Bị Che Chắn Nên Rất Nhiều Ánh Sáng Tự Nhiên.\n-- Nội Thất Mới Tinh Và Đầy Đủ Bao Gồm:\n-Điều Hoà, Nóng Lạnh, Tủ Lạnh\nTủ Quần Áo ,Bàn Ghế,Giường Chăn Ga Gối Đệm, Kệ Bếp,Bồn Rửa, Máy Giặt, Máy Sấy Chung...\n- Quý Khách Chỉ Việc Xách Vali Vào Ở.\n-Nhà Gần Trụ Sở Công An Phường Nên An Ninh Đảm Bảo.\n--Có Trang Bị Khóa Cổng Vân Tay\n- Camera An Ninh 24/7 , Hệ Thống PCCC Được Kiểm Duyệt Của Cục Cảnh Sát Phòng Cháy.\n-Chỗ Gửi Xe Rộng Rãi Ở Tầng 1 Và Hoàn Toàn Miễn Phí.\n-- Thanh Toán 1 Tháng 1.\n+ Giá Chỉ 4tr6/Tháng\n+ CAM KẾT HÌNH ẢNH VÀ THÔNG TIN CHUẨN XÁC.\n- -Số Lượng Phòng Có Hạn.\n--Xin Hãy Gọi Luôn 24/24 Để Được Hỗ Trợ Và Xem Phòng Miễn Phí.\n-- Miễn Trung Gian & Quảng Cáo .\n--Trân Trọng!!!",
+    "tien_ich": [
+      "dieu_hoa",
+      "nong_lanh",
+      "may_giat",
+      "tu_lanh",
+      "ban_cong",
+      "bep",
+      "giuong",
+      "tu_quan_ao"
+    ],
+    "khong_chung_chu": true,
+    "gio_giac_tu_do": true
+  },
+  "vi_tri": {
+    "lat": 21.058,
+    "lng": 105.755,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 2.1,
+    "khoang_cach_cs2_km": 3,
+    "khoang_cach_cs3_km": 59.4,
+    "co_so_gan_nhat": "CS1",
+    "thoi_gian_di_xe_phut": 7
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "Liên hệ qua bài viết",
+    "facebook": ""
+  },
+  "anh": [
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/10/30/225/b72584586e7149eeb3002ce97d51586a.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/10/30/226/89c2a2df770b46c1b0beace7baa7979a.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/10/30/227/7f09807ae0614a03929fc436f8988b5e.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/10/30/228/8d3a8dac949a4634ba49f514bfa49694.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/10/30/229/6d438ec957e64d56a4d4c56ec6c689ed.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/10/30/220/93296bb9070f4a6583746330c7d0fb36.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}

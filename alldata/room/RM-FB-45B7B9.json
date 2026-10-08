@@ -1,0 +1,84 @@
+{
+  "ma_phong": "RM-FB-45B7B9",
+  "nguon": "facebook",
+  "url_nguon": "https://www.facebook.com/groups/HaUITimPhongTro/posts/1766497164642913/",
+  "ngay_cao": "2026-10-08T02:10:11.350Z",
+  "ngay_cap_nhat": "2026-10-08T02:10:11.350Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "100% Khử định danh PII, nguồn nhóm công khai",
+    "chong_spam": "Đã qua cổng kiểm định pipeline staging",
+    "da_kiem_tra_trung": true,
+    "sha256_noi_dung": "75899850d3886b56031ed24add3ebb773b78b749ec231360d9daa0138a7d845d"
+  },
+  "kiem_dinh": {
+    "link": {
+      "ok": true,
+      "reason": "Permalink mở được (HTTP 200)",
+      "at": "2026-10-08T02:00:22.679Z"
+    },
+    "pipeline": "pipeline_crawl_validate_publish",
+    "nhom_nguon": "HaUI - Tìm Phòng Trọ (71.9K tv)"
+  },
+  "thong_tin": {
+    "tieu_de": "Phòng gác xép, nội thất như ảnh, có ban công, thang máy, ở ngay",
+    "gia": 3300000,
+    "dien_tich": null,
+    "dia_chi": "Khu vực tu hoàng, Nam Từ Liêm, Hà Nội (gần HaUI CS1/CS2)",
+    "quan_huyen": "Nam Từ Liêm",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "35 Tu Hoàng ĐỐI DIỆN ĐẠI HỌC CÔNG NGHIỆP\nPhòng gác xép, nội thất như ảnh, có ban công, thang máy, ở ngay\nGiá 3tr3\nLh 0896580629",
+    "tien_ich": [
+      "thang_may",
+      "ban_cong",
+      "gac_xep"
+    ],
+    "khong_chung_chu": false,
+    "gio_giac_tu_do": false
+  },
+  "vi_tri": {
+    "lat": 21.0475,
+    "lng": 105.7335,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 0.7,
+    "khoang_cach_cs2_km": 1.8,
+    "khoang_cach_cs3_km": 58.9,
+    "co_so_gan_nhat": "CS1",
+    "thoi_gian_di_xe_phut": 2
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "0896580629",
+    "facebook": "https://www.facebook.com/groups/HaUITimPhongTro/posts/1766497164642913/"
+  },
+  "anh": [
+    {
+      "url_goc": "/photos/RM-FB-45B7B9_photo_1.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng FB"
+    },
+    {
+      "url_goc": "/photos/RM-FB-45B7B9_photo_2.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng FB"
+    },
+    {
+      "url_goc": "/photos/RM-FB-45B7B9_photo_3.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng FB"
+    },
+    {
+      "url_goc": "/photos/RM-FB-45B7B9_photo_4.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng FB"
+    },
+    {
+      "url_goc": "/photos/RM-FB-45B7B9_photo_5.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng FB"
+    },
+    {
+      "url_goc": "/photos/RM-FB-45B7B9_photo_6.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng FB"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}

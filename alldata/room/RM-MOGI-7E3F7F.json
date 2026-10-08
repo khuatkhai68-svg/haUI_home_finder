@@ -1,0 +1,74 @@
+{
+  "ma_phong": "RM-MOGI-7E3F7F",
+  "nguon": "mogi",
+  "url_nguon": "https://mogi.vn/quan-cau-giay/thue-phong-tro-khu-nha-tro/phong-tro-chung-cu-mini-30m2-4tr5-co-thuong-luong-id22565511",
+  "ngay_cao": "2026-10-08T02:11:11.320Z",
+  "ngay_cap_nhat": "2026-10-08T02:11:11.320Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "Nguồn niêm yết công khai mogi.vn",
+    "chong_spam": "Đã qua cổng kiểm định pipeline staging",
+    "da_kiem_tra_trung": true,
+    "sha256_noi_dung": "cdaf886563b01bf577890130e190d8c5566b217a5f56bf3a6368728ffb4728df"
+  },
+  "kiem_dinh": {
+    "link": {
+      "ok": true,
+      "reason": "HTTP 200 OK, tin còn hiệu lực (Playwright live DOM)",
+      "at": "2026-10-08T02:08:53.835Z"
+    },
+    "pipeline": "pipeline_crawl_validate_publish",
+    "nhom_nguon": "Mogi Cầu Giấy Tr3"
+  },
+  "thong_tin": {
+    "tieu_de": "Phòng trọ chung cư mini 30m2 4tr5 có thương lượng",
+    "gia": 4500000,
+    "dien_tich": 30,
+    "dia_chi": "Dương Quảng Hàm, Phường Quan Hoa, Quận Cầu Giấy, Hà Nội",
+    "quan_huyen": "Cầu Giấy",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Phòng trọ chung cư mini 30m2 4tr5 có thương lượng\nPhòng khép kín mới sạch sẽ\nĐầy đủ nội thất như ảnh có ban công phơi đồ\nđể xe tầng 1 có camera cửa ra vào vân tay an ninh\nkhông chung chủ\nsố 6 ngách 9/49/165 Dương Quảng Hàm Cầu Giấy\nqua xem trực tiếp gọi 0337897722 hoặc ib zalo 0392900403",
+    "tien_ich": [
+      "ban_cong"
+    ],
+    "khong_chung_chu": true,
+    "gio_giac_tu_do": false
+  },
+  "vi_tri": {
+    "lat": 21.032,
+    "lng": 105.795,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 6.7,
+    "khoang_cach_cs2_km": 7.9,
+    "khoang_cach_cs3_km": 55.6,
+    "co_so_gan_nhat": "CS1",
+    "thoi_gian_di_xe_phut": 23
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "0337897722",
+    "facebook": ""
+  },
+  "anh": [
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/05/24/444/e1ca03b9006e4f0882ad1b163c3f5180.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/05/24/445/a6d55c30b46f4948994aff699ccea39a.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/05/24/446/5136c5b332484a018c1762d531e3ae46.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/05/24/447/790d66c4593247b4a96aa72136578a23.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}

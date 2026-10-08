@@ -1,0 +1,71 @@
+{
+  "ma_phong": "RM-MOGI-871C65",
+  "nguon": "mogi",
+  "url_nguon": "https://mogi.vn/quan-bac-tu-liem/thue-phong-tro-khu-nha-tro/nha-chinh-chu-cho-thue-tai-minh-khai-bac-tu-liem-id21766176",
+  "ngay_cao": "2026-10-08T02:10:22.534Z",
+  "ngay_cap_nhat": "2026-10-08T02:10:22.534Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "Nguồn niêm yết công khai mogi.vn",
+    "chong_spam": "Đã qua cổng kiểm định pipeline staging",
+    "da_kiem_tra_trung": true,
+    "sha256_noi_dung": "5f6b97c37195a7ca64a434c1696befed77419fc8c4d06d9ae6404801ad84f1f8"
+  },
+  "kiem_dinh": {
+    "link": {
+      "ok": true,
+      "reason": "HTTP 200 OK, tin còn hiệu lực (Playwright live DOM)",
+      "at": "2026-10-08T02:06:00.163Z"
+    },
+    "pipeline": "pipeline_crawl_validate_publish",
+    "nhom_nguon": "Mogi Bắc Từ Liêm Tr4"
+  },
+  "thong_tin": {
+    "tieu_de": "Nhà chính chủ cho thuê tại Minh Khai - Bắc Từ Liêm",
+    "gia": 1999000,
+    "dien_tich": 40,
+    "dia_chi": "Phú Minh, Phường Minh Khai, Quận Bắc Từ Liêm, Hà Nội",
+    "quan_huyen": "Bắc Từ Liêm",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Nhà chính chủ cho thuê tại Minh Khai - Bắc Từ Liêm\nCho thuê nhà cấp 4, diện tích 40 mét vuông. Gần Đại học Công nghiệp, Đại học mỏ, Học viện tài chính...\nĐịa chỉ phúc lý 3, phường Minh Khai, Bắc Từ Liêm. Nhà cách đường 60 m khoảng 20 m. Ô tô vào được. Có điều hoà, nóng lạnh. Giá 2 triệu.\nLiên hệ Chi Dung: 0983369263/ Anh Toàn 0989357583",
+    "tien_ich": [
+      "dieu_hoa",
+      "nong_lanh"
+    ],
+    "khong_chung_chu": false,
+    "gio_giac_tu_do": false
+  },
+  "vi_tri": {
+    "lat": 21.0537,
+    "lng": 105.7351,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 0,
+    "khoang_cach_cs2_km": 1.3,
+    "khoang_cach_cs3_km": 59.5,
+    "co_so_gan_nhat": "CS1",
+    "thoi_gian_di_xe_phut": 1
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "0983369263",
+    "facebook": ""
+  },
+  "anh": [
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2022/08/07/144/9f34fe13126043668a505908d04823a9.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2022/08/07/145/9ab40c5808184bc0891b5432c1ff8a5d.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2022/08/07/146/af72a0563305421d8643e34a6f0151ca.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}

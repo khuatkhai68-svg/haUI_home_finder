@@ -1,0 +1,86 @@
+{
+  "ma_phong": "RM-MOGI-801B43",
+  "nguon": "mogi",
+  "url_nguon": "https://mogi.vn/huyen-hoai-duc/thue-can-ho-chung-cu/chinh-chu-cho-thue-chung-cu-mini-cao-cap-gia-sinh-vien-id22459840",
+  "ngay_cao": "2026-10-08T02:11:22.788Z",
+  "ngay_cap_nhat": "2026-10-08T02:11:22.788Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "Nguồn niêm yết công khai mogi.vn",
+    "chong_spam": "Đã qua cổng kiểm định pipeline staging",
+    "da_kiem_tra_trung": true,
+    "sha256_noi_dung": "a2bb6791673517bec234befd83f6855ae2a31b72d5f2506dc762052bf3fd5b4f"
+  },
+  "kiem_dinh": {
+    "link": {
+      "ok": true,
+      "reason": "HTTP 200 OK, tin còn hiệu lực (Playwright live DOM)",
+      "at": "2026-10-08T02:10:01.962Z"
+    },
+    "pipeline": "pipeline_crawl_validate_publish",
+    "nhom_nguon": "Mogi CCMN Hoài Đức"
+  },
+  "thong_tin": {
+    "tieu_de": "Chính chủ cho thuê chung cư mini cao cấp- giá sinh viên",
+    "gia": 3200000,
+    "dien_tich": 50,
+    "dia_chi": "Lê Trọng Tấn, Xã Di Trạch, Huyện Hoài Đức, Hà Nội",
+    "quan_huyen": "Hoài Đức",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Chính chủ cho thuê chung cư mini cao cấp- giá sinh viên\nCho thuê chung cư mini cao cấp- giá sinh viên-0973.345.562\n💵Giá từ 3,2tr ☘️Rộng 30 - 50m2 – thoáng – rộng – đẹp\n🛵Địa chỉ: Khu Đô thị Vân Canh (gần trường Cao đẳng FPT, Đông Á, ĐH Công Nghiệp). Nội thất cơ bản: Điều hoà, nóng lạnh, giường tủ, bàn bếp, VSKK.\n💧Nước 25k/ khối 💡Điện 3.5k/ số Dịch vụ 100k (Máy giặt, vệ sinh chung)\n⏰Giờ giấc tự do, không chung chủ. ☎️ LH chính chủ: 0973.345.562- Vân Anh",
+    "tien_ich": [
+      "dieu_hoa",
+      "nong_lanh",
+      "may_giat",
+      "bep",
+      "giuong"
+    ],
+    "khong_chung_chu": true,
+    "gio_giac_tu_do": true
+  },
+  "vi_tri": {
+    "lat": 21.052,
+    "lng": 105.715,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 2.1,
+    "khoang_cach_cs2_km": 1.6,
+    "khoang_cach_cs3_km": 59.9,
+    "co_so_gan_nhat": "CS2",
+    "thoi_gian_di_xe_phut": 6
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "0973345562",
+    "facebook": ""
+  },
+  "anh": [
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/01/03/093/c4e2888750de41679e9f4e044a18d469.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/01/03/092/56f82c4249ec4ab1bf4e42cef771f0a6.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/01/03/093/f810bc8e8a1045f590e80efd87da42d6.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/01/03/094/8d5de4e8baf144e4be5058440fa77398.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/01/03/096/a9462b7a6cdf4d41828c0160ab170ce3.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/01/03/097/a1b8ded26f8f4d6085e1e387194c9940.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}

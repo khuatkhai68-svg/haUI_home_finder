@@ -1,0 +1,89 @@
+{
+  "ma_phong": "RM-MOGI-537A5F",
+  "nguon": "mogi",
+  "url_nguon": "https://mogi.vn/quan-cau-giay/thue-phong-tro-khu-nha-tro/phong-dep-moi-full-do-pho-tran-cung-co-cua-so-thoang-id22478795",
+  "ngay_cao": "2026-10-08T02:11:13.979Z",
+  "ngay_cap_nhat": "2026-10-08T02:11:13.979Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "Nguồn niêm yết công khai mogi.vn",
+    "chong_spam": "Đã qua cổng kiểm định pipeline staging",
+    "da_kiem_tra_trung": true,
+    "sha256_noi_dung": "3923188f317821431fd4fa76f3d98531ddc0817f0bd6d1ff554426948b7cf634"
+  },
+  "kiem_dinh": {
+    "link": {
+      "ok": true,
+      "reason": "HTTP 200 OK, tin còn hiệu lực (Playwright live DOM)",
+      "at": "2026-10-08T02:09:03.834Z"
+    },
+    "pipeline": "pipeline_crawl_validate_publish",
+    "nhom_nguon": "Mogi Cầu Giấy Tr4"
+  },
+  "thong_tin": {
+    "tieu_de": "Phòng đẹp mới full đồ phố Trần Cung có cửa sổ thoáng",
+    "gia": 4300000,
+    "dien_tich": 18,
+    "dia_chi": "59 Trần Cung, Phường Nghĩa Tân, Quận Cầu Giấy, Hà Nội",
+    "quan_huyen": "Bắc Từ Liêm",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Phòng đẹp mới full đồ phố Trần Cung có cửa sổ thoáng\nĐ/C Ngõ 59 Trần Cung số nhà 1 ngay đầu ngõ - phố sầm uất gần Hoàng Quốc Việt\nDiện tích 18m2\nFull đồ có cửa sổ:\n✅ Điều hòa, nóng lạnh\n✅ Tủ quần áo, giường\n✅ Tủ lạnh\n✅Bàn ghế làm việc\n✅ Bếp từ, hút mùi, tủ bếp trên dưới\nNhà có hầm để xe rộng dãi, cửa cổng vân tay, cửa phòng vân tay\nWifi tốc độ cao, có camera an ninh 24/24\nDịch vụ:\nĐiện 4k/s\nNước 30k/m2\nMạng 100k/phòng\nDv chung 150k/người\nĐể xe free 2 xe",
+    "tien_ich": [
+      "dieu_hoa",
+      "nong_lanh",
+      "tu_lanh",
+      "ban_cong",
+      "bep",
+      "giuong",
+      "tu_quan_ao",
+      "wifi"
+    ],
+    "khong_chung_chu": false,
+    "gio_giac_tu_do": true
+  },
+  "vi_tri": {
+    "lat": 21.051,
+    "lng": 105.783,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 5,
+    "khoang_cach_cs2_km": 6,
+    "khoang_cach_cs3_km": 58,
+    "co_so_gan_nhat": "CS1",
+    "thoi_gian_di_xe_phut": 18
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "Liên hệ qua bài viết",
+    "facebook": ""
+  },
+  "anh": [
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/03/19/126/59eb5161f85642fbbd4249e8ef052743.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/03/19/129/f1b852b51af44bcca738dfc2aac8f1fe.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/03/19/129/7a837a814c0b412bb089bcdf5bc70007.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/03/19/120/6bdaa2496dbe4ca7a838d9bc6474b17a.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/03/19/121/f4775dc6d79046d798674b35266759ea.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/03/19/122/a725077eb9a248adbb468704313571bf.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}

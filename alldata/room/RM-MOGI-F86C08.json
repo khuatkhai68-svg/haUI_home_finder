@@ -1,0 +1,75 @@
+{
+  "ma_phong": "RM-MOGI-F86C08",
+  "nguon": "mogi",
+  "url_nguon": "https://mogi.vn/quan-bac-tu-liem/thue-phong-tro-khu-nha-tro/cho-thue-phong-tro-khep-khin-tai-bac-tu-liem-ha-noi-id21611675",
+  "ngay_cao": "2026-10-08T02:10:23.240Z",
+  "ngay_cap_nhat": "2026-10-08T02:10:23.240Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "Nguồn niêm yết công khai mogi.vn",
+    "chong_spam": "Đã qua cổng kiểm định pipeline staging",
+    "da_kiem_tra_trung": true,
+    "sha256_noi_dung": "1b3289432d688333070b448249456e82b7dd394ff8ad3bd608fecc77454ddb78"
+  },
+  "kiem_dinh": {
+    "link": {
+      "ok": true,
+      "reason": "HTTP 200 OK, tin còn hiệu lực (Playwright live DOM)",
+      "at": "2026-10-08T02:06:03.045Z"
+    },
+    "pipeline": "pipeline_crawl_validate_publish",
+    "nhom_nguon": "Mogi Bắc Từ Liêm Tr4"
+  },
+  "thong_tin": {
+    "tieu_de": "Cho thuê phòng trọ khép khín tại Bắc Từ Liêm Hà Nội",
+    "gia": 1200000,
+    "dien_tich": 14,
+    "dia_chi": "An Dương Vương, Phường Đông Ngạc, Quận Bắc Từ Liêm, Hà Nội",
+    "quan_huyen": "Bắc Từ Liêm",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Cho thuê phòng trọ khép khín tại Bắc Từ Liêm Hà Nội\nCho thuê phòng trọ khép khín,phòng có điều hòa bình nóng vệ sinh khép khín có chỗ để xe,an ninh tốt chủ nhà thân thiện",
+    "tien_ich": [
+      "dieu_hoa",
+      "nong_lanh"
+    ],
+    "khong_chung_chu": false,
+    "gio_giac_tu_do": false
+  },
+  "vi_tri": {
+    "lat": 21.058,
+    "lng": 105.755,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 2.1,
+    "khoang_cach_cs2_km": 3,
+    "khoang_cach_cs3_km": 59.4,
+    "co_so_gan_nhat": "CS1",
+    "thoi_gian_di_xe_phut": 7
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "Liên hệ qua bài viết",
+    "facebook": ""
+  },
+  "anh": [
+    {
+      "url_goc": "https://cloud.mogi.vn/images/rotate3/2022/05/02/489/0f1669f806e64a5b961a31c49fee3f74.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/rotate3/2022/05/02/480/58d17e9b120f49bcbcc472b3d686b59e.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/rotate1/2022/05/02/481/6aa344e86bca4b4ab94a6f2c128190c9.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/rotate3/2022/05/02/482/70ca8f005bf64c66a19cb715cca2e63d.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "ma_phong": "RM-MOGI-70D3D9",
+  "nguon": "mogi",
+  "url_nguon": "https://mogi.vn/quan-bac-tu-liem/thue-phong-tro-khu-nha-tro/cho-thue-phong-x-di-nh-full-do-vs-khep-kin-gio-tu-do-ko-chung-chu-id21508201",
+  "ngay_cao": "2026-10-08T02:10:25.248Z",
+  "ngay_cap_nhat": "2026-10-08T02:10:25.248Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "Nguồn niêm yết công khai mogi.vn",
+    "chong_spam": "Đã qua cổng kiểm định pipeline staging",
+    "da_kiem_tra_trung": true,
+    "sha256_noi_dung": "65e2c69b08175c9bd075161c3cbdd6d944274237c0394f2deb40a4f30db90929"
+  },
+  "kiem_dinh": {
+    "link": {
+      "ok": true,
+      "reason": "HTTP 200 OK, tin còn hiệu lực (Playwright live DOM)",
+      "at": "2026-10-08T02:06:07.386Z"
+    },
+    "pipeline": "pipeline_crawl_validate_publish",
+    "nhom_nguon": "Mogi Bắc Từ Liêm Tr4"
+  },
+  "thong_tin": {
+    "tieu_de": "Cho thuê phòng X.Đỉnh full đồ,VS khép kín, giờ tự do,ko chung chủ",
+    "gia": 3300000,
+    "dien_tich": 30,
+    "dia_chi": "Xuân Đỉnh, Phường Xuân Đỉnh, Quận Bắc Từ Liêm, Hà Nội",
+    "quan_huyen": "Bắc Từ Liêm",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Cho thuê phòng X.Đỉnh full đồ,VS khép kín, giờ tự do,ko chung chủ\nCòn 1 phòng duy nhất, full đồ (giường, tủ, bàn ghế, điều hoà, nóng lạnh, tủ lạnh…). Ban công, cửa sổ rộng sáng thoáng. Phòng rộng 30m, yên tĩnh, an ninh tốt, ô tô tải cách nhà 50m, xe ba gác vào tận cửa\nPhù hợp với những người thích yên tĩnh, sạch sẽ, tôn trọng sự riêng tư và lịch sự.\nVị trí thuận tiện với đầy đủ tiệc ích:\n- Cách công viên Hòa Bình, Phạm Văn Đồng, bến xe buýt Nam Thăng Long, chợ đầu mối và các siêu thị HC, Vinmart: 100m\n- Cách công viên Ngoại giao đoàn và khu Ngoại giao đoàn 200m\n- Cách Hồ Tây và đường Võ Chí Công, Nguyễn Văn Huyên: 300m\n- Gần các trường Đại học: Nội vụ, Tài chính chủ\nGiá thuê: 3,3tr/th\n- Tiền điện: 3,8k/số\n- Tiền nước, wf, vs chung: 200k/ng/th\nLH chính chủ: Vân Anh (0988823826)",
+    "tien_ich": [
+      "dieu_hoa",
+      "nong_lanh",
+      "ban_cong",
+      "giuong"
+    ],
+    "khong_chung_chu": false,
+    "gio_giac_tu_do": false
+  },
+  "vi_tri": {
+    "lat": 21.058,
+    "lng": 105.755,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 2.1,
+    "khoang_cach_cs2_km": 3,
+    "khoang_cach_cs3_km": 59.4,
+    "co_so_gan_nhat": "CS1",
+    "thoi_gian_di_xe_phut": 7
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "0988823826",
+    "facebook": ""
+  },
+  "anh": [
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2022/01/17/595/7796b133a9634f91bb9148667a123db5.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2022/01/17/598/92ee24000f934e7a8039b36d12589211.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2022/01/17/591/f8eb982a91734ba5b92084f48d145919.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2022/01/17/592/7f4e76f110044784a4acbf489979bca6.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2022/01/17/598/83120360bd264fad9719eb1cc2b0d9ec.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2022/01/17/590/6e895fccafa549028deada981b9e1475.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}

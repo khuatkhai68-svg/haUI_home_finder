@@ -1,0 +1,78 @@
+{
+  "ma_phong": "RM-MOGI-3AB65A",
+  "nguon": "mogi",
+  "url_nguon": "https://mogi.vn/quan-cau-giay/thue-phong-tro-khu-nha-tro/cho-thue-can-ho-1k1n-full-do-gan-tran-duy-hung-o-to-do-cua-thang-may-id22643497",
+  "ngay_cao": "2026-10-08T02:11:05.834Z",
+  "ngay_cap_nhat": "2026-10-08T02:11:05.834Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "Nguồn niêm yết công khai mogi.vn",
+    "chong_spam": "Đã qua cổng kiểm định pipeline staging",
+    "da_kiem_tra_trung": true,
+    "sha256_noi_dung": "3fcd932e5015ceeb815dcd1b05211a4b8acf1cfd6e28095ed5069fd65dc5f3f2"
+  },
+  "kiem_dinh": {
+    "link": {
+      "ok": true,
+      "reason": "HTTP 200 OK, tin còn hiệu lực (Playwright live DOM)",
+      "at": "2026-10-08T02:08:42.258Z"
+    },
+    "pipeline": "pipeline_crawl_validate_publish",
+    "nhom_nguon": "Mogi Cầu Giấy Tr3"
+  },
+  "thong_tin": {
+    "tieu_de": "Cho thuê căn hộ 1K1N full đồ gần Trần Duy Hưng, ô tô đỗ cửa, thang máy",
+    "gia": 6300000,
+    "dien_tich": 30,
+    "dia_chi": "Nguyễn Quốc Trị, Phường Trung Hòa, Quận Cầu Giấy, Hà Nội",
+    "quan_huyen": "Cầu Giấy",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Cho thuê căn hộ 1K1N full đồ gần Trần Duy Hưng, ô tô đỗ cửa, thang máy\nCăn hộ mặt đường Nguyễn Quốc Trị, ô tô đỗ cửa, cách bãi gửi xe 50m\nTòa nhà có thang máy, khóa vân tay\nĐi lại thuận tiện",
+    "tien_ich": [
+      "thang_may"
+    ],
+    "khong_chung_chu": false,
+    "gio_giac_tu_do": false
+  },
+  "vi_tri": {
+    "lat": 21.032,
+    "lng": 105.795,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 6.7,
+    "khoang_cach_cs2_km": 7.9,
+    "khoang_cach_cs3_km": 55.6,
+    "co_so_gan_nhat": "CS1",
+    "thoi_gian_di_xe_phut": 23
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "Liên hệ qua bài viết",
+    "facebook": ""
+  },
+  "anh": [
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/11/08/524/1b615fd1608e435ab4c2da90db094bdb.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/11/08/525/7e7330f4067d404a99051067fd66a3ec.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/11/08/526/0b3ce2c359304c81b14b7f39dbb4aebe.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/11/08/527/bff61cf5af28442bb392632fa26f7e25.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/11/08/528/cca7634eded641bda33be3057e534573.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}

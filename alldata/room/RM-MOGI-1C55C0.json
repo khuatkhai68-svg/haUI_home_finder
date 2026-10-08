@@ -1,0 +1,85 @@
+{
+  "ma_phong": "RM-MOGI-1C55C0",
+  "nguon": "mogi",
+  "url_nguon": "https://mogi.vn/huyen-hoai-duc/thue-can-ho-chung-cu/cho-thue-can-2pn-2wc-70m2-gia-9tr-thang-tai-t3-thang-long-capital-id22706350",
+  "ngay_cao": "2026-10-08T02:11:21.548Z",
+  "ngay_cap_nhat": "2026-10-08T02:11:21.548Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "Nguồn niêm yết công khai mogi.vn",
+    "chong_spam": "Đã qua cổng kiểm định pipeline staging",
+    "da_kiem_tra_trung": true,
+    "sha256_noi_dung": "05f248a05f082fa1c48768b170151d891d181b48ea7f1a7e90eee341fbf17977"
+  },
+  "kiem_dinh": {
+    "link": {
+      "ok": true,
+      "reason": "HTTP 200 OK, tin còn hiệu lực (Playwright live DOM)",
+      "at": "2026-10-08T02:09:58.801Z"
+    },
+    "pipeline": "pipeline_crawl_validate_publish",
+    "nhom_nguon": "Mogi CCMN Hoài Đức"
+  },
+  "thong_tin": {
+    "tieu_de": "Cho thuê căn 2PN, 2WC, 70m2, giá 9tr/tháng tại T3 Thăng Long Capital",
+    "gia": 9000000,
+    "dien_tich": 70,
+    "dia_chi": "Đại lộ Thăng Long, Xã An Khánh, Huyện Hoài Đức, Hà Nội",
+    "quan_huyen": "Hoài Đức",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Cho thuê căn 2PN, 2WC, 70m2, giá 9tr/tháng tại T3 Thăng Long Capital\nCho thuê căn hộ chung cư T3 Thăng Long Capital (chính chủ 100%).\nCó thể vào ở từ 15/9.\n+ Thiết kế hiện đại với 2 phòng ngủ rộng rãi.\n+ 2 toilet riêng biệt, thuận tiện cho sinh hoạt.\n+ Diện tích 70m², không gian sống thoáng đãng.\n+ Nội thất cơ bản (bàn ghế, điều hòa, giường tủ, nóng lạnh).\n+ Ban công hướng Đông mát mẻ.\nĐịa điểm xung quanh:\n- Gần siêu thị Winmart và T - Mart.\n- Công viên Thiên Đường Bảo Sơn, Công viên Nam An Khánh.\n- Trường Vinschool Thăng Long, Trường Mầm Non An Khánh B.\nLiên hệ xem nhà buổi tối hoặc cuối tuần sdt/zalo 0397220204",
+    "tien_ich": [
+      "dieu_hoa",
+      "nong_lanh",
+      "ban_cong",
+      "giuong"
+    ],
+    "khong_chung_chu": false,
+    "gio_giac_tu_do": false
+  },
+  "vi_tri": {
+    "lat": 21.052,
+    "lng": 105.715,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 2.1,
+    "khoang_cach_cs2_km": 1.6,
+    "khoang_cach_cs3_km": 59.9,
+    "co_so_gan_nhat": "CS2",
+    "thoi_gian_di_xe_phut": 6
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "0397220204",
+    "facebook": ""
+  },
+  "anh": [
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/09/04/191/334f26e309924193a74ae2b353a1b988.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/09/04/192/18b9b0ee51be4763ac380ff645e328d9.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/09/04/193/1c42acb1c8eb4b9481c7ff5b6a4d75cd.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/09/04/194/13db1d453aa2461d8e531e511a773b34.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/09/04/194/deeacf7475e94bbfb60ae235026ac1d7.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/project/thumb-detail/2024/12/19/461/7164e1b514244950a4c54ca28dce6c2c.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}

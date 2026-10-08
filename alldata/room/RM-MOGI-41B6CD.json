@@ -1,0 +1,85 @@
+{
+  "ma_phong": "RM-MOGI-41B6CD",
+  "nguon": "mogi",
+  "url_nguon": "https://mogi.vn/quan-cau-giay/thue-can-ho-dich-vu/chinh-chu-cho-thue-nha-ccmn-full-do-nha-moi-id22719922",
+  "ngay_cao": "2026-10-08T02:11:20.214Z",
+  "ngay_cap_nhat": "2026-10-08T02:11:20.214Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "Nguồn niêm yết công khai mogi.vn",
+    "chong_spam": "Đã qua cổng kiểm định pipeline staging",
+    "da_kiem_tra_trung": true,
+    "sha256_noi_dung": "ce75253aa8f69eac77d13e810e5edbe55f64eb83dcf1fed0ef20aa6dcb91eacc"
+  },
+  "kiem_dinh": {
+    "link": {
+      "ok": true,
+      "reason": "HTTP 200 OK, tin còn hiệu lực (Playwright live DOM)",
+      "at": "2026-10-08T02:09:42.137Z"
+    },
+    "pipeline": "pipeline_crawl_validate_publish",
+    "nhom_nguon": "Mogi CCMN Cầu Giấy Tr2"
+  },
+  "thong_tin": {
+    "tieu_de": "Chính chủ cho thuê nhà CCMN full đồ, nhà mới",
+    "gia": 6500000,
+    "dien_tich": 25,
+    "dia_chi": "Nguyễn Khang, Phường Yên Hòa, Quận Cầu Giấy, Hà Nội",
+    "quan_huyen": "Cầu Giấy",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Chính chủ cho thuê nhà CCMN full đồ, nhà mới\nCho thuê nhà ngõ 155 Cầu Giấy 6,5tr/tháng.\nNhà CCMN diện tích 25m2 khép kín full đồ:\n+ An ninh đảm bảo: khoá cổng vân tay, thẻ từ thang máy.\n+ Có chỗ để xe 2 xe/phòng; hệ thống PCCC đầy đủ chống cháy lan từng phòng.\n+ Giường tủ, điều hoà hai chiều, tủ lạnh, máy giặt, nóng lạnh, tủ bếp trên dưới, hút mùi.\n+ Điện 4k/số; nước 35k/m3; dịch vụ 200k/người; internet 100k/phòng.\n+ Giao thông thuận tiện, xung quanh an ninh đảm bảo.\nLiên hệ trực tiếp chính chủ: 0962858000 Mr Hùng\nCảm ơn mọi người đã đọc tin",
+    "tien_ich": [
+      "dieu_hoa",
+      "nong_lanh",
+      "may_giat",
+      "tu_lanh",
+      "thang_may",
+      "bep",
+      "giuong",
+      "wifi"
+    ],
+    "khong_chung_chu": false,
+    "gio_giac_tu_do": false
+  },
+  "vi_tri": {
+    "lat": 21.032,
+    "lng": 105.795,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 6.7,
+    "khoang_cach_cs2_km": 7.9,
+    "khoang_cach_cs3_km": 55.6,
+    "co_so_gan_nhat": "CS1",
+    "thoi_gian_di_xe_phut": 23
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "0962858000",
+    "facebook": ""
+  },
+  "anh": [
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/11/30/547/9faa81f49047493cadfb08981e85e019.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/rotate3/2025/11/30/546/d26fba5552c54b5b9decd994b4e2a5ff.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/11/30/548/40c86965b1be46d1aadbac6601f599f3.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/rotate3/2025/11/30/549/a82255b869fb4a6cbc56a026bf063833.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/rotate3/2025/11/30/548/dc0b92e675d848f9bb78c37cde9cc8d0.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}

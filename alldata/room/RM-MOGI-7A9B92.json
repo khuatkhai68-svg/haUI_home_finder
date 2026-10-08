@@ -1,0 +1,80 @@
+{
+  "ma_phong": "RM-MOGI-7A9B92",
+  "nguon": "mogi",
+  "url_nguon": "https://mogi.vn/quan-nam-tu-liem/thue-phong-tro-khu-nha-tro/cho-thue-phong-30m2-full-noi-that-khoa-van-tay-thang-may-me-tri-id22486083",
+  "ngay_cao": "2026-10-08T02:10:52.162Z",
+  "ngay_cap_nhat": "2026-10-08T02:10:52.162Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "Nguồn niêm yết công khai mogi.vn",
+    "chong_spam": "Đã qua cổng kiểm định pipeline staging",
+    "da_kiem_tra_trung": true,
+    "sha256_noi_dung": "59d6e1e3916f41aa7aa5bdfc421d304e5a4a19c3b19563ff3e52cab3f5d9880e"
+  },
+  "kiem_dinh": {
+    "link": {
+      "ok": true,
+      "reason": "HTTP 200 OK, tin còn hiệu lực (Playwright live DOM)",
+      "at": "2026-10-08T02:07:33.365Z"
+    },
+    "pipeline": "pipeline_crawl_validate_publish",
+    "nhom_nguon": "Mogi Nam Từ Liêm Tr4"
+  },
+  "thong_tin": {
+    "tieu_de": "Cho thuê phòng 30m2 full nội thất, khóa vân tay, thang máy Mễ Trì",
+    "gia": 5000000,
+    "dien_tich": 30,
+    "dia_chi": "Mễ Trì Thượng, Phường Mễ Trì, Quận Nam Từ Liêm, Hà Nội",
+    "quan_huyen": "Nam Từ Liêm",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Cho thuê phòng 30m2 full nội thất, khóa vân tay, thang máy Mễ Trì\nPhòng full nội thất: Điều hòa, nóng lạnh, tủ lạnh, giường đệm, bếp, tủ bếp, bàn ăn,tủ quần áo...\nGần điểm xe bus, trường học, gần chợ\nTòa nhà có thang máy, khóa vân tay đi lại tự do",
+    "tien_ich": [
+      "dieu_hoa",
+      "nong_lanh",
+      "tu_lanh",
+      "thang_may",
+      "bep",
+      "giuong",
+      "tu_quan_ao"
+    ],
+    "khong_chung_chu": false,
+    "gio_giac_tu_do": false
+  },
+  "vi_tri": {
+    "lat": 21.032,
+    "lng": 105.758,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 3.4,
+    "khoang_cach_cs2_km": 4.7,
+    "khoang_cach_cs3_km": 56.5,
+    "co_so_gan_nhat": "CS1",
+    "thoi_gian_di_xe_phut": 12
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "Liên hệ qua bài viết",
+    "facebook": ""
+  },
+  "anh": [
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/02/28/587/e74928e3ce714bc697023cf49d09116b.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/02/28/583/4fd29a9d79854f9f8363c91a5f7be1b3.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/02/28/585/78ea50ad4c65483ea967f8f29d73ccba.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/02/28/588/69bdf94221d2460e9b1882d6609262c6.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}

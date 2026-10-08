@@ -1,0 +1,82 @@
+{
+  "ma_phong": "RM-MOGI-7A2411",
+  "nguon": "mogi",
+  "url_nguon": "https://mogi.vn/quan-nam-tu-liem/thue-can-ho-chung-cu/cho-thue-can-ho-2-ngu-1-khach-full-noi-that-tai-nguyen-hoang-my-dinh-id22689327",
+  "ngay_cao": "2026-10-08T02:10:59.155Z",
+  "ngay_cap_nhat": "2026-10-08T02:10:59.155Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "Nguồn niêm yết công khai mogi.vn",
+    "chong_spam": "Đã qua cổng kiểm định pipeline staging",
+    "da_kiem_tra_trung": true,
+    "sha256_noi_dung": "c2f47a40979f496e7ff5af8635df05a88eb3c6f942a1e82ac11106621433f754"
+  },
+  "kiem_dinh": {
+    "link": {
+      "ok": true,
+      "reason": "HTTP 200 OK, tin còn hiệu lực (Playwright live DOM)",
+      "at": "2026-10-08T02:08:11.531Z"
+    },
+    "pipeline": "pipeline_crawl_validate_publish",
+    "nhom_nguon": "Mogi CCMN Nam Từ Liêm Tr2"
+  },
+  "thong_tin": {
+    "tieu_de": "Cho thuê Căn Hộ 2 Ngủ 1 Khách full nội thất tại Nguyễn Hoàng - Mỹ Đình",
+    "gia": 8499000,
+    "dien_tich": 60,
+    "dia_chi": "Nguyễn Hoàng, Phường Mỹ Đình 2, Quận Nam Từ Liêm, Hà Nội",
+    "quan_huyen": "Nam Từ Liêm",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Cho thuê Căn Hộ 2 Ngủ 1 Khách full nội thất tại Nguyễn Hoàng - Mỹ Đình\n- Căn hộ 2 NGỦ 1 KHÁCH FULL NỘI THẤT HIỆN ĐẠI\n- Nhà đẹp, diện tích rộng rãi\n- Giờ giấc tự do, ra vào bằng cửa cổng vân tay\n- Hệ thống phòng cháy chữa cháy đầy đủ\n- Cửa sổ lớn thoáng mát\n__________\nVị trí ngay bến xe Mỹ Đình - thuận tiện di chuyển sang các quận Trung tâm Hà Nội",
+    "tien_ich": [
+      "ban_cong"
+    ],
+    "khong_chung_chu": false,
+    "gio_giac_tu_do": true
+  },
+  "vi_tri": {
+    "lat": 21.032,
+    "lng": 105.758,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 3.4,
+    "khoang_cach_cs2_km": 4.7,
+    "khoang_cach_cs3_km": 56.5,
+    "co_so_gan_nhat": "CS1",
+    "thoi_gian_di_xe_phut": 12
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "Liên hệ qua bài viết",
+    "facebook": ""
+  },
+  "anh": [
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/06/08/247/38d121d7bd4c4e87b49e2710927d8077.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/06/08/248/a5f9b998990d4df984dc6ea8ae02c25a.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/06/08/249/aa554655ea8044f8b2ec8e1a5e42fe9c.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/06/08/249/60d018e8731044518e42f648bf6b8db6.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/06/08/240/268d84d7fb994f41a1328c5cbe6b4099.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/06/08/241/80109819818f4606a5674f6c68d61adc.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}

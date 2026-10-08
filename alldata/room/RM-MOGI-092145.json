@@ -1,0 +1,79 @@
+{
+  "ma_phong": "RM-MOGI-092145",
+  "nguon": "mogi",
+  "url_nguon": "https://mogi.vn/quan-cau-giay/thue-phong-tro-khu-nha-tro/cho-thue-phong-studio-tien-nghi-full-noi-that-id22612630",
+  "ngay_cao": "2026-10-08T02:11:06.541Z",
+  "ngay_cap_nhat": "2026-10-08T02:11:06.541Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "Nguồn niêm yết công khai mogi.vn",
+    "chong_spam": "Đã qua cổng kiểm định pipeline staging",
+    "da_kiem_tra_trung": true,
+    "sha256_noi_dung": "8e69aee9fecce173057ebdb18e8576326027a1cdd42fda8770d35a651058794e"
+  },
+  "kiem_dinh": {
+    "link": {
+      "ok": true,
+      "reason": "HTTP 200 OK, tin còn hiệu lực (Playwright live DOM)",
+      "at": "2026-10-08T02:08:45.112Z"
+    },
+    "pipeline": "pipeline_crawl_validate_publish",
+    "nhom_nguon": "Mogi Cầu Giấy Tr3"
+  },
+  "thong_tin": {
+    "tieu_de": "Cho Thuê Phòng STUDIO tiện nghi full nội thất",
+    "gia": 5200000,
+    "dien_tich": 28,
+    "dia_chi": "Mai Dịch, Phường Mai Dịch, Quận Cầu Giấy, Hà Nội",
+    "quan_huyen": "Cầu Giấy",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Cho Thuê Phòng STUDIO tiện nghi full nội thất\nChung cư Mini full nội thất\nGần Các trường Đại Học TM. Đại học Quốc Gia. Sân Khấu Điện Ảnh....\nPhòng full nội thất, có ban công\nBếp nấu ăn bên ngoài tách riêng với phòng ngủ\nGần Trường Gần Chợ. gần đường lớn tiện đi lại bắt xe buýt...",
+    "tien_ich": [
+      "ban_cong",
+      "bep"
+    ],
+    "khong_chung_chu": false,
+    "gio_giac_tu_do": false
+  },
+  "vi_tri": {
+    "lat": 21.032,
+    "lng": 105.795,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 6.7,
+    "khoang_cach_cs2_km": 7.9,
+    "khoang_cach_cs3_km": 55.6,
+    "co_so_gan_nhat": "CS1",
+    "thoi_gian_di_xe_phut": 23
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "Liên hệ qua bài viết",
+    "facebook": ""
+  },
+  "anh": [
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/08/07/397/a990ea40895f48bd935a613304931737.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/08/07/390/bc379ded03e24881bb5ee8607197839b.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/08/07/392/93e889742dde4ee4ab0eae48b7139a9d.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/08/07/394/123ebf816e1747c5b8a021690ffad772.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/08/07/395/db18637fe426425bae4d5d19e870a734.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}
