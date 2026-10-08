@@ -693,6 +693,17 @@ async function runCrawl() {
   let raws = [];
   try {
     const context = await browser.newContext({ userAgent: UA, locale: 'vi-VN', viewport: { width: 1366, height: 900 } });
+    // Data-saving mode: Chặn font, video, audio và tracker quảng cáo để tiết kiệm tối đa băng thông & dữ liệu
+    await context.route('**/*', (route) => {
+      const type = route.request().resourceType();
+      const url = route.request().url();
+      if (['font', 'media'].includes(type) ||
+          /google-analytics|doubleclick|googletagmanager|connect\.facebook\.net|clarity\.ms|hotjar/i.test(url)) {
+        return route.abort();
+      }
+      return route.continue();
+    });
+
     const fbRaw = await crawlFacebook(context, stats, existing);
     audit(`📥 FB thô có permalink hợp lệ: ${fbRaw.length}`);
     const ptRaw = await crawlPt123(context, stats, existing);
