@@ -1,0 +1,64 @@
+{
+  "ma_phong": "RM-FB-2DA509",
+  "nguon": "facebook",
+  "url_nguon": "https://www.facebook.com/groups/1896518147417522/posts/2821858088216852/",
+  "ngay_cao": "2026-10-08T03:14:10.615Z",
+  "ngay_cap_nhat": "2026-10-08T03:14:10.615Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "100% Khử định danh PII, nguồn nhóm công khai",
+    "chong_spam": "Đã qua cổng kiểm định pipeline staging",
+    "da_kiem_tra_trung": true,
+    "sha256_noi_dung": "91b65085d1b908cb2941cabc8be7372b24eaea2708aee0528ee48ff47b20db58"
+  },
+  "kiem_dinh": {
+    "link": {
+      "ok": true,
+      "reason": "Permalink mở được (HTTP 200)",
+      "at": "2026-10-08T02:59:35.080Z"
+    },
+    "pipeline": "pipeline_crawl_validate_publish",
+    "nhom_nguon": "Nhà trọ Nhổn - Nguyên Xá - Văn Trì - ĐH Công Nghiệp Hà Nội (80K tv)"
+  },
+  "thong_tin": {
+    "tieu_de": "Cho thuê phòng trọ 9.0 tr/tháng gần HaUI CS1 & CS2 (Nhổn - Bắc Từ Liêm)",
+    "gia": 8990000,
+    "dien_tich": null,
+    "dia_chi": "Khu vực nguyên xá, Bắc Từ Liêm, Hà Nội (gần HaUI CS1/CS2)",
+    "quan_huyen": "Bắc Từ Liêm",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Cho Thuê ccmn\nĐịa chỉ\nLai xá 2tr-2.2-2.5tr-2.8tr\n99 Cầu diễn 2.2-2.5-2.6-3tr\nPhú diễn 2.8-3.6tr Như Ảnh\nNguyên xá 3.3-3.6tr\nVân Canh 2.7-3.3tr\n80/21 Xuân Phương 2.5tr\nMỹ đình có nhiều khu vực….\nLh zalo 0369533591 tư Vấn",
+    "tien_ich": [],
+    "khong_chung_chu": false,
+    "gio_giac_tu_do": false
+  },
+  "vi_tri": {
+    "lat": 21.0555,
+    "lng": 105.738,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 0.4,
+    "khoang_cach_cs2_km": 1.4,
+    "khoang_cach_cs3_km": 59.6,
+    "co_so_gan_nhat": "CS1",
+    "thoi_gian_di_xe_phut": 1
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "0369533591",
+    "facebook": "https://www.facebook.com/groups/1896518147417522/posts/2821858088216852/"
+  },
+  "anh": [
+    {
+      "url_goc": "/photos/RM-FB-2DA509_photo_1.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng FB"
+    },
+    {
+      "url_goc": "/photos/RM-FB-2DA509_photo_2.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng FB"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}
