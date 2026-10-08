@@ -1,0 +1,85 @@
+{
+  "ma_phong": "RM-MOGI-A11FEA",
+  "nguon": "mogi",
+  "url_nguon": "https://mogi.vn/huyen-hoai-duc/thue-phong-tro-khu-nha-tro/can-cho-thue-phong-tro-gap-id22538609",
+  "ngay_cao": "2026-10-08T01:56:22.243Z",
+  "ngay_cap_nhat": "2026-10-08T01:56:22.243Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "Nguồn niêm yết công khai mogi.vn",
+    "chong_spam": "Đã qua cổng kiểm định pipeline staging",
+    "da_kiem_tra_trung": true,
+    "sha256_noi_dung": "c7169400c66a62a561a30615b811d767b08c87232a4f0c81ba05589e816752ef"
+  },
+  "kiem_dinh": {
+    "link": {
+      "ok": true,
+      "reason": "HTTP 200 OK, tin còn hiệu lực (Playwright live DOM)",
+      "at": "2026-10-08T01:47:36.949Z"
+    },
+    "pipeline": "pipeline_crawl_validate_publish",
+    "nhom_nguon": "Mogi Hoài Đức"
+  },
+  "thong_tin": {
+    "tieu_de": "Cần cho thuê phòng trọ gấp📢📢📢",
+    "gia": 3500000,
+    "dien_tich": 34,
+    "dia_chi": "Hậu Ái, Xã Vân Canh, Huyện Hoài Đức, Hà Nội",
+    "quan_huyen": "Hoài Đức",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Cần cho thuê phòng trọ gấp📢📢📢\n💥Cho thuê phòng trọ khép kín vừa hoàn thành, mới 100% sạch sẽ, thoáng mát, Có điều hòa mát, bình nóng lạnh. Tổng diện tích sử dụng 34m2 : mặt sàn 25m2, gác xép 9m2, có khu bếp riêng biêt ko lo mùi khi nấu ăn👍\n💥 Vị trí: gần đường 3.5, cách 50m ( lối ra đâm thẳng ra đường 3.5). Cách trường MN Vân Canh khu Hậu Ái 200m rất thuận lợi giao thông. Ô tô đỗ tận cửa. An ninh tốt, hàng xóm văn minh 🥰\n💥 Đối tượng cho thuê: gia đình sử dụng lâu dài\n💥 Liên hệ: Mr Tuấn 0904 046 277\nMr Dũng: 0389 713 710",
+    "tien_ich": [
+      "dieu_hoa",
+      "nong_lanh",
+      "bep",
+      "gac_xep"
+    ],
+    "khong_chung_chu": false,
+    "gio_giac_tu_do": false
+  },
+  "vi_tri": {
+    "lat": 21.052,
+    "lng": 105.715,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 2.1,
+    "khoang_cach_cs2_km": 1.6,
+    "khoang_cach_cs3_km": 59.9,
+    "co_so_gan_nhat": "CS2",
+    "thoi_gian_di_xe_phut": 6
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "0904046277",
+    "facebook": ""
+  },
+  "anh": [
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/04/16/322/037172a656374cd8a5cc05096d74a69f.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/04/16/323/12d05e28165a4bf59952d33191d358b5.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/04/16/324/ed997f8f6f7443a3b7c7f5ea62527d31.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/04/16/325/e3def2aa049a4572ab3a3b306d00e4bb.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/04/16/326/2a7f8e881f754cc399a0dbdcabafed65.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/04/16/327/e0a097fcda7c4967acfe7fbe4bdf49b7.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}

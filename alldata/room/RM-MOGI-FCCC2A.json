@@ -1,0 +1,72 @@
+{
+  "ma_phong": "RM-MOGI-FCCC2A",
+  "nguon": "mogi",
+  "url_nguon": "https://mogi.vn/quan-nam-tu-liem/thue-phong-tro-khu-nha-tro/cho-thue-phong-tro-gia-re-2-5-khep-kin-my-dinh-nam-tu-liem-id22718799",
+  "ngay_cao": "2026-10-08T01:56:03.067Z",
+  "ngay_cap_nhat": "2026-10-08T01:56:03.067Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "Nguồn niêm yết công khai mogi.vn",
+    "chong_spam": "Đã qua cổng kiểm định pipeline staging",
+    "da_kiem_tra_trung": true,
+    "sha256_noi_dung": "16b8335c53e27f934439a9572447a2a75724f9fcd38b4ea124cb69cb1f2d9308"
+  },
+  "kiem_dinh": {
+    "link": {
+      "ok": true,
+      "reason": "HTTP 200 OK, tin còn hiệu lực (Playwright live DOM)",
+      "at": "2026-10-08T01:46:41.029Z"
+    },
+    "pipeline": "pipeline_crawl_validate_publish",
+    "nhom_nguon": "Mogi Nam Từ Liêm Tr2"
+  },
+  "thong_tin": {
+    "tieu_de": "Cho thuê phòng trọ giá rẻ 2,5 khép kín, Mỹ Đình, Nam Từ Liêm",
+    "gia": 2500000,
+    "dien_tich": 20,
+    "dia_chi": "Đỗ Xuân Hợp, Phường Mỹ Đình 1, Quận Nam Từ Liêm, Hà Nội",
+    "quan_huyen": "Nam Từ Liêm",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Cho thuê phòng trọ giá rẻ 2,5 khép kín, Mỹ Đình, Nam Từ Liêm\nCho thuê phòng trọ giá rẻ 26 ngõ 16/ 33 Đỗ Xuân Hợp, Mỹ Đình 1, Nam Từ Liêm Hà Nội.\nTrống phòng ở luôn phòng giá 2,5 triệu/tháng.\nMặt sau sân vận động Mỹ Đình, gần cao đẳng Bách Khoa, cao đẳng FPT, Đại học Đông Á, Đại học Thành Đô, cao đẳng Đại Việt, cao đẳng Bách Nghệ, Đại học Thương Mại, Sân Khấu Điện Ảnh...\nNội thất: Đầy đủ điều hòa, nóng lạnh, giường tủ...\nDịch vụ:\nGồm: Điện: 4000k/kw, nước 120k/ người, DV 150k /người tháng.\nLiên hệ: A Nguyên 0904 525 414",
+    "tien_ich": [
+      "dieu_hoa",
+      "nong_lanh",
+      "giuong"
+    ],
+    "khong_chung_chu": false,
+    "gio_giac_tu_do": false
+  },
+  "vi_tri": {
+    "lat": 21.032,
+    "lng": 105.758,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 3.4,
+    "khoang_cach_cs2_km": 4.7,
+    "khoang_cach_cs3_km": 56.5,
+    "co_so_gan_nhat": "CS1",
+    "thoi_gian_di_xe_phut": 12
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "0904525414",
+    "facebook": ""
+  },
+  "anh": [
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/11/24/394/098bae04b81546f290fc203d7a38e85b.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/11/24/395/b3bf143330fc488eadbb59e3126b9374.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/11/24/395/07806933fac94ea29222ca37aa5b348e.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}

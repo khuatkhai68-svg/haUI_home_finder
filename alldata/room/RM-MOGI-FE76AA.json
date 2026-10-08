@@ -1,0 +1,70 @@
+{
+  "ma_phong": "RM-MOGI-FE76AA",
+  "nguon": "mogi",
+  "url_nguon": "https://mogi.vn/huyen-hoai-duc/thue-phong-tro-khu-nha-tro/phong-tro-2-6-tr-tra-m-troi-ga-n-tan-tay-do-tha-nh-do-cong-nghie-p-id22719489",
+  "ngay_cao": "2026-10-08T01:56:20.070Z",
+  "ngay_cap_nhat": "2026-10-08T01:56:20.070Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "Nguồn niêm yết công khai mogi.vn",
+    "chong_spam": "Đã qua cổng kiểm định pipeline staging",
+    "da_kiem_tra_trung": true,
+    "sha256_noi_dung": "e5d0668cdac9251eea04f25b287a6be916965bf20bc2f112781607e3fbef3204"
+  },
+  "kiem_dinh": {
+    "link": {
+      "ok": true,
+      "reason": "HTTP 200 OK, tin còn hiệu lực (Playwright live DOM)",
+      "at": "2026-10-08T01:47:30.051Z"
+    },
+    "pipeline": "pipeline_crawl_validate_publish",
+    "nhom_nguon": "Mogi Hoài Đức"
+  },
+  "thong_tin": {
+    "tieu_de": "PHÒNG TRỌ 2,6 tr Trạm Trôi. gần Tân tây đô, thành đô, Công Nghiệp.",
+    "gia": 2599000,
+    "dien_tich": 24,
+    "dia_chi": "Cao Xá 1, Thị trấn Trạm Trôi, Huyện Hoài Đức, Hà Nội",
+    "quan_huyen": "Hoài Đức",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "PHÒNG TRỌ 2,6 tr Trạm Trôi. gần Tân tây đô, thành đô, Công Nghiệp.\nNHÀ SỐ 15 CAO TRUNG, THỊ TRẤN TRÔI, HOÀI ĐỨC TRỐNG PHÒNG\n201 VSC GIÁ 2,6 TR ở luôn\nGần Đại học công nghiệp, Cao đẳng FPT, Đại học Đông Á, Đại học Thành Đô, Cao đẳng Đại Việt p, Cao đẳng Bách Nghệ, Học viện chính sách và phát triển....\nkệ bếp, giường tủ, bàn ghế, tủ lạnh riêng trong phòng.\nNội thất: Full nội thất như hình (100% thật)\n- Ô tô đỗ cửa miễn phí\n- Không giới hạn người ở, không giới hạn xe\n- Cho nuôi pet\n- Giờ giấc tự do, khoá vân tay, máy giặt chung , xe để miễn phí tầng 1\n- thang bộ\n- Không chung chủ\n- Camera an ninh\n- Wifi đầy đủ.\nDịch vụ:\nGồm: Điện: 4000k/kw, Nước 120k/ người, dv 150k /người tháng\nLiên hệ: Nguyên 096 9153598, Phượng 0985991384",
+    "tien_ich": [
+      "may_giat",
+      "tu_lanh",
+      "bep",
+      "giuong",
+      "wifi"
+    ],
+    "khong_chung_chu": true,
+    "gio_giac_tu_do": true
+  },
+  "vi_tri": {
+    "lat": 21.052,
+    "lng": 105.715,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 2.1,
+    "khoang_cach_cs2_km": 1.6,
+    "khoang_cach_cs3_km": 59.9,
+    "co_so_gan_nhat": "CS2",
+    "thoi_gian_di_xe_phut": 6
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "0969153598",
+    "facebook": ""
+  },
+  "anh": [
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/11/28/197/e4e3636885c446b6845423f4b82fa838.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/11/28/198/93b18071b4304da6b8d909d8f36aa8a3.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}

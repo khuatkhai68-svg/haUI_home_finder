@@ -1,0 +1,79 @@
+{
+  "ma_phong": "RM-MOGI-A903F7",
+  "nguon": "mogi",
+  "url_nguon": "https://mogi.vn/quan-nam-tu-liem/thue-phong-tro-khu-nha-tro/cho-thue-phong-tro-gia-re-2-7-tr-so-39-ngo-82-phu-do-nam-tu-liem-ha-id22719487",
+  "ngay_cao": "2026-10-08T01:56:00.650Z",
+  "ngay_cap_nhat": "2026-10-08T01:56:00.650Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "Nguồn niêm yết công khai mogi.vn",
+    "chong_spam": "Đã qua cổng kiểm định pipeline staging",
+    "da_kiem_tra_trung": true,
+    "sha256_noi_dung": "ccdb4a26bd80be27535d811283d5db933cabff4c7f5ec17011d5e886474d8797"
+  },
+  "kiem_dinh": {
+    "link": {
+      "ok": true,
+      "reason": "HTTP 200 OK, tin còn hiệu lực (Playwright live DOM)",
+      "at": "2026-10-08T01:46:34.406Z"
+    },
+    "pipeline": "pipeline_crawl_validate_publish",
+    "nhom_nguon": "Mogi Nam Từ Liêm Tr1"
+  },
+  "thong_tin": {
+    "tieu_de": "Cho thuê phòng trọ giá rẻ 2,7 tr SỐ 39 NGÕ 82 PHÚ ĐÔ, NAM TỪ LIÊM, HÀ",
+    "gia": 2700000,
+    "dien_tich": 20,
+    "dia_chi": "Phú Đô, Phường Phú Đô, Quận Nam Từ Liêm, Hà Nội",
+    "quan_huyen": "Nam Từ Liêm",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Cho thuê phòng trọ giá rẻ 2,7 tr SỐ 39 NGÕ 82 PHÚ ĐÔ, NAM TỪ LIÊM, HÀ\nCHO THUÊ PHÒNG TRỌ 2,7 tr SỐ 39 NGÕ 82 PHÚ ĐÔ, NAM TỪ LIÊM, HÀ NỘI\nTrống phòng ở luôn giá 2,7 vệ sinh chung 1 phòng\nVị trí: Gần SVĐ Mỹ Đình, chợ, Cao đẳng Bách Khoa, FPT, Đại học Đông Á, Thương Mại, SKĐA...\nTrống phòng ở luôn giá 2, 7vệ sinh chung 1 phòng\nTiện ích:\nGiờ giấc tự do, không chung chủ\nKhóa vân tay, camera an ninh\nMáy giặt chung tầng 1, để xe miễn phí\nWifi mạnh, ô tô đỗ cửa\nKhu dân cư văn minh, an ninh tốt\nNội thất đầy đủ như hình (100% thật)\nChi phí:\nĐiện: 3.800đ/kWh\nNước: 100k/người\nDV: 150k/người\nƯu đãi: Đóng 1 coc 1\nLiên hệ A. Nguyên: 0904 525 414",
+    "tien_ich": [
+      "may_giat",
+      "wifi"
+    ],
+    "khong_chung_chu": true,
+    "gio_giac_tu_do": true
+  },
+  "vi_tri": {
+    "lat": 21.032,
+    "lng": 105.758,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 3.4,
+    "khoang_cach_cs2_km": 4.7,
+    "khoang_cach_cs3_km": 56.5,
+    "co_so_gan_nhat": "CS1",
+    "thoi_gian_di_xe_phut": 12
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "0904525414",
+    "facebook": ""
+  },
+  "anh": [
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/11/28/053/eb305197591c4c00aa4c9b1f24d1f4ec.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/11/28/054/d7ced7c63c86401ebdf864029024639e.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/11/28/055/88c3ae4e32b740f690ea948a5e7c97d9.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/11/28/055/c759acd7cc40465388c8a152d370aa6a.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/11/28/056/40f97dc082a04e41bfebf9942453a43b.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}

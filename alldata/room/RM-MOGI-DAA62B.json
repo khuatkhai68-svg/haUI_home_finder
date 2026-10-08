@@ -1,0 +1,78 @@
+{
+  "ma_phong": "RM-MOGI-DAA62B",
+  "nguon": "mogi",
+  "url_nguon": "https://mogi.vn/huyen-hoai-duc/thue-phong-tro-khu-nha-tro/cho-thue-phong-tro-cho-lai-xa-ngay-dh-thanh-do-dh-cong-nghiep-3-7tr-id22191504",
+  "ngay_cao": "2026-10-08T01:56:23.999Z",
+  "ngay_cap_nhat": "2026-10-08T01:56:23.999Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "Nguồn niêm yết công khai mogi.vn",
+    "chong_spam": "Đã qua cổng kiểm định pipeline staging",
+    "da_kiem_tra_trung": true,
+    "sha256_noi_dung": "e7857fe6716139589bd93b2d10fed8f99f1c36fb9731dfc480718b2493f8ba0f"
+  },
+  "kiem_dinh": {
+    "link": {
+      "ok": true,
+      "reason": "HTTP 200 OK, tin còn hiệu lực (Playwright live DOM)",
+      "at": "2026-10-08T01:47:42.498Z"
+    },
+    "pipeline": "pipeline_crawl_validate_publish",
+    "nhom_nguon": "Mogi Hoài Đức"
+  },
+  "thong_tin": {
+    "tieu_de": "Cho thuê phòng trọ Chợ Lai Xá, ngay ĐH Thành Đô, ĐH Công Nghiệp, 3.7tr",
+    "gia": 3699000,
+    "dien_tich": 20,
+    "dia_chi": "Đường 32, Xã Kim Chung, Huyện Hoài Đức, Hà Nội",
+    "quan_huyen": "Hoài Đức",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Cho thuê phòng trọ Chợ Lai Xá, ngay ĐH Thành Đô, ĐH Công Nghiệp, 3.7tr\nChính chủ cho thuê phòng trọ Lai Xá, Full đồ: giá: 3tr7 – 4tr.\n- Phòng mới, thoáng sáng, gần chợ, điểm đón xe buýt, 2 trường Đại Học.\n- Nội thất: điều hòa, tủ lạnh, nóng lạnh, máy giặt, gác xép, tủ quần áo, bàn bếp, hút mùi, tủ bếp, thang máy, khóa vân tay.\n- Dịch vụ: Điện 3k8/số, Nước 80k/người , Mạng 100k/phòng, Dvc 150k/ người.\n- Liên hệ a Toàn: 0969123345 để hẹn lịch xem phòng.",
+    "tien_ich": [
+      "dieu_hoa",
+      "nong_lanh",
+      "may_giat",
+      "tu_lanh",
+      "thang_may",
+      "bep",
+      "tu_quan_ao",
+      "wifi",
+      "gac_xep"
+    ],
+    "khong_chung_chu": false,
+    "gio_giac_tu_do": false
+  },
+  "vi_tri": {
+    "lat": 21.052,
+    "lng": 105.715,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 2.1,
+    "khoang_cach_cs2_km": 1.6,
+    "khoang_cach_cs3_km": 59.9,
+    "co_so_gan_nhat": "CS2",
+    "thoi_gian_di_xe_phut": 6
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "0969123345",
+    "facebook": ""
+  },
+  "anh": [
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2023/06/08/297/414c1af1cba140fa8794342dc743e550.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2023/06/08/295/afd1633dacc040758510de6abc5dd666.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2023/06/08/296/7d4cc253619f44ffb98045fe6af82690.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}

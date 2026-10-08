@@ -1,0 +1,87 @@
+{
+  "ma_phong": "RM-MOGI-9C232B",
+  "nguon": "mogi",
+  "url_nguon": "https://mogi.vn/quan-nam-tu-liem/thue-phong-tro-khu-nha-tro/cho-thue-ccmn-khu-vuc-me-tri-thuong-id22689631",
+  "ngay_cao": "2026-10-08T01:56:08.938Z",
+  "ngay_cap_nhat": "2026-10-08T01:56:08.938Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "Nguồn niêm yết công khai mogi.vn",
+    "chong_spam": "Đã qua cổng kiểm định pipeline staging",
+    "da_kiem_tra_trung": true,
+    "sha256_noi_dung": "5d447fde71130bbe57be709a454540ee7358cb8956372a30b16868c886637195"
+  },
+  "kiem_dinh": {
+    "link": {
+      "ok": true,
+      "reason": "HTTP 200 OK, tin còn hiệu lực (Playwright live DOM)",
+      "at": "2026-10-08T01:46:53.474Z"
+    },
+    "pipeline": "pipeline_crawl_validate_publish",
+    "nhom_nguon": "Mogi Nam Từ Liêm Tr2"
+  },
+  "thong_tin": {
+    "tieu_de": "Cho thuê CCMN khu vực Mễ Trì Thượng",
+    "gia": 5000000,
+    "dien_tich": 35,
+    "dia_chi": "32 Đồng Me Mễ Trì Thượng, Phường Mễ Trì, Quận Nam Từ Liêm, Hà Nội",
+    "quan_huyen": "Nam Từ Liêm",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Cho thuê CCMN khu vực Mễ Trì Thượng\n🏡Chính chủ cho thuê CCMN tại ngõ 32 Đồng Me, cách đường Phạm Hùng 300m, gần Big C Thăng Long, svđ Mỹ Đình, vincom Trần Duy Hưng, đối diện khách sạn Marriott view 360 cực chill !!!\n💕Camera an ninh, bảo vệ 24/7, khóa vân tay, giờ giấc tự do\n💕Nội thất: Điều hòa, vệ sinh khép kín, giường, tủ quần áo, tủ bếp trên dưới, bình nóng lạnh, có ban công phơi quần áo, máy giặt chung và sân phơi tầng thượng thoáng mát\n💕Thang máy hiện đại, thang bộ rộng rãi, hệ thống PCCC đầy đủ, có thang thoát hiểm.\n💕Diện tích phòng 25m2 – 35m2 có gác xép, 4 người ở thoải mái.\n💵Dịch vụ 150k/người/tháng (gồm điện hành lang, thang máy, máy giặt chung, vệ sinh chung), điện 3,9k/kwh, nước 35k/m3, mạng 100k/phòng, miễn phí gửi xe (tối đa 2 xe/phòng)\n⛔️Đóng 1 cọc 1; Không nhận xe điện, được nuôi mèo\n📞 0985962265 chị Thanh",
+    "tien_ich": [
+      "dieu_hoa",
+      "nong_lanh",
+      "may_giat",
+      "thang_may",
+      "ban_cong",
+      "bep",
+      "giuong",
+      "tu_quan_ao",
+      "wifi",
+      "gac_xep"
+    ],
+    "khong_chung_chu": false,
+    "gio_giac_tu_do": true
+  },
+  "vi_tri": {
+    "lat": 21.032,
+    "lng": 105.758,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 3.4,
+    "khoang_cach_cs2_km": 4.7,
+    "khoang_cach_cs3_km": 56.5,
+    "co_so_gan_nhat": "CS1",
+    "thoi_gian_di_xe_phut": 12
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "0985962265",
+    "facebook": ""
+  },
+  "anh": [
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/06/09/115/1fdeb65a26854bb6a562a19c270470e1.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/06/09/114/d60d3bc481614b279738d4c2dcb06438.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/06/09/118/718dbebdc4764ae2a6f60809f7d44bed.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/06/09/114/7ffc06eb3df34b59b269ecbc54b6c0e2.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/06/09/114/062842df4513434fb94465da021acf8a.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}

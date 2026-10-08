@@ -1,0 +1,73 @@
+{
+  "ma_phong": "RM-MOGI-10B7FC",
+  "nguon": "mogi",
+  "url_nguon": "https://mogi.vn/quan-bac-tu-liem/thue-phong-tro-khu-nha-tro/cho-thue-1n1k-59-pham-van-dong-id22500499",
+  "ngay_cao": "2026-10-08T01:55:57.484Z",
+  "ngay_cap_nhat": "2026-10-08T01:55:57.484Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "Nguồn niêm yết công khai mogi.vn",
+    "chong_spam": "Đã qua cổng kiểm định pipeline staging",
+    "da_kiem_tra_trung": true,
+    "sha256_noi_dung": "d9d5d42cc87b2c19a80ccb521d54d9cf3238bf2c140101f9fec685b35866f8ae"
+  },
+  "kiem_dinh": {
+    "link": {
+      "ok": true,
+      "reason": "HTTP 200 OK, tin còn hiệu lực (Playwright live DOM)",
+      "at": "2026-10-08T01:46:15.303Z"
+    },
+    "pipeline": "pipeline_crawl_validate_publish",
+    "nhom_nguon": "Mogi Bắc Từ Liêm Tr2"
+  },
+  "thong_tin": {
+    "tieu_de": "Cho thuê 1N1K - 59 Phạm Văn Đồng",
+    "gia": 5850000,
+    "dien_tich": 30,
+    "dia_chi": "Phạm Văn Đồng, Phường Cổ Nhuế 1, Quận Bắc Từ Liêm, Hà Nội",
+    "quan_huyen": "Bắc Từ Liêm",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Cho thuê 1N1K - 59 Phạm Văn Đồng\nCCMN PHẠM VĂN ĐỒNG\n28-30m2\nPhòng 1n1k ban công\nĐiện : 28k\nNước :35k\nVệ sinh: 40k\nThang máy : 50k\nMáy giặt, sấy : 120k\nWifi :100k\nPhí vận hành :100\nLiên hệ : 0335600363",
+    "tien_ich": [
+      "may_giat",
+      "thang_may",
+      "ban_cong",
+      "wifi"
+    ],
+    "khong_chung_chu": false,
+    "gio_giac_tu_do": false
+  },
+  "vi_tri": {
+    "lat": 21.058,
+    "lng": 105.755,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 2.1,
+    "khoang_cach_cs2_km": 3,
+    "khoang_cach_cs3_km": 59.4,
+    "co_so_gan_nhat": "CS1",
+    "thoi_gian_di_xe_phut": 7
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "0335600363",
+    "facebook": ""
+  },
+  "anh": [
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/03/13/122/c392988ef8ca4e64b66874c156328a87.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/03/13/129/9af30ff8602c410091701937cfb03077.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/03/13/120/2a1a6274533b4283a28274e16b7150f2.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}

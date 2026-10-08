@@ -1,0 +1,79 @@
+{
+  "ma_phong": "RM-MOGI-A7634C",
+  "nguon": "mogi",
+  "url_nguon": "https://mogi.vn/quan-bac-tu-liem/thue-phong-tro-khu-nha-tro/chinh-chu-cho-thue-phong-full-do-ngo-401-co-nhue-bac-tu-liem-id22644285",
+  "ngay_cao": "2026-10-08T01:55:54.905Z",
+  "ngay_cap_nhat": "2026-10-08T01:55:54.905Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "Nguồn niêm yết công khai mogi.vn",
+    "chong_spam": "Đã qua cổng kiểm định pipeline staging",
+    "da_kiem_tra_trung": true,
+    "sha256_noi_dung": "86a68d9c127d3ff007f202ef644d7f2776e46274a94acda1f2ae539db523254e"
+  },
+  "kiem_dinh": {
+    "link": {
+      "ok": true,
+      "reason": "HTTP 200 OK, tin còn hiệu lực (Playwright live DOM)",
+      "at": "2026-10-08T01:46:09.712Z"
+    },
+    "pipeline": "pipeline_crawl_validate_publish",
+    "nhom_nguon": "Mogi Bắc Từ Liêm Tr2"
+  },
+  "thong_tin": {
+    "tieu_de": "Chính chủ cho thuê phòng full đồ ngõ 401 Cổ Nhuế - Bắc Từ Liêm.",
+    "gia": 4100000,
+    "dien_tich": 23,
+    "dia_chi": "Cổ Nhuế, Phường Cổ Nhuế 2, Quận Bắc Từ Liêm, Hà Nội",
+    "quan_huyen": "Bắc Từ Liêm",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Chính chủ cho thuê phòng full đồ ngõ 401 Cổ Nhuế - Bắc Từ Liêm.\n🏡 NHÀ MỚI SẮP HOÀN THIỆN ngõ 401 Cổ Nhuế - Bắc Từ Liêm.\n😍CHÍNH CHỦ CẦN CHO THUÊ NHÀ:\n👉Giao thông thuận tiện, ngõ thoáng.\n👉 Diện tích: 20-23m/phòng\n👉 Nhà xây đầy đủ công năng, full thiết bị nội thất cơ bản gồm: giường, tủ áo, tủ bếp, bàn ghế, điều hoà, nóng lạnh, máy giặt chung, thang máy và đặc biệt là PCCC đầy đủ chỉ việc xách vali vào ở.\n💰 Giá: 4xxx",
+    "tien_ich": [
+      "dieu_hoa",
+      "nong_lanh",
+      "may_giat",
+      "thang_may",
+      "bep",
+      "giuong"
+    ],
+    "khong_chung_chu": false,
+    "gio_giac_tu_do": false
+  },
+  "vi_tri": {
+    "lat": 21.058,
+    "lng": 105.755,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 2.1,
+    "khoang_cach_cs2_km": 3,
+    "khoang_cach_cs3_km": 59.4,
+    "co_so_gan_nhat": "CS1",
+    "thoi_gian_di_xe_phut": 7
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "Liên hệ qua bài viết",
+    "facebook": ""
+  },
+  "anh": [
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/11/11/371/38944ce5fae9433f81aa16a1a723ceb0.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/11/11/372/ce705b2bd94b4d048ffbb3662852624e.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/11/11/373/38d48f32c145448bba7b260f32c34b04.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/11/11/373/db46d4bf78f747d0aff1cedd8fe165f7.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}

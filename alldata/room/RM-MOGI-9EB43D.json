@@ -1,0 +1,82 @@
+{
+  "ma_phong": "RM-MOGI-9EB43D",
+  "nguon": "mogi",
+  "url_nguon": "https://mogi.vn/quan-nam-tu-liem/thue-phong-tro-khu-nha-tro/cho-thue-ccmn-ngo-32-dong-me-moi-dep-nhu-homestay-id22690050",
+  "ngay_cao": "2026-10-08T01:56:08.306Z",
+  "ngay_cap_nhat": "2026-10-08T01:56:08.306Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "Nguồn niêm yết công khai mogi.vn",
+    "chong_spam": "Đã qua cổng kiểm định pipeline staging",
+    "da_kiem_tra_trung": true,
+    "sha256_noi_dung": "9cc079ac6b36e3ef7434065f55a4acce07440ed49bf55ccd9a6b1bb49ccb0545"
+  },
+  "kiem_dinh": {
+    "link": {
+      "ok": true,
+      "reason": "HTTP 200 OK, tin còn hiệu lực (Playwright live DOM)",
+      "at": "2026-10-08T01:46:52.072Z"
+    },
+    "pipeline": "pipeline_crawl_validate_publish",
+    "nhom_nguon": "Mogi Nam Từ Liêm Tr2"
+  },
+  "thong_tin": {
+    "tieu_de": "Cho thuê CCMN ngõ 32 Đồng Me mới đẹp như homestay",
+    "gia": 5000000,
+    "dien_tich": 30,
+    "dia_chi": "Mễ Trì Thượng, Phường Mễ Trì, Quận Nam Từ Liêm, Hà Nội",
+    "quan_huyen": "Nam Từ Liêm",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Cho thuê CCMN ngõ 32 Đồng Me mới đẹp như homestay\nChính chủ cho thuê CCMN tại ngõ 32 Đồng Me, nhà mới xây như khách sạn trong khu sầm uất, cửa sổ nhìn sang khách sạn Marriott, sân thượng view 360 cực chill !!! chợ ngay cổng, hệ thống PCCC đầy đủ, khóa vân tay, chỗ để xe cực rộng, không ở chung chủ, có bảo vệ 24/7, giờ giấc tự do;\nPhòng rộng (25m2 – 35m2 chưa kể gác xép), vệ sinh khép kín; Nội thất đầy đủ: Điều hòa, tủ lạnh, giường, tủ quần áo, tủ bếp, bình nóng lạnh, máy giặt chung.\nLiên hệ chị Thanh: 0985962265",
+    "tien_ich": [
+      "dieu_hoa",
+      "nong_lanh",
+      "may_giat",
+      "tu_lanh",
+      "ban_cong",
+      "bep",
+      "giuong",
+      "tu_quan_ao",
+      "gac_xep"
+    ],
+    "khong_chung_chu": false,
+    "gio_giac_tu_do": true
+  },
+  "vi_tri": {
+    "lat": 21.032,
+    "lng": 105.758,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 3.4,
+    "khoang_cach_cs2_km": 4.7,
+    "khoang_cach_cs3_km": 56.5,
+    "co_so_gan_nhat": "CS1",
+    "thoi_gian_di_xe_phut": 12
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "0985962265",
+    "facebook": ""
+  },
+  "anh": [
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/06/11/356/374622035a3640e4a9ef74487c7997e3.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/06/11/358/baaad3fd0c9d4bf1a9ac3a068e8be521.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/06/11/352/b89b8a6c3e284b8b8d1bcb357b01ed06.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/06/11/355/5a9cec05f7e1491ebc91574131287c16.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}

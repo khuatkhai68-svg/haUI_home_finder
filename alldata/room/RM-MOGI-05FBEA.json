@@ -1,0 +1,86 @@
+{
+  "ma_phong": "RM-MOGI-05FBEA",
+  "nguon": "mogi",
+  "url_nguon": "https://mogi.vn/quan-bac-tu-liem/thue-phong-tro-khu-nha-tro/phong-tro-sieu-re-o-duoc-ngay-tai-phu-dien-id22675224",
+  "ngay_cao": "2026-10-08T01:55:52.042Z",
+  "ngay_cap_nhat": "2026-10-08T01:55:52.042Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "Nguồn niêm yết công khai mogi.vn",
+    "chong_spam": "Đã qua cổng kiểm định pipeline staging",
+    "da_kiem_tra_trung": true,
+    "sha256_noi_dung": "32ac194c7c2ec6c67540767a2f51f54b29a04a817dbe27a98a778ea47a6b1627"
+  },
+  "kiem_dinh": {
+    "link": {
+      "ok": true,
+      "reason": "HTTP 200 OK, tin còn hiệu lực (Playwright live DOM)",
+      "at": "2026-10-08T01:46:03.055Z"
+    },
+    "pipeline": "pipeline_crawl_validate_publish",
+    "nhom_nguon": "Mogi Bắc Từ Liêm Tr1"
+  },
+  "thong_tin": {
+    "tieu_de": "Phòng trọ siêu rẻ ở được ngay tại Phú Diễn",
+    "gia": 3700000,
+    "dien_tich": 30,
+    "dia_chi": "Phú Diễn, Phường Phú Diễn, Quận Bắc Từ Liêm, Hà Nội",
+    "quan_huyen": "Bắc Từ Liêm",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Phòng trọ siêu rẻ ở được ngay tại Phú Diễn\nCẦN CHO THUÊ PHÒNG TRỌ ~ Ngõ 261, đường Phú Diễn ( cách hồ Phú Diễn 50m)\nBạn đang tìm một phòng trọ rộng rãi, đầy đủ tiện nghi tại khu vực Phú Diễn? Tôi có ngay một lựa chọn phù hợp cho bạn đây !\nPhòng rộng rãi thoáng mát, thang máy chạy vèo vèo,ngõ thông ôtô qua nhà.\nDiện tích: 30 m² ( có thể ở từ 3-4 người)\n‣ Nội thất: Đầy đủ (giường, tủ, điều hòa, nóng lạnh, máy giặt, quạt trần)\nGiá thuê: 3.7 triệu/ tháng\nPhòng sạch sẽ, thoáng mát, an nình đảm bảo, giao thông thuận tiện. Phù hợp cho sinh viên và người đi làm.\nLiên hệ tới sđt 0388770502 ngay để xem phòng!",
+    "tien_ich": [
+      "dieu_hoa",
+      "nong_lanh",
+      "may_giat",
+      "thang_may",
+      "giuong"
+    ],
+    "khong_chung_chu": false,
+    "gio_giac_tu_do": false
+  },
+  "vi_tri": {
+    "lat": 21.045,
+    "lng": 105.755,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 2.3,
+    "khoang_cach_cs2_km": 3.6,
+    "khoang_cach_cs3_km": 58,
+    "co_so_gan_nhat": "CS1",
+    "thoi_gian_di_xe_phut": 8
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "0388770502",
+    "facebook": ""
+  },
+  "anh": [
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/04/01/512/8058e0d6b3464cefb072e8ae96b1d5e2.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/04/01/513/4e2a7166099a4f69a5bf250ced67eab5.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/04/01/514/20e58717ec3a4ab0a09c0e507501eb74.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/04/01/514/7e53644277284de2a8c7d77e5476f63d.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/04/01/515/a1e583abf948425a853de703fccafbb5.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/04/01/516/b1e10631af284ae59d42cc64d3d78ee2.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}

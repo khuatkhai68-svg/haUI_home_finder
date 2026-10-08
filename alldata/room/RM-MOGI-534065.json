@@ -1,0 +1,85 @@
+{
+  "ma_phong": "RM-MOGI-534065",
+  "nguon": "mogi",
+  "url_nguon": "https://mogi.vn/quan-cau-giay/thue-phong-tro-khu-nha-tro/cho-thue-ccmn-gac-xep-moi-tinh-tai-yen-hoa-cau-giay-id22689306",
+  "ngay_cao": "2026-10-08T01:56:17.624Z",
+  "ngay_cap_nhat": "2026-10-08T01:56:17.624Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "Nguồn niêm yết công khai mogi.vn",
+    "chong_spam": "Đã qua cổng kiểm định pipeline staging",
+    "da_kiem_tra_trung": true,
+    "sha256_noi_dung": "4fc8f68feab71232e0f3480b51dc5d6a77def36daec3828d9e2b1519260e1737"
+  },
+  "kiem_dinh": {
+    "link": {
+      "ok": true,
+      "reason": "HTTP 200 OK, tin còn hiệu lực (Playwright live DOM)",
+      "at": "2026-10-08T01:47:23.395Z"
+    },
+    "pipeline": "pipeline_crawl_validate_publish",
+    "nhom_nguon": "Mogi Cầu Giấy Tr2"
+  },
+  "thong_tin": {
+    "tieu_de": "Cho Thuê CCMN Gác xép - mới tinh tại Yên Hòa - Cầu Giấy",
+    "gia": 4799000,
+    "dien_tich": 25,
+    "dia_chi": "Yên Hòa, Phường Yên Hòa, Quận Cầu Giấy, Hà Nội",
+    "quan_huyen": "Nam Từ Liêm",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Cho Thuê CCMN Gác xép - mới tinh tại Yên Hòa - Cầu Giấy\n🚪 Không chung chủ – Giờ giấc tự do\n🔑 Tiện nghi đầy đủ:\nFull nội thất như hình\nBan công thoáng mát – Cửa sổ lớn đón gió\nNhà vệ sinh khép kín – sạch sẽ, riêng tư\nWifi mạnh\nThang máy, khóa vân tay – An ninh đảm bảo\nChỗ để xe rộng\n🌆 Tiện ích khu vực xung quanh cực thuận tiện:\n🏫 Gần ĐH Thủ Đô, ĐH Giao Thông, HV Báo Chí, ĐH Sư Phạm, Tài Chính Ngân Hàng\n🏪 Gần chợ, siêu thị Vinmart, Circle K, Lotte Mart\n🚍 Cách bến xe buýt chỉ 100m – kết nối dễ dàng đi Mỹ Đình, Cầu Giấy, Xuân Thủy\n☕ Gần nhiều quán cà phê, ăn uống, phòng gym, cửa hàng tiện lợi",
+    "tien_ich": [
+      "thang_may",
+      "ban_cong",
+      "wifi",
+      "gac_xep"
+    ],
+    "khong_chung_chu": true,
+    "gio_giac_tu_do": true
+  },
+  "vi_tri": {
+    "lat": 21.028,
+    "lng": 105.772,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 4.8,
+    "khoang_cach_cs2_km": 6.1,
+    "khoang_cach_cs3_km": 55.7,
+    "co_so_gan_nhat": "CS1",
+    "thoi_gian_di_xe_phut": 17
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "Liên hệ qua bài viết",
+    "facebook": ""
+  },
+  "anh": [
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/06/08/060/4f3209f10d2a44b0b3c92ab4eee08de5.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/06/08/061/f48c597c34164496bc08ee2da8caa445.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/06/08/062/30df057b5ebe45ec833c3b5e4af337e9.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/06/08/063/9f77b599f2b14b938dde1fc7ce90e11b.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/06/08/064/6be247ceeab447c8ace46c8102b60972.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/06/08/065/66b01dee715b4eb8828dd105db956286.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "ma_phong": "RM-MOGI-6B4BC6",
+  "nguon": "mogi",
+  "url_nguon": "https://mogi.vn/quan-nam-tu-liem/thue-phong-tro-khu-nha-tro/ccmn-sieu-dep-35m-full-do-gia-chi-5-4tr-o-ngay-129-thien-hien-id22707226",
+  "ngay_cao": "2026-10-08T01:56:04.653Z",
+  "ngay_cap_nhat": "2026-10-08T01:56:04.653Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "Nguồn niêm yết công khai mogi.vn",
+    "chong_spam": "Đã qua cổng kiểm định pipeline staging",
+    "da_kiem_tra_trung": true,
+    "sha256_noi_dung": "c33c9737d331588b4bb01fc08f12ea3633825ac47951c3ab42d53bf13e0ef35d"
+  },
+  "kiem_dinh": {
+    "link": {
+      "ok": true,
+      "reason": "HTTP 200 OK, tin còn hiệu lực (Playwright live DOM)",
+      "at": "2026-10-08T01:46:45.154Z"
+    },
+    "pipeline": "pipeline_crawl_validate_publish",
+    "nhom_nguon": "Mogi Nam Từ Liêm Tr2"
+  },
+  "thong_tin": {
+    "tieu_de": "Ccmn Siêu Đẹp 35m² – Full Đồ, Giá Chỉ 5.4tr – ở ngay 129 Thiên Hiền",
+    "gia": 5400000,
+    "dien_tich": 35,
+    "dia_chi": "129 Thiên Hiền, Phường Mỹ Đình 1, Quận Nam Từ Liêm, Hà Nội",
+    "quan_huyen": "Nam Từ Liêm",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Ccmn Siêu Đẹp 35m² – Full Đồ, Giá Chỉ 5.4tr – ở ngay 129 Thiên Hiền\n🔥 SIÊU PHẨM CCMN THIÊN HIỀN – FULL NỘI THẤT 🛋\n35m² chỉ 5.4TR/tháng 👉 Xách vali vào ở ngay!\n📍 27 ngõ 129 Thiên Hiền – Gần trung tâm, tiện đi lại.\n⚡️ Free giờ giấc – Camera an ninh 24/24\n☎️ LH xem phòng: 0987656902",
+    "tien_ich": [],
+    "khong_chung_chu": false,
+    "gio_giac_tu_do": true
+  },
+  "vi_tri": {
+    "lat": 21.032,
+    "lng": 105.758,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 3.4,
+    "khoang_cach_cs2_km": 4.7,
+    "khoang_cach_cs3_km": 56.5,
+    "co_so_gan_nhat": "CS1",
+    "thoi_gian_di_xe_phut": 12
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "0987656902",
+    "facebook": ""
+  },
+  "anh": [
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/09/10/241/13879ec5db3044f8b4211e0e2aac007a.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/09/10/243/78a3052c00174fbdb18e7e10288eb42e.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/09/10/239/873ea6f861bf411ca893937a844d3f70.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/09/10/240/c261dc67d5ae4d8ea5d4c8dafde3097a.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/09/10/239/9dc879eb2de342bd9e571778f9863e4c.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/09/10/242/f689d3ec6f6a4c0089d28e23813dad0b.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}

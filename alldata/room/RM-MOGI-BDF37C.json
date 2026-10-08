@@ -1,0 +1,83 @@
+{
+  "ma_phong": "RM-MOGI-BDF37C",
+  "nguon": "mogi",
+  "url_nguon": "https://mogi.vn/quan-cau-giay/thue-phong-tro-khu-nha-tro/he-thong-nha-tro-o-ngo-79-duong-cau-giay-50m2-3-8-trieu-id22691189",
+  "ngay_cao": "2026-10-08T01:56:16.235Z",
+  "ngay_cap_nhat": "2026-10-08T01:56:16.235Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "Nguồn niêm yết công khai mogi.vn",
+    "chong_spam": "Đã qua cổng kiểm định pipeline staging",
+    "da_kiem_tra_trung": true,
+    "sha256_noi_dung": "0e78949c51f18291f88d4dad0b78e6720e87859b20c20b8fcd5835c44b12d059"
+  },
+  "kiem_dinh": {
+    "link": {
+      "ok": true,
+      "reason": "HTTP 200 OK, tin còn hiệu lực (Playwright live DOM)",
+      "at": "2026-10-08T01:47:20.635Z"
+    },
+    "pipeline": "pipeline_crawl_validate_publish",
+    "nhom_nguon": "Mogi Cầu Giấy Tr2"
+  },
+  "thong_tin": {
+    "tieu_de": "Hệ thống Nhà trọ ở ngõ 79 đường Cầu Giấy 50m2 3,8 triệu",
+    "gia": 3800000,
+    "dien_tich": 50,
+    "dia_chi": "Cầu Giấy, Phường Quan Hoa, Quận Cầu Giấy, Hà Nội",
+    "quan_huyen": "Cầu Giấy",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Hệ thống Nhà trọ ở ngõ 79 đường Cầu Giấy 50m2 3,8 triệu\nNhà trọ ở ngõ 79 đường Cầu Giấy, Phường Quan Hoa, Cầu Giấy, Hà Nội, diện tích 50m2, giá chỉ 3,8triệu VND. Căn phòng được trang bị nội thất cơ bản, phù hợp cho sinh viên hay người đi làm tìm kiếm không gian sống tiện nghi và thoải mái.\n- Giá thuê hợp lý 3,8triệu VND\n- Tặng 500k khi chuyển vào\n- Diện tích 50m2, không gian thoáng đãng\n- Nội thất cơ bản, dọn vào ở ngay\n- Có Bếp riêng , gường tủ , chăn ga gối đệm\n-\nĐịa điểm tiện ích xung quanh\n- Các trường học lớn\n- Bệnh viện Đa Khoa Bảo Sơn 2\n- Công viên Yên Hòa\n- Siêu thị Teekiu Mart\n- Trường Đại học Ngoại ngữ - ĐHQGHN\n- Nhiều chợ dân sinh , khu ăn uống mua sắm\nLiên hệ ngay PHẠM NGỌC PHƯƠNG MAI qua số điện thoại 0868339814 để biết thêm chi tiết và xem phòng!",
+    "tien_ich": [
+      "bep",
+      "giuong"
+    ],
+    "khong_chung_chu": false,
+    "gio_giac_tu_do": false
+  },
+  "vi_tri": {
+    "lat": 21.032,
+    "lng": 105.795,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 6.7,
+    "khoang_cach_cs2_km": 7.9,
+    "khoang_cach_cs3_km": 55.6,
+    "co_so_gan_nhat": "CS1",
+    "thoi_gian_di_xe_phut": 23
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "0868339814",
+    "facebook": ""
+  },
+  "anh": [
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/06/16/199/0af3f763c86546d09bfc83500d1b69ec.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/06/16/190/a1698a4149ad43d5abf77295be31a52a.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/06/16/191/ae21829c84c94c8eb6e67099cf006173.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/06/16/192/9b65672091be46fc967b717bf578f616.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/06/16/192/9e87af6e42f34bda97c91a2ea6de39c7.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/06/16/193/c8b0c6f006ab40db8f1c074c29184687.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}

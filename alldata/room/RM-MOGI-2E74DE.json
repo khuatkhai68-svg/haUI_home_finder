@@ -1,0 +1,92 @@
+{
+  "ma_phong": "RM-MOGI-2E74DE",
+  "nguon": "mogi",
+  "url_nguon": "https://mogi.vn/quan-nam-tu-liem/thue-phong-tro-khu-nha-tro/chinh-chu-cho-thue-nha-tai-phu-my-my-dinh-nha-moi-tinh-id22663098",
+  "ngay_cao": "2026-10-08T01:56:09.666Z",
+  "ngay_cap_nhat": "2026-10-08T01:56:09.666Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "Nguồn niêm yết công khai mogi.vn",
+    "chong_spam": "Đã qua cổng kiểm định pipeline staging",
+    "da_kiem_tra_trung": true,
+    "sha256_noi_dung": "1fd4a5f2c26e0d55772aaea918e5116002598b9d684313f689b8e9a376febedb"
+  },
+  "kiem_dinh": {
+    "link": {
+      "ok": true,
+      "reason": "HTTP 200 OK, tin còn hiệu lực (Playwright live DOM)",
+      "at": "2026-10-08T01:46:54.879Z"
+    },
+    "pipeline": "pipeline_crawl_validate_publish",
+    "nhom_nguon": "Mogi Nam Từ Liêm Tr2"
+  },
+  "thong_tin": {
+    "tieu_de": "Chính chủ cho thuê nhà tại Phú Mỹ - Mỹ Đình - Nhà mới tinh",
+    "gia": 4400000,
+    "dien_tich": 25,
+    "dia_chi": "Phú Mỹ, Phường Mỹ Đình 2, Quận Nam Từ Liêm, Hà Nội",
+    "quan_huyen": "Nam Từ Liêm",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Chính chủ cho thuê nhà tại Phú Mỹ - Mỹ Đình - Nhà mới tinh\nhính chủ không qua trung gian cho thuê CCMN tại số 10 ngõ 57 Phú Mỹ - Mỹ Đình.\n- Tầng 1: Nhà xe rộng rãi.\n- Tầng 2 - 6: Mỗi tầng 4 PNKK, Không chung chủ.\n- Tầng 7: Sân phơi.\n- Điện 4k. Nước 35k. Nét 100k/1p. DV chung 200k/1 người. Không nhận xe điện, ở 3 - 4 bạn thoải mái.\nNội thất: Giường + gác xép, tủ quần áo, tủ lạnh, bếp từ, hút mùi, điều hòa, nóng lạnh, rèm, đệm, wifi riêng, Máy giặt, máy sấy chung, thang máy. + Ban công, cửa sổ thoáng mát, có lối thoát hiểm, trang bị an toàn PCCC từng phòng đảm bảo, camera an ninh, khóa vân tay.\nKhu vực dân trí cao, Giao thông thuận lợi. Khu vực tiện ích ngập tràn, đi thông ra tứ phía, bến xe Mỹ Đình, Sân vận động Mỹ Đình, Lê Đức Thọ, Bệnh viện 198, ĐHQG Hà Nội, ĐH Thương Mai, ĐH SK Điện Ảnh..., bãi ô tô cách nhà 80m.\n- Giá thuê: 4,4 - 5 tr/1P.\n- Liên hệ: 0922 912 868",
+    "tien_ich": [
+      "dieu_hoa",
+      "nong_lanh",
+      "may_giat",
+      "tu_lanh",
+      "thang_may",
+      "ban_cong",
+      "bep",
+      "giuong",
+      "tu_quan_ao",
+      "wifi",
+      "gac_xep"
+    ],
+    "khong_chung_chu": true,
+    "gio_giac_tu_do": false
+  },
+  "vi_tri": {
+    "lat": 21.032,
+    "lng": 105.758,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 3.4,
+    "khoang_cach_cs2_km": 4.7,
+    "khoang_cach_cs3_km": 56.5,
+    "co_so_gan_nhat": "CS1",
+    "thoi_gian_di_xe_phut": 12
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "0922912868",
+    "facebook": ""
+  },
+  "anh": [
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/02/15/343/8d5d8c5083ad481fba199ced7404d114.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/02/15/352/fa0645c28361401d9eae01275fac0c1a.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/02/15/354/b19f743bf9b642309ccde11ec9cc61cf.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/02/15/354/1b5b759a4b2e415686435291cd9857fb.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/02/15/355/3338398d269d42af945da3f505320ab2.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/02/15/356/bb74a8698382499197c48462b2202eaa.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}

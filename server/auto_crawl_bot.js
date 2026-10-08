@@ -140,33 +140,57 @@ const PUBLIC_FB_GROUPS = [
   }
 ];
 
-// ── Nguồn bổ sung khác: Phongtro123 đa cơ sở CS1, CS2, CS3 ──────────────────
+// ── Nguồn bổ sung khác: Phongtro123 & BDS123 đa cơ sở CS1, CS2, CS3 ──────────────────
 const PT123_SOURCES = [
-  { url: 'https://phongtro123.com/tinh-thanh/ha-noi/quan-bac-tu-liem', isHaNam: false, label: 'Bắc Từ Liêm Toàn Quận (CS1/CS2) Tr1' },
-  { url: 'https://phongtro123.com/tinh-thanh/ha-noi/quan-bac-tu-liem?page=2', isHaNam: false, label: 'Bắc Từ Liêm Toàn Quận (CS1/CS2) Tr2' },
-  { url: 'https://phongtro123.com/tinh-thanh/ha-noi/quan-bac-tu-liem?page=3', isHaNam: false, label: 'Bắc Từ Liêm Toàn Quận (CS1/CS2) Tr3' },
-  { url: 'https://phongtro123.com/tinh-thanh/ha-noi/quan-bac-tu-liem?page=4', isHaNam: false, label: 'Bắc Từ Liêm Toàn Quận (CS1/CS2) Tr4' },
-  { url: 'https://phongtro123.com/tinh-thanh/ha-noi/quan-bac-tu-liem/phuong-minh-khai', isHaNam: false, label: 'Minh Khai (CS1)' },
-  { url: 'https://phongtro123.com/tinh-thanh/ha-noi/quan-bac-tu-liem/phuong-phuc-dien', isHaNam: false, label: 'Phúc Diễn (CS1)' },
-  { url: 'https://phongtro123.com/tinh-thanh/ha-noi/quan-bac-tu-liem/phuong-phu-dien', isHaNam: false, label: 'Phú Diễn (CS1)' },
-  { url: 'https://phongtro123.com/tinh-thanh/ha-noi/quan-bac-tu-liem/phuong-tay-tuu', isHaNam: false, label: 'Tây Tựu (CS2)' },
-  { url: 'https://phongtro123.com/tinh-thanh/ha-noi/quan-bac-tu-liem/phuong-co-nhue-1', isHaNam: false, label: 'Cổ Nhuế 1 (CS1)' },
-  { url: 'https://phongtro123.com/tinh-thanh/ha-noi/quan-bac-tu-liem/phuong-co-nhue-2', isHaNam: false, label: 'Cổ Nhuế 2 (CS1)' },
-  { url: 'https://phongtro123.com/tinh-thanh/ha-noi/quan-bac-tu-liem/phuong-dong-ngac', isHaNam: false, label: 'Đông Ngạc (CS1)' },
-  { url: 'https://phongtro123.com/tinh-thanh/ha-noi/quan-bac-tu-liem/phuong-xuan-tao', isHaNam: false, label: 'Xuân Tảo (CS1)' },
-  { url: 'https://phongtro123.com/tinh-thanh/ha-noi/quan-cau-giay/phuong-nghia-tan', isHaNam: false, label: 'Nghĩa Tân (CS1)' },
-  { url: 'https://phongtro123.com/tinh-thanh/ha-noi/huyen-hoai-duc/xa-kim-chung', isHaNam: false, label: 'Kim Chung - Lai Xá (CS1/CS2)' },
-  { url: 'https://phongtro123.com/tinh-thanh/ha-noi/huyen-hoai-duc/xa-van-canh', isHaNam: false, label: 'Vân Canh (CS1)' },
-  { url: 'https://phongtro123.com/tinh-thanh/ha-noi/huyen-hoai-duc/xa-di-trach', isHaNam: false, label: 'Di Trạch (CS1/CS2)' },
-  { url: 'https://phongtro123.com/tinh-thanh/ha-noi/huyen-hoai-duc/thi-tran-tram-troi', isHaNam: false, label: 'Trạm Trôi (CS2)' },
-  { url: 'https://phongtro123.com/tinh-thanh/ha-noi/huyen-hoai-duc', isHaNam: false, label: 'Hoài Đức (CS1/CS2)' },
-  { url: 'https://phongtro123.com/tinh-thanh/ha-nam/thanh-pho-phu-ly', isHaNam: true, label: 'TP. Phủ Lý (CS3)' },
-  { url: 'https://phongtro123.com/tinh-thanh/ha-nam/thanh-pho-phu-ly/phuong-le-hong-phong', isHaNam: true, label: 'Lê Hồng Phong (CS3)' },
-  { url: 'https://phongtro123.com/tinh-thanh/ha-nam/thanh-pho-phu-ly/phuong-quang-trung', isHaNam: true, label: 'Quang Trung (CS3)' },
-  { url: 'https://phongtro123.com/tinh-thanh/ha-nam/thanh-pho-phu-ly/phuong-minh-khai', isHaNam: true, label: 'Minh Khai Hà Nam (CS3)' },
-  { url: 'https://phongtro123.com/tinh-thanh/ha-nam/thanh-pho-phu-ly/phuong-luong-khanh-thien', isHaNam: true, label: 'Lương Khánh Thiện (CS3)' },
-  { url: 'https://phongtro123.com/tinh-thanh/ha-nam', isHaNam: true, label: 'Tỉnh Hà Nam (CS3)' }
+  // ── 1. NGUỒN TỔNG HÀ NỘI MỚI NHẤT ──
+  { url: 'https://phongtro123.com/tinh-thanh/ha-noi', isHaNam: false, label: 'Hà Nội Mới Nhất Tr1' },
+  { url: 'https://phongtro123.com/tinh-thanh/ha-noi?page=2', isHaNam: false, label: 'Hà Nội Mới Nhất Tr2' },
+  { url: 'https://phongtro123.com/tinh-thanh/ha-noi?page=3', isHaNam: false, label: 'Hà Nội Mới Nhất Tr3' },
+
+  // ── 2. CÁC PHƯỜNG TRỌNG ĐIỂM CS1 & CS2 (BẮC TỪ LIÊM) ──
+  { url: 'https://phongtro123.com/tinh-thanh/ha-noi/quan-bac-tu-liem/phuong-minh-khai', isHaNam: false, label: 'BTL - Minh Khai (CS1)' },
+  { url: 'https://phongtro123.com/tinh-thanh/ha-noi/quan-bac-tu-liem/phuong-tay-tuu', isHaNam: false, label: 'BTL - Tây Tựu (CS2)' },
+  { url: 'https://phongtro123.com/tinh-thanh/ha-noi/quan-bac-tu-liem/phuong-phuc-dien', isHaNam: false, label: 'BTL - Phúc Diễn' },
+  { url: 'https://phongtro123.com/tinh-thanh/ha-noi/quan-bac-tu-liem/phuong-phu-dien', isHaNam: false, label: 'BTL - Phú Diễn' },
+  { url: 'https://phongtro123.com/tinh-thanh/ha-noi/quan-bac-tu-liem/phuong-co-nhue-1', isHaNam: false, label: 'BTL - Cổ Nhuế 1' },
+  { url: 'https://phongtro123.com/tinh-thanh/ha-noi/quan-bac-tu-liem/phuong-co-nhue-2', isHaNam: false, label: 'BTL - Cổ Nhuế 2' },
+  { url: 'https://phongtro123.com/tinh-thanh/ha-noi/quan-bac-tu-liem/phuong-xuan-dinh', isHaNam: false, label: 'BTL - Xuân Đỉnh' },
+  { url: 'https://phongtro123.com/tinh-thanh/ha-noi/quan-bac-tu-liem/phuong-dong-ngac', isHaNam: false, label: 'BTL - Đông Ngạc' },
+  { url: 'https://phongtro123.com/tinh-thanh/ha-noi/quan-bac-tu-liem/phuong-thuy-phuong', isHaNam: false, label: 'BTL - Thụy Phương' },
+
+  // ── 3. CÁC PHƯỜNG TRỌNG ĐIỂM NAM TỪ LIÊM ──
+  { url: 'https://phongtro123.com/tinh-thanh/ha-noi/huyen-tu-liem/phuong-xuan-phuong', isHaNam: false, label: 'NTL - Xuân Phương' },
+  { url: 'https://phongtro123.com/tinh-thanh/ha-noi/huyen-tu-liem/phuong-phuong-canh', isHaNam: false, label: 'NTL - Phương Canh' },
+  { url: 'https://phongtro123.com/tinh-thanh/ha-noi/huyen-tu-liem/phuong-cau-dien', isHaNam: false, label: 'NTL - Cầu Diễn' },
+  { url: 'https://phongtro123.com/tinh-thanh/ha-noi/huyen-tu-liem/phuong-my-dinh-1', isHaNam: false, label: 'NTL - Mỹ Đình 1' },
+  { url: 'https://phongtro123.com/tinh-thanh/ha-noi/huyen-tu-liem/phuong-me-tri', isHaNam: false, label: 'NTL - Mễ Trì' },
+  { url: 'https://phongtro123.com/tinh-thanh/ha-noi/huyen-tu-liem/phuong-tay-mo', isHaNam: false, label: 'NTL - Tây Mỗ' },
+  { url: 'https://phongtro123.com/tinh-thanh/ha-noi/huyen-tu-liem/phuong-dai-mo', isHaNam: false, label: 'NTL - Đại Mỗ' },
+
+  // ── 4. CÁC PHƯỜNG TRỌNG ĐIỂM CẦU GIẤY (METRO NHỔN - CẦU GIẤY) ──
+  { url: 'https://phongtro123.com/tinh-thanh/ha-noi/quan-cau-giay/phuong-mai-dich', isHaNam: false, label: 'Cầu Giấy - Mai Dịch' },
+  { url: 'https://phongtro123.com/tinh-thanh/ha-noi/quan-cau-giay/phuong-dich-vong', isHaNam: false, label: 'Cầu Giấy - Dịch Vọng' },
+  { url: 'https://phongtro123.com/tinh-thanh/ha-noi/quan-cau-giay/phuong-dich-vong-hau', isHaNam: false, label: 'Cầu Giấy - Dịch Vọng Hậu' },
+  { url: 'https://phongtro123.com/tinh-thanh/ha-noi/quan-cau-giay/phuong-quan-hoa', isHaNam: false, label: 'Cầu Giấy - Quan Hoa' },
+  { url: 'https://phongtro123.com/tinh-thanh/ha-noi/quan-cau-giay/phuong-nghia-tan', isHaNam: false, label: 'Cầu Giấy - Nghĩa Tân' },
+  { url: 'https://phongtro123.com/tinh-thanh/ha-noi/quan-cau-giay/phuong-nghia-do', isHaNam: false, label: 'Cầu Giấy - Nghĩa Đô' },
+
+  // ── 5. CÁC XÃ TRỌNG ĐIỂM HOÀI ĐỨC & ĐAN PHƯỢNG (SÁT CS1 & CS2) ──
+  { url: 'https://phongtro123.com/tinh-thanh/ha-noi/huyen-hoai-duc/xa-kim-chung', isHaNam: false, label: 'Hoài Đức - Kim Chung' },
+  { url: 'https://phongtro123.com/tinh-thanh/ha-noi/huyen-hoai-duc/xa-di-trach', isHaNam: false, label: 'Hoài Đức - Di Trạch' },
+  { url: 'https://phongtro123.com/tinh-thanh/ha-noi/huyen-hoai-duc/xa-van-canh', isHaNam: false, label: 'Hoài Đức - Vân Canh' },
+  { url: 'https://phongtro123.com/tinh-thanh/ha-noi/huyen-hoai-duc/xa-duc-thuong', isHaNam: false, label: 'Hoài Đức - Đức Thượng' },
+  { url: 'https://phongtro123.com/tinh-thanh/ha-noi/huyen-hoai-duc/thi-tran-tram-troi', isHaNam: false, label: 'Hoài Đức - Trạm Trôi' },
+  { url: 'https://phongtro123.com/tinh-thanh/ha-noi/huyen-dan-phuong/xa-tan-lap', isHaNam: false, label: 'Đan Phượng - Tân Lập' },
+  { url: 'https://phongtro123.com/tinh-thanh/ha-noi/huyen-dan-phuong/xa-tan-hoi', isHaNam: false, label: 'Đan Phượng - Tân Hội' },
+
+  // ── 6. KHU VỰC TRỌNG ĐIỂM CS3 (HÀ NAM - PHỦ LÝ) ──
+  { url: 'https://phongtro123.com/tinh-thanh/ha-nam', isHaNam: true, label: 'Tỉnh Hà Nam Tr1' },
+  { url: 'https://phongtro123.com/tinh-thanh/ha-nam?page=2', isHaNam: true, label: 'Tỉnh Hà Nam Tr2' },
+  { url: 'https://phongtro123.com/tinh-thanh/ha-nam/thanh-pho-phu-ly', isHaNam: true, label: 'TP. Phủ Lý' }
 ];
+
+
 
 // ── Tọa độ địa danh để geocoding chính xác ─────────────────────────────────────
 const HANAM_COORDS = {
@@ -191,6 +215,7 @@ const HANAM_COORDS = {
 
 const HANOI_COORDS = {
   // Cụm trọng điểm CS1 - Minh Khai / Nhổn
+  "minh khai": { lat: 21.0537, lng: 105.7351, dist: "Bắc Từ Liêm" },
   "nhổn": { lat: 21.0540, lng: 105.7350, dist: "Bắc Từ Liêm" },
   "nguyên xá": { lat: 21.0555, lng: 105.7380, dist: "Bắc Từ Liêm" },
   "văn trì": { lat: 21.0585, lng: 105.7390, dist: "Bắc Từ Liêm" },
@@ -202,6 +227,7 @@ const HANOI_COORDS = {
   "phúc diễn": { lat: 21.0490, lng: 105.7480, dist: "Bắc Từ Liêm" },
   "đức diễn": { lat: 21.0460, lng: 105.7500, dist: "Bắc Từ Liêm" },
   "cầu diễn": { lat: 21.0420, lng: 105.7620, dist: "Bắc Từ Liêm" },
+  "bắc từ liêm": { lat: 21.0580, lng: 105.7550, dist: "Bắc Từ Liêm" },
 
   // Cụm trọng điểm CS2 - Tây Tựu
   "tây tựu": { lat: 21.0618, lng: 105.7259, dist: "Bắc Từ Liêm" },
@@ -215,9 +241,11 @@ const HANOI_COORDS = {
   "phạm văn đồng": { lat: 21.0550, lng: 105.7780, dist: "Bắc Từ Liêm" },
   "trần cung": { lat: 21.0510, lng: 105.7830, dist: "Bắc Từ Liêm" },
   "hoàng công chất": { lat: 21.0480, lng: 105.7620, dist: "Bắc Từ Liêm" },
+  "xuân đỉnh": { lat: 21.0720, lng: 105.7880, dist: "Bắc Từ Liêm" },
   "xuân tảo": { lat: 21.0680, lng: 105.7890, dist: "Bắc Từ Liêm" },
 
   // Cụm lân cận Hoài Đức (rất gần CS1 & CS2)
+  "hoài đức": { lat: 21.0520, lng: 105.7150, dist: "Hoài Đức" },
   "lideco": { lat: 21.0665, lng: 105.7115, dist: "Hoài Đức" },
   "trạm trôi": { lat: 21.0680, lng: 105.7110, dist: "Hoài Đức" },
   "đức thượng": { lat: 21.0740, lng: 105.7020, dist: "Hoài Đức" },
@@ -232,8 +260,22 @@ const HANOI_COORDS = {
   "an khánh": { lat: 21.0020, lng: 105.7380, dist: "Hoài Đức" },
   "lê trọng tấn": { lat: 20.9985, lng: 105.7485, dist: "Hoài Đức" },
   "geleximco": { lat: 20.9990, lng: 105.7450, dist: "Hoài Đức" },
+  "đông lao": { lat: 20.9890, lng: 105.7180, dist: "Hoài Đức" },
+  "đông la": { lat: 20.9890, lng: 105.7180, dist: "Hoài Đức" },
+  "đức giang": { lat: 21.0710, lng: 105.6880, dist: "Hoài Đức" },
+  "la phù": { lat: 20.9850, lng: 105.7280, dist: "Hoài Đức" },
+
+  // Cụm lân cận Đan Phượng (sát CS2 Tây Tựu)
+  "đan phượng": { lat: 21.0820, lng: 105.7050, dist: "Đan Phượng" },
+  "tân lập": { lat: 21.0780, lng: 105.7080, dist: "Đan Phượng" },
+  "tân hội": { lat: 21.0850, lng: 105.7050, dist: "Đan Phượng" },
+  "thị trấn phùng": { lat: 21.0850, lng: 105.6880, dist: "Đan Phượng" },
 
   // Cụm lân cận Nam Từ Liêm
+  "nam từ liêm": { lat: 21.0320, lng: 105.7580, dist: "Nam Từ Liêm" },
+  "từ liêm": { lat: 21.0390, lng: 105.7550, dist: "Nam Từ Liêm" },
+  "nguyễn văn giáp": { lat: 21.0390, lng: 105.7610, dist: "Nam Từ Liêm" },
+  "phú mỹ": { lat: 21.0280, lng: 105.7680, dist: "Nam Từ Liêm" },
   "phương canh": { lat: 21.0420, lng: 105.7360, dist: "Nam Từ Liêm" },
   "xuân phương": { lat: 21.0370, lng: 105.7360, dist: "Nam Từ Liêm" },
   "tu hoàng": { lat: 21.0475, lng: 105.7335, dist: "Nam Từ Liêm" },
@@ -252,17 +294,30 @@ const HANOI_COORDS = {
   "hàm nghi": { lat: 21.0380, lng: 105.7650, dist: "Nam Từ Liêm" },
   "nguyễn cơ thạch": { lat: 21.0360, lng: 105.7650, dist: "Nam Từ Liêm" },
   "trần hữu dực": { lat: 21.0410, lng: 105.7550, dist: "Nam Từ Liêm" },
+  "trung văn": { lat: 20.9980, lng: 105.7850, dist: "Nam Từ Liêm" },
+  "cầu cốc": { lat: 21.0040, lng: 105.7420, dist: "Nam Từ Liêm" },
+  "phạm hùng": { lat: 21.0250, lng: 105.7780, dist: "Nam Từ Liêm" },
 
   // Cụm lân cận Cầu Giấy (giáp ranh tuyến Metro Nhổn - Cầu Giấy)
+  "cầu giấy": { lat: 21.0320, lng: 105.7950, dist: "Cầu Giấy" },
   "hồ tùng mậu": { lat: 21.0390, lng: 105.7720, dist: "Cầu Giấy" },
   "mai dịch": { lat: 21.0370, lng: 105.7770, dist: "Cầu Giấy" },
   "doãn kế thiện": { lat: 21.0420, lng: 105.7780, dist: "Cầu Giấy" },
   "trần bình": { lat: 21.0360, lng: 105.7760, dist: "Cầu Giấy" },
   "xuân thủy": { lat: 21.0365, lng: 105.7860, dist: "Cầu Giấy" },
-  "cầu giấy": { lat: 21.0320, lng: 105.7950, dist: "Cầu Giấy" },
+  "dịch vọng hậu": { lat: 21.0330, lng: 105.7870, dist: "Cầu Giấy" },
+  "dịch vọng": { lat: 21.0350, lng: 105.7920, dist: "Cầu Giấy" },
+  "quan hoa": { lat: 21.0360, lng: 105.8010, dist: "Cầu Giấy" },
   "nghĩa tân": { lat: 21.0450, lng: 105.7920, dist: "Cầu Giấy" },
   "nghĩa đô": { lat: 21.0470, lng: 105.7980, dist: "Cầu Giấy" },
-  "hoàng quốc việt": { lat: 21.0460, lng: 105.7940, dist: "Cầu Giấy" }
+  "hoàng quốc việt": { lat: 21.0460, lng: 105.7940, dist: "Cầu Giấy" },
+  "hoàng sâm": { lat: 21.0440, lng: 105.7930, dist: "Cầu Giấy" },
+  "nguyễn khánh toàn": { lat: 21.0360, lng: 105.7980, dist: "Cầu Giấy" },
+  "trần duy hưng": { lat: 21.0080, lng: 105.7980, dist: "Cầu Giấy" },
+  "trần thái tông": { lat: 21.0310, lng: 105.7870, dist: "Cầu Giấy" },
+  "trung hòa": { lat: 21.0110, lng: 105.7990, dist: "Cầu Giấy" },
+  "yên hòa": { lat: 21.0200, lng: 105.7930, dist: "Cầu Giấy" },
+  "dương đình nghệ": { lat: 21.0240, lng: 105.7860, dist: "Cầu Giấy" }
 };
 
 // ── Tính khoảng cách Haversine (km) ──────────────────────────────────────────
@@ -360,17 +415,19 @@ function isStudentSeekingPost(text) {
 /** Lọc bỏ 100% quảng cáo thương mại không liên quan */
 function isCommercialSpam(text) {
   const lower = text.toLowerCase();
+  // Tránh nhận nhầm trường học địa phương: "cđ du lịch", "cao đẳng du lịch"
+  const clean = lower.replace(/(?:cđ|cao đẳng|đại học|dh)\s*du\s*lịch/g, '');
   const spamKeywords = [
     'sofa', 'da bò', 'máy in', 'in chuyển nhiệt', 'tuyến giáp', 'đồ thờ', 
     'sữa canxi', 'khóa học', 'khoá học', 'tuyển dụng', 'việc làm', 'ctv', 
     'bán đất', 'đất nền', 'bất động sản nghỉ dưỡng', 'mái thái', 'tây ninh', 
     'khối u', 'thẩm mỹ', 'spa', 'massage', 'xe máy', 'thanh lý', 'mua bán', 
-    'bát tràng', 'tour', 'du lịch', 'vé máy bay', 'vay tiền', 'tín dụng',
+    'bát tràng', 'tour du lịch', 'vé máy bay', 'vay tiền', 'tín dụng',
     'bán nhà', 'bán biệt thự', 'bán shophouse', 'bán căn hộ',
     'cho thuê mặt bằng', 'mặt bằng kinh doanh', 'mặt tiền quốc lộ', 'mặt bằng',
     'kho xưởng', 'văn phòng', 'shophouse', 'kiot', 'ki-ốt', 'cửa hàng kinh doanh'
   ];
-  return spamKeywords.some(kw => lower.includes(kw));
+  return spamKeywords.some(kw => clean.includes(kw));
 }
 
 /** Kiểm tra có phải bài CHO THUÊ phòng trọ thực thụ quanh khu vực HaUI */
@@ -1485,5 +1542,17 @@ module.exports = {
   startAutoCrawlScheduler,
   getCrawlBotStatus,
   crawlPhongtro123Http,
-  CRAWL_INTERVAL_MS
+  CRAWL_INTERVAL_MS,
+  // Helpers dùng chung cho pipeline staging (crawler/pipeline_crawl_validate_publish.mjs)
+  isStudentSeekingPost,
+  isCommercialSpam,
+  isGenuineRoomOffer,
+  isBlacklistedAddress,
+  resolveLocation,
+  parsePrice,
+  parseArea,
+  parseAmenities,
+  extractPhoneNumber,
+  PUBLIC_FB_GROUPS,
+  PT123_SOURCES
 };

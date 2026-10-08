@@ -1,0 +1,84 @@
+{
+  "ma_phong": "RM-FB-A25E6C",
+  "nguon": "facebook",
+  "url_nguon": "https://www.facebook.com/groups/HaUITimPhongTro/posts/1766221704670459/",
+  "ngay_cao": "2026-10-08T01:56:55.040Z",
+  "ngay_cap_nhat": "2026-10-08T01:56:55.040Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "100% Khử định danh PII, nguồn nhóm công khai",
+    "chong_spam": "Đã qua cổng kiểm định pipeline staging",
+    "da_kiem_tra_trung": true,
+    "sha256_noi_dung": "e56b1139350df78d94f7485d280dfaabe130f1fe1d5e1a9f56de6fe60fa8ae8f"
+  },
+  "kiem_dinh": {
+    "link": {
+      "ok": true,
+      "reason": "Permalink mở được (HTTP 200)",
+      "at": "2026-10-07T22:19:07.003Z"
+    },
+    "pipeline": "pipeline_crawl_validate_publish",
+    "nhom_nguon": "HaUI - Tìm Phòng Trọ (71.9K tv)"
+  },
+  "thong_tin": {
+    "tieu_de": "STUDIO FULL ĐỒ THOÁNG ĐẸP KHU XUÂN PHƯƠNG VÀO Ở ĐƯỢC LUÔN",
+    "gia": 3450000,
+    "dien_tich": null,
+    "dia_chi": "Khu vực xuân phương, Nam Từ Liêm, Hà Nội (gần HaUI CS1/CS2)",
+    "quan_huyen": "Nam Từ Liêm",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "STUDIO FULL ĐỒ THOÁNG ĐẸP KHU XUÂN PHƯƠNG VÀO Ở ĐƯỢC LUÔN\nĐc 253 Xuân Phương\nGiá 3tr450k\n( có fix )\nfull nội thất ( giường , tủ lạnh … )\nCách FPT chỉ 1km , đh Công nghệ Đông Á , đi lại thuận tiện\nCửa sổ thoáng , phòng rộng mới tinh\nLh : 0399565842 ( Toàn quản lý )qqqk",
+    "tien_ich": [
+      "tu_lanh",
+      "ban_cong",
+      "giuong"
+    ],
+    "khong_chung_chu": false,
+    "gio_giac_tu_do": false
+  },
+  "vi_tri": {
+    "lat": 21.037,
+    "lng": 105.736,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 1.9,
+    "khoang_cach_cs2_km": 3,
+    "khoang_cach_cs3_km": 57.7,
+    "co_so_gan_nhat": "CS1",
+    "thoi_gian_di_xe_phut": 7
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "0399565842",
+    "facebook": "https://www.facebook.com/groups/HaUITimPhongTro/posts/1766221704670459/"
+  },
+  "anh": [
+    {
+      "url_goc": "/photos/RM-FB-A25E6C_photo_1.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng FB"
+    },
+    {
+      "url_goc": "/photos/RM-FB-A25E6C_photo_2.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng FB"
+    },
+    {
+      "url_goc": "/photos/RM-FB-A25E6C_photo_3.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng FB"
+    },
+    {
+      "url_goc": "/photos/RM-FB-A25E6C_photo_4.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng FB"
+    },
+    {
+      "url_goc": "/photos/RM-FB-A25E6C_photo_5.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng FB"
+    },
+    {
+      "url_goc": "/photos/RM-FB-A25E6C_photo_6.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng FB"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}

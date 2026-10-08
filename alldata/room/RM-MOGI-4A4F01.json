@@ -1,0 +1,74 @@
+{
+  "ma_phong": "RM-MOGI-4A4F01",
+  "nguon": "mogi",
+  "url_nguon": "https://mogi.vn/huyen-hoai-duc/thue-phong-tro-khu-nha-tro/cho-thue-nha-tro-2-5-tr-tai-duong-thu-y-duc-thuong-hoai-duc-gan-tan-id22718353",
+  "ngay_cao": "2026-10-08T01:56:20.325Z",
+  "ngay_cap_nhat": "2026-10-08T01:56:20.325Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "Nguồn niêm yết công khai mogi.vn",
+    "chong_spam": "Đã qua cổng kiểm định pipeline staging",
+    "da_kiem_tra_trung": true,
+    "sha256_noi_dung": "34721bc8d1ef0b90311bee2b2a65406208217978c796262deefc8edb1c5a3c24"
+  },
+  "kiem_dinh": {
+    "link": {
+      "ok": true,
+      "reason": "HTTP 200 OK, tin còn hiệu lực (Playwright live DOM)",
+      "at": "2026-10-08T01:47:31.434Z"
+    },
+    "pipeline": "pipeline_crawl_validate_publish",
+    "nhom_nguon": "Mogi Hoài Đức"
+  },
+  "thong_tin": {
+    "tieu_de": "Cho thuê nhà trọ 2.5 tr tại đường Thú Y, Đức Thượng, Hoài Đức Gần Tân",
+    "gia": 2500000,
+    "dien_tich": 30,
+    "dia_chi": "Quốc Lộ 32, Xã Đức Thượng, Huyện Hoài Đức, Hà Nội",
+    "quan_huyen": "Hoài Đức",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Cho thuê nhà trọ 2.5 tr tại đường Thú Y, Đức Thượng, Hoài Đức Gần Tân\nNhanh tay! Cho thuê nhà trọ tại Đường Thú Y, Xã Đức Thượng, Hoài Đức, Hà Nội với diện tích 30 m². Nhà trọ có 1 phòng ngủ, 1 toilet, 1 tầng và nội thất cơ bản, phù hợp cho những ai đang tìm kiếm một nơi ở tiện nghi.\n+ Diện tích 30 m², thoáng mát và rộng rãi.\n+ 1 phòng ngủ, phù hợp cho gia đình nhỏ hoặc nhóm bạn.\n+ 1 toilet sạch sẽ và tiện nghi.\n+ Nội thất cơ bản, dễ dàng sắp xếp theo nhu cầu.\n+ Giá thuê chỉ 2.5 triệu VND, hợp lý cho không gian và tiện ích.\n+ Thời gian thuê linh hoạt.\n+nhà thang máy\nChi phí:\nĐiện: 4.000đ/kWh.\nNước: 100k/người.\nDịch vụ: 150k/người/tháng. Thang máy 50k, Máy sấy 50k\nLiên hệ ngay để được tư vấn miễn phí và xem nhà: 0904 525 414",
+    "tien_ich": [
+      "thang_may"
+    ],
+    "khong_chung_chu": false,
+    "gio_giac_tu_do": false
+  },
+  "vi_tri": {
+    "lat": 21.052,
+    "lng": 105.715,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 2.1,
+    "khoang_cach_cs2_km": 1.6,
+    "khoang_cach_cs3_km": 59.9,
+    "co_so_gan_nhat": "CS2",
+    "thoi_gian_di_xe_phut": 6
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "0904525414",
+    "facebook": ""
+  },
+  "anh": [
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/11/22/154/c1949abc1f4044a3b2e3b8def4154802.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/11/22/156/c33070194bef4cafb9aa953ddf03c178.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/11/22/157/c096d7716c34494f92fcf8b5c76355a3.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/11/22/155/c4443383bfbd46f1a27996918bb9e144.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}

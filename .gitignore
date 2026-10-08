@@ -20,6 +20,7 @@ alldata/logs/*.json
 botdata/.playwright-mcp/
 botdata/screenshots/
 botdata/playwright-mcp/
+botdata/staging/
 
 # Screenshots tạm
 webdata/*.png

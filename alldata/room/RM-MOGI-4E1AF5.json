@@ -1,0 +1,75 @@
+{
+  "ma_phong": "RM-MOGI-4E1AF5",
+  "nguon": "mogi",
+  "url_nguon": "https://mogi.vn/quan-cau-giay/thue-phong-tro-khu-nha-tro/cho-thue-phong-tro-gia-re-tran-thai-tong-2-6tr-kk-gan-hoc-vien-bao-ch-id22718245",
+  "ngay_cao": "2026-10-08T01:56:13.444Z",
+  "ngay_cap_nhat": "2026-10-08T01:56:13.444Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "Nguồn niêm yết công khai mogi.vn",
+    "chong_spam": "Đã qua cổng kiểm định pipeline staging",
+    "da_kiem_tra_trung": true,
+    "sha256_noi_dung": "bd47199ff2c2091fe482516a8f7843959d9b942cb17792bd87b683dafd76c61c"
+  },
+  "kiem_dinh": {
+    "link": {
+      "ok": true,
+      "reason": "HTTP 200 OK, tin còn hiệu lực (Playwright live DOM)",
+      "at": "2026-10-08T01:47:13.741Z"
+    },
+    "pipeline": "pipeline_crawl_validate_publish",
+    "nhom_nguon": "Mogi Cầu Giấy Tr2"
+  },
+  "thong_tin": {
+    "tieu_de": "Cho thuê phòng trọ giá rẻ Trần Thái Tông 2.6tr kk, gần Học Viện Báo Ch",
+    "gia": 2600000,
+    "dien_tich": 22,
+    "dia_chi": "Cầu Giấy, Phường Dịch Vọng, Quận Cầu Giấy, Hà Nội",
+    "quan_huyen": "Cầu Giấy",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Cho thuê phòng trọ giá rẻ Trần Thái Tông 2.6tr kk, gần Học Viện Báo Ch\nCho thuê phòng trọ giá rẻ Trần Thái Tông 2.7 kk, gần Học Viện Báo Chí, ĐH Quốc Gia.\nĐịa chỉ: Nhà 7A. Ngõ 35/17c Trần Thái Tông, Cầu Giấy gần ngã tư Trần Thái Tông - Xuân Thủy.\nCách HV Báo Chí 200m, gần ĐH Quốc Gia, Sư Phạm, Ngoại Ngữ, Thương Mại.\nGiá: 2,6 triệu/tháng.\nTiện ích:\nGiường, tủ, đệm, điều hòa, nóng lạnh.\nBàn bếp, máy giặt chung, khóa vân tay.\nThang bộ, để xe free.\nPhí DV:\nĐiện: 4.000đ/số Nước: 100k/ng DV chung: 150k/ng (wifi, máy giặt... ).\nLiên Hệ : 0904 525 414",
+    "tien_ich": [
+      "dieu_hoa",
+      "nong_lanh",
+      "may_giat",
+      "bep",
+      "giuong",
+      "wifi"
+    ],
+    "khong_chung_chu": false,
+    "gio_giac_tu_do": false
+  },
+  "vi_tri": {
+    "lat": 21.032,
+    "lng": 105.795,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 6.7,
+    "khoang_cach_cs2_km": 7.9,
+    "khoang_cach_cs3_km": 55.6,
+    "co_so_gan_nhat": "CS1",
+    "thoi_gian_di_xe_phut": 23
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "0904525414",
+    "facebook": ""
+  },
+  "anh": [
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/11/21/496/d9eae529c5ec47a594ee09a11c5db503.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/11/21/497/885f29523e80449e9fa5db4a78a85da3.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/11/21/497/1613796b6b8f4397984360cc40a17767.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}

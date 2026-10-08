@@ -1,0 +1,83 @@
+{
+  "ma_phong": "RM-MOGI-A28D0F",
+  "nguon": "mogi",
+  "url_nguon": "https://mogi.vn/quan-nam-tu-liem/thue-phong-tro-loi-di-rieng/cho-thue-nha-moi-tinh-tai-chdv-khu-vuc-nguyen-dong-chi-my-dinh-id22724347",
+  "ngay_cao": "2026-10-08T01:55:59.911Z",
+  "ngay_cap_nhat": "2026-10-08T01:55:59.911Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "Nguồn niêm yết công khai mogi.vn",
+    "chong_spam": "Đã qua cổng kiểm định pipeline staging",
+    "da_kiem_tra_trung": true,
+    "sha256_noi_dung": "82fdfa867d0a168f1a22f6e2c530489c2e23e04292446def630464973c221c30"
+  },
+  "kiem_dinh": {
+    "link": {
+      "ok": true,
+      "reason": "HTTP 200 OK, tin còn hiệu lực (Playwright live DOM)",
+      "at": "2026-10-08T01:46:33.021Z"
+    },
+    "pipeline": "pipeline_crawl_validate_publish",
+    "nhom_nguon": "Mogi Nam Từ Liêm Tr1"
+  },
+  "thong_tin": {
+    "tieu_de": "Cho thuê nhà mới tinh tại CHDV khu vực Nguyễn Đổng Chi, Mỹ Đình",
+    "gia": 4500000,
+    "dien_tich": 20,
+    "dia_chi": "Nguyễn Đổng Chi, Phường Cầu Diễn, Quận Nam Từ Liêm, Hà Nội",
+    "quan_huyen": "Bắc Từ Liêm",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Cho thuê nhà mới tinh tại CHDV khu vực Nguyễn Đổng Chi, Mỹ Đình\n🛏️ Phòng full nội thất, vào ở ngay\nGiường, tủ, điều hòa, nóng lạnh, tủ lạnh riêng, bếp nấu + hút mùi, máy giặt chung\n🔐 Khóa vân tay từng phòng\nNhà mới vào ở luôn.\nLiên hệ: 0984155690",
+    "tien_ich": [
+      "dieu_hoa",
+      "nong_lanh",
+      "may_giat",
+      "tu_lanh",
+      "bep",
+      "giuong"
+    ],
+    "khong_chung_chu": false,
+    "gio_giac_tu_do": false
+  },
+  "vi_tri": {
+    "lat": 21.042,
+    "lng": 105.762,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 3.1,
+    "khoang_cach_cs2_km": 4.3,
+    "khoang_cach_cs3_km": 57.5,
+    "co_so_gan_nhat": "CS1",
+    "thoi_gian_di_xe_phut": 11
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "0984155690",
+    "facebook": ""
+  },
+  "anh": [
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/12/29/104/3329fbd93bfc48f39f2eb1c698bec85e.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/12/29/105/132e959a050b4abdbcf6cb0803fa853b.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/12/29/106/a95dd37cf1b94a00829af5675d6be162.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/12/29/107/91c59cce37a34357b144fea3be319f64.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/12/29/108/600c4068ad3d45a9b217171eb840599b.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "ma_phong": "RM-MOGI-69FE95",
+  "nguon": "mogi",
+  "url_nguon": "https://mogi.vn/quan-bac-tu-liem/thue-phong-tro-o-chung-chu/khai-truong-phong-studio-28m2-tran-cung-co-nhue-1-bac-tu-liem-id22652425",
+  "ngay_cao": "2026-10-08T01:55:53.986Z",
+  "ngay_cap_nhat": "2026-10-08T01:55:53.986Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "Nguồn niêm yết công khai mogi.vn",
+    "chong_spam": "Đã qua cổng kiểm định pipeline staging",
+    "da_kiem_tra_trung": true,
+    "sha256_noi_dung": "21937c32c1494ad4c317354ac4c16377e8e9f081cf7b6def009767eadb187149"
+  },
+  "kiem_dinh": {
+    "link": {
+      "ok": true,
+      "reason": "HTTP 200 OK, tin còn hiệu lực (Playwright live DOM)",
+      "at": "2026-10-08T01:46:08.338Z"
+    },
+    "pipeline": "pipeline_crawl_validate_publish",
+    "nhom_nguon": "Mogi Bắc Từ Liêm Tr2"
+  },
+  "thong_tin": {
+    "tieu_de": "Khai trương phòng Studio 28m2 - Trần Cung - Cổ Nhuế 1 - Bắc Từ Liêm",
+    "gia": 4200000,
+    "dien_tich": 28,
+    "dia_chi": "Trần Cung, Phường Cổ Nhuế 1, Quận Bắc Từ Liêm, Hà Nội",
+    "quan_huyen": "Bắc Từ Liêm",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Khai trương phòng Studio 28m2 - Trần Cung - Cổ Nhuế 1 - Bắc Từ Liêm\nKHAI TRƯƠNG TOÀ CCMN TRẦN CUNG\n🔑 Địa chỉ: Ngõ 488 Trần Cung – Cổ Nhuế 1 – Bắc Từ Liêm – Hà Nội\nTòa nhà 6 tầng mới xây, vị trí thuận lợi, Gần bệnh viện E và các trường đại học (điện lực, đhqg, báo chí, thương mại, tài chính, cao đẳng mẫu giáo tw, sư phạm).\n- Diện tích: Studio 25-28m2\n- Cửa sổ rộng 3,5m2, thoáng.\n- Nội thất full:Giường, đệm, tqa 4 buồng, bếp từ kèm nồi, hút mùi, tl, nl, dh, 2 máy giặt chung, 2 máy sấy chung (có thể yêu cầu riêng).\n- Thang máy hiện đại, hệ thống phòng cháy chữa cháy đảm bảo.\n- Full tầng 1 để xe (Diện tích: 65m2)\n- Giờ giấc tự do, khoá vân tay\nCall/zalo chủ nhà: cô Hoa 0988069827 chính chủ\n❌ LƯU Ý\n- Hợp đồng từ 8 tháng\n- Thanh toán 1 cọc 1\n- Tối đa 3 người, 3 xe\n- Không nuôi pet\n- Không nhận xe điện\nCall/ zalo chính chủ: 0988069827",
+    "tien_ich": [
+      "nong_lanh",
+      "may_giat",
+      "thang_may",
+      "ban_cong",
+      "bep",
+      "giuong"
+    ],
+    "khong_chung_chu": false,
+    "gio_giac_tu_do": true
+  },
+  "vi_tri": {
+    "lat": 21.058,
+    "lng": 105.755,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 2.1,
+    "khoang_cach_cs2_km": 3,
+    "khoang_cach_cs3_km": 59.4,
+    "co_so_gan_nhat": "CS1",
+    "thoi_gian_di_xe_phut": 7
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "0988069827",
+    "facebook": ""
+  },
+  "anh": [
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/12/07/041/97ac47539b744b37b2604d39119e6de5.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/12/07/042/853d5291fd86482590c455b992eac7e8.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/12/07/043/2dd3d83bd6644c3f978ae7518be53131.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/12/07/044/b1b02b0705b943bc9430ba4e612f4394.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/12/07/046/59ed0236bbab4bd69eaafc04878100ed.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/12/07/045/e23c9654312a4252a4e315361c337a34.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "ma_phong": "RM-MOGI-C91F6B",
+  "nguon": "mogi",
+  "url_nguon": "https://mogi.vn/quan-cau-giay/thue-phong-tro-loi-di-rieng/dai-hoc-thuong-mai-moi-tinh-full-do-gia-re-sinh-vien-o-luon-id22617659",
+  "ngay_cao": "2026-10-08T01:56:18.600Z",
+  "ngay_cap_nhat": "2026-10-08T01:56:18.600Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "Nguồn niêm yết công khai mogi.vn",
+    "chong_spam": "Đã qua cổng kiểm định pipeline staging",
+    "da_kiem_tra_trung": true,
+    "sha256_noi_dung": "1475e06d9aff52bb1d8e142139a4dcade397d24c700983d2dac41db2bcf327cc"
+  },
+  "kiem_dinh": {
+    "link": {
+      "ok": true,
+      "reason": "HTTP 200 OK, tin còn hiệu lực (Playwright live DOM)",
+      "at": "2026-10-08T01:47:26.175Z"
+    },
+    "pipeline": "pipeline_crawl_validate_publish",
+    "nhom_nguon": "Mogi Cầu Giấy Tr2"
+  },
+  "thong_tin": {
+    "tieu_de": "Đại Học Thương Mại Mới Tinh Full Đồ Giá Rẻ Sinh Viên Ở Luôn",
+    "gia": 4200000,
+    "dien_tich": 20,
+    "dia_chi": "Hồ Tùng Mậu, Phường Mai Dịch, Quận Cầu Giấy, Hà Nội",
+    "quan_huyen": "Bắc Từ Liêm",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Đại Học Thương Mại Mới Tinh Full Đồ Giá Rẻ Sinh Viên Ở Luôn\n---Cho Thuê Chung Cư Mini Mới Xây, Khép Kín, Không Chung Chủ,Tự Do Thời Gian.\n--Địa Chỉ: Ngõ 267 Hồ Tùng Mậu - Quận Cầu Giấy.\n-- Khu Tập Trung Nhiều Trường Đại Học Như Thương Mại, Ngoại Ngữ, Quốc Gia,Sư Phạm..\n--Giáp Các Tuyến Phố Lớn Phạm Văn Đồng,Lê Đức Thọ, Cầu Giấy,....\n- Nhà Gần Siêu Thị, Trung Tâm Thương Mại,Chợ Dân Sinh,Trường Mầm Non, Trường Cấp 1-2 -3,Bến Xe Bus Chỉ Cách 1p Đi Bộ\n-Căn Hộ Có Cửa Sổ Rộng Hướng Đông Nam Thoáng Mát Nên Rất Nhiều Ánh Sáng Tự Nhiên.\n-- Nội Thất Mới Tinh Và Đầy Đủ Bao Gồm:\n-Điều Hoà, Nóng Lạnh, Tủ Lạnh\nTủ Quần Áo ,Bàn Ghế,Giường Chăn Ga Gối Đệm, Kệ Bếp,Bồn Rửa, Máy Giặt, Máy Sấy Chung.\n- Quý Khách Chỉ Việc Xách Valy Vào Ở.\n-Nhà Gần Trụ Sở Công An Phường Nên An Ninh Đảm Bảo.\n--Có Trang Bị Khóa Cổng Vân Tay\n- Camera An Ninh 24/7 , Hệ Thống PCCC Được Kiểm Duyệt Của Cục Cảnh Sát Phòng Cháy, Tất Cả Cửa Đều Là Chống Cháy.\n-Chỗ Gửi Xe Rộng Rãi Ở Tầng 1 Và Hoàn Toàn Miễn Phí.\n-- Thanh Toán 1 Tháng 1.\n+ Giá Chỉ 4tr2/Tháng\n+ CAM KẾT HÌNH ẢNH VÀ THÔNG TIN CHUẨN XÁC.\n- -Số Lượng Phòng Có Hạn.\n--Xin Hãy Gọi Luôn 24/24 Để Được Hỗ Trợ Và Xem Phòng Miễn Phí.\n-- Miễn Trung Gian & Quảng Cáo .\n--Trân Trọng!!!",
+    "tien_ich": [
+      "dieu_hoa",
+      "nong_lanh",
+      "may_giat",
+      "tu_lanh",
+      "ban_cong",
+      "bep",
+      "giuong",
+      "tu_quan_ao"
+    ],
+    "khong_chung_chu": true,
+    "gio_giac_tu_do": true
+  },
+  "vi_tri": {
+    "lat": 21.055,
+    "lng": 105.778,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 4.5,
+    "khoang_cach_cs2_km": 5.5,
+    "khoang_cach_cs3_km": 58.5,
+    "co_so_gan_nhat": "CS1",
+    "thoi_gian_di_xe_phut": 16
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "Liên hệ qua bài viết",
+    "facebook": ""
+  },
+  "anh": [
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/08/20/127/b8c3b8fda7d545128fe4a289269f1ae2.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/08/20/129/ca10d162aa0e437b97725c7babe01b98.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/08/20/129/6e4cbc73657749a0aac8648baac2e50e.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/08/20/120/436d4b1306c246509e0cba2ef289abad.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2024/08/20/121/0e0f48d3c7b84292ac6faf624a512e1b.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}

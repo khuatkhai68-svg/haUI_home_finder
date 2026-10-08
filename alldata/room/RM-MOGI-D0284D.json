@@ -1,0 +1,77 @@
+{
+  "ma_phong": "RM-MOGI-D0284D",
+  "nguon": "mogi",
+  "url_nguon": "https://mogi.vn/quan-bac-tu-liem/thue-phong-tro-khu-nha-tro/cho-thue-phong-tro-rieng-biet-tang-1-gia-4-tr-40m2-cau-dien-nam-tu-li-id22718359",
+  "ngay_cao": "2026-10-08T01:55:48.360Z",
+  "ngay_cap_nhat": "2026-10-08T01:55:48.360Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "Nguồn niêm yết công khai mogi.vn",
+    "chong_spam": "Đã qua cổng kiểm định pipeline staging",
+    "da_kiem_tra_trung": true,
+    "sha256_noi_dung": "617ccd103de234be46daedac92f77705cbfd8c3ae9f1c40c980fc4080d94e0a2"
+  },
+  "kiem_dinh": {
+    "link": {
+      "ok": true,
+      "reason": "HTTP 200 OK, tin còn hiệu lực (Playwright live DOM)",
+      "at": "2026-10-08T01:45:50.600Z"
+    },
+    "pipeline": "pipeline_crawl_validate_publish",
+    "nhom_nguon": "Mogi Bắc Từ Liêm Tr1"
+  },
+  "thong_tin": {
+    "tieu_de": "Cho thuê phòng trọ riêng biệt tầng 1 giá 4 tr 40m2 Cầu Diễn, Nam Từ Li",
+    "gia": 4000000,
+    "dien_tich": 38,
+    "dia_chi": "Cầu Diễn, Phường Minh Khai, Quận Bắc Từ Liêm, Hà Nội",
+    "quan_huyen": "Bắc Từ Liêm",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Cho thuê phòng trọ riêng biệt tầng 1 giá 4 tr 40m2 Cầu Diễn, Nam Từ Li\nCho thuê phòng trọ riêng biệt tầng 1 giá 4 tr 40m² Cầu Diễn, Nam Từ Liêm.\nĐịa chỉ: Số 2, ngách 1, ngõ 36, đường Cầu Diễn.\nGần ĐH Công Nghiệp, ĐH Tài Nguyên & Môi trường, CĐ Thông tin Truyền thông...\nPhòng trống:\nPhòng khép kín tách biệt, khu dân cư văn minh, Yên Tĩnh,\nNội thất đầy đủ:\nGiường, tủ, đệm, điều hoà, nóng lạnh, khoá vân tay.\nMáy giặt chung, ô tô đỗ cửa.\nChi phí:\nĐiện: 4.000đ/kWh.\nNước: 100k/người.\nDịch vụ: 150k/người/tháng.\nLiên hệ A. Nguyên: 0904 525 414",
+    "tien_ich": [
+      "dieu_hoa",
+      "nong_lanh",
+      "may_giat",
+      "giuong"
+    ],
+    "khong_chung_chu": false,
+    "gio_giac_tu_do": false
+  },
+  "vi_tri": {
+    "lat": 21.0537,
+    "lng": 105.7351,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 0,
+    "khoang_cach_cs2_km": 1.3,
+    "khoang_cach_cs3_km": 59.5,
+    "co_so_gan_nhat": "CS1",
+    "thoi_gian_di_xe_phut": 1
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "0904525414",
+    "facebook": ""
+  },
+  "anh": [
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/11/22/204/c2887f833c884eaf8a022f7d28647e96.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/11/22/205/ef96eb75552e40b6a800d4dd5411b7e3.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/11/22/206/18797a5e65bb48d58ccb6389dd574f10.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2025/11/22/210/54df49dd90b54836800ac5c13c9aa7b1.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "ma_phong": "RM-MOGI-D1AF0F",
+  "nguon": "mogi",
+  "url_nguon": "https://mogi.vn/huyen-hoai-duc/thue-phong-tro-khu-nha-tro/cho-thue-01-phong-o-thuoc-nha-rieng-gan-dh-thanh-do-id22124791",
+  "ngay_cao": "2026-10-08T01:56:24.479Z",
+  "ngay_cap_nhat": "2026-10-08T01:56:24.479Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "Nguồn niêm yết công khai mogi.vn",
+    "chong_spam": "Đã qua cổng kiểm định pipeline staging",
+    "da_kiem_tra_trung": true,
+    "sha256_noi_dung": "0e2af2e443c17b8cba78e11d5db33693b3584eacb37d6de795ebad28c04287a1"
+  },
+  "kiem_dinh": {
+    "link": {
+      "ok": true,
+      "reason": "HTTP 200 OK, tin còn hiệu lực (Playwright live DOM)",
+      "at": "2026-10-08T01:47:45.377Z"
+    },
+    "pipeline": "pipeline_crawl_validate_publish",
+    "nhom_nguon": "Mogi Hoài Đức"
+  },
+  "thong_tin": {
+    "tieu_de": "Cho thuê 01 phòng ở thuộc nhà riêng gần ĐH Thành Đô",
+    "gia": 1300000,
+    "dien_tich": 20,
+    "dia_chi": "Lai Xá, Xã Kim Chung, Huyện Hoài Đức, Hà Nội",
+    "quan_huyen": "Hoài Đức",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Cho thuê 01 phòng ở thuộc nhà riêng gần ĐH Thành Đô\nCho thuê 01 phòng ở thuộc nhà riêng\nNhà trong ngõ có 5 tầng, có 4 phòng ngủ , 3 nhà vệ sinh, 03 nhà tắm.\nTầng 01 để xe và nấu ăn thoải mái,\ncho thuê 01 phòng tầng 2 rộng rãi có phòng ngủ rộng và phòng khách không gian rộng.\nTầng 4 là phòng trống để đồ, tầng 5 máy giặt và phơi quần áo.\nĐược sử dụng máy giặt , điện và nước, internet dùng chung, điều hoà, nóng lạnh, điện và nước tính theo giá hộ dân không kinh doanh.\nAn ninh tốt dân cư. Gần đại học Thành Đô, Đại Học Công Nghiệp HN\nGiá thuê: 1.3 triệu-1.5 triệu/tháng- 15 m2",
+    "tien_ich": [
+      "dieu_hoa",
+      "nong_lanh",
+      "may_giat",
+      "bep",
+      "wifi"
+    ],
+    "khong_chung_chu": false,
+    "gio_giac_tu_do": false
+  },
+  "vi_tri": {
+    "lat": 21.052,
+    "lng": 105.715,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 2.1,
+    "khoang_cach_cs2_km": 1.6,
+    "khoang_cach_cs3_km": 59.9,
+    "co_so_gan_nhat": "CS2",
+    "thoi_gian_di_xe_phut": 6
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "Liên hệ qua bài viết",
+    "facebook": ""
+  },
+  "anh": [
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2023/04/21/355/0717d4364b85473985ae977084ea072a.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2023/04/21/356/c8f6819a2f4e4c698f904d371f6ae7b3.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2023/04/21/359/7fd94387fe164651a172fe3e63fede67.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2023/04/21/350/42c6cbce20434be98859ad0af157c93a.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}

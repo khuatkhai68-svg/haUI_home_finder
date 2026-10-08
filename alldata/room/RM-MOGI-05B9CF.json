@@ -1,0 +1,76 @@
+{
+  "ma_phong": "RM-MOGI-05B9CF",
+  "nguon": "mogi",
+  "url_nguon": "https://mogi.vn/quan-cau-giay/thue-phong-tro-khu-nha-tro/cho-thue-phong-khep-kin-22m-lac-long-quan-gan-vo-chi-cong-id22736351",
+  "ngay_cao": "2026-10-08T01:56:12.802Z",
+  "ngay_cap_nhat": "2026-10-08T01:56:12.802Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "Nguồn niêm yết công khai mogi.vn",
+    "chong_spam": "Đã qua cổng kiểm định pipeline staging",
+    "da_kiem_tra_trung": true,
+    "sha256_noi_dung": "1df3ba074946569242a73e106315adf7dfbb9a502fb3825f466178e5ebc64991"
+  },
+  "kiem_dinh": {
+    "link": {
+      "ok": true,
+      "reason": "HTTP 200 OK, tin còn hiệu lực (Playwright live DOM)",
+      "at": "2026-10-08T01:47:12.373Z"
+    },
+    "pipeline": "pipeline_crawl_validate_publish",
+    "nhom_nguon": "Mogi Cầu Giấy Tr2"
+  },
+  "thong_tin": {
+    "tieu_de": "Cho thuê phòng khép kín 22m Lạc Long Quân gần Võ Chí Công",
+    "gia": 2500000,
+    "dien_tich": 22,
+    "dia_chi": "Lạc Long Quân, Phường Nghĩa Đô, Quận Cầu Giấy, Hà Nội",
+    "quan_huyen": "Bắc Từ Liêm",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Cho thuê phòng khép kín 22m Lạc Long Quân gần Võ Chí Công\nChính chủ cho thuê phòng khép kín 22m tầng 1\nTHOÁNG MÁT YÊN TĨNH SẠCH SẼ, AN NINH TỐT\nCÓ ĐIỀU HÒA + NÓNG LẠNH + MẠNG\nĐIỆN NƯỚC GIÁ BÌNH DÂN CÓ NHU CẦU CHO THUÊ Ở LÂU DÀI\nNHÀ GẦN ĐƯỜNG VÕ CHÍ CÔNG XUÂN LA XUÂN ĐỈNH HỒ TÂY\nĐỊA CHỈ NGÕ 175/90 LẠC LONG QUÂN\nGIÁ 2TR5/1 THÁNG\nAI CÓ NHU CẦU LIÊN HỆ Chú Hòa 0369639426",
+    "tien_ich": [
+      "dieu_hoa",
+      "nong_lanh",
+      "wifi"
+    ],
+    "khong_chung_chu": false,
+    "gio_giac_tu_do": false
+  },
+  "vi_tri": {
+    "lat": 21.072,
+    "lng": 105.788,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 5.9,
+    "khoang_cach_cs2_km": 6.5,
+    "khoang_cach_cs3_km": 60.1,
+    "co_so_gan_nhat": "CS1",
+    "thoi_gian_di_xe_phut": 21
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "0369639426",
+    "facebook": ""
+  },
+  "anh": [
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2026/04/15/075/cef3bbdee13a441ea612118405197323.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2026/04/15/079/99614b93236749be9af3e8ad2af810e5.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2026/04/15/074/c53f1ddfd2974422a535939a1a5eaade.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    },
+    {
+      "url_goc": "https://cloud.mogi.vn/images/2026/04/15/078/6fcf5b32ae324e77bea8e0cb86ba9b6e.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}
