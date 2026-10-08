@@ -1,0 +1,82 @@
+{
+  "ma_phong": "RM-FB-312758",
+  "nguon": "facebook",
+  "url_nguon": "https://www.facebook.com/groups/HaUITimPhongTro/posts/1766521151307181/",
+  "ngay_cao": "2026-10-08T09:54:48.508Z",
+  "ngay_cap_nhat": "2026-10-08T09:54:48.508Z",
+  "trang_thai": "con_trong",
+  "luat_tuan_thu": {
+    "nghi_dinh_13": "100% Khử định danh PII, nguồn nhóm công khai",
+    "chong_spam": "Đã qua cổng kiểm định pipeline staging",
+    "da_kiem_tra_trung": true,
+    "sha256_noi_dung": "0372239175267b0a248a0653ffa48d93dff1c0458f4697a0394e7522686ecb54"
+  },
+  "kiem_dinh": {
+    "link": {
+      "ok": true,
+      "reason": "Permalink mở được (HTTP 200)",
+      "at": "2026-10-08T09:40:31.732Z"
+    },
+    "pipeline": "pipeline_crawl_validate_publish",
+    "nhom_nguon": "HaUI - Tìm Phòng Trọ (71.9K tv)"
+  },
+  "thong_tin": {
+    "tieu_de": "Cho thuê phòng trọ 2.4 tr/tháng gần HaUI CS1 & CS2 (Nhổn - Bắc Từ Liêm)",
+    "gia": 2400000,
+    "dien_tich": null,
+    "dia_chi": "Khu vực di trạch, Hoài Đức, Hà Nội (gần HaUI CS1/CS2)",
+    "quan_huyen": "Hoài Đức",
+    "tinh_thanh": "Hà Nội",
+    "mo_ta": "Phòng giá rẻ #2tr4\nGác lửng: 2tr4\nStudio: 2tr6 - 3tr2\n01 khách 01 ngủ: 3tr5\nTại: Di Trạch\n: 098 420 4140 (zalo)\n#phongtrohaui, #phongtrodaihoccongnghiep\n#trodhcn #phongtrohaui,#phongtrodaihoccongnghiep\n#trodhcn #chothuetro #ganDHCongNghiep #DHCongNghiepHaNoi #FPTPolytechnic #CaodangFPT #PhongTroGanDaiHocDongA\n#DaiHocCongNgheDongA\n#EAUT #PhongTroEAUT",
+    "tien_ich": [
+      "gac_xep"
+    ],
+    "khong_chung_chu": false,
+    "gio_giac_tu_do": false
+  },
+  "vi_tri": {
+    "lat": 21.051,
+    "lng": 105.718,
+    "vi_tri_xap_xi": false,
+    "khoang_cach_cs1_km": 1.8,
+    "khoang_cach_cs2_km": 1.5,
+    "khoang_cach_cs3_km": 59.7,
+    "co_so_gan_nhat": "CS2",
+    "thoi_gian_di_xe_phut": 5
+  },
+  "lien_he": {
+    "ten_chu": "Chủ phòng / Người đăng (ẩn danh)",
+    "so_dien_thoai": "0984204140",
+    "facebook": "https://www.facebook.com/groups/HaUITimPhongTro/posts/1766521151307181/"
+  },
+  "anh": [
+    {
+      "url_goc": "/photos/RM-FB-312758_photo_1.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng FB"
+    },
+    {
+      "url_goc": "/photos/RM-FB-312758_photo_2.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng FB"
+    },
+    {
+      "url_goc": "/photos/RM-FB-312758_photo_3.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng FB"
+    },
+    {
+      "url_goc": "/photos/RM-FB-312758_photo_4.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng FB"
+    },
+    {
+      "url_goc": "/photos/RM-FB-312758_photo_5.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng FB"
+    },
+    {
+      "url_goc": "/photos/RM-FB-312758_photo_6.jpg",
+      "mo_ta": "Ảnh thực tế bài đăng FB"
+    }
+  ],
+  "phan_tich": {
+    "da_kiem_tra": true,
+    "scam_score": 0.05
+  }
+}
